@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iotee.example/schema/contracts/deploy/deployment-profile.schema.json",
+  "title": "IOT-EE deployment profile",
+  "description": "A reviewed selection of catalog tools, layers, vault and storage settings for one deployment target. Aligns with ADR 0009's profile record (environment/provider/region/tier) and ADR 0011 Decision 7's topology. Declarative only: no field holds a command, script or free text that is executed. Additional properties are forbidden so no such field can be added without changing this contract. Cross-field rules live in deploy/catalog/validate.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile_id", "profile_version", "status", "purpose", "environment", "provider", "region", "tier", "topology", "production_use", "ha", "limitations", "layers", "tools", "vault", "storage_classes", "verification"],
+  "properties": {
+    "profile_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+    "profile_version": {"type": "integer", "minimum": 1},
+    "deployment_scope": {"enum": ["full-stack", "applications-only"], "description": "applications-only consumes an existing cluster and external platform services; Layers 0-3 are not installed by this profile."},
+    "status": {"enum": ["lab", "planned", "validated", "approved", "retired"]},
+    "purpose": {"type": "string", "minLength": 10},
+    "environment": {"enum": ["dev", "staging", "prod"]},
+    "provider": {"enum": ["on_prem", "aws", "azure", "gcp"]},
+    "region": {"enum": ["on_prem_primary", "on_prem_dr", "aws_us_east_1", "aws_eu_west_1", "azure_eastus", "gcp_us_central1"]},
+    "tier": {"enum": ["standard", "high_availability"]},
+    "topology": {"enum": ["modular-monolith", "distributed-single-cluster", "multi-cluster", "edge"]},
+    "production_use": {"type": "boolean"},
+    "ha": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["control_plane_nodes", "host_redundancy"],
+      "properties": {
+        "control_plane_nodes": {"enum": [1, 3, 5]},
+        "host_redundancy": {"type": "boolean"}
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "external_dependencies": {
+      "type": "array",
+      "description": "Capability bindings for an applications-only release. References identify reviewed configuration, never credentials or executable commands.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["role", "binding_ref", "required_capabilities", "readiness"],
+        "properties": {
+          "role": {"enum": ["kubernetes", "identity", "secrets", "relational-database", "event-stream", "object-storage", "ingress", "observability", "gitops"]},
+          "binding_ref": {"type": "string", "pattern": "^config://[a-z0-9][a-z0-9/-]+$"},
+          "required_capabilities": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"}},
+          "readiness": {"enum": ["pending", "passed", "failed"]},
+          "evidence_ref": {"type": "string", "minLength": 8}
+        }
+      }
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["layer", "path", "state", "static_checks"],
+        "properties": {
+          "layer": {"enum": [0, 1, 2, 3, 4]},
+          "path": {"type": ["string", "null"]},
+          "state": {"enum": ["implemented", "planned", "not-applicable"]},
+          "static_checks": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "tools": {
+      "type": "object",
+      "description": "category -> selected tool. Keys are catalog categories.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["tool", "version"],
+        "properties": {
+          "tool": {"type": "string"},
+          "version": {"type": "string", "description": "A version listed in the catalog entry, or 'unpinned' (lab/planned profiles only)."}
+        }
+      }
+    },
+    "vault": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The secrets backend (server) profile. Every capability it relies on -- storage, unseal method, backup method, namespaces -- must be declared by the selected edition in the tool catalog. Only references are stored, never secret or key material.",
+      "required": ["tool", "edition", "state", "required_capabilities", "secret_reference_scheme", "storage_backend", "topology", "unseal", "backup", "data_loss_effect"],
+      "properties": {
+        "managed_externally": {"type": "boolean", "description": "True when the selected backend already exists and this profile must not install it."},
+        "tool": {"type": "string"},
+        "edition": {"type": "string"},
+        "state": {"enum": ["implemented", "planned"]},
+        "required_capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "client": {"type": "string", "description": "Client integration (for example spring-vault). A client is never a secrets backend."},
+        "secret_reference_scheme": {"type": "string", "pattern": "^[a-z][a-z0-9+.-]*://$"},
+        "storage_backend": {"enum": ["integrated-raft", "provider-managed"], "description": "Where the backend keeps its own encrypted data. integrated-raft needs the edition capability integrated-raft-storage; provider-managed needs provider-managed-storage."},
+        "topology": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["replicas", "spread"],
+          "properties": {
+            "replicas": {"enum": [1, 3, 5]},
+            "spread": {"enum": ["none", "node", "zone"]}
+          }
+        },
+        "unseal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["method", "custody"],
+          "properties": {
+            "method": {"enum": ["shamir", "auto-unseal-cloud-kms", "auto-unseal-transit", "auto-unseal-pkcs11", "auto-unseal-kmip", "provider-managed"], "description": "Must be a capability of the selected edition."},
+            "key_ref": {"type": "string", "pattern": "^[a-z][a-z0-9+.-]*://.+", "description": "Reference to the KMS/HSM/transit key (for example awskms://alias/iotee-unseal). Never key material. Required for auto-unseal methods; not allowed for shamir or provider-managed."},
+            "custody": {"type": "string", "minLength": 10, "description": "Who holds the Shamir key shares or controls the KMS/HSM key, and how access is granted. No key material."}
+          }
+        },
+        "backup": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["enabled", "restore_tested"],
+          "properties": {
+            "enabled": {"type": "boolean"},
+            "method": {"enum": ["raft-snapshot-manual", "raft-snapshot-automated", "provider-managed-snapshots"], "description": "Must be a capability of the selected edition."},
+            "schedule": {"type": "string"},
+            "retention_days": {"type": "integer", "minimum": 1},
+            "target_ref": {"type": "string", "pattern": "^[a-z][a-z0-9+.-]*://.+", "description": "Reference to where snapshots are kept; never credentials."},
+            "restore_tested": {"type": "boolean"}
+          }
+        },
+        "data_loss_effect": {"type": "string", "minLength": 20, "description": "What is lost and when: losing the unseal keys or KMS key, losing nodes, missing or untested backup."}
+      }
+    },
+    "storage_classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "tool", "state", "required_capabilities", "quota", "encryption", "backup", "topology", "reclaim_policy", "retention", "data_loss_effect"],
+        "properties": {
+          "managed_externally": {"type": "boolean", "description": "True when storage is supplied by the existing cluster."},
+          "name": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+          "tool": {"type": "string"},
+          "state": {"enum": ["implemented", "planned"]},
+          "required_capabilities": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+          "quota": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["max_total_gi", "max_per_claim_gi"],
+            "properties": {
+              "max_total_gi": {"type": "integer", "minimum": 1},
+              "max_per_claim_gi": {"type": "integer", "minimum": 1}
+            }
+          },
+          "encryption": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["at_rest"],
+            "properties": {
+              "at_rest": {"type": "boolean"},
+              "key_ref": {"type": "string", "description": "A reference, never key material: the vault's secret_reference_scheme (for example openbao://kv/storage/lab-key), or, in a cloud profile, that provider's KMS scheme (awskms:// on aws, azurekeyvault:// on azure, gcpckms:// on gcp)."}
+            }
+          },
+          "backup": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["enabled", "restore_tested"],
+            "properties": {
+              "enabled": {"type": "boolean"},
+              "tool": {"type": "string"},
+              "schedule": {"type": "string"},
+              "retention_days": {"type": "integer", "minimum": 1},
+              "restore_tested": {"type": "boolean"}
+            }
+          },
+          "topology": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["replicas", "spread"],
+            "properties": {
+              "replicas": {"type": "integer", "minimum": 1},
+              "spread": {"enum": ["none", "node", "zone"]}
+            }
+          },
+          "reclaim_policy": {"enum": ["Retain", "Delete"]},
+          "retention": {"type": "string", "minLength": 5},
+          "data_loss_effect": {"type": "string", "minLength": 20}
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["real_environment"],
+      "properties": {
+        "real_environment": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["date", "scope", "result", "evidence"],
+            "properties": {
+              "date": {"type": "string", "format": "date"},
+              "scope": {"type": "string"},
+              "result": {"enum": ["passed", "partial", "failed"]},
+              "evidence": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["plan_ref", "authored_by", "approved_by", "approved_by_role", "approved_on"],
+      "properties": {
+        "plan_ref": {"type": "string", "minLength": 3},
+        "authored_by": {"type": "string"},
+        "approved_by": {"type": "string"},
+        "approved_by_role": {"const": "system-admin"},
+        "approved_on": {"type": "string", "format": "date"}
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+---
+# Copy to inventory/group_vars/all/local.yml (git-ignored) and edit. Loaded
+# after main.yml for every host. Non-secret, site-specific values only:
+# secrets come from the environment or a vault, never from this file.
+#
+# Do NOT set these with -e on the command line: extra vars have the highest
+# precedence in Ansible and silently override every reviewed default.
+
+# Extra names/addresses for the API server certificate, e.g. the Hyper-V
+# host's LAN address when using prep-hyperv-host.ps1 -ApiServerForwardTo.
+# rke2_tls_san:
+#   - "lab-host.example.internal"
+
+# Where the admin kubeconfig is written on the controller (default
+# ~/.kube/config; a previous file is backed up).
+# rke2_kubeconfig_dest: "~/.kube/iotee-pc.yaml"

@@ -53,7 +53,7 @@ output "nodes" {
   description = "Every VM: role, IPv4, MAC, sizing, Hyper-V VM name."
   value = {
     for name, n in local.nodes : name => {
-      vm_name      = hyperv_machine_instance.vm[name].name
+      vm_name      = hyperv_vm.vm[name].name
       role         = n.role
       ipv4         = n.ipv4
       mac          = n.mac_upper

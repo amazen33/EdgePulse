@@ -1,5 +1,9 @@
 ---
-# Loaded for every host in inventory/hosts.ini.
+# Committed defaults, loaded for every host in any inventory file in inventory/
+# (hosts.ini, hosts.example.ini). Site-specific, non-secret overrides (for
+# example rke2_tls_san) go in inventory/group_vars/all/local.yml or
+# inventory/host_vars/<host>.yml -- both git-ignored; start from
+# inventory/local-overrides.example.yml. Do not pass overrides with -e.
 
 # ----- RKE2 ----------------------------------------------------------------
 # Pinned, never "latest". v1.35.7+rke2r1 was RKE2's *stable* channel on

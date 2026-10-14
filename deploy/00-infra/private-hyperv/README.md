@@ -1,7 +1,11 @@
-# Layer 0: private Hyper-V infrastructure
+# Layer 0: private Hyper-V infrastructure (lab/development profile)
 
-Raw virtual machines for the IOT-EE Kubernetes cluster, on **one Windows
-Hyper-V host**, behind a **private (Internal) switch with Windows NAT**.
+Raw virtual machines for the IOT-EE **lab** Kubernetes cluster, on **one
+Windows Hyper-V host**, behind a **private (Internal) switch with Windows
+NAT**. This is the `lab-hyperv-single-host` profile
+(`deploy/profiles/lab-hyperv-single-host.yaml`): not production, not highly
+available, not bare metal. The addresses below are the lab's defaults for
+the NAT network the prep script creates, not a site network.
 
 | VM | Role | IPv4 | MAC | vCPU | RAM | Data disk |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -21,7 +25,7 @@ Outputs the node list as JSON and as an Ansible inventory for Layer 1.
 
 **Does not:** install packages, run commands in the guests, format the data
 disk, or touch Kubernetes. That is Layer 1 (`deploy/01-k8s-engine/rke2-ansible`, Ansible)
-and Layer 2 (`deploy/k8s`).
+and Layer 2 (`deploy/02-cluster-addons`).
 
 The seed is required, not optional: Hyper-V cannot set a Linux guest's IP from
 the host, and Windows NAT has no DHCP server, so the guest must apply its own
@@ -61,9 +65,11 @@ static address on first boot.
   about 16 GB free RAM and 200 GB free disk for the defaults.
 - QEMU for Windows (`qemu-img.exe`), to convert the Ubuntu cloud image. The
   prep script installs it for you (see step 1) if it isn't already on `PATH`.
-- OpenTofu >= 1.6 (or Terraform >= 1.6).
+- OpenTofu >= 1.6 (the default; MPL-2.0). Terraform is an optional
+  compatibility choice only (BSL 1.1 since 2023-08-10), used only if the
+  owner accepts its licence (`deploy/catalog/tools.yaml`); CI runs OpenTofu.
 - An SSH key pair: `ssh-keygen -t ed25519` creates `~/.ssh/id_ed25519.pub`.
-- A local Windows account in *Hyper-V Administrators* for Terraform, e.g.:
+- A local Windows account in *Hyper-V Administrators* for OpenTofu, e.g.:
   ```powershell
   $pw = Read-Host -AsSecureString "Password for iotee-tf"
   New-LocalUser -Name iotee-tf -Password $pw -PasswordNeverExpires
@@ -71,7 +77,7 @@ static address on first boot.
   Add-LocalGroupMember -Group "Remote Management Users" -Member iotee-tf
   ```
   After step 1 below has created `D:\HyperV\iotee`, give that account write
-  access to it (Terraform creates the disks and seed ISOs there):
+  access to it (OpenTofu creates the disks and seed ISOs there):
   ```powershell
   icacls D:\HyperV\iotee /grant "iotee-tf:(OI)(CI)M"
   ```
@@ -134,9 +140,10 @@ tofu output nodes_json
 tofu output -raw ansible_inventory_ini | Set-Content -Encoding utf8 ..\..\01-k8s-engine\rke2-ansible\inventory\hosts.ini
 ```
 
-With the default `nodes` and `network` the generated file equals the committed
-`inventory/hosts.ini`, so `git diff` shows nothing. Then continue with Layer 1
-in `deploy/01-k8s-engine/rke2-ansible/README.md`.
+That file is git-ignored: the real inventory never goes into Git (only
+`inventory/hosts.example.ini`, with documentation addresses, is committed).
+Validate it before use: `ansible-playbook -i inventory/hosts.ini validate-inventory.yml`.
+Then continue with Layer 1 in `deploy/01-k8s-engine/rke2-ansible/README.md`.
 
 ## Outputs
 
@@ -158,7 +165,7 @@ in `deploy/01-k8s-engine/rke2-ansible/README.md`.
 - **Remove a node:** drain it in Layer 1 first, remove its entry, `tofu apply`.
 - **Rebuild a node:**
   `tofu apply -replace='hyperv_vhd.os["rke2-worker-01"]' -replace='hyperv_vhd.data["rke2-worker-01"]' -replace='hyperv_machine_instance.vm["rke2-worker-01"]'`
-- **Control-plane HA:** set 3 `control-plane` entries (Terraform accepts 1, 3
+- **Control-plane HA:** set 3 `control-plane` entries (the configuration accepts 1, 3
   or 5). One control-plane node means the API is down whenever that VM is.
 
 ## Design notes
@@ -183,4 +190,9 @@ count, MAC format, duplicates, gateway outside the subnet, node on the gateway,
 undersized control plane, invalid hostname, private or missing SSH key); the
 prep script parses with PowerShell 7.
 
-**Not yet run on a real Hyper-V host.** Record the first real run here.
+The host-preparation script was run once on the owner's Hyper-V host on
+2026-09-25, as recorded in `deploy/README.md`; its reported completion has
+not been independently checked. **OpenTofu `plan` and `apply` have not been
+run against that host**, and no VMs have been created by Layer 0. Record the
+first real plan/apply and post-provision checks in the deployment evidence
+log before calling this layer tested.

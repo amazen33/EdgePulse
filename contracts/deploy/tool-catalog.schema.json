@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iotee.example/schema/contracts/deploy/tool-catalog.schema.json",
+  "title": "IOT-EE curated deployment tool catalog",
+  "description": "Versioned list of the infrastructure tools a deployment profile may select, with licence class, role, pinned versions, declared capabilities (per edition where editions differ) and the four review checks (compatibility, support, licence, security). Source only (ADR 0013): validated by deploy/catalog/validate.py in CI, later by Deployment Studio. Cross-field rules that JSON Schema cannot express (a default must be OSI open source; 'approved' needs all four checks passed) live in the validator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["catalog_version", "reviewed_on", "tools"],
+  "properties": {
+    "catalog_version": {"type": "integer", "minimum": 1},
+    "reviewed_on": {"type": "string", "format": "date"},
+    "tools": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/tool"}}
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["passed", "pending", "failed", "not-applicable"]},
+        "note": {"type": "string"},
+        "source": {"type": "string"},
+        "checked_on": {"type": "string", "format": "date"}
+      }
+    },
+    "edition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["edition", "license_class", "capabilities"],
+      "properties": {
+        "edition": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+        "license_class": {"$ref": "#/$defs/license_class"},
+        "capabilities": {"type": "array", "items": {"$ref": "#/$defs/capability"}, "uniqueItems": true},
+        "note": {"type": "string"}
+      }
+    },
+    "capability": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]*$"},
+    "license_class": {"enum": ["osi-open-source", "source-available", "commercial", "saas", "unverified"]},
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "category", "license", "role", "versions", "capabilities", "checks", "approval"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+        "name": {"type": "string"},
+        "category": {"enum": [
+            "os", "hypervisor", "hypervisor-automation", "kubernetes-distribution", "cluster-networking", "service-mesh",
+          "iac-provisioning", "config-management", "packaging", "gitops",
+          "gateway", "event-backbone", "mqtt-broker", "stream-processing", "search-index", "observability",
+          "secrets-backend", "secrets-client", "block-storage", "object-storage",
+          "backup", "load-balancer"
+        ]},
+        "license": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["spdx", "class"],
+          "properties": {
+            "spdx": {"type": "string", "description": "SPDX expression, or a short description when no SPDX id applies"},
+            "class": {"$ref": "#/$defs/license_class"}
+          }
+        },
+        "role": {"enum": ["default", "alternative", "optional-compatibility", "lab-only", "test-only", "rejected"]},
+        "default_status": {"enum": ["proposed", "confirmed"], "description": "Required when role is default. 'confirmed' only after an owner decision."},
+        "versions": {"type": "array", "items": {"type": "string"}, "uniqueItems": true, "description": "Versions pinned somewhere in the repository. Empty means not pinned yet; a profile may then only select it as 'unpinned' in lab or planned status."},
+        "pinned_in": {"type": "array", "items": {"type": "string"}},
+        "capabilities": {"type": "array", "items": {"$ref": "#/$defs/capability"}, "uniqueItems": true},
+        "editions": {"type": "array", "items": {"$ref": "#/$defs/edition"}},
+        "checks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["compatibility", "support", "license", "security"],
+          "properties": {
+            "compatibility": {"$ref": "#/$defs/check"},
+            "support": {"$ref": "#/$defs/check"},
+            "license": {"$ref": "#/$defs/check"},
+            "security": {"$ref": "#/$defs/check"}
+          }
+        },
+        "approval": {"enum": ["approved", "candidate", "not-approved"]},
+        "commercial_alternatives": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "string"}
+      }
+    }
+  }
+}

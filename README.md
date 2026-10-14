@@ -1,124 +1,146 @@
 # IOT-EE
 
-M0 foundation, M1 Migration Studio foundation, and M2 domain core (tenancy,
-RBAC, asset/device model, command domain). No legacy access, exports, rule
-parity, infrastructure, or production implementation has been verified.
-Existing root images and Multipass scripts are unverified reference
-inputs, preserved unchanged. The scripts provision machines and replace
-guest hosts files; they are not part of the supported deployment or test
-path and must not be executed by CI.
+An enterprise, multi-tenant IoT platform for tank monitoring (tenants,
+devices, tanks, telemetry, alarms, reports, firmware), built as a
+**Java 17 / Spring Boot 3 / Spring Cloud** platform that extends
+**ThingsBoard CE** behind a replaceable, upgradeable compatibility boundary. It replaces a
+legacy ThingsBoard CE deployment through a controlled migration.
 
-## Local gate
+Nothing in this repository has been deployed to, or verified against, a
+real environment, a real legacy system, or a real external service.
+The status below separates what is implemented and tested locally from
+what is planned or blocked. **No ThingsBoard EE/PE feature parity and no
+compliance certification is claimed**; parity needs a version-specific
+feature matrix with evidence, which does not exist yet. Goal-by-goal
+traceability is in
+[`docs/enterprise-readiness-review.md`](docs/enterprise-readiness-review.md).
 
-Use Python 3.11 or newer; no third-party dependencies or network access are
-required.
+## Product scope
 
-```sh
-python scripts/check.py
-```
+- **ThingsBoard CE is replaceable and upgradeable.** Keep it unforked and isolate version-specific APIs and customizations behind an adapter. Upgrade to a newer CE version by reapplying the thin declared customization set and passing compatibility tests; another conforming platform may replace it after behavioral parity and migration checks. This amends ADR 0011 Decision 2 via the proposed adapter-boundaries ADR; no drop-in equivalence is claimed.
+- **Domain:** tenants, devices, assets/tanks and their hierarchy,
+  telemetry, alarms and commands, reports.
+- **Migration** from the legacy system: Migration Studio (M1) and a
+  final, reconciled legacy import and cutover (M9).
+- **Reports, firmware, evidence**, and **optional monetization**
+  (default off; never blocks telemetry, alarms or commands).
+- **Deployment** to private/on-prem and cloud environments: upstream
+  Kubernetes on-prem and managed EKS/AKS/GKE, with Deployment Studio (M8)
+  producing reviewed, policy-checked plans.
 
-The gate runs the complete current test suite, validates synthetic
-fixtures and the inert deployment plan, statically checks that
-`migration_studio/` and `domain_core/` perform no network/process I/O, and
-checks required stage artifacts. Python is M0-M2 tooling only; the
-application language/framework is undecided.
+## Platform
 
-Read [architecture](docs/architecture.md), decisions
-([M0](docs/adr/0001-foundation.md), [M1](docs/adr/0002-migration-studio-foundation.md),
-[M2](docs/adr/0003-m2-domain-core.md)),
-[milestones and test gates](docs/test-plan.md), [missing inputs](docs/inputs.md),
-the [Migration Studio foundation write-up](docs/migration-studio.md), and the
-[domain core write-up](docs/domain-core.md). Developer instructions are in
-[CLAUDE.md](CLAUDE.md).
+| Concern | Direction | Governing ADR |
+| --- | --- | --- |
+| Language/runtime | Java 17, Spring Boot 3.3, Spring Cloud 2023.0, Maven | 0011, 0012 |
+| Python | Limited to the RAG subsystem and standalone adapters; the M0-M8 Python code in `spec/` is a frozen reference implementation, not the platform | 0011 Decisions 1, 9 |
+| Service structure | Autonomous services sharing contracts only (`.proto`, JSON Schema); hexagonal ports and adapters | 0013, 0017 |
+| Frontend | REST over HTTPS through **APISIX** (north-south gateway) and a BFF; one multiplexed WebSocket per browser | proposed communication-direction ADR, 0005 |
+| Service to service | **gRPC** (synchronous); **Kafka** (asynchronous events, transactional outbox, idempotent consumers) | proposed communication-direction ADR, 0018 |
+| Devices | **MQTT** over authenticated TLS; firmware binaries over HTTPS/object storage. Legacy (non-MQTT) device ingestion is **not designed** since ADR 0019 made TB CE a downstream consumer | 0004, 0006, 0019 |
+| Load balancing/network policy | Proposed Cilium pod reachability plus Istio Ambient service policy; no profile selected or installed. Kubernetes Services route in-cluster; Spring Cloud LoadBalancer only where a client must route itself | proposed Cilium/Ambient and communication-direction ADRs |
+| Tenancy | Pooled `tenant_id` + PostgreSQL Row-Level Security | 0016 |
+| Identity | IAM-agnostic OIDC/JWT (Keycloak as first provider only); each service re-verifies tokens | 0016 |
+| Roles | System admin, system operator, tenant admin, tenant operator (ADR 0016's Product and Tenant tiers). Only system admins grant or revoke VM environment-admin channel access | 0016, proposed roles ADR |
+| Observability | LGTM + OpenTelemetry; `traceparent` and `X-Correlation-ID` carried separately | 0015 |
+| Streaming/RAG | Flink -> redaction -> pgvector, core/AI cluster only. Integration with multiple AI environments/providers is **not designed** (no ADR) | 0019 |
+| Open-source defaults | Mostly Apache 2.0; exceptions under review: HashiCorp Vault and EMQX are source-available (BSL), the `minio/minio` repository (the planned on-prem WORM default) was archived on 2026-04-25 and is no longer maintained. Licences and commercial alternatives per component: `docs/enterprise-readiness-review.md`, goal 14 | -- |
 
-No remote, branch protection, hosted CI run, container build, or deployment
-is implied by local gate success. Configure the repository host and
-required review checks before collaborative delivery.
+"Proposed" ADRs are drafts in `docs/adr/XXXX-proposed-*.md` awaiting
+review; they take effect when merged.
 
-## Status
+## Roadmap and current stage
 
-- **M0 — done**: inert foundation, synthetic telemetry contract, inert
-  deployment plan, gate script.
-- **M1 — foundation done, provider integration blocked**: vault
-  abstraction, source-registration configuration lifecycle, hash-chained
-  evidence log. Real provider integration tests are blocked (no isolated
-  Vault/cloud environment available here) — see
-  [`docs/migration-studio.md`](docs/migration-studio.md).
-- **M2 — domain core done**: tenancy (hybrid isolation decision), RBAC
-  (custom tenant roles over a fixed permission catalog), asset/tank
-  hierarchy, opaque tenant-scoped device identity, and the operator/device
-  command domain (authorization, TTL, idempotent dispatch). No real
-  PostgreSQL schema, MQTT transport, or device delivery yet — see
-  [`docs/domain-core.md`](docs/domain-core.md).
-- **M3 — ingestion foundation done, real backends blocked**: MQTT topic
-  convention, a transactional outbox (raw_telemetry + outbox_event),
-  a Kafka relay with at-least-once-tolerant idempotent consumption,
-  bounded per-device offline command queueing with reconnect
-  replay-prevention, and a ThingsBoard shadow-parity comparison
-  framework exercised against synthetic data only. No real MQTT broker,
-  PostgreSQL, Kafka cluster, or ThingsBoard connection exists yet — see
-  [`docs/ingestion.md`](docs/ingestion.md).
-- **M4 — reporting read-model + gateway auth/route contract done, SSR/WS/real-gateway blocked**:
-  a CQRS read-model projecting M3's telemetry into a per-tenant tank
-  summary (latest/min/max level, consumption rate), tenant-local display
-  formatting (UTC storage/computation unchanged), a permission-gated
-  report publication record, and a provider-neutral gateway auth contract
-  plus an APISIX-shaped route/policy contract. No real APISIX, identity
-  provider, SSR renderer, or WebSocket server exists yet — see
-  [`docs/gateway.md`](docs/gateway.md) and [`docs/reporting.md`](docs/reporting.md).
-- **M5 — firmware signing/provenance/rollout done, real HSM/transport blocked**:
-  provider-neutral signature verification, firmware artifact provenance
-  (build metadata + hash + signer identity, verified as a unit), and a
-  staged canary-then-broad rollout with automatic rollback to
-  last-known-good on a failed device health check. No real HSM/KMS,
-  device secure-boot chain, build-system provenance verification, or
-  firmware download/flashing transport exists yet — see
-  [`docs/firmware.md`](docs/firmware.md).
-- **M6 — immutable evidence/legal-hold/replay-reconciliation done, real WORM/DR blocked**:
-  a provider-neutral WORM store contract for the audit/compliance trail
-  (RBAC decisions, firmware rollout/rollback events, shadow-parity
-  comparisons), redaction and content-hash integrity checks on every
-  evidence record, an RBAC-gated legal-hold flag that structurally
-  blocks retention deletion, and a replay/reconciliation procedure that
-  rebuilds a read-model from durable events against documented
-  per-tenant RPO/RTO targets. No real WORM/object-lock backend, backup/
-  restore execution, cross-region failover, fault injection, or
-  load/soak testing exists yet — see
-  [`docs/evidence.md`](docs/evidence.md).
-- **M7 — optional monetization behind a runtime feature flag done, real payment/tax blocked**:
-  a default-off, per-tenant-overridable monetization flag as the single
-  gate for all billing side effects; certified (active) device-count
-  metering; effective-dated, versioned price plans; immutable period
-  closure with reversal-only correction; and a mechanical import-scan
-  rule (`scripts/check.py`) proving no other bounded context can ever
-  depend on billing. Disabling the flag leaves every other feature fully
-  available -- there is no feature-entitlement check anywhere in this
-  package. No real payment provider, invoicing, or tax/currency handling
-  exists yet -- see [`docs/billing.md`](docs/billing.md).
-- **M8 — Deployment Studio/multi-environment done, plan/validate-only, real apply blocked**:
-  an immutable, append-only, versioned deployment-profile registry with
-  default-deny lookup (closed environment/provider/region enums, prod
-  requires approval); an RBAC-gated plan lifecycle (draft, validated,
-  approved/rejected) with a required, write-once approval-audit trail;
-  structural IaC-document validation that refuses any `apply: true`
-  document; a least-privilege runner-policy contract that can never
-  declare apply/destroy; and GitOps drift detection between a plan's
-  desired state and a supplied observed-state snapshot. No real
-  terraform/ansible apply, cloud API call, GitOps controller connection,
-  or live infrastructure read exists yet -- see
-  [`docs/deployment-studio.md`](docs/deployment-studio.md).
-- **Graduation (post-M8) -- a real (test-target) S3 WORM adapter**:
-  `adapters.worm_s3.S3WormStore`, a real S3-compatible implementation of
-  `evidence.worm.WormStore` using genuine S3 Object Lock for legal hold
-  and retention, kept outside every inert core package and wired in only
-  as an optional extra (`requirements-adapters-s3.txt`, lazily imported
-  -- `requirements.txt` is unchanged). Scoped to a synthetic/test bucket
-  only; the one test performing real network I/O skips cleanly (reported
-  as skipped, never passed) without `WORM_S3_BUCKET` set. No production
-  bucket/region, IAM role design, indexed tenant listing, or
-  production retention claim exists yet -- see
-  [`docs/adapters-worm-s3.md`](docs/adapters-worm-s3.md).
-- All CLAUDE.md milestones (M0-M8) have an initial, contract-gated slice complete;
-  each stage's real-backend items remain individually documented as blocked in its own docs page.
-  One of M6's blocked items (a real WORM backend) has since been graduated to a
-  real test-target implementation -- see the graduation bullet above.
+Milestones M0-M9 are product capabilities
+(`docs/requirements-addendum.md`). **M9 is the final full legacy
+import, reconciliation and cutover**, after M8. The Java foundation is a
+separate stage, **Platform Foundation (PF)**, that the M1-M9
+capabilities are built on (proposed milestone-naming ADR).
+
+| Stage | Scope | State |
+| --- | --- | --- |
+| M0-M8 (spec) | Python reference slices of each capability, in `spec/` | Done as specification and frozen; real backends blocked in every slice |
+| PF-A | TB CE investigation (`docs/tb-ce-inventory.md`, `tb-extensions/manifest.yaml`) | Done as a document; the TB CE behaviour it describes is unverified |
+| PF-B | Java bootstrap and the ADR 0013 autonomy refactor | Done |
+| PF-C | C0 gate, C1 hexagonal skeleton | Done (C1: PR #21) |
+| PF-C | C2 observability, C3 identity, C4 persistence and tenancy, C5 events, C6 transport swap, C7 deploy foundation | **C2 next**; C3-C7 not started |
+| M1-M8 (platform) | Java implementation of each capability | Not started |
+| M9 | Final legacy import, reconciliation, cutover | Not started; needs M8 and real legacy access |
+
+## What is implemented (tested locally and in CI)
+
+- `services/identity` -- a walking skeleton, not a usable identity
+  service: hexagonal layout (`domain`, `application`, `port.in`,
+  `port.out`, `adapter.in.rest`, `adapter.in.grpc`, `config`), one use
+  case (tenant permissions) over REST and gRPC through the same inbound
+  port, a local RBAC registry, correlation-ID handling, and `cfg.yaml`
+  validation against `contracts/cfg/cfg.schema.json`. The ABAC hook is
+  a stub that always permits; it must be replaced before any
+  tenant-facing endpoint exists (ADR 0016).
+- `contracts/` -- event envelope and identity `.proto` contracts, and the
+  draft `cfg.yaml` JSON Schema.
+- `architecture/` -- ArchUnit rule factories (test scope) with negative
+  fixtures; Maven Enforcer bans shared runtime modules.
+- `spec/` -- the frozen Python M0-M8 reference implementation and its
+  gate.
+- `deploy/` -- IaC in five layers: VMs (OpenTofu), CIS-hardened RKE2
+  (Ansible), cluster add-ons (Kustomize) implemented for a single-host
+  Hyper-V **lab profile** only; observability (LGTM/OTel) and application
+  release (Helm + Argo CD) are planned and **no Helm chart exists**. A
+  curated tool catalog and deployment profiles are validated in CI. CI
+  checks everything statically only.
+
+## Planned or blocked (not verified)
+
+Each item stays blocked, not passed, until it is verified in a
+representative environment:
+
+- **Legacy system:** no legacy access, export, inventory, rule/report
+  parity or data import has happened.
+- **ThingsBoard CE:** no running TB CE; consuming platform Kafka topics
+  and native OTel emission are unverified
+  (`docs/track-c-execution-plan.md`, section 2.3).
+- **Infrastructure services:** no APISIX, BFF, Kafka, MQTT broker,
+  PostgreSQL with RLS, identity provider, Vault, proposed Cilium/Istio Ambient profile and LGTM stack,
+  Flink, pgvector, WORM store or payment provider is connected to any
+  platform code.
+- **Deployment:** Layer 0 host preparation has been run once on the
+  owner's Hyper-V host; the VMs, the RKE2 cluster and the add-ons have
+  not been created (`deploy/README.md`, "Verification status"). No cloud
+  environment exists.
+- **Security scanning:** supply-chain scanning (ADR 0014) is reserved,
+  not implemented; a green build is not a security clearance. No
+  static-analysis or coverage gate exists yet.
+- **Bare metal:** the only Layer 0 targets Hyper-V VMs on one Windows
+  host; a bare-metal Layer 0 does not exist.
+- **LGTM:** no observability stack is deployed or packaged yet (PF-C C2).
+- **Added requirements, not yet reconciled by ADR:** rule-based
+  authorization with real ABAC (the current ABAC hook always permits),
+  refresh-token rotation and OTP, a backend-first Config Studio (scope
+  undefined), and a single Terraform/Ansible/Helm responsibility matrix.
+  Payment-provider boundaries (ADR 0018) and system-admin-only VM channel
+  grants (proposed roles ADR) are decided but not implemented. Proposed
+  stages: `docs/enterprise-readiness-review.md`, "Follow-up roadmap".
+
+## Gates
+
+| Gate | Command | Scope |
+| --- | --- | --- |
+| Java platform | `mvn -B -f pom.xml verify` | `contracts/`, `architecture/`, `services/*` |
+| Python spec | `python spec/scripts/check.py` | `spec/` only |
+| Infrastructure | `.github/workflows/infra.yml` | `deploy/`: `tofu validate`, Ansible syntax check and inventory validation, PowerShell parse, kustomize + kubeconform, tool catalog/profile validation |
+
+A passing gate is not evidence of production readiness, rule parity,
+broker connectivity, retention or deployment success.
+
+## Where to read next
+
+- [`CLAUDE.md`](CLAUDE.md) -- development contract, roadmap, reading order
+- [`docs/adr/`](docs/adr/) -- decisions; [`docs/adr/README.md`](docs/adr/README.md) for numbering
+- [`docs/enterprise-readiness-review.md`](docs/enterprise-readiness-review.md) -- traceability against the 14 product goals
+- [`docs/requirements-addendum.md`](docs/requirements-addendum.md) -- tenant administration, consoles, vault, delivery sequence
+- [`docs/track-c-execution-plan.md`](docs/track-c-execution-plan.md) -- PF-C steps
+- [`deploy/README.md`](deploy/README.md) -- infrastructure layers
+- [`spec/README.md`](spec/README.md) -- the Python reference implementation
+
+All changes go through a PR, CI and human review.

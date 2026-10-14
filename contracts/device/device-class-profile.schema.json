@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iotee.example/schema/contracts/device/device-class-profile.schema.json",
+  "title": "IOT-EE device class inventory and capability profiles",
+  "description": "Inventory of device classes the platform may connect, with the capabilities used for adapter selection and capability negotiation (proposed ADR XXXX-proposed-device-adapter-contract-and-capability-negotiation). Every capability is either a verified value or 'unknown'. Sources must be verifiable engineering sources; marketing material and screenshots are not accepted. Cross-field rules live in tools/policy/check.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["inventory_version", "reviewed_on", "device_classes"],
+  "properties": {
+    "inventory_version": {"type": "integer", "minimum": 1},
+    "reviewed_on": {"type": "string", "format": "date"},
+    "device_classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["class_id", "generation", "description", "status", "sources", "transports", "authentication", "firmware", "time", "units", "offline_buffer", "commands", "constraints", "compatibility_tests"],
+        "properties": {
+          "class_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+          "generation": {"enum": ["modern", "legacy", "synthetic"]},
+          "description": {"type": "string"},
+          "status": {
+            "enum": ["unverified", "documented", "fixture-tested", "device-tested", "supported", "unsupported"],
+            "description": "unverified: no accepted source. documented: accepted sources, no tests. fixture-tested: protocol fixtures or authorized captures pass. device-tested: representative hardware passes the compatibility suite. supported: device-tested and approved."
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["type", "reference"],
+              "properties": {
+                "type": {"enum": ["protocol-specification", "vendor-engineering-document", "firmware-source", "authorized-protocol-capture", "lab-test-report", "repository-spec", "marketing", "screenshot", "hearsay"]},
+                "reference": {"type": "string"},
+                "checked_on": {"type": "string", "format": "date"}
+              }
+            }
+          },
+          "transports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["protocol", "security", "state"],
+              "properties": {
+                "protocol": {"type": "string", "pattern": "^(mqtt-3\\.1\\.1|mqtt-5|http-1\\.1|coap-rfc7252|legacy:[a-z0-9-]+|unknown)$"},
+                "security": {"enum": ["mtls", "tls-token", "dtls-psk", "dtls-cert", "none", "unknown"]},
+                "bearer": {"type": "string", "description": "Network bearer if verified (e.g. cellular, lorawan); 'unknown' otherwise."},
+                "state": {"enum": ["declared", "fixture-tested", "device-tested"]}
+              }
+            }
+          },
+          "authentication": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["credential_kind", "credential_storage", "per_device", "rotation"],
+            "properties": {
+              "credential_kind": {"enum": ["x509-client-cert", "access-token", "psk", "shared-fleet-secret", "none", "unknown"]},
+              "credential_storage": {"enum": ["vault-reference", "unknown"], "description": "Credentials are only ever referenced through the vault broker."},
+              "per_device": {"type": ["boolean", "string"], "description": "true/false, or 'unknown'."},
+              "rotation": {"enum": ["supported", "not-supported", "unknown"]}
+            }
+          },
+          "firmware": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["ota", "on_device_signature_verification", "rollback", "compatibility_keys"],
+            "properties": {
+              "ota": {"enum": ["supported", "not-supported", "unknown"]},
+              "on_device_signature_verification": {"enum": ["yes", "no", "unknown"]},
+              "rollback": {"enum": ["device-supported", "none", "unknown"]},
+              "compatibility_keys": {"type": "array", "items": {"type": "string"}, "description": "Attributes that decide firmware compatibility (e.g. hardware revision, bootloader version)."}
+            }
+          },
+          "time": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["clock", "timestamp_source"],
+            "properties": {
+              "clock": {"enum": ["rtc-network-synced", "rtc-unsynced", "none", "unknown"]},
+              "timestamp_source": {"enum": ["device", "server-receive", "unknown"]}
+            }
+          },
+          "units": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["metric", "device_unit", "canonical_unit", "conversion"],
+              "properties": {
+                "metric": {"type": "string"},
+                "device_unit": {"type": "string"},
+                "canonical_unit": {"enum": ["percent", "celsius", "litre", "metre", "pascal", "volt", "second", "unknown"]},
+                "conversion": {"type": "string", "description": "Versioned mapping id, 'identity', or 'unknown'."}
+              }
+            }
+          },
+          "offline_buffer": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["device_side", "ordering", "message_id"],
+            "properties": {
+              "device_side": {"enum": ["yes", "no", "unknown"]},
+              "capacity": {"type": "string"},
+              "ordering": {"enum": ["preserved", "not-preserved", "unknown"]},
+              "message_id": {"enum": ["unique-per-message", "sequence-number", "none", "unknown"], "description": "What the platform can deduplicate and replay-protect on."}
+            }
+          },
+          "commands": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["supported", "acknowledgement"],
+            "properties": {
+              "supported": {"enum": ["yes", "no", "unknown"]},
+              "acknowledgement": {"enum": ["authenticated-ack", "unauthenticated-ack", "none", "unknown"]},
+              "writable_properties": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "constraints": {"type": "array", "items": {"type": "string"}},
+          "compatibility_tests": {
+            "type": "array",
+            "description": "Paths or ids of passing compatibility tests. Required for fixture-tested and above.",
+            "items": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}

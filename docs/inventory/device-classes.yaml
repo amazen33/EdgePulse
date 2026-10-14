@@ -1,0 +1,65 @@
+# Device class inventory -- validated by tools/policy/check.py against
+# contracts/device/device-class-profile.schema.json.
+#
+# Decisions: docs/adr/XXXX-proposed-device-adapter-contract-and-capability-negotiation.md.
+# Only verifiable engineering sources count (protocol specifications,
+# vendor engineering documents, firmware source, authorized and redacted
+# protocol captures from the real fleet, lab test reports). Marketing
+# pages, screenshots and recollection are not accepted, and a class whose
+# only sources are of that kind stays "unverified" with every capability
+# "unknown". No class may be "fixture-tested" or better without passing
+# compatibility tests listed here, and no document may claim legacy
+# device support until a legacy class is "supported".
+inventory_version: 1
+reviewed_on: 2026-09-26
+
+device_classes:
+  - class_id: platform-reference-mqtt
+    generation: synthetic
+    description: >-
+      The target profile new device firmware is asked to implement: MQTT over
+      TLS with per-device client certificates, the ADR 0004 topic convention,
+      canonical units, device timestamps with time quality, authenticated
+      command acknowledgements and on-device firmware signature verification.
+      These are platform requirements, not observed device behaviour.
+    status: documented
+    sources:
+      - {type: protocol-specification, reference: "OASIS MQTT Version 5.0 and MQTT Version 3.1.1"}
+      - {type: repository-spec, reference: "docs/adr/0004-m3-ingestion-outbox-delivery.md; spec/ingestion/topics.py"}
+      - {type: repository-spec, reference: "docs/requirements-addendum.md, Tenant operators and secure device property updates"}
+    transports:
+      - {protocol: mqtt-5, security: mtls, state: declared}
+      - {protocol: mqtt-3.1.1, security: mtls, state: declared}
+    authentication: {credential_kind: x509-client-cert, credential_storage: vault-reference, per_device: true, rotation: supported}
+    firmware: {ota: supported, on_device_signature_verification: "yes", rollback: device-supported, compatibility_keys: [hardware_revision, bootloader_version]}
+    time: {clock: rtc-network-synced, timestamp_source: device}
+    units:
+      - {metric: fill_level, device_unit: percent, canonical_unit: percent, conversion: identity}
+      - {metric: temperature, device_unit: celsius, canonical_unit: celsius, conversion: identity}
+    offline_buffer: {device_side: "yes", ordering: preserved, message_id: unique-per-message}
+    commands: {supported: "yes", acknowledgement: authenticated-ack, writable_properties: [target_level_percent, reporting_interval_seconds, valve_open]}
+    constraints: ["Requirement profile only; no device implements it yet"]
+    compatibility_tests: []
+
+  - class_id: spectrotank-legacy-fleet
+    generation: legacy
+    description: >-
+      The installed SpectroTANK device fleet connected to the legacy
+      ThingsBoard CE deployment. Hardware models, firmware versions,
+      transports, payloads, authentication and command behaviour have not
+      been provided from an accepted source. Nothing about this fleet may be
+      inferred from product pages, screenshots or the legacy UI.
+    status: unverified
+    sources: []
+    transports:
+      - {protocol: unknown, security: unknown, bearer: unknown, state: declared}
+    authentication: {credential_kind: unknown, credential_storage: unknown, per_device: unknown, rotation: unknown}
+    firmware: {ota: unknown, on_device_signature_verification: unknown, rollback: unknown, compatibility_keys: []}
+    time: {clock: unknown, timestamp_source: unknown}
+    units:
+      - {metric: unknown, device_unit: unknown, canonical_unit: unknown, conversion: unknown}
+    offline_buffer: {device_side: unknown, ordering: unknown, message_id: unknown}
+    commands: {supported: unknown, acknowledgement: unknown}
+    constraints:
+      - "Needs: device model list and firmware versions from engineering records, the legacy TB CE device profiles and transport configuration exported through the authorized export process, and redacted protocol captures from representative devices."
+    compatibility_tests: []

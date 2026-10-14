@@ -1,5 +1,13 @@
 # Migration Studio — M1 foundation
 
+The source-by-source preparation, M9 rehearsal and cutover gates are in
+`docs/legacy-migration-execution-plan.md`. This M1 module implements
+only the foundation described below.
+CDC control, live connector adapters and tenant-scoped rule-node
+migration are proposed for later stages in
+`docs/adr/XXXX-proposed-migration-studio-cdc-and-tenant-rules.md`; they
+are not capabilities of this M1 reference module.
+
 ## Milestone
 M1 (Migration Studio foundation), per `docs/requirements-addendum.md` and
 the M1 row of `docs/test-plan.md`.

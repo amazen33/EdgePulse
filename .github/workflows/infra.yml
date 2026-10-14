@@ -1,16 +1,21 @@
 name: "Infrastructure gate: deploy/"
 on:
   push:
-    paths: ["deploy/**", ".github/workflows/infra.yml"]
+    paths: ["deploy/**", "contracts/deploy/**", ".github/workflows/infra.yml"]
   pull_request:
-    paths: ["deploy/**", ".github/workflows/infra.yml"]
+    paths: ["deploy/**", "contracts/deploy/**", ".github/workflows/infra.yml"]
 permissions:
   contents: read
-# Static checks only. Nothing here can reach the Hyper-V hosts or change
-# infrastructure: `tofu apply` and the Ansible playbooks are run by a human
-# (development contract: no infrastructure action without explicit approval).
+# Static checks only, one job per layer plus the tool catalog. Nothing here
+# can reach a host, cluster or cloud account or change infrastructure:
+# `tofu apply` and the Ansible playbooks are run by a human (development
+# contract: no infrastructure action without explicit approval). Layers 3
+# (observability) and 4 (apps) have no artifacts yet; the guards job fails
+# if a profile or README claims otherwise.
 jobs:
-  terraform:
+  opentofu:
+    # Layer 0. OpenTofu is the default (MPL-2.0); Terraform (BSL) is an
+    # optional compatibility choice and is not run here.
     runs-on: ubuntu-latest
     timeout-minutes: 10
     defaults:
@@ -35,16 +40,41 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install ansible-core
-      - name: Syntax-check every playbook against the committed inventory
+      - name: No real inventory committed
+        run: |
+          if git ls-files --error-unmatch inventory/hosts.ini 2>/dev/null; then
+            echo "inventory/hosts.ini must not be committed (use hosts.example.ini)"; exit 1
+          fi
+      - name: Syntax-check every playbook against the example inventory
         env:
           RKE2_TOKEN: syntax-check-only-not-a-real-token-0000000000
         run: |
-          for pb in site-rke2.yml health.yml heal.yml; do
-            ansible-playbook --syntax-check -i inventory/hosts.ini "$pb"
+          for pb in validate-inventory.yml site-rke2.yml health.yml heal.yml tests/validate-inventory-live.yml; do
+            ansible-playbook --syntax-check -i inventory/hosts.example.ini "$pb"
+          done
+      - name: Example inventory passes validation
+        run: ansible-playbook -i inventory/hosts.example.ini validate-inventory.yml
+      - name: A live run rejects the example inventory (documentation addresses)
+        run: |
+          if output=$(ansible-playbook -i inventory/hosts.example.ini tests/validate-inventory-live.yml 2>&1); then
+            echo "::error::the example inventory was accepted for a live run"; exit 1
+          fi
+          if ! grep -Fq "a documentation address from the example inventory" <<< "$output"; then
+            printf '%s\n' "$output"
+            echo "::error::the live-inventory test failed for an unexpected reason"; exit 1
+          fi
+          echo "rejected as expected: example inventory in live mode"
+      - name: Every negative inventory fixture fails validation
+        run: |
+          for inv in tests/inventories/bad-*.ini; do
+            if ansible-playbook -i "$inv" validate-inventory.yml > /dev/null 2>&1; then
+              echo "::error::$inv was accepted"; exit 1
+            fi
+            echo "rejected as expected: $inv"
           done
       - name: Only ansible.builtin modules (no unpinned collections)
         run: |
-          bad=$(grep -rhoE '^\s+-? ?[a-z_]+\.[a-z_]+\.[a-z_]+:' site-rke2.yml health.yml heal.yml roles | grep -v 'ansible\.builtin\.' || true)
+          bad=$(grep -rhoE '^\s+-? ?[a-z_]+\.[a-z_]+\.[a-z_]+:' site-rke2.yml health.yml heal.yml validate-inventory.yml tasks roles tests | grep -v 'ansible\.builtin\.' || true)
           if [ -n "$bad" ]; then echo "Non-builtin modules: $bad"; exit 1; fi
 
   powershell:
@@ -73,5 +103,39 @@ jobs:
         run: |
           curl -sSL https://github.com/yannh/kubeconform/releases/download/v0.7.0/kubeconform-linux-amd64.tar.gz | tar xz kubeconform
           sudo mv kubeconform /usr/local/bin/
-      - name: Render and validate the add-on manifests
-        run: kubectl kustomize deploy/k8s | kubeconform -strict -summary -
+      - name: Render and validate the Layer 2 add-on manifests
+        run: kubectl kustomize deploy/02-cluster-addons | kubeconform -strict -summary -
+
+  guards:
+    # Repository rules no single tool checks (deploy/checks/static_guards.py):
+    # no node addresses or host lists in ansible.cfg; committed Layer 1
+    # inventory/variable files use RFC 5737 documentation addresses only; no
+    # ansible-playbook -e/--extra-vars in documented or scripted commands;
+    # Helm-chart and layer-state claims match the files that exist.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'pyyaml>=6'
+      - run: python deploy/checks/static_guards.py
+      - run: python -m unittest discover -s deploy/checks/tests -v
+
+  catalog:
+    # Tool catalog and deployment profiles: schema + cross-field rules
+    # (approved tools only in usable profiles, OSI-open-source defaults,
+    # explicit vault edition capabilities including storage, unseal and
+    # backup methods, key references never material, storage quotas/backup/
+    # topology/reclaim/data-loss statements). Reads files only.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'pyyaml>=6' 'jsonschema>=4.0'
+      - run: python deploy/catalog/validate.py
+      - run: python -m unittest discover -s deploy/catalog/tests -v

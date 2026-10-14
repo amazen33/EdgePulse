@@ -1,0 +1,127 @@
+# AI integration inventory -- validated by tools/policy/check.py against
+# contracts/ai/ai-integration-profile.schema.json.
+#
+# Decisions: docs/adr/XXXX-proposed-ai-integration-port-and-controls.md.
+# Every integration below is a CANDIDATE, not a selection: none has an
+# adapter, a contract test or an evaluation, so every one is
+# "unimplemented". The validator refuses any status above that without
+# evidence, and refuses any control that would let AI act on devices,
+# rules, migrations, firmware, grants or configuration.
+inventory_version: 1
+reviewed_on: 2026-09-26
+
+controls:
+  mode: read-only
+  retrieval_sources: [certified-read-model, redacted-windowed-insight]
+  tenant_authorized_retrieval: true
+  source_attribution: required
+  redaction: [before-embedding, before-prompt, on-output]
+  prompt_injection_defenses:
+    - retrieved-content-as-data
+    - non-overridable-system-policy
+    - tool-calls-authorized-as-user
+    - no-content-driven-tool-selection
+    - no-outbound-fetch
+    - output-encoding
+  tool_policy:
+    allowlist_only: true
+    audited: true
+    per_call_authorization: true
+    allowed_tools:
+      - {tool_id: reporting.telemetry_summary.read, effect: read, owner_service: reporting, state: unimplemented}
+      - {tool_id: alarms.history.read, effect: read, owner_service: alarms, state: unimplemented}
+      - {tool_id: devices.metadata.read, effect: read, owner_service: device-management, state: unimplemented}
+  rate_and_cost_limits:
+    per_tenant: true
+    per_user: true
+    on_exhaustion: degrade-ai-only
+  failure_isolation: ai-outage-never-blocks-iot-operations
+  forbidden_capabilities:
+    - device.command.dispatch
+    - device.property.write
+    - rules.modify
+    - migration.approve
+    - firmware.rollout
+    - access.grant
+    - config.apply
+    - payment.execute
+
+integrations:
+  - integration_id: onprem-openai-compatible-runtime
+    provider: "Self-hosted OpenAI-compatible model server (e.g. vLLM or Ollama) -- candidate"
+    hosting: on-prem
+    adapter: java-spring-ai
+    model: {family: "not selected", version: unpinned}
+    capabilities: [chat, embeddings]
+    data_residency: "deployment site (to be confirmed per profile)"
+    retention: unknown
+    egress: none
+    allowed_data_classes: [tenant-redacted-insight, tenant-certified-read-model]
+    status: unimplemented
+    evidence: {contract_tests: [], evaluations: []}
+    notes: "Candidate for air-gapped and data-sovereign deployments. No runtime, model or adapter chosen."
+  - integration_id: azure-openai
+    provider: "Azure OpenAI Service -- candidate"
+    hosting: public-cloud-api
+    adapter: java-spring-ai
+    model: {family: "not selected", version: unpinned}
+    capabilities: [chat, embeddings]
+    data_residency: unknown
+    retention: unknown
+    egress: internet
+    allowed_data_classes: [tenant-redacted-insight]
+    status: unimplemented
+    evidence: {contract_tests: [], evaluations: []}
+    notes: "Residency and retention terms must be confirmed from the contracted service terms before use."
+  - integration_id: aws-bedrock
+    provider: "Amazon Bedrock -- candidate"
+    hosting: public-cloud-api
+    adapter: java-native
+    model: {family: "not selected", version: unpinned}
+    capabilities: [chat, embeddings]
+    data_residency: unknown
+    retention: unknown
+    egress: internet
+    allowed_data_classes: [tenant-redacted-insight]
+    status: unimplemented
+    evidence: {contract_tests: [], evaluations: []}
+    notes: "Candidate for the planned AWS profile. Not tested."
+  - integration_id: google-vertex-ai
+    provider: "Google Vertex AI -- candidate"
+    hosting: public-cloud-api
+    adapter: java-native
+    model: {family: "not selected", version: unpinned}
+    capabilities: [chat, embeddings]
+    data_residency: unknown
+    retention: unknown
+    egress: internet
+    allowed_data_classes: [tenant-redacted-insight]
+    status: unimplemented
+    evidence: {contract_tests: [], evaluations: []}
+    notes: "Candidate for the planned GCP profile. Not tested."
+  - integration_id: anthropic-api
+    provider: "Anthropic API -- candidate"
+    hosting: public-cloud-api
+    adapter: java-native
+    model: {family: "not selected", version: unpinned}
+    capabilities: [chat]
+    data_residency: unknown
+    retention: unknown
+    egress: internet
+    allowed_data_classes: [tenant-redacted-insight]
+    status: unimplemented
+    evidence: {contract_tests: [], evaluations: []}
+    notes: "Candidate. Not tested."
+  - integration_id: python-rag-agent
+    provider: "Platform RAG agent (ADR 0011 Decision 1, ADR 0019) -- calls one of the providers above"
+    hosting: private-cloud
+    adapter: python-rag
+    model: {family: "per selected provider", version: unpinned}
+    capabilities: [chat, embeddings]
+    data_residency: "AI cluster of the deployment profile"
+    retention: unknown
+    egress: within-profile-network
+    allowed_data_classes: [tenant-redacted-insight, tenant-certified-read-model]
+    status: unimplemented
+    evidence: {contract_tests: [], evaluations: []}
+    notes: "No RAG agent, Flink job, redaction stage or pgvector store exists yet."

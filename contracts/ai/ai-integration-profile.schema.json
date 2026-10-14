@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://iotee.example/schema/contracts/ai/ai-integration-profile.schema.json",
+  "title": "IOT-EE AI integration inventory",
+  "description": "Declared AI provider/model integrations and the controls every AI feature must satisfy (proposed ADR XXXX-proposed-ai-integration-port-and-controls). Declarative only: no field holds a prompt, key, endpoint credential or executable content. Cross-field rules (status gating, forbidden tools, read-only scope) live in tools/policy/check.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["inventory_version", "reviewed_on", "controls", "integrations"],
+  "properties": {
+    "inventory_version": {"type": "integer", "minimum": 1},
+    "reviewed_on": {"type": "string", "format": "date"},
+    "controls": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Platform-wide AI controls. The validator refuses any value that weakens a mandatory control.",
+      "required": ["mode", "retrieval_sources", "tenant_authorized_retrieval", "source_attribution", "redaction", "prompt_injection_defenses", "tool_policy", "rate_and_cost_limits", "failure_isolation", "forbidden_capabilities"],
+      "properties": {
+        "mode": {"enum": ["read-only"]},
+        "retrieval_sources": {"type": "array", "minItems": 1, "items": {"enum": ["certified-read-model", "redacted-windowed-insight"]}, "uniqueItems": true},
+        "tenant_authorized_retrieval": {"const": true},
+        "source_attribution": {"const": "required"},
+        "redaction": {"type": "array", "minItems": 2, "items": {"enum": ["before-embedding", "before-prompt", "on-output"]}, "uniqueItems": true},
+        "prompt_injection_defenses": {"type": "array", "minItems": 1, "items": {"enum": ["retrieved-content-as-data", "non-overridable-system-policy", "tool-calls-authorized-as-user", "no-content-driven-tool-selection", "no-outbound-fetch", "output-encoding"]}, "uniqueItems": true},
+        "tool_policy": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["allowlist_only", "audited", "per_call_authorization", "allowed_tools"],
+          "properties": {
+            "allowlist_only": {"const": true},
+            "audited": {"const": true},
+            "per_call_authorization": {"const": true},
+            "allowed_tools": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["tool_id", "effect", "owner_service", "state"],
+                "properties": {
+                  "tool_id": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]*$"},
+                  "effect": {"enum": ["read"]},
+                  "owner_service": {"type": "string"},
+                  "state": {"enum": ["unimplemented", "contract-tested", "approved"]}
+                }
+              }
+            }
+          }
+        },
+        "rate_and_cost_limits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["per_tenant", "per_user", "on_exhaustion"],
+          "properties": {
+            "per_tenant": {"const": true},
+            "per_user": {"const": true},
+            "on_exhaustion": {"enum": ["degrade-ai-only"]}
+          }
+        },
+        "failure_isolation": {"enum": ["ai-outage-never-blocks-iot-operations"]},
+        "forbidden_capabilities": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "description": "Capabilities that no AI integration or tool may have. The validator requires at least the constitutional set."
+        }
+      }
+    },
+    "integrations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["integration_id", "provider", "hosting", "adapter", "model", "capabilities", "data_residency", "retention", "egress", "allowed_data_classes", "status", "evidence", "notes"],
+        "properties": {
+          "integration_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$"},
+          "provider": {"type": "string"},
+          "hosting": {"enum": ["on-prem", "private-cloud", "public-cloud-api"]},
+          "adapter": {"enum": ["java-native", "java-spring-ai", "python-rag"], "description": "Where the provider SDK lives. Spring AI is allowed only inside a Java outbound adapter."},
+          "model": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["family", "version"],
+            "properties": {
+              "family": {"type": "string"},
+              "version": {"type": "string", "description": "Pinned model/version string, or 'unpinned' while unimplemented."}
+            }
+          },
+          "capabilities": {"type": "array", "minItems": 1, "items": {"enum": ["chat", "embeddings", "rerank"]}, "uniqueItems": true},
+          "data_residency": {"type": "string", "description": "Region/jurisdiction where prompts and outputs are processed, or 'unknown'."},
+          "retention": {"type": "string", "description": "Provider retention of prompts/outputs, or 'unknown'."},
+          "egress": {"enum": ["none", "within-profile-network", "internet", "unknown"]},
+          "allowed_data_classes": {"type": "array", "items": {"enum": ["public", "tenant-redacted-insight", "tenant-certified-read-model"]}, "uniqueItems": true},
+          "status": {"enum": ["unimplemented", "contract-tested", "evaluated", "approved", "rejected"]},
+          "evidence": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["contract_tests", "evaluations"],
+            "properties": {
+              "contract_tests": {"type": "array", "items": {"type": "string"}},
+              "evaluations": {"type": "array", "items": {"type": "string"}}
+            }
+          },
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

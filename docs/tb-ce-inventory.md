@@ -142,6 +142,25 @@ preference framing left open (an in-TB-hosted custom integration), so
 it should be read into ADR 0011's own text at the next revision rather
 than left as a Track-A-only footnote.
 
+**Confirmed against a running instance, not just documentation** (see
+[`docs/spikes/tb-ce-kafka-rule-engine-spike.md`](spikes/tb-ce-kafka-rule-engine-spike.md)):
+a real TB CE v4.3.1.5 server was built from ThingsBoard's own published
+release artifact and driven end-to-end. It has no external-event-source
+integration surface at all -- CE's rule engine can be reached by an
+outside event only through the transports and REST API this document
+already inventories, never through an `AbstractIntegration`-shaped
+subscription to an externally-owned topic. This directly answers ADR
+0019's "TB CE downstream of Kafka" framing: that framing is **not
+achievable in CE as literally stated** (TB CE cannot subscribe to a
+platform-owned Kafka topic on its own); the demonstrated CE-compatible
+substitute is an external bridge service consuming the platform's Kafka
+topic and calling TB CE's own documented telemetry/REST endpoint per
+event, which is what this section already concluded from documentation
+alone. The spike also found TB CE's REST/telemetry ingestion path
+provides no message-level deduplication and no server-side buffering
+during an outage -- both remain the calling bridge's responsibility, as
+ADR 0012's outbox/idempotent-consumer discipline already assumes.
+
 ### 2.3 REST API -- auth model and key endpoints
 
 **Source:** [ThingsBoard REST API reference](https://thingsboard.io/docs/reference/rest-api/)

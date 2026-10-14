@@ -1,5 +1,13 @@
 # Deployment Studio / multi-environment — M8
 
+> **Platform note (2026-09-26).** This page describes the frozen Python
+> spec slice in `spec/deployment_studio`. The platform's deployment
+> profiles, tool catalog and their validation now live in
+> `deploy/profiles/`, `deploy/catalog/` and `contracts/deploy/`
+> (proposed ADR `XXXX-proposed-deployment-layers-tool-catalog-and-profiles.md`),
+> reusing this slice's environment/provider/region/tier values and its
+> plan-and-review lifecycle. The Java Deployment Studio is not started.
+
 ## Milestone
 M8, per `CLAUDE.md`'s milestone list: "Deployment Studio/multi-environment."
 

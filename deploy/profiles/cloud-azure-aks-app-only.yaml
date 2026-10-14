@@ -1,0 +1,66 @@
+# PLANNED application-only profile. No cloud or cluster access has been tested.
+# Layers 0-3 and external services are owned by the environment operator.
+profile_id: cloud-azure-aks-app-only
+profile_version: 1
+deployment_scope: applications-only
+status: planned
+purpose: "Release IOT-EE applications onto an existing Azure AKS environment without installing the platform stack."
+environment: staging
+provider: azure
+region: azure_eastus
+tier: high_availability
+topology: distributed-single-cluster
+production_use: false
+ha: {control_plane_nodes: 3, host_redundancy: true}
+limitations:
+  - "Planned only: no cluster, external dependency, Helm chart or real-environment verification exists."
+  - "The external operator must prove dependency capabilities, security, backup and restore before approval."
+layers:
+  - {layer: 0, path: null, state: not-applicable, static_checks: []}
+  - {layer: 1, path: null, state: not-applicable, static_checks: []}
+  - {layer: 2, path: null, state: not-applicable, static_checks: []}
+  - {layer: 3, path: null, state: not-applicable, static_checks: []}
+  - {layer: 4, path: deploy/04-apps, state: planned, static_checks: []}
+tools:
+  packaging: {tool: helm, version: unpinned}
+  gitops: {tool: argo-cd, version: unpinned}
+external_dependencies:
+  - {role: kubernetes, binding_ref: "config://external/kubernetes", required_capabilities: [kubernetes-api, network-policy, service-routing, workload-peer-authentication, transport-encryption], readiness: pending}
+  - {role: identity, binding_ref: "config://external/identity", required_capabilities: [oidc], readiness: pending}
+  - {role: secrets, binding_ref: "config://external/secrets", required_capabilities: [kv-v2], readiness: pending}
+  - {role: relational-database, binding_ref: "config://external/database", required_capabilities: [sql], readiness: pending}
+  - {role: event-stream, binding_ref: "config://external/events", required_capabilities: [pubsub], readiness: pending}
+  - {role: object-storage, binding_ref: "config://external/objects", required_capabilities: [object-api], readiness: pending}
+  - {role: ingress, binding_ref: "config://external/ingress", required_capabilities: [https], readiness: pending}
+  - {role: observability, binding_ref: "config://external/observability", required_capabilities: [otlp], readiness: pending}
+  - {role: gitops, binding_ref: "config://external/gitops", required_capabilities: [gitops-sync], readiness: pending}
+vault:
+  managed_externally: true
+  tool: openbao
+  edition: community
+  state: planned
+  required_capabilities: [kv-v2, kubernetes-auth, policies, audit-log]
+  client: spring-vault
+  secret_reference_scheme: "openbao://"
+  storage_backend: integrated-raft
+  topology: {replicas: 3, spread: zone}
+  unseal:
+    method: auto-unseal-cloud-kms
+    key_ref: "azurekeyvault://external-kv/keys/openbao-unseal"
+    custody: "External environment owner controls the key and must provide reviewed custody evidence."
+  backup: {enabled: false, restore_tested: false}
+  data_loss_effect: "External unseal key custody and restore are unverified. No backup is confirmed; losing the KMS key or quorum can make secrets unavailable or unrecoverable."
+storage_classes:
+  - name: azure-disk-premium
+    managed_externally: true
+    tool: azure-disk-csi
+    state: planned
+    required_capabilities: [rwo, snapshots, encryption-at-rest]
+    quota: {max_total_gi: 500, max_per_claim_gi: 100}
+    encryption: {at_rest: true, key_ref: "azurekeyvault://external-kv/keys/disk-encryption"}
+    backup: {enabled: false, restore_tested: false}
+    topology: {replicas: 1, spread: none}
+    reclaim_policy: Delete
+    retention: "External owner must confirm the volume lifecycle and backup policy."
+    data_loss_effect: "Deleting the claim deletes the volume. No backup is confirmed; losing the zone or encryption key can make data unavailable or unrecoverable."
+verification: {real_environment: []}

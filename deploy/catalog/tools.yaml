@@ -1,0 +1,639 @@
+# Curated deployment tool catalog -- validated by deploy/catalog/validate.py
+# against contracts/deploy/tool-catalog.schema.json.
+#
+# Rules (enforced by the validator):
+#   - A tool with role "default" must be OSI open source. Its default_status
+#     stays "proposed" until the repository owner confirms it.
+#   - "approved" requires all four checks (compatibility, support, licence,
+#     security) to have passed. Nothing is approved yet: the licence check
+#     is done for some tools (source cited), the others are pending.
+#   - versions lists only versions pinned somewhere in this repository
+#     (pinned_in says where). An empty list means "not pinned yet".
+#   - Profiles may select only tools listed here; staging/prod/validated/
+#     approved profiles may select only "approved" tools.
+# Licences change (Terraform, Vault, EMQX and MinIO all changed recently):
+# re-check the licence at every version pin.
+catalog_version: 2
+reviewed_on: 2026-09-26
+tools:
+  # ----- Operating system and hypervisor ------------------------------------
+  - id: ubuntu-server
+    name: Ubuntu Server LTS
+    category: os
+    license: {spdx: "Various OSI licences (distribution)", class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: ["24.04 (noble)"]
+    pinned_in: [deploy/00-infra/private-hyperv/scripts/prep-hyperv-host.ps1]
+    capabilities: [cloud-init, systemd, apt]
+    checks:
+      compatibility: {status: pending, note: "RKE2 support for 24.04 to be confirmed against the RKE2 support matrix for the pinned version"}
+      support: {status: pending, note: "Standard LTS security updates; paid Ubuntu Pro not assumed"}
+      license: {status: pending}
+      security: {status: pending, note: "CIS benchmark for the OS itself not applied yet; Layer 1 applies RKE2's CIS profile only"}
+    approval: candidate
+    commercial_alternatives: ["Ubuntu Pro (Canonical)", "Red Hat Enterprise Linux", "SUSE Linux Enterprise"]
+  - id: hyper-v
+    name: Microsoft Hyper-V
+    category: hypervisor
+    license: {spdx: "Proprietary (part of Windows licence)", class: commercial}
+    role: lab-only
+    versions: []
+    capabilities: [gen2-vm, secure-boot, internal-switch, winnat]
+    checks:
+      compatibility: {status: pending}
+      support: {status: not-applicable, note: "Lab profile only"}
+      license: {status: pending}
+      security: {status: pending}
+    approval: candidate
+    notes: "Used only by the single-host lab profile. Not a production target."
+  - id: windsorcli-hyperv
+    name: windsorcli/hyperv OpenTofu/Terraform provider
+    category: hypervisor-automation
+    license: {spdx: MPL-2.0, class: osi-open-source}
+    role: lab-only
+    versions: ["0.4.0"]
+    pinned_in: [deploy/00-infra/private-hyperv/main.tf]
+    capabilities: [vm, vhd, iso-image, local-backend]
+    checks:
+      compatibility: {status: pending, note: "Applied once on the lab host (2026-09-27, 15 resources); lab evidence only, not a completed compatibility review"}
+      support: {status: pending, note: "Pre-1.0 community provider, pinned exactly; checkpoints, start/stop actions and integration services are not exposed and are set by a null_resource"}
+      license: {status: pending, note: "MPL-2.0 per LICENSE at tag v0.4.0 of github.com/windsorcli/terraform-provider-hyperv (read 2026-09-27); not yet reviewed by the owner"}
+      security: {status: pending}
+    approval: candidate
+  - id: taliesins-hyperv
+    name: taliesins/hyperv OpenTofu/Terraform provider
+    category: hypervisor-automation
+    license: {spdx: "unverified", class: unverified}
+    role: alternative
+    versions: []
+    capabilities: [vm, vhd, iso-image]
+    checks:
+      compatibility: {status: failed, note: "Replaced 2026-09-26: its WinRM connection could not be authorized on the lab host (recorded in deploy/00-infra/private-hyperv/main.tf)"}
+      support: {status: pending, note: "Community provider"}
+      license: {status: pending, note: "Licence not confirmed from the provider's repository"}
+      security: {status: pending}
+    approval: not-approved
+    notes: "No longer pinned anywhere. Kept as a recorded alternative for a remote-host (WinRM) Layer 0."
+
+  # ----- Kubernetes ------------------------------------------------------------
+  - id: cilium
+    name: Cilium with Hubble
+    category: cluster-networking
+    license: {spdx: "Apache-2.0 userspace; GPL-2.0-only OR BSD-2-Clause BPF templates", class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [cni, network-policy, service-routing, hubble-service-map, wireguard-or-ipsec-encryption]
+    checks:
+      compatibility: {status: pending, note: "No RKE2/EKS/AKS Cilium installation, migration or rollback proof"}
+      support: {status: pending, note: "Pin a release and review the target support matrix and 24/7 operations model"}
+      license: {status: passed, source: "https://github.com/cilium/cilium", checked_on: "2026-09-26"}
+      security: {status: pending, note: "Cilium mutual authentication is beta; workload mTLS, encryption, policy and key rotation need separate proof"}
+    approval: candidate
+    notes: "Candidate CNI/policy/Hubble option. No default chosen. Network policy and encryption do not replace service authorization or peer-authenticated TLS."
+
+  - id: istio-ambient
+    name: Istio Ambient
+    category: service-mesh
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [ztunnel, hbone-mtls, workload-identity, layer-4-policy, optional-waypoint-layer-7-policy]
+    checks:
+      compatibility: {status: pending, note: "No RKE2/EKS/AKS Ambient installation, CNI coexistence or rollback proof"}
+      support: {status: pending, note: "Pin a release and review the target support matrix and 24/7 operations model"}
+      license: {status: passed, source: "https://github.com/istio/istio/blob/master/LICENSE", checked_on: "2026-09-26"}
+      security: {status: pending, note: "Prove STRICT mTLS, plaintext rejection, policy placement, certificate rotation and L7 waypoint behavior"}
+    approval: candidate
+    notes: "Optional workload-security candidate beside Cilium; may coexist with Cilium CNI after compatibility tests. No default selected."
+
+  - id: rke2
+    name: RKE2 (Rancher Kubernetes Engine 2)
+    category: kubernetes-distribution
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: ["v1.35.7+rke2r1"]
+    pinned_in: [deploy/01-k8s-engine/rke2-ansible/inventory/group_vars/all/main.yml]
+    capabilities: [cis-profile, embedded-etcd, secrets-encryption, pod-security-admission]
+    checks:
+      compatibility: {status: pending, note: "Rendered and syntax-checked only; no cluster created"}
+      support: {status: pending}
+      license: {status: pending}
+      security: {status: pending}
+    approval: candidate
+    commercial_alternatives: ["SUSE Rancher Prime (supported RKE2)", "Red Hat OpenShift"]
+  - id: k3s
+    name: K3s
+    category: kubernetes-distribution
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [embedded-etcd, sqlite-datastore, local-path-storage]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    notes: "Dev/edge profiles (ADR 0019 keeps Flink off edge K3s)."
+  - id: okd
+    name: OKD (community OpenShift distribution)
+    category: kubernetes-distribution
+    license: {spdx: "Apache-2.0 (OKD project; component licenses vary)", class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [kubernetes-api, operators, security-context-constraints, bare-metal-and-cloud-profiles]
+    checks:
+      compatibility: {status: pending, note: "No OKD profile or cluster; SCC, storage, ingress and application chart conformance required"}
+      support: {status: pending, note: "Community-supported; operator must define 24/7 support model"}
+      license: {status: pending, note: "Review pinned release and bundled component licenses"}
+      security: {status: pending}
+    approval: candidate
+    commercial_alternatives: ["Red Hat OpenShift Container Platform"]
+  - id: openshift-container-platform
+    name: Red Hat OpenShift Container Platform
+    category: kubernetes-distribution
+    license: {spdx: "Commercial subscription", class: commercial}
+    role: optional-compatibility
+    versions: []
+    capabilities: [kubernetes-api, operators, security-context-constraints, vendor-support]
+    checks:
+      compatibility: {status: pending, note: "No OpenShift profile or cluster; application and infrastructure conformance required"}
+      support: {status: pending, note: "Subscription and support terms are deployment-owner inputs"}
+      license: {status: pending, note: "Explicit subscription approval required"}
+      security: {status: pending}
+    approval: candidate
+  - id: eks
+    name: Amazon EKS
+    category: kubernetes-distribution
+    license: {spdx: "Managed service", class: saas}
+    role: alternative
+    versions: []
+    capabilities: [managed-control-plane]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: not-applicable}, security: {status: pending}}
+    approval: candidate
+  - id: aks
+    name: Azure Kubernetes Service
+    category: kubernetes-distribution
+    license: {spdx: "Managed service", class: saas}
+    role: alternative
+    versions: []
+    capabilities: [managed-control-plane]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: not-applicable}, security: {status: pending}}
+    approval: candidate
+  - id: gke
+    name: Google Kubernetes Engine
+    category: kubernetes-distribution
+    license: {spdx: "Managed service", class: saas}
+    role: alternative
+    versions: []
+    capabilities: [managed-control-plane]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: not-applicable}, security: {status: pending}}
+    approval: candidate
+  - id: kube-vip
+    name: kube-vip (services mode) + kube-vip-cloud-provider
+    category: load-balancer
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: ["v1.2.4"]
+    pinned_in: [deploy/02-cluster-addons/kube-vip/kube-vip-daemonset.yaml, "deploy/02-cluster-addons/kube-vip/kustomization.yaml (cloud-provider v0.0.12)"]
+    capabilities: [arp-loadbalancer, service-type-loadbalancer]
+    checks: {compatibility: {status: pending, note: "kubeconform only"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+
+  # ----- Provisioning, configuration, packaging, GitOps ------------------------
+  - id: opentofu
+    name: OpenTofu
+    category: iac-provisioning
+    license: {spdx: MPL-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [hcl, state-locking-backends, provider-registry]
+    checks:
+      compatibility: {status: pending, note: "CI runs tofu fmt/init/validate; the CI setup action installs an unpinned version -- pin it"}
+      support: {status: pending}
+      license: {status: pending}
+      security: {status: pending}
+    approval: candidate
+    commercial_alternatives: ["Terraform (HashiCorp, BSL) -- optional compatibility only", "HCP Terraform"]
+  - id: terraform
+    name: HashiCorp Terraform
+    category: iac-provisioning
+    license: {spdx: BUSL-1.1, class: source-available}
+    role: optional-compatibility
+    versions: []
+    capabilities: [hcl, state-locking-backends, provider-registry]
+    checks:
+      compatibility: {status: pending, note: "Layer 0 uses only syntax both tools accept; not tested with terraform"}
+      support: {status: pending}
+      license:
+        status: passed
+        checked_on: 2026-09-26
+        source: "https://www.globenewswire.com/news-release/2023/08/10/2723189/0/en/HashiCorp-adopts-the-Business-Source-License-for-future-releases-of-its-products.html"
+        note: "HashiCorp moved Terraform (and Vault) from MPL-2.0 to BSL 1.1 for all releases after 2023-08-10. Not OSI open source, so never a default here; usable only if the owner accepts the licence terms."
+      security: {status: pending}
+    approval: not-approved
+  - id: ansible-core
+    name: ansible-core
+    category: config-management
+    license: {spdx: GPL-3.0-or-later, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [ssh-agentless, ansible-builtin-modules, inventory-validation]
+    checks:
+      compatibility: {status: pending, note: "CI installs an unpinned ansible-core -- pin it"}
+      support: {status: pending}
+      license: {status: pending}
+      security: {status: pending}
+    approval: candidate
+    commercial_alternatives: ["Red Hat Ansible Automation Platform"]
+  - id: helm
+    name: Helm
+    category: packaging
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [charts, values-overlays, oci-registry]
+    checks: {compatibility: {status: pending, note: "No chart exists yet"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+  - id: kustomize
+    name: Kustomize (kubectl built-in)
+    category: packaging
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [overlays, remote-bases]
+    checks: {compatibility: {status: pending, note: "Used today for Layer 2 add-ons (rendered and kubeconform-checked in CI)"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+  - id: argo-cd
+    name: Argo CD
+    category: gitops
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [git-sync, helm, kustomize, rollback]
+    checks: {compatibility: {status: pending, note: "Not installed"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["Akuity Platform", "Codefresh"]
+  - id: flux
+    name: Flux
+    category: gitops
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [git-sync, helm, kustomize]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+
+  # ----- Platform runtime infrastructure --------------------------------------
+  - id: apisix
+    name: Apache APISIX
+    category: gateway
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [rest, grpc, websocket, jwt-auth, rate-limit]
+    checks: {compatibility: {status: pending, note: "Not deployed"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["API7 Enterprise"]
+  - id: apache-kafka
+    name: Apache Kafka
+    category: event-backbone
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [kafka-protocol, transactions, mirrormaker]
+    checks: {compatibility: {status: pending, note: "Not deployed; ADR 0018 conformance suite not built"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["Confluent Platform / Confluent Cloud", "managed Kafka services"]
+  - id: redpanda
+    name: Redpanda (Community)
+    category: event-backbone
+    license: {spdx: "BUSL-1.1 (community edition)", class: source-available}
+    role: test-only
+    versions: []
+    capabilities: [kafka-protocol]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: pending, note: "Verify the current community licence at pin time"}, security: {status: pending}}
+    approval: candidate
+    notes: "ADR 0018 CI conformance target only; not a runtime default."
+    commercial_alternatives: ["Redpanda Enterprise"]
+  - id: mosquitto
+    name: Eclipse Mosquitto
+    category: mqtt-broker
+    license: {spdx: "EPL-2.0 OR BSD-3-Clause", class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [mqtt-3.1.1, mqtt-5, tls, acl]
+    checks: {compatibility: {status: pending}, support: {status: pending, note: "No native clustering; HA needs a different broker or design"}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["HiveMQ Enterprise", "EMQX Enterprise"]
+  - id: hivemq-ce
+    name: HiveMQ Community Edition
+    category: mqtt-broker
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [mqtt-3.1.1, mqtt-5, tls]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["HiveMQ Enterprise"]
+  - id: tbmq-ce
+    name: ThingsBoard MQTT Broker Community Edition
+    category: mqtt-broker
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [mqtt-3.1.1, mqtt-5, tls, acl, clustering]
+    checks:
+      compatibility: {status: pending, note: "No IOT-EE broker or cross-region conformance run"}
+      support: {status: pending, note: "Pin CE release and verify maintenance and 24/7 support model"}
+      license: {status: pending, note: "Verify exact pinned CE artifact and transitive components"}
+      security: {status: pending, note: "Vendor comparison lists advanced admin RBAC and audit logs as PE-only; compensating controls or edition choice required"}
+    approval: candidate
+    notes: "Candidate only; MirrorMaker of Kafka topics alone is not TBMQ recovery. See proposed broker/DR ADR."
+  - id: fluxmq
+    name: Absmach FluxMQ
+    category: mqtt-broker
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [mqtt-3.1.1, mqtt-5, tls, clustering]
+    checks:
+      compatibility: {status: pending, note: "No MQTT/Kafka integration or region recovery conformance run"}
+      support: {status: pending, note: "Pin release and review maintenance and 24/7 operations support"}
+      license: {status: passed, source: "https://github.com/absmach/fluxmq/blob/main/LICENSE", checked_on: "2026-09-26"}
+      security: {status: pending, note: "Verify admin controls, audit evidence, mTLS and durable queue behavior; queue Raft is documented WIP"}
+    approval: candidate
+    notes: "Exploratory MQTT candidate. Its documented queue Raft layer is WIP; not a Kafka replacement."
+  - id: emqx
+    name: EMQX
+    category: mqtt-broker
+    license: {spdx: BUSL-1.1, class: source-available}
+    role: alternative
+    versions: []
+    capabilities: [mqtt-3.1.1, mqtt-5, tls, acl, clustering]
+    checks:
+      compatibility: {status: pending}
+      support: {status: pending}
+      license:
+        status: passed
+        checked_on: 2026-09-26
+        source: "https://www.emqx.com/en/news/emqx-adopts-business-source-license"
+        note: "BSL 1.1 from EMQX 5.9. Not OSI open source."
+      security: {status: pending}
+    approval: not-approved
+    commercial_alternatives: ["EMQX Enterprise"]
+
+  # ----- Stream processing and search ---------------------------------------
+  - id: apache-flink
+    name: Apache Flink
+    category: stream-processing
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: ["1.20.5"]
+    pinned_in: [pom.xml]
+    capabilities: [stream-processing, event-time, stateful-computation, kafka-connectors]
+    checks:
+      compatibility: {status: pending, note: "Version-managed in pom.xml; distributed runtime profile and connector integration not deployed"}
+      support: {status: pending, note: "Support model and production operations not selected"}
+      license: {status: pending, note: "Apache-2.0; verify complete distribution and connector notices at release pin"}
+      security: {status: pending}
+    approval: candidate
+    commercial_alternatives: ["Ververica Platform", "Amazon Managed Service for Apache Flink"]
+  - id: elasticsearch
+    name: Elasticsearch
+    category: search-index
+    license: {spdx: "ELv2 OR SSPL-1.0 (server distribution/source; version-dependent components may differ)", class: source-available}
+    role: alternative
+    versions: []
+    capabilities: [full-text-search, vector-search, analytics]
+    checks:
+      compatibility: {status: pending, note: "No Elasticsearch server selected or deployed; pom.xml manages Java client 8.13.4 only"}
+      support: {status: pending}
+      license:
+        status: passed
+        checked_on: 2026-09-26
+        source: "https://www.elastic.co/pricing/faq/licensing"
+        note: "The 8.13.4-era server distribution is under ELv2; source was offered under ELv2/SSPL. The AGPLv3 source option was introduced before 8.16 GA and does not apply retroactively. The Java client has a separate Apache-2.0 license. Not eligible as an OSI-open-source default. Verify the exact selected server distribution and components before adoption."
+      security: {status: pending}
+    approval: not-approved
+    commercial_alternatives: ["Elastic commercial subscriptions"]
+  - id: opensearch
+    name: OpenSearch
+    category: search-index
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [full-text-search, vector-search, analytics]
+    checks:
+      compatibility: {status: pending, note: "Candidate only; no OpenSearch server or Java client selected"}
+      support: {status: pending}
+      license: {status: pending, note: "Verify server, dashboards, plugins and client licenses at pin time"}
+      security: {status: pending}
+    approval: candidate
+    commercial_alternatives: ["Amazon OpenSearch Service", "Aiven for OpenSearch"]
+
+  # ----- Observability (Layer 3) ------------------------------------------------
+  - id: grafana-lgtm
+    name: Grafana, Loki, Tempo, Mimir (LGTM)
+    category: observability
+    license: {spdx: AGPL-3.0-only, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [logs, traces, metrics, dashboards]
+    checks: {compatibility: {status: pending, note: "Not installed; Layer 3 is planned"}, support: {status: pending}, license: {status: pending, note: "AGPL obligations apply if modified and offered as a service"}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["Grafana Enterprise", "Grafana Cloud"]
+  - id: otel-collector
+    name: OpenTelemetry Collector
+    category: observability
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [otlp, traces, metrics, logs]
+    checks: {compatibility: {status: pending}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+
+  # ----- Secrets ---------------------------------------------------------------
+  - id: openbao
+    name: OpenBao
+    category: secrets-backend
+    license: {spdx: MPL-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [kv-v2, transit, pki, kubernetes-auth, policies, audit-log, integrated-raft-storage, raft-snapshot-manual, shamir-unseal, auto-unseal-cloud-kms, auto-unseal-transit, auto-unseal-pkcs11, auto-unseal-kmip, namespaces]
+    editions:
+      - edition: community
+        license_class: osi-open-source
+        capabilities: [kv-v2, transit, pki, kubernetes-auth, policies, audit-log, integrated-raft-storage, raft-snapshot-manual, shamir-unseal, auto-unseal-cloud-kms, auto-unseal-transit, auto-unseal-pkcs11, auto-unseal-kmip, namespaces]
+        note: >-
+          Declared from upstream documentation (checked 2026-09-26), not
+          verified here. Shamir is the default seal; cloud KMS (AWS KMS, Azure
+          Key Vault, GCP Cloud KMS and others), Transit, PKCS#11 and KMIP seals
+          are documented (https://openbao.org/docs/configuration/seal/).
+          Namespaces arrived in OpenBao 2.3 (beta released 2025-05-28,
+          https://openbao.org/blog/namespaces-announcement/): a profile that
+          needs them must pin a version >= 2.3 and verify them. No scheduled
+          (automated) snapshot capability is declared: backups are manual
+          `bao operator raft snapshot save` runs driven by an external scheduler.
+    checks:
+      compatibility: {status: pending, note: "Spring Vault against OpenBao not tested"}
+      support: {status: pending}
+      license:
+        status: passed
+        checked_on: 2026-09-26
+        source: "https://github.com/openbao/openbao"
+        note: "MPL-2.0 per the project repository (OSI open source). OpenSSF sandbox project since 2025-06 (https://openssf.org/blog/2025/06/17/openbao-joins-the-openssf-to-advance-secure-secrets-management-in-open-source/). Re-check at every version pin."
+      security: {status: pending}
+    approval: candidate
+    notes: "Proposed open-source secrets default. docs/requirements-addendum.md still names HashiCorp Vault as the initial backend -- owner decision needed."
+  - id: hashicorp-vault
+    name: HashiCorp Vault
+    category: secrets-backend
+    license: {spdx: BUSL-1.1, class: source-available}
+    role: optional-compatibility
+    versions: []
+    capabilities: [kv-v2, transit, pki, kubernetes-auth, policies, audit-log, integrated-raft-storage, raft-snapshot-manual, raft-snapshot-automated, shamir-unseal, auto-unseal-cloud-kms, auto-unseal-transit, auto-unseal-pkcs11, namespaces, performance-replication, dr-replication, provider-managed-storage, provider-managed-unseal, provider-managed-snapshots]
+    editions:
+      - edition: community
+        license_class: source-available
+        capabilities: [kv-v2, transit, pki, kubernetes-auth, policies, audit-log, integrated-raft-storage, raft-snapshot-manual, shamir-unseal, auto-unseal-cloud-kms, auto-unseal-transit]
+        note: "BSL 1.1 for releases after 2023-08-10. No namespaces, no replication, no automated snapshots, no HSM (PKCS#11) seal."
+      - edition: enterprise
+        license_class: commercial
+        capabilities: [kv-v2, transit, pki, kubernetes-auth, policies, audit-log, integrated-raft-storage, raft-snapshot-manual, raft-snapshot-automated, shamir-unseal, auto-unseal-cloud-kms, auto-unseal-transit, auto-unseal-pkcs11, namespaces, performance-replication, dr-replication]
+        note: >-
+          Namespaces, replication, HSM (PKCS#11) seal and automated
+          integrated-storage snapshots are Enterprise features ("Appropriate
+          Vault Enterprise license required",
+          https://developer.hashicorp.com/vault/docs/enterprise/automated-integrated-storage-snapshots,
+          checked 2026-09-26). Other entries declared from vendor
+          documentation, not verified here.
+      - edition: hcp
+        license_class: saas
+        capabilities: [kv-v2, transit, pki, kubernetes-auth, policies, audit-log, namespaces, provider-managed-storage, provider-managed-unseal, provider-managed-snapshots]
+        note: "HashiCorp-managed service: storage, unseal and snapshots are operated by the vendor and are not configurable here. Declared from vendor documentation, not verified."
+    checks:
+      compatibility: {status: pending}
+      support: {status: pending}
+      license:
+        status: passed
+        checked_on: 2026-09-26
+        source: "https://www.globenewswire.com/news-release/2023/08/10/2723189/0/en/HashiCorp-adopts-the-Business-Source-License-for-future-releases-of-its-products.html"
+        note: "BSL 1.1 for releases after 2023-08-10. Not universally open source; not a default here."
+      security: {status: pending}
+    approval: not-approved
+    commercial_alternatives: ["Vault Enterprise", "HCP Vault", "cloud KMS/secret managers"]
+  - id: spring-vault
+    name: Spring Vault
+    category: secrets-client
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [java-client, kv-v2-client, transit-client, kubernetes-auth-client]
+    checks: {compatibility: {status: pending, note: "Client for the Vault HTTP API; against OpenBao untested"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    notes: "A Java client integration for Spring services (the Vault HTTP API). It is NOT a secrets server, holds no secrets, and can never be selected as a secrets backend; the backend and its edition decide which capabilities exist."
+
+  # ----- Storage and backup ------------------------------------------------------
+  - id: longhorn
+    name: Longhorn
+    category: block-storage
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [rwo, snapshots, volume-expansion, replication, encryption-at-rest, backup-to-s3]
+    checks: {compatibility: {status: pending, note: "Not installed; capabilities from upstream documentation, unverified here"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["SUSE Rancher Prime storage support", "Portworx"]
+  - id: local-path-provisioner
+    name: local-path-provisioner
+    category: block-storage
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: lab-only
+    versions: []
+    capabilities: [rwo]
+    checks: {compatibility: {status: pending}, support: {status: not-applicable, note: "Lab scratch only"}, license: {status: pending}, security: {status: pending, note: "No encryption, no replication"}}
+    approval: candidate
+  # Managed-cloud block storage (planned cloud profiles only). The CSI drivers
+  # are open source; the disks are a provider service, hence class saas.
+  # Capabilities are declared from provider documentation, not verified here.
+  - id: aws-ebs-csi
+    name: Amazon EBS (EBS CSI driver)
+    category: block-storage
+    license: {spdx: "Apache-2.0 (driver); managed service", class: saas}
+    role: alternative
+    versions: []
+    capabilities: [rwo, snapshots, volume-expansion, encryption-at-rest, zonal]
+    checks: {compatibility: {status: pending, note: "No cloud account or cluster; planned profile only"}, support: {status: pending}, license: {status: not-applicable}, security: {status: pending}}
+    approval: candidate
+    notes: "A volume lives in one availability zone; losing the zone loses access until restore."
+  - id: azure-disk-csi
+    name: Azure Disk (Azure Disk CSI driver)
+    category: block-storage
+    license: {spdx: "Apache-2.0 (driver); managed service", class: saas}
+    role: alternative
+    versions: []
+    capabilities: [rwo, snapshots, volume-expansion, encryption-at-rest, zonal]
+    checks: {compatibility: {status: pending, note: "No cloud account or cluster; planned profile only"}, support: {status: pending}, license: {status: not-applicable}, security: {status: pending}}
+    approval: candidate
+  - id: gce-pd-csi
+    name: Google Persistent Disk (GCE PD CSI driver)
+    category: block-storage
+    license: {spdx: "Apache-2.0 (driver); managed service", class: saas}
+    role: alternative
+    versions: []
+    capabilities: [rwo, snapshots, volume-expansion, encryption-at-rest, zonal]
+    checks: {compatibility: {status: pending, note: "No cloud account or cluster; planned profile only"}, support: {status: pending}, license: {status: not-applicable}, security: {status: pending}}
+    approval: candidate
+
+  - id: minio
+    name: MinIO (open-source repository)
+    category: object-storage
+    license: {spdx: AGPL-3.0-only, class: osi-open-source}
+    role: rejected
+    versions: []
+    capabilities: [s3-api, object-lock]
+    checks:
+      compatibility: {status: pending}
+      support:
+        status: failed
+        checked_on: 2026-09-26
+        source: "https://github.com/minio/minio"
+        note: "Repository archived by its owner on 2026-04-25; README: THIS REPOSITORY IS NO LONGER MAINTAINED. MinIO points to AIStor Free / AIStor Enterprise."
+      license: {status: pending}
+      security: {status: failed, note: "No upstream fixes after archival"}
+    approval: not-approved
+    commercial_alternatives: ["MinIO AIStor Free / AIStor Enterprise (licence terms to review)"]
+    notes: "Was the on-prem WORM default in ADR 0007 and docs/architecture.md. Replacement is an owner decision (goal 6/14 in docs/enterprise-readiness-review.md)."
+  - id: ceph-rgw
+    name: Ceph Object Gateway (RGW)
+    category: object-storage
+    license: {spdx: "LGPL-2.1-or-later (Ceph)", class: osi-open-source}
+    role: alternative
+    versions: []
+    capabilities: [s3-api, object-lock]
+    checks: {compatibility: {status: pending, note: "Object Lock declared from upstream documentation; ADR 0010 WORM conformance suite not run"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate
+    commercial_alternatives: ["IBM Storage Ceph"]
+  - id: velero
+    name: Velero
+    category: backup
+    license: {spdx: Apache-2.0, class: osi-open-source}
+    role: default
+    default_status: proposed
+    versions: []
+    capabilities: [k8s-resource-backup, volume-snapshots, restore, schedules]
+    checks: {compatibility: {status: pending, note: "Not installed; no restore rehearsed"}, support: {status: pending}, license: {status: pending}, security: {status: pending}}
+    approval: candidate

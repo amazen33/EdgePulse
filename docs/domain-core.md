@@ -13,7 +13,11 @@ domain only — alarms themselves are not implemented yet).
 Decisions supplied by the repository owner for this stage:
 - Tenant isolation: hybrid — schema-per-tenant for enterprise-tier tenants
   (and any tenant that outgrows the shared-schema threshold), shared
-  schema + row-level security otherwise.
+  schema + row-level security otherwise. **Superseded for the Java
+  platform** by ADR 0016 (pooled `tenant_id` + PostgreSQL RLS only); this
+  hybrid rule remains the record of the frozen Python spec (see
+  `docs/adr/XXXX-proposed-roles-and-privileged-environment-access.md`,
+  Decision 3).
 - Device identifiers: opaque, tenant-scoped UUIDs; human labels are
   separate and mutable.
 - Canonical units/time: metric units, UTC timestamps everywhere in the

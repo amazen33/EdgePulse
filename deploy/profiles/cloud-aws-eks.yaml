@@ -1,0 +1,67 @@
+# PLANNED cloud profile. No Layer 0, account, cluster or test exists for it.
+# It stays "planned" until verified against a real, isolated aws account
+# and cluster, recorded under verification.real_environment.
+profile_id: cloud-aws-eks
+profile_version: 1
+status: planned
+purpose: "Managed Kubernetes on aws (eks), reusing Layers 1-4 conventions where they apply; engine provisioning replaces Layer 0/1."
+environment: staging
+provider: aws
+region: aws_us_east_1
+tier: high_availability
+topology: distributed-single-cluster
+production_use: false
+ha:
+  control_plane_nodes: 3
+  host_redundancy: true
+limitations:
+  - "Planned only: no infrastructure code, account or cluster exists."
+  - "Control-plane HA is the provider's managed service, not verified here."
+  - "Vault and storage settings below are a plan for review, not a tested configuration."
+layers:
+  - {layer: 0, path: null, state: planned, static_checks: []}
+  - {layer: 1, path: null, state: not-applicable, static_checks: []}
+  - {layer: 2, path: null, state: planned, static_checks: []}
+  - {layer: 3, path: deploy/03-observability, state: planned, static_checks: []}
+  - {layer: 4, path: deploy/04-apps, state: planned, static_checks: []}
+tools:
+  iac-provisioning: {tool: opentofu, version: unpinned}
+  kubernetes-distribution: {tool: eks, version: unpinned}
+  packaging: {tool: helm, version: unpinned}
+  gitops: {tool: argo-cd, version: unpinned}
+  observability: {tool: grafana-lgtm, version: unpinned}
+vault:
+  tool: openbao
+  edition: community
+  state: planned
+  required_capabilities: [kv-v2, kubernetes-auth, policies, audit-log]
+  client: spring-vault
+  secret_reference_scheme: "openbao://"
+  storage_backend: integrated-raft
+  topology: {replicas: 3, spread: zone}
+  unseal:
+    method: auto-unseal-cloud-kms
+    key_ref: "awskms://alias/iotee-openbao-unseal"
+    custody: "Planned: the AWS KMS key lives in the isolated aws account; only the OpenBao workload identity may use it for unseal, and key deletion needs a second system admin."
+  backup:
+    enabled: true
+    method: raft-snapshot-manual
+    schedule: "planned: daily, run by a reviewed CronJob"
+    retention_days: 30
+    target_ref: "s3://iotee-openbao-snapshots"
+    restore_tested: false
+  data_loss_effect: "Planned, nothing exists. Three raft replicas across zones survive one zone; losing a quorum loses secrets written since the last snapshot. Snapshots are manual runs (no automated snapshot capability in OpenBao community) and restore is untested. Deleting or disabling the AWS KMS key used for unseal makes every secret and snapshot permanently unreadable."
+storage_classes:
+  - name: ebs-gp3
+    tool: aws-ebs-csi
+    state: planned
+    required_capabilities: [rwo, snapshots, encryption-at-rest]
+    quota: {max_total_gi: 500, max_per_claim_gi: 100}
+    encryption: {at_rest: true, key_ref: "awskms://alias/iotee-ebs"}
+    backup: {enabled: true, tool: velero, schedule: "daily", retention_days: 30, restore_tested: false}
+    topology: {replicas: 1, spread: none}
+    reclaim_policy: Delete
+    retention: "Planned: the volume is deleted with its claim; only Velero backups outlive it, for 30 days."
+    data_loss_effect: "Deleting the claim deletes the volume and its data (reclaim Delete). A volume lives in one zone: losing the zone loses access until restored from backup, and restore has never been tested. Deleting the AWS KMS key makes the volume and its snapshots unreadable."
+verification:
+  real_environment: []

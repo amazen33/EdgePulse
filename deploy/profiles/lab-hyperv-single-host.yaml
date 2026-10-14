@@ -1,0 +1,94 @@
+# Lab / development profile -- the only profile with any code behind it.
+# NOT production, NOT highly available, NOT evidence of a scalable private
+# cloud. Validated by deploy/catalog/validate.py.
+profile_id: lab-hyperv-single-host
+profile_version: 1
+status: lab
+purpose: "Single-host lab and development cluster on one Windows Hyper-V machine, for building and testing the platform's deployment layers."
+environment: dev
+provider: on_prem
+region: on_prem_primary
+tier: standard
+topology: distributed-single-cluster
+production_use: false
+ha:
+  control_plane_nodes: 1
+  host_redundancy: false
+limitations:
+  - "One physical host: losing it stops everything."
+  - "One control-plane node: the Kubernetes API is down whenever that VM is."
+  - "Nodes are Hyper-V VMs behind Windows NAT, not bare-metal servers."
+  - "Reachable from the host only unless a NAT static mapping is added."
+  - "No storage, secrets backend, observability or application layer installed yet."
+  - "VM disks grow on the host volume; nothing monitors free space while the VMs run (a full volume stops them)."
+layers:
+  - {layer: 0, path: deploy/00-infra/private-hyperv, state: implemented, static_checks: [tofu-fmt, tofu-validate, powershell-parse]}
+  - {layer: 1, path: deploy/01-k8s-engine/rke2-ansible, state: implemented, static_checks: [ansible-syntax, ansible-builtin-only, inventory-validation]}
+  - {layer: 2, path: deploy/02-cluster-addons, state: implemented, static_checks: [kustomize-render, kubeconform]}
+  - {layer: 3, path: deploy/03-observability, state: planned, static_checks: []}
+  - {layer: 4, path: deploy/04-apps, state: planned, static_checks: []}
+tools:
+  os: {tool: ubuntu-server, version: "24.04 (noble)"}
+  hypervisor: {tool: hyper-v, version: unpinned}
+  hypervisor-automation: {tool: windsorcli-hyperv, version: "0.4.0"}
+  iac-provisioning: {tool: opentofu, version: unpinned}
+  config-management: {tool: ansible-core, version: unpinned}
+  kubernetes-distribution: {tool: rke2, version: "v1.35.7+rke2r1"}
+  load-balancer: {tool: kube-vip, version: "v1.2.4"}
+  packaging: {tool: kustomize, version: unpinned}
+  gitops: {tool: argo-cd, version: unpinned}
+  observability: {tool: grafana-lgtm, version: unpinned}
+  backup: {tool: velero, version: unpinned}
+vault:
+  tool: openbao
+  edition: community
+  state: planned
+  required_capabilities: [kv-v2, kubernetes-auth, policies, audit-log]
+  client: spring-vault
+  secret_reference_scheme: "openbao://"
+  storage_backend: integrated-raft
+  topology: {replicas: 1, spread: none}
+  unseal:
+    method: shamir
+    custody: "Lab only: the key shares and root token are held by the lab owner outside Git and outside the cluster; unsealing is manual after every restart."
+  backup:
+    enabled: true
+    method: raft-snapshot-manual
+    schedule: "manual, before every Layer 1 upgrade or node rebuild"
+    retention_days: 7
+    target_ref: "pvc://openbao/raft-snapshots"
+    restore_tested: false
+  data_loss_effect: "Single replica on a single host: losing the VM or the host loses every secret written since the last manual snapshot. Losing the unseal key shares makes every secret and snapshot permanently unreadable. Snapshots are manual and kept on the same host, and restore has never been tested."
+storage_classes:
+  - name: lab-replicated
+    tool: longhorn
+    state: planned
+    required_capabilities: [rwo, snapshots, encryption-at-rest]
+    quota: {max_total_gi: 120, max_per_claim_gi: 20}
+    encryption: {at_rest: true, key_ref: "openbao://kv/storage/lab-replicated"}
+    backup: {enabled: true, tool: velero, schedule: "daily", retention_days: 7, restore_tested: false}
+    topology: {replicas: 2, spread: node}
+    reclaim_policy: Retain
+    retention: "Volumes are kept after their claim is deleted until an operator removes them."
+    data_loss_effect: "Deleting a claim keeps the volume (Retain). Losing both replica nodes, or the single host, loses any data written since the last backup; restore has never been tested."
+  - name: lab-scratch
+    tool: local-path-provisioner
+    state: planned
+    required_capabilities: [rwo]
+    quota: {max_total_gi: 20, max_per_claim_gi: 5}
+    encryption: {at_rest: false}
+    backup: {enabled: false, restore_tested: false}
+    topology: {replicas: 1, spread: none}
+    reclaim_policy: Delete
+    retention: "None: data lives only as long as its claim and its node."
+    data_loss_effect: "Deleting the claim permanently deletes the data. Losing or rebuilding the node deletes it too. No backup, no encryption: disposable test data only, never tenant data."
+verification:
+  real_environment:
+    - date: 2026-09-25
+      scope: "Layer 0 host preparation (prep-hyperv-host.ps1) only"
+      result: partial
+      evidence: "Console output reported by the owner; template size and read-only flag not independently checked. VMs, cluster and add-ons not created."
+    - date: 2026-09-27
+      scope: "Layers 0 and 1 on one Hyper-V host (E: volume): 3 VMs by tofu apply (windsorcli/hyperv 0.4.0), RKE2 v1.35.7+rke2r1 by site-rke2.yml. Layer 2 and later not applied."
+      result: passed
+      evidence: "Owner-run commands, output reviewed in the session: tofu apply 15 added; 3 VMs running with checkpoints disabled; site-rke2.yml PLAY RECAP failed=0 on all nodes; kubectl get nodes 3/3 Ready; no pods outside Running/Succeeded. Lab profile only: one host, one control-plane node."

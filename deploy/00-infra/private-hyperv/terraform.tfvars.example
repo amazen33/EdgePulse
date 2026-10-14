@@ -1,13 +1,7 @@
 # Copy to terraform.tfvars (git-ignored) and adjust to your host.
-# Credentials are NOT set here. Export them instead:
-#   $env:TF_VAR_hyperv_user     = "$env:COMPUTERNAME\iotee-tf"
-#   $secure = Read-Host -AsSecureString "Password for iotee-tf"
-#   $env:TF_VAR_hyperv_password = [System.Net.NetworkCredential]::new('', $secure).Password
-
-# Terraform running on the Hyper-V host itself.
-hyperv_host = {
-  address = "127.0.0.1"
-}
+# No connection variables: OpenTofu runs directly on this Hyper-V host
+# (backend = "local" in main.tf), as whatever account runs `tofu` -- no
+# separate host/port/credential to set here or in the environment.
 
 # Must match the prep script's -VmRoot and -TemplateRoot/-TemplateName.
 vm_root            = "D:\\HyperV\\iotee\\vms"

@@ -31,7 +31,14 @@ Decision 7), a narrower and different thing.
   Decision 3). Same versioning-by-directory rule as `events/v1/`.
 - `cfg/cfg.schema.json` -- the draft `cfg.yaml` JSON Schema every
   service's own configuration is validated against (ADR 0012 Decision
-  3).
+  3). `tenant_mode` accepts only `pooled-rls` (ADR 0016: pooled
+  `tenant_id` + PostgreSQL RLS).
+
+- `deploy/tool-catalog.schema.json`, `deploy/deployment-profile.schema.json`
+  -- the deployment tool catalog and deployment profile contracts
+  (proposed deployment-layers ADR). Validated by `deploy/catalog/validate.py`
+  in CI today; the Java Deployment Studio (M8) is expected to consume the
+  same schemas.
 
 ## What does not belong here
 
