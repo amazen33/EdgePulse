@@ -1,0 +1,11 @@
+# What this EdgePulse release requires and provides (release-streams standard, section 5).
+product: edgepulse
+version_source: pom.xml
+requires:
+  # Twinfra is the platform EdgePulse runs on (EdgePulse ADR 0021).
+  twinfra: ">=0.1.0 <1.0.0"
+  # ThingsBoard CE is the operational core (EdgePulse ADR 0020); pinned in tb-extensions/manifest.yaml.
+  thingsboard-ce: "4.3.1.x"
+provides:
+  # contracts/migration/v1, published by IOT-WO-03 (EdgePulse ADR 0022). Not published yet.
+  edgepulse-migration-contract: "v1 (planned)"
