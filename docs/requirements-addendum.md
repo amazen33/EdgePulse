@@ -5,7 +5,7 @@
 > [0021](adr/0021-twinfra-platform-and-licence-gate.md) (including Amendment 1),
 > and [0022](adr/0022-migration-manager-integration.md): TB CE owns ingress and
 > its operational data; Twinfra supplies hosting, OpenBao and platform gates;
-> Migration Studio M1/M9 belongs to migration-manager, with IOT-EE readiness
+> Migration Studio M1/M9 belongs to EdgeMig, with EdgePulse readiness
 > MR-1 to MR-14. These decisions take precedence over the historical body
 > below. The approved sequence is [MILESTONES.md](../MILESTONES.md).
 > This is a target specification for an IoT platform in foundation development.

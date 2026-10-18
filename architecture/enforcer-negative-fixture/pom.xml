@@ -19,11 +19,11 @@
   separate, isolated Maven build and asserts it fails.
 
   The one dependency below deliberately violates the rule: a
-  compile-scope dependency on a com.iotee.platform:* artifact. It uses
+  compile-scope dependency on a com.edgepulse.platform:* artifact. It uses
   <scope>system</scope> with a <systemPath> pointing at the
   fake-shared-runtime.jar committed alongside this pom (a trivial,
   otherwise-empty jar; see that file) specifically so this fixture's
-  build never needs to resolve a real com.iotee.platform artifact from
+  build never needs to resolve a real com.edgepulse.platform artifact from
   any repository; the point of this fixture is to prove the ENFORCER
   RULE fires on the GAV+scope pattern, not to exercise Maven's ordinary
   dependency resolution. See verify.groovy for the assertion that the
@@ -36,7 +36,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.iotee.platform.architecture.fixture</groupId>
+  <groupId>com.edgepulse.platform.architecture.fixture</groupId>
   <artifactId>enforcer-negative-fixture</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
@@ -49,11 +49,11 @@
 
   <dependencies>
     <!-- Deliberately banned: a compile/runtime/provided/system-scope
-         dependency on a com.iotee.platform:* artifact. system scope
+         dependency on a com.edgepulse.platform:* artifact. system scope
          with a local systemPath avoids needing repository resolution
          (see this file's header comment). -->
     <dependency>
-      <groupId>com.iotee.platform</groupId>
+      <groupId>com.edgepulse.platform</groupId>
       <artifactId>fake-shared-runtime</artifactId>
       <version>1.0.0</version>
       <scope>system</scope>
@@ -82,16 +82,16 @@
               <rules>
                 <bannedDependencies>
                   <excludes>
-                    <exclude>com.iotee.platform:*:*:*:compile</exclude>
-                    <exclude>com.iotee.platform:*:*:*:runtime</exclude>
-                    <exclude>com.iotee.platform:*:*:*:provided</exclude>
-                    <exclude>com.iotee.platform:*:*:*:system</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:compile</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:runtime</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:provided</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:system</exclude>
                   </excludes>
                   <message>
                     ADR 0013 (microservice autonomy and contract-based
                     sharing) prohibits any compile-, runtime-, provided-,
                     or system-scope dependency on another
-                    com.iotee.platform:* artifact. Services share
+                    com.edgepulse.platform:* artifact. Services share
                     contract sources (contracts/) and build-time
                     architecture rules (architecture/, test scope only)
                     -- never a shared runtime library. If you are trying

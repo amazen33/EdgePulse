@@ -1,11 +1,11 @@
 spring:
   application:
-    name: iotee-service-identity
+    name: edgepulse-service-identity
 
 server:
   port: 8081
 
-iotee:
+edgepulse:
   identity:
     correlation:
       # S4: whether this service is itself the platform's trust boundary

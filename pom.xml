@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.iotee.platform</groupId>
-  <artifactId>iotee-platform-parent</artifactId>
+  <groupId>com.edgepulse.platform</groupId>
+  <artifactId>edgepulse-platform-parent</artifactId>
   <version>2.0.0</version>
   <packaging>pom</packaging>
 
-  <name>IOT-EE Platform (parent)</name>
+  <name>EdgePulse Platform (parent)</name>
   <description>
     Maven multi-module parent for the Java platform per ADR 0011
     (platform architecture and language stack), ADR 0012 (M9 foundation
@@ -171,15 +171,15 @@
 
       <!-- The ONE intra-repo artifact any service is ever allowed to depend
            on, and only at test scope (ADR 0013 Decision 8): shared ArchUnit
-           rule definitions. No other com.iotee.platform:* artifact is
+           rule definitions. No other com.edgepulse.platform:* artifact is
            declared here ; there is no shared runtime module to declare
            (ADR 0013 retires common/ and adapters/web-spring/ outright; see
            this pom's own description and the enforce-no-shared-runtime
            Enforcer rule below, which makes this permanent, not just true
            today because nothing has been added back yet). -->
       <dependency>
-        <groupId>com.iotee.platform</groupId>
-        <artifactId>iotee-architecture</artifactId>
+        <groupId>com.edgepulse.platform</groupId>
+        <artifactId>edgepulse-architecture</artifactId>
         <version>${project.version}</version>
         <scope>test</scope>
       </dependency>
@@ -272,14 +272,14 @@
     <plugins>
       <!-- ADR 0013 Decision 5.1 + Decision 8: mechanical, platform-wide
            enforcement that no module ever declares a compile-,
-           runtime-, provided-, or system-scope dependency on another com.iotee.platform:*
+           runtime-, provided-, or system-scope dependency on another com.edgepulse.platform:*
            artifact. This is what makes "no shared runtime module" a
            build failure, not a convention ; it applies to every module
            via plugin inheritance (declared directly under <plugins>, not
            <pluginManagement>, so it is not opt-in per module) and governs
            every services/*, adapters/*, or future module the same way,
            automatically, without each module's own pom.xml having to
-           remember to add it. iotee-architecture is exempt only at test
+           remember to add it. edgepulse-architecture is exempt only at test
            scope (the version above is pinned with <scope>test</scope>;
            this rule bans compile/runtime scope specifically, so a
            test-scope architecture dependency is unaffected, while a
@@ -299,16 +299,16 @@
               <rules>
                 <bannedDependencies>
                   <excludes>
-                    <exclude>com.iotee.platform:*:*:*:compile</exclude>
-                    <exclude>com.iotee.platform:*:*:*:runtime</exclude>
-                    <exclude>com.iotee.platform:*:*:*:provided</exclude>
-                    <exclude>com.iotee.platform:*:*:*:system</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:compile</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:runtime</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:provided</exclude>
+                    <exclude>com.edgepulse.platform:*:*:*:system</exclude>
                   </excludes>
                   <message>
                     ADR 0013 (microservice autonomy and contract-based
                     sharing) prohibits any compile-, runtime-, provided-,
                     or system-scope dependency on another
-                    com.iotee.platform:* artifact. Services share
+                    com.edgepulse.platform:* artifact. Services share
                     contract sources (contracts/) and build-time
                     architecture rules (architecture/, test scope only)
                     -- never a shared runtime library. If you are trying

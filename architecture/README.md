@@ -14,7 +14,7 @@ and nothing here is ever on a running service's classpath.
 
 **Every consumer must declare this module at `<scope>test</scope>`.**
 The parent `pom.xml`'s `enforce-no-shared-runtime` Maven Enforcer rule
-fails the build if any module declares `iotee-architecture` at
+fails the build if any module declares `edgepulse-architecture` at
 `compile` or `runtime` scope -- see `services/identity/pom.xml` for the
 correct declaration.
 

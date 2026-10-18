@@ -1,8 +1,63 @@
-name: "Platform gate: Java platform"
+name: "Platform gates: Java platform and naming"
 on: [push, pull_request]
 permissions:
   contents: read
 jobs:
+  naming-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Check tracked names
+        run: bash .github/scripts/naming_gate.sh --audit
+      - name: Prove the naming gate rejects planted violations
+        shell: bash
+        run: |
+          set -euo pipefail
+          legacy='iot''ee'
+          content_probe=.naming-gate-content-self-test.txt
+          path_probe=".naming-gate-${legacy}-self-test.txt"
+          test ! -e "$content_probe"
+          test ! -e "$path_probe"
+          cleanup() {
+            git rm --cached --force --ignore-unmatch -- "$content_probe" "$path_probe"
+            rm -f -- "$content_probe" "$path_probe"
+          }
+          trap cleanup EXIT
+          expect_rejected() {
+            local status=0
+            bash .github/scripts/naming_gate.sh > naming-self-test.log 2>&1 || status=$?
+            cat naming-self-test.log
+            rm -f -- naming-self-test.log
+            if [[ $status != 1 ]]; then
+              echo "Expected a naming violation, got status $status" >&2
+              exit 1
+            fi
+          }
+          printf '%s\n' "$legacy" > "$content_probe"
+          git add -- "$content_probe"
+          expect_rejected
+          echo 'PASS: planted content token rejected'
+          mapfile -t exempt_paths < <(bash .github/scripts/naming_gate.sh --exempt-paths)
+          reference=''
+          for candidate in "${exempt_paths[@]}"; do
+            if [[ $candidate == docs/reviews/* ]]; then reference=$candidate; break; fi
+          done
+          test -n "$reference"
+          printf '%s\n' "$reference" > "$content_probe"
+          bash .github/scripts/naming_gate.sh
+          printf '%s %s\n' "$reference" "$legacy" > "$content_probe"
+          expect_rejected
+          echo 'PASS: exempt path plus separate content token rejected'
+          git rm --cached --force -- "$content_probe"
+          rm -f -- "$content_probe"
+          printf '%s\n' 'synthetic content' > "$path_probe"
+          git add -- "$path_probe"
+          expect_rejected
+          echo 'PASS: planted tracked path rejected'
+          cleanup
+          trap - EXIT
+          bash .github/scripts/naming_gate.sh
   java-platform-bootstrap:
     # Track B (ADR 0012 Decisions 3-6, refactored per ADR 0013): the Java
     # multi-module Maven bootstrap under the repository root (pom.xml,
@@ -15,7 +70,7 @@ jobs:
     # real, on every push and PR. It also exercises the Maven Enforcer
     # `bannedDependencies` rule (ADR 0013's dependency-declaration-level
     # no-shared-runtime guarantee): `mvn verify` fails the build outright
-    # if any module reintroduces a `com.iotee.platform:*` artifact at
+    # if any module reintroduces a `com.edgepulse.platform:*` artifact at
     # compile or runtime scope.
     #
     # Uses the runner's pre-installed Maven (via setup-java's default

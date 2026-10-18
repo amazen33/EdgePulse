@@ -54,8 +54,8 @@ Spring components, or helper implementations. Both modules are retired.
 Their code was relocated into this service's own packages, not deleted:
 
 - `rbac/` (`AbacContext`, `AbacDecision`, `Permission`, `RbacRegistry`,
-  `Role`) -- was `common`'s `com.iotee.platform.common.rbac`, now
-  `com.iotee.platform.identity.rbac`. This service's own copy; a future
+  `Role`) -- was `common`'s `com.edgepulse.platform.common.rbac`, now
+  `com.edgepulse.platform.identity.rbac`. This service's own copy; a future
   `services/device` or any other service that needs the same
   authorization seam authors its own copy in its own package (ADR 0013's
   accepted-duplication model), not a shared dependency on this one.
@@ -77,7 +77,7 @@ archived separately in tag archive/python-spec-final),
 source only, no generated jars checked in or shared. This module's
 `pom.xml` points `protobuf-maven-plugin` at that path
 (`../../contracts/events/v1`) and generates its own
-`com.iotee.platform.contracts.events.v1.Envelope` classes into its own
+`com.edgepulse.platform.contracts.events.v1.Envelope` classes into its own
 `target/generated-sources/` on every build -- the standard per-service
 generation idiom ADR 0013 Decision 9 confirms. `cfg.schema.json` moved
 the same way, to `contracts/cfg/cfg.schema.json`; this service's schema
@@ -87,14 +87,14 @@ resource, since there is no shared module to package it into a jar for.
 Mechanical enforcement, both added in this refactor rather than deferred:
 
 - The root `pom.xml`'s Maven Enforcer `bannedDependencies` rule fails
-  the build if any module declares a `com.iotee.platform:*` artifact at
-  `compile` or `runtime` scope (`test` scope, e.g. `iotee-architecture`,
+  the build if any module declares a `com.edgepulse.platform:*` artifact at
+  `compile` or `runtime` scope (`test` scope, e.g. `edgepulse-architecture`,
   is exempt) -- the platform-wide, dependency-declaration-level
   guarantee that no service can add a shared runtime library back.
 - `IdentityArchitectureRulesTest`'s
   `noProductionClassResidesInARetiredSharedPackage` -- the
   source-level autonomy tripwire, catching the retired
-  `com.iotee.platform.common..` / `com.iotee.platform.adapters.webspring..`
+  `com.edgepulse.platform.common..` / `com.edgepulse.platform.adapters.webspring..`
   package names being reintroduced even without a matching `pom.xml`
   dependency.
 
@@ -143,7 +143,7 @@ Key points:
   Spring annotation; `config.IdentityServiceConfig` wires it with plain
   constructors. The gRPC adapter is plain grpc-java;
   `config.GrpcServerLifecycle` starts it with the Spring context
-  (`iotee.identity.grpc.enabled`, `iotee.identity.grpc.port`, default
+  (`edgepulse.identity.grpc.enabled`, `edgepulse.identity.grpc.port`, default
   `9091`; `0` = ephemeral, used by tests).
 - **Enforced mechanically** by `IdentityHexagonalArchitectureRulesTest`:
   each adapter depends only on `port.in` (never on the domain, the
@@ -258,7 +258,7 @@ those items as closed, exactly as it was before CI run #84 existed.
 ### Track C step C1 (hexagonal skeleton + gRPC adapter)
 
 Status: **passed in CI.** CI run #103
-(https://github.com/amazen33/IOT-EE/actions/runs/36109849592) on commit
+(https://github.com/amazen33/EdgePulse/actions/runs/36109849592) on commit
 `878f568` (branch `feature/c1-hexagonal-skeleton`) passed the workflow
 "Platform gates: Python spec + Java platform": `mvn -B -f pom.xml verify`
 compiled the gRPC adapter and generated stubs and passed the ArchUnit

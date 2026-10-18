@@ -46,6 +46,10 @@
           {
             "context": "java-platform-bootstrap",
             "integration_id": 15368
+          },
+          {
+            "context": "naming-gate",
+            "integration_id": 15368
           }
         ]
       }

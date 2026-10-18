@@ -19,9 +19,9 @@
 // this file rather than editing it in place.
 syntax = "proto3";
 
-package com.iotee.platform.contracts.identity.v1;
+package com.edgepulse.platform.contracts.identity.v1;
 
-option java_package = "com.iotee.platform.contracts.identity.v1";
+option java_package = "com.edgepulse.platform.contracts.identity.v1";
 option java_outer_classname = "TenantPermissionsProto";
 option java_multiple_files = true;
 

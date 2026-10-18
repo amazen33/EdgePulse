@@ -21,6 +21,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Changed
 
+- IOT-WO-05: rename active Maven, Java/proto, Spring configuration and
+  contract identifiers to EdgePulse under ADR 0023; align standing documents
+  and add the blocking naming gate with exact historical-reference exemptions.
+  MS0 remains open until the owner signs its receipt and tags `v2.0.0-alpha.1`.
+
 - IOT-WO-01 Part C: mark retained infrastructure frozen under ADR 0021;
   archive the Python M0-M8 specification in tag `archive/python-spec-final`,
   remove it from the active checkout and CI, and retain the required Java gate.

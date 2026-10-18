@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Development contract and architectural conventions for the IOT-EE platform.
+Development contract and architectural conventions for the EdgePulse platform.
 All changes require PR, CI, and human review; an agent must not approve its own work.
 
 Prompt frame: state the milestone, bounded context, verified inputs, acceptance criteria, security constraints, intended files, relevant tests, and non-goals. Distinguish assumptions from observations. Inspect before editing and preserve unrelated work.
@@ -25,18 +25,19 @@ The approved delivery sequence is [MILESTONES.md](MILESTONES.md), replacing
 the M0–M9, PF-A/B/C, Track and R1–R6 schemes. Its mapping preserves historical
 references; do not use those references as a second backlog.
 
-M1 Migration Studio and M9 legacy import/cutover move to **migration-manager**
-(ADR 0022). IOT-EE owns the **migration-readiness epic, MR-1 to MR-14**:
+M1 Migration Studio and M9 legacy import/cutover move to **EdgeMig**
+(ADR 0022). EdgePulse owns the **migration-readiness epic, MR-1 to MR-14**:
 versioned integration contracts, tenant lifecycle, import-safe fence,
 reconciliation APIs, run-scoped access, endpoint transitions and evidence.
 MS2 defines contracts; MS4–MS6 implement readiness; MS8–MS9 are joint runs.
 Readiness precedes customer-facing feature work beyond the core. Discovery,
-extraction, transformation and migration orchestration belong to migration-manager.
+extraction, transformation and migration orchestration belong to EdgeMig.
 
-IOT-WO-01 Part C (infrastructure freeze and Python specification archive):
-done once the freeze/archive PR merges. IOT-WO-05 (rename): not started.
-MS0 remains incomplete until IOT-WO-05 and the MS0 receipt. MILESTONES.md
-defines the sequence and required receipts; runtime integrations remain pending.
+IOT-WO-01 Part C: done ([PR #38](https://github.com/amazen33/EdgePulse/pull/38)).
+IOT-WO-05 (rename): done when the rename PR merges. MS0 remains open until
+an owner-signed MS0 receipt and tag `v2.0.0-alpha.1`.
+[MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
+runtime integrations remain pending.
 
 ### Language and implementation status
 The current build remains Java 17 + Spring Boot / Spring Cloud. ADR 0021
@@ -91,11 +92,12 @@ docs/, AGENTS.md, CLAUDE.md, README.md, MILESTONES.md, .github/workflows/ stay a
 
 ## Gates
 
-The Java gate runs in CI on every change. The existing infrastructure gate runs on deploy/ changes and is retained unchanged. Each gate must pass for changes touching its scope. The archived Python specification has no active CI job.
+The Java and naming gates run in CI on every change. The existing infrastructure gate runs on deploy/ changes and is retained unchanged. Each gate must pass for changes touching its scope. The archived Python specification has no active CI job.
 
 | Gate | Command | Scope |
 | --- | --- | --- |
 | Java platform gate | `mvn -B -f pom.xml verify` | contracts/, architecture/, services/*, adapters/*. Compile + unit tests + ArchUnit boundary rules. |
+| Naming gate | `bash .github/scripts/naming_gate.sh` | Tracked paths and contents; only approved history/frozen files, exact generated path references, archive tags and the former-name line exception are allowed. |
 | Infrastructure gate | `.github/workflows/infra.yml` | Existing deploy/ package checks; static CI checks only, no host or cluster access. |
 
 After every stage run its complete relevant gate and the full regression gate. A stage requires code, tests, docs, deployment artifacts, and passing gates; document unavailable external verification as blocked, not passed.
@@ -122,7 +124,7 @@ claims. No portability, AI or real-environment capability is established.
 TB CE is the operational core and system of record for MQTT/HTTP/CoAP
 transports, devices/assets/relations, attributes/telemetry, rules, alarms
 and dashboards. Keep it unforked and track its thin customization set in
-tb-extensions/manifest.yaml. IOT-EE services surround it with identity,
+tb-extensions/manifest.yaml. EdgePulse services surround it with identity,
 fine-grained authorization, evidence, billing, AI, consoles and migration
 integration. A bounded context leaves TB only through a new ADR naming
 parity tests, data migration and rollback (0020 Decision 6).
@@ -182,7 +184,7 @@ A stage is not complete without all of:
 □ Documentation — architecture notes, ADR if the stage introduces a new decision
 □ Helm chart and Argo CD Application for Twinfra where the stage touches deployment (ADR 0021, including Amendment 1)
 □ Stage gate passes (mvn verify and any additional gate required by the implemented scope)
-□ Full regression gates pass (Java platform and applicable static infrastructure/release checks)
+□ Full regression gates pass (Java platform, naming and applicable static infrastructure/release checks)
 □ Blocked items recorded explicitly — external verification not available is documented as blocked, not passed
 Supply-chain security scanning follows accepted ADR 0014: pinned Syft
 SBOMs, Grype image/SBOM scanning and OSV-Scanner for lockfiles and the Maven
@@ -196,7 +198,7 @@ The original M0 constraint remains in force as a standing rule:
 
 The Python reference at archive/python-spec-final:spec/ remains subject to its original constraint: it must not provision infrastructure, import legacy data, or execute unrestricted cloud commands. It is historical input, not an active platform gate.
 
-Migration Studio M1/M9 requirements are migration-manager inputs under ADR 0022. IOT-EE implements migration readiness only; real legacy access and owner approval remain required. ADR 0022 MR-9 requires explicit owner approval for each device-credential step, with no values in logs, events, evidence or Git.
+Migration Studio M1/M9 requirements are EdgeMig inputs under ADR 0022. EdgePulse implements migration readiness only; real legacy access and owner approval remain required. ADR 0022 MR-9 requires explicit owner approval for each device-credential step, with no values in logs, events, evidence or Git.
 
 Legacy ThingsBoard CE exports are handled through authorized export, inventory, shadow comparison, and approval — never recreated from memory or screenshots.
 
