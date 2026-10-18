@@ -22,9 +22,9 @@
     rule definitions, consumed at test scope only; each services/*
     module owns its own domain, RBAC, correlation, and Spring wiring
     code, generating its own Protobuf classes from contracts/ as part of
-    its own build. The spec/ tree (see spec/README.md) remains the
-    authoritative M0-M8 Python reference implementation, frozen per ADR
-    0012 Decision 8; this parent is the M9+ Java platform alongside it.
+    its own build. The frozen M0-M8 Python reference implementation is
+    archived in tag archive/python-spec-final; ADR 0012 Decision 8 still
+    applies to it.
   </description>
 
   <modules>
@@ -213,8 +213,9 @@
         <version>${json-schema-validator.version}</version>
       </dependency>
 
-      <!-- ArchUnit: the Java analog of spec/scripts/check.py's mechanical
-           boundary gate. A standard third-party testing library (ADR 0013
+      <!-- ArchUnit: the Java analog of the mechanical boundary gate in
+           archive/python-spec-final:spec/scripts/check.py.
+           A standard third-party testing library (ADR 0013
            Decision 2), not project-authored logic ; architecture/'s OWN
            code (the rule factories) is the project-authored, shareable
            part, and it is shareable only because it is a build-time

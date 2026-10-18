@@ -1,3 +1,5 @@
+> Frozen by ADR 0021; must not be extended. Kept until a deletion work order; history: tag `archive/iot-ee-own-infra`.
+
 # Standalone Layer 0: Hyper-V lab machines
 
 This directory is a self-contained module. It prepares one Windows Hyper-V

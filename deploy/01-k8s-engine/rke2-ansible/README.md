@@ -1,3 +1,5 @@
+> Frozen by ADR 0021; must not be extended. Kept until a deletion work order; history: tag `archive/iot-ee-own-infra`.
+
 # Layer 1 — `deploy/01-k8s-engine/rke2-ansible`
 
 Ansible that turns Ubuntu VMs from any compatible infrastructure layer into a

@@ -11,13 +11,14 @@ these contracts configures its own build to generate code from it (see
 the reference example) -- the generated classes are that service's own
 build artifact, never a shared runtime dependency.
 
-`contracts/` lives at the repository root, as a sibling to `spec/`,
-`services/`, and `adapters/`, because it is language-neutral: both this
+`contracts/` lives at the repository root alongside `services/` and
+`adapters/`, because it is language-neutral: both this
 platform's Java services and any future Python consumer (the RAG
 subsystem, per ADR 0011 Decision 1) generate their own code from the
-same source here. It does not live under `spec/`, which is scoped
-specifically to the Python M0-M8 reference implementation (ADR 0012
-Decision 7), a narrower and different thing.
+same source here. It is separate from the archived Python M0-M8 reference
+implementation (archive/python-spec-final:spec/; ADR 0012 Decision 7).
+That reference is available in [the archive tag](https://github.com/amazen33/EdgePulse/tree/archive/python-spec-final/spec),
+not the active checkout.
 
 ## Layout
 

@@ -72,7 +72,8 @@ Their code was relocated into this service's own packages, not deleted:
   own interceptor explicitly, in its own `WebMvcConfigurer`.
 
 Protobuf: the shared envelope contract now lives at
-`contracts/events/v1/envelope.proto` (repo root, sibling to `spec/`),
+`contracts/events/v1/envelope.proto` (repo root; the Python reference is
+archived separately in tag archive/python-spec-final),
 source only, no generated jars checked in or shared. This module's
 `pom.xml` points `protobuf-maven-plugin` at that path
 (`../../contracts/events/v1`) and generates its own
@@ -179,16 +180,16 @@ Key points:
   policy package exists; see "Authorization policy and tenant-scoped
   roles" above. C3 bearer-token enforcement is now wired.)
 - No Migration Studio or Deployment Studio code.
-- No changes anywhere under `spec/` -- that tree is frozen except for its
-  own gate (`spec/scripts/check.py`), per ADR 0012 Decision 7, ADR 0012
-  Decision 8, and this module's own directive.
+- The frozen Python reference and its former gate are archived in tag
+  archive/python-spec-final:spec/ (ADR 0012 Decisions 7 and 8); they are
+  not part of this module or active CI.
 
 ## Sibling-isolation rule: currently vacuous, by design
 
 `IdentityArchitectureRulesTest` checks isolation from five sibling
 bounded contexts, but none of them exist as Java packages anywhere in
-this repository yet -- they are Python-only, under `spec/billing/`,
-`spec/firmware/`, etc. `allFiveSiblingIsolationRulesAreCurrentlyVacuous`
+this repository yet -- they are Python-only, in tag `archive/python-spec-final:spec/billing/`,
+`archive/python-spec-final:spec/firmware/`, etc. `allFiveSiblingIsolationRulesAreCurrentlyVacuous`
 documents this mechanically: it fails, forcing this note to be revisited,
 the day any of those five is added as a real Java `services/*` package.
 The `application`, `domain` and `rbac` framework-freedom rules, the
@@ -196,6 +197,11 @@ hexagonal dependency-direction rules, and the retired-shared-package
 tripwire are real and enforced today.
 
 ## Verification status
+
+The verification log below is historical. Its Python gate commands, test
+counts and former spec/ paths refer to tag archive/python-spec-final; they
+are preserved as recorded and are not an active CI requirement. The current
+platform gate is `mvn -B -f pom.xml verify`.
 
 `python spec/scripts/check.py` (the existing Python gate) was run and
 still passes 437/437 with `spec/` untouched by this refactor.

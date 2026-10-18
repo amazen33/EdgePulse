@@ -1,3 +1,5 @@
+> Frozen by ADR 0021; must not be extended. Kept until a deletion work order; history: tag `archive/iot-ee-own-infra`.
+
 # Deployment layers and current lab evidence
 
 IOT-EE currently has two independently testable installation packages and a

@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 /**
  * A single, granular permission this platform recognizes.
  *
- * <p>Mirrors {@code spec/domain_core/rbac.py}'s {@code PERMISSION_CATALOG}
+ * <p>Mirrors {@code archive/python-spec-final:spec/domain_core/rbac.py}'s {@code PERMISSION_CATALOG}
  * shape: a fixed, versioned catalog of dotted-string permission keys
  * (there, a {@code frozenset[str]}; here, a Java {@code enum} so an
  * unknown permission fails to compile instead of failing silently at

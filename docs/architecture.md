@@ -90,7 +90,7 @@ Usage metering finalizes UsageMetered events. Optional, separately deployable mo
 Deployment Studio is dropped by MILESTONES.md; Twinfra supplies deployment.
 Future IOT-EE delivery must provide application images, Helm charts and Argo CD Applications into
 IOT-EE namespaces with default-deny ingress. Existing infrastructure packages
-await archival/freeze under IOT-WO-01 Part C, which is not started. This document
+are frozen by ADR 0021 (see [freeze notice](../deploy/FROZEN.md)); removal requires a later deletion work order. This document
 authorizes no host, cluster, infrastructure, deployment or cutover action.
 
 Packaging follows ADR 0021 Amendment 1: arbitrary UID, non-root, restricted
