@@ -11,6 +11,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Added
 
+- IOT-WO-01 Part B decision records: ADRs 0014 and 0020–0023, the approved
+  milestone plan, snapshot draft dispositions and aligned architecture pointers.
+  Runtime integration, infrastructure freeze, Python archival and renaming remain
+  separate work orders.
 - Release streams (Dev, Candidate, Stable): `RELEASING.md`, this changelog,
   `compatibility.yaml`, the `release-checks` and `release` workflows, and the rulesets in
   `.github/rulesets/`.
