@@ -9,7 +9,13 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+## [2.0.0-alpha.2] - 2026-10-18
+
+- MS0 Reset was accepted ([acceptance receipt](docs/acceptance/ms0-reset-2026-10-18.md)). This release has the same content as 2.0.0-alpha.1, which was never released; see below.
+
 ## [2.0.0-alpha.1] - 2026-10-18
+
+> Not released. Tag v2.0.0-alpha.1 points at a80e73e, the PR #40 head before the squash merge, which is not on main; its release run failed. Superseded by 2.0.0-alpha.2.
 
 - MS0 Reset was accepted ([acceptance receipt](docs/acceptance/ms0-reset-2026-10-18.md)).
 
