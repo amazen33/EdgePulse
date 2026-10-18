@@ -19,7 +19,7 @@ are not covered by this module.
 | **Java: unit-tested** | Framework-free Java in `services/identity` with passing unit tests. Not wired to an endpoint unless stated. |
 | **Locally verified** | Java test passed in the local identity Maven gate; this does not prove a real IdP/JWKS integration. |
 | **CI only** | Test or environment proof unavailable locally; CI or a real integration environment remains the check. |
-| **Spec only** | The frozen Python reference (`spec/`) implements and tests it; no Java. |
+| **Spec only** | The archived Python reference (`archive/python-spec-final:spec/`) contains its implementation and tests; no Java. |
 | **Spec gap** | A probe of the frozen spec shows it violates the requirement. The spec is frozen and is not changed; the Java implementation must not copy it. |
 | **Not implemented** | No code anywhere. |
 | **Blocked** | Needs something not available here: an identity provider, a vetted library, a broker, a device, a bastion, a payment provider or an owner decision. |
@@ -123,7 +123,7 @@ tenant-scoped assignments. Spring, gRPC and ArchUnit tests run only in CI
 | Signature and algorithm verification against issuer keys | `NimbusTokenSignatureVerifierJwksTest` runs the real Nimbus adapter against a local HTTP JWKS: valid RS256, unsigned, HS256 substitution, wrong RSA signature and a new key ID after rotation. It also passes verified claims to `AccessTokenValidator` and proves expiry is rejected there. | Locally verified with synthetic issuer; real IdP and transport round trip pending |
 | Endpoints require a validated token | Both `services/identity` REST and gRPC endpoints now require a bearer token; the permit-all `AbacContext.alwaysPermit()` bean is removed from `config.IdentityServiceConfig`. Application-layer fake-verifier tests exercise absent/forged/expired/wrong-issuer/wrong-audience/forbidden-audience/cross-tenant/revoked cases. Spring/gRPC tests pass for unauthenticated paths, but not a successfully signed token. | Locally verified for current test cases; signed-token integration pending |
 | Separate sessions per console | No BFF exists | **Not implemented** |
-| Spec | `spec/gateway/auth.py`: opaque token map, no issuer or audience concept | Spec gap (by design: IdP deferred) |
+| Spec | `archive/python-spec-final:spec/gateway/auth.py`: opaque token map, no issuer or audience concept | Spec gap (by design: IdP deferred) |
 
 ### 2. Short-lived access tokens; refresh rotation and reuse detection; BFF sessions, Secure HttpOnly cookies, CSRF
 
@@ -162,13 +162,13 @@ tenant-scoped assignments. Spring, gRPC and ArchUnit tests run only in CI
 | Expiry and revocation | `anExpiredGrantIsDenied`, `aRevokedGrantDeniesFromTheMomentOfRevocation` | Java: unit-tested |
 | Decision audit data (reason, grant/rule id, policy version) | `anActiveGrantPermitsAndTheDecisionNamesItAndThePolicyVersion` | Java: unit-tested (no audit store) |
 | Enforced in every service/API/channel | Only `services/identity` exists. Its two live endpoints (REST + gRPC) now authenticate and authorize the caller (see the "Endpoints require a validated token" row above); no other service exists yet | **Not implemented** (all other services) |
-| Spec | `spec/domain_core/rbac.py`: `Principal.has_permission` returns True for every permission for a system admin; no explicit deny | **Spec gap** |
+| Spec | `archive/python-spec-final:spec/domain_core/rbac.py`: `Principal.has_permission` returns True for every permission for a system admin; no explicit deny | **Spec gap** |
 
 ### 5. Tenant operators change only allowlisted device properties in scope, via audited, expiring, idempotent, server-mediated commands with device acknowledgement
 
 | Part | Evidence | Status |
 | --- | --- | --- |
-| Allowlisted properties, tenant and device scope, scope expiry, cross-tenant and unassigned device rejected, system admins cannot dispatch directly | `spec/tests/test_domain_core_commands.py` (e.g. `test_forbidden_property_rejected`, `test_cross_tenant_device_access_rejected`, `test_unassigned_device_rejected`, `test_expired_scope_rejected`) | Spec only |
+| Allowlisted properties, tenant and device scope, scope expiry, cross-tenant and unassigned device rejected, system admins cannot dispatch directly | `archive/python-spec-final:spec/tests/test_domain_core_commands.py` (e.g. `test_forbidden_property_rejected`, `test_cross_tenant_device_access_rejected`, `test_unassigned_device_rejected`, `test_expired_scope_rejected`) | Spec only |
 | Same semantics as policy (device allowlist, essential command permission) | `PolicyDecisionPointTest.aDeviceOutsideTheOperatorsAllowlistIsDenied`, `essentialCapabilitiesStayAvailableWithNoEntitlementsAtAll` (fixture permissions) | Java: unit-tested (policy only) |
 | Stale commands expire; expired commands are not delivered | `test_stale_command_expires_and_is_not_reused`, `test_drain_on_reconnect_drops_expired_commands` | Spec only |
 | Redelivery of the same command id on reconnect skipped | `test_redelivering_the_same_command_id_is_skipped_on_a_second_drain` | Spec only |
@@ -197,7 +197,7 @@ tenant-scoped assignments. Spring, gRPC and ArchUnit tests run only in CI
 | Part | Evidence | Status |
 | --- | --- | --- |
 | Entitlement required even with the permission, including for system admins | `PolicyDecisionPointTest.firmwareIsDeniedWithoutTheTenantEntitlementEvenWithThePermission`, `firmwareNeedsTheEntitlementEvenForASystemAdminWithATenantGrant`, `firmwareNeedsTheEntitlementAndThePermissionAndTheDevice` | Java: unit-tested (fixture permission; no firmware service) |
-| Signed artifacts, provenance, canary/broad rings, auto-rollback | `spec/tests/test_firmware_*` | Spec only |
+| Signed artifacts, provenance, canary/broad rings, auto-rollback | `archive/python-spec-final:spec/tests/test_firmware_*` | Spec only |
 | **Tenant entitlement** | Probe: `FirmwareRollout` checks only `firmware.manage`; no entitlement input exists | **Spec gap** |
 | **Tenant scoping of rollout devices** | Probe: a tenant-A firmware manager assigned a tenant-B device | **Spec gap** |
 | Device hardware compatibility; scoped approval; recheck at dispatch; system-admin entitlement management | None | **Not implemented** |
@@ -210,16 +210,16 @@ tenant-scoped assignments. Spring, gRPC and ArchUnit tests run only in CI
 | An essential capability cannot be gated by an entitlement (rejected when the policy is built) | `PolicyDecisionPointTest.anEssentialCapabilityCannotBeDeclaredWithAnEntitlementGate` | Java: unit-tested |
 | Telemetry, alarms and in-scope commands stay available with no entitlements | `essentialCapabilitiesStayAvailableWithNoEntitlementsAtAll` | Java: unit-tested (fixture permissions) |
 | Entitlements are tenant facts, separate from grants | `AccessRequest.tenantEntitlements` vs `Grant.permissions` | Java: unit-tested |
-| Monetization flag is not feature access | `spec/billing/flags.py` (no `is_feature_entitled`); ADR 0008 | Spec only |
+| Monetization flag is not feature access | `archive/python-spec-final:spec/billing/flags.py` (no `is_feature_entitled`); ADR 0008 | Spec only |
 | Release flags, quotas, an entitlement catalog and its management API | None; `tenant.manage_entitlements` exists in the spec catalog with no model | **Not implemented** |
 
 ### 9. Monetization: optional, downstream of finalized usage; provider port; hosted checkout; signed, idempotent webhooks; reconciliation; no card data
 
 | Part | Evidence | Status |
 | --- | --- | --- |
-| Default off, per-tenant override, disabled mode has no side effects | `spec/tests/test_billing_flag_matrix.py` | Spec only |
-| Write-once period closure, reversal-only correction, duplicate closure rejected | `spec/tests/test_billing_closure.py` | Spec only |
-| Billing isolated from core contexts | `spec/scripts/check.py` `_check_billing_isolation` | Spec only |
+| Default off, per-tenant override, disabled mode has no side effects | `archive/python-spec-final:spec/tests/test_billing_flag_matrix.py` | Spec only |
+| Write-once period closure, reversal-only correction, duplicate closure rejected | `archive/python-spec-final:spec/tests/test_billing_closure.py` | Spec only |
+| Billing isolated from core contexts | `archive/python-spec-final:spec/scripts/check.py` `_check_billing_isolation` | Spec only |
 | Consumes **finalized usage events** | Spec meters the active device count from `DeviceRegistry`, not finalized `UsageMetered` events as ADR 0018 requires | **Spec gap** (documented divergence) |
 | Payment SDK confined to its adapter | `IdentityFrameworkFreedomArchitectureRulesTest.noVendorSdkOutsideAdaptersRuleCatchesIdentityProviderAndPaymentSdks` (identity service only) | Locally verified |
 | Provider port, hosted checkout, webhook signature verification, dedupe, reconciliation | None | **Not implemented**; provider choice **Blocked** (open input) |

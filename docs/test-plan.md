@@ -11,10 +11,16 @@ cross-vertical and AI capabilities require milestone receipts. AI is F5 work,
 not a tested execution path. The rows below specify required tests rather
 than completed milestones.
 
-Retained foundation gate (relocation and CI wiring: merged
-[PR #12](https://github.com/amazen33/EdgePulse/pull/12)):
-`python spec/scripts/check.py` runs unit tests, fixture validation, inert
-plan policy checks and required-artifact checks. CI runs the same command on Linux and Windows with Python 3.11 and 3.14. It never runs root Multipass scripts, connects to legacy systems, or provisions cloud resources. Deployment artifact is a validated non-executable foundation plan; this stage does not include an application deployment.
+Current platform regression gate: `mvn -B -f pom.xml verify`, including
+unit tests and ArchUnit boundary checks. Applicable static infrastructure
+and release checks remain required; no check may contact a host or cluster.
+
+The former Python foundation gate and its unit tests, fixture validation,
+inert plan checks and required-artifact checks are archived with the frozen
+M0–M8 reference at [archive/python-spec-final](https://github.com/amazen33/EdgePulse/tree/archive/python-spec-final/spec).
+Its historical `python spec/scripts/check.py` command belongs to that tag;
+it is not run by active CI. Relocation history remains merged
+[PR #12](https://github.com/amazen33/EdgePulse/pull/12).
 
 | Stage | Required additions to the full gate |
 | --- | --- |

@@ -1,3 +1,5 @@
+> Frozen by ADR 0021; must not be extended. Kept until a deletion work order; history: tag `archive/iot-ee-own-infra`.
+
 # Layer 2: kube-vip LoadBalancer add-on
 
 This directory is a self-contained, **lab-specific** Layer 2 package. Copy

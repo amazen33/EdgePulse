@@ -33,17 +33,19 @@ MS2 defines contracts; MS4–MS6 implement readiness; MS8–MS9 are joint runs.
 Readiness precedes customer-facing feature work beyond the core. Discovery,
 extraction, transformation and migration orchestration belong to migration-manager.
 
-IOT-WO-01 Part C (infrastructure freeze and spec/ archive) and IOT-WO-05
-(rename): not started. MS0 remains incomplete. MILESTONES.md defines the
-sequence and required receipts; runtime integrations remain pending.
+IOT-WO-01 Part C (infrastructure freeze and Python specification archive):
+done once the freeze/archive PR merges. IOT-WO-05 (rename): not started.
+MS0 remains incomplete until IOT-WO-05 and the MS0 receipt. MILESTONES.md
+defines the sequence and required receipts; runtime integrations remain pending.
 
 ### Language and implementation status
 The current build remains Java 17 + Spring Boot / Spring Cloud. ADR 0021
 selects Java 21 and a supported Spring line; the build upgrade is pending
 IOT-WO-02. Python remains limited to RAG and standalone adapters
-(ADR 0011 Decision 1). The frozen M0–M8 reference implementation stays in
-spec/ until Part C (relocation: merged
-[PR #12](https://github.com/amazen33/EdgePulse/pull/12)); local gates do not
+(ADR 0011 Decision 1). The frozen M0–M8 Python reference implementation
+is archived at [archive/python-spec-final](https://github.com/amazen33/EdgePulse/tree/archive/python-spec-final/spec); its former relocation
+is recorded in merged [PR #12](https://github.com/amazen33/EdgePulse/pull/12).
+The archived specification has no active CI gate; local Java gates do not
 prove real-backend integration.
 
 Merged [PR #14](https://github.com/amazen33/EdgePulse/pull/14) supplies the
@@ -77,23 +79,22 @@ services/<name>/            autonomous Java services
   └─ config/                 composition root (Spring wiring only)
   └─ correlation/            framework-free correlation-ID context
 adapters/<provider>/        real-backend implementations behind contracts (future Java work; none exist yet)
-  └─ (e.g. worm_s3)         built from spec/ patterns; isolated, optional deps
-deploy/                     existing standalone infrastructure package sources; future application delivery is Helm + Argo CD on Twinfra (ADR 0021); see deploy/README.md
-spec/                       frozen M0–M8 Python reference implementation (not the platform)
+  └─ (e.g. worm_s3)         patterns archived at archive/python-spec-final:spec/; isolated, optional deps
+deploy/                     frozen infrastructure sources (ADR 0021; deploy/FROZEN.md); future application delivery is Helm + Argo CD on Twinfra
+archive/python-spec-final   tag containing spec/ (M0–M8 Python reference; absent from the active checkout)
 docs/                       ADRs, architecture guides, inventories
   └─ adr/                   numbered ADRs (0001–present) + README.md convention
-.github/workflows/          CI: python spec gate + java platform gate
+.github/workflows/          CI: Java platform gate + applicable static infrastructure and release checks
 ```
 
 docs/, AGENTS.md, CLAUDE.md, README.md, MILESTONES.md, .github/workflows/ stay at the repository root — they describe the project as a whole, not any single language tree.
 
 ## Gates
 
-The Python and Java gates run in CI on every change. The existing infrastructure gate runs on deploy/ changes and is retained unchanged. Each gate must pass for changes touching its scope.
+The Java gate runs in CI on every change. The existing infrastructure gate runs on deploy/ changes and is retained unchanged. Each gate must pass for changes touching its scope. The archived Python specification has no active CI job.
 
 | Gate | Command | Scope |
 | --- | --- | --- |
-| Python spec gate | `python spec/scripts/check.py` | The frozen M0–M8 reference implementation only. Mechanical isolation checks + full regression suite. |
 | Java platform gate | `mvn -B -f pom.xml verify` | contracts/, architecture/, services/*, adapters/*. Compile + unit tests + ArchUnit boundary rules. |
 | Infrastructure gate | `.github/workflows/infra.yml` | Existing deploy/ package checks; static CI checks only, no host or cluster access. |
 
@@ -177,11 +178,11 @@ See docs/adr/README.md for the current convention and next free number
 A stage is not complete without all of:
 
 □ Code implementing the stage's scope
-□ Tests — unit + boundary (ArchUnit for Java, check.py for Python)
+□ Tests — unit + boundary (ArchUnit for Java; additional gates for the implemented scope)
 □ Documentation — architecture notes, ADR if the stage introduces a new decision
 □ Helm chart and Argo CD Application for Twinfra where the stage touches deployment (ADR 0021, including Amendment 1)
-□ Stage gate passes (mvn verify and/or python spec/scripts/check.py as applicable)
-□ Full regression gate passes (both gates green)
+□ Stage gate passes (mvn verify and any additional gate required by the implemented scope)
+□ Full regression gates pass (Java platform and applicable static infrastructure/release checks)
 □ Blocked items recorded explicitly — external verification not available is documented as blocked, not passed
 Supply-chain security scanning follows accepted ADR 0014: pinned Syft
 SBOMs, Grype image/SBOM scanning and OSV-Scanner for lockfiles and the Maven
@@ -193,7 +194,7 @@ outside ADR 0014. Green current CI does not prove these gates exist.
 M0–M8 legacy constraints (still binding)
 The original M0 constraint remains in force as a standing rule:
 
-The Python spec tree (spec/) must not provision infrastructure, import legacy data, or execute unrestricted cloud commands.
+The Python reference at archive/python-spec-final:spec/ remains subject to its original constraint: it must not provision infrastructure, import legacy data, or execute unrestricted cloud commands. It is historical input, not an active platform gate.
 
 Migration Studio M1/M9 requirements are migration-manager inputs under ADR 0022. IOT-EE implements migration readiness only; real legacy access and owner approval remain required. ADR 0022 MR-9 requires explicit owner approval for each device-credential step, with no values in logs, events, evidence or Git.
 

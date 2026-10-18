@@ -21,6 +21,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Changed
 
+- IOT-WO-01 Part C: mark retained infrastructure frozen under ADR 0021;
+  archive the Python M0-M8 specification in tag `archive/python-spec-final`,
+  remove it from the active checkout and CI, and retain the required Java gate.
+  Active reference documentation points to the archive; MS0 still requires
+  IOT-WO-05 and its receipt. No deployment or identifier rename is included.
+
 - The version is now `2.0.0`, the next base version: EdgePulse continues after the IOT-EE
   tags (`v0.3.0`–`v1.0.0`). It was `0.1.0-SNAPSHOT` in the root and module poms.
 

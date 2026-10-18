@@ -1,31 +1,14 @@
-name: "Platform gates: Python spec + Java platform"
+name: "Platform gate: Java platform"
 on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  foundation:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        python: ['3.11', '3.14']
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
-        with:
-          python-version: ${{ matrix.python }}
-      - run: python -m pip install -r spec/requirements.txt
-      - run: python spec/scripts/check.py
-
   java-platform-bootstrap:
     # Track B (ADR 0012 Decisions 3-6, refactored per ADR 0013): the Java
     # multi-module Maven bootstrap under the repository root (pom.xml,
     # architecture/, services/identity/) plus the source-only contracts/
-    # directory it generates Protobuf classes from. Independent of the
-    # `foundation` job above -- spec/ (Python) and the Java platform are
-    # separate gates that both must pass, per the development contract's
-    # "full regression gate" rule. This is the actual `mvn verify` run
+    # directory it generates Protobuf classes from. This is the actual
+    # `mvn verify` run
     # that could not be completed in the sandboxed environment this
     # bootstrap was written in (see services/identity/README.md,
     # "Verification status") -- this job is that verification, for
