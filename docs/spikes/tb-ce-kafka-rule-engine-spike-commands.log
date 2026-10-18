@@ -1,0 +1,139 @@
+# Reproducible command log for the TB CE 4.3.1.5 rule-engine spike
+# (docs/spikes/tb-ce-kafka-rule-engine-spike.md). Condensed to the
+# essential, working sequence -- two real failures were hit during the
+# first boot attempt and are called out where they occurred, since they
+# are useful findings in their own right (see the report's
+# "Operational notes"). Every identifier is synthetic.
+
+## 1. Fetch and verify the exact pinned version
+curl -sSL -o thingsboard-4.3.1.5.deb \
+  "https://github.com/thingsboard/thingsboard/releases/download/v4.3.1.5/thingsboard-4.3.1.5.deb"
+sha256sum thingsboard-4.3.1.5.deb
+# fac5f69f10ce47c45774fe8e8d06716620a4e75f46eb7ec82c4abc42ef5a2fdf
+
+dpkg-deb -x thingsboard-4.3.1.5.deb extracted/
+unzip -p extracted/usr/share/thingsboard/bin/thingsboard.jar META-INF/MANIFEST.MF
+# Implementation-Title: ThingsBoard
+# Implementation-Version: 4.3.1.5
+# Start-Class: org.thingsboard.server.ThingsboardServerApplication
+
+## 2. Local PostgreSQL 16 (already present in the container image)
+PGDATA=/tmp/tbspike-pgdata
+mkdir -p "$PGDATA"; chown -R postgres:postgres "$PGDATA"; chmod 700 "$PGDATA"
+sudo -u postgres /usr/lib/postgresql/16/bin/initdb -D "$PGDATA" -U postgres --auth=trust
+sudo -u postgres /usr/lib/postgresql/16/bin/pg_ctl -D "$PGDATA" -l /tmp/pg.log \
+  -o "-p 5433 -c listen_addresses=127.0.0.1" start
+sudo -u postgres /usr/lib/postgresql/16/bin/psql -p 5433 -h 127.0.0.1 -U postgres \
+  -c "CREATE DATABASE thingsboard;"
+sudo -u postgres /usr/lib/postgresql/16/bin/psql -p 5433 -h 127.0.0.1 -U postgres \
+  -c "ALTER USER postgres PASSWORD 'synthetic-tb-spike-pw';"
+
+## 3. Install schema (org.thingsboard.server.ThingsboardInstallApplication)
+export SPRING_DATASOURCE_URL="jdbc:postgresql://127.0.0.1:5433/thingsboard"
+export SPRING_DATASOURCE_USERNAME=postgres
+export SPRING_DATASOURCE_PASSWORD=synthetic-tb-spike-pw
+export TB_QUEUE_TYPE=in-memory
+java -cp extracted/usr/share/thingsboard/bin/thingsboard.jar \
+  -Dloader.main=org.thingsboard.server.ThingsboardInstallApplication \
+  -Dinstall.data_dir=extracted/usr/share/thingsboard/data \
+  -Dinstall.load_demo=false -Dspring.jpa.hibernate.ddl-auto=none -Dinstall.upgrade=false \
+  org.springframework.boot.loader.launch.PropertiesLauncher
+# => "Installation finished successfully!"
+
+## 4. Start the server
+# FIRST ATTEMPT FAILED: cfRocksDb / RocksDB LOCK under ${user.home}/.rocksdb
+# (new-in-4.3 Calculated Fields state store). Fixed by:
+mkdir -p /root/.rocksdb/cf_states /root/.rocksdb/edqs
+# (a stale LOCK file from an earlier crashed attempt also had to be removed:
+#  rm -rf /root/.rocksdb && mkdir -p ... again)
+
+export SERVER_PORT=8082
+java -Dinstall.data_dir=extracted/usr/share/thingsboard/data \
+  -jar extracted/usr/share/thingsboard/bin/thingsboard.jar
+# => "Started ThingsboardServerApplication v4.3.1.5 using Java 21.0.10 ... in 28.8s"
+
+## 5. Synthetic tenants, tenant admins, devices (documented REST API)
+TOKEN=$(curl -sS -X POST http://127.0.0.1:8082/api/auth/login -H "Content-Type: application/json" \
+  -d '{"username":"sysadmin@thingsboard.org","password":"sysadmin"}' | jq -r .token)
+
+curl -sS -X POST http://127.0.0.1:8082/api/tenant -H "X-Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" -d '{"title":"spike-tenant-A","region":"Global"}'
+# (repeated for spike-tenant-B)
+
+curl -sS -X POST "http://127.0.0.1:8082/api/user?sendActivationMail=false" \
+  -H "X-Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+  -d '{"tenantId":{"id":"<tenant-A-id>","entityType":"TENANT"},
+       "email":"spike-admin-a@synthetic.example","authority":"TENANT_ADMIN"}'
+
+LINK=$(curl -sS -X GET "http://127.0.0.1:8082/api/user/<admin-A-id>/activationLink" \
+  -H "X-Authorization: Bearer $TOKEN")
+# LINK: http://127.0.0.1:8082/api/noauth/activate?activateToken=<token>
+curl -sS -X POST http://127.0.0.1:8082/api/noauth/activate -H "Content-Type: application/json" \
+  -d '{"activateToken":"<token>","password":"SyntheticSpike!2026a"}'
+# => tenant-admin-A bearer token
+
+curl -sS -X POST http://127.0.0.1:8082/api/device -H "X-Authorization: Bearer <tenant-admin-A-token>" \
+  -H "Content-Type: application/json" \
+  -d '{"name":"spike-tank-sensor-A1","type":"tank-level-sensor"}'
+curl -sS -X GET http://127.0.0.1:8082/api/device/<device-A-id>/credentials \
+  -H "X-Authorization: Bearer <tenant-admin-A-token>"
+# => device-A access token (credentialsId)
+# (repeated identically for tenant B / device B)
+
+## 6. Extend each tenant's Root Rule Chain (GET/POST .../metadata)
+curl -sS http://127.0.0.1:8082/api/ruleChain/<root-chain-id>/metadata \
+  -H "X-Authorization: Bearer <tenant-admin-token>" > rc_meta.json
+# add two nodes to rc_meta.json's "nodes" array (indices 6, 7):
+#   6: org.thingsboard.rule.engine.filter.TbJsFilterNode
+#      jsScript: "return typeof msg.tank_level_percent !== 'undefined'
+#                 && msg.tank_level_percent > 80;"
+#   7: org.thingsboard.rule.engine.action.TbCreateAlarmNode
+#      alarmType: HIGH_TANK_LEVEL, severity: CRITICAL,
+#      alarmDetailsBuildJs: "return { tank_level_percent: msg.tank_level_percent };"
+#      (NOTE: do not include "propagateToOwnerHierarchy" -- rejected by
+#       RuleChainDataValidator on this version; see report.)
+# add connections: {fromIndex: <Message Type Switch idx>, toIndex: 6, type: "Post telemetry"}
+#                  {fromIndex: 6, toIndex: 7, type: "True"}
+curl -sS -X POST http://127.0.0.1:8082/api/ruleChain/metadata \
+  -H "X-Authorization: Bearer <tenant-admin-token>" -H "Content-Type: application/json" \
+  --data-binary @rc_meta_updated.json
+
+## 7. Event ingestion -> rule engine execution (the core proof)
+curl -sS -X POST http://127.0.0.1:8082/api/v1/<device-A-token>/telemetry \
+  -H "Content-Type: application/json" \
+  -d '{"ts": 1790000060000, "values": {"tank_level_percent": 93.4, "temperature_c": 19.0}}'
+sleep 3
+curl -sS http://127.0.0.1:8082/api/alarm/DEVICE/<device-A-id>?pageSize=10\&page=0 \
+  -H "X-Authorization: Bearer <tenant-admin-A-token>"
+# => one ACTIVE_UNACK / CRITICAL / HIGH_TANK_LEVEL alarm
+
+## 8. Tenant/device mapping
+curl -sS http://127.0.0.1:8082/api/alarm/DEVICE/<device-B-id>?pageSize=10\&page=0 \
+  -H "X-Authorization: Bearer <tenant-admin-A-token>"
+# => 404 "Device with id [...] is not found" (cross-tenant read refused)
+
+## 9. Duplicate delivery
+for i in 1 2 3; do
+  curl -sS -X POST http://127.0.0.1:8082/api/v1/<device-A-token>/telemetry \
+    -H "Content-Type: application/json" \
+    -d '{"ts": 1790000240000, "values": {"tank_level_percent": 97.0}}'
+done
+# => exactly 1 timeseries point at that ts, exactly 1 active alarm (endTs
+#    bumped to processing time of the 3rd call -- alarm-node upsert, not
+#    message dedup; rule chain ran 3 times)
+
+## 10. Retries and failure recovery
+pkill -f thingsboard.jar
+curl -m5 -X POST http://127.0.0.1:8082/api/v1/<device-A-token>/telemetry -d '{...}'
+# curl: (7) Failed to connect ... (0.009s -- immediate, no buffering)
+# restart TB CE (same command as step 4) -> back up in ~29s, prior state intact
+curl -X POST http://127.0.0.1:8082/api/v1/<device-A-token>/telemetry \
+  -d '{"ts": 1790000300000, "values": {"tank_level_percent": 50.0}}'
+# => 200; landed only because the caller retried it manually -- TB CE did
+#    not replay or flag the outage window on its own
+
+## Cleanup
+pkill -f thingsboard.jar
+sudo -u postgres /usr/lib/postgresql/16/bin/pg_ctl -D /tmp/tbspike-pgdata stop
+curl -sS -X DELETE http://127.0.0.1:8082/api/tenant/<tenant-A-id> -H "X-Authorization: Bearer $TOKEN"
+curl -sS -X DELETE http://127.0.0.1:8082/api/tenant/<tenant-B-id> -H "X-Authorization: Bearer $TOKEN"

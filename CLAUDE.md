@@ -11,38 +11,41 @@ ThingsBoard preservation: preserve ThingsBoard rules through authorized export, 
 
 Constitutional engineering rules (see ADR 0011 Decision 4 for the full text): no secrets/PII/payment data/private keys/device credentials in source, Git, events, logs, metrics, prompts, or fixtures; server-issued correlation IDs preserved end-to-end; signed device-verified firmware (WebSockets report progress, not binaries); no destructive/infra/deploy/secret-rotation action or test-gate bypass without explicit human approval; no DR/compliance/migration completion claims from local tests alone; RBAC + ABAC + mTLS/JWT/SSO multi-tenancy.
 
-## Milestones
-### Python era (M0–M8) — reference implementation
-M0 foundation
+## Roadmap and current scope
+The approved delivery sequence is [MILESTONES.md](MILESTONES.md), replacing
+the M0–M9, PF-A/B/C, Track and R1–R6 schemes. Its mapping preserves historical
+references; do not use those references as a second backlog.
 
-M1 Migration Studio
+M1 Migration Studio and M9 legacy import/cutover move to **migration-manager**
+(ADR 0022). IOT-EE owns the **migration-readiness epic, MR-1 to MR-14**:
+versioned integration contracts, tenant lifecycle, import-safe fence,
+reconciliation APIs, run-scoped access, endpoint transitions and evidence.
+MS2 defines contracts; MS4–MS6 implement readiness; MS8–MS9 are joint runs.
+Readiness precedes customer-facing feature work beyond the core. Discovery,
+extraction, transformation and migration orchestration belong to migration-manager.
 
-M2 domain core
+IOT-WO-01 Part B records decisions and updates pointers. Part C (infrastructure
+freeze and Python archival) and IOT-WO-05 (rename) are separate work. Part B
+alone does not complete MS0 or implement a runtime integration.
 
-M3 MQTT/PostgreSQL ingestion, Kafka, TB shadow parity
+### Language and implementation status
+The current build remains Java 17 + Spring Boot / Spring Cloud. ADR 0021
+selects Java 21 and a supported Spring line for IOT-WO-02; Part B does not
+upgrade the build. Python remains limited to RAG and standalone adapters
+(ADR 0011 Decision 1). The frozen M0–M8 reference implementation stays in
+spec/ until Part C; local gates do not prove real-backend integration.
 
-M4 APISIX/SSR/WebSockets/reports
+The Java foundation has autonomous services and a hexagonal identity query
+over REST and gRPC. TB CE core integration, Twinfra application packaging
+and migration readiness remain work for later orders, with external
+verification blocked pending those orders and their required access.
 
-M5 firmware
-
-M6 immutable evidence / resilience / DR
-
-M7 optional monetization
-
-M8 Deployment Studio / multi-environment
-
-The M0–M8 Python code is a specification / reference implementation, not the platform codebase. Per ADR 0011 Decision 9 and ADR 0012 Decision 8, it is frozen and relocated to spec/. No further Python platform code is written except the two Python-scoped areas named in ADR 0011 Decision 1 (the RAG subsystem and standalone adapters).
-
-### Post-M8 platform era (ADR 0011–0013)
-ADR 0011 pivoted the platform to Java 17 + Spring Boot / Spring Cloud, extending ThingsBoard CE as an upgradeable compatibility core. Python is scoped to the RAG subsystem and standalone adapters only.
-
-ADR 0012 scoped M9 — Track A (TB CE investigation, a document) and Track B (Java bootstrap: Maven parent, common/ primitives, ArchUnit gates, services/identity walking skeleton) — and relocated the M0–M8 Python tree to spec/ (Decision 7).
-
-ADR 0013 established microservice autonomy: services share only contracts (.proto, OpenAPI, JSON Schema) and test-scope build artifacts (ArchUnit rules). No shared runtime JARs. Per-service RBAC, correlation, and Spring wiring, duplicated by design — no duplication ceiling; repeated code is a boundary signal, never grounds to reopen a shared JAR.
-
-M9 is in progress. Track A merged; Track B refactor against ADR 0013 pending.
-
-Post-v1.0.0 work is scoped milestone-by-milestone. There is no M9+ roadmap yet — it is defined when the prior milestone closes.
+ADR 0013 established microservice autonomy: services share only contracts
+(.proto, OpenAPI, JSON Schema) and test-scope build artifacts (ArchUnit rules).
+No shared runtime JARs. Per-service RBAC, correlation and Spring wiring are
+duplicated by design; repeated code is a boundary signal, never grounds to
+reopen a shared JAR. Retained application drafts remain proposals subject
+to the dispositions in docs/adr/README.md and accepted ADRs 0020–0022.
 
 ## Repository layout
 
@@ -58,26 +61,26 @@ services/<name>/            autonomous Java services
   └─ adapter/out/<concern>/  driven adapters implementing port/out (vendor SDKs live only here)
   └─ config/                 composition root (Spring wiring only)
   └─ correlation/            framework-free correlation-ID context
-adapters/<provider>/        real-backend implementations behind contracts (M10+; none exist in Java yet)
+adapters/<provider>/        real-backend implementations behind contracts (future Java work; none exist yet)
   └─ (e.g. worm_s3)         built from spec/ patterns; isolated, optional deps
-deploy/                     private-cloud IaC in standalone layer packages: 00-infra/private-hyperv (L0: Hyper-V VMs, OpenTofu), 01-k8s-engine/rke2-ansible (L1: Ansible, CIS-hardened RKE2 only), k8s/ (L2: kube-vip LoadBalancer add-on; storage and secrets packages not designed yet); each has its own offline test, lab evidence is recorded per package; see deploy/README.md
+deploy/                     existing standalone infrastructure packages retained unchanged in Part B; future application delivery is Helm + Argo CD on Twinfra (ADR 0021); see deploy/README.md
 spec/                       frozen M0–M8 Python reference implementation (not the platform)
 docs/                       ADRs, architecture guides, inventories
   └─ adr/                   numbered ADRs (0001–present) + README.md convention
 .github/workflows/          CI: python spec gate + java platform gate
 ```
 
-docs/, CLAUDE.md, README.md, .github/workflows/ stay at the repository root — they describe the project as a whole, not any single language tree.
+docs/, AGENTS.md, CLAUDE.md, README.md, MILESTONES.md, .github/workflows/ stay at the repository root — they describe the project as a whole, not any single language tree.
 
 ## Gates
 
-The two platform gates run in CI on every change; the infrastructure gate runs on changes under deploy/. Each gate must pass for changes touching its scope.
+The Python and Java gates run in CI on every change. The existing infrastructure gate runs on deploy/ changes and is retained unchanged. Each gate must pass for changes touching its scope.
 
 | Gate | Command | Scope |
 | --- | --- | --- |
 | Python spec gate | `python spec/scripts/check.py` | The frozen M0–M8 reference implementation only. Mechanical isolation checks + full regression suite. |
-| Java platform gate | `mvn -f pom.xml verify` | contracts/, architecture/, services/*, adapters/*. Compile + unit tests + ArchUnit boundary rules. |
-| Infrastructure gate | `.github/workflows/infra.yml` (each layer's own test: `tests/verify.ps1`, `tests/verify-layer1.sh`, `tests/verify-layer2.py`, plus render and schema checks) | deploy/ only. Static checks; never reaches a host or cluster. Live lab runs are recorded as evidence, never as CI results. |
+| Java platform gate | `mvn -B -f pom.xml verify` | contracts/, architecture/, services/*, adapters/*. Compile + unit tests + ArchUnit boundary rules. |
+| Infrastructure gate | `.github/workflows/infra.yml` | Existing deploy/ package checks; static CI checks only, no host or cluster access. |
 
 After every stage run its complete relevant gate and the full regression gate. A stage requires code, tests, docs, deployment artifacts, and passing gates; document unavailable external verification as blocked, not passed.
 
@@ -96,10 +99,49 @@ Database independence — the domain knows nothing about PostgreSQL, JPA, or SQL
 
 Protocol independence — REST, gRPC, and Kafka are driving/driven adapters. Incoming requests translate to plain Java commands before hitting the domain; domain events translate to Kafka messages at the outer edge.
 
-### Plug-and-play infrastructure
-Every infrastructure component is an interchangeable plugin behind an abstract contract: TB CE (replaceable), Kafka (replaceable with Redpanda/RabbitMQ), CDC (Debezium, replaceable), APISIX (replaceable with NGINX/Envoy), Spring Boot (replaceable/upgradeable without touching business logic), storage (MinIO/S3/Azure/GCS behind a WORM port), payments (Stripe behind a payment-provider port).
+### TB CE core and owned integration boundaries (ADRs 0020–0022)
+TB CE is the operational core and system of record for MQTT/HTTP/CoAP
+transports, devices/assets/relations, attributes/telemetry, rules, alarms
+and dashboards. Keep it unforked and track its thin customization set in
+tb-extensions/manifest.yaml. IOT-EE services surround it with identity,
+fine-grained authorization, evidence, billing, AI, consoles and migration
+integration. A bounded context leaves TB only through a new ADR naming
+parity tests, data migration and rollback (0020 Decision 6).
+
+TB's stock outbound Kafka node publishes to a raw topic. An ingestion
+adapter validates, resolves tenants from TB metadata, deduplicates by TB
+message ID and timestamp, and publishes canonical events. Commands,
+attributes, provisioning and administration use TB's documented REST API
+behind ThingsBoardPort. Never write TB tables or read/publish internal TB
+queue topics. No atomicity across TB and Kafka is claimed.
+
+Other infrastructure/provider integrations stay behind owned ports or
+versioned contracts. A replacement needs behavioral and operational
+conformance; alternatives are not presumed equivalent. Broker conformance
+targets Apache Kafka only (ADR 0021). Twinfra supplies hosting, networking,
+PostgreSQL, OpenBao and observability. IOT-EE ships application images,
+Helm charts and Argo CD Applications. Packaging follows ADR 0021 Amendment 1's
+OpenShift compatibility rules; no support claim precedes an accepted live
+receipt. WORM still needs Object Lock conformance.
 
 Enforcement: Maven Enforcer bannedDependencies + ArchUnit autonomy rules, both in the build. Test-scope shared artifacts (ArchUnit rules, checkstyle configs, .proto, JSON Schema) are permitted; runtime shared artifacts with business logic are prohibited.
+
+### Communication direction (application proposal)
+REST over HTTPS through APISIX/BFF; one tenant-authorized multiplexed
+WebSocket per browser; gRPC between deployed services; in-process ports in
+a modular monolith; Kafka for asynchronous events. Devices connect to TB CE
+transports (ADR 0020). The retained application proposal is
+docs/adr/XXXX-proposed-platform-communication-direction.md; historical
+platform references do not override ADR 0021. Workload security follows
+Twinfra's baseline and requires explicit deployment-order verification.
+
+### Tenancy and roles
+Pooled tenant_id + PostgreSQL RLS (ADR 0016); contracts/cfg/cfg.schema.json
+accepts tenant_mode: pooled-rls only. Keep system admin, system operator,
+tenant admin and tenant operator distinct. TB tenant to tenant_id mapping
+and TB customer/user mapping require MS4 design. Tenant operators are not
+automatically TB customer users. Environment-admin channels belong to
+Twinfra (MILESTONES.md); the privileged-environment-access draft is deferred.
 
 ## ADR conventions
 ADRs live in docs/adr/ and are numbered sequentially. The number is assigned at merge, not at branch creation.
@@ -118,36 +160,34 @@ A stage is not complete without all of:
 □ Code implementing the stage's scope
 □ Tests — unit + boundary (ArchUnit for Java, check.py for Python)
 □ Documentation — architecture notes, ADR if the stage introduces a new decision
-□ Deployment artifacts where the stage touches infrastructure (Ansible/Terraform/Helm/Argo CD)
+□ Helm chart and Argo CD Application for Twinfra where the stage touches deployment (ADR 0021, including Amendment 1)
 □ Stage gate passes (mvn verify and/or python spec/scripts/check.py as applicable)
 □ Full regression gate passes (both gates green)
 □ Blocked items recorded explicitly — external verification not available is documented as blocked, not passed
-Supply-chain security scanning (planned — ADR 0014, post-v1.0.0)
-Trivy scans for CVEs in dependencies, container images, IaC misconfigurations, and secrets. SBOM generation and image signing (cosign/Sigstore) are part of the same ADR. Until ADR 0014 is ratified, scanning is not part of the CI gate — do not assume a green build means a clean bill of health.
+Supply-chain security scanning follows accepted ADR 0014: pinned Syft
+SBOMs, Grype image/SBOM scanning and OSV-Scanner for lockfiles and the Maven
+graph, with KEV blocking, cool-off and evidenced exceptions. ADR 0021 adds
+Twinfra's licence gate. IOT-WO-02 implements these CI gates; Part B records
+decisions only. Signing/provenance follows Twinfra's later adoption and is
+outside ADR 0014. Green current CI does not prove these gates exist.
 
 M0–M8 legacy constraints (still binding)
 The original M0 constraint remains in force as a standing rule:
 
 The Python spec tree (spec/) must not provision infrastructure, import legacy data, or execute unrestricted cloud commands.
 
-Migration Studio's data import is a separate concern governed by its own ADR (see docs/adr/0002), and is still pending real legacy system access.
+Migration Studio M1/M9 requirements are migration-manager inputs under ADR 0022. IOT-EE implements migration readiness only; real legacy access and owner approval remain required. ADR 0022 MR-9 requires explicit owner approval for each device-credential step, with no values in logs, events, evidence or Git.
 
 Legacy ThingsBoard CE exports are handled through authorized export, inventory, shadow comparison, and approval — never recreated from memory or screenshots.
 
 Reading order for a new session
-If you are a new agent starting work on this repository, read in this order:
-
-CLAUDE.md (this file) — conventions and current state
-
-docs/adr/0011-platform-architecture-and-language-stack.md — the platform pivot
-
-docs/adr/0012-m9-foundation-scope.md — the current milestone
-
-docs/adr/0013-microservice-autonomy.md — the autonomy rule (renumbered at merge)
-
-docs/adr/README.md — ADR numbering convention
-
-The specific milestone/ADR relevant to your task
+1. AGENTS.md and CLAUDE.md -- the same contract (only the titles differ).
+2. README.md and MILESTONES.md -- status and approved sequence.
+3. docs/adr/README.md, then ADRs 0014 and 0020–0023 -- current decisions and dispositions. ADR 0023 records names; implementation is IOT-WO-05.
+4. docs/requirements-addendum.md -- historical body with its amending header.
+5. ADRs 0011–0013 and 0015–0019 -- read through the supersession map; accepted text stays unchanged.
+6. docs/architecture.md, docs/test-plan.md and the relevant task ADR.
+7. docs/enterprise-readiness-review.md and docs/reviews/iot-ee-review-2026-10-14.md -- dated reviews, not current runtime evidence.
+8. docs/work-orders/IOT-WO-01-snapshot-and-decisions.md -- Part B scope; do not infer authorization for Part C or later orders.
 
 Do not start writing code until you have read the relevant ADR for the work you are about to do.
-
