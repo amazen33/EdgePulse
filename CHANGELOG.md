@@ -9,6 +9,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+## [2.0.0-alpha.1] - 2026-10-18
+
+- MS0 Reset was accepted ([acceptance receipt](docs/acceptance/ms0-reset-2026-10-18.md)).
+
 ### Added
 
 - IOT-WO-01 Part B decision records: ADRs 0014 and 0020–0023, the approved

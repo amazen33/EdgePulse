@@ -22,6 +22,8 @@
       "type": "pull_request",
       "parameters": {
         "required_approving_review_count": 0,
+        "required_reviewers": [],
+        "require_extra_approval_for_unattributed_changes": true,
         "dismiss_stale_reviews_on_push": true,
         "require_code_owner_review": false,
         "require_last_push_approval": false,

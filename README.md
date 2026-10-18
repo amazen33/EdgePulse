@@ -10,9 +10,7 @@ around it, under [ADR 0020](docs/adr/0020-tb-ce-operational-core.md),
 and [migration-manager integration](docs/adr/0022-migration-manager-integration.md).
 The approved roadmap is [MILESTONES.md](MILESTONES.md).
 
-IOT-WO-01 Part C: done ([PR #38](https://github.com/amazen33/EdgePulse/pull/38)).
-IOT-WO-05 (rename): done when the rename PR merges. MS0 remains open until
-an owner-signed MS0 receipt and tag `v2.0.0-alpha.1`.
+MS0 Reset: accepted 2026-10-18 (docs/acceptance/ms0-reset-2026-10-18.md); pre-release v2.0.0-alpha.1. MS1 (IOT-WO-02) and MS2 (IOT-WO-03): not started.
 [MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
 runtime integrations remain pending.
 
