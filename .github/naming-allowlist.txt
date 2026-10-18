@@ -1,0 +1,20 @@
+# Kind | path/glob or exact tag name | reason
+# Globs exempt files and generate the literal tracked-path reference set.
+# The ADR index is standing documentation and is deliberately not included.
+glob | docs/adr/[0-9][0-9][0-9][0-9]-*.md | Historical accepted decisions; never edit accepted ADRs.
+glob | docs/adr/XXXX-proposed-*.md | Retained historical decision drafts; preserve their recorded names.
+glob | docs/work-orders/* | Historical approved work orders, including the exact rename order copy.
+glob | docs/acceptance/* | Historical acceptance receipts; preserve recorded evidence.
+glob | docs/reviews/* | Dated historical reviews; preserve recorded evidence.
+glob | docs/spikes/* | Historical spike evidence; preserve reports and redacted logs.
+glob | deploy/* | Infrastructure frozen by ADR 0021; names remain until deletion is authorized.
+glob | docs/enterprise-readiness-review.md | Historical enterprise review, retained unchanged.
+glob | docs/claude-conformance-audit-2026-09.md | Dated conformance audit, retained unchanged.
+glob | docs/legacy-migration-execution-plan.md | Historical migration input specification, retained unchanged.
+glob | docs/requirements-addendum.md | Historical requirements body; the amending header uses current names.
+glob | MILESTONES.md | Approved milestone plan, retained unchanged.
+glob | CHANGELOG.md | Existing historical entries must remain unchanged.
+glob | RELEASING.md | Historical milestone-tag wording must remain unchanged.
+literal | archive/reconcile-snapshot-2026-09-26 | Immutable snapshot tag; preserve exact references.
+literal | archive/iot-ee-own-infra | Immutable infrastructure archive tag; preserve exact references.
+literal | archive/python-spec-final | Immutable Python reference archive tag; preserve exact references.

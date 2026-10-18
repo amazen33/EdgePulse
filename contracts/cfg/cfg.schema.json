@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://iotee.example/schema/contracts/cfg/cfg.schema.json",
-  "title": "IOT-EE platform service configuration (draft)",
+  "$id": "https://edgepulse.example/schema/contracts/cfg/cfg.schema.json",
+  "title": "EdgePulse platform service configuration (draft)",
   "description": "Draft JSON Schema for a services/* module's cfg.yaml (ADR 0012 Decision 3). Lives under contracts/ (ADR 0013): a shared contract artifact, source only -- every service validates its own cfg.yaml against this same file directly, never through a shared runtime library. Intentionally minimal: only the fields every service is already expected to have (tenant scoping mode, fixed by ADR 0016, and a correlation-id policy toggle). NOT the final schema -- see the Non-goals note in services/identity/README.md. Extend this file, in its own reviewed change, as real configuration surface is added.",
   "type": "object",
   "additionalProperties": false,
@@ -9,7 +9,7 @@
   "properties": {
     "service_name": {
       "type": "string",
-      "description": "Matches this service's Maven artifactId, e.g. \"iotee-service-identity\".",
+      "description": "Matches this service's Maven artifactId, e.g. \"edgepulse-service-identity\".",
       "pattern": "^[a-z][a-z0-9-]*$"
     },
     "tenant_mode": {

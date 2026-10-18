@@ -5,15 +5,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.iotee.platform</groupId>
-    <artifactId>iotee-platform-parent</artifactId>
+    <groupId>com.edgepulse.platform</groupId>
+    <artifactId>edgepulse-platform-parent</artifactId>
     <version>2.0.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>iotee-architecture</artifactId>
+  <artifactId>edgepulse-architecture</artifactId>
   <packaging>jar</packaging>
-  <name>IOT-EE Platform :: architecture</name>
+  <name>EdgePulse Platform :: architecture</name>
   <description>
     Shared ArchUnit rule DEFINITIONS only (ADR 0013 Decision 8): reusable
     ArchRule factory methods and import-scoping helpers that every
@@ -29,7 +29,7 @@
     because it never ships in a runtime artifact. The parent pom's
     enforce-no-shared-runtime Maven Enforcer rule bans a compile- or
     runtime-scope dependency on this artifact (or any other
-    com.iotee.platform:* artifact) -- a consumer must declare
+    com.edgepulse.platform:* artifact) -- a consumer must declare
     &lt;scope&gt;test&lt;/scope&gt; explicitly, exactly the way
     services/identity/pom.xml does.
 

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package com.iotee.platform.contracts.events.v1;
+package com.edgepulse.platform.contracts.events.v1;
 
-option java_package = "com.iotee.platform.contracts.events.v1";
+option java_package = "com.edgepulse.platform.contracts.events.v1";
 option java_outer_classname = "EnvelopeProto";
 option java_multiple_files = true;
 
@@ -36,11 +36,11 @@ message Envelope {
   string id = 1;
 
   // CloudEvents "source": URI identifying the context/service that
-  // produced this envelope, e.g. "urn:iotee:service:identity".
+  // produced this envelope, e.g. "urn:edgepulse:service:identity".
   string source = 2;
 
   // CloudEvents "type": reverse-DNS-style event/command type, e.g.
-  // "com.iotee.identity.tenant.provisioned.v1".
+  // "com.edgepulse.identity.tenant.provisioned.v1".
   string type = 3;
 
   // CloudEvents "specversion": fixed at "1.0" for every envelope this

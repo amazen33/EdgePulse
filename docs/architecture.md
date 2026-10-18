@@ -7,8 +7,8 @@ foundation is evidenced by merged [PR #21](https://github.com/amazen33/EdgePulse
 and [PR #29](https://github.com/amazen33/EdgePulse/pull/29), within their code/test
 scope only. Tool portability, hybrid-cloud, cross-vertical operation and AI
 need milestone receipts before any capability claim. AI remains unimplemented
-F5 work after MS5. The target places TB CE at the operational core, IOT-EE
-services around it and hosting on Twinfra. Legacy version, backend, protocols, credentials and customizations remain unknown until migration-manager produces an authorized inventory (ADR 0022).
+F5 work after MS5. The target places TB CE at the operational core, EdgePulse
+services around it and hosting on Twinfra. Legacy version, backend, protocols, credentials and customizations remain unknown until EdgeMig produces an authorized inventory (ADR 0022).
 
 ## Boundaries and flow
 
@@ -18,26 +18,26 @@ Target data path (ADR 0020 Decision 7):
 
 ```text
 device → TB CE transport → TB rule engine → outbound Kafka node
-       → IOT-EE ingestion adapter → canonical topics
+       → EdgePulse ingestion adapter → canonical topics
        → (Flink → redaction → pgvector → RAG | evidence | billing | …)
 ```
 
 TB CE owns MQTT/HTTP/CoAP transports, devices/assets/relations,
 attributes/telemetry storage, rules, alarms and dashboards. Its stock outbound
-Kafka action node publishes to an IOT-EE raw topic. The ingestion adapter
+Kafka action node publishes to an EdgePulse raw topic. The ingestion adapter
 validates, resolves the tenant from TB message metadata (never payload),
 deduplicates by TB message ID and timestamp, wraps the canonical v1 envelope
 and publishes canonical topics. Redaction precedes every vector write.
 
 TB's cluster queue (`TB_QUEUE_TYPE=kafka`) supplies ingress buffering and is
-separate from canonical topics with ACLs. IOT-EE never reads or publishes TB
+separate from canonical topics with ACLs. EdgePulse never reads or publishes TB
 internal topics and never imports TransportProtos.proto. Edge buffering is
 open, subject to ADR 0021's licence gate.
 
 Commands, attributes, provisioning and tenant administration use TB's
 documented REST API only through ThingsBoardPort, with API keys in OpenBao;
 no direct TB table writes. Consumers require durable tenant-scoped
-idempotency. IOT-EE service state changes and their outbox share a local
+idempotency. EdgePulse service state changes and their outbox share a local
 transaction under ADR 0018. There is no atomic transaction across TB and
 Kafka. Retry, reconciliation, DLQ and replay require implementation and tests.
 
@@ -47,11 +47,11 @@ data migration and rollback (0020 Decision 6). Keycloak federation and
 TB tenant/customer/user mappings require verification. No running integration
 or real-environment test is claimed here.
 
-## Migration-manager integration (ADR 0022)
+## EdgeMig integration (ADR 0022)
 
 M1 and M9, discovery, extraction, transformation, CDC and orchestration move
-to migration-manager. The retained migration documents are its input
-specification. IOT-EE owns MR-1 to MR-14: readiness contracts, tenant
+to EdgeMig. The retained migration documents are its input
+specification. EdgePulse owns MR-1 to MR-14: readiness contracts, tenant
 lifecycle, side-effect fence, reconciliation reads, run-scoped access,
 endpoint transitions and append-only run records. Mode W upgrades an
 approved isolated TB copy using TB procedures; Mode T imports normalized
@@ -88,8 +88,8 @@ Usage metering finalizes UsageMetered events. Optional, separately deployable mo
 ## Application delivery on Twinfra (ADR 0021)
 
 Deployment Studio is dropped by MILESTONES.md; Twinfra supplies deployment.
-Future IOT-EE delivery must provide application images, Helm charts and Argo CD Applications into
-IOT-EE namespaces with default-deny ingress. Existing infrastructure packages
+Future EdgePulse delivery must provide application images, Helm charts and Argo CD Applications into
+EdgePulse namespaces with default-deny ingress. Existing infrastructure packages
 are frozen by ADR 0021 (see [freeze notice](../deploy/FROZEN.md)); removal requires a later deletion work order. This document
 authorizes no host, cluster, infrastructure, deployment or cutover action.
 

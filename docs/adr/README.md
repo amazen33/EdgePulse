@@ -23,8 +23,8 @@ until accepted and numbered at merge.
 | 0019 Decision 3 (data path) | Amended by 0020 Decision 7: TB outbound Kafka → ingestion adapter → canonical topics |
 | 0011 Decision 3 infrastructure stack; 0015 Layer 3 installation | Superseded in the scope stated by 0021: Twinfra hosting and observability |
 | 0018 broker conformance | 0021 drops the alternate broker target; Apache Kafka only |
-| M1/M9 Migration Studio | Moved to migration-manager by 0022; IOT-EE owns MR-1 to MR-14 |
-| Product names | 0023 accepted; renaming is IOT-WO-05, outside Part B |
+| M1/M9 Migration Studio | Moved to EdgeMig by 0022; EdgePulse owns MR-1 to MR-14 |
+| Product names | 0023 accepted; IOT-WO-05 rename is complete when its PR merges; MS0 still requires the owner receipt and release tag |
 
 Accepted ADRs are not edited in place. Read historical text through the
 later superseding/amending record, including 0021 Amendment 1.
@@ -56,7 +56,7 @@ and resilience-and-workflow-patterns. They remain proposed; historical
 references to withdrawn drafts do not reinstate those decisions.
 
 Migration-studio-cdc-and-tenant-rules and
-`docs/legacy-migration-execution-plan.md` carry the ADR 0022 migration-manager
+`docs/legacy-migration-execution-plan.md` carry the ADR 0022 EdgeMig
 input banner. Ai-and-device-adapter-boundaries and
 device-adapter-contract-and-capability-negotiation carry the ADR 0020 revision
 banner. Config-studio, ai-integration-port-and-controls,

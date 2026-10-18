@@ -1,6 +1,6 @@
 # contracts/
 
-Shared contract sources for the IOT-EE platform, per ADR 0013
+Shared contract sources for the EdgePulse platform, per ADR 0013
 (microservice autonomy and contract-based sharing).
 
 This directory holds **source only**: `.proto` files and JSON Schema
