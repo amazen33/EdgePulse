@@ -72,10 +72,16 @@ shopt -u nocasematch
 
 # Capture Git's status separately: a grep error must not become a clean gate.
 matches=$(mktemp)
+needles=$(mktemp)
 remainder_file=$(mktemp .naming-gate-remainder.XXXXXX)
-trap 'rm -f -- "$matches" "$remainder_file"' EXIT
+trap 'rm -f -- "$matches" "$needles" "$remainder_file"' EXIT
+# Select every line that can change after literal removal, as well as every
+# original retired-name hit. Other lines contain neither a needle nor a name.
+# Fixed-string selection also makes the audit include references on lines
+# that have no retired spelling before removal.
+printf '%s\n' 'iot''ee' 'iot''-ee' "${exempt_paths[@]}" "${literals[@]}" > "$needles"
 grep_status=0
-git grep -n -z -a -i -E "$legacy_pattern" -- > "$matches" || grep_status=$?
+git grep -n -z -a -i -F -f "$needles" -- > "$matches" || grep_status=$?
 (( grep_status <= 1 )) || exit "$grep_status"
 while IFS= read -r -d '' path && IFS= read -r -d '' number && IFS= read -r line; do
   if is_exempt_file "$path"; then
