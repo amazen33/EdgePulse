@@ -33,14 +33,14 @@ MS2 defines contracts; MS4–MS6 implement readiness; MS8–MS9 are joint runs.
 Readiness precedes customer-facing feature work beyond the core. Discovery,
 extraction, transformation and migration orchestration belong to migration-manager.
 
-IOT-WO-01 Part B records decisions and updates pointers. Part C (infrastructure
-freeze and Python archival) and IOT-WO-05 (rename) are separate work. Part B
-alone does not complete MS0 or implement a runtime integration.
+IOT-WO-01 Part C (infrastructure freeze and spec/ archive) and IOT-WO-05
+(rename): not started. MS0 remains incomplete. MILESTONES.md defines the
+sequence and required receipts; runtime integrations remain pending.
 
 ### Language and implementation status
 The current build remains Java 17 + Spring Boot / Spring Cloud. ADR 0021
-selects Java 21 and a supported Spring line for IOT-WO-02; Part B does not
-upgrade the build. Python remains limited to RAG and standalone adapters
+selects Java 21 and a supported Spring line; the build upgrade is pending
+IOT-WO-02. Python remains limited to RAG and standalone adapters
 (ADR 0011 Decision 1). The frozen M0–M8 reference implementation stays in
 spec/ until Part C (relocation: merged
 [PR #12](https://github.com/amazen33/EdgePulse/pull/12)); local gates do not
@@ -78,7 +78,7 @@ services/<name>/            autonomous Java services
   └─ correlation/            framework-free correlation-ID context
 adapters/<provider>/        real-backend implementations behind contracts (future Java work; none exist yet)
   └─ (e.g. worm_s3)         built from spec/ patterns; isolated, optional deps
-deploy/                     existing standalone infrastructure packages retained unchanged in Part B; future application delivery is Helm + Argo CD on Twinfra (ADR 0021); see deploy/README.md
+deploy/                     existing standalone infrastructure package sources; future application delivery is Helm + Argo CD on Twinfra (ADR 0021); see deploy/README.md
 spec/                       frozen M0–M8 Python reference implementation (not the platform)
 docs/                       ADRs, architecture guides, inventories
   └─ adr/                   numbered ADRs (0001–present) + README.md convention
@@ -138,8 +138,8 @@ versioned contracts. A replacement needs behavioral and operational
 conformance; alternatives are not presumed equivalent. Broker conformance
 targets Apache Kafka only (ADR 0021). The target uses Twinfra for hosting,
 networking, PostgreSQL, OpenBao and observability. Future application delivery
-must provide images, Helm charts and Argo CD Applications; these are not
-implemented by Part B. Packaging follows ADR 0021 Amendment 1's
+must provide images, Helm charts and Argo CD Applications; these remain
+unimplemented. Packaging follows ADR 0021 Amendment 1's
 OpenShift compatibility rules; no support claim precedes an accepted live
 receipt. WORM still needs Object Lock conformance.
 
@@ -186,8 +186,8 @@ A stage is not complete without all of:
 Supply-chain security scanning follows accepted ADR 0014: pinned Syft
 SBOMs, Grype image/SBOM scanning and OSV-Scanner for lockfiles and the Maven
 graph, with KEV blocking, cool-off and evidenced exceptions. ADR 0021 adds
-Twinfra's licence gate. IOT-WO-02 implements these CI gates; Part B records
-decisions only. Signing/provenance follows Twinfra's later adoption and is
+Twinfra's licence gate. Implementation of these CI gates is pending
+IOT-WO-02. Signing/provenance follows Twinfra's later adoption and is
 outside ADR 0014. Green current CI does not prove these gates exist.
 
 M0–M8 legacy constraints (still binding)
@@ -207,6 +207,6 @@ Reading order for a new session
 5. ADRs 0011–0013 and 0015–0019 -- read through the supersession map; accepted text stays unchanged.
 6. docs/architecture.md, docs/test-plan.md and the relevant task ADR.
 7. docs/enterprise-readiness-review.md and docs/reviews/iot-ee-review-2026-10-14.md -- dated reviews, not current runtime evidence.
-8. docs/work-orders/IOT-WO-01-snapshot-and-decisions.md -- Part B scope; do not infer authorization for Part C or later orders.
+8. docs/work-orders/IOT-WO-01-snapshot-and-decisions.md -- historical work-order scope; only explicitly assigned parts authorize work.
 
 Do not start writing code until you have read the relevant ADR for the work you are about to do.

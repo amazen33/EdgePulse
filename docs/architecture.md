@@ -90,13 +90,13 @@ Usage metering finalizes UsageMetered events. Optional, separately deployable mo
 Deployment Studio is dropped by MILESTONES.md; Twinfra supplies deployment.
 Future IOT-EE delivery must provide application images, Helm charts and Argo CD Applications into
 IOT-EE namespaces with default-deny ingress. Existing infrastructure packages
-are untouched in Part B; their archival/freeze is Part C. This document
+await archival/freeze under IOT-WO-01 Part C, which is not started. This document
 authorizes no host, cluster, infrastructure, deployment or cutover action.
 
 Packaging follows ADR 0021 Amendment 1: arbitrary UID, non-root, restricted
 security context, portable Ingress/Service, configurable storage class and
 platform values profiles. OpenShift/OKD is a compatibility target; support
-requires an accepted live compatibility receipt. No charts are promoted in
-Part B. Twinfra dependencies, gates and real-environment runs remain pending
+requires an accepted live compatibility receipt. Application charts remain
+unimplemented. Twinfra dependencies, gates and real-environment runs remain pending
 their work orders. Instrumentation uses Twinfra's observability baseline.
 Supply-chain scanning follows ADR 0014; implementation is pending IOT-WO-02.

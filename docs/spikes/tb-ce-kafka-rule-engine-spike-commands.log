@@ -26,12 +26,12 @@ sudo -u postgres /usr/lib/postgresql/16/bin/pg_ctl -D "$PGDATA" -l /tmp/pg.log \
 sudo -u postgres /usr/lib/postgresql/16/bin/psql -p 5433 -h 127.0.0.1 -U postgres \
   -c "CREATE DATABASE thingsboard;"
 sudo -u postgres /usr/lib/postgresql/16/bin/psql -p 5433 -h 127.0.0.1 -U postgres \
-  -c "ALTER USER postgres PASSWORD 'synthetic-tb-spike-pw';"
+  -c "ALTER USER postgres PASSWORD '<synthetic-password>';"
 
 ## 3. Install schema (org.thingsboard.server.ThingsboardInstallApplication)
 export SPRING_DATASOURCE_URL="jdbc:postgresql://127.0.0.1:5433/thingsboard"
 export SPRING_DATASOURCE_USERNAME=postgres
-export SPRING_DATASOURCE_PASSWORD=synthetic-tb-spike-pw
+export SPRING_DATASOURCE_PASSWORD='<synthetic-password>'
 export TB_QUEUE_TYPE=in-memory
 java -cp extracted/usr/share/thingsboard/bin/thingsboard.jar \
   -Dloader.main=org.thingsboard.server.ThingsboardInstallApplication \
@@ -54,7 +54,7 @@ java -Dinstall.data_dir=extracted/usr/share/thingsboard/data \
 
 ## 5. Synthetic tenants, tenant admins, devices (documented REST API)
 TOKEN=$(curl -sS -X POST http://127.0.0.1:8082/api/auth/login -H "Content-Type: application/json" \
-  -d '{"username":"sysadmin@thingsboard.org","password":"sysadmin"}' | jq -r .token)
+  -d '{"username":"<tb-default-sysadmin>","password":"<synthetic-password>"}' | jq -r .token)
 
 curl -sS -X POST http://127.0.0.1:8082/api/tenant -H "X-Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" -d '{"title":"spike-tenant-A","region":"Global"}'
@@ -69,7 +69,7 @@ LINK=$(curl -sS -X GET "http://127.0.0.1:8082/api/user/<admin-A-id>/activationLi
   -H "X-Authorization: Bearer $TOKEN")
 # LINK: http://127.0.0.1:8082/api/noauth/activate?activateToken=<token>
 curl -sS -X POST http://127.0.0.1:8082/api/noauth/activate -H "Content-Type: application/json" \
-  -d '{"activateToken":"<token>","password":"SyntheticSpike!2026a"}'
+  -d '{"activateToken":"<token>","password":"<synthetic-password>"}'
 # => tenant-admin-A bearer token
 
 curl -sS -X POST http://127.0.0.1:8082/api/device -H "X-Authorization: Bearer <tenant-admin-A-token>" \

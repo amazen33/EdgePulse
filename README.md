@@ -10,11 +10,10 @@ around it, under [ADR 0020](docs/adr/0020-tb-ce-operational-core.md),
 and [migration-manager integration](docs/adr/0022-migration-manager-integration.md).
 The approved roadmap is [MILESTONES.md](MILESTONES.md).
 
-This change implements **IOT-WO-01 Part B: decision records**. Part C
-(infrastructure freeze and Python archival) and IOT-WO-05 (renaming under
-ADR 0023) remain separate. MS0 is not complete from Part B alone. No
-deployment, real-environment test, migration completion, feature parity or
-compliance claim is made by this change.
+IOT-WO-01 Part C (infrastructure freeze and spec/ archive) and IOT-WO-05
+(rename under ADR 0023): not started. MS0 remains incomplete. Runtime
+integrations and real-environment acceptance remain pending the milestones
+and their receipts in [MILESTONES.md](MILESTONES.md).
 
 Tool-agnostic, hybrid-cloud, cross-vertical and AI capabilities remain
 unproven. Each needs a milestone receipt before it can be claimed. AI is
@@ -26,11 +25,11 @@ below evidence only their stated foundation artifacts and tests.
 | Area | Foundation artifacts / evidence | Next work / evidence required |
 | --- | --- | --- |
 | Java foundation | Maven reactor, correlation, configuration schema and boundary rules ([#14](https://github.com/amazen33/EdgePulse/pull/14), [#17](https://github.com/amazen33/EdgePulse/pull/17)); REST/gRPC query ([#21](https://github.com/amazen33/EdgePulse/pull/21)); caller authorization ([#29](https://github.com/amazen33/EdgePulse/pull/29)) — all merged | Identity federation, persistence, messaging and operational integrations remain unimplemented |
-| Python reference | Frozen specification tree in spec/, relocated by merged [#12](https://github.com/amazen33/EdgePulse/pull/12); real-backend items remain individually blocked | Part C archives/removes it; unchanged in Part B; no platform milestone completion inferred |
-| Decision records | ADRs 0014 and 0020–0023, dispositions and milestone plan included for review in this Part B PR | Human review and merge; later work orders implement decisions |
-| TB CE core | Inventory and plan-only customization manifest from merged [#13](https://github.com/amazen33/EdgePulse/pull/13); dated spike retained as historical input | MS3 deployment/upgrade rehearsal, MS5 event path; no run performed by Part B |
+| Python reference | Frozen specification tree in spec/, relocated by merged [#12](https://github.com/amazen33/EdgePulse/pull/12); real-backend items remain individually blocked | Part C archival/removal not started; no platform milestone completion inferred |
+| Decision records | ADRs 0014 and 0020–0023, the draft dispositions and approved milestone plan define the target | Later work orders implement the decisions |
+| TB CE core | Inventory and plan-only customization manifest from merged [#13](https://github.com/amazen33/EdgePulse/pull/13); dated spike retained as historical input | MS3 deployment/upgrade rehearsal and MS5 event path await implementation and acceptance receipts |
 | Migration | M1/M9 moved to migration-manager; execution plan retained as its input specification | IOT-EE readiness MR-1 to MR-14: MS2 contracts, then MS4–MS6 implementation |
-| Deployment | Existing package sources retained from merged [#30](https://github.com/amazen33/EdgePulse/pull/30), [#31](https://github.com/amazen33/EdgePulse/pull/31) and [#34](https://github.com/amazen33/EdgePulse/pull/34); no deployment claim | Images, Helm charts and Argo CD Applications for Twinfra; no chart promoted by Part B |
+| Deployment | Existing package sources retained from merged [#30](https://github.com/amazen33/EdgePulse/pull/30), [#31](https://github.com/amazen33/EdgePulse/pull/31) and [#34](https://github.com/amazen33/EdgePulse/pull/34); no deployment claim | Images, Helm charts and Argo CD Applications for Twinfra remain unimplemented |
 | Gates and runtime | Java/Python gate definitions from merged [#14](https://github.com/amazen33/EdgePulse/pull/14) and [#12](https://github.com/amazen33/EdgePulse/pull/12); release checks from merged [#36](https://github.com/amazen33/EdgePulse/pull/36) | MS1 / IOT-WO-02 implements accepted licence/supply-chain gates and runtime upgrade |
 
 The snapshot is preserved at `archive/reconcile-snapshot-2026-09-26`;
