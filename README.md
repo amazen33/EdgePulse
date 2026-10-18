@@ -1,8 +1,11 @@
 # IOT-EE
 
-An enterprise, multi-tenant IoT platform with ThingsBoard CE as its
-operational core and autonomous Java services around it. The accepted
-direction is [ADR 0020](docs/adr/0020-tb-ce-operational-core.md),
+EdgePulse is an IoT platform in foundation development. Its partly implemented
+Java foundation is evidenced by merged [PR #14](https://github.com/amazen33/EdgePulse/pull/14),
+[PR #21](https://github.com/amazen33/EdgePulse/pull/21) and
+[PR #29](https://github.com/amazen33/EdgePulse/pull/29). The accepted target
+uses ThingsBoard CE as its operational core with autonomous Java services
+around it, under [ADR 0020](docs/adr/0020-tb-ce-operational-core.md),
 [Twinfra hosting and licence gate](docs/adr/0021-twinfra-platform-and-licence-gate.md)
 and [migration-manager integration](docs/adr/0022-migration-manager-integration.md).
 The approved roadmap is [MILESTONES.md](MILESTONES.md).
@@ -13,17 +16,22 @@ ADR 0023) remain separate. MS0 is not complete from Part B alone. No
 deployment, real-environment test, migration completion, feature parity or
 compliance claim is made by this change.
 
+Tool-agnostic, hybrid-cloud, cross-vertical and AI capabilities remain
+unproven. Each needs a milestone receipt before it can be claimed. AI is
+deferred epic F5 after MS5; no AI execution path is implemented. Merged PRs
+below evidence only their stated foundation artifacts and tests.
+
 ## Status
 
-| Area | Implemented or retained | Next work / evidence required |
+| Area | Foundation artifacts / evidence | Next work / evidence required |
 | --- | --- | --- |
-| Java foundation | Maven reactor, autonomous identity skeleton, tenant-permissions query through REST/gRPC, correlation handling, configuration schema and ArchUnit boundaries | Identity federation, persistence, messaging and operational integrations remain unimplemented |
-| Python reference | Frozen M0–M8 contract-gated slices in spec/; real-backend items remain individually blocked | Part C archives/removes it; unchanged in Part B |
-| Decision records | ADRs 0014 and 0020–0023, draft dispositions and approved milestone plan | Human review and merge; later work orders implement decisions |
-| TB CE core | Declared customization/upgrade manifest and dated spike report as historical input | MS3 deployment/upgrade rehearsal, MS5 event path; no run performed by Part B |
+| Java foundation | Maven reactor, correlation, configuration schema and boundary rules ([#14](https://github.com/amazen33/EdgePulse/pull/14), [#17](https://github.com/amazen33/EdgePulse/pull/17)); REST/gRPC query ([#21](https://github.com/amazen33/EdgePulse/pull/21)); caller authorization ([#29](https://github.com/amazen33/EdgePulse/pull/29)) — all merged | Identity federation, persistence, messaging and operational integrations remain unimplemented |
+| Python reference | Frozen specification tree in spec/, relocated by merged [#12](https://github.com/amazen33/EdgePulse/pull/12); real-backend items remain individually blocked | Part C archives/removes it; unchanged in Part B; no platform milestone completion inferred |
+| Decision records | ADRs 0014 and 0020–0023, dispositions and milestone plan included for review in this Part B PR | Human review and merge; later work orders implement decisions |
+| TB CE core | Inventory and plan-only customization manifest from merged [#13](https://github.com/amazen33/EdgePulse/pull/13); dated spike retained as historical input | MS3 deployment/upgrade rehearsal, MS5 event path; no run performed by Part B |
 | Migration | M1/M9 moved to migration-manager; execution plan retained as its input specification | IOT-EE readiness MR-1 to MR-14: MS2 contracts, then MS4–MS6 implementation |
-| Deployment | Existing standalone infrastructure packages and CI retained unchanged | Images, Helm charts and Argo CD Applications for Twinfra; no chart promoted by Part B |
-| Gates and runtime | Existing Java/Python gates retained | MS1 / IOT-WO-02 implements accepted licence/supply-chain gates and runtime upgrade |
+| Deployment | Existing package sources retained from merged [#30](https://github.com/amazen33/EdgePulse/pull/30), [#31](https://github.com/amazen33/EdgePulse/pull/31) and [#34](https://github.com/amazen33/EdgePulse/pull/34); no deployment claim | Images, Helm charts and Argo CD Applications for Twinfra; no chart promoted by Part B |
+| Gates and runtime | Java/Python gate definitions from merged [#14](https://github.com/amazen33/EdgePulse/pull/14) and [#12](https://github.com/amazen33/EdgePulse/pull/12); release checks from merged [#36](https://github.com/amazen33/EdgePulse/pull/36) | MS1 / IOT-WO-02 implements accepted licence/supply-chain gates and runtime upgrade |
 
 The snapshot is preserved at `archive/reconcile-snapshot-2026-09-26`;
 it is not a merge source wholesale. The dated
@@ -32,6 +40,10 @@ it is not a merge source wholesale. The dated
 evidence limits. They do not establish current runtime readiness.
 
 ## Platform
+
+The integration rows below are accepted design targets, not working platform
+capabilities. Existing foundation evidence is limited to the linked PRs above;
+an ADR alone does not prove implementation, portability or runtime acceptance.
 
 | Concern | Accepted direction / implementation limit | Authority |
 | --- | --- | --- |
@@ -42,16 +54,16 @@ evidence limits. They do not establish current runtime readiness.
 | TB administration | Documented REST API through ThingsBoardPort; API keys in OpenBao; no TB table writes or internal-topic access | 0020, 0021 |
 | Frontend/service calls | HTTPS REST through APISIX/BFF, one scoped WebSocket; gRPC synchronous, Kafka asynchronous; communication draft remains proposed | 0005, 0017, application proposal |
 | Identity/tenancy | Keycloak consoles, CE federation to verify, TB tenant mapping, service JWT verification, pooled tenant_id + PostgreSQL RLS | 0016, 0020, 0022 |
-| Hosting/secrets | Twinfra supplies platform, PostgreSQL and OpenBao; IOT-EE ships application artifacts only | 0021 |
+| Hosting/secrets | Target: Twinfra provides platform, PostgreSQL and OpenBao; future IOT-EE application artifacts are images, Helm charts and Argo CD Applications | 0021 |
 | Observability | Twinfra baseline: Prometheus, OpenTelemetry, Jaeger and Perses; separate traceparent and server-issued correlation IDs | 0015 as amended by 0021 |
-| AI/RAG | Canonical topics → Flink → mandatory redaction → pgvector → tenant-scoped RAG; deferred proposals and unimplemented provider candidates | 0019 as amended by 0020, 0021 |
+| AI/RAG (F5, unimplemented) | Design only: canonical topics → Flink → mandatory redaction → pgvector → tenant-scoped RAG; no AI capability claimed | 0019 as amended by 0020, 0021 |
 | Evidence | Owned S3 port to Twinfra SeaweedFS; Object Lock conformance before WORM claims | 0010, 0021 |
 | Supply chain/licences | Pinned Syft, Grype, OSV-Scanner and Twinfra licence rules; implementation in IOT-WO-02 | 0014, 0021 |
 | Packaging | Helm/Argo CD for Twinfra, portable OpenShift/OKD-compatible packaging; accepted live compatibility receipt before support claims | 0021 Amendment 1 |
 
 M1 discovery/import tooling and M9 cutover orchestration are migration-manager's
 scope. IOT-EE's migration-readiness epic exposes versioned, tenant-authorized
-contracts and APIs. Legacy facts and approvals remain external inputs.
+contracts and APIs as future work. Legacy facts and approvals remain external inputs.
 Feature epics follow MS5 in the approved plan; Deployment Studio is dropped
 because Twinfra supplies deployment.
 

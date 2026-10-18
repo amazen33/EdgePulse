@@ -11,6 +11,15 @@ ThingsBoard preservation: preserve ThingsBoard rules through authorized export, 
 
 Constitutional engineering rules (see ADR 0011 Decision 4 for the full text): no secrets/PII/payment data/private keys/device credentials in source, Git, events, logs, metrics, prompts, or fixtures; server-issued correlation IDs preserved end-to-end; signed device-verified firmware (WebSockets report progress, not binaries); no destructive/infra/deploy/secret-rotation action or test-gate bypass without explicit human approval; no DR/compliance/migration completion claims from local tests alone; RBAC + ABAC + mTLS/JWT/SSO multi-tenancy.
 
+## Claim wording and evidence
+Describe EdgePulse as an IoT platform in foundation development. Every
+completion claim, including "done", must link to a merged PR or receipt
+and state the scope that evidence proves. A merged code PR does not prove
+a runtime integration or milestone acceptance. Do not claim tool-agnostic,
+hybrid-cloud, cross-vertical or AI capability until a milestone receipt
+proves it. Label architecture descriptions as targets; AI remains the
+unimplemented F5 epic. Keep unavailable external verification blocked.
+
 ## Roadmap and current scope
 The approved delivery sequence is [MILESTONES.md](MILESTONES.md), replacing
 the M0–M9, PF-A/B/C, Track and R1–R6 schemes. Its mapping preserves historical
@@ -33,10 +42,16 @@ The current build remains Java 17 + Spring Boot / Spring Cloud. ADR 0021
 selects Java 21 and a supported Spring line for IOT-WO-02; Part B does not
 upgrade the build. Python remains limited to RAG and standalone adapters
 (ADR 0011 Decision 1). The frozen M0–M8 reference implementation stays in
-spec/ until Part C; local gates do not prove real-backend integration.
+spec/ until Part C (relocation: merged
+[PR #12](https://github.com/amazen33/EdgePulse/pull/12)); local gates do not
+prove real-backend integration.
 
-The Java foundation has autonomous services and a hexagonal identity query
-over REST and gRPC. TB CE core integration, Twinfra application packaging
+Merged [PR #14](https://github.com/amazen33/EdgePulse/pull/14) supplies the
+Java bootstrap and boundary gates;
+[PR #21](https://github.com/amazen33/EdgePulse/pull/21) supplies the hexagonal
+identity query over REST and gRPC; and
+[PR #29](https://github.com/amazen33/EdgePulse/pull/29) adds caller authorization.
+These are foundation code/test outcomes, not platform completion. TB CE core integration, Twinfra application packaging
 and migration readiness remain work for later orders, with external
 verification blocked pending those orders and their required access.
 
@@ -93,13 +108,16 @@ Contracts over libraries — communication relies on versioned schemas (Protobuf
 Standard format libraries allowed — Jackson, protobuf-java, CloudEvents SDK, etc. are ordinary per-service third-party dependencies. Do not hand-roll a serializer to "purify" a service.
 
 ### Hexagonal architecture
-Pure domain core — business rules live in a framework-free layer. No org.springframework.., jakarta.servlet.., jakarta.ws.rs.. imports in domain/, rbac/, port/, or application/. Ports and adapters per ADR 0017: dependencies point inward only, each driving adapter depends only on port/in, io.grpc.. only in adapter/in/grpc, org.springframework.web.. only in adapter/in/rest (ArchUnit-enforced per service; see services/identity IdentityHexagonalArchitectureRulesTest).
+Pure domain core — business rules live in a framework-free layer. No org.springframework.., jakarta.servlet.., jakarta.ws.rs.. imports in domain/, rbac/, port/, or application/. Ports and adapters per ADR 0017: dependencies point inward only, each driving adapter depends only on port/in, io.grpc.. only in adapter/in/grpc, org.springframework.web.. only in adapter/in/rest (identity enforcement: merged [PR #21](https://github.com/amazen33/EdgePulse/pull/21); see services/identity IdentityHexagonalArchitectureRulesTest).
 
-Database independence — the domain knows nothing about PostgreSQL, JPA, or SQL. Persistence via repository interfaces (ports); implemented by infrastructure adapters. jakarta.persistence.. annotations permitted; org.hibernate.., org.eclipse.persistence.., and org.jooq.. are denied by ArchUnit rule (no persistence code exists yet, so this rule is currently vacuously satisfied, not exercised against real persistence code).
+Database independence — the domain knows nothing about PostgreSQL, JPA, or SQL. Persistence via repository interfaces (ports); implemented by infrastructure adapters. jakarta.persistence.. annotations permitted; org.hibernate.., org.eclipse.persistence.., and org.jooq.. are denied by the ArchUnit rule added in merged [PR #17](https://github.com/amazen33/EdgePulse/pull/17) (no persistence code exists yet, so the rule is not exercised against real persistence code).
 
 Protocol independence — REST, gRPC, and Kafka are driving/driven adapters. Incoming requests translate to plain Java commands before hitting the domain; domain events translate to Kafka messages at the outer edge.
 
 ### TB CE core and owned integration boundaries (ADRs 0020–0022)
+The following paragraphs are target requirements, not working integration
+claims. No portability, AI or real-environment capability is established.
+
 TB CE is the operational core and system of record for MQTT/HTTP/CoAP
 transports, devices/assets/relations, attributes/telemetry, rules, alarms
 and dashboards. Keep it unforked and track its thin customization set in
@@ -118,13 +136,14 @@ queue topics. No atomicity across TB and Kafka is claimed.
 Other infrastructure/provider integrations stay behind owned ports or
 versioned contracts. A replacement needs behavioral and operational
 conformance; alternatives are not presumed equivalent. Broker conformance
-targets Apache Kafka only (ADR 0021). Twinfra supplies hosting, networking,
-PostgreSQL, OpenBao and observability. IOT-EE ships application images,
-Helm charts and Argo CD Applications. Packaging follows ADR 0021 Amendment 1's
+targets Apache Kafka only (ADR 0021). The target uses Twinfra for hosting,
+networking, PostgreSQL, OpenBao and observability. Future application delivery
+must provide images, Helm charts and Argo CD Applications; these are not
+implemented by Part B. Packaging follows ADR 0021 Amendment 1's
 OpenShift compatibility rules; no support claim precedes an accepted live
 receipt. WORM still needs Object Lock conformance.
 
-Enforcement: Maven Enforcer bannedDependencies + ArchUnit autonomy rules, both in the build. Test-scope shared artifacts (ArchUnit rules, checkstyle configs, .proto, JSON Schema) are permitted; runtime shared artifacts with business logic are prohibited.
+Foundation enforcement: Maven Enforcer bannedDependencies + ArchUnit autonomy rules (merged [PR #14](https://github.com/amazen33/EdgePulse/pull/14), with follow-ups in [PR #17](https://github.com/amazen33/EdgePulse/pull/17)). Test-scope shared artifacts (ArchUnit rules, checkstyle configs, .proto, JSON Schema) are permitted; runtime shared artifacts with business logic are prohibited.
 
 ### Communication direction (application proposal)
 REST over HTTPS through APISIX/BFF; one tenant-authorized multiplexed

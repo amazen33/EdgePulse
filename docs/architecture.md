@@ -1,6 +1,14 @@
 # Target architecture (decisions recorded; integration not implemented)
 
-Current authority: ADRs 0020–0022 and MILESTONES.md. TB CE is the operational core; IOT-EE services surround it and Twinfra supplies the platform. Legacy version, backend, protocols, credentials and customizations remain unknown until migration-manager produces an authorized inventory (ADR 0022).
+Current authority: ADRs 0020–0022 and MILESTONES.md. EdgePulse is an IoT
+platform in foundation development. Every flow and integration below is a
+target requirement, not an implemented capability. The existing identity
+foundation is evidenced by merged [PR #21](https://github.com/amazen33/EdgePulse/pull/21)
+and [PR #29](https://github.com/amazen33/EdgePulse/pull/29), within their code/test
+scope only. Tool portability, hybrid-cloud, cross-vertical operation and AI
+need milestone receipts before any capability claim. AI remains unimplemented
+F5 work after MS5. The target places TB CE at the operational core, IOT-EE
+services around it and hosting on Twinfra. Legacy version, backend, protocols, credentials and customizations remain unknown until migration-manager produces an authorized inventory (ADR 0022).
 
 ## Boundaries and flow
 
@@ -80,7 +88,7 @@ Usage metering finalizes UsageMetered events. Optional, separately deployable mo
 ## Application delivery on Twinfra (ADR 0021)
 
 Deployment Studio is dropped by MILESTONES.md; Twinfra supplies deployment.
-IOT-EE delivers application images, Helm charts and Argo CD Applications into
+Future IOT-EE delivery must provide application images, Helm charts and Argo CD Applications into
 IOT-EE namespaces with default-deny ingress. Existing infrastructure packages
 are untouched in Part B; their archival/freeze is Part C. This document
 authorizes no host, cluster, infrastructure, deployment or cutover action.
@@ -91,4 +99,4 @@ platform values profiles. OpenShift/OKD is a compatibility target; support
 requires an accepted live compatibility receipt. No charts are promoted in
 Part B. Twinfra dependencies, gates and real-environment runs remain pending
 their work orders. Instrumentation uses Twinfra's observability baseline.
-Supply-chain scanning follows ADR 0014, implemented separately in IOT-WO-02.
+Supply-chain scanning follows ADR 0014; implementation is pending IOT-WO-02.

@@ -8,6 +8,10 @@
 > Migration Studio M1/M9 belongs to migration-manager, with IOT-EE readiness
 > MR-1 to MR-14. These decisions take precedence over the historical body
 > below. The approved sequence is [MILESTONES.md](../MILESTONES.md).
+> This is a target specification for an IoT platform in foundation development.
+> Completion claims require linked merged-PR or receipt evidence; tool-agnostic,
+> hybrid-cloud, cross-vertical and AI capabilities require milestone receipts.
+> The unchanged historical body does not establish any such capability.
 
 Status: proposed implementation requirements accepted for roadmap planning; no implemented capability or verified TB feature parity is implied.
 
