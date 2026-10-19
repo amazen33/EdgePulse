@@ -1,0 +1,21 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Release.Name }}-db
+  namespace: {{ .Release.Namespace }}
+spec:
+  instances: 1
+  imageName: {{ required "PostgreSQL image digest is required" .Values.database.image | quote }}
+  enableSuperuserAccess: false
+  bootstrap:
+    initdb:
+      database: thingsboard
+      owner: thingsboard
+      # CNPG generates the app Secret; this chart contains references only.
+  storage:
+    size: {{ .Values.database.size }}
+    {{- if .Values.database.storageClass }}
+    storageClass: {{ .Values.database.storageClass | quote }}
+    {{- end }}
+  resources:
+    {{- toYaml .Values.database.resources | nindent 4 }}

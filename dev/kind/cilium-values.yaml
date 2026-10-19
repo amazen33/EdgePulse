@@ -1,0 +1,37 @@
+# Mode copied from Twinfra module-2/values/cilium.yaml, 2026-10-19.
+# Only local endpoint/cluster identity and public repositories differ.
+kubeProxyReplacement: true
+k8sServiceHost: edgepulse-dev-control-plane
+k8sServicePort: 6443
+containerRuntimeEndpoint: /run/containerd/containerd.sock
+cni:
+  binPath: /opt/cni/bin
+  confPath: /etc/cni/net.d
+  exclusive: false
+bpf:
+  masquerade: true
+  hostLegacyRouting: false
+  autoMount: {enabled: false}
+cgroup:
+  autoMount: {enabled: false}
+  hostRoot: /sys/fs/cgroup
+ipam: {mode: kubernetes}
+ipv4: {enabled: true}
+ipv6: {enabled: false}
+routingMode: native
+ipv4NativeRoutingCIDR: 10.42.0.0/16
+autoDirectNodeRoutes: false
+devices: [eth0]
+cluster: {name: edgepulse-dev}
+bandwidthManager: {enabled: true, bbr: false}
+hostFirewall: {enabled: true}
+policyEnforcementMode: default
+allowLocalhost: policy
+operator:
+  replicas: 1
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: 65532
+    runAsGroup: 65532
+    allowPrivilegeEscalation: false
+    capabilities: {drop: [ALL]}

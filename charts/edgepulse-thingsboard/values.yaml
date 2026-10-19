@@ -1,0 +1,18 @@
+# Twinfra profile. Harness/operator/namespace provisioning is outside this chart.
+image: thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a
+tb:
+  enabled: true
+  resources:
+    requests: {cpu: "500m", memory: 2Gi}
+    limits: {cpu: "2", memory: 4Gi}
+  # Only a freshly sampled UID supplied at rehearsal time; absent on real profiles.
+  rehearsalUid: null
+bootstrap:
+  enabled: false
+database:
+  image: ghcr.io/cloudnative-pg/postgresql@sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0
+  storageClass: edgepulse-postgres
+  size: 20Gi
+  resources:
+    requests: {cpu: "250m", memory: 512Mi}
+    limits: {cpu: "1", memory: 2Gi}

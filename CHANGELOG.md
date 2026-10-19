@@ -9,6 +9,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+- Prepare IOT-WO-04 Amendment 3's namespaced TB CE chart, pinned isolated kind
+  harness, restricted-v2 render and context-guard checks, and local rehearsal
+  record. Live steps require separate owner approval; no milestone receipt.
+
 ## [2.0.0-alpha.3] - 2026-10-18
 
 - MS0 Reset was accepted ([acceptance receipt](docs/acceptance/ms0-reset-2026-10-18.md)). Same content as 2.0.0-alpha.1; tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released (see below).

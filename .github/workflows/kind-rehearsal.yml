@@ -1,0 +1,81 @@
+name: Local kind harness and OpenShift render
+on:
+  pull_request:
+  push:
+    branches: [main, 'codex/iot-wo-04-a3-kind-rehearsal']
+    paths: ['charts/**', 'dev/kind/**', '.github/workflows/kind-rehearsal.yml']
+permissions:
+  contents: read
+jobs:
+  changed-paths:
+    runs-on: ubuntu-24.04
+    outputs:
+      harness: ${{ steps.paths.outputs.harness }}
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0, MIT
+        with: {fetch-depth: 0}
+      - id: paths
+        shell: bash
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          set -euo pipefail
+          [[ "$BASE" =~ ^[0-9a-f]{40}$ ]]
+          if [[ "$BASE" == 0000000000000000000000000000000000000000 ]]; then
+            BASE=$(git rev-parse HEAD^)
+          fi
+          git diff --name-only "$BASE" HEAD > "$RUNNER_TEMP/edgepulse-changed-paths"
+          if grep -E '^(charts/|dev/kind/|\.github/workflows/kind-rehearsal\.yml$)' "$RUNNER_TEMP/edgepulse-changed-paths" > /dev/null; then
+            echo 'harness=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'harness=false' >> "$GITHUB_OUTPUT"
+          fi
+  openshift-render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0, MIT
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0, MIT
+        with: {python-version: '3.12'}
+      - run: python -m pip install PyYAML==6.0.3
+      - name: Verified Helm, all profiles and restricted-v2 negative tests
+        shell: pwsh
+        run: |
+          . ./dev/kind/common.ps1
+          New-Item -ItemType Directory -Force target/kind | Out-Null
+          Get-PinnedFile "https://get.helm.sh/helm-v$($script:Pins.helm.version)-linux-amd64.tar.gz" target/kind/helm.tar.gz $script:Pins.helm.linuxSha256
+          tar -xzf target/kind/helm.tar.gz -C target/kind
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python dev/kind/tests/render_check.py --helm target/kind/linux-amd64/helm
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./dev/kind/tests/guards.ps1
+  kind-smoke:
+    needs: [changed-paths, openshift-render]
+    if: needs.changed-paths.outputs.harness == 'true'
+    # Informational job, not added to required-check rulesets.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      KUBECONFIG: ${{ github.workspace }}/target/kind/kubeconfig
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0, MIT
+      - name: Isolated inert context
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force target/kind | Out-Null
+          Copy-Item dev/kind/kubeconfig.seed.yaml $env:KUBECONFIG
+      - name: Up (disposable GitHub-hosted runner only)
+        shell: pwsh
+        run: ./dev/kind/up.ps1 -Engine CI
+      - name: Install CNPG-backed TB under a newly sampled UID
+        shell: pwsh
+        run: ./dev/kind/install.ps1 -Engine CI
+      - name: Health through loopback port-forward
+        shell: pwsh
+        run: ./dev/kind/smoke.ps1 -Engine CI
+      - name: Tear down only edgepulse-dev
+        if: always()
+        shell: pwsh
+        run: |
+          docker inspect edgepulse-dev-control-plane --format '{{index .Config.Labels "io.x-k8s.kind.cluster"}}' *> $null
+          if ($LASTEXITCODE -eq 0) { ./dev/kind/down.ps1 -Engine CI }
