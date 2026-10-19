@@ -1,0 +1,57 @@
+{
+  "mr": "MR-7",
+  "algorithm": "SHA-256 over UTF-8 JCS sorted-record array",
+  "vectors": [
+    {
+      "name": "SYNTHETIC-month-boundary",
+      "data_class": "telemetry-historical",
+      "records": [
+        {
+          "record_id": "SYNTHETIC-r2",
+          "timestamp_epoch_ms": 1775001600000,
+          "payload": {
+            "temperature": 13
+          }
+        },
+        {
+          "record_id": "SYNTHETIC-r1",
+          "timestamp_epoch_ms": 1775001599999,
+          "payload": {
+            "temperature": 12
+          }
+        }
+      ],
+      "canonical_utf8": "[{\"payload\":{\"temperature\":12},\"record_id\":\"SYNTHETIC-r1\",\"timestamp_epoch_ms\":1775001599999},{\"payload\":{\"temperature\":13},\"record_id\":\"SYNTHETIC-r2\",\"timestamp_epoch_ms\":1775001600000}]",
+      "sha256": "66f102d7a3357871aa98d9d92c72220e8032c6c6c74bab4e4641fac5758f511a"
+    },
+    {
+      "name": "SYNTHETIC-one-field-change",
+      "data_class": "telemetry-historical",
+      "records": [
+        {
+          "record_id": "SYNTHETIC-r2",
+          "timestamp_epoch_ms": 1775001600000,
+          "payload": {
+            "temperature": 13
+          }
+        },
+        {
+          "record_id": "SYNTHETIC-r1",
+          "timestamp_epoch_ms": 1775001599999,
+          "payload": {
+            "temperature": 14
+          }
+        }
+      ],
+      "canonical_utf8": "[{\"payload\":{\"temperature\":14},\"record_id\":\"SYNTHETIC-r1\",\"timestamp_epoch_ms\":1775001599999},{\"payload\":{\"temperature\":13},\"record_id\":\"SYNTHETIC-r2\",\"timestamp_epoch_ms\":1775001600000}]",
+      "sha256": "0f7465bbef391f70c1688f4226530ae55d56e5fa538e3e94a9ec4b3863290a88"
+    },
+    {
+      "name": "SYNTHETIC-empty",
+      "data_class": "telemetry-historical",
+      "records": [],
+      "canonical_utf8": "[]",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ]
+}

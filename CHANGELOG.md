@@ -9,9 +9,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
-- Prepare IOT-WO-04 Amendment 3's namespaced TB CE chart, pinned isolated kind
-  harness, restricted-v2 render and context-guard checks, and local rehearsal
-  record. Live steps require separate owner approval; no milestone receipt.
+### Added
+
+- IOT-WO-03: migration contract `v1.0.0-draft` (MR-1 to MR-14), test-only
+  contract kit, provenance-compatible envelope fields and synthetic reference
+  fixtures. Additive changes only within v1; licence and supply-chain gates
+  remain pending IOT-WO-02. No service or live integration is implemented.
 
 ## [2.0.0-alpha.3] - 2026-10-18
 

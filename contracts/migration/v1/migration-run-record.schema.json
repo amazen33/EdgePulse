@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgepulse.example/contracts/migration/v1/migration-run-record.schema.json",
+  "title": "MR-13 append-only migration run record",
+  "$comment": "MR-13; com.edgepulse.platform.contracts.migration.v1; v1.0.0-draft. Closed machine metadata only; no personal data, credential values, free text, or raw source data.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "run_id",
+    "tenant_id",
+    "contract_version",
+    "recorded_at_epoch_ms",
+    "manifest_sha256",
+    "mapping_sha256",
+    "reconciliation_result_sha256",
+    "approvals",
+    "decision",
+    "previous_record_sha256"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+      "maxLength": 256
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+      "maxLength": 256
+    },
+    "tenant_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+      "maxLength": 256
+    },
+    "contract_version": {
+      "type": "string",
+      "enum": [
+        "v1.0.0-draft"
+      ]
+    },
+    "recorded_at_epoch_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "maxLength": 256
+    },
+    "mapping_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "maxLength": 256
+    },
+    "reconciliation_result_sha256": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$",
+        "maxLength": 256
+      },
+      "minItems": 1,
+      "maxItems": 10000
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "approval_ref",
+          "tier",
+          "approved_at_epoch_ms"
+        ],
+        "properties": {
+          "approval_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "tier": {
+            "type": "string",
+            "enum": [
+              "system-admin",
+              "system-operator"
+            ]
+          },
+          "approved_at_epoch_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 10000
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "go",
+        "no-go"
+      ]
+    },
+    "previous_record_sha256": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "maxLength": 256
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

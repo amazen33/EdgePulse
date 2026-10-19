@@ -1,0 +1,1535 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Tenant migration lifecycle (MR-2 MR-5 MR-6 MR-11 MR-12)",
+    "version": "v1.0.0-draft",
+    "description": "MR-2 MR-5 MR-6 MR-11 MR-12; com.edgepulse.platform.contracts.migration.v1. Contract only; no running API. Additive changes only within v1."
+  },
+  "x-namespace": "com.edgepulse.platform.contracts.migration.v1",
+  "x-mr": "MR-2 MR-5 MR-6 MR-11 MR-12",
+  "security": [
+    {
+      "MigrationOAuth": [
+        "migration.operator"
+      ]
+    }
+  ],
+  "paths": {
+    "/tenants/{tenant_id}/migration/v1/target": {
+      "get": {
+        "operationId": "getMigrationTarget",
+        "x-mr": "MR-2 MR-8",
+        "description": "Publishes the pinned target; legacy version normalization belongs to the consumer. No throughput support is asserted until synthetic live evidence is accepted.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "tb_ce_version",
+                    "import_api_set",
+                    "bulk_load_capacity",
+                    "capacity_gate"
+                  ],
+                  "properties": {
+                    "tb_ce_version": {
+                      "type": "string",
+                      "enum": [
+                        "4.3.1.5"
+                      ]
+                    },
+                    "import_api_set": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "documented-tenant-api",
+                          "documented-device-api",
+                          "documented-telemetry-api",
+                          "documented-attributes-api",
+                          "documented-credentials-api"
+                        ]
+                      },
+                      "minItems": 1,
+                      "maxItems": 10000
+                    },
+                    "bulk_load_capacity": {
+                      "type": "string",
+                      "enum": [
+                        "unproven"
+                      ]
+                    },
+                    "capacity_gate": {
+                      "type": "string",
+                      "enum": [
+                        "IOT-WO-04"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{tenant_id}/migration/v1/tenant": {
+      "post": {
+        "operationId": "createOrAdoptMigrationTenant",
+        "x-mr": "MR-2 MR-5 MR-6",
+        "description": "Requires a pre-authorized tenant-scoped grant for this path ID. Mode W preserves TB UUIDs; Mode T preserves accepted UUIDs or uses the consumer ID map. external_ref is immutable; changes conflict (409). Same run/source identity is idempotent. Every call is audited. Adoption applies to an approved upgraded isolated copy; no direct TB table writes.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tenant"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/vnd.edgepulse.migration.v1+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "run_id",
+                  "mode",
+                  "action",
+                  "tb_tenant_id",
+                  "keycloak_tenant_ref",
+                  "external_ref"
+                ],
+                "properties": {
+                  "run_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "mode": {
+                    "type": "string",
+                    "enum": [
+                      "W",
+                      "T"
+                    ]
+                  },
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "create",
+                      "adopt"
+                    ]
+                  },
+                  "tb_tenant_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "keycloak_tenant_ref": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "external_ref": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "source_system",
+                      "source_id",
+                      "run_id"
+                    ],
+                    "properties": {
+                      "source_system": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                        "maxLength": 256
+                      },
+                      "source_id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                        "maxLength": 256
+                      },
+                      "run_id": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                        "maxLength": 256
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{tenant_id}/migration/v1/state": {
+      "get": {
+        "operationId": "getMigrationTenantState",
+        "x-mr": "MR-2",
+        "description": "Tenant-scoped lifecycle read.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tenant"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "transitionMigrationTenant",
+        "x-mr": "MR-2 MR-3 MR-10 MR-11",
+        "description": "Only x-state-transitions are legal; an expected-state mismatch is 409. Entering cutover or active requires a current tier-1 owner-approved step-up: otherwise 401 with WWW-Authenticate: Bearer error=\"insufficient_user_authentication\" and required acr_values per RFC 9470. approval_ref is mandatory for those two destinations and is resolved server-side, not trusted as proof. Each transition is audited. importing/shadow enforce the MR-3 fence. active blocks purge/restore; endpoint takeover and rollback evidence remain MR-10 work. Mode W retries require pre-adoption backup restoration before restarting importing. No runtime fence is implemented here.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tenant"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/vnd.edgepulse.migration.v1+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "run_id",
+                  "expected_state",
+                  "target_state"
+                ],
+                "properties": {
+                  "run_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "expected_state": {
+                    "type": "string",
+                    "enum": [
+                      "provisioning",
+                      "importing",
+                      "shadow",
+                      "cutover",
+                      "active",
+                      "rolled_back",
+                      "retired"
+                    ]
+                  },
+                  "target_state": {
+                    "type": "string",
+                    "enum": [
+                      "provisioning",
+                      "importing",
+                      "shadow",
+                      "cutover",
+                      "active",
+                      "rolled_back",
+                      "retired"
+                    ]
+                  },
+                  "approval_ref": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{tenant_id}/migration/v1/invitations": {
+      "post": {
+        "operationId": "inviteMigrationUser",
+        "x-mr": "MR-5",
+        "description": "Default identity mapping uses expiring re-enrolment invitations resolved through an authorized identity channel. Never returns a sign-in link or secret. Password-hash import is excluded pending licence and security review; no personal fields are accepted.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "invitation_ref",
+                    "expires_at_epoch_ms",
+                    "correlation_id"
+                  ],
+                  "properties": {
+                    "invitation_ref": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    },
+                    "expires_at_epoch_ms": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "correlation_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/vnd.edgepulse.migration.v1+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "run_id",
+                  "source_user_ref",
+                  "expires_at_epoch_ms"
+                ],
+                "properties": {
+                  "run_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "source_user_ref": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "expires_at_epoch_ms": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{tenant_id}/migration/v1/role-mappings": {
+      "post": {
+        "operationId": "mapMigrationRole",
+        "x-mr": "MR-5",
+        "description": "Resolve user and customer references inside the same tenant. This operation cannot grant tier-1 or environment-admin roles. Cross-tenant references return 403.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "mapping_ref",
+                    "correlation_id"
+                  ],
+                  "properties": {
+                    "mapping_ref": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    },
+                    "correlation_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/vnd.edgepulse.migration.v1+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "run_id",
+                  "tb_user_ref",
+                  "tb_customer_ref",
+                  "subject_ref",
+                  "role"
+                ],
+                "properties": {
+                  "run_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "tb_user_ref": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "tb_customer_ref": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "subject_ref": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "tenant-admin",
+                      "tenant-operator"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{tenant_id}/migration/v1/runs/{run_id}/imports": {
+      "delete": {
+        "operationId": "purgeMigrationImports",
+        "x-mr": "MR-11",
+        "description": "Mode T only: purge imported records for the tenant/run while importing or shadow; refuse all other states with 409, especially active. No arbitrary selector or cross-tenant purge. Mode W uses approved pre-adoption backup restoration instead. Audit and idempotency are required.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          },
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "run_id",
+                    "purge_ref",
+                    "correlation_id"
+                  ],
+                  "properties": {
+                    "run_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    },
+                    "purge_ref": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    },
+                    "correlation_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{tenant_id}/migration/v1/runs/{run_id}/access-references": {
+      "post": {
+        "operationId": "issueMigrationRunAccess",
+        "x-mr": "MR-9 MR-12",
+        "description": "Authenticated migration.operator grant is tenant- and run-scoped and time-boxed. Expiry cannot exceed the grant/run expiry. EdgePulse stores the TB tenant API key in OpenBao and returns only an opaque reference via an authorized retrieval channel; no broad vault or TB sysadmin access. Each credential-migration step separately requires explicit owner approval, verified server-side using credential_step_approval_ref. Credential values never enter this contract or evidence. Every call is audited.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          },
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunAccessReference"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/vnd.edgepulse.migration.v1+json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "expires_at_epoch_ms"
+                ],
+                "properties": {
+                  "expires_at_epoch_ms": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "credential_step_approval_ref": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                    "maxLength": 256
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tenants/{tenant_id}/migration/v1/runs/{run_id}/access-references/{reference_id}": {
+      "delete": {
+        "operationId": "revokeMigrationRunAccess",
+        "x-mr": "MR-12",
+        "description": "Revoke a reference for this tenant/run only; revoked=true. Idempotent and audited. Run completion or expiry revokes every reference automatically.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          },
+          {
+            "name": "run_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          },
+          {
+            "name": "reference_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RunAccessReference"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Problem": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "title",
+          "status",
+          "correlation_id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "status": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 599
+          },
+          "detail": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri"
+          },
+          "correlation_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          }
+        }
+      },
+      "Tenant": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tenant_id",
+          "tb_tenant_id",
+          "keycloak_tenant_ref",
+          "state",
+          "external_ref",
+          "correlation_id"
+        ],
+        "properties": {
+          "tenant_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "tb_tenant_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "keycloak_tenant_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "provisioning",
+              "importing",
+              "shadow",
+              "cutover",
+              "active",
+              "rolled_back",
+              "retired"
+            ]
+          },
+          "external_ref": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_system",
+              "source_id",
+              "run_id"
+            ],
+            "properties": {
+              "source_system": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              },
+              "source_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              },
+              "run_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              }
+            }
+          },
+          "correlation_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          }
+        }
+      },
+      "RunAccessReference": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reference_id",
+          "run_id",
+          "tenant_id",
+          "expires_at_epoch_ms",
+          "revoked"
+        ],
+        "properties": {
+          "reference_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "run_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "tenant_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "expires_at_epoch_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "revoked": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ExternalRef": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_system",
+          "source_id",
+          "run_id"
+        ],
+        "properties": {
+          "source_system": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "source_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "run_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "MigrationOAuth": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://identity.edgepulse.example/oauth2/token",
+            "scopes": {
+              "migration.operator": "Tenant-scoped, time-boxed migration operator grant (MR-12)."
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://identity.edgepulse.example/oauth2/authorize",
+            "tokenUrl": "https://identity.edgepulse.example/oauth2/token",
+            "scopes": {
+              "migration.operator": "Authorized tier-1 user step-up, bound to the same tenant and run grant."
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-state-transitions": {
+    "provisioning": [
+      "importing",
+      "retired"
+    ],
+    "importing": [
+      "shadow",
+      "rolled_back"
+    ],
+    "shadow": [
+      "cutover",
+      "rolled_back"
+    ],
+    "cutover": [
+      "active",
+      "rolled_back"
+    ],
+    "active": [
+      "retired"
+    ],
+    "rolled_back": [
+      "importing",
+      "retired"
+    ],
+    "retired": []
+  },
+  "x-step-up-transitions": [
+    "cutover",
+    "active"
+  ],
+  "x-purge-states": [
+    "importing",
+    "shadow"
+  ]
+}

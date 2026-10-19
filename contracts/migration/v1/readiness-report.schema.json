@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgepulse.example/contracts/migration/v1/readiness-report.schema.json",
+  "title": "MR-1 readiness assessment (not runtime proof)",
+  "$comment": "MR-1; com.edgepulse.platform.contracts.migration.v1; v1.0.0-draft. Closed machine metadata only; no personal data, credential values, free text, or raw source data.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_id",
+    "contract_version",
+    "manifest_sha256",
+    "items"
+  ],
+  "properties": {
+    "report_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+      "maxLength": 256
+    },
+    "contract_version": {
+      "type": "string",
+      "enum": [
+        "v1.0.0-draft"
+      ]
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "maxLength": 256
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "manifest_pointer",
+          "status",
+          "reason",
+          "reference"
+        ],
+        "properties": {
+          "manifest_pointer": {
+            "type": "string",
+            "pattern": "^/[A-Za-z0-9_./~-]+$",
+            "maxLength": 256
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "needs-work",
+              "blocked"
+            ]
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "pinned-format-compatible",
+              "implementation-required",
+              "unsupported-protocol",
+              "unsupported-node-type",
+              "licence-review-required",
+              "inventory-incomplete",
+              "capacity-unproven"
+            ]
+          },
+          "reference": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "kind",
+              "id"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "adr",
+                  "rule-node-type",
+                  "protocol",
+                  "work-order"
+                ]
+              },
+              "id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              }
+            }
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 10000
+    }
+  }
+}
