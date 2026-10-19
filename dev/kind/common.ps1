@@ -52,7 +52,12 @@ function Assert-Engine([string]$Engine, [switch]$OwnerChecksConfirmed) {
         if ($rancher.Count -gt 0 -and $desktop.Count -gt 0) { throw 'Refusing: two desktop engines are running.' }
         if ($Engine -eq 'RancherDesktop') {
             if ($rancher.Count -eq 0 -or $desktop.Count -gt 0) { throw 'Rancher Desktop must be the only running engine.' }
-            $settings = & rdctl list-settings | ConvertFrom-Json
+            $engineBin = Join-Path ([IO.Path]::GetDirectoryName($rancher[0].Path)) 'resources/resources/win32/bin'
+            $rdctl = Join-Path $engineBin 'rdctl.exe'
+            if (-not (Test-Path -LiteralPath $rdctl)) { throw 'Cannot locate the running Rancher Desktop CLI; refusing.' }
+            # Current process only: no machine/user PATH or engine setting changes.
+            $env:PATH = "$engineBin$([IO.Path]::PathSeparator)$env:PATH"
+            $settings = & $rdctl list-settings | ConvertFrom-Json
             if ($LASTEXITCODE -ne 0 -or $settings.containerEngine.name -cne 'moby' -or $settings.kubernetes.enabled) {
                 throw 'Rancher Desktop requires moby and built-in Kubernetes off.'
             }
