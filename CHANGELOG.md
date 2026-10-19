@@ -9,6 +9,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+## [2.0.0-alpha.4] - 2026-10-19
+
+- MS2 migration contract v1 was accepted ([acceptance receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)).
+
 ### Added
 
 - IOT-WO-03: migration contract `v1.0.0-draft` (MR-1 to MR-14), test-only
