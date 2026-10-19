@@ -33,7 +33,7 @@ MS2 defines contracts; MS4–MS6 implement readiness; MS8–MS9 are joint runs.
 Readiness precedes customer-facing feature work beyond the core. Discovery,
 extraction, transformation and migration orchestration belong to EdgeMig.
 
-MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.2 (v2.0.0-alpha.1 was tagged off main and never released). MS1 (IOT-WO-02) and MS2 (IOT-WO-03): not started.
+MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS1 (IOT-WO-02) and MS2 (IOT-WO-03): not started.
 [MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
 runtime integrations remain pending.
 
