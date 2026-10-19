@@ -10,7 +10,7 @@ around it, under [ADR 0020](docs/adr/0020-tb-ce-operational-core.md),
 and [migration-manager integration](docs/adr/0022-migration-manager-integration.md).
 The approved roadmap is [MILESTONES.md](MILESTONES.md).
 
-MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.2 (v2.0.0-alpha.1 was tagged off main and never released). MS1 (IOT-WO-02) and MS2 (IOT-WO-03): not started.
+MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS1 (IOT-WO-02) and MS2 (IOT-WO-03): not started.
 [MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
 runtime integrations remain pending.
 
