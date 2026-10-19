@@ -1,0 +1,3 @@
+# Static target profile only. No Twinfra installation authorized.
+database:
+  storageClass: edgepulse-postgres

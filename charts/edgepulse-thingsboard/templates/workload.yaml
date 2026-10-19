@@ -1,0 +1,50 @@
+{{- if .Values.tb.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "tb.name" . }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  strategy: {type: Recreate}
+  selector:
+    matchLabels: {app.kubernetes.io/name: edgepulse-thingsboard}
+  template:
+    metadata:
+      labels: {app.kubernetes.io/name: edgepulse-thingsboard}
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        {{- include "tb.container" . | nindent 8 }}
+      volumes:
+        - name: temporary
+          emptyDir: {sizeLimit: 256Mi}
+{{- end }}
+{{- if .Values.bootstrap.enabled }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "tb.name" . }}-initialize
+  namespace: {{ .Release.Namespace }}
+spec:
+  backoffLimit: 0
+  activeDeadlineSeconds: 900
+  template:
+    metadata:
+      labels: {app.kubernetes.io/name: edgepulse-thingsboard}
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        {{- include "tb.container" . | nindent 8 }}
+      volumes:
+        - name: temporary
+          emptyDir: {sizeLimit: 256Mi}
+{{- end }}

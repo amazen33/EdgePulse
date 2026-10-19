@@ -1,0 +1,50 @@
+{
+  "kind": {
+    "version": "0.33.0",
+    "licence": "Apache-2.0",
+    "published": "2026-08-26",
+    "windowsSha256": "4b22adaa135368c5a465d56bbd8e520cbea87272a06ca00b6078e7b81515c9fc",
+    "linuxSha256": "aee6151561422756b764a4ae28e7f44cda5af5a9eead3cc9985112b1de8d8e0d",
+    "node": "kindest/node:v1.36.4@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed"
+  },
+  "kubectl": {
+    "version": "1.36.5",
+    "licence": "Apache-2.0",
+    "windowsSha256": "5e87156aa0b20e3c1c66db22a11d898f9a5f787513a3bbd8df2633c207a5a855",
+    "linuxSha256": "33bc88a24c3b09cf55bfd59e6ca977881b61fc3f25ab65bc80c65b430248648e"
+  },
+  "helm": {
+    "version": "3.19.0",
+    "licence": "Apache-2.0",
+    "windowsSha256": "6488630c2e5d5945ed990fa02fd9e99f9c6792cdbcd79eb264b6cfb90179d2d1",
+    "linuxSha256": "a7f81ce08007091b86d8bd696eb4d86b8d0f2e1b9f6c714be62f82f96a594496"
+  },
+  "cilium": {
+    "version": "1.20.2",
+    "licence": "Apache-2.0",
+    "chartSha256": "b2afd87b7f75f875f92a14559f14f59b7babbb479d968e3fd625a20bf30ec20e",
+    "images": {
+      "cilium": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "envoy": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "operator": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc"
+    }
+  },
+  "cnpg": {
+    "version": "1.30.1",
+    "licence": "Apache-2.0",
+    "manifestSha256": "37237f145d8138256ea25ae830f87759255665ff08f8d552fdd8224a5ec032fb",
+    "image": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07"
+  },
+  "thingsboard": {
+    "version": "4.3.1.6",
+    "sourceCommit": "c77335f4a524bb9fe0209806672c6ec7aea76141",
+    "licence": "Apache-2.0",
+    "published": "2026-09-29",
+    "image": "thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a"
+  },
+  "postgresql": {
+    "version": "18.6-system-trixie",
+    "licence": "PostgreSQL",
+    "image": "ghcr.io/cloudnative-pg/postgresql:18.6-system-trixie@sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0"
+  }
+}

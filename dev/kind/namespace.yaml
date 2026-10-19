@@ -1,0 +1,114 @@
+# Harness baseline only; never included in the application chart.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: edgepulse-dev
+  labels:
+    twinfra.io/account: edgepulse-dev
+    pod-security.kubernetes.io/enforce: restricted
+    pod-security.kubernetes.io/enforce-version: v1.36
+    pod-security.kubernetes.io/audit: restricted
+    pod-security.kubernetes.io/warn: restricted
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata: {name: edgepulse-budget, namespace: edgepulse-dev}
+spec:
+  hard:
+    requests.cpu: "3"
+    requests.memory: 4Gi
+    limits.cpu: "4"
+    limits.memory: 6Gi
+    requests.storage: 20Gi
+    persistentvolumeclaims: "2"
+    services.nodeports: "0"
+    services.loadbalancers: "0"
+---
+apiVersion: v1
+kind: LimitRange
+metadata: {name: edgepulse-limits, namespace: edgepulse-dev}
+spec:
+  limits:
+    - type: Container
+      default: {cpu: "1", memory: 512Mi}
+      defaultRequest: {cpu: "100m", memory: 128Mi}
+      max: {cpu: "2", memory: 4Gi}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: default-deny, namespace: edgepulse-dev}
+spec:
+  podSelector: {}
+  policyTypes: [Ingress, Egress]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: dns, namespace: edgepulse-dev}
+spec:
+  podSelector: {}
+  policyTypes: [Egress]
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: kube-system}
+          podSelector:
+            matchLabels: {k8s-app: kube-dns}
+      ports: [{protocol: UDP, port: 53}, {protocol: TCP, port: 53}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: tb-to-database, namespace: edgepulse-dev}
+spec:
+  podSelector:
+    matchLabels: {app.kubernetes.io/name: edgepulse-thingsboard}
+  policyTypes: [Egress]
+  egress:
+    - to:
+        - podSelector:
+            matchLabels: {cnpg.io/cluster: edgepulse-db}
+      ports: [{protocol: TCP, port: 5432}]
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: {name: database-clients, namespace: edgepulse-dev}
+spec:
+  podSelector:
+    matchLabels: {cnpg.io/cluster: edgepulse-db}
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels: {app.kubernetes.io/name: edgepulse-thingsboard}
+      ports: [{protocol: TCP, port: 5432}]
+    - from:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: cnpg-system}
+          podSelector:
+            matchLabels: {app.kubernetes.io/name: cloudnative-pg}
+      ports: [{protocol: TCP, port: 8000}]
+---
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata: {name: database-control, namespace: edgepulse-dev}
+spec:
+  endpointSelector:
+    matchLabels: {cnpg.io/cluster: edgepulse-db}
+  ingress:
+    - fromEntities: [host]
+      toPorts:
+        - ports: [{port: "8000", protocol: TCP}]
+  egress:
+    - toEntities: [kube-apiserver]
+      toPorts:
+        - ports: [{port: "443", protocol: TCP}, {port: "6443", protocol: TCP}]
+---
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata: {name: port-forward-and-probes, namespace: edgepulse-dev}
+spec:
+  endpointSelector:
+    matchLabels: {app.kubernetes.io/name: edgepulse-thingsboard}
+  ingress:
+    - fromEntities: [host]
+      toPorts:
+        - ports: [{port: "8080", protocol: TCP}]
