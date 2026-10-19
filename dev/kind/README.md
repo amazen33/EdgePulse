@@ -19,8 +19,9 @@ mvn -B -f pom.xml verify
 ```
 
 The render test lints three profiles and validates their application and
-initialization renders. Ten tests plant forbidden identities, host access,
-external exposure, missing restrictions and cluster-scoped objects. Guard tests
+initialization renders. Eleven tests plant forbidden identities, host access,
+external exposure, missing restrictions, cluster-scoped objects and missing CNPG
+version metadata. Guard tests
 parse only the committed credential-free seed, then mock the clients: all four entry points must reject a wrong context before any
 engine call. CI renders on every PR; kind-smoke runs for chart/harness changes
 on a disposable GitHub-hosted runner. It is not a required ruleset check.

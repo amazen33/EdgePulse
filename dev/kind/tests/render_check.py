@@ -11,7 +11,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[3]
 CHART = ROOT / "charts/edgepulse-thingsboard"
-DIGEST = re.compile(r"^[a-z0-9./-]+@sha256:[0-9a-f]{64}$")
+DIGEST = re.compile(r"^[a-z0-9./-]+(?::[a-zA-Z0-9._-]+)?@sha256:[0-9a-f]{64}$")
 ALLOWED = {"Deployment", "Job", "Service", "Cluster"}
 
 
@@ -49,6 +49,7 @@ def check(documents):
         elif obj["kind"] == "Cluster":
             require(spec["instances"] == 1, "single database instance required")
             require(DIGEST.fullmatch(spec["imageName"]), "database digest missing")
+            require(re.search(r":[0-9]+\.[0-9]+[^@]*@sha256:", spec["imageName"]), "CNPG requires the PostgreSQL version tag alongside the digest")
             require(memory(spec["resources"]["limits"]["memory"]) <= 2048, "database budget")
         else:
             if obj["kind"] == "Deployment":
@@ -130,6 +131,12 @@ class NegativeChecks(unittest.TestCase):
         for kind in ("NodePort", "LoadBalancer"):
             with self.subTest(kind=kind), self.assertRaises(ValueError):
                 check([{"kind": "Service", "metadata": {"namespace": "edgepulse-dev"}, "spec": {"type": kind}}])
+
+    def test_rejects_digest_only_database_image(self):
+        obj = {"kind": "Cluster", "metadata": {"namespace": "edgepulse-dev"},
+               "spec": {"instances": 1, "imageName": "ghcr.io/cloudnative-pg/postgresql@sha256:" + "0" * 64,
+                        "resources": {"limits": {"memory": "2Gi"}}}}
+        with self.assertRaises(ValueError): check([obj])
 
 
 def main():
