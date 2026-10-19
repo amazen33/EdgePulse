@@ -1,0 +1,727 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://edgepulse.example/contracts/migration/v1/legacy-inventory.schema.json",
+  "title": "MR-1 legacy inventory manifest",
+  "$comment": "MR-1 MR-9; com.edgepulse.platform.contracts.migration.v1; v1.0.0-draft. Closed machine metadata only; no personal data, credential values, free text, or raw source data.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "inventory_id",
+    "contract_version",
+    "tb",
+    "fork",
+    "customizations",
+    "telemetry_backend",
+    "tenants",
+    "devices",
+    "rule_node_types",
+    "integrations",
+    "gateways",
+    "external_dependencies"
+  ],
+  "properties": {
+    "inventory_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+      "maxLength": 256
+    },
+    "contract_version": {
+      "type": "string",
+      "enum": [
+        "v1.0.0-draft"
+      ]
+    },
+    "tb": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edition",
+        "version",
+        "build"
+      ],
+      "properties": {
+        "edition": {
+          "type": "string",
+          "enum": [
+            "community",
+            "professional",
+            "cloud",
+            "unknown"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:\\.[0-9]+)?$",
+          "maxLength": 256
+        },
+        "build": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$",
+          "maxLength": 256
+        }
+      }
+    },
+    "fork": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "forked",
+        "evidence_sha256"
+      ],
+      "properties": {
+        "forked": {
+          "type": "boolean"
+        },
+        "evidence_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "maxLength": 256
+        }
+      }
+    },
+    "customizations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rule_nodes",
+        "scripts",
+        "widgets"
+      ],
+      "properties": {
+        "rule_nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "artifact_id",
+              "license_id",
+              "sha256"
+            ],
+            "properties": {
+              "artifact_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              },
+              "license_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9.-]{0,95}$",
+                "maxLength": 256
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$",
+                "maxLength": 256
+              }
+            }
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "scripts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "artifact_id",
+              "license_id",
+              "sha256"
+            ],
+            "properties": {
+              "artifact_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              },
+              "license_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9.-]{0,95}$",
+                "maxLength": 256
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$",
+                "maxLength": 256
+              }
+            }
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "widgets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "artifact_id",
+              "license_id",
+              "sha256"
+            ],
+            "properties": {
+              "artifact_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              },
+              "license_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9.-]{0,95}$",
+                "maxLength": 256
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$",
+                "maxLength": 256
+              }
+            }
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        }
+      }
+    },
+    "telemetry_backend": {
+      "type": "string",
+      "enum": [
+        "sql",
+        "timescale",
+        "cassandra",
+        "hybrid",
+        "unknown"
+      ]
+    },
+    "tenants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tenant_ref",
+          "counts",
+          "telemetry_rows_per_month"
+        ],
+        "properties": {
+          "tenant_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "counts": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "tenants",
+              "customers",
+              "users",
+              "groups",
+              "roles",
+              "role-assignments",
+              "devices",
+              "assets",
+              "relations",
+              "locations",
+              "customer-assignments",
+              "device-profiles",
+              "asset-profiles",
+              "attributes-server",
+              "attributes-shared",
+              "attributes-client",
+              "desired-state",
+              "reported-state",
+              "telemetry-historical",
+              "telemetry-latest",
+              "rule-chains",
+              "rule-nodes",
+              "scripts",
+              "calculated-fields",
+              "alarm-rules",
+              "alarms-historical",
+              "alarm-history",
+              "alarms-active",
+              "dashboards",
+              "widgets",
+              "maps",
+              "entity-views",
+              "notifications",
+              "report-definitions",
+              "report-exports",
+              "integrations",
+              "transport-config",
+              "queues",
+              "scheduled-jobs",
+              "ota-packages",
+              "ota-rollouts",
+              "audit-events",
+              "debug-events",
+              "logs",
+              "transient-queues",
+              "caches",
+              "sessions",
+              "credential-fingerprints"
+            ],
+            "properties": {
+              "tenants": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "customers": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "users": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "groups": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "roles": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "role-assignments": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "devices": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "assets": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "relations": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "locations": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "customer-assignments": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "device-profiles": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "asset-profiles": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "attributes-server": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "attributes-shared": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "attributes-client": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "desired-state": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "reported-state": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "telemetry-historical": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "telemetry-latest": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "rule-chains": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "rule-nodes": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "scripts": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "calculated-fields": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "alarm-rules": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "alarms-historical": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "alarm-history": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "alarms-active": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "dashboards": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "widgets": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "maps": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "entity-views": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "notifications": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "report-definitions": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "report-exports": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "integrations": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "transport-config": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "queues": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "scheduled-jobs": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "ota-packages": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "ota-rollouts": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "audit-events": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "debug-events": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "logs": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "transient-queues": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "caches": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "sessions": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "credential-fingerprints": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            }
+          },
+          "telemetry_rows_per_month": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "month",
+                "rows"
+              ],
+              "properties": {
+                "month": {
+                  "type": "string",
+                  "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+                  "maxLength": 256
+                },
+                "rows": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                }
+              }
+            },
+            "minItems": 0,
+            "maxItems": 10000
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 10000
+    },
+    "devices": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocols",
+        "ports",
+        "topic_formats",
+        "credential_types"
+      ],
+      "properties": {
+        "protocols": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "mqtt",
+              "http",
+              "coap",
+              "other"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "ports": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        },
+        "topic_formats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_/{}/.+#-]{1,128}$",
+            "maxLength": 256
+          },
+          "minItems": 0,
+          "maxItems": 10000
+        },
+        "credential_types": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "access-token",
+              "x509",
+              "mqtt-basic"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 10000
+        }
+      }
+    },
+    "rule_node_types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "count"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "pattern": "^org\\.thingsboard\\.rule\\.engine\\.[A-Za-z0-9_.]+$",
+            "maxLength": 256
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        }
+      },
+      "minItems": 0,
+      "maxItems": 10000
+    },
+    "integrations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "integration_ref",
+          "kind",
+          "count"
+        ],
+        "properties": {
+          "integration_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "mqtt-mirror",
+              "http",
+              "other"
+            ]
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        }
+      },
+      "minItems": 0,
+      "maxItems": 10000
+    },
+    "gateways": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "gateway_ref",
+          "kind",
+          "count"
+        ],
+        "properties": {
+          "gateway_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "mosquitto",
+              "iot-gateway",
+              "other"
+            ]
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        }
+      },
+      "minItems": 0,
+      "maxItems": 10000
+    },
+    "external_dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "dependency_ref",
+          "kind",
+          "version"
+        ],
+        "properties": {
+          "dependency_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "database",
+              "broker",
+              "identity",
+              "object-store",
+              "other"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$",
+            "maxLength": 256
+          }
+        }
+      },
+      "minItems": 0,
+      "maxItems": 10000
+    }
+  }
+}

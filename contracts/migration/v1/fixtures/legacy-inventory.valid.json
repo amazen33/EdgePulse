@@ -1,0 +1,197 @@
+{
+  "inventory_id": "SYNTHETIC-inventory-1",
+  "contract_version": "v1.0.0-draft",
+  "tb": {
+    "edition": "community",
+    "version": "4.3.1.5",
+    "build": "2cd31ac359214f94b945546830da503ddf80070f"
+  },
+  "fork": {
+    "forked": false,
+    "evidence_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "customizations": {
+    "rule_nodes": [],
+    "scripts": [],
+    "widgets": []
+  },
+  "telemetry_backend": "sql",
+  "tenants": [
+    {
+      "tenant_ref": "SYNTHETIC-tenant-a",
+      "counts": {
+        "tenants": 1,
+        "customers": 0,
+        "users": 0,
+        "groups": 0,
+        "roles": 0,
+        "role-assignments": 0,
+        "devices": 3,
+        "assets": 0,
+        "relations": 0,
+        "locations": 0,
+        "customer-assignments": 0,
+        "device-profiles": 0,
+        "asset-profiles": 0,
+        "attributes-server": 0,
+        "attributes-shared": 0,
+        "attributes-client": 1,
+        "desired-state": 0,
+        "reported-state": 0,
+        "telemetry-historical": 6,
+        "telemetry-latest": 1,
+        "rule-chains": 1,
+        "rule-nodes": 1,
+        "scripts": 0,
+        "calculated-fields": 0,
+        "alarm-rules": 1,
+        "alarms-historical": 1,
+        "alarm-history": 0,
+        "alarms-active": 0,
+        "dashboards": 1,
+        "widgets": 0,
+        "maps": 0,
+        "entity-views": 0,
+        "notifications": 0,
+        "report-definitions": 0,
+        "report-exports": 0,
+        "integrations": 0,
+        "transport-config": 0,
+        "queues": 0,
+        "scheduled-jobs": 0,
+        "ota-packages": 0,
+        "ota-rollouts": 0,
+        "audit-events": 0,
+        "debug-events": 0,
+        "logs": 0,
+        "transient-queues": 0,
+        "caches": 0,
+        "sessions": 0,
+        "credential-fingerprints": 0
+      },
+      "telemetry_rows_per_month": [
+        {
+          "month": "2026-03",
+          "rows": 3
+        },
+        {
+          "month": "2026-04",
+          "rows": 1
+        },
+        {
+          "month": "2026-10",
+          "rows": 2
+        }
+      ]
+    },
+    {
+      "tenant_ref": "SYNTHETIC-tenant-b",
+      "counts": {
+        "tenants": 1,
+        "customers": 0,
+        "users": 0,
+        "groups": 0,
+        "roles": 0,
+        "role-assignments": 0,
+        "devices": 3,
+        "assets": 0,
+        "relations": 0,
+        "locations": 0,
+        "customer-assignments": 0,
+        "device-profiles": 0,
+        "asset-profiles": 0,
+        "attributes-server": 0,
+        "attributes-shared": 0,
+        "attributes-client": 1,
+        "desired-state": 0,
+        "reported-state": 0,
+        "telemetry-historical": 6,
+        "telemetry-latest": 1,
+        "rule-chains": 1,
+        "rule-nodes": 1,
+        "scripts": 0,
+        "calculated-fields": 0,
+        "alarm-rules": 1,
+        "alarms-historical": 1,
+        "alarm-history": 0,
+        "alarms-active": 0,
+        "dashboards": 1,
+        "widgets": 0,
+        "maps": 0,
+        "entity-views": 0,
+        "notifications": 0,
+        "report-definitions": 0,
+        "report-exports": 0,
+        "integrations": 0,
+        "transport-config": 0,
+        "queues": 0,
+        "scheduled-jobs": 0,
+        "ota-packages": 0,
+        "ota-rollouts": 0,
+        "audit-events": 0,
+        "debug-events": 0,
+        "logs": 0,
+        "transient-queues": 0,
+        "caches": 0,
+        "sessions": 0,
+        "credential-fingerprints": 0
+      },
+      "telemetry_rows_per_month": [
+        {
+          "month": "2026-03",
+          "rows": 3
+        },
+        {
+          "month": "2026-04",
+          "rows": 1
+        },
+        {
+          "month": "2026-10",
+          "rows": 2
+        }
+      ]
+    }
+  ],
+  "devices": {
+    "protocols": [
+      "mqtt",
+      "http",
+      "coap"
+    ],
+    "ports": [
+      1883,
+      8883,
+      8080,
+      5683
+    ],
+    "topic_formats": [
+      "v1/devices/me/telemetry"
+    ],
+    "credential_types": [
+      "access-token",
+      "x509",
+      "mqtt-basic"
+    ]
+  },
+  "rule_node_types": [
+    {
+      "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+      "count": 1
+    }
+  ],
+  "integrations": [],
+  "gateways": [
+    {
+      "gateway_ref": "SYNTHETIC-mirror-1",
+      "kind": "mosquitto",
+      "count": 1
+    }
+  ],
+  "external_dependencies": [
+    {
+      "dependency_ref": "SYNTHETIC-db-1",
+      "kind": "database",
+      "version": "16"
+    }
+  ]
+}

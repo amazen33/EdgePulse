@@ -1,0 +1,1276 @@
+{
+  "report_id": "SYNTHETIC-report-1",
+  "contract_version": "v1.0.0-draft",
+  "manifest_sha256": "b448565f3b5e8d45e87c721f57ba2f96e9aa5774cc8d4ebcbbc141b25811c8a1",
+  "items": [
+    {
+      "manifest_pointer": "/inventory_id",
+      "status": "complete",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/contract_version",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tb/edition",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tb/version",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tb/build",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/fork/forked",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/fork/evidence_sha256",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/customizations/rule_nodes",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/customizations/scripts",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/customizations/widgets",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/telemetry_backend",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/tenant_ref",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/tenants",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/customers",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/users",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/groups",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/roles",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/role-assignments",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/devices",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/assets",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/relations",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/locations",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/customer-assignments",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/device-profiles",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/asset-profiles",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/attributes-server",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/attributes-shared",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/attributes-client",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/desired-state",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/reported-state",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/telemetry-historical",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/telemetry-latest",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/rule-chains",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/rule-nodes",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/scripts",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/calculated-fields",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/alarm-rules",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/alarms-historical",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/alarm-history",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/alarms-active",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/dashboards",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/widgets",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/maps",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/entity-views",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/notifications",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/report-definitions",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/report-exports",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/integrations",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/transport-config",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/queues",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/scheduled-jobs",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/ota-packages",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/ota-rollouts",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/audit-events",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/debug-events",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/logs",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/transient-queues",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/caches",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/sessions",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/counts/credential-fingerprints",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/telemetry_rows_per_month/0/month",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/telemetry_rows_per_month/0/rows",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/telemetry_rows_per_month/1/month",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/telemetry_rows_per_month/1/rows",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/telemetry_rows_per_month/2/month",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/0/telemetry_rows_per_month/2/rows",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/tenant_ref",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/tenants",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/customers",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/users",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/groups",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/roles",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/role-assignments",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/devices",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/assets",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/relations",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/locations",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/customer-assignments",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/device-profiles",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/asset-profiles",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/attributes-server",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/attributes-shared",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/attributes-client",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/desired-state",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/reported-state",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/telemetry-historical",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/telemetry-latest",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/rule-chains",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/rule-nodes",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/scripts",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/calculated-fields",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/alarm-rules",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/alarms-historical",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/alarm-history",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/alarms-active",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/dashboards",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/widgets",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/maps",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/entity-views",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/notifications",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/report-definitions",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/report-exports",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/integrations",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/transport-config",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/queues",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/scheduled-jobs",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/ota-packages",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/ota-rollouts",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/audit-events",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/debug-events",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/logs",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/transient-queues",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/caches",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/sessions",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/counts/credential-fingerprints",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/telemetry_rows_per_month/0/month",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/telemetry_rows_per_month/0/rows",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/telemetry_rows_per_month/1/month",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/telemetry_rows_per_month/1/rows",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/telemetry_rows_per_month/2/month",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/tenants/1/telemetry_rows_per_month/2/rows",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/protocols/0",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/protocols/1",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/protocols/2",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/ports/0",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/ports/1",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/ports/2",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/ports/3",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/topic_formats/0",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/credential_types/0",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/credential_types/1",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/devices/credential_types/2",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/rule_node_types/0/type",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/rule_node_types/0/count",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/integrations",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/gateways/0/gateway_ref",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/gateways/0/kind",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/gateways/0/count",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/external_dependencies/0/dependency_ref",
+      "status": "supported",
+      "reason": "pinned-format-compatible",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/external_dependencies/0/kind",
+      "status": "needs-work",
+      "reason": "implementation-required",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    },
+    {
+      "manifest_pointer": "/external_dependencies/0/version",
+      "status": "blocked",
+      "reason": "capacity-unproven",
+      "reference": {
+        "kind": "work-order",
+        "id": "IOT-WO-04"
+      }
+    }
+  ]
+}

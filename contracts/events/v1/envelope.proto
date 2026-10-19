@@ -6,6 +6,17 @@ option java_package = "com.edgepulse.platform.contracts.events.v1";
 option java_outer_classname = "EnvelopeProto";
 option java_multiple_files = true;
 
+// MR-4 (IOT-WO-03 Amendment 1). Zero is deliberately the proto3 default.
+// Old messages decode to ORIGIN_UNSPECIFIED, which consumers treat as live.
+// Consumers must handle provenance explicitly; unknown future values fail
+// closed rather than being interpreted as live or billable history.
+enum Origin {
+  ORIGIN_UNSPECIFIED = 0;
+  ORIGIN_LIVE = 1;
+  ORIGIN_MIGRATION = 2;
+  ORIGIN_REPLAY = 3;
+}
+
 // Platform event/command envelope, CloudEvents v1.0 shaped (ADR 0012
 // Decision 4). This is the ONLY wire envelope this platform uses for
 // events and commands crossing a bounded-context boundary -- Protobuf
@@ -91,4 +102,11 @@ message Envelope {
   // RFC 2046 media type of `data`, e.g. "application/json" or
   // "application/x-protobuf". CloudEvents calls this "datacontenttype".
   string data_content_type = 11;
+
+  // MR-4: origin is explicit for new producers. No old field number changes.
+  Origin origin = 12;
+
+  // Set and non-empty only for ORIGIN_MIGRATION; empty for all other origins.
+  // No credential value or personal data; a tenant-scoped opaque run ID only.
+  string migration_run_id = 13;
 }

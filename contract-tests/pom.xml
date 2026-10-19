@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.edgepulse.platform</groupId>
+    <artifactId>edgepulse-platform-parent</artifactId>
+    <version>2.0.0</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+  <artifactId>edgepulse-contract-tests</artifactId>
+  <name>EdgePulse :: migration contract tests (MR-14)</name>
+  <description>Test sources only. Never consumed by a service or another module.</description>
+  <dependencies>
+    <dependency>
+      <groupId>com.networknt</groupId><artifactId>json-schema-validator</artifactId><scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId><artifactId>jackson-databind</artifactId><scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.dataformat</groupId><artifactId>jackson-dataformat-yaml</artifactId><scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger.parser.v3</groupId><artifactId>swagger-parser</artifactId><version>2.1.24</version><scope>test</scope>
+      <exclusions>
+        <!-- Only OpenAPI 3 is accepted; do not add the unused Swagger 2 converter. -->
+        <exclusion><groupId>io.swagger.parser.v3</groupId><artifactId>swagger-parser-v2-converter</artifactId></exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>io.github.erdtman</groupId><artifactId>java-json-canonicalization</artifactId><version>1.1</version><scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId></plugin>
+      <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId></plugin>
+    </plugins>
+  </build>
+</project>

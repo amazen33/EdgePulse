@@ -1,0 +1,22 @@
+{
+  "record_id": "SYNTHETIC-record-1",
+  "run_id": "SYNTHETIC-run-1",
+  "tenant_id": "SYNTHETIC-tenant-a",
+  "contract_version": "v1.0.0-draft",
+  "recorded_at_epoch_ms": 1775001600000,
+  "manifest_sha256": "b448565f3b5e8d45e87c721f57ba2f96e9aa5774cc8d4ebcbbc141b25811c8a1",
+  "mapping_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "reconciliation_result_sha256": [
+    "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  ],
+  "approvals": [
+    {
+      "approval_ref": "SYNTHETIC-approval-1",
+      "tier": "system-admin",
+      "approved_at_epoch_ms": 1775001599000
+    }
+  ],
+  "decision": "go",
+  "previous_record_sha256": null,
+  "raw_data": "SYNTHETIC-FORBIDDEN-RAW-DATA"
+}

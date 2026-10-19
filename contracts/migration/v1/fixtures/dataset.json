@@ -1,0 +1,206 @@
+{
+  "contract_version": "v1.0.0-draft",
+  "tb_ce_version": "4.3.1.5",
+  "tenants": [
+    {
+      "id": "SYNTHETIC-tenant-a",
+      "devices": [
+        {
+          "id": "SYNTHETIC-a-device-0",
+          "credential_type": "access-token",
+          "credentials": {
+            "value": "SYNTHETIC-NOT-AN-ACCESS-TOKEN"
+          }
+        },
+        {
+          "id": "SYNTHETIC-a-device-1",
+          "credential_type": "x509",
+          "credentials": {
+            "fingerprint": "SYNTHETIC-NOT-AN-X509-FINGERPRINT"
+          }
+        },
+        {
+          "id": "SYNTHETIC-a-device-2",
+          "credential_type": "mqtt-basic",
+          "credentials": {
+            "username": "SYNTHETIC-NOT-A-USERNAME",
+            "password": "SYNTHETIC-NOT-A-PASSWORD"
+          }
+        }
+      ],
+      "telemetry": [
+        {
+          "record_id": "SYNTHETIC-a-sample-0",
+          "device_id": "SYNTHETIC-a-device-0",
+          "timestamp_epoch_ms": 1774745999999,
+          "key": "temperature",
+          "value": 10
+        },
+        {
+          "record_id": "SYNTHETIC-a-sample-1",
+          "device_id": "SYNTHETIC-a-device-0",
+          "timestamp_epoch_ms": 1774746000000,
+          "key": "temperature",
+          "value": 11
+        },
+        {
+          "record_id": "SYNTHETIC-a-sample-2",
+          "device_id": "SYNTHETIC-a-device-0",
+          "timestamp_epoch_ms": 1775001599999,
+          "key": "temperature",
+          "value": 12
+        },
+        {
+          "record_id": "SYNTHETIC-a-sample-3",
+          "device_id": "SYNTHETIC-a-device-0",
+          "timestamp_epoch_ms": 1775001600000,
+          "key": "temperature",
+          "value": 13
+        },
+        {
+          "record_id": "SYNTHETIC-a-sample-4",
+          "device_id": "SYNTHETIC-a-device-0",
+          "timestamp_epoch_ms": 1792889999999,
+          "key": "temperature",
+          "value": 14
+        },
+        {
+          "record_id": "SYNTHETIC-a-sample-5",
+          "device_id": "SYNTHETIC-a-device-0",
+          "timestamp_epoch_ms": 1792890000000,
+          "key": "temperature",
+          "value": 15
+        }
+      ],
+      "rule_chain": {
+        "id": "SYNTHETIC-a-disabled-chain",
+        "enabled": false,
+        "node_types": [
+          "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+        ],
+        "alarm_type": "SYNTHETIC-temperature-high"
+      },
+      "dashboard": {
+        "id": "SYNTHETIC-a-dashboard",
+        "widget_type": "timeseries",
+        "device_id": "SYNTHETIC-a-device-0"
+      },
+      "historical_alarms": [
+        {
+          "id": "SYNTHETIC-a-alarm",
+          "created_at_epoch_ms": 1774746000000,
+          "status": "CLEARED_ACK",
+          "re_raise": false
+        }
+      ],
+      "attributes": [
+        {
+          "device_id": "SYNTHETIC-a-device-0",
+          "scope": "CLIENT_SCOPE",
+          "key": "model",
+          "value": "SYNTHETIC-sensor"
+        }
+      ]
+    },
+    {
+      "id": "SYNTHETIC-tenant-b",
+      "devices": [
+        {
+          "id": "SYNTHETIC-b-device-0",
+          "credential_type": "access-token",
+          "credentials": {
+            "value": "SYNTHETIC-NOT-AN-ACCESS-TOKEN"
+          }
+        },
+        {
+          "id": "SYNTHETIC-b-device-1",
+          "credential_type": "x509",
+          "credentials": {
+            "fingerprint": "SYNTHETIC-NOT-AN-X509-FINGERPRINT"
+          }
+        },
+        {
+          "id": "SYNTHETIC-b-device-2",
+          "credential_type": "mqtt-basic",
+          "credentials": {
+            "username": "SYNTHETIC-NOT-A-USERNAME",
+            "password": "SYNTHETIC-NOT-A-PASSWORD"
+          }
+        }
+      ],
+      "telemetry": [
+        {
+          "record_id": "SYNTHETIC-b-sample-0",
+          "device_id": "SYNTHETIC-b-device-0",
+          "timestamp_epoch_ms": 1774745999999,
+          "key": "temperature",
+          "value": 10
+        },
+        {
+          "record_id": "SYNTHETIC-b-sample-1",
+          "device_id": "SYNTHETIC-b-device-0",
+          "timestamp_epoch_ms": 1774746000000,
+          "key": "temperature",
+          "value": 11
+        },
+        {
+          "record_id": "SYNTHETIC-b-sample-2",
+          "device_id": "SYNTHETIC-b-device-0",
+          "timestamp_epoch_ms": 1775001599999,
+          "key": "temperature",
+          "value": 12
+        },
+        {
+          "record_id": "SYNTHETIC-b-sample-3",
+          "device_id": "SYNTHETIC-b-device-0",
+          "timestamp_epoch_ms": 1775001600000,
+          "key": "temperature",
+          "value": 13
+        },
+        {
+          "record_id": "SYNTHETIC-b-sample-4",
+          "device_id": "SYNTHETIC-b-device-0",
+          "timestamp_epoch_ms": 1792889999999,
+          "key": "temperature",
+          "value": 14
+        },
+        {
+          "record_id": "SYNTHETIC-b-sample-5",
+          "device_id": "SYNTHETIC-b-device-0",
+          "timestamp_epoch_ms": 1792890000000,
+          "key": "temperature",
+          "value": 15
+        }
+      ],
+      "rule_chain": {
+        "id": "SYNTHETIC-b-disabled-chain",
+        "enabled": false,
+        "node_types": [
+          "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+        ],
+        "alarm_type": "SYNTHETIC-temperature-high"
+      },
+      "dashboard": {
+        "id": "SYNTHETIC-b-dashboard",
+        "widget_type": "timeseries",
+        "device_id": "SYNTHETIC-b-device-0"
+      },
+      "historical_alarms": [
+        {
+          "id": "SYNTHETIC-b-alarm",
+          "created_at_epoch_ms": 1774746000000,
+          "status": "CLEARED_ACK",
+          "re_raise": false
+        }
+      ],
+      "attributes": [
+        {
+          "device_id": "SYNTHETIC-b-device-0",
+          "scope": "CLIENT_SCOPE",
+          "key": "model",
+          "value": "SYNTHETIC-sensor"
+        }
+      ]
+    }
+  ]
+}

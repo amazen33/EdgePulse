@@ -1,0 +1,71 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "EdgePulse import-safe root (MR-3)",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": true,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Import historical timeseries",
+        "configurationVersion": 1,
+        "configuration": {
+          "defaultTTL": 0,
+          "useServerTs": false,
+          "processingSettings": {
+            "type": "ADVANCED",
+            "timeseries": {
+              "type": "ON_EVERY_MESSAGE"
+            },
+            "latest": {
+              "type": "ON_EVERY_MESSAGE"
+            },
+            "webSockets": {
+              "type": "SKIP"
+            },
+            "calculatedFields": {
+              "type": "SKIP"
+            }
+          }
+        }
+      },
+      {
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode",
+        "name": "Import attributes",
+        "configurationVersion": 3,
+        "configuration": {
+          "scope": "CLIENT_SCOPE",
+          "notifyDevice": false,
+          "sendAttributesUpdatedNotification": false,
+          "updateAttributesOnlyOnValueChange": true,
+          "processingSettings": {
+            "type": "ADVANCED",
+            "attributes": {
+              "type": "ON_EVERY_MESSAGE"
+            },
+            "webSockets": {
+              "type": "SKIP"
+            },
+            "calculatedFields": {
+              "type": "SKIP"
+            }
+          }
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "Failure"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

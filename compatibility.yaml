@@ -7,5 +7,5 @@ requires:
   # ThingsBoard CE is the operational core (EdgePulse ADR 0020); pinned in tb-extensions/manifest.yaml.
   thingsboard-ce: "4.3.1.x"
 provides:
-  # contracts/migration/v1, published by IOT-WO-03 (EdgePulse ADR 0022). Not published yet.
-  edgepulse-migration-contract: "v1 (planned)"
+  # contracts/migration/v1 (ADR 0022); licence/supply-chain gates pending IOT-WO-02.
+  edgepulse-migration-contract: "v1.0.0-draft"
