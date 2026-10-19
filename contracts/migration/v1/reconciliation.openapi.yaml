@@ -1,0 +1,578 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Tenant reconciliation reads (MR-7 MR-9)",
+    "version": "v1.0.0-draft",
+    "description": "MR-7 MR-9; com.edgepulse.platform.contracts.migration.v1. Contract only; no running API. Additive changes only within v1."
+  },
+  "x-namespace": "com.edgepulse.platform.contracts.migration.v1",
+  "x-mr": "MR-7 MR-9",
+  "security": [
+    {
+      "MigrationOAuth": [
+        "migration.operator"
+      ]
+    }
+  ],
+  "paths": {
+    "/tenants/{tenant_id}/migration/v1/reconciliation": {
+      "get": {
+        "operationId": "getMigrationReconciliation",
+        "x-mr": "MR-7 MR-9",
+        "description": "Read-only: TB-held data is read through ThingsBoardPort; service data through owned ports. Authorization binds tenant path, device filters and a stable watermark; a cross-tenant selection is 403, never empty success. Each cursor is opaque and bound to tenant, selection, page size and watermark; mismatched/reused-for-other-scope cursors are 400/403. Pages cover the same snapshot; page boundaries never change the per-class digest defined in digest-spec.md. Digests over approved redacted projections only; credential comparisons use salted fingerprints, never values.",
+        "parameters": [
+          {
+            "name": "tenant_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          },
+          {
+            "name": "selection",
+            "in": "query",
+            "required": true,
+            "style": "deepObject",
+            "explode": true,
+            "description": "Exactly one half-open UTC window [from,to), with from < to, or an as-of snapshot. Integer epoch milliseconds; invalid selection or watermark ahead of the requested position is 400.",
+            "schema": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "kind",
+                    "from_epoch_ms",
+                    "to_epoch_ms"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "window"
+                      ]
+                    },
+                    "from_epoch_ms": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "to_epoch_ms": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "kind",
+                    "as_of_epoch_ms"
+                  ],
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "snapshot"
+                      ]
+                    },
+                    "as_of_epoch_ms": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 9007199254740991
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name": "watermark",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          },
+          {
+            "name": "device_ref",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 500,
+              "default": 100
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+              "maxLength": 256
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/vnd.edgepulse.migration.v1+json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "tenant_id",
+                    "watermark",
+                    "selection",
+                    "results"
+                  ],
+                  "properties": {
+                    "tenant_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    },
+                    "watermark": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    },
+                    "selection": {
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "kind",
+                            "from_epoch_ms",
+                            "to_epoch_ms"
+                          ],
+                          "properties": {
+                            "kind": {
+                              "type": "string",
+                              "enum": [
+                                "window"
+                              ]
+                            },
+                            "from_epoch_ms": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "to_epoch_ms": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991
+                            }
+                          }
+                        },
+                        {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "required": [
+                            "kind",
+                            "as_of_epoch_ms"
+                          ],
+                          "properties": {
+                            "kind": {
+                              "type": "string",
+                              "enum": [
+                                "snapshot"
+                              ]
+                            },
+                            "as_of_epoch_ms": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 9007199254740991
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                          "data_class",
+                          "count",
+                          "sha256",
+                          "owner"
+                        ],
+                        "properties": {
+                          "data_class": {
+                            "type": "string",
+                            "enum": [
+                              "tenants",
+                              "customers",
+                              "users",
+                              "groups",
+                              "roles",
+                              "role-assignments",
+                              "devices",
+                              "assets",
+                              "relations",
+                              "locations",
+                              "customer-assignments",
+                              "device-profiles",
+                              "asset-profiles",
+                              "attributes-server",
+                              "attributes-shared",
+                              "attributes-client",
+                              "desired-state",
+                              "reported-state",
+                              "telemetry-historical",
+                              "telemetry-latest",
+                              "rule-chains",
+                              "rule-nodes",
+                              "scripts",
+                              "calculated-fields",
+                              "alarm-rules",
+                              "alarms-historical",
+                              "alarm-history",
+                              "alarms-active",
+                              "dashboards",
+                              "widgets",
+                              "maps",
+                              "entity-views",
+                              "notifications",
+                              "report-definitions",
+                              "report-exports",
+                              "integrations",
+                              "transport-config",
+                              "queues",
+                              "scheduled-jobs",
+                              "ota-packages",
+                              "ota-rollouts",
+                              "audit-events",
+                              "debug-events",
+                              "logs",
+                              "transient-queues",
+                              "caches",
+                              "sessions",
+                              "credential-fingerprints"
+                            ]
+                          },
+                          "count": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 9007199254740991
+                          },
+                          "sha256": {
+                            "type": "string",
+                            "pattern": "^[0-9a-f]{64}$",
+                            "maxLength": 256
+                          },
+                          "owner": {
+                            "type": "string",
+                            "enum": [
+                              "tb-adapter",
+                              "edgepulse-service"
+                            ]
+                          }
+                        }
+                      },
+                      "minItems": 0,
+                      "maxItems": 10000
+                    },
+                    "next_cursor": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                      "maxLength": 256
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            },
+            "headers": {
+              "WWW-Authenticate": {
+                "required": true,
+                "description": "RFC 9470 challenge when a tier-1 step-up is required; otherwise the normal bearer challenge.",
+                "schema": {
+                  "type": "string"
+                },
+                "example": "Bearer error=\"insufficient_user_authentication\", acr_values=\"urn:edgepulse:acr:tier1-step-up\""
+              }
+            }
+          },
+          "403": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Redacted RFC 9457 problem; cross-tenant access is refused, never an empty success.",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Problem": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "type",
+          "title",
+          "status",
+          "correlation_id"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 128
+          },
+          "status": {
+            "type": "integer",
+            "minimum": 400,
+            "maximum": 599
+          },
+          "detail": {
+            "type": "string",
+            "maxLength": 256
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri"
+          },
+          "correlation_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          }
+        }
+      },
+      "Tenant": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "tenant_id",
+          "tb_tenant_id",
+          "keycloak_tenant_ref",
+          "state",
+          "external_ref",
+          "correlation_id"
+        ],
+        "properties": {
+          "tenant_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "tb_tenant_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "keycloak_tenant_ref": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "provisioning",
+              "importing",
+              "shadow",
+              "cutover",
+              "active",
+              "rolled_back",
+              "retired"
+            ]
+          },
+          "external_ref": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "source_system",
+              "source_id",
+              "run_id"
+            ],
+            "properties": {
+              "source_system": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              },
+              "source_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              },
+              "run_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+                "maxLength": 256
+              }
+            }
+          },
+          "correlation_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          }
+        }
+      },
+      "RunAccessReference": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reference_id",
+          "run_id",
+          "tenant_id",
+          "expires_at_epoch_ms",
+          "revoked"
+        ],
+        "properties": {
+          "reference_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "run_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "tenant_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "expires_at_epoch_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "revoked": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ExternalRef": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_system",
+          "source_id",
+          "run_id"
+        ],
+        "properties": {
+          "source_system": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "source_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          },
+          "run_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$",
+            "maxLength": 256
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "MigrationOAuth": {
+        "type": "oauth2",
+        "flows": {
+          "clientCredentials": {
+            "tokenUrl": "https://identity.edgepulse.example/oauth2/token",
+            "scopes": {
+              "migration.operator": "Tenant-scoped, time-boxed migration operator grant (MR-12)."
+            }
+          },
+          "authorizationCode": {
+            "authorizationUrl": "https://identity.edgepulse.example/oauth2/authorize",
+            "tokenUrl": "https://identity.edgepulse.example/oauth2/token",
+            "scopes": {
+              "migration.operator": "Authorized tier-1 user step-up, bound to the same tenant and run grant."
+            }
+          }
+        }
+      }
+    }
+  }
+}

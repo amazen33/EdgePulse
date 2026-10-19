@@ -30,6 +30,7 @@
   <modules>
     <module>architecture</module>
     <module>services/identity</module>
+    <module>contract-tests</module>
   </modules>
 
   <properties>
@@ -290,6 +291,20 @@
         <artifactId>maven-enforcer-plugin</artifactId>
         <version>${maven-enforcer-plugin.version}</version>
         <executions>
+          <execution>
+            <id>enforce-contract-tests-not-consumable</id>
+            <goals><goal>enforce</goal></goals>
+            <configuration>
+              <rules>
+                <bannedDependencies>
+                  <excludes>
+                    <exclude>com.edgepulse.platform:edgepulse-contract-tests</exclude>
+                  </excludes>
+                  <message>IOT-WO-03 Amendment 1: contract-tests is a test-only reactor module; no module may depend on it in any scope.</message>
+                </bannedDependencies>
+              </rules>
+            </configuration>
+          </execution>
           <execution>
             <id>enforce-no-shared-runtime</id>
             <goals>

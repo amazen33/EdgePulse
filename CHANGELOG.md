@@ -9,6 +9,13 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+### Added
+
+- IOT-WO-03: migration contract `v1.0.0-draft` (MR-1 to MR-14), test-only
+  contract kit, provenance-compatible envelope fields and synthetic reference
+  fixtures. Additive changes only within v1; licence and supply-chain gates
+  remain pending IOT-WO-02. No service or live integration is implemented.
+
 ## [2.0.0-alpha.3] - 2026-10-18
 
 - MS0 Reset was accepted ([acceptance receipt](docs/acceptance/ms0-reset-2026-10-18.md)). Same content as 2.0.0-alpha.1; tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released (see below).
