@@ -79,3 +79,4 @@ jobs:
         run: |
           docker inspect edgepulse-dev-control-plane --format '{{index .Config.Labels "io.x-k8s.kind.cluster"}}' *> $null
           if ($LASTEXITCODE -eq 0) { ./dev/kind/down.ps1 -Engine CI }
+          else { Write-Output 'No owned node exists; nothing to delete.'; exit 0 }

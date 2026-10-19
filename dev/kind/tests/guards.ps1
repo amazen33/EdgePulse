@@ -1,5 +1,9 @@
-# Static tests: functions replace clients; no engine, kubeconfig or cluster read.
+# Parse only the committed credential-free seed, then replace clients.
+# No engine or cluster is contacted and no user kubeconfig is read.
 . "$PSScriptRoot/../common.ps1"
+$seedServer = (& kubectl --kubeconfig "$PSScriptRoot/../kubeconfig.seed.yaml" config view --minify '-o=jsonpath={.clusters[0].cluster.server}') -join ''
+if ($LASTEXITCODE -ne 0 -or $seedServer -cne 'https://127.0.0.1:1') { throw 'Inert seed does not parse as an isolated context' }
+Write-Output 'Committed credential-free seed parses locally: PASS'
 $originalConfig = $env:KUBECONFIG
 $env:KUBECONFIG = Join-Path $script:State 'kubeconfig'
 $global:MutationCalls = 0
