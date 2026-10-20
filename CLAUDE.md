@@ -79,7 +79,7 @@ services/<name>/            autonomous Java services
   └─ correlation/            framework-free correlation-ID context
 adapters/<provider>/        real-backend implementations behind contracts (future Java work; none exist yet)
   └─ (e.g. worm_s3)         patterns archived at archive/python-spec-final:spec/; isolated, optional deps
-deploy/                     frozen infrastructure sources (ADR 0021; deploy/FROZEN.md); future application delivery is Helm + Argo CD on Twinfra
+archive/iot-ee-own-infra     tag containing retired own-infrastructure sources (ADR 0021; IOT-WO-07)
 archive/python-spec-final   tag containing spec/ (M0–M8 Python reference; absent from the active checkout)
 docs/                       ADRs, architecture guides, inventories
   └─ adr/                   numbered ADRs (0001–present) + README.md convention
@@ -90,13 +90,12 @@ docs/, AGENTS.md, CLAUDE.md, README.md, MILESTONES.md, .github/workflows/ stay a
 
 ## Gates
 
-The Java and naming gates run in CI on every change. The existing infrastructure gate runs on deploy/ changes and is retained unchanged. Each gate must pass for changes touching its scope. The archived Python specification has no active CI job.
+The Java and naming gates run in CI on every change. Each gate must pass for changes touching its scope. The former infrastructure sources and their static gate are preserved in [archive/iot-ee-own-infra](https://github.com/amazen33/EdgePulse/tree/archive/iot-ee-own-infra). The archived Python specification has no active CI job. The current licence-gate sequence is documented in [security/README.md](security/README.md).
 
 | Gate | Command | Scope |
 | --- | --- | --- |
 | Java platform gate | `mvn -B -f pom.xml verify` | contracts/, architecture/, services/*, adapters/*. Compile + unit tests + ArchUnit boundary rules. |
 | Naming gate | `bash .github/scripts/naming_gate.sh` | Tracked paths and contents; only approved history/frozen files, exact generated path references, archive tags and the former-name line exception are allowed. |
-| Infrastructure gate | `.github/workflows/infra.yml` | Existing deploy/ package checks; static CI checks only, no host or cluster access. |
 
 After every stage run its complete relevant gate and the full regression gate. A stage requires code, tests, docs, deployment artifacts, and passing gates; document unavailable external verification as blocked, not passed.
 

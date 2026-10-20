@@ -7,7 +7,6 @@ glob | docs/work-orders/* | Historical approved work orders, including the exact
 glob | docs/acceptance/* | Historical acceptance receipts; preserve recorded evidence.
 glob | docs/reviews/* | Dated historical reviews; preserve recorded evidence.
 glob | docs/spikes/* | Historical spike evidence; preserve reports and redacted logs.
-glob | deploy/* | Infrastructure frozen by ADR 0021; names remain until deletion is authorized.
 glob | docs/enterprise-readiness-review.md | Historical enterprise review, retained unchanged.
 glob | docs/claude-conformance-audit-2026-09.md | Dated conformance audit, retained unchanged.
 glob | docs/legacy-migration-execution-plan.md | Historical migration input specification, retained unchanged.

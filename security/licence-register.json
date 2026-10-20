@@ -24,7 +24,6 @@
       "verifiedOn": "2026-10-20",
       "locations": [
         ".github/workflows/ci.yml",
-        ".github/workflows/infra.yml",
         ".github/workflows/kind-rehearsal.yml",
         ".github/workflows/licence-gate.yml"
       ],
@@ -89,40 +88,6 @@
       "spdx": "MIT",
       "electedSpdx": "MIT",
       "licenceSource": "https://github.com/actions/setup-python/blob/a26af69be951a213d495a4c3e4e4022e16d87065/LICENSE",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "github-action|actions/setup-python|e797f83bcb11b83ae66e0230d6156d7c80228e7c",
-      "ecosystem": "github-action",
-      "name": "actions/setup-python",
-      "version": "e797f83bcb11b83ae66e0230d6156d7c80228e7c",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        ".github/workflows/infra.yml"
-      ],
-      "integrities": [],
-      "spdx": "MIT",
-      "electedSpdx": "MIT",
-      "licenceSource": "https://github.com/actions/setup-python/blob/e797f83bcb11b83ae66e0230d6156d7c80228e7c/LICENSE",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "github-action|opentofu/setup-opentofu|000eeb8522f0572907c393e8151076c205fdba1b",
-      "ecosystem": "github-action",
-      "name": "opentofu/setup-opentofu",
-      "version": "000eeb8522f0572907c393e8151076c205fdba1b",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        ".github/workflows/infra.yml"
-      ],
-      "integrities": [],
-      "spdx": "MPL-2.0",
-      "electedSpdx": "MPL-2.0",
-      "licenceSource": "https://github.com/opentofu/setup-opentofu/blob/000eeb8522f0572907c393e8151076c205fdba1b/LICENSE",
       "class": "build-tool",
       "unmodified": true
     },
@@ -5562,29 +5527,6 @@
       }
     },
     {
-      "id": "oci-image|docker.io/library/busybox|1.36.1",
-      "ecosystem": "oci-image",
-      "name": "docker.io/library/busybox",
-      "version": "1.36.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "deploy/k8s/tests/smoke.yaml"
-      ],
-      "integrities": [],
-      "notes": "Primary upstream project/container packaging licence; full image and OS-package licence SBOM is pending IOT-WO-02 Part B under the dated baseline. Existing source input; no deployment claim.",
-      "spdx": "GPL-2.0-only",
-      "electedSpdx": "GPL-2.0-only",
-      "licenceSource": "https://git.busybox.net/busybox/tree/LICENSE?h=1_36_1",
-      "class": "base-os",
-      "unmodified": true,
-      "tier": 4,
-      "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
-    },
-    {
       "id": "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
       "ecosystem": "oci-image",
       "name": "docker.io/thingsboard/tb-node",
@@ -5651,50 +5593,6 @@
       "spdx": "Apache-2.0 AND PostgreSQL",
       "electedSpdx": "Apache-2.0 AND PostgreSQL",
       "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/main/LICENSE",
-      "class": "allowed",
-      "tier": 2,
-      "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
-    },
-    {
-      "id": "oci-image|ghcr.io/kube-vip/kube-vip-cloud-provider|v0.0.12",
-      "ecosystem": "oci-image",
-      "name": "ghcr.io/kube-vip/kube-vip-cloud-provider",
-      "version": "v0.0.12",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "deploy/k8s/kube-vip/kube-vip-cloud-controller.yaml"
-      ],
-      "integrities": [],
-      "notes": "Primary upstream project/container packaging licence; full image and OS-package licence SBOM is pending IOT-WO-02 Part B under the dated baseline. Existing source input; no deployment claim.",
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://github.com/kube-vip/kube-vip-cloud-provider/blob/v0.0.12/LICENSE",
-      "class": "allowed",
-      "tier": 2,
-      "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
-    },
-    {
-      "id": "oci-image|ghcr.io/kube-vip/kube-vip|v1.2.4",
-      "ecosystem": "oci-image",
-      "name": "ghcr.io/kube-vip/kube-vip",
-      "version": "v1.2.4",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "deploy/k8s/kube-vip/kube-vip-daemonset.yaml"
-      ],
-      "integrities": [],
-      "notes": "Primary upstream project/container packaging licence; full image and OS-package licence SBOM is pending IOT-WO-02 Part B under the dated baseline. Existing source input; no deployment claim.",
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://github.com/kube-vip/kube-vip/blob/v1.2.4/LICENSE",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
@@ -5775,23 +5673,6 @@
       }
     },
     {
-      "id": "pip|ansible-core|2.19.3",
-      "ecosystem": "pip",
-      "name": "ansible-core",
-      "version": "2.19.3",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "GPL-3.0-or-later",
-      "electedSpdx": "GPL-3.0-or-later",
-      "licenceSource": "https://pypi.org/pypi/ansible-core/2.19.3/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "pip|attrs|26.1.0",
       "ecosystem": "pip",
       "name": "attrs",
@@ -5809,57 +5690,6 @@
       "unmodified": true
     },
     {
-      "id": "pip|cffi|2.0.0",
-      "ecosystem": "pip",
-      "name": "cffi",
-      "version": "2.0.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "MIT",
-      "electedSpdx": "MIT",
-      "licenceSource": "https://pypi.org/pypi/cffi/2.0.0/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "pip|cryptography|46.0.2",
-      "ecosystem": "pip",
-      "name": "cryptography",
-      "version": "46.0.2",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "Apache-2.0 OR BSD-3-Clause",
-      "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://pypi.org/pypi/cryptography/46.0.2/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "pip|jinja2|3.1.6",
-      "ecosystem": "pip",
-      "name": "jinja2",
-      "version": "3.1.6",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "BSD-3-Clause",
-      "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://pypi.org/pypi/jinja2/3.1.6/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "pip|jsonschema|4.17.3",
       "ecosystem": "pip",
       "name": "jsonschema",
@@ -5873,57 +5703,6 @@
       "spdx": "MIT",
       "electedSpdx": "MIT",
       "licenceSource": "https://pypi.org/pypi/jsonschema/4.17.3/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "pip|markupsafe|3.0.3",
-      "ecosystem": "pip",
-      "name": "markupsafe",
-      "version": "3.0.3",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "BSD-3-Clause",
-      "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://pypi.org/pypi/markupsafe/3.0.3/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "pip|packaging|25.0",
-      "ecosystem": "pip",
-      "name": "packaging",
-      "version": "25.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "Apache-2.0 OR BSD-2-Clause",
-      "electedSpdx": "BSD-2-Clause",
-      "licenceSource": "https://pypi.org/pypi/packaging/25.0/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "pip|pycparser|2.23",
-      "ecosystem": "pip",
-      "name": "pycparser",
-      "version": "2.23",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "BSD-3-Clause",
-      "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://pypi.org/pypi/pycparser/2.23/json",
       "class": "build-tool",
       "unmodified": true
     },
@@ -5952,30 +5731,12 @@
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
-        "security/infra-requirements.txt",
         "security/requirements.txt"
       ],
       "integrities": [],
       "spdx": "MIT",
       "electedSpdx": "MIT",
       "licenceSource": "https://pypi.org/pypi/pyyaml/6.0.3/json",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "pip|resolvelib|1.2.1",
-      "ecosystem": "pip",
-      "name": "resolvelib",
-      "version": "1.2.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/infra-requirements.txt"
-      ],
-      "integrities": [],
-      "spdx": "ISC",
-      "electedSpdx": "ISC",
-      "licenceSource": "https://pypi.org/pypi/resolvelib/1.2.1/json",
       "class": "build-tool",
       "unmodified": true
     },
@@ -6020,23 +5781,6 @@
       "unmodified": true
     },
     {
-      "id": "tool|kubeconform|0.7.0",
-      "ecosystem": "tool",
-      "name": "kubeconform",
-      "version": "0.7.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/toolchain.lock.json"
-      ],
-      "integrities": [],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://github.com/yannh/kubeconform/blob/v0.7.0/LICENSE",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "tool|kubectl|1.36.5",
       "ecosystem": "tool",
       "name": "kubectl",
@@ -6072,23 +5816,6 @@
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://github.com/apache/maven/blob/maven-3.9.11/LICENSE",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "tool|opentofu|1.11.5",
-      "ecosystem": "tool",
-      "name": "opentofu",
-      "version": "1.11.5",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "security/toolchain.lock.json"
-      ],
-      "integrities": [],
-      "spdx": "MPL-2.0",
-      "electedSpdx": "MPL-2.0",
-      "licenceSource": "https://github.com/opentofu/opentofu/blob/v1.11.5/LICENSE",
       "class": "build-tool",
       "unmodified": true
     },

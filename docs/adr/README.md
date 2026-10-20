@@ -32,6 +32,8 @@ at merge.
 Accepted ADRs are not edited in place. Read historical text through the
 later superseding/amending record, including 0021 Amendment 1.
 
+[IOT-WO-07](../work-orders/IOT-WO-07-delete-frozen-infrastructure.md) carries out ADR 0021's deletion of the frozen own-infrastructure sources; history remains in [archive/iot-ee-own-infra](https://github.com/amazen33/EdgePulse/tree/archive/iot-ee-own-infra).
+
 ## Withdrawn drafts (kept in tag `archive/reconcile-snapshot-2026-09-26`)
 
 These files are absent from the Part B merge tree and remain reachable

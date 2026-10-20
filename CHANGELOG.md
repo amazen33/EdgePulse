@@ -15,6 +15,13 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   planted-violation checks under ADRs 0024–0026, ported from Twinfra `0d95007`.
   Supply-chain, quality and runtime-baseline work remain in later parts.
 
+### Removed
+
+- IOT-WO-07: retire the 61 frozen own-infrastructure files and their non-required
+  infrastructure workflow under ADR 0021; history remains in `archive/iot-ee-own-infra`.
+  Remove their exclusively used tools, licence records and six obsolete evidence gaps.
+  Application code, archive tags and environment state are unchanged.
+
 ## [2.0.0-alpha.4] - 2026-10-19
 
 - MS2 migration contract v1 was accepted ([acceptance receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)).

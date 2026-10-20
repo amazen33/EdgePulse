@@ -30,8 +30,9 @@ Full custom permissive texts and exact sources are in
 scope; executed plugins and their complete isolated classpaths; Maven build
 extensions and native generators; SHA-pinned Actions; pinned CI Python
 requirements/tools; migration-contract TOOLS.md inputs; and the binaries,
-charts, manifests and images in `dev/kind/pins.json`. Existing frozen image
-references are inventoried too. The collector never invokes Dependency
+charts, manifests and images in `dev/kind/pins.json`. The retired own-infrastructure
+sources remain in `archive/iot-ee-own-infra` under IOT-WO-07; they are not active
+inventory inputs. The collector never invokes Dependency
 Plugin 3.7.0 or the `enforcerNegativeTest` diagnostic profile.
 
 The **resolved per-module Dependency Plugin 3.11.0 tree** decides scope.
@@ -75,11 +76,11 @@ tier-3 evidence are required before 2027-04-20. OpenBao's historical Twinfra
 MPL exception remains visible in the policy; no OpenBao component is used
 or registered by this repository's current inputs.
 
-Thirteen existing evidence gaps have **2027-01-18** expiry, within 90 days:
-three immutable-digest gaps in frozen deploy sources and ten full-image
-SBOM gaps. The primary image project licence does not clear its OS packages
-or transitive contents. Each gap has an owner, reason and required evidence;
-none waives a known blocked licence. Frozen deploy sources are not changed.
+Seven existing full-image SBOM evidence gaps retain their **2027-01-18**
+expiry. IOT-WO-07 removes the retired infrastructure images and their six
+obsolete evidence gaps. The primary image project licence does not clear
+its OS packages or transitive contents. Each remaining gap has an owner,
+reason and required evidence; none waives a known blocked licence.
 
 ## Run the gate
 
@@ -103,8 +104,7 @@ Evidence, BOMs and trees are generated under the reactor modules' ignored
 `target/` directories. The report records counts, every component, scope
 disagreements, packaging observations, open baselines and legacy deadlines.
 CI runs the blocking job **`licence-gate`**, separately from existing
-`java-platform-bootstrap`, `naming-gate` and `release-checks`. The owner adds
-the new job to the ruleset after merge; agents do not edit that ruleset.
+`java-platform-bootstrap`, `naming-gate` and `release-checks`. Required check names are unchanged; agents do not edit the ruleset.
 
 The planted tests cover the work order's six Amendment 3 cases, four
 Amendment 4 cases, three legacy-ratchet cases, missing full LicenseRef text,
