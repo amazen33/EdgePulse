@@ -16,6 +16,24 @@
   ],
   "components": [
     {
+      "id": "github-action|actions/cache|caa296126883cff596d87d8935842f9db880ef25",
+      "ecosystem": "github-action",
+      "name": "actions/cache",
+      "version": "caa296126883cff596d87d8935842f9db880ef25",
+      "locations": [
+        ".github/workflows/supply-chain-gate.yaml",
+        ".github/workflows/supply-chain.yaml"
+      ],
+      "spdx": "MIT",
+      "class": "build-tool",
+      "licenceSource": "https://raw.githubusercontent.com/actions/cache/caa296126883cff596d87d8935842f9db880ef25/LICENSE",
+      "verifiedOn": "2026-10-20",
+      "recordedOn": "2026-10-20",
+      "integrities": [],
+      "electedSpdx": "MIT",
+      "unmodified": true
+    },
+    {
       "id": "github-action|actions/checkout|08c6903cd8c0fde910a37f88322edcfb5dd907a8",
       "ecosystem": "github-action",
       "name": "actions/checkout",
@@ -25,7 +43,10 @@
       "locations": [
         ".github/workflows/ci.yml",
         ".github/workflows/kind-rehearsal.yml",
-        ".github/workflows/licence-gate.yml"
+        ".github/workflows/licence-gate.yml",
+        ".github/workflows/supply-chain-gate.yaml",
+        ".github/workflows/supply-chain-tools.yaml",
+        ".github/workflows/supply-chain.yaml"
       ],
       "integrities": [],
       "spdx": "MIT",
@@ -53,6 +74,23 @@
       "unmodified": true
     },
     {
+      "id": "github-action|actions/download-artifact|37930b1c2abaa49bbe596cd826c3c89aef350131",
+      "ecosystem": "github-action",
+      "name": "actions/download-artifact",
+      "version": "37930b1c2abaa49bbe596cd826c3c89aef350131",
+      "locations": [
+        ".github/workflows/supply-chain.yaml"
+      ],
+      "spdx": "MIT",
+      "class": "build-tool",
+      "licenceSource": "https://raw.githubusercontent.com/actions/download-artifact/37930b1c2abaa49bbe596cd826c3c89aef350131/LICENSE",
+      "verifiedOn": "2026-10-20",
+      "recordedOn": "2026-10-20",
+      "integrities": [],
+      "electedSpdx": "MIT",
+      "unmodified": true
+    },
+    {
       "id": "github-action|actions/setup-java|c5195efecf7bdfc987ee8bae7a71cb8b11521c00",
       "ecosystem": "github-action",
       "name": "actions/setup-java",
@@ -61,7 +99,9 @@
       "verifiedOn": "2026-10-20",
       "locations": [
         ".github/workflows/ci.yml",
-        ".github/workflows/licence-gate.yml"
+        ".github/workflows/licence-gate.yml",
+        ".github/workflows/supply-chain-gate.yaml",
+        ".github/workflows/supply-chain.yaml"
       ],
       "integrities": [],
       "spdx": "MIT",
@@ -82,13 +122,35 @@
         ".github/workflows/kind-rehearsal.yml",
         ".github/workflows/licence-gate.yml",
         ".github/workflows/release-checks.yml",
-        ".github/workflows/release.yml"
+        ".github/workflows/release.yml",
+        ".github/workflows/supply-chain-gate.yaml",
+        ".github/workflows/supply-chain-tools.yaml",
+        ".github/workflows/supply-chain.yaml"
       ],
       "integrities": [],
       "spdx": "MIT",
       "electedSpdx": "MIT",
       "licenceSource": "https://github.com/actions/setup-python/blob/a26af69be951a213d495a4c3e4e4022e16d87065/LICENSE",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "github-action|actions/upload-artifact|043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+      "ecosystem": "github-action",
+      "name": "actions/upload-artifact",
+      "version": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+      "locations": [
+        ".github/workflows/supply-chain-gate.yaml",
+        ".github/workflows/supply-chain-tools.yaml",
+        ".github/workflows/supply-chain.yaml"
+      ],
+      "spdx": "MIT",
+      "class": "build-tool",
+      "licenceSource": "https://raw.githubusercontent.com/actions/upload-artifact/043fb46d1a93c77aae656e7c1c64a875d1fc6a0a/LICENSE",
+      "verifiedOn": "2026-10-20",
+      "recordedOn": "2026-10-20",
+      "integrities": [],
+      "electedSpdx": "MIT",
       "unmodified": true
     },
     {
@@ -5741,6 +5803,46 @@
       "unmodified": true
     },
     {
+      "id": "tool|actionlint|1.7.12",
+      "ecosystem": "tool",
+      "name": "actionlint",
+      "version": "1.7.12",
+      "locations": [
+        "security/toolchain.lock.json"
+      ],
+      "spdx": "MIT",
+      "class": "build-tool",
+      "licenceSource": "https://raw.githubusercontent.com/rhysd/actionlint/v1.7.12/LICENSE.txt",
+      "verifiedOn": "2026-10-20",
+      "recordedOn": "2026-10-20",
+      "integrities": [
+        "sha256:8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+      ],
+      "electedSpdx": "MIT",
+      "unmodified": true,
+      "notes": "ADR 0014: checksum-pinned CI-only scanner/tool; upstream origin/main 0d95007. No scanned program is executed."
+    },
+    {
+      "id": "tool|grype|0.119.0",
+      "ecosystem": "tool",
+      "name": "grype",
+      "version": "0.119.0",
+      "locations": [
+        "security/toolchain.lock.json"
+      ],
+      "spdx": "Apache-2.0",
+      "class": "build-tool",
+      "licenceSource": "https://raw.githubusercontent.com/anchore/grype/v0.119.0/LICENSE",
+      "verifiedOn": "2026-10-20",
+      "recordedOn": "2026-10-20",
+      "integrities": [
+        "sha256:3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b"
+      ],
+      "unmodified": true,
+      "notes": "ADR 0014: checksum-pinned CI-only scanner/tool; upstream origin/main 0d95007. No scanned program is executed.",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
       "id": "tool|helm|3.19.0",
       "ecosystem": "tool",
       "name": "helm",
@@ -5820,6 +5922,26 @@
       "unmodified": true
     },
     {
+      "id": "tool|osv-scanner|2.6.0",
+      "ecosystem": "tool",
+      "name": "osv-scanner",
+      "version": "2.6.0",
+      "locations": [
+        "security/toolchain.lock.json"
+      ],
+      "spdx": "Apache-2.0",
+      "class": "build-tool",
+      "licenceSource": "https://raw.githubusercontent.com/google/osv-scanner/v2.6.0/LICENSE",
+      "verifiedOn": "2026-10-20",
+      "recordedOn": "2026-10-20",
+      "integrities": [
+        "sha256:ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108"
+      ],
+      "unmodified": true,
+      "notes": "ADR 0014: checksum-pinned CI-only scanner/tool; upstream origin/main 0d95007. No scanned program is executed.",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
       "id": "tool|python|3.12.12",
       "ecosystem": "tool",
       "name": "python",
@@ -5835,6 +5957,26 @@
       "licenceSource": "https://github.com/python/cpython/blob/v3.12.12/LICENSE",
       "class": "build-tool",
       "unmodified": true
+    },
+    {
+      "id": "tool|syft|1.52.0",
+      "ecosystem": "tool",
+      "name": "syft",
+      "version": "1.52.0",
+      "locations": [
+        "security/toolchain.lock.json"
+      ],
+      "spdx": "Apache-2.0",
+      "class": "build-tool",
+      "licenceSource": "https://raw.githubusercontent.com/anchore/syft/v1.52.0/LICENSE",
+      "verifiedOn": "2026-10-20",
+      "recordedOn": "2026-10-20",
+      "integrities": [
+        "sha256:caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d"
+      ],
+      "unmodified": true,
+      "notes": "ADR 0014: checksum-pinned CI-only scanner/tool; upstream origin/main 0d95007. No scanned program is executed.",
+      "electedSpdx": "Apache-2.0"
     },
     {
       "id": "tool|temurin|17.0.16+8",

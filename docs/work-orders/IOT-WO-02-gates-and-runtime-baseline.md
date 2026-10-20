@@ -169,3 +169,16 @@ Evidence (Codex trace, 2026-10-20): `dom4j:dom4j:1.1` reaches the plugin graph o
    - In the Part A PR, report the resolved scope, and whether the packaged identity artifact contains Logback.
    - **Change no behaviour in Part A.** Classify by the resolved tree.
    - The fix is a separate, owner-approved follow-up. Logback is `EPL-1.0 OR LGPL-2.1`, so shipping it needs its own runtime licence decision, like ADR 0025, before or with the fix.
+
+### Ruling (architect, 2026-10-20): attaching Part B evidence to legacy entries
+
+The legacy fingerprint (`licence_ladder.fingerprint`) covers every register field except `tier` and `enterpriseGrade`. The schema forbids `criteria` alongside `legacy-pending`. The checker and schema stay unchanged.
+
+1. **Image SBOMs, with a re-fingerprint for evidence only.** For the seven images whose `image-sbom` baseline entries expire on 2027-01-18:
+   - add `imageSBOM` (path and SHA-256) to the register entry;
+   - update **only** that entry's `sha256` in `ladder.legacy`;
+   - remove the `image-sbom:` baseline entry.
+   - Its `tier` and `due` (2027-04-20) stay unchanged.
+2. **Guard test.** For each re-fingerprinted entry, the old and new register entries must differ **only** by the added `imageSBOM` key: the same coordinates, digest, licence, class and tier, and the same due date in policy. A planted case that changes anything else alongside `imageSBOM` must fail. List the seven old and new fingerprints in the PR. The owner's approval of the Part B PR re-approves those seven.
+3. **Supply-chain criterion evidence is not attached to legacy entries.** Store each runtime component's scan evidence under `security/evidence/supply-chain/`: the SBOM digest, the Grype and OSV results, the tool versions, the date, and the pass result under ADR-0049. When full ADR-0054 records are written (Part C, IOT-WO-06, or the backfill before 2027-04-20), their `supplyChain` criterion links to that file. This replaces the second sentence of the Part B prompt's item 3.
+4. Everything else in Part B stands, including the stop rule for unfixable Critical or High findings.

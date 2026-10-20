@@ -156,7 +156,7 @@ class WatchResilience(unittest.TestCase):
 
     def test_candidate_evidence_is_retained_by_the_weekly_workflow(self):
         workflow=Path(__file__).resolve().parents[3]/'.github/workflows/supply-chain.yaml'
-        self.assertIn('.build/supply-chain/watch-candidates/',workflow.read_text(encoding='utf-8'))
+        self.assertIn('target/supply-chain/watch-candidates/',workflow.read_text(encoding='utf-8'))
 
     def test_candidates_share_pinned_database_without_repeated_downloads(self):
         with tempfile.TemporaryDirectory() as tmp:

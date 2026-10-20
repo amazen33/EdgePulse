@@ -9,6 +9,13 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+### Security
+
+- IOT-WO-02 Part B: wire checksum-pinned Syft, Grype and OSV-Scanner over
+  digest-pinned image inputs, Maven reactor BOMs/resolved trees and lockfiles.
+  Preserve the ADR 0014 policy and an evidence-only legacy SBOM backfill guard;
+  scan results and any remaining acceptance blockers accompany the PR.
+
 ### Added
 
 - IOT-WO-02 Part A: a separate licence gate, the Maven/component register and

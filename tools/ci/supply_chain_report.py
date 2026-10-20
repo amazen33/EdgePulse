@@ -11,7 +11,7 @@ import re
 import urllib.error
 import urllib.request
 
-REPOSITORY='amazen33/twinfra'
+REPOSITORY='amazen33/EdgePulse'
 TITLE='Supply-chain scan: open findings'
 WATCH_TITLE='Upstream updates available'
 
@@ -25,7 +25,7 @@ def request(url,token,payload=None,method=None):
 
 def publish(report,title,url,token):
     if title not in (TITLE,WATCH_TITLE):raise ValueError('Unexpected issue title')
-    if not re.fullmatch(r'https://github.com/amazen33/twinfra/actions/runs/[0-9]+',url):raise ValueError('Invalid run URL')
+    if not re.fullmatch(r'https://github.com/amazen33/EdgePulse/actions/runs/[0-9]+',url):raise ValueError('Invalid run URL')
     body=report['markdown']
     if title==TITLE:
         state=report['firstSeen']
@@ -79,7 +79,7 @@ def main():
     parser.add_argument('--report',type=Path,required=True);parser.add_argument('--title',required=True)
     parser.add_argument('--run-url',required=True);args=parser.parse_args()
     if os.environ.get('GITHUB_REF')!='refs/heads/main' or os.environ.get('GITHUB_REPOSITORY')!=REPOSITORY:
-        raise ValueError('Issue reporting is restricted to trusted main in Twinfra')
+        raise ValueError('Issue reporting is restricted to trusted main in EdgePulse')
     print(publish(json.loads(args.report.read_text(encoding='utf-8')),args.title,args.run_url,os.environ['GH_TOKEN']))
 
 
