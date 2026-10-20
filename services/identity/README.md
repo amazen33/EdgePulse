@@ -9,6 +9,17 @@ Spring Boot service -- generating its own Protobuf classes from a shared
 Spring configuration -- works end to end, not to be a usable identity
 service yet.
 
+## Runtime logging (ADR 0027)
+
+Identity uses the four Log4j 2.26.1 runtime artifacts, managed by the root
+Log4j BOM, without a Spring Boot logging starter or reverse SLF4J bridge
+(IOT-WO-06 ruling, 2026-10-21). `log4j2-spring.xml` sends logs only to the
+console and includes the interceptor's `correlationId` MDC value. The tests
+launch a fresh JVM with Maven's runtime classpath to check the provider,
+Boot logging context and a synthetic request log line. This is local code
+verification, not environment acceptance. Part C must re-evaluate the BOM
+override and direct declarations when the Spring line changes.
+
 ## Authorization policy and tenant-scoped roles (2026-09-26)
 
 Decisions: `docs/adr/XXXX-proposed-identity-authorization-and-privileged-access.md`
