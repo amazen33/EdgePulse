@@ -31,6 +31,28 @@ def result(value):
 
 
 class PlantedViolations(unittest.TestCase):
+    def validate_work_order(self, reference):
+        value = finding()
+        entry = {k:value[k] for k in ('target','package','version','vulnerability','severity')}
+        entry.update(owner='SYNTHETIC-owner', approvedBy='SYNTHETIC-owner', workOrder=reference,
+                     createdOn=ON.isoformat(), expires='2026-11-01',
+                     reason='SYNTHETIC work-order schema extension test.')
+        return sc.validate_exceptions({'version':1,'exceptions':[entry]}, root=ep.ROOT, on=ON)
+
+    def test_bare_twinfra_work_order_fails(self):
+        with self.assertRaisesRegex(ValueError, 'Malformed vulnerability exception:.*does not match'):
+            self.validate_work_order('WO-08')
+
+    def test_namespaced_image_refresh_work_order_passes(self):
+        self.assertEqual(self.validate_work_order('IOT-WO-08')[0]['workOrder'], 'IOT-WO-08')
+
+    def test_namespaced_part_c_work_order_passes(self):
+        self.assertEqual(self.validate_work_order('IOT-WO-02 Part C')[0]['workOrder'], 'IOT-WO-02 Part C')
+
+    def test_malformed_namespaced_work_order_fails(self):
+        with self.assertRaisesRegex(ValueError, 'Malformed vulnerability exception:.*does not match'):
+            self.validate_work_order('IOT-WO-2 Part c')
+
     def test_kev_blocks_even_with_a_matched_exception(self):
         v = finding('Low', False)
         with tempfile.TemporaryDirectory() as tmp:
@@ -54,7 +76,7 @@ class PlantedViolations(unittest.TestCase):
     def test_expired_exception_fails(self):
         v = finding()
         exception = {k:v[k] for k in ('target','package','version','vulnerability','severity')}
-        exception.update(owner='SYNTHETIC-owner', approvedBy='SYNTHETIC-owner', workOrder='WO-99',
+        exception.update(owner='SYNTHETIC-owner', approvedBy='SYNTHETIC-owner', workOrder='IOT-WO-99',
                          createdOn='2026-09-01', expires='2026-09-10', reason='SYNTHETIC expired test evidence.')
         with self.assertRaisesRegex(ValueError, 'Expired/invalid exception lifetime'):
             ep.evaluate(result(v), {'version':1,'exceptions':[exception]}, KEV, ep.ROOT, on=ON)
@@ -85,7 +107,7 @@ class PlantedViolations(unittest.TestCase):
     def test_exception_without_evidence_fails(self):
         v = finding()
         exception = {k:v[k] for k in ('target','package','version','vulnerability','severity')}
-        exception.update(owner='SYNTHETIC-owner', approvedBy='SYNTHETIC-owner', workOrder='WO-99',
+        exception.update(owner='SYNTHETIC-owner', approvedBy='SYNTHETIC-owner', workOrder='IOT-WO-99',
                          createdOn=ON.isoformat(), expires='2026-11-01', reason='SYNTHETIC reason without evidence.')
         with self.assertRaisesRegex(ValueError, 'Exception requires evidence'):
             ep.evaluate(result(v), {'version':1,'exceptions':[exception]}, KEV, ep.ROOT, on=ON)

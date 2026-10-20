@@ -41,7 +41,8 @@ def exception(v,**overrides):
     entry={k:v[k] for k in ('target','package','version','vulnerability','severity')}|dict(
         owner='amazen33',reason='Owner-approved mitigation with a scheduled removal.',approvedBy='amazen33',createdOn=ON.isoformat(),
         expires=(ON+timedelta(days=sc.EXCEPTION_DAYS.get(v['severity'],90))).isoformat())
-    if v['fixAvailable']:entry['workOrder']='WO-34'
+    # EdgePulse wiring schema extension: valid fixtures use this repository's namespace.
+    if v['fixAvailable']:entry['workOrder']='IOT-WO-34'
     return entry|overrides
 
 
@@ -152,7 +153,9 @@ class Gate(unittest.TestCase):
         self.assertEqual(entries[0]['workOrder'],'WO-34')
         for text in ('fix version(s): 2.0','LAN-only','tunnel-only UIs','remediated by WO-34'):
             self.assertIn(text,entries[0]['reason'])
-        sc.validate_exceptions(report['proposedExceptions'],on=ON,bootstrap=True)
+        # The checker is unchanged; EdgePulse rejects its Twinfra proposal namespace.
+        with self.assertRaisesRegex(ValueError,'Malformed vulnerability exception:.*does not match'):
+            sc.validate_exceptions(report['proposedExceptions'],on=ON,bootstrap=True)
         high=self.evaluate(value(introduced=True))['proposedExceptions']['exceptions'][0]
         self.assertEqual(high['expires'],'2026-12-12')
 

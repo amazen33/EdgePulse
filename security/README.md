@@ -121,3 +121,20 @@ The planted tests cover the work order's six Amendment 3 cases, four
 Amendment 4 cases, three legacy-ratchet cases, missing full LicenseRef text,
 four invocation-scope cases, scope disagreement and tree/BOM mismatch,
 plus packaging, election and baseline protections. They use synthetic data.
+
+## EdgePulse supply-chain schema extension
+
+The owner-approved Part B wiring extension changes only the `workOrder`
+pattern in `vulnerability-exceptions.schema.json` to
+`^IOT-WO-[0-9]{2}( Part [A-Z])?$`. EdgePulse exceptions name their own
+remediation orders, such as `IOT-WO-08` and `IOT-WO-02 Part C`; bare
+Twinfra forms such as `WO-08` are rejected because their numbers collide
+with different Twinfra orders. The unchanged first port is commit
+`0a5a2f1`; `tools/ci/supply_chain.py` remains unchanged. The extension and
+its planted tests are in the EdgePulse wiring commits. The upstream
+proposal generator's bare work-order output is rejected by this schema;
+the EdgePulse adapter suppresses those proposals.
+
+[IOT-WO-08](../docs/work-orders/IOT-WO-08-image-and-dependency-refresh.md)
+defines the image and dependency refresh due 2026-11-19. Initial exception
+approval remains pending; a namespaced reference does not approve a risk.
