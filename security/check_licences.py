@@ -15,6 +15,9 @@ import jsonschema
 import yaml
 
 from licence_inventory import enumerate_inputs, identity, digest, objects
+from edgepulse_licences import (BUILD_FAMILIES, BUILD_EXCEPTIONS, election,
+                               maven_build_tool, named_jakarta, stored_build_licence,
+                               KNOWN_BUILD_REFS)
 
 
 def expression(text):
@@ -131,7 +134,10 @@ def observed_integrities(component):
 
 def check_component(entry, component, policy, root, today, baseline):
     kind = entry['class']
-    tree = expression(entry['spdx'])
+    # EdgePulse ADRs 0024-0026: explicit election; families are build-tool only.
+    tree = election(entry, policy, expression, evaluate, identifiers)
+    named_jakarta(entry)
+    stored_build_licence(entry, tree, root, identifiers, policy)
     permitted = list(policy['permitted'])
     exceptions = policy['permittedExceptions']
     if kind == 'blocked':
@@ -145,12 +151,21 @@ def check_component(entry, component, policy, root, today, baseline):
     if kind in ('build-tool', 'weak-copyleft', 'base-os') and entry.get('unmodified') is not True:
         raise ValueError('Class requires an unmodified component')
     if kind == 'build-tool':
-        permitted += ['MPL-2.0', 'GPL-*', 'LGPL-*']
+        permitted += BUILD_FAMILIES + ['Apache-1.1'] + list(KNOWN_BUILD_REFS) + list(policy.get('knownPermissiveBuildLicences', {}))
+        exceptions = exceptions + BUILD_EXCEPTIONS
         if component['ecosystem'] == 'npm':
             if any(not x.get('dev') or x.get('production') for x in component['observations']):
                 raise ValueError('Build-tool is reachable from production or is not dev-only')
+        elif component['ecosystem'] == 'maven':
+            maven_build_tool(component)
+        elif component['ecosystem'] == 'pip':
+            if not set(component['locations']) <= {'security/requirements.txt', 'security/infra-requirements.txt'}:
+                raise ValueError('Python build tool occurs outside the CI-only requirements')
+        elif component['ecosystem'] == 'github-action':
+            if any(not p.startswith('.github/workflows/') for p in component['locations']):
+                raise ValueError('Build action occurs outside CI workflows')
         elif component['ecosystem'] == 'tool':
-            if set(component['locations']) != {'tools/ci/toolchain.lock.json'}:
+            if not set(component['locations']) <= {'security/toolchain.lock.json', 'dev/kind/pins.json'}:
                 raise ValueError('Build-tool binary occurs outside the CI tool lock')
         else:
             raise ValueError('Unsupported build-tool ecosystem')
@@ -190,7 +205,7 @@ def check_component(entry, component, policy, root, today, baseline):
         return
     elif kind == 'exception':
         authorized = policy['exceptions'].get(entry['name'])
-        if not authorized or entry['spdx'] != authorized['spdx'] or entry['adr'] != authorized['adr']:
+        if not authorized or entry['electedSpdx'] != authorized['spdx'] or entry['adr'] != authorized['adr']:
             raise ValueError('Exception is not authorized by the policy')
         if authorized.get('module') and not module_off(root, authorized['module']):
             raise ValueError('Module enabled with an open runtime exception')
@@ -205,8 +220,8 @@ def check_component(entry, component, policy, root, today, baseline):
     if not pending_source and not evaluate(tree, permitted, exceptions):
         raise ValueError('SPDX expression is not permitted for ' + kind)
     for item in component['observations']:
-        if item.get('spdx') and expression(item['spdx']) != tree:
-            raise ValueError('npm lock licence changed from registered expression')
+        if item.get('spdx') and expression(item['spdx']) != expression(entry['spdx']):
+            raise ValueError('Observed licence changed from registered expression')
 
 
 def audit(root, today=None, rendered=()):
@@ -226,8 +241,9 @@ def audit(root, today=None, rendered=()):
         dockerfile = (root / 'module-5a/images/rag.Dockerfile').read_text()
         if 'COPY security/licences/rag/ /usr/share/licenses/vcloud-rag/' not in dockerfile:
             errors.append('RAG image omits the offline licence notices')
-    else:
+    elif (root / 'module-5a/images/rag.Dockerfile').exists():
         errors.append('Missing image licence notice integrity lock')
+    # Repository integration: Twinfra's RAG notice lock applies to that image only.
     for item in register['components']:
         expected = identity(item['ecosystem'], item['name'], item['version'])
         if item['id'] != expected or expected in entries:
@@ -255,7 +271,7 @@ def audit(root, today=None, rendered=()):
         try:
             check_component(entry, component, policy, root, today, baseline)
             if 'ladder' in policy:
-                licence_ladder.validate(entry, policy, identifiers(expression(entry['spdx'])), today)
+                licence_ladder.validate(entry, policy, identifiers(expression(entry['electedSpdx'])), today)
             if entry.get('evidencePending') and f'licence-source:{key}' not in baseline:
                 raise ValueError('Unverified licence requires an explicit dated evidence baseline')
             if entry['ecosystem'] == 'oci-image' and entry['class'] != 'pending-removal':
@@ -279,8 +295,14 @@ def audit(root, today=None, rendered=()):
         errors.append('Stale register entry (remove with component): ' + key)
     # Baselines never override class validation, and cannot admit an unknown component.
     rows = [dict(component, **{k: entries[key].get(k) for k in
-            ('class', 'spdx', 'adr', 'expires', 'module')}) for key, component in sorted(components.items()) if key in entries]
+            ('class', 'spdx', 'electedSpdx', 'adr', 'expires', 'module')}) for key, component in sorted(components.items()) if key in entries]
     return dict(status='failed' if errors else 'passed', checkedOn=today.isoformat(), errors=errors,
+                mavenScopeDisagreements=[dict(id=c['id'], module=o['path'],
+                    resolvedScope=o['scope'], bomNonTestReachable=o['bomNonTestReachable'])
+                    for c in components.values() for o in c['observations'] if o.get('scopeDisagreement')],
+                logbackPackaging=[dict(id=c['id'], resolvedScope=o['scope'],
+                    packaged=o['packaged'], **o['packagingEvidence'])
+                    for c in components.values() for o in c['observations'] if o.get('packagingEvidence')],
                 countsByEcosystem=dict(sorted(Counter(x['ecosystem'] for x in rows).items())),
                 countsByClass={kind: sum(x['class'] == kind for x in rows) for kind in policy['classes']}, components=rows,
                 openBaseline=baseline_doc['findings'],
@@ -291,7 +313,7 @@ def audit(root, today=None, rendered=()):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[2])
+    parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument('--report', type=Path, required=True)
     parser.add_argument('--rendered', type=Path, action='append', default=[])
     args = parser.parse_args()
@@ -307,6 +329,10 @@ def main():
     backfill = Counter(e['due'] for e in report.get('legacyBackfill', []))
     if backfill:
         print('ADR-0054 legacy-pending backfill: ' + json.dumps(dict(sorted(backfill.items()))))
+    for item in report.get('mavenScopeDisagreements', []):
+        print('Maven scope disagreement: ' + json.dumps(item, sort_keys=True))
+    for item in report.get('logbackPackaging', []):
+        print('Logback packaging: ' + json.dumps(item, sort_keys=True))
     for kind in ('openBaseline', 'pendingRemoval'):
         for entry in report.get(kind, []):
             print(f'{kind}: {entry["id"]} expires {entry["expires"]}')
@@ -322,7 +348,7 @@ def main():
             lines.append('')
         for kind in ('openBaseline', 'pendingRemoval'):
             lines.append('Open ' + kind + ':')
-            lines.extend(f'- `{e["id"]}` — expires **{e["expires"]}**' for e in report.get(kind, []))
+            lines.extend(f'- `{e["id"]}` â€” expires **{e["expires"]}**' for e in report.get(kind, []))
             lines.append('')
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
             stream.write('\n'.join(lines) + '\n')

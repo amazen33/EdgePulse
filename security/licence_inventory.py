@@ -229,10 +229,11 @@ def enumerate_inputs(root, rendered=()):
                     raise ValueError('Unpinned/unrecognized requirement: ' + path + ': ' + line)
         if path.startswith('.github/workflows/'):
             for name, sha in re.findall(r'uses:\s*([^\s@]+)@([\w.-]+)', file.read_text()):
+                if not re.fullmatch(r'[0-9a-f]{40}', sha):
+                    raise ValueError('GitHub Action is not pinned by SHA: ' + path + ': ' + name)
                 add('github-action', name, sha, path)
-            for name, version in re.findall(r'(python|node)-version:\s*[\"\x27]?([0-9.]+)', file.read_text()):
-                add('tool', name, version, path)
-        if path.endswith('.json') and not path.endswith('package-lock.json') and ('lock' in path or path in ('lab/wsl/profile.json', 'security/node-exceptions.json')):
+            # EdgePulse CI tool versions are checked against the owned tool lock below.
+        if path.endswith('.json') and path != 'security/toolchain.lock.json' and not path.endswith('package-lock.json') and ('lock' in path or path in ('lab/wsl/profile.json', 'security/node-exceptions.json')):
             data = json.loads(file.read_text(encoding='utf-8'))
             walk_images(data, path)
             for obj in objects(data):
@@ -328,4 +329,10 @@ def enumerate_inputs(root, rendered=()):
     for file in rendered:
         for doc in yaml.safe_load_all(Path(file).read_text(encoding='utf-8')):
             walk_images(doc, 'rendered:' + Path(file).name)
+    # EdgePulse ADRs 0024/0025: Maven joins and the explicitly requested pin inventory.
+    from edgepulse_inventory import enumerate_edgepulse
+    enumerate_edgepulse(root, tracked, add, image)
+    from maven_inventory import enumerate_maven
+    register = json.loads((root / 'security/licence-register.json').read_text(encoding='utf-8'))
+    enumerate_maven(root, register, add)
     return components, findings

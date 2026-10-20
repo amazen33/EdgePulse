@@ -1,0 +1,74 @@
+{
+  "plugins": [
+    {
+      "coordinates": "org.apache.maven.plugins:maven-antrun-plugin:3.1.0",
+      "binding": "pluginManagement only",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-assembly-plugin:3.7.1",
+      "binding": "pluginManagement only",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-clean-plugin:3.2.0",
+      "binding": "clean (clean)",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-dependency-plugin:3.7.0",
+      "binding": "pluginManagement only",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-deploy-plugin:3.1.2",
+      "binding": "deploy (deploy)",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-install-plugin:3.1.2",
+      "binding": "install (install)",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-invoker-plugin:3.7.0",
+      "binding": "inactive profile: verify (install, run)",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-release-plugin:3.0.1",
+      "binding": "pluginManagement only",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-site-plugin:3.12.1",
+      "binding": "site (site); site-deploy (deploy)",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    },
+    {
+      "coordinates": "org.springframework.boot:spring-boot-maven-plugin:3.3.4",
+      "binding": "pluginManagement only; unbound",
+      "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
+      "evidenceDate": "2026-10-20",
+      "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
+    }
+  ]
+}

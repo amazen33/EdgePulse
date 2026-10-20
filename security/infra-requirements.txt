@@ -1,0 +1,10 @@
+# Existing static infrastructure gate tools; exact versions, build-time only.
+ansible-core==2.19.3
+cryptography==46.0.2
+cffi==2.0.0
+pycparser==2.23
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+packaging==25.0
+PyYAML==6.0.3
+resolvelib==1.2.1

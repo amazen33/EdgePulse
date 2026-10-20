@@ -1,0 +1,2728 @@
+{
+  "plugin": "org.apache.maven.plugins:maven-dependency-plugin:3.11.0",
+  "status": "Approved collector fallback; executed classpath registered",
+  "evidenceDate": "2026-10-20",
+  "publishedBy": "2026-05-24T17:19:23Z",
+  "publicationSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/3.11.0/maven-dependency-plugin-3.11.0.pom",
+  "collector": "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom",
+  "componentCount": 51,
+  "dom4j11Present": false,
+  "components": [
+    {
+      "coordinates": "com.github.cliftonlabs:json-simple:3.0.2",
+      "bomRef": "pkg:maven/com.github.cliftonlabs/json-simple@3.0.2?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "148c0d1bdc1bcb24394627d6930ee9ad"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "2337afdb06134a12fc0239299c3ceb2e9c209516"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "fda65a9ad0e1ac0c88987106e89aa4d8b2a2495e7e042371efa83813f65b7295"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "c77f7423fd96b5b6159236536e4e4b509032cea94368186b86c99f4ec72cf40ecfb26821cc7124077363902ce2b91644e32e53fa7de3fce9885b400b0424ecd0"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "805dced7fef08b98489ff09ffedda93998369ed6a024674f09ae8d4e62e8ffab5da235d64e5f91eabc1840f6695a7e43"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "d0a6dc8d23efc7dd2bd19036d8550a7ea1125528872765ab3094c72b9d76d287e7909abec239d4d8bae2a1d55c8621f6"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "d4239bd87f94a37ab4eeb653d9789a5a53899e5074d93ba66bea26f80b1ea2ca"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "448912379c297b72afad74ab6f7c9ef796046476dcaa8a2b4f1905ace248c4f52558c4683b3887e1aeddb03029b9b41ef8a90841cfd088734061c35489eb69b5"
+        }
+      ]
+    },
+    {
+      "coordinates": "com.github.luben:zstd-jni:1.5.7-6",
+      "bomRef": "pkg:maven/com.github.luben/zstd-jni@1.5.7-6?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "47f279a106a9d6e40997522286e14545"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "5ce34668f1ec629a343b9047f36c6cc4c0d3683a"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "8d6feb1da335f3ab13c584c613e23c7b3c61b392e37956872057baf8f0ca1d6f"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "70a2e2c4a3e3467cad0640955bea585fd263ad49fa7f00381321f0e26152af46c987f1b2ddfff66fff0d0035dfe23e633fc63091a8a4b08dcbac29b9b57a5ca1"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "6974dccb4dfe78fd0f819fc9cec6d37963ad2bc18adbf639daef939ea9378f03e3cb8910ba490210123877bb1b05960c"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "b60fb9fef35eecfe600888bd69400c47299d03398e3784b2856e406ab8d3fb52fb7da188cf440e84844e3728a46ab88e"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "f0d3ef618aa167daa9da9cef404bee2bd383c7743365b2f1c54c4955f3456479"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "cbce7c9e57d56a37cb8c5bd3ac2bad521c13317695fd9709fde22c19ada8e9b419a8e60b8219e6eb6f00000509dd036a4be6a0613b0ef5007fab52c8265434f5"
+        }
+      ]
+    },
+    {
+      "coordinates": "commons-beanutils:commons-beanutils:1.9.4",
+      "bomRef": "pkg:maven/commons-beanutils/commons-beanutils@1.9.4?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "07dc532ee316fe1f2f0323e9bd2f8df4"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "d52b9abcd97f38c81342bb7e7ae1eee9b73cba51"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "7d938c81789028045c08c065e94be75fc280527620d5bd62b519d5838532368a"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "7762b348caecead49038a38a89754ff7d9be6199324315495ba47cf24f52c06faadf9306d925c8fe47c587589a939c82e491e1c730267fdf354243a68c0f96ff"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "dcd3845917b8fb189cf4034b0d7c6d266ec7110f85ffbd2711cdea9eb94b4fa3e1cee9120b484c6a120b82769230ed3a"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "dfdb8845989be083de807184910124ad7e7e372959b34686cd5f5020f193a2997831ead497b0a5a0233f031aecdf55f6"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "127a81068335d6ca47f5f5e12d849dc1bc5300b2ad8d3f9b64ca30ff2a76d479"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "f67405d0a7667adf7cd35cd7416c54e1759380cdb9c8f179a10175058e40292808e17e69d48df4d4d6b5e268c314127cf3ab87af6920a271bb2e6e0df963940d"
+        }
+      ]
+    },
+    {
+      "coordinates": "commons-codec:commons-codec:1.19.0",
+      "bomRef": "pkg:maven/commons-codec/commons-codec@1.19.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "e46fa78c69544eb6239c4e8447e72544"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8c0dbe3ae883fceda9b50a6c76e745e548073388"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "5c3881e4f556855e9c532927ee0c9dfde94cc66760d5805c031a59887070af5f"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "d98a7a1cfcc08aa9cce4f7778e3f37ecb99da7b1da01944e5fa8faf06fbf9f969f2efb0b416832f419d53085250f711c071f1dac9fa0968483c37034198367fb"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "f0edec3cd84b2320e6930380d3fe13335d33f041470d27fb93789db0c696ec01dda21b471f0015bf70bffffcbfdb67c0"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "ce771ef9f0df326a34ab37e70f710801bb18d545aca0ee492db62770db323ab8a0b5082123ca4826f3d3182748537cfc"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "8296db95bb2fac86a0eb68e61e9730084f4272ad6a4a4327a5259c631840e98e"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "05da2f8674a257c5d8a1137cadbda71d2635f22237450bf2cbc980380a56905247bea38049c8cd80e60077be2be73b1eae6b466c228e4277763a54979cf856fb"
+        }
+      ]
+    },
+    {
+      "coordinates": "commons-collections:commons-collections:3.2.2",
+      "bomRef": "pkg:maven/commons-collections/commons-collections@3.2.2?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "f54a8510f834a1a57166970bfc982e94"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8ad72fe39fa8c91eaaf12aadb21e0c3661fe26d5"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "eeeae917917144a68a741d4c0dff66aa5c5c5fd85593ff217bced3fc8ca783b8"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "51c72f9aca7726f3c387095e66be85a6df97c74b00a25434b89188c1b8eab6e2b55accf7b9bd412430d22bd09324dec076e300b3d1fa39fccad471f0f2a3da16"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "dd4e99b3314bd3c1a1ee26296615d9e44dadf7a1f8a7bbba44fb95121803d331e36d4cca4260e7609af78a47ba3e4073"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "8ce03528e4a6e95c44283b56eca87e6a6d3bf1363411a55b538f4f9110cf7470581ea5c73925e877ddab08dba0603f40"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "fd3d6134b5f07077b82ccf93d148dacf7c4ce5c971209510edd0e77e3e38c19e"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "c2a523916fb7c7d55a05d5e3d9e9b33000733f4b20a71be174e4e093e3f06ea78ad831edd1505527da7388105f8647efb7d5666ba852c90b4e2d5bb74256efbc"
+        }
+      ]
+    },
+    {
+      "coordinates": "commons-io:commons-io:2.21.0",
+      "bomRef": "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "bc7e020873f086ede85f97bd9f013215"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "52a6f68fe5afe335cde95461dd5c3412f04996f7"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "7d643a2afea8b058b762aa6fb90e5b256f6c729739f8b3784c3370ddc609e88d"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "7ac1aa4d834cd7cdecaee223a64c63d481810c73dfdb5109f402234a05cadf754e414cead99072f5140d4f7042ee084161935fb28129a631d908d989c5bbac5d"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "97c07e5c4f62484c98b6777f63ab032ee09eeb1c9ddae8332890126df9c665afb9cd554db02495171738720d23c53732"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "e3e44c9f4a5f4075fb62a438a84015fe2abf878e9793835a7816dc3c35141bb79fe96dfdc6bb5aef96b7c5bbbcf453c1"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "1f8f4ce25b7169452dabb10ce843b3246378ea55c1971acd2300e417747b3a68"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "175630adf10305aeb31d737f833021a25582ffe2ef66fda6e7f694598af9c68cebbd205ade469eca4faaf6b9d349244289e62179d9cf48d93427090e2c008cf8"
+        }
+      ]
+    },
+    {
+      "coordinates": "commons-logging:commons-logging:1.2",
+      "bomRef": "pkg:maven/commons-logging/commons-logging@1.2?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "040b4b4d8eac886f6b4a2a3bd2f31b00"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "4bfc12adfe4842bf07b657f0369c4cb522955686"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "daddea1ea0be0f56978ab3006b8ac92834afeefbd9b7e4e6316fca57df0fa636"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "ed00dbfabd9ae00efa26dd400983601d076fe36408b7d6520084b447e5d1fa527ce65bd6afdcb58506c3a808323d28e88f26cb99c6f5db9ff64f6525ecdfa557"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "ac20720d7156131478205f1b454395abf84cfc8da2f163301af32f63bd3c4764bd26cb54ed53800f33193ae591f3ce9c"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "628eb4407e95dca84da1a06b08a6d9b832a49de8472b1b217e8607f08efeeed18b996232d64dd07f03e78e0e3bb4b078"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "9aab62deccf156ee6e324c925dfc30ecb53e8465802863a551901a461424e807"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "3fd76857f6d20c03799537cc961c1c4ddf1c375c6c192fb982363e3b9397ba138b77f24ef38b4202f44e37586789c0320e4de18fdadd2772304fd14a9b26d552"
+        }
+      ]
+    },
+    {
+      "coordinates": "eu.maveniverse.maven.domtrip:domtrip-core:1.5.1",
+      "bomRef": "pkg:maven/eu.maveniverse.maven.domtrip/domtrip-core@1.5.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "name": "EPLv2",
+            "url": "https://www.eclipse.org/legal/epl-v20.html"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4c956e700fea29306849e2c3d3440e13"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "5d7973ce3b8a6d2ccde09343d4b09448a95a9ae2"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "7f70f7c35068a99a9e0c527bdd6392a6e07678bd9933ca4429116b8275629f74"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "e59045a42c020022ea5e927a560c49aed235e3af8ce631a22e8d976705fdb6cde9062493f92064737be27ec02ce872f1453eb96fc60be5d47d6341fb4833ffdf"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "c41957bbecff5d157e0f3646a50d527b8573f7b19b720e31094893cb098d7e8ef77e7bb5ac3be99270e7132300633fe5"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "91c1b7f73839c8d90c34ec6fee6c9f18c10e05882bc016d916838871a77aee7e335d1bf9ab575026b332752a111fc6f8"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "dec724506b508dd09e65a4375e52c001493280b53b54bd6482a4653772c034f5"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "4ead3dd6087c8c605425f909a04e3221d059aa07cd396abc0521a6226ead4f1eab125b0747219231ca7ed934c41c3eb6e44ecfb7ea1658d79d5f8edb99b4aa33"
+        }
+      ]
+    },
+    {
+      "coordinates": "eu.maveniverse.maven.domtrip:domtrip-maven:1.5.1",
+      "bomRef": "pkg:maven/eu.maveniverse.maven.domtrip/domtrip-maven@1.5.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "name": "EPLv2",
+            "url": "https://www.eclipse.org/legal/epl-v20.html"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "d318883aadfbc3a998a3beddd36b0f4b"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "296b323a42015a1b4a2753b4a91685369fc0b56e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "d8ddc436506a6d2288bcb0cc12c0257793005af1ae67c53d7d7c6c1fd59d82af"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "f087a3468d31f23e900645f7e1e891037deb3406ca0c35b80a2192d72eea1067eea8fddd1b2f28d54d915eb0b1cba94dc4ba5b9d5db3bd7d1319beab1ad9dee1"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "feccf08a152875a12e645c6d3f22b0aad013d897e06c3ef1d54f4fa067303dff5954cd3904b18f323ec709437d82f410"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "c1fb34bc2d33985924a443c8a69d01cf14ac18582009c8722d8619dfc1631b40ec34d811cdf1f3a81b52d48e02cd07aa"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "c72f9ae710b2417bb9eb7a0af32b5e6dcdaf894541071b93ac767d0161b42a7a"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "d3f5be95c1c25ad198af4f94d123f234e307ed13a23a598e5cfd6982893472c56f631553331396c41969de043218b758e19ebdac52743f119406ba851bfff381"
+        }
+      ]
+    },
+    {
+      "coordinates": "javax.inject:javax.inject:1",
+      "bomRef": "pkg:maven/javax.inject/javax.inject@1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "289075e48b909e9e74e6c915b3631d2e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6975da39a7040257bd51d21a231b76c915872d38"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "91c77044a50c481636c32d916fd89c9118a72195390452c81065080f957de7ff"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "e126b7ccf3e42fd1984a0beef1004a7269a337c202e59e04e8e2af714280d2f2d8d2ba5e6f59481b8dcd34aaf35c966a688d0b48ec7e96f102c274dc0d3b381e"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "ac04c9f03ccbe35a25deb8b50280a0ca01dbe6aff0dd795d55af6112bfe3cd5817eb82f32fb18378d86cd64b07597190"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "fca090ecb1edeacb9fe865dc515cd1d109b323cd742d4a9733ff199a96ee96e0db4f924079520b9c189ef750f255475d"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "5b0054e39e522de0e0ffc4034d12f72270291fb24d94d5ffc9c4d69c25035fc6"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "fb290f5a70b1efc1dff12f40a0b2d7b94019f66da42e78010c0b8e61f222c4f267b67e356a9e9c346eb801e5515e36243888f280c5cb95c2dd69016a30cadeb9"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.commons:commons-compress:1.28.0",
+      "bomRef": "pkg:maven/org.apache.commons/commons-compress@1.28.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "f33efe616d561f8281ef7bf9f2576ad0"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "e482f2c7a88dac3c497e96aa420b6a769f59c8d7"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e1522945218456f3649a39bc4afd70ce4bd466221519dba7d378f2141a4642ca"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "f1f140f4f40ab3cf3265919db9dbb95a631a29aa784e305f291de4e68876bb711d9217d62d7937cddddd393982decdf71a608b4b3ab7f4e6375cf28af2893d7f"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "afe6a8fc8e7486c4ecce95276bb1467763d7ff7d941c7bcff8661bbbd4bff442fd0899ff7a11bc540cda86818ee4a8f0"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "6afb636ad0805e522913cfd91c8293c485b7f4eff5e45dd3a17a716c3f4b8ab8969e9c00927559a5fb762cba1fdb3d3f"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "4420e0b462b5dcc45077e95e012a82a5ae17659e5abe8a685fa086dab6995298"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "23e37d13c8ee6c7369e407c29d1f9ee1bb44eca9f09a6f9742f6b4cf3d38dd7a0509fe0142536cd8087b68a76e71d819105af2c23f2aeed08acc58eb93cf7e61"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.commons:commons-digester3:3.2",
+      "bomRef": "pkg:maven/org.apache.commons/commons-digester3@3.2?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "41d2c62c7aedafa7a3627794abc83f71"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "c3f68c5ff25ec5204470fd8fdf4cb8feff5e8a79"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "1c150e3d2df4b4237b47e28fea2079fb0da324578d5cca6a5fed2e37a62082ec"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "a2063f01fd50f96cfd8765c49935249a77df47965ff0ae375bb1f1e47e3cdeb5e82eaf0b0e32183e581c01821499f9d4c57419e90352a7aa96b97850950e8652"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "1691e34753c8ce3bb16729de8901f65def9362a989887e7b5d3cb05ded854e5b25b01b7725201228a97d17c4d68eb5f1"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "aaf22fbe0faa7303fc7b3c96ece73ae0e980ebd01454e344f612f7ccb10059c89d29cd579fbf2d211967708a7884a5c2"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "0c06a70800e0baf107e23e79a2eb7087694e06565fb9a27dc1ec920420b25fb1"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "2ed528a469c368296f63b6c1bc0ffe0eb01208cf8adf4127c350d38223c47550409e572c33ac2ed567792cb44b46cc002c5a0ec52019beccdedcc5dcc84a7155"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.commons:commons-lang3:3.20.0",
+      "bomRef": "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4b29562ded527aa074e1d44f8646dac5"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "65897b3e5731220962e659e001904af3c3cbeba9"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "69e5c9fa35da7a51a5fd2099dfe56a2d8d32cf233e2f6d770e796146440263f4"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "1c72db334ea44f932c35e602b78907865f5bab43e30c871c9be67c8184eaa778f32d7bc3ab525d5921cd28619d3f9babfd483f17de54f007ee07db2e074b0307"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "77dd27c4d5e9372c002bd6878d2cfaaec3cf46dd57d65de63d7f2e09351344531cfa81a537b56628ac6db18adee7e484"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "3456de40eef224b3ad195d2f218dd28eacb0da07607aee7ead94bd8d54bd8311d51c28d4066db4bf8b69a2df48c415f5"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "36e3f71352fa14bc580db45a05b09b063392c6d39acf9e24ffa6a67bbc07a336"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "6ecbc05bb5cd3f7537078b0cf51b0a5f7189dfa60c22e5ec0d6b9e2fd3f7fa7566770b5da87e0c9929f48769933c3e3a473fd5cc7231672fca36ab1fee1f8670"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.commons:commons-text:1.12.0",
+      "bomRef": "pkg:maven/org.apache.commons/commons-text@1.12.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "544add6fbc8d4b100b07c3692d08099e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "66aa90dc099701c4d3b14bd256c328f592ccf0d6"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "de023257ff166044a56bd1aa9124e843cd05dac5806cc705a9311f3556d5a15f"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "7d198cc288e4d515f37c81d0dcd1210bce3594d2a06a11f6a78566d33c33acdb4f292b0b42c87281b69fe3af891966bca708e25fa29b1b3536e9f951f5b57d7c"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "4f471c41486a396f25e6956750440aa05c294778ae1ffaafba1f8596f0d49da45b56ad829d59343900fca7c0db461bbe"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "685ab7392554fd43e5ec7fcd1f6faab19a74d0541927e947334ac9ae1e97e6d12590998f091ef4293738e3763999a6cc"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "ed3e3bb796583c58c587be9c692cef80f6e7496120963d9b47cef453d2b6f20d"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "f5fcacd33f37676d354c836329c41347a4023f851ec0b24785c64c46c72c609dc64599413f2a6a3ecab4e45fcdbb3b487ca36a9b67fcd1c457bd09e1b5530137"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-core:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-core@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "c0fb5fa304380a070a896e79a62b6932"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6b8dd422ff321fdbf32a0196b85cce3d63cfe68c"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "939183cf5ced6741745b2475a4adf78ca85885ee0dad6dae28dd3f25bd447ff3"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "254ba191aa9a3badee94990bdfce0d629faed0634990060fec014801f02cb8c902be4fa887ee7ad8fbdb0628e132257946f55e2cf34d2aee9e80d4e59db919b5"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "67f5e1d315f1277e41e976cd19bbf09af2e68500d73e947e18b77c42b996d7ae709af296cd6f822a9bc080827a35eb32"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "e07e1c7b41c21b3edbfec8ed9b0defa6e0bdd9ecfc3da020f0d483d27d199e22833292de4e04cd14494fd373ff70a191"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "01bcf009f82c3480b30905d40c660671c77a34e78e17533e6bf5891d2abd4ada"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "c2b77bf05c1d98eac15ccc2b5849d3bedf3059f48f00ffd06c4984d53f81e9c8e7e677e7c96ae2cf174d6a1a6e0a21f6afa0e200e3eee0873a80b775ebad5b1a"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-integration-tools:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-integration-tools@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "b8e18118b11a20e0ddc66b235989682e"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "ce08d289ed826416983860fb2adced6dd7ade550"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "4aee72f9b30b507964c2f52b63f70e7b41fb9d957359cb5dc13c428abb4b6189"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "f1283e59206ef36d30b461a3acd492e0293ef43408e3836b383cef2008dec2c67855bd834477dc6c570948eb23c0563513ea1e77ed70c4fe740cf497b5aedf7f"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "571f23ff6805482534a2900ea0d31f60990e66a23ca84c7c1277dd7e835a6c366444758b74449c06f34e417e6f023b97"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "be39da056d82de338c6e162b4ddb394fe5403c191940705b1432a6e63e4fd471bb62287f67b944f294b3b51d0ce5949b"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "b23f619e2527c6cb933a128e5a46ece0ab7425b731b80499879216e691f34c02"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "a5546b3480e2427fdf78cd0329f6824d679391873dcac4b1a2a1f7d4e0a097a8161e49266803531c99b366c5f50be6969395ab1c40f53e3265799ae1f6f73937"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-module-apt:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-module-apt@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "f6613830c1f558b909b32d3e3e271911"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "0505b4e8d57eb3f8c3d66adcca85ce09311742ba"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f4a846c448ca85358279184a310f6ee3f46fa39688f74a72961c1bfe222f28a6"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "97bbf8b640a29efd19693e09403bda9b1ab0c5b78fd3ea1e383b57d61be8d8fc112a2d2098fee1bf8b84b5b23c52bca1f820245274fb959c74e2c5ff66435705"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "cb4781e22a3c1f17c7cd630c38a704d5cf7289dcbbd90667ae63eaacd925a93d22678e700a6ab0a59f03757a823a05ba"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "36ba428bde2da90c56f47a39e2bfe6ae2a3f21bf4244f6e77758e433ab355eb8a2ab7f59ee66d212b6d00aeaacc3df8a"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "aa461bef4ef9be4357f26c06233e5352293067a6e4146891e68660bf73757c2a"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "8f45c3d4a73a0d943ab7c86e106e38c44fa8435035ae44e007bbb5162f8699588e0828ef300d52bc5ea8ffd3e9379fea68617f7655467f4f09fc65857d49acb5"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-module-xdoc:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-module-xdoc@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "dd12065dc641017da7006cb39f0490e5"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "fe3a51c0226cb7cdfdcc97b73681f6ee80fad72c"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "7956aca14f8adbc48bac86b218701dd44cc990063a69edbfca363b105994a474"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "34d0ff9cf1de22f57764fb3fc5212794393faf97d7f25a2aeb459cdc3768dd8a9d7ba1a722ab8856a9e9cfae8d0f6155d069275028f6d7e064ca1cee909e283e"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "f42887fa6cfe11eadef20b1de3445c7985764cee1524768044e7cd9b5359a3d252e852099130715a12bc51255bcc92de"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "5d6da0a4ac898aa36b259a78998d3033ed37341471b6e811e722b5341ced7b5ad02542b4d9f72877640305a3a471c55c"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "0708739dbfcc78dea964478de746aed9dacba22c29de850802756867568b0d91"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "535580ea82e12ece01b4f913bb9055af2e726188af5e948831fe34dd35bc4186515168220d9ddcd865a334e3f6da65cb8782be278a5f4dc5eb9afee6a31e0a90"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-module-xhtml5:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml5@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "2369dd687d9b13d115157299d09ca7d4"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "15fbcfe42e0a50eb33adbc061c9b4db84ec0470e"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "c91557679a0eb9fde3175055628ceb7b8fd5ab6d308340770d236fb06265dc26"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "9a6e7cdbbd4cac4f7f275ae4668a61fee7610b1aa4cc1277c17c01b6e28c2e12e82403404d839a727b9aaf08d5c33328c95772e18e3416a5dbdda7bad5a8a13b"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "11eb926fb6bf0c57d461bb890488c800a374857bea22e6543f2b82273a23fe66ed2f9c6115f1ac7a9169f71160cc76d7"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "e1b87e1d963f0191797308fd9a1a7b3d99d21cc218a7e8adabc422aec5b37760c8f232638aac4b4d2040992ad2ac6809"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "65d5775f67a3b4ac04506c0f03f34d7fca0bfcb57fc2f2ffc5b5d609c458a8f1"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "91102caa2091dc1a033bc2d1cd768998093f124bb4b49f8e526fdb9d99f77a0d4eb055d9a1d728ee3733ad350cb447b6d88f38c08f44ee4886689026ef4636cc"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-sink-api:2.1.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "87a07d1cbbede4fa5ff79e94a4c77907"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "079edb7ed839b2dc5c7d4e4fc452e3d24e3dceda"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "b465db838dd482a994d32a088bea4bcbaa62cfb8b2853511a9f8c3e769402c74"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "8e4853dc0a53fe19b29ec4e57f100f0b0b6f00b339727cec966d5664a6febf49fbc5c0fa2473b23a3202add9af98153018e9728b4737c3dc974b9f250629aef4"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "33e2854ccdec42a864e95452ec89f211db0e5fe80ca1f766c9daf0700fe0826e4386fcd1c6f728207c1a3a7b54a093aa"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "3618594c9139d66d69fa2d6b5f686cf2da6f54399404f72e02f446bfa7e03d00406cb7c75ac7540030f3a8b284b5421a"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "edbb39d6dae92024e15c4e383f2e0656ff70519113467258130f76fffdc4b838"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "351e4fba881acdc4f811c5a7a79adf3013533f8f74382e572577389d5fb2e294d85bb6e071b8c7df136281e6da7efa2cd4766cb47eabd347770f60a0337fd82d"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-site-model:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-site-model@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4da689094c6e4a2d6457d21ce959ac42"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6a43c5b58b9acbf789618efdda23d5cb9fb0981f"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "f6ec9ef75a41d1b826e5ecf02d92c5de90a6bc70ea93d5340988703223bf2205"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "cbc57a27b6aee02de03e5736e753174c85ab9ca484e3ecf29f14d0e5414bae6c7d8d85746dc0be36e69a465f646e3414b4d42cfe0afe5ec84696c7183dce44fb"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "5792b264ac5100c74ee032f0cd17d6e206de13c0edc9fdcfaac15720f6cb1257398fdcadfc9e4dc82974d45fc5846122"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "428cf97b0c580abb9585a1c0944f247e7b06f67e91a9dcd5a806980a18f6efb93433e5e0c736ea6ed7290d1a4dacd9f5"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "93838a46d4982cb621cb9cbf9937efd9eee1ea3e66e3ae38c2e6f5b9c6485e28"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "3c1f1ecdf57031a6e52f945d6d83578ad6ef718799c27344848a28612498b4e657b761f9254c27ef155d04a282f1b64fa966e95f14509b7f929e3e9ee502c5f1"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-site-renderer:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-site-renderer@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "0af057ade4d5bc3b41a06cf1100bbd93"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "b68214ec1d3250a4594f598f054977d961e66ac8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "6cdee370194f4b9f742d12ef46528042f480d9bdf3de832de2792e1ae9ffc68d"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "fbd9b5c101c908cfa1a1152d86bd85b34aeab040af2031eed82e40391f2a1f8672665c29e798d9eb0ffc8bbd8daf7d5650ac5498c4674d45e3a2136497bd039d"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "3f0a3411760b923e905272ffef3acdcb521823509c854d676392748b1610b2aff000c1ddac0e06b20839d5f509d113ca"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "0f0ac53a476af63dea74bee5704aafa778bffec18bd83c09d74c475d9f6f77170b22281bc82726115fd466f6615d1094"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "1c8dfaf0807068d1c3fca0e0b819ffef373c0dd7f7644d59a133929ab3dbef33"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "59bcc9793a679d2d23698a2ee066e15529e1c5c78b32c55e69af6bac4c3fca6bf3431cc9be19eaea73ac05c204ed784cfa36f79e34579d29d071cbc3e2b5c18f"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.doxia:doxia-skin-model:2.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.doxia/doxia-skin-model@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "9daee5a484a8a9cb32b2fe6cfea42531"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "86913a4d7f1acbf26d426c97adecb18e21938ebf"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "3ced0d90353f49e8eb1458f54664b93ec117d79b9789a576da41e2f6f99723e0"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "c2c7b6b284566175ab474cc65d3cae4e788e0443a0002d8987879e85f1c0a34a05cd02c4ebac0ddffa616d927d6879bfa962ee765bd26e0c96acfe5b888d574f"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "75878eed8636aa36bed4c9d94749d7366fb37fd6f85a733d69b61a42693334e0777500bd0d1dc3743be20eb043ba6bc9"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "426009912e94a4701e8b5f60b050baee2df2308568b1e9a41cf116b5302e4a459aa4a27d960268fede81f096438ea826"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "7f32e9ee1107485d9d5132d96858693fdebd92a477902cf79f61677f9802cdd6"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "64aaadacb6f783cb666753f52e24c51c8c5e1cf7c58330f774eb30adc9160ea1a77853070c4e59a0c9e2fde97f589cddb361a82f756a0435a97c5cbaabea9554"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.plugins:maven-dependency-plugin:3.11.0",
+      "bomRef": "pkg:maven/org.apache.maven.plugins/maven-dependency-plugin@3.11.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "806683d5a6fab29b829cc79eaf42c60f"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "7451abfa599596cf15d2c57ce8234547476961ff"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e37a8fc9ff47435cc6bda257a4501cf79626c8115610ba33c77775ce23b4c3b7"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "d82f99cd5aab3bc2c90c2e152171fd018040274da67a54297ad2b6d9fe0b0a39f59c1f37e83c03884d8337bbdf2551c1cea71891cf7898377197c175390f4a04"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "d177cf7a737433e288ede954993117e766f770f2b8ecdc2b71262e0e579e4dd60e99870d293de89540a46fa7029bf6bf"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "fe03c226409be322d052882f1978d361fb9497fb8cca8001710c18016ca35109f9401b7e75c885bf97428d4043c29b73"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "dd2efa70e7c9dc14ceb6a8e2152ad6ed3ba491f95f72c639dfc832f716b38ab1"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "a0bdd54d73d8d9e76ec05316bfc9c15140e6bb766470f83918bb049304f6a1da510510915c8062da9da74c6afb24f2a67f19e9528b9a23d25d29ca3a495bedee"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.reporting:maven-reporting-api:4.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@4.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "9c49fcb81d69bb5ec513d624c181fc05"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "d3ad7e3d03463b5bd77e7d3ce94539cc723c8dfb"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "cb2cbde3c9c7288f7398a250dcf3c90cf92714cff301f22b298e1091b5def33c"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "5a76ac4d7d9bbd2c834bfa16062bbf9523588e4ace9badfd2820b5cc5b7efbd1aa148479e4aa1a0f94347fa9ab7fd1ab6e9055d35b6f9c49161aa6a9c2ba6bc0"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "a839758279aff4fa8da0e4c5970281791ce296772f4178f1c1a07215f701f8eb1a4f54bf73a4eac15a8f6524a35ce1b0"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "9bbd0b95e2ca51e8dafcaa64bdaa40630b2847d6867ce5318829d30121580438df1cb552b848617f2a9393c7dbf4dcca"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "037b404b0c94d26f5d24003235b26d11609aed2c744dd42356ac39de5abdfd05"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "b2ba70061d190f29a2f6c40c14804b75355740a01f5a86e7af39a3da475f23eecb78dbb1ffc437121d849f0adbb4acf7224fe75e634dbff29dc83640367f5f75"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.reporting:maven-reporting-impl:4.0.0",
+      "bomRef": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@4.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "302ed7d914dc813380d361d1acb83c2f"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "d3753b5c13a873a5ddb71f404c6fe1179a4688c2"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e9e70fdb26ff8b1f15435e3a68866a25c85b1694007e0fbdfe84e48e946fe463"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "ba9375f585e019dd617570f1b1e9e0d9c5f892bc50cef901b62bb77af5251f33187d72768ecc1e6b75aaa8701cbf7917d1d9fb341059a1a73abc700cccb86cf6"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "61415b631b105f16898ee7e88f49cffb6f58440b91115743e3938c8c0cfbedb176b90a6913242f7d084e850c996d0b26"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "9432022ecc13aaa5363b61272a60117219f4e62b391022028edb3669880570cf2fa89fa01b16c51785dcb2928081f862"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "973658f5634db80ba5479ba47092477622328551d8cb3ea8eec876e414ec1e9d"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "6fcbba982ab9a982f226fa63d9d769340b6d1dc406e33fae8657867f1f948f7f3521ac5447de932aaae246fc8983fad4c7899dab04fc4e4168be70a2597d7b21"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.resolver:maven-resolver-api:1.4.1",
+      "bomRef": "pkg:maven/org.apache.maven.resolver/maven-resolver-api@1.4.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "4566dcb75f3d95fcc4c2fc83ae562f71"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "ceee6b7ea1bc252afa585fa32f76c2cda206bdcd"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "33dc67306cc95da14e5444e8b494d967924abf1d01bae1894676164cbd3f6112"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "da56ddeecfbb6d285d08fa60f88fe125d1f08f48ea24013b83b6aadf24835c034c9b45cdb815d99505b35e0605c48b6d7e5949f1735a874049b0790e8a8461dc"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "5756381d718729e842637a3865b1b597757575ff087d4a248b04eaec300f990ff505c174055f00918ab26d14e9ecff88"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "a42f1e01f6a6350d37d7db4e0a1829d399241e809cbfa713bd047105ee155d6fbdf9334ee3d7a1ddb5f9b6e959b0ba61"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "1742e3d180c14936f9e0d003c1492e94095ba230b866038250a6a66aea6a5cb6"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "bda39f42b160f16bbf9bed080a6d896a0022787d3593b8434aa3bb730825a21f19699d0c4fe676f09d0db86dae08233c6b1153572aed09b839b99ed00bef69ed"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.resolver:maven-resolver-util:1.9.25",
+      "bomRef": "pkg:maven/org.apache.maven.resolver/maven-resolver-util@1.9.25?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "8c4a25d08ba8ba18a9f93a821d518273"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "f755f6816d8fd63b09b8f2c9e1eaaa1f60c179e8"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e31330fdb29045f3087b4985cb488a5b5ebbcbd7d879fda14e6ed4dd61b1fdf7"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "785dffddf7bca8acac5bdea37791688e4abdf381183bc9b495936c590a30b800fcca82f94915b85141294526b0efbaad20560a8894a441de07c59e27c25ccc59"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "67d52a00a6af0c4a6697c26274cb5cdfc696cb3bd75ffea6891a5f01857e288d90d4e9cf76f595156ff4df39c9d6d34d"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "c6a659e75f37b1b40f73d16443a593d17325d289fc70d0ddcb27a0027306525b124c88bea3f86e903a88affaa5fea076"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "3447b4098827b646c011d7cd6a8205b25e27fba291ac0843d1b82e8f64e68cf4"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "f053605e80695b2e2007db7b39ea78d2778919d6aafc5f01272cfd81f8a4638caec28bf1eea1efa103ddb256abe9e6e172c210db07c3998676547e497dab6a6b"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.shared:maven-artifact-transfer:0.13.1",
+      "bomRef": "pkg:maven/org.apache.maven.shared/maven-artifact-transfer@0.13.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "5a73136d65cfc2dd8af0fd365dbda4fb"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "9f6d2088ae64dd926b8ec445afdb7e148eb08060"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "1ac88accde99ed71e65253bd130868c0e654f940f01ade073b895eb2f817cf06"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "122bf211295a1f94cca62f50cc3ee51cdd01c0dde47db4a236c60aa0a68165be30902719fd5093f1280d875c9635737383bfe92090daef03a5dca24481a50595"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "20a7ed7096a2938f7f17b585bea0ee80705f787a54c19650ba9f7f6df75200f7c1d5d28832715af5c336197e90a4342b"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "370fd1560274a088771517bcb4f91a0550d2244d0efebad8a577f5eadec1f52f396fd1f6eb9cc5ae554945107c401a19"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "d3a8a5e17795c11ac3250957bc9693fd349bed29bd0c11b8e7b4d1a7832fede4"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "abdb3cbb5ab862489019a83a43a7f6edefce474513d8c0a4a7b47b353ddf0270bc0a0e63214937c381cc18b4ccd23587d7029346cead785bb9ef6e4869a19084"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.shared:maven-common-artifact-filters:3.4.0",
+      "bomRef": "pkg:maven/org.apache.maven.shared/maven-common-artifact-filters@3.4.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "48f960129682d6ca5a10d23970a637c0"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "25855b1fa26fa5a1b387375de4b14ac39df23981"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "931a77aa9dad6c91f10fcfafa70adc7608c004576b4924c74ecbffb27568a880"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "51a063ac45441485c1b1d94c9554cb74cb34354bd76783aec5ed6e9789cd7e78e9a70e6d51a3b14d9e1c68d1f060e14e996399afb8015970262b056816a0668b"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "ae6f68b2f786cfc3b959306541bf92e61bd17bad0dbd3ae88dac23d6f429725538051a188bff5224d60bfe901903fae8"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "a847c64df3b8919c4b8f3410826155f4eeade99fa345e811e9c6865b3a5d678a8c1c9221b77d8ec60b1ba38ed287c832"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "663ff46ab6188be3013ddb17045b584d7cfd97f4a1190a8d10153b3cacca7574"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "257333220dfd1be86aa740ae86716ff2af85cbadc56a28fcdb95ecda43fd7f450ca684774fd2d8b482a2c05b13d28e5f9d97ca1a246f059f605f343454e42406"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.shared:maven-dependency-analyzer:1.17.1",
+      "bomRef": "pkg:maven/org.apache.maven.shared/maven-dependency-analyzer@1.17.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "2e2ac2bcedb999debd469dc7d2ab4d87"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "40c57063ff38b14cbdb7cbe1048b8d5dd905beb5"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "1c01883172b50855ceaa68f3688b21a4b8d8bc77435d162db08818680b7fed87"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "2918e45eff62f164cb4bda4a34869eca091f3578df049d4d05e20b7549f34074dab2c79d6854b503522ad068fcb06479567def90e9c966d4695419f666783a4f"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "2fa3527e839000d6a2cd19c4201cdce8a519b22d557c145ac49e9f085ae09ce0371fa34641cce53fc24df51f6c7891ca"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "36aff3519e97bfc894b46f215b354f8d65894253b6d7323cf184e082866d9186e8b702685cc4f62de3570ff24f964532"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "c8c4b0d4df3ee6db6e20f1766c9db5288c487aa1aa03fde3f349a58bc40c5008"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "c19cee74a7624d4f85a0c995f8464de2f901caca924e07d7f0565dcd24a58593515ca84fca2c3774722ee5c378451e115def285d4f6ca1ba2b4a42633a048359"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.shared:maven-dependency-tree:3.3.0",
+      "bomRef": "pkg:maven/org.apache.maven.shared/maven-dependency-tree@3.3.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "d31e811443b74801b0345f3e279e5b4c"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "d9bca2c7d845fbc10b3a94082c489a33b520dfc9"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "a3353f6a82feb950d5e7e64b0cd4ceadea7eb62112e447172e34974a510316f4"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "d1b73d574b09e004f46e4a436b58b4416ae45458199ab553bf44e9f0d1779b18e0ff2a9a8f42cdf71a621b1d5d4a93e0208de9369579a3a172bbba9ea51cb19b"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "384e67aea49f8fa77187235390dfc9494f39bdc818a92488502e23143effa76b3b7c4d1bdfa0b130ff3a06f8bc34b4be"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "e1281cfc483f33fe06c699626c2d3f3be45a74bc6983cac089f5907b1dde443b826d402fff8bfb7fe32323a31c8ca6b3"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "aaf7d2f0acbedfdb9bd94d8831c2ddad9e7db9a145f1c566a33e9d560bffce57"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "d7f7b8f5289e53d1ca4857c7fab7615d2dbbfd212e3489ab39486d06866b6ab669c1c65f443a04fda79fa44d28333e8d75fee7791f1486a823801c73d43b9c35"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven.shared:maven-shared-utils:3.4.2",
+      "bomRef": "pkg:maven/org.apache.maven.shared/maven-shared-utils@3.4.2?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "53a038f77a81cb5816ad2b1c7daa8711"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "bfa28296272a5915b08de9f11f34a94b0a818fd0"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "b613357e1bad4dfc1dead801691c9460f9585fe7c6b466bc25186212d7d18487"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "71db8a485a6436cb305276ea9d748f578e1a8ffa1346c8570f7038684ce53d320584174634aeffa1b51629af0171a2d6572854eb07236a83236ad1d9949988e9"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "8f7e2c449282244fea3151ac0c956b42bb7ae6cb2397ca8b18952aea802d33cccad6e08a5f515fc34e52bacfece18862"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "72ec6c2c5de8cd074bd59dbb8215005bedc9de58795484ec2792fa867eaf13547aaca81daaf06f1ec117d29b21e70cd0"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "5cf6de29555bde0317d641e8a7afd7d1ed84dddff92c80f8493b4a2873d26c41"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "836acb2525ddc3b352da7db824e00c0831b25f46cb32a77c1e578b39978621e3c47da3554a901749af15b3981620875a4c4492f421a1833d8eb8e50c4804eff8"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.maven:maven-archiver:3.6.2",
+      "bomRef": "pkg:maven/org.apache.maven/maven-archiver@3.6.2?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "742b3136d8ff1fcb66f5fd7f3c267c8d"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "a2d949d87fed6db197cc3cceec93012dd2317ca0"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "1f895a587df4844d9b7565e8e9a6352afe1d55532458a0dbeb746bc1d02e9216"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "352f7af9cff067f4a4e959dd9d450f5eae6cb5dd6ac37c11813f11f83cec0b31143f0f6f30860403aedb9f6bd03c7d7a7fea322ee9b283b5c3a053673177133c"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "f4d5965d5713ed15449677d971777fba4dcff34109cb3d573af8d9a307675a57cf7cf41b31ea6de543f72743c6ed8ecc"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "e05e2c8955181adea2bf8e0fa2e1ad413183b1c905d9ccf0cfee0efdbebc2a04735d8ef53f46e289961d5961976ed5f1"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "6c43e3a38137addaab770d33d9fb26f75c09b0f8659128f62a122d4364084b74"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "d91d9158d349d816d14ac81ec6adf98c4394d7f36da17d275e2bf882ac67d8e052a3085960e5e8d02123192ee3fefc52537f19ede8ead73e9691f0e4a17a02ba"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.velocity.tools:velocity-tools-generic:3.1",
+      "bomRef": "pkg:maven/org.apache.velocity.tools/velocity-tools-generic@3.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "76f13879ead8693fd4d5751a8a236089"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "07aaa49086a64cd9dab967a8437cc03abbfad655"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "8258cfdcaa16127f35ffe610a3fa4f76b7ebe51b88922c73c4ee39ce8f378ce5"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "51e7249e92d516f9e8a92a1068856d920edee512563131cca2dede45ed6de0e8667dfe0f54cd59712f255f9019d92ea521b8182622ba303af3a45b9740a6d54b"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "7aadd12f098af99f43a390b4620ffba74008dd3308fbdd18ca0c012929b80196f3977b8748c967312e12546f8e065ce1"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "221fa964a36d4ee566a50164569df5f905082f2c94cf95bb763e1611f77806bb63000bade25fa3d205d16eea576d7781"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "3aa26883c32b31553ba468cd678ae0b6aa70272a683aea0d0cb8149afe404dc9"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "5d32822a5d3c913dacdece7c1415016b6f7f1320589397509c4ea689ae3a585e289acdaed7df14e2fe64be466956179b3260211bca013c11f71fa0542d28336d"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.apache.velocity:velocity-engine-core:2.4.1",
+      "bomRef": "pkg:maven/org.apache.velocity/velocity-engine-core@2.4.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "41a3757dc9d701590be703d1f2bd2462"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "0b662837e8006d5c383bd128503ea86ef5b4d361"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "1c19157d1171d560088e485be97c93a7a2f7e9f56e517f0a30273c5c39df6231"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "77150ed775e644be44d9f1ead19a880c8a02cba18dae97aec4ea8f14db04ee795bce35bd2e5314f2e95d40c01441da954327348f91addc9bb8d0cc9f7c00f561"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "87cb5f02de5e137db4426938d783233d274b41786de2f27719e8469e188822911acce66992ae074b22a9ff47c0997c38"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "a6671daa3dc0091fbca6fdcb7d8799adee1c1c5c68de7da0a0f07870bb22ed94fe9a705223bf23e90b7f7f5a4d12a5c4"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "71c8123c1c4bb5fb839e70d229545139b2da58fa3e3d9b09355d355b6f56c595"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "381c65e4a7026fc680fd37ffe53616f93b4dba2dc9cbd98f76c56e3e5a4ea2dbd5fa82e6b10da7df1dd3b1b4017d7a583a2777cef421f04412893b27e6202a22"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-archiver:4.11.0",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-archiver@4.11.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "9d218428542790bd3e0b34532446e5a8"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "389b4c015a2a67093592283814eb1137e0fc49ae"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "d24c3ca2185009d81b1ce3ee90cff1cfeab53b70fadbb3ae0c02a867d7c96034"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "11d04d6c97da47d9eedb6e9a9da0f2ccb365bb9ccdcfce17ac815f824c480b8530b288556b81c4db7fcbfbc8ffa2a05d07c24c63661c2b454d669ab0c71ffe6c"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "9249d988aa3ad0c7db88f35fb0c0e6fac45429427c304a47452cca668059d6c37ac1d8a234527fc98a8b8c58a5a56b5d"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "a49f710081fe76f0fadd04f7d439a41d424909502a07533f687359f7f5059406702c98dd23f66d7f2f8b3e6baed4389a"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "ef5d5be749924a04115e09351b7abf805f9ea6f0cd9904c51eaa2f5e288e5444"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "bf2e5b887814800bcf4b65d91022a505816793183b371c46ea7c6010893f45cbfee845d90a8c7610773c80b7814d9a6f3a8e9428bee0937d26213fa074730dc8"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-classworlds:2.6.0",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-classworlds@2.6.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "67e722b27e3a33b33c1b263b99dd7c43"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8587e80fcb38e70b70fae8d5914b6376bfad6259"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "52f77c5ec49f787c9c417ebed5d6efd9922f44a202f217376e4f94c0d74f3549"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "6a58048d9db54e603b9cfd35373cf695b66dd860bec878c663b4fc53b6b3d44dd5b0c92e7603654911b1f78e63ef277cf6b272fe069a360989138550545f274d"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "e839707ea5c4351f2703c6861ee4d58e08df0f7509110af13d4b3824e6ec5cfd65508fa80cc3f222baf5cf6c4ab5d5ac"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "75389fc7ed9aa3ad33ff317b0d41851fe0073b37aa8c33081722bfafb851493fb0e3b9629f924026fc32841f01399695"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "3aef41be29373137c58c415693b312c95e048731dce519ab88649eae9ba0e492"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "312eff142f86b9e110131dcca69527fbec80478e463fed5a34e2bd628673bce7be9ddb6fe0cda7fab2a119d1f310629413740019e686e9162194984ab6e06bf4"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-component-annotations:2.0.0",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-component-annotations@2.0.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "be18d50372002ba958de0ae4850b18a7"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6897b9fa8b67c900b52996f845e2d179eea13441"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "405eef6fc9188241ec88579c3e473f5c8997455c69bcd62e142492aca15106bc"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "a82bff6a7b68501e8ed54dfdfbe05bc2722ba8fdf8d6c1bdb8c36c0d516167cf2cfe8b8e835ee1f14c5f576c4523dd83d55ec6a9e8206aef57dedebe5a82c3ab"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "3216aeb7616da3afa0afbd3411477ac3c8b9bb79e1df07accf86de8c3f0737c67167980d61f9191a4fcff57fd5af690c"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "743fd43379cf4c39a2c0354bd746bbff129d041efb668ceffe9565151b08ef3fbd6b0041457f7cbd5ad7217a65400344"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "ce2b61b3da3e481bac422c71a531f0c788f9e6f55cda31835cae75af9d88eaaa"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "f400ba6cd9c5cfc0f34a065354a47e3985f0b9ed63c6a0c77f6701e1eeaab081f30e6cc295474a028f6e364475761f6e60f802414329161b4103880bd69b3bdc"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-i18n:1.1.0",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-i18n@1.1.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "2d36d7df65cddbbea3997ddf1afb310a"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "93f0046c9625734fb4e796afba1af6f54ef6c307"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "995c0792669a031c94d91960a5beb60e1516abcec17a104f9f47470b36e56e27"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "bc4953312257ed2dde1a155fc42f21f5305469154eb9e260b413e136d3b53c44fa5a9ed4971bc5d2b821a137400b8aa4edfc0e39780d1cb5291d4800ef9fa42c"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "9fb85e540da5360b1d88a28123bcbc32eadce45a062befd933be66e3fc56ea42626173c0a286fc2cdf97187950a47554"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "0f86cc7256c7034b67c52caf6760f6fe74aca9c87bd2c2c6ff7b2491b1ae55942fd3a02519c60d511e2ac2ebac1905f1"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "ed3c0f026cd02d0976d0ae8e5ae2d7a3bfddacb9c432e467e2e4b0d366736fce"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "8260ee7e1c6c4eeb9e642e8e56c1aa6543cc4b773df813b3d20b647829020726dd22fafe3ef0bfe9e52d8000c2160dd8400ee673d47ca33d3723ce04401055c2"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-interpolation:1.27",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "c2edbe0dbc934692794aaeac6006055a"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "8dc73f4ff5eafcbb7ec035ba54736e828b272533"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "3fb4fb6143fdf964024c3cb738551524b9ea84e5c211cd660c559ad0703e5230"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "34ae1399e75560d6aec6743ce37e10d2236342ec58145c3fdd7b03340f4ed3ef500f824c845d452dbb8c3f14d118c855707de4a080074fa572daf7ccfef4dddf"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "cf31f04d414db3c864a403628707df8b36c379a984d75804e5cbfeeea5fea54d2510620de045c0b01a7745063b3135fb"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "9a439b4e81260659af067e91d5e2482337dc718cd32abc08562e9a90fee45da6a0cbfffdc7190b13ba662ed3153fcde1"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "d8cd271924ed99a870e9f8c17796e2ab0a3e69350465508517992bee0cea6bbe"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "75a3e2cbde1c45b70c1b4103620f76673db127e17518e2ca51cff1e6d7a84041e495c71171490004650d6476679d009594db2557898e231962bea3744914c501"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-io:3.6.0",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-io@3.6.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "0af7594f2b303839b65e3d78047a3338"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "bcfac1a03aaaed4abf9c3f448df7d84f099f2170"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "fc0f3effea7514e4f214df1afb672f54c982e78e5ca3b32b34196c7d056a1aa4"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "9df5e9dec3ad9f62cec676d6353643ce010991be97bbf20429278b400d1949f4ff981b870daa57e2df642554cecbbe9dc2abf34a1deb49bbc889c63ec6bffebf"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "086ea94ce7307a4d6d11214523a578b5899636cae5989ba694c88a9929019634ff682be4799507e00c37f3a21418987c"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "caa3fd5bb26025d543b74f76aad139a495308eda32ca1f33372fca92f1fee704bdd7e05ed85d244af49ff25ccff28240"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "3b9c2e44d9fd9c42f9115249ad3e9bff79b4b9a7cb2e86ff24b0ba5fbd8f1fa3"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "b242c8b6d5c525380538557cd4734545a34f6479a911cd28bdffe5ed797221cee62528d541d8516f7eebb175e595aff2fb192c778685cbea8401c17eb72bc0f4"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-utils:4.0.3",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "a8848eea66d01d0279b26871dbc2cf1b"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "c097bf60a8a7aaf37dfb8f2c933a21e784035976"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "421ff6ed146c53a9d4eaade8f629b52b12af7187101f1bd06c2c64e904019f3c"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "ed864c502a54ab2e8e2d4c74479b1cb48c5e44ee56fcad6ba5aec9e20e3e765148299cb8eb8c9a516fb59bf836b12886caca00a9b12eb5cb036271df3437218d"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "91a1b379d98255afc76a39c8027de60c552f202c4068e1d8fba8c314afae382b5666da79d5b5ee64be059c0fb4eff30f"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "e2081b8cf0164c59a83d1ff370c1e1523278a255df831a67f489f2c92ec3eeb94238f18c940ff1d682dcb8edde911f07"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "dd4a151abcb534c595c3204b6bd14feffe574666647a85f7389fe9b6cfab2e5f"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "ffadce47e7375302a9f33229950267371e7381f0134cf102867d57d63ee04f40be8f2ea969092d2e98be8b9deb95fd9b5d6782b9483a1f3e7e7bd8be033b67d2"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-velocity:2.2.0",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-velocity@2.2.0?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "fd4bb44db19036ab360720360f09dccc"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "75a983b74a4c0adcd0751528ff397ae308ef6d0c"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "3e7e902f492c973cf210ddb8267843a3b65e83f5067467e2f4d9af0051f6b8b9"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "c8cf2a0cb9b96e78d71559a45a21fc8c74df5088f9934790efdc1bc2da14dc598a551f90addae210798d6a1eecd7c56934e301a601bfc5f1add9a35ee0a364dc"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "74927582b56f2e46ab5a268ea38e45092d1e1de35c0f2263337cd5470b3934cc239a32eca6407922450ef139f8490ad4"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "b28c88e9054b6b94afdd971979f5293f92a866e0bc88f557653f1e796d67a94957333247df6616580837476b308e1b6c"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "38631c8e26284bb97611dc2387d72b69ffeccc24755ead8b67ffdf040d99e53f"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "79b8722161304b4a7359fd29f1ac0fddc5a4038a456333f2651b0b3bb63577f8dfb94606662f56a82c90942ffefc693fe65481e7b2d729cb086b68d94c481d65"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.codehaus.plexus:plexus-xml:3.0.1",
+      "bomRef": "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "cd868918ebc742350840124ea4422ab0"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "b0e73c21402f03c2765674b8dede21673b3288cf"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "c1a510a87a62bd2d74ac1472dd31c3f9e9b0b8b8568f37d77c0f135415bebd05"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "422f2ccdda00dd8c90c2f5b5f4ad6f0410fb6f2bcb3429d196f7f39c96a44a6709c70539648214d5b7686a70240a6c16c7b985b943f8002d318f90896230a259"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "da397eb08963f4366d2119af1d993efa00fee25e50b09454422805ce83e662507e2afc7f6b4171a9c5da111d7ada3365"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "d21cc3459871a9f6e9a893df8f8bcb85a4f20cee96e821098e2a0f2655b20c9f01f1139e7dc4a80444d627d9854c56f6"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "bdf4b087b5d0ed2473c5ff7524b7c6dff791738715aa5499f14ed11729b3690b"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "fedd50a88c651e5a5da1639d5c507634bd50cb9103acfdec9e0db7827656855b7d1ee19ec7318de91996e86dc5e9c38f1b507433498c75ae327b865534999a9a"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.eclipse.sisu:org.eclipse.sisu.inject:0.9.0.M3",
+      "bomRef": "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.inject@0.9.0.M3?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "643a13084e0ac59cdda06319e1b348ea"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "3665002ba4d16dfa779ef658a63d0608c4bd898b"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "15335c4dcf082f599fb8eddcfb58d6a7e9a9c97de2883c257089a479b9b24522"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "76267078f3dd887fd7c4a0931d0ae057d5f51478f712ce4bb5530cfa5c2aa18a8dbe935b32c1afb01a4e2cde44d30579baf5868b8b63ee066ea0714fd9d8a81c"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "d24164f8aaae165de8533530b90168228e7d107a5eeb63997bf6e2d41f1adfaabf29aa9ab4f08e3445c69aa57f6c09b8"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "aab9bce13f047bcdd8d47420f80e88a314f3566bf7edcd7d37cf286865f45586fda8745793eb2a54c506759f9654bd5b"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "d9e302304b0f99703243f697f72b12e42df692553c08ef9d2d2e0eb83847eab7"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "8ac0b60618e01e819fcabcfd210176310d98f9856b49cafd5dfb451393b791b1ed43fc17e359c5868662dc76e0059e23a152c5564f7ce94ca4720bd092cb29d0"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.eclipse.sisu:org.eclipse.sisu.plexus:0.9.0.M3",
+      "bomRef": "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.plexus@0.9.0.M3?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "EPL-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "964e7bc9837b270566f18b87af65f5d7"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "b493c7abcc6e04fa0a6a20d489a3db0395c76f70"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "c99674d3773e26154885661711f0b6d63aa5008f5cc99227a236756d4ad9de5e"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "68c5df01ad522917d954b62cb3b11376b3446920e8d5cb35737de508e6acd91a36b34144933f427bbe1d29dca9097ba9dd2431c713fe18069f271a80b519f051"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "bd39a6cc9c18c62e64393da231b61efbf5bdeb8c0306e455bbc6e33f4b614e14023ccfbec83c943994da6684ab453092"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "aa3ca83152de61ee92ba94f655190b61aa25520db903489656485a56aa9314a453a91284c0fb377dffb8160580a610c2"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "434081d9dbbd4ffedafa88010d4db9a699fd2bc736e8b12b3bf3cede21f30aa9"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "86e4c864bdfcbcb7d58ac08d80b2c1406cadf10424c92889d1cb181f924af19b28d53210f77cb2b0515faa7ac6fff2dacd25ae1b62c419a798bdfd2a9f3108ae"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.ow2.asm:asm:9.9.1",
+      "bomRef": "pkg:maven/org.ow2.asm/asm@9.9.1?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "BSD-3-Clause",
+            "url": "https://opensource.org/licenses/BSD-3-Clause"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "1888ad1f49038441bb2d12aa6dffe396"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "2ceea6ab43bcae1979b2a6d85fc0ca429877e5ab"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "6f3828a215c920059a5efa2fb55c233d6c54ec5cadca99ce1b1bdd10077c7ddd"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "bb43eaca8777c7b2b4bce9fc19f9be5742a736a23415e271643c3e14d3d82f565f6de0e29ebac570ce66b3921ece1ebd4de06abeb633ae28c17891de56973807"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "9448b1eeafccfe061a7533a633b3cf7445312f916d372a3b6bbae8747267b6d6a9387fd100aec22bc22160007a819fa9"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "b684b8c0bc4d7cb21245b2d9e20e103460686e80b16d2b4ea5452c82948ba74fc2bcb093f4ab1d6b010448da5dc12457"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "f59abda303b133b832ad3d81076241d924dce6304dce5a1a60f8d816797dbbc2"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "d42ab2d7dfb1e11b896a1aad31d945639b5aa85ac9b5c2e33fc2e9174c4333eaa018217b58147930fb8017c7f569a6390c242c0e500f5b70600a2100bd08035b"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.slf4j:slf4j-api:1.7.36",
+      "bomRef": "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "MIT",
+            "url": "https://opensource.org/license/mit/"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "872da51f5de7f3923da4de871d57fd85"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "6c62681a2f655b49963a5983b8b0950a6120ae14"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "d3ef575e3e4979678dc01bf1dcce51021493b4d11fb7f1be8ad982877c16a1c0"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "f9b033fc019a44f98b16048da7e2b59edd4a6a527ba60e358f65ab88e0afae03a9340f1b3e8a543d49fa542290f499c5594259affa1ff3e6e7bf3b428d4c610b"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "2b14ad035877087157e379d3277dcdcd79e58d6bdb147c47d29e377d75ce53ad42cafbf22f5fb7827c7e946ff4876b9a"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "3bc3110dafb8d5be16a39f3b2671a466463cd99eb39610c0e4719a7bf2d928f2ea213c734887c6926a07c4cca7769e4b"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "ba2608179fcf46e2291a90b9cbb4aa30d718e481f59c350cc21c73b88d826881"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "14c4edcd19702ef607d78826839d8a6d3a39157df54b89a801d3d3cbbe1307131a77671b041c761122730fb1387888c5ec2e46bdd80e1cb07f8f144676441824"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.sonatype.plexus:plexus-build-api:0.0.7",
+      "bomRef": "pkg:maven/org.sonatype.plexus/plexus-build-api@0.0.7?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "49f0f8c6bdf2687e358870a4fc1559c6"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "e6ba5cd4bfd8de00235af936e7f63eb24ed436e6"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "934171640fbd3d2495c50b79b0d9adb11e2c83e65bad157df8fe34bcac0ff798"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "e073d367ce5edaf6dfcbf6d1ec9f544082d4536aec8a84b060d24625c0d8ff1facf90529843f9bf4383ef43aa5cd3d0e143f473dffa6da7fd910f1d2e3872ec7"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "2e6c177e34d0bb3fd05ea8f635f01a6b01afd28113f214392cae8f6bdc73715ee1dbfa4d1525f42321f8a8dd05db9191"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "fe41dea9191319334edb863c438ffe78b19c5f2669a653058d7d4fe5527d7e66a7f382f806ff12fcb09c3f468542e870"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "530e25ed3a34ee1d1aacda1a935608e70ef6494bb931fee33eb7366df2d85642"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "9f1b45445d930a9833436b57baeda25522f0151be0b2f2a27ef1c1dcc8f6ccc5f1168fe40ea91f1e3ac1d98308b3dd1da3c7b49a90cb75eb6a924534545435a5"
+        }
+      ]
+    },
+    {
+      "coordinates": "org.tukaani:xz:1.11",
+      "bomRef": "pkg:maven/org.tukaani/xz@1.11?type=jar",
+      "licencesAsReported": [
+        {
+          "license": {
+            "id": "0BSD",
+            "url": "http://landley.net/toybox/license.html"
+          }
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "MD5",
+          "content": "e4144a47f3ece77768478543d76be20b"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "bdfd1774efb216f506f4f3c5b08c205b308c50aa"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "0a4077f6aeae2865532a564807af8d30c26acc6f63b7928d93bd7ab1f2190449"
+        },
+        {
+          "alg": "SHA-512",
+          "content": "044225c81dec561756df357172842477fcc326c455d88c0738327d1b837bb067c819d05c998af43df1b43ce7674fc35242e40e859c20aeaa0ebcb0552fd10e21"
+        },
+        {
+          "alg": "SHA-384",
+          "content": "566ee6a11ba1f14b1bd28e27af1e525eecdf344bc73449580e6415a0fe587e7eaec61ba0c1a33bec4e3e811c3258b732"
+        },
+        {
+          "alg": "SHA3-384",
+          "content": "b20e8a901fed9c31e4ff8b088f1d594cfb079a660e7a7fbb789bdb56e6ba550c827dc8651c363ceab14805a2162e1535"
+        },
+        {
+          "alg": "SHA3-256",
+          "content": "13661a5462a93386d0a44f2d153ceea3ab04924b8041131d064703b8dee5ffe1"
+        },
+        {
+          "alg": "SHA3-512",
+          "content": "87f2bbe68eae2a99981644adc4680569110014d2e7f64c7b3f53f9934884c6a669d73a6bb4d95a5473f121a045926a871a7d7a6639f916cd05784cb4e44bc634"
+        }
+      ]
+    }
+  ],
+  "root": "pkg:maven/com.edgepulse.licence-evidence/plugin-1@1?type=jar",
+  "dependencies": [
+    {
+      "ref": "pkg:maven/com.edgepulse.licence-evidence/plugin-1@1?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.maven.plugins/maven-dependency-plugin@3.11.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/com.github.cliftonlabs/json-simple@3.0.2?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/com.github.luben/zstd-jni@1.5.7-6?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/commons-beanutils/commons-beanutils@1.9.4?type=jar",
+      "dependsOn": [
+        "pkg:maven/commons-logging/commons-logging@1.2?type=jar",
+        "pkg:maven/commons-collections/commons-collections@3.2.2?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/commons-codec/commons-codec@1.19.0?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/commons-collections/commons-collections@3.2.2?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/commons-logging/commons-logging@1.2?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/eu.maveniverse.maven.domtrip/domtrip-core@1.5.1?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/eu.maveniverse.maven.domtrip/domtrip-maven@1.5.1?type=jar",
+      "dependsOn": [
+        "pkg:maven/eu.maveniverse.maven.domtrip/domtrip-core@1.5.1?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/javax.inject/javax.inject@1?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.commons/commons-compress@1.28.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/commons-codec/commons-codec@1.19.0?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.commons/commons-digester3@3.2?type=jar",
+      "dependsOn": [
+        "pkg:maven/commons-beanutils/commons-beanutils@1.9.4?type=jar",
+        "pkg:maven/commons-logging/commons-logging@1.2?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.commons/commons-text@1.12.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-core@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-text@1.12.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-integration-tools@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.maven.reporting/maven-reporting-api@4.0.0?type=jar",
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-site-model@2.0.0?type=jar",
+        "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.plexus@0.9.0.M3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-i18n@1.1.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-module-apt@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-core@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-module-xdoc@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-core@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml5@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-core@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-site-model@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.plexus@0.9.0.M3?type=jar",
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-site-renderer@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-core@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-site-model@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-skin-model@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-module-xhtml5@2.0.0?type=jar",
+        "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.plexus@0.9.0.M3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-velocity@2.2.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/org.apache.velocity/velocity-engine-core@2.4.1?type=jar",
+        "pkg:maven/org.apache.velocity.tools/velocity-tools-generic@3.1?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.doxia/doxia-skin-model@2.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.plugins/maven-dependency-plugin@3.11.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/eu.maveniverse.maven.domtrip/domtrip-maven@1.5.1?type=jar",
+        "pkg:maven/eu.maveniverse.maven.domtrip/domtrip-core@1.5.1?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar",
+        "pkg:maven/org.apache.maven.reporting/maven-reporting-api@4.0.0?type=jar",
+        "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@4.0.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-archiver@4.11.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-io@3.6.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-i18n@1.1.0?type=jar",
+        "pkg:maven/org.apache.maven.shared/maven-dependency-analyzer@1.17.1?type=jar",
+        "pkg:maven/org.apache.maven.shared/maven-dependency-tree@3.3.0?type=jar",
+        "pkg:maven/org.apache.maven.shared/maven-common-artifact-filters@3.4.0?type=jar",
+        "pkg:maven/org.apache.maven.shared/maven-artifact-transfer@0.13.1?type=jar",
+        "pkg:maven/org.apache.maven.shared/maven-shared-utils@3.4.2?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@1.9.25?type=jar",
+        "pkg:maven/org.sonatype.plexus/plexus-build-api@0.0.7?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/org.apache.velocity/velocity-engine-core@2.4.1?type=jar",
+        "pkg:maven/org.apache.velocity.tools/velocity-tools-generic@3.1?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.reporting/maven-reporting-api@4.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.reporting/maven-reporting-impl@4.0.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.maven.reporting/maven-reporting-api@4.0.0?type=jar",
+        "pkg:maven/org.apache.maven.shared/maven-shared-utils@3.4.2?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-sink-api@2.1.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-site-model@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-core@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-integration-tools@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-site-renderer@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-module-apt@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.doxia/doxia-module-xdoc@2.0.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.apache.maven/maven-archiver@3.6.2?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@1.4.1?type=jar",
+        "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.plexus@0.9.0.M3?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.resolver/maven-resolver-api@1.4.1?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.resolver/maven-resolver-util@1.9.25?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-api@1.4.1?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.shared/maven-artifact-transfer@0.13.1?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.codehaus.plexus/plexus-component-annotations@2.0.0?type=jar",
+        "pkg:maven/org.apache.maven.shared/maven-common-artifact-filters@3.4.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.shared/maven-common-artifact-filters@3.4.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@1.9.25?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.shared/maven-dependency-analyzer@1.17.1?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.ow2.asm/asm@9.9.1?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.shared/maven-dependency-tree@3.3.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.maven.resolver/maven-resolver-util@1.9.25?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven.shared/maven-shared-utils@3.4.2?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.maven/maven-archiver@3.6.2?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.codehaus.plexus/plexus-archiver@4.11.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.velocity.tools/velocity-tools-generic@3.1?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.velocity/velocity-engine-core@2.4.1?type=jar",
+        "pkg:maven/commons-beanutils/commons-beanutils@1.9.4?type=jar",
+        "pkg:maven/org.apache.commons/commons-digester3@3.2?type=jar",
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/com.github.cliftonlabs/json-simple@3.0.2?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.apache.velocity/velocity-engine-core@2.4.1?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.commons/commons-lang3@3.20.0?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-archiver@4.11.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-io@3.6.0?type=jar",
+        "pkg:maven/org.apache.commons/commons-compress@1.28.0?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar",
+        "pkg:maven/org.tukaani/xz@1.11?type=jar",
+        "pkg:maven/com.github.luben/zstd-jni@1.5.7-6?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-classworlds@2.6.0?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-component-annotations@2.0.0?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-i18n@1.1.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-interpolation@1.27?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-io@3.6.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/javax.inject/javax.inject@1?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/commons-io/commons-io@2.21.0?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-velocity@2.2.0?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.apache.velocity/velocity-engine-core@2.4.1?type=jar",
+        "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.inject@0.9.0.M3?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.plexus@0.9.0.M3?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.eclipse.sisu/org.eclipse.sisu.inject@0.9.0.M3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-component-annotations@2.0.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-classworlds@2.6.0?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar",
+        "pkg:maven/org.codehaus.plexus/plexus-xml@3.0.1?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.ow2.asm/asm@9.9.1?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.slf4j/slf4j-api@1.7.36?type=jar",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.sonatype.plexus/plexus-build-api@0.0.7?type=jar",
+      "dependsOn": [
+        "pkg:maven/org.codehaus.plexus/plexus-utils@4.0.3?type=jar"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.tukaani/xz@1.11?type=jar",
+      "dependsOn": []
+    }
+  ]
+}

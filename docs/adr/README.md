@@ -12,12 +12,15 @@ sibling branch respectively).
 
 ## Current numbers and supersession map
 
-Part B fills reserved **0014** and allocates **0020–0023**. The next free
-number after these records merge is **0024**. Other drafts retain XXXX
-until accepted and numbered at merge.
+Records **0024–0026** define the EdgePulse licence-gate extensions. The next
+free number is **0027**. Other drafts retain XXXX until accepted and numbered
+at merge.
 
 | Record | Current authority |
 | --- | --- |
+| [0024 build-tool licences and Maven ecosystem](0024-build-tool-licences-and-maven-ecosystem.md) | Accepted; build-tool licence scope amended by 0026 |
+| [0025 test-only modules and Jakarta annotation exception](0025-test-only-modules-and-jakarta-annotation-exception.md) | Accepted; clarifies 0024 Decision 2 and names the Jakarta runtime exception |
+| [0026 build-tool licence families](0026-build-tool-licence-families.md) | Accepted; supersedes 0024 Decision 1 for build-tool only |
 | 0014 supply-chain scanning | Accepted; CI implementation is IOT-WO-02 |
 | 0019 Decision 4 (TB downstream) | **Superseded by 0020**: TB CE is the operational core and ingress owner |
 | 0019 Decision 3 (data path) | Amended by 0020 Decision 7: TB outbound Kafka → ingestion adapter → canonical topics |

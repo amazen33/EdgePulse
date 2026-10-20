@@ -9,6 +9,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+### Added
+
+- IOT-WO-02 Part A: a separate licence gate, the Maven/component register and
+  planted-violation checks under ADRs 0024–0026, ported from Twinfra `0d95007`.
+  Supply-chain, quality and runtime-baseline work remain in later parts.
+
 ## [2.0.0-alpha.4] - 2026-10-19
 
 - MS2 migration contract v1 was accepted ([acceptance receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)).

@@ -1,0 +1,17 @@
+{
+  "org.cyclonedx:cyclonedx-maven-plugin:2.9.1": {
+    "publishedBy": "Thu, 28 Nov 2024 21:30:07 GMT",
+    "source": "https://repo.maven.apache.org/maven2/org/cyclonedx/cyclonedx-maven-plugin/2.9.1/cyclonedx-maven-plugin-2.9.1.pom",
+    "readOn": "2026-10-20"
+  },
+  "org.apache.maven.plugins:maven-help-plugin:3.5.1": {
+    "publishedBy": "Fri, 18 Oct 2024 10:11:19 GMT",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.1/maven-help-plugin-3.5.1.pom",
+    "readOn": "2026-10-20"
+  },
+  "org.apache.maven.plugins:maven-dependency-plugin:3.11.0": {
+    "publishedBy": "Sun, 24 May 2026 17:19:23 GMT",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-dependency-plugin/3.11.0/maven-dependency-plugin-3.11.0.pom",
+    "readOn": "2026-10-20"
+  }
+}

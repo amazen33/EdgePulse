@@ -1,7 +1,8 @@
 # Twinfra licence-gate port
 
 Source: [amazen33/twinfra](https://github.com/amazen33/twinfra), commit `0d950075a8bf43358d9fd406b80b67d657f804e1`.
-Read from `origin/main` Git objects only. The files below are copied byte for byte;
+Read from `origin/main` Git objects only. Commit
+`eec61fa6d713efd172fbdf17b657d2d1c9233720` copied the files below byte for byte;
 the original MIT copyright and permission notice is in [UPSTREAM-LICENSE.txt](UPSTREAM-LICENSE.txt).
 
 | Upstream path | Local path | SHA-256 |
@@ -13,3 +14,9 @@ the original MIT copyright and permission notice is in [UPSTREAM-LICENSE.txt](UP
 | `security/licence-policy.json` | `licence-policy.json` | `6b8841170378d7d8d481f3d526ce2bf4719399e8306aff969c8927e5405b8e96` |
 | `tools/ci/requirements.txt` | `requirements.txt` | `cf261469f6b21804b350964739f1b8db7c8810f99e9c57c4a90bd6f14eab65ea` |
 | `LICENSE` | `UPSTREAM-LICENSE.txt` | `a320818c9cbb9a60636e31690347f4142ddec9da7fe81f11407952620fad45f2` |
+
+The table describes that unchanged first commit. The following commit adds
+EdgePulse's repository adapters and the accepted ADR 0024–0026 extensions;
+it does not change Twinfra. `licence_ladder.py` retains the upstream rules
+unchanged. [README.md](README.md) describes the adapters, exact inventory
+scope, pending evidence and reproducible gate commands.

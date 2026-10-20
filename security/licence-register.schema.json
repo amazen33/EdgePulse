@@ -4,7 +4,8 @@
   "additionalProperties": false,
   "required": [
     "version",
-    "components"
+    "components",
+    "testOnlyModules"
   ],
   "properties": {
     "version": {
@@ -26,7 +27,8 @@
           "verifiedOn",
           "recordedOn",
           "locations",
-          "integrities"
+          "integrities",
+          "electedSpdx"
         ],
         "properties": {
           "id": {
@@ -74,7 +76,8 @@
               "npm",
               "pip",
               "github-action",
-              "tool"
+              "tool",
+              "maven"
             ]
           },
           "class": {
@@ -279,6 +282,18 @@
                 }
               }
             }
+          },
+          "electedSpdx": {
+            "type": "string",
+            "minLength": 1
+          },
+          "upstreamSource": {
+            "type": "string",
+            "format": "uri"
+          },
+          "licenceTextSHA256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
           }
         },
         "allOf": [
@@ -291,6 +306,20 @@
                     "pending-removal"
                   ]
                 }
+              },
+              "not": {
+                "properties": {
+                  "name": {
+                    "const": "jakarta.annotation:jakarta.annotation-api"
+                  },
+                  "adr": {
+                    "const": "0025"
+                  }
+                },
+                "required": [
+                  "name",
+                  "adr"
+                ]
               }
             },
             "then": {
@@ -386,6 +415,36 @@
             }
           }
         ]
+      }
+    },
+    "testOnlyModules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "artifactId",
+          "enforcerExecution",
+          "restriction"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "artifactId": {
+            "type": "string"
+          },
+          "enforcerExecution": {
+            "type": "string"
+          },
+          "restriction": {
+            "enum": [
+              "test-scope",
+              "no-consumers"
+            ]
+          }
+        }
       }
     }
   },

@@ -86,6 +86,10 @@
       "spdx": "LGPL-3.0-only",
       "adr": "0043",
       "module": "module-5a/"
+    },
+    "jakarta.annotation:jakarta.annotation-api": {
+      "spdx": "EPL-2.0",
+      "adr": "0025"
     }
   },
   "historicalExceptions": [
@@ -153,2636 +157,489 @@
       "source-available"
     ],
     "legacy": {
-      "helm-chart|apisix|2.18.0": {
-        "sha256": "7cff472254a04d36dbdc273be1fc729a2076dbaa7d8a8c137f6f55e4c9db42aa",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
       "helm-chart|cilium|1.20.2": {
-        "sha256": "341ea8e408ff04677613e07a67e1ff681743ecf6e6891cf8384374fa35548b04",
+        "sha256": "4eebd81b8ecd94b2014f90da780082566d6358e2e4113b51c3f87926b26a9783",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "helm-chart|kueue|0.20.0": {
-        "sha256": "849a21e1f3fe6cd07e7797c82c71acbc3455f971ec455acc87b8b3a9a912bebd",
+      "manifest|cnpg|1.30.1": {
+        "sha256": "8483e7af31acbbe8487dae11342142384ff9bc39efaeecf6a939b4ceadffe7c2",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "helm-chart|nvidia.github.io/k8s-device-plugin/stable/nvidia-device-plugin-0.20.1.tgz|b705142f03ac17906bfcface9319e2f7b9a570d2af7f04f23252723ce2c0bb8e": {
-        "sha256": "dbec92efb974ff2039fcfa542662870a0855bf0e1aa804e06be6a72116104fe8",
+      "maven|com.ethlo.time:itu|1.10.2": {
+        "sha256": "7c6ac39ba82ace5cefddd49e93298fc55f31e605032c34d066b32395f050a8f2",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "helm-chart|openbao/openbao-helm|0.30.2": {
-        "sha256": "f54394de5640e678c37d5b21665fd24457a0a4a9713797338548f392f74310f3",
+      "maven|com.fasterxml.jackson.core:jackson-annotations|2.17.2": {
+        "sha256": "6a1b76f0694b1a3014138543f26c107d0725bfd712936eb95cd0fc3712ed76c0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.core:jackson-core|2.17.2": {
+        "sha256": "fd7c7b9ed675ed506f32bfcbd6b00e5c3b109c377cf688486a1a4c2d2a7efcd5",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.core:jackson-databind|2.17.2": {
+        "sha256": "ae595bcd7b8b8bb64c9c563b9a01cd1d6dd2854afa4dfe2427422a0b3b781b24",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.17.2": {
+        "sha256": "fec2ea8a2cce8d6739ffea1f39446dde841fccc144402bf1eae4d7c2fdf29a5e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.datatype:jackson-datatype-jdk8|2.17.2": {
+        "sha256": "14bdfd34df325fff5f1b50574d56a99c4639950e9ca6fb27d400c200f0578ee8",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.datatype:jackson-datatype-jsr310|2.17.2": {
+        "sha256": "aab7151911b9e4e8e9b674f57dec0d6fba733f0d43a62a075b670fd8c2f1a190",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.module:jackson-module-parameter-names|2.17.2": {
+        "sha256": "b13c7156154f14e0a68f2e5703b9f407f670ef422ceebc28b1fdb5436d5ede0c",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.github.stephenc.jcip:jcip-annotations|1.0-1": {
+        "sha256": "431efc6f50783a91e310f6c9ae573313d1b87913e8541195a84ab79bf7c7a1c0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.android:annotations|4.1.1.4": {
+        "sha256": "2f4ff33742f4613f219b0c594393185c458c1178f41b868ba89fe785be4bfbd8",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.api.grpc:proto-google-common-protos|2.41.0": {
+        "sha256": "fb800a4bd1fda53ce8bc2679c7ab624b6be70b597f24d1cf5dba66120e0efd2f",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.code.findbugs:jsr305|3.0.2": {
+        "sha256": "e6c160679742ca0835b5813db14dd21add85b5a2b7154c488bc0fb121bb9b034",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.code.gson:gson|2.10.1": {
+        "sha256": "b62c71589be7c0f19e35a9d7b7e7ef96404a5f44a2641e9c4bc09aaa3521c402",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.errorprone:error_prone_annotations|2.28.0": {
+        "sha256": "64da99e8d3e39a8295365a73cb0edfa47c24c3ad80104f62a70a16959ca9a469",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.guava:failureaccess|1.0.2": {
+        "sha256": "48f7190a2bddfe78c0cf73c78206e510408d414eb6765989e13cb9648a2e77a7",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.guava:guava|33.2.1-android": {
+        "sha256": "91095d31101476395bf7181516cdd3a7f5c51cf358bd7b9db74e273d7a91271f",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.guava:listenablefuture|9999.0-empty-to-avoid-conflict-with-guava": {
+        "sha256": "9dfa504c621c100b2c983d94ab52b668a4ba9679e6e201049bbcce877ca98f12",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.j2objc:j2objc-annotations|1.3": {
+        "sha256": "20bf643a49fc389982947447803900598259b3a232fc47a7ec2cd2711a59e417",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.protobuf:protobuf-java-util|3.21.10": {
+        "sha256": "975f4980ff61966f87b7060986c51b7b71a9f0caecb5291b41a0d8f1c6c8a552",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.protobuf:protobuf-java|3.25.5": {
+        "sha256": "aa03bc1c2180eda6b742a7896df4d964370b54487514090820948814c1017715",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|com.networknt:json-schema-validator|1.5.1": {
+        "sha256": "86727c33669024e40a4395b7ca13c7fe7bd6cdb648a59bb1431b22dc404597cc",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.nimbusds:nimbus-jose-jwt|9.37.4": {
+        "sha256": "e6ae66e6b530197718f384c2e749b2b912ca5c54c5bce0ecf2d166fdccf1832b",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.cloudevents:cloudevents-api|3.0.0": {
+        "sha256": "f9e73673475bfe6cb3867f13e0b936dcdd516095f783d41ae0cd14244b36b36a",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.cloudevents:cloudevents-core|3.0.0": {
+        "sha256": "66d4a1e54419e1adac4ddeafea32d3e2f6ba42a455c14f9a659037e11cfe727e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.cloudevents:cloudevents-protobuf|3.0.0": {
+        "sha256": "c4e526a7924b404cbe9f587dd29892506509cda45369f5565147af0c1702bef6",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-api|1.68.1": {
+        "sha256": "22bb169360fb2e697ef5fa19b6aae5749ca0a3ce69180dd5260b95cf21212104",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-context|1.68.1": {
+        "sha256": "2b749c80e33b5a9c0fe4f6b441c2b7307fa3b50edfb903aed4c8fe587d4777e0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-core|1.68.1": {
+        "sha256": "21649804b36f22b8949feadbe81317e123228592b1b2e5d03fe4a93cc4c3258d",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-netty-shaded|1.68.1": {
+        "sha256": "a6b70ac15f871b24e945d0cc9756e68c842817338a1c96e6eacc807df9463c2f",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-protobuf-lite|1.68.1": {
+        "sha256": "186e32dbd759b0ffacf4802ac2609659fa1dba619835a8767a372a1b990c80b1",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-protobuf|1.68.1": {
+        "sha256": "5b18852098ebfcb3d2da2420f7979f63acb689be6658128822c2dece3f7af330",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-stub|1.68.1": {
+        "sha256": "ce241d595ca76d052d3a61681144b1cdaf32b90e87100090df79081d7c44e6be",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-util|1.68.1": {
+        "sha256": "36d5350fb0164b255429f24e231f811781ddb0133ed8078e164beca8dea87339",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.micrometer:micrometer-commons|1.13.4": {
+        "sha256": "b1603c16de47af4ee1d0ac567bec8ba944f1a56bebcc1010a8eed852e24377e8",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.micrometer:micrometer-observation|1.13.4": {
+        "sha256": "6df4ed2cbacfa7cb227269e17d3dd280aec77ba4117114f590c6bb18a7d0777c",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.perfmark:perfmark-api|0.27.0": {
+        "sha256": "ba9df6a62039f71bee32df2d493b355a00fa57f4a5bf29add9b301206c382447",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|jakarta.annotation:jakarta.annotation-api|2.1.1": {
+        "sha256": "82ab0c342bbe27a5ff3da4dd48e39e65a594f519363ad2733777bac4c6da38aa",
         "tier": 3,
-        "due": "2027-01-14"
+        "due": "2027-04-20"
       },
-      "manifest|apache/apisix-ingress-controller/config/crd/bases/apisix.apache.org_apisixpluginconfigs.yaml|2.2.0": {
-        "sha256": "5bd6e46d78d2c29ff0926118be6744615f45398f9118b14a9f86971b0fe426c9",
+      "maven|org.apache.logging.log4j:log4j-api|2.23.1": {
+        "sha256": "98bcb8cf725240f11a82455ad715735015862b87b9603b3fcfb2cb335bdd81d5",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|apache/apisix-ingress-controller/config/crd/bases/apisix.apache.org_apisixroutes.yaml|2.2.0": {
-        "sha256": "b23ef3b8236c937efb5a2e82bdeb8d52394d5acc57e5eed7f69e313e2200abf6",
+      "maven|org.apache.logging.log4j:log4j-to-slf4j|2.23.1": {
+        "sha256": "9efd8a05dc1be6b475f8e2afe55ec2590b13192078297fcb4e79ab70b6374cd7",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|apache/apisix-ingress-controller/config/crd/bases/apisix.apache.org_apisixtlses.yaml|2.2.0": {
-        "sha256": "2ae12c5ef70e28f76ec75119b226fe8a3adb974043474d2ed9f962b26881df4c",
+      "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.30": {
+        "sha256": "d864335255fe8b501a8be7df1c79de8257638f5bedfb358497cf1a2b215a8fa0",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|apache/apisix-ingress-controller/config/crd/bases/apisix.apache.org_apisixupstreams.yaml|2.2.0": {
-        "sha256": "52f33ef6dcc695a99b002c88cc0b84bb448fc60c1f5ad23a367bff77e652e8f6",
+      "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.30": {
+        "sha256": "b8c40628e3f64fe6cd051107f81cd67b13c081d9bf7c7804638a35e728e9079c",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|apache/apisix/apisix/plugins/openid-connect.lua|3.19.0": {
-        "sha256": "95d91b8dc8191346eda53ee7a0d3660c69ca64b1cb8ff80ba3554d0d380adb73",
+      "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.30": {
+        "sha256": "a08423038bc647a0b6f0f31db3c67effaae452d4bf094becb030a933f3d5398e",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|argoproj/argo-cd/manifests/core-install.yaml|v3.5.3": {
-        "sha256": "c931deec21fec3db0f47993989ef966a4b40b5d3b468c3a116176f860421c5c4",
+      "maven|org.apache.tomcat:annotations-api|6.0.53": {
+        "sha256": "3cb2fef8e05a671aa45b495fae27f9a6129086aa689703a57d6421847839c37b",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|argoproj/argo-cd/manifests/crds/application-crd.yaml|v3.5.3": {
-        "sha256": "7d427034824370f533e4d9164d25d10a8332c66419c7bceb75838bba2f486b41",
+      "maven|org.checkerframework:checker-qual|3.42.0": {
+        "sha256": "1ceff5425ba9403729e06e904320c9ef01726b60c66ea5d71105e80309c4c21d",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.codehaus.mojo:animal-sniffer-annotations|1.24": {
+        "sha256": "70bb2d016c7f348fceb983131f692e2a127d021259891aa0a723bd6e5318a78b",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.slf4j:jul-to-slf4j|2.0.16": {
+        "sha256": "3a3d9fb36a09f8c21d46ceb57a099bf239198e93e302300071a073f2562b29c4",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.slf4j:slf4j-api|2.0.16": {
+        "sha256": "1320307b400808c2d39f5cf27f5185cd556567a8ccc7462282e26e92045e0fd7",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-autoconfigure|3.3.4": {
+        "sha256": "bba05c229ae96b13f4daaeb55af2f20e93521e68bd72c1ddb763f8d0cdced1b4",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|argoproj/argo-cd/manifests/crds/appproject-crd.yaml|v3.5.3": {
-        "sha256": "f3c9e51b93f49c7069bcebf6e2a9542c471ea459055afdaf57f169d40f7e99d6",
+      "maven|org.springframework.boot:spring-boot-starter-json|3.3.4": {
+        "sha256": "b667e0a65606f0b46dcaa28b6cac34fe70aff38d1d63ea2afcaa1667fe5892f2",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|argoproj/argo-cd/manifests/install.yaml|v3.5.3": {
-        "sha256": "421e45de1bf58fd4b597bba6796b03a3ee39be7baf58eb146d1c91cd49adaf7e",
+      "maven|org.springframework.boot:spring-boot-starter-logging|3.3.4": {
+        "sha256": "d6074e754f3f6989dab49e738101aee3bcb64ed90a049a325d863820e6a4c781",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "manifest|canonical/cloud-init/cloudinit/config/schemas/schema-cloud-config-v1.json|26.2": {
-        "sha256": "c08710148ecfe4f1d73651455e9c75d699fc8c609a468471b1f75fc3b2c7f323",
+      "maven|org.springframework.boot:spring-boot-starter-tomcat|3.3.4": {
+        "sha256": "31a035cc26f57c99a70b3f7c24d0f347eff26b0562fde33a93fa3f93d01804a9",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-starter-web|3.3.4": {
+        "sha256": "ca9b5941d0c77fe03141100afc40a264beb9c2eebc8c26226959d04ddf7268c4",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-starter|3.3.4": {
+        "sha256": "1618a15364a87ffe3ad4a97005bb5e97f4dae81d2e33aa2594d4268c11229931",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot|3.3.4": {
+        "sha256": "43aa287b2023ef0112d6fb27a754f507dea83a3122d596736ad1f610aa229f19",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-aop|6.1.13": {
+        "sha256": "46cafa80b983efc9e98b10b56ef57fa390bafd903bb6449019e7974cdcc9d62e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-beans|6.1.13": {
+        "sha256": "d0deff3899b6be9c6672ba8c30168f2b7f4e39a62ce92f06d69903bf03f800a4",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-context|6.1.13": {
+        "sha256": "b0fc4a1bbb7746e13b34e48c10b5aaf57e1179537d67edeee0551e715e9608ae",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-core|6.1.13": {
+        "sha256": "8d889063a847023426f63a8f10458e607770f6dc2f960a1e16663354842550ea",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-expression|6.1.13": {
+        "sha256": "2fa52900589510115eecd805191c09d67505f0d79a9a772e0800748c3ad879e4",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-jcl|6.1.13": {
+        "sha256": "d0747a289232877eb99e9696e1a3fda5f8f700aeb2ea3501e814b8888743fe9e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-webmvc|6.1.13": {
+        "sha256": "135094bf9bb4e777848a1fd4baae3783dd1c136d6ff73d99ac4ac6c6a3fcefd7",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-web|6.1.13": {
+        "sha256": "47f56de41321f9b1b6c02fb39cddb92119cb22cd17219d6af9fde21975d795ee",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.yaml:snakeyaml|2.2": {
+        "sha256": "93d2fa707173d1d7c6957875bc2fadf3da8e2c4e61237fa41d0179c4ad4cacdf",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed": {
+        "sha256": "2d156ce1b8f9bd895a8344b2235bb070a2ab05232b8d380c78a03614956f0740",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|docker.io/library/busybox|1.36.1": {
+        "sha256": "724c1e682589e8db240c92392abb85ccedee96251ac35cc26b3e8852a7afa4b3",
         "tier": 4,
-        "due": "2027-01-14"
+        "due": "2027-04-20"
       },
-      "manifest|cilium/cilium/pkg/k8s/apis/cilium.io/client/crds/v2/ciliumclusterwidenetworkpolicies.yaml|v1.20.2": {
-        "sha256": "99ee4e3799f7248f99df0d487e41d0e504be3713f79226bc35b3f39efd4b4b71",
+      "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a": {
+        "sha256": "af7b2038c200eecab2da5951ce3813d632f36a5fe7660a1fa7fe1364ebed0b99",
         "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|cilium/cilium/pkg/k8s/apis/cilium.io/client/crds/v2/ciliumnetworkpolicies.yaml|v1.20.2": {
-        "sha256": "282037d97d01b3b6460d513daaa24e5525641aef5e073578b696cd49904e5ec0",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|cloud-images.ubuntu.com/noble/20260926/noble-server-cloudimg-amd64.img|6a81c37564db9b1ee84e141922625e1d7c5b389b99bb3c572e0243607d5bb4d2": {
-        "sha256": "6b23929eb91d0fd8dcd19fdc47c112fbace5ba1362612e04f1b4a149685a9695",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|cloudnative-pg/cloudnative-pg/cnpg-1.30.1.yaml|v1.30.1": {
-        "sha256": "9862e386ba5f00f8d763e09c54c85dd62b4dae2c1ba3fdda6248718a4288e14a",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|cloudnative-pg/cloudnative-pg/config/crd/bases/postgresql.cnpg.io_clusters.yaml|v1.30.1": {
-        "sha256": "6b66d8f3140bd76b5ad99bbaac03de7d986a80fbe5f8f5c471019e0c0fc5a43e",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|k3s-io/k3s/k3s-images.txt|v1.36.5+k3s1": {
-        "sha256": "8e3b88483ad45caab84acf4b7c8a77eee886fe213c78f128aade854e958a708b",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|keycloak/keycloak/core/src/main/java/org/keycloak/representations/idm/ClientRepresentation.java|26.8.0": {
-        "sha256": "3a0a8343fcfb1d2b50dd3c195a2866ff7f28f4febdbf25a7bee9ed8e0b74dcbc",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|keycloak/keycloak/core/src/main/java/org/keycloak/representations/idm/RealmRepresentation.java|26.8.0": {
-        "sha256": "ec5439bde419467672f4498cabf573a67377a514f2c57174a9a3324ed3c797cf",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|keycloak/keycloak/core/src/main/java/org/keycloak/representations/idm/ScopeMappingRepresentation.java|26.8.0": {
-        "sha256": "e281a7c56b32e76e5ea71d9a61d06771f4e48fb68106fbca62ec80e40529386b",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|keycloak/keycloak/services/src/main/java/org/keycloak/protocol/oidc/mappers/AudienceProtocolMapper.java|26.8.0": {
-        "sha256": "e6a9b554c945e6258ef58c475af3432a9079d148b1dba1f28aad7baa9915c64b",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|keycloak/keycloak/services/src/main/java/org/keycloak/protocol/oidc/mappers/GroupMembershipMapper.java|26.8.0": {
-        "sha256": "e67c4b36477d50a6f6490cc52efc34d96fe872e116a5693ecb353b1d6e8e163f",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|knative/net-kourier/kourier.yaml|knative-v1.23.0": {
-        "sha256": "36fd9ccc89d5041c600a0d5b92534d88b7dfb9cd1821d7508f685361cfcb98da",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|knative/serving/config/core/configmaps/features.yaml|knative-v1.23.0": {
-        "sha256": "9a1c311d827ba0f2f9b06f8939187878b9d671253f1040ffa1b6cc1a2e49cea7",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|knative/serving/serving-core.yaml|knative-v1.23.0": {
-        "sha256": "d14a350afcc93c88eb0f71621a3f09ea78069eed7c87ddd558e0d3ddafa1838e",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|knative/serving/serving-crds.yaml|knative-v1.23.0": {
-        "sha256": "8b4a52801bf343eb1d5c8905da42ac466c077ae6f4644e2094e145ff2196d3d1",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes-sigs/jobset/manifests.yaml|v0.12.0": {
-        "sha256": "85e333f455bf4bfa5f2ee08331c63a8d0a0660eddb020ad0fa75786a6b22bf7a",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes-sigs/kueue/LICENSE|v0.20.0": {
-        "sha256": "912874c20799747f3a119fd1605fd88ea77ae2bf032d9eeae3a14cf29c8b54ee",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes-sigs/kueue/manifests.yaml|v0.20.0": {
-        "sha256": "50781a9c4b0e925a41162f868d9f008d6051220c512f339eee8cdc5f67b6e534",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes-sigs/metrics-server/components.yaml|v0.9.0": {
-        "sha256": "c185ea3e59254ab328763c6deac87796d608b001756c8e406cd89071f0357bcd",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes-sigs/secrets-store-csi-driver/deploy/csidriver.yaml|v1.6.1": {
-        "sha256": "218b04a677d238643edefaf84d9119b4c1135c454142c91b2650b787972b96b8",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes-sigs/secrets-store-csi-driver/deploy/secrets-store.csi.x-k8s.io_secretproviderclasses.yaml|v1.6.1": {
-        "sha256": "cedc0d415470c60e402d9fa185550785b87c9beae3eca96ff8312b1b299eb452",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes/autoscaler/vertical-pod-autoscaler/deploy/vpa-v1-crd-gen.yaml|vertical-pod-autoscaler-1.8.0": {
-        "sha256": "2f0d9cf0b2825d481aaf8ed3d0bdb0fb146637f44f21d1138b17c1f149b0d82f",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes/kubernetes/api/openapi-spec/v3/apis__apiextensions.k8s.io__v1_openapi.json|v1.36.5": {
-        "sha256": "cc7ada0f4d6e9c40f900d3dab4eef6c5072fb62213a962c79795fe642bc96fba",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|kubernetes/kubernetes/cmd/kubeadm/app/constants/constants.go|v1.36.5": {
-        "sha256": "cf85a3003b89232412433117af1e0c32aa25a7e3c4fd3c7ef2f1ac8b2257f1da",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|prometheus-operator/prometheus-operator/bundle.yaml|v0.94.1": {
-        "sha256": "e7fc2e29f9bdf84c50288e28cb4e73eeec7e75b9693c67c920f3e483348f3f80",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|prometheus-operator/prometheus-operator/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml|v0.94.1": {
-        "sha256": "96fdda8266f2b76177617521d492841dc72452ec272e9c1288372cda2686e4ab",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|prometheus-operator/prometheus-operator/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml|v0.94.1": {
-        "sha256": "51976e2b5254b9266248dd19b3e0e453fff29c35871ff0a26eebf56504053d05",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|tektoncd/pipeline/release.yaml|v1.17.0": {
-        "sha256": "e1a9c3422f803a766bda3d31c07e9fbc293facbb1a8daa540d8a6eac8b4bac8c",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|tektoncd/triggers/release.yaml|v0.37.1": {
-        "sha256": "cfb337219f113f8f9855228566e58e117cfae56ad21ea6a1ddced77cdf090a94",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/apiservice.json|master": {
-        "sha256": "746fbc789d910ec7c16d2bc7710ebc4812a5ad269c55d8dfa784698029cf3b5f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/clusterrole.json|master": {
-        "sha256": "5304b51a669a3d7c45e5d484db135345125072d43de7ed81d7d34242796047b0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/clusterrolebinding.json|master": {
-        "sha256": "3b013f79a3653b8a5a0ed19046fc57f7db0951250ce64019bed4b3c72b7adbf3",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/configmap.json|master": {
-        "sha256": "a1ed3b5e2f4c2eb2262dcbf1d54e5a7cee4e3d1e53e23bb35a21f2f4c7a55d0f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/cronjob.json|master": {
-        "sha256": "82b50cbd529988e6603a492866df45bd4eba0bc8b5a3f0c1c3e3c289c08c0b18",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/csidriver.json|master": {
-        "sha256": "229b677eac949b2a5ee45bb9508821bcef93f7c592c009422ca30839d091f2de",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/daemonset.json|master": {
-        "sha256": "402d3ce217caff179035489e0bf74f483c1097a53a5c948a0d2b47de3604cf89",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/deployment.json|master": {
-        "sha256": "b8c74b12d814a54b0f8800587f4a1ce6f8c23cccc87badada6cc236def6e5202",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/ingressclass.json|master": {
-        "sha256": "7bc59031ed8ce1810212c1e0bbd94dd58e38a56bfcc0d52cd9fe1a198b2ed0f6",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/job.json|master": {
-        "sha256": "79a302618821cd51d3a14bacd9b7032a25be8b448c3df9ced5250f84df44eed8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/mutatingwebhookconfiguration.json|master": {
-        "sha256": "665fbebe570953af9f66e888c2fdd83c94c7c3e6d59123219eed8982f43acfaf",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/namespace.json|master": {
-        "sha256": "46d781b1db46119c6abd8eee0178ea97a175aa489173b0ffcfd08acce45b8f2a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/networkpolicy.json|master": {
-        "sha256": "dc07444b403e4d48e9621deae71f091c8a30c97d0fb74114d8cc85759d24788c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/persistentvolume.json|master": {
-        "sha256": "c1bb70e630625fdc7c87aad4f1818720d651b81667f0c2c84598b44cf2c999f7",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/persistentvolumeclaim.json|master": {
-        "sha256": "1dcb4e568ce54446574035b25bb43437e4f0319ae1f94c9e726dd0389541a65e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/pod.json|master": {
-        "sha256": "ba45d16d5b59df8a34300af89019e5a8219146462256f76699fd4f3046c7db6f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/poddisruptionbudget.json|master": {
-        "sha256": "979d10ddbc3b784d46b69f5b113d07b504117bc985a5e2f9e725f3f29a00d9fb",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/role.json|master": {
-        "sha256": "22b0f9308b2b61f75504a0fb5ace779c8e6c9ebb7f70de193cea2ee9fc234857",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/rolebinding.json|master": {
-        "sha256": "710d52bcfd370f825a08f2c01d0c0ae218da290c38e2657e88782e98e7df79af",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/runtimeclass.json|master": {
-        "sha256": "e4bd504bc6da8b222917c1c0da72ca9a04f927bd349c098143bbdd357532739d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/secret.json|master": {
-        "sha256": "eddc2a9e13800e7b065f28b095a570223d84bfa994920ae8b7366013f7408dbd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/service.json|master": {
-        "sha256": "f4506633d12435155045ccf0d7cf0f7bf90b29dafc63359ceed86e8a537e8810",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/serviceaccount.json|master": {
-        "sha256": "45320444082b8f11eade8098988a82a5322093ddeb495d7a5b208136595301e4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/statefulset.json|master": {
-        "sha256": "ca066be39e79440729af4549de0e2703d6c0a0ead50365a18bc19306c92a829a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/storageclass.json|master": {
-        "sha256": "6cb0fc7595b1ca265836b54d1495fc9148a9d979495a8e8be90b9eb8d217f23e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "manifest|yannh/kubernetes-json-schema/v1.36.5-standalone-strict/validatingwebhookconfiguration.json|master": {
-        "sha256": "1ad207e4f851ac319b4d7bc76a7912b68c972532f70bc17fe7508a631edf2e53",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@antfu/install-pkg|2.1.0": {
-        "sha256": "51b9cfa9f6cf5d2e30f8b6fc724fbefffc3dd2cc44272078443a80ced771fdc0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@asamuzakjp/css-color|3.2.0": {
-        "sha256": "8af2bcd738235380d84f151ba3668516901dbc9dbf3beeabfc104c8a69e0104a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@asamuzakjp/css-color|7.1.3": {
-        "sha256": "cf8d68cb16ecdbd684d9bb83f60f6dd3ecfb6c126f211ab607606d102b9adf62",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@asamuzakjp/dom-selector|9.2.4": {
-        "sha256": "912353ea52b50fa7f8f828619a6fb1ee2a53f13ca3aa0c9eba88862039e0f7e9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@babel/code-frame|7.29.7": {
-        "sha256": "8e7fd778c50f232dbf15e2026da0980e97325d02506450a911d56457459a163e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@babel/helper-validator-identifier|7.29.7": {
-        "sha256": "cc3001282b4d6e4676923dcacb605317438b22bc7e31d6f4aacf9051885e1152",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@babel/runtime|7.29.10": {
-        "sha256": "801c325197bd4c193e1ecfd07b8d0dda9f1703d4cd43bdc54da2d38b67dad34f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@braintree/sanitize-url|7.1.2": {
-        "sha256": "0590dce24d585f58dd2ce940e6d252a6b486d206994165d3f1aa0bdb449cffbc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@bramus/specificity|2.4.3": {
-        "sha256": "4e6ce3856b958d8282be2ec5ca911e53eb011a65dfe9388aecf91dbab316061c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@chevrotain/cst-dts-gen|11.0.3": {
-        "sha256": "80a36e476cfcfa5215140f9f99df90cfe0d3e27e70a6851004350103aefb145f",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@chevrotain/gast|11.0.3": {
-        "sha256": "0f367315d80d31cd104c8cf67a3efee8a729a6b99b069470f6160417a0c1eefc",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@chevrotain/regexp-to-ast|11.0.3": {
-        "sha256": "da4426dae332cf89aa81694d1ec6c2f28ce4b5288d76fd70aedcec792ca5bca2",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@chevrotain/types|11.0.3": {
-        "sha256": "d1a305c32c125f43351272b2421c8b63a2e95ff2f9ac004a2a4678b86f87a901",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@chevrotain/utils|11.0.3": {
-        "sha256": "9cacc067f54602d8ecaf38f69875daaba38e88fb27a0189b1a688a2e779641e3",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/color-helpers|5.1.0": {
-        "sha256": "53d825ad0132a490f35a2d0d3705c61767402116684be9e01b728a57f6ff77ee",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/color-helpers|6.1.2": {
-        "sha256": "8c6b35772bae7190309b8d11780a37949ccdcb2056177d1beb5ebbba71604bc1",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-calc|2.1.4": {
-        "sha256": "f2d92f2472c2e45a3992d1587bb74280cca4dfcbe5cc67085b2bfa8ec73c63a2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-calc|3.4.3": {
-        "sha256": "887e31c23dc34aa0e671a34f651ea4e4ea675e1e64d9a421e0c18e1baf985d5a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-color-parser|3.1.0": {
-        "sha256": "0b7b53d201ea86936f76456df7dab7c7e178fdb231669dff9dd0a89a2de85db9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-color-parser|4.2.6": {
-        "sha256": "64cc26cc15b54a01094935bcc2e3a1669207ec149019049549c25583950b95d2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-parser-algorithms|3.0.5": {
-        "sha256": "015980da82cf38f4bfc64b2396959a6ef687e4f531cda12968a6489278e04776",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-parser-algorithms|4.0.2": {
-        "sha256": "29a3b1cdcc17e6216958b39c04602489c74fcc93607375f84127cc79f278aa0b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-syntax-patches-for-csstree|1.1.15": {
-        "sha256": "b809e51bdfae02c543a3d6c52adc3035745d51e2e221b1ce3994199e3ef5ea9d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-tokenizer|3.0.4": {
-        "sha256": "3b03f92bf43f5d8711f8c28f3519d016f437be13a4e50bb62c3b423e63597759",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@csstools/css-tokenizer|4.0.2": {
-        "sha256": "6af5b66b13c8827df1a3d996e83dffd10719fb9179287e894ef4de60a62b9a9a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@exodus/bytes|1.16.0": {
-        "sha256": "ebca25516dbb448f5c7bb40e6867d0966212934645fc6dfeba750c7d2e24d64b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@iconify/types|2.0.0": {
-        "sha256": "679ffe22ee0d3d0f0b9d660595726704ffec162aad264ecf222a8e1af4e8b72a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@iconify/utils|3.1.7": {
-        "sha256": "414168c456fe0d741679a874ee622a790d264e25c5d9341f2c97b1c23afa5946",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@jridgewell/gen-mapping|0.3.13": {
-        "sha256": "cb0be5df48ce03f759debe20a7c7cf9e9d6775b2aa2cd553be6a5ed678fcec01",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@jridgewell/remapping|2.3.5": {
-        "sha256": "4d770af385b90ef9d341879981a725e7f97ca3a5c55eeda611a5477f9506df1d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@jridgewell/resolve-uri|3.1.2": {
-        "sha256": "f8b48e4b71caac65ebb09945a5a1503c60d089f9fc0b6bdf4849eda305be9677",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@jridgewell/sourcemap-codec|1.6.0": {
-        "sha256": "2f462e68196a8cf3c36539380fa0f12fa80549dd2f539f5209cb3c5a045e8957",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@jridgewell/trace-mapping|0.3.31": {
-        "sha256": "e771e97845840b74277d70fab6644a19162bd1221368bcf44c5af50a705035c8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@mermaid-js/parser|0.6.3": {
-        "sha256": "7ff6b96dbd88c1ade535551049466fe12fc67bfe712c312da7564f03ed3e0111",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@oxc-project/types|0.153.0": {
-        "sha256": "39a9b9734651ef2b5e08a5ccaf13aea6305c1da4303fc6e429b8f20c7b6ec726",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-android-arm-eabi|1.2.13": {
-        "sha256": "0e6d3c0813e97e703372924e82d394c9033551f215ea6ba7ca56a461c204e64d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-android-arm64|1.2.13": {
-        "sha256": "c3c6ffb6e4ba4541d466f54d7193be28789abd6b5aa157aed8503f2a89695ddb",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-darwin-arm64|1.2.13": {
-        "sha256": "0ca95e7435378b9271781a744b16455ef701cd47c39b8cbde285b1fbb202df8a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-darwin-x64|1.2.13": {
-        "sha256": "8ed0073916f28788ab23709359fbbd69300d7d85ca671dfefff3d7d41f3f9ffc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-freebsd-x64|1.2.13": {
-        "sha256": "d298feda0bbd54a33caa1341d0704e92e0f825e34f553f0f8f013115fd7ae7de",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-linux-arm-gnueabihf|1.2.13": {
-        "sha256": "33e9ee4462fecc104c0976d4488466cc61e881fc347974befdd39425096c3ab6",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-linux-arm64-gnu|1.2.13": {
-        "sha256": "0f27db624fdc261802fb766ba9984c8487b12a8a06a6d37e6da99dd5e630feda",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-linux-arm64-musl|1.2.13": {
-        "sha256": "bd042d49a0e358fbc6049f48efef660bca95b7c5aee784c2767e17b92d25ef02",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-linux-ppc64-gnu|1.2.13": {
-        "sha256": "9d4cb49326022db4e2630b3bd57508533e48591927ca1c117ee69d5c2b6c40f0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-linux-s390x-gnu|1.2.13": {
-        "sha256": "4f8d5c0a8077733091cef5c1199e10af4376520fd8e53fe5dc7367cb360f9d71",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-linux-x64-gnu|1.2.13": {
-        "sha256": "199d638664cae79abbe51a076f25eb3046da74c4b5a353f82c7e8a7c50fb363a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-linux-x64-musl|1.2.13": {
-        "sha256": "ff7d1fe4b7608873930c1036ab23bfe9fe37ad44a66e350fe1b09be7490954e7",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-openharmony-arm64|1.2.13": {
-        "sha256": "b9a9c8841288be6000922318145ca01b03d4b5c10e1a141973d41546a5eec70c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-win32-arm64-msvc|1.2.13": {
-        "sha256": "2e2ee479382b28a04748a54f6a2c03942b2c5d6e69e72e217cabc904f7ef0fc4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/binding-win32-x64-msvc|1.2.13": {
-        "sha256": "79946cdf7c6767ced4a640cf9b50da8b6f1cd31f2ae6652e8d28280d4939b301",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@rolldown/pluginutils|1.0.1": {
-        "sha256": "1d3c46873373357f95e1eed1ae64021be7f7212cdf058e1098ac8ee323f60ff1",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/node|4.3.3": {
-        "sha256": "89e8bd7d5365530e82cfab77f72c4b22ff5d9814a56cb2620d177153e01ec3e5",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-android-arm64|4.3.3": {
-        "sha256": "928275b2fb9c480768dd1d24f0acbeec69f22fb5fe13d85920f5cb0803d3f4de",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-darwin-arm64|4.3.3": {
-        "sha256": "8ef0ffb74ce6cd00efeb7b62fb9e055d6a84981c0d8edde2d29e3179c1c6094a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-darwin-x64|4.3.3": {
-        "sha256": "7026a4f44085732db6051924775c9dec8f6d05cb342f987f5bc4a8e612914b94",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-freebsd-x64|4.3.3": {
-        "sha256": "ca82c41ee0479306c15701066bfd79b3780df1626ecd0234a86d76bd73040590",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-linux-arm-gnueabihf|4.3.3": {
-        "sha256": "2b93fa9b9d8a22dd41a68b094aa3fdb200764b974666d3821ef683c20367d913",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-linux-arm64-gnu|4.3.3": {
-        "sha256": "0628d1a14ad1ae7c416cca0bf9175251fe8f55a342b6d5b5354f00ef73a19471",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-linux-arm64-musl|4.3.3": {
-        "sha256": "8c6e74466ba070d9a1478e5b0d05c06f8ef27227e25d334c6d4f4bad0743cb4c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-linux-x64-gnu|4.3.3": {
-        "sha256": "4c1e4244b31ef83193109a0a0c7644e298db57b7807cb8d30f06dad10cdab854",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-linux-x64-musl|4.3.3": {
-        "sha256": "b6d9efa8dbc7c476cb05b96609b0fc22cd348cedeebce64222d6cda8ca6b6e4a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-wasm32-wasi|4.3.3": {
-        "sha256": "1adc504d8fe64c1646911f764c4bfca52981bf0f01cd177ae1708a4970041fe2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-win32-arm64-msvc|4.3.3": {
-        "sha256": "d661266f32186dacb31e97c4b87bfdcb533d2416d601a39d165e88e629f5106e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide-win32-x64-msvc|4.3.3": {
-        "sha256": "f080a10551de1f29e60016df7e997125e4ecd55a774bc4a3fb0100b67b204237",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/oxide|4.3.3": {
-        "sha256": "82632942896525787ca7fe074ea49aa58a3b32c73af59250f1b21ec1b0028cb4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@tailwindcss/vite|4.3.3": {
-        "sha256": "5a542c8f19eccb217cb95402e1ee9dd94767ec7082a39356b5532ddb6464fe86",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@testing-library/dom|10.4.2": {
-        "sha256": "1eb172e0d75a38282820d38cca348bdf70125ac0c2ec46449dea585be4f58726",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@testing-library/react|16.3.3": {
-        "sha256": "dc6af63be8567fdc111e87c61e7f923083e086f7648a6df001a31f6383501c79",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@testing-library/user-event|14.6.1": {
-        "sha256": "78b7422e7b332506636e77eda8581b540b46f59ae821ed1b68bd84bdcd237140",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/aria-query|5.0.4": {
-        "sha256": "5f91f0a78596a2f111e4504f4d9ce06ba0896947af3e6b3b50c3551cfb1e56b7",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/chai|5.2.3": {
-        "sha256": "55b69370f5ad22d064acd7e48548d482fbcc9355a822c40807dcaea3e4cd8bd9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-array|3.2.2": {
-        "sha256": "393d79a9ddd8b2788d9c67b152679ed50d1008cbccdd545ccb69357bb7c2a98d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-axis|3.0.6": {
-        "sha256": "3cc9abf075a5c4ea3853f0e7b263eae6c065125e583d412baf702941ed7dbad5",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-brush|3.0.6": {
-        "sha256": "1d7617d8a6a97a3ee68383052999cc6f1ec4b7c7058d81ac4d827728b8b3066d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-chord|3.0.6": {
-        "sha256": "b45dd1e228ccf3c4b31df8f912ab1a400093a7681cb364b42cd297604c8341b2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-color|3.1.3": {
-        "sha256": "7340b63c7e26941722ea68230cc6a0e6c5bef7251157e1f29e5d7bdc60791347",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-contour|3.0.6": {
-        "sha256": "46a290df7b65023e6b672bdbe9644876d37053dc11b142e1a5567760d720e2b2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-delaunay|6.0.4": {
-        "sha256": "e6c084cafe46ab5306d49f116f3eaf30bae660bcc9e9507bd447246558969626",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-dispatch|3.0.7": {
-        "sha256": "f626753eb085a0ea6050576f480e2a54b0214c86d7acb59a5f4937839e3bff0c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-drag|3.0.7": {
-        "sha256": "fd57a790fb1539ed7fd44b436bc3451e7354e028ba4a5896b98c6df667b6454f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-dsv|3.0.7": {
-        "sha256": "aeb6de53e89d8a072b62526fa87008fd289258917e60c85cf2fab29aa11cfec4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-ease|3.0.2": {
-        "sha256": "397ce523d625a88257cd346e5a44573e43ff4d544875a4f8ef92b61dae443afa",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-fetch|3.0.7": {
-        "sha256": "453700d3cba879cbe3a1c899f4cb06012ef187a390abdcc5f176a5a1e6bf42d9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-force|3.0.10": {
-        "sha256": "d8510cecb139fa5b75381832d09c48cd0187c9a59c1b175c67d9e83a617923ef",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-format|3.0.4": {
-        "sha256": "129b2f4bdb21d4902967f39296fd528b347603b2d6eab139739140def369a309",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-geo|3.1.1": {
-        "sha256": "e56520d9a2337ec63c95939ef3185c1af77e17f79fd95fe6513162ed4f6570f3",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-hierarchy|3.1.7": {
-        "sha256": "e76d15f57fe672e63ffe7271678eb1382ce430048b7a82093de2864515f42fba",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-interpolate|3.0.4": {
-        "sha256": "63f497d9e8ecbc2c36be0122e4b83c4e1b7e4122855189a041eb0c57fb585d6c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-path|3.1.1": {
-        "sha256": "346ce97fd52dc193502b8e3a133238467881609333b4258950b3d0a2fd1402fd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-polygon|3.0.2": {
-        "sha256": "17fd4fe4031a558e9c5fbd87b81f8f7aa27a79f39241db98b52f315f4a54e9fd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-quadtree|3.0.6": {
-        "sha256": "7fbaf889f3a765e68ea74a7dfe0d5276953d019d0466bb58326e8d78ff53e5ee",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-random|3.0.4": {
-        "sha256": "d79463e762289629894c112658b2ea47ed00c44255d38c3d21c8b9bf4bf65cf8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-scale-chromatic|3.1.0": {
-        "sha256": "da7f027253b1bd6cc1cc14837d883c25afdc56988fd5ab22caeee50214d29ee9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-scale|4.0.9": {
-        "sha256": "1b7fb41038d1da03fb454b3ab79e27bbadb36db4550b6bd90cccfeedd6f42c72",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-selection|3.0.12": {
-        "sha256": "be8a09bc3271ea5ed32a38af80c065049342afa937b959dae677dc4e45f0b8a0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-shape|3.2.0": {
-        "sha256": "4dacf7324efcecbe2413bc78b939fa522c98129766e9f91e326748fe513e3faf",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-time-format|4.0.3": {
-        "sha256": "26550e954128a6b1da37d3cbcae6cba5283f43b39736692ee33a932d70d8dafa",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-timer|3.0.2": {
-        "sha256": "df631ef6826262f53013f4a8ea847b9721b89f230923357aade6cd699010c6d8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-time|3.0.4": {
-        "sha256": "c63442428a77476dc93cae2d508739b33947c082975278426debdd7f252eb34d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-transition|3.0.9": {
-        "sha256": "16bc7e3943856f9746f9698b6629d1c0895cec390136d940f98950f320229c9e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3-zoom|3.0.9": {
-        "sha256": "886e23325350b248fbad7a31485e235ae3791ef4dc43021a1216aa4dd442c48b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/d3|7.4.3": {
-        "sha256": "d023d89fa52e81b944336f5284374133fc0c5aed1df12f74f866e98ddf394b49",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/deep-eql|4.0.2": {
-        "sha256": "e5f08bc9e93a8a3fd2f44576f3033a806b83be292ac8a53657a3e0d8a5995a9a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/estree|1.0.9": {
-        "sha256": "ec58dafc4bd1775af53776811f8016e32d892393dba17940b83dcbb98a176128",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/geojson|7946.0.16": {
-        "sha256": "acd88448952b0a6ed16a512e2f9d447fec815c1d8d7becc9f72efcf459de2482",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/react-dom|19.3.0": {
-        "sha256": "0ff193f5f3f1780a5a6995485229a1bd8bf55d1abc654d4fab43eb7d0797e234",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/react|19.3.0": {
-        "sha256": "a4beebb978711b5f5b672c7e9e9a3818511e18ef17c191805712ff038c76331a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@types/trusted-types|2.0.7": {
-        "sha256": "7261b0c6cebdf03238a01cd81e61e3d407f8d501297594fcffa4c48dcbc541ae",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-aix-ppc64|7.0.2": {
-        "sha256": "f9535879f8a903a85f064282e0f9aa860d8d22a411cc6e748b7e21e56a5263d5",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-darwin-arm64|7.0.2": {
-        "sha256": "4d7f5b4afeb330a408c647159932b1ef251960b8a1f3707a7217a94949c476ed",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-darwin-x64|7.0.2": {
-        "sha256": "c8cce43ebac76f9a4e7cd2faa874daf03c1341d00026e7e27021780a5684d71b",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-freebsd-arm64|7.0.2": {
-        "sha256": "66b7ce952c0e42c13dadf8ce10ef0b630d50672bb6a1ea27ebf39c8986229428",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-freebsd-x64|7.0.2": {
-        "sha256": "7f5f86aa7c27bac5992c9982036c105da7ee7dedcff47363bcb6634823d62ed3",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-arm64|7.0.2": {
-        "sha256": "d725ead57e123a9277e352fb4bdc035a35751028b62ae851226f376540966630",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-arm|7.0.2": {
-        "sha256": "1646717a90dd6f8d2d6a87c8260b6b76d73ce0d4372a28bc89addc1d8ccccc5c",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-loong64|7.0.2": {
-        "sha256": "c0eb36dfa8a444c7d937e8c0956b02e5aa863bc16e11f49f3a057b84f4873e12",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-mips64el|7.0.2": {
-        "sha256": "1d0fa75b7f9dd344cdaa1ccef9fc9fded88490d1de41521af2e2c9f39ed1fb7a",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-ppc64|7.0.2": {
-        "sha256": "7da6da73be1125f9f3e554797efc164293031eba389f36bce79d66bae686fa98",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-riscv64|7.0.2": {
-        "sha256": "2c2ad5226f680d532bd3f76a7940db5ed349a3e4dd6c37c4c5882fe96e938ba5",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-s390x|7.0.2": {
-        "sha256": "c315c79698a81c968497760c6ba029e1c0d9fe8565488125d5afc60170213727",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-linux-x64|7.0.2": {
-        "sha256": "31ea87edd4d032a3039fc0ee49dbfb4e2dcddfa14ffa233424793f7956889b12",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-netbsd-arm64|7.0.2": {
-        "sha256": "14a189f1b9e3c0e81c3b789e4406a0dccd4ba1ee73876fc1280adc17341ea493",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-netbsd-x64|7.0.2": {
-        "sha256": "dbbefaabd1f460216c91dc7c5bb408d58159721abb895bca9a34a3f8898f3438",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-openbsd-arm64|7.0.2": {
-        "sha256": "8fb3f2cb391bfc494923f38c1900bfaba8f9b5581373c2d3e6cfce3af7e049cd",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-openbsd-x64|7.0.2": {
-        "sha256": "20ebe345bfb4de996be8a58175676ae30896072b618bcb3110b9ca36fb9b29ba",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-sunos-x64|7.0.2": {
-        "sha256": "995372533d45ece54112f15231cf7a62f32c15733b7170aa8f07aec0a064b8b0",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-win32-arm64|7.0.2": {
-        "sha256": "6231952bfab35a1d971fc2f2c1ee6bf377f3c3cdb1bae05a35f4af78c60f9b63",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@typescript/typescript-win32-x64|7.0.2": {
-        "sha256": "ca7c512b90a0a71fc698fc7701404a9c47677ce7dede7657666b29179db1d3d5",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|@vitejs/plugin-react|6.1.2": {
-        "sha256": "234f79385dc91cc1bf2a4245fe40751843249aeba172dceaf1080ee8dc56040b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@vitest/mocker|5.0.3": {
-        "sha256": "5880940203b09da1e6fa334037c786c1053ff3404464d7fb62305ec7a7b8949d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|@vitest/spy|5.0.3": {
-        "sha256": "88b82170323a10ab243c0818e1ed579773c2b09bcc81651420d6636b27f943cc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|agent-base|7.1.4": {
-        "sha256": "c8c9c20814c54aee3ed23cc8caf713a42ca294c79c9a388b7b889b07d93d840b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|ansi-regex|5.0.1": {
-        "sha256": "2b0e02215fa575b1f3efa2b2c8499ddf2bb8eee61a37deb1fd6069c1573423d1",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|ansi-styles|5.2.0": {
-        "sha256": "ac65365864996f7462607a683bf60fb23449a15a7a0832aa5a1e94b3d4cf4f81",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|aria-query|5.3.0": {
-        "sha256": "8851c6eb321b605297c2daa2d01fc1e1ad701ae0d8e0978be1939fc6ea18ebdb",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|assertion-error|2.0.1": {
-        "sha256": "23f3d705250721ccbe48b37d5ace6a43b501f048295edecefecd686d7698ea38",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|bidi-js|1.1.0": {
-        "sha256": "fca7ab477471d8779ccb85733a2da8f33b28cf5b189e3525759ddb46f9f99978",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|chai|6.3.0": {
-        "sha256": "bdb2a26d80a0b040954df8e1fd8372c25ec904a4a4dd21eb75381724b16b945a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|chevrotain-allstar|0.3.1": {
-        "sha256": "80d4e42d056b3dc654479c10cfba2958dfa7eb4225eeaaac626fe1c8422309b2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|chevrotain|11.0.3": {
-        "sha256": "cf6e35d2562eddc6f11c00e73bfa9b78c6f4c63b391d7aebe709d9cb7096e84d",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|commander|7.2.0": {
-        "sha256": "55a7326e6b0079310fb1fbf64584eba13173b6d69a218f25c89ea53eec070525",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|commander|8.3.0": {
-        "sha256": "6ff5f49a83f6549afce5c5101322d9c24ccd6f171d8eabecd9a3bc192ec5eb37",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|cose-base|1.0.3": {
-        "sha256": "a4511de1d15f45274665a828c53eac0fa13c65f2e28b2bfa593f98f2436faa06",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|cose-base|2.2.0": {
-        "sha256": "7421888fc92b7283f2c2b439b415db16fafd2c15b48b0860f31cbcc316fb8e7d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|css-tree|3.2.1": {
-        "sha256": "ec2672c3e6a896d99681b73601445e5fa677cff55ff5d389476cacd96a76d6da",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|cssstyle|4.6.0": {
-        "sha256": "48e09f1fc27e6f6c437e9da9c060aa34a8041a22c99cc9f743e872235e7c8897",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|csstype|3.2.3": {
-        "sha256": "e489fd20e644d83ce3fab4f02067f4b1c246a8fc6e4cc17f8f312c4f011605bd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|cytoscape-cose-bilkent|4.1.0": {
-        "sha256": "f7b44667b013e766ab7ffe32ebd6f8b3a06ef13a52eb153ff83c4bd04eab89b6",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|cytoscape-fcose|2.2.0": {
-        "sha256": "90c19d2c55b59c843b00a273c6af688af04c22d0191706aafaeaf25f51a67175",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|cytoscape|3.34.3": {
-        "sha256": "b55d7c900a11c27c8d5451cbc12ebf15a115a0cf8cb1c3cbb2e553bdbfd4ec65",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-array|2.12.1": {
-        "sha256": "a1f20321d94c51154731475302e97bb961ae20304f1349d9dbd6c8597ed4408e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-array|3.2.4": {
-        "sha256": "9110f5cb2fc02016c391b250e0278db13003c511ba8ae2ef690f27e7bd4df1b0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-axis|3.0.0": {
-        "sha256": "fffe942d01974b8f8854fcb2242052097ee925335cc75f9027cc3c0174455b69",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-brush|3.0.0": {
-        "sha256": "e93e953d8cb87b0ec3f1be1d77ed4e040cd1fe1dbe0d9534fa3dc75cbd29d784",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-chord|3.0.1": {
-        "sha256": "697cf40d6a0fd291f0a961d7ecee35526104ae41d59d45d679a125e88e099c78",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-color|3.1.0": {
-        "sha256": "17b8491914a0992e43af6e887232229707ecf8a127c4440c29e80a56a5b1fbed",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-contour|4.0.2": {
-        "sha256": "7d93cc814ff3b5d1cf6a6d2b1204c338e39b99151f7612ffb4b629f33dbb4e68",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-delaunay|6.0.4": {
-        "sha256": "3383d3e0ae7c3b4d12f415ca9ed75ee0073fa8677e5f8461588dcbd945e29a8b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-dispatch|3.0.1": {
-        "sha256": "2d6eed7cbbb6542b44f0e2675288b1e065a50aeb7c0663a9db7050cbe4611502",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-drag|3.0.0": {
-        "sha256": "52981d4376dd59be948977fae7904ff85c0a0cd367da58e9634496fff51d0a86",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-dsv|3.0.1": {
-        "sha256": "735e6b78254969fc99135187e94dda5e846a6791d31f2fb665c38a05cbb1e80c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-ease|3.0.1": {
-        "sha256": "4781f4d64a1632faa7f0efb7bc7e50015611cd11ee680b0f13e91787564095c7",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-fetch|3.0.1": {
-        "sha256": "62efa9140af833a3320fb91586d2992dbcf23596165c2a1c316e721337ce49f7",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-force|3.0.0": {
-        "sha256": "e49da80b8d553256a2d9242a3b2d8095c0474fba7e09f8db2fd922954871afea",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-format|3.1.2": {
-        "sha256": "3fe988d8c658f552fe22270819b4d2322cbd79e60ef1d46bc6aad520576eb896",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-geo|3.1.1": {
-        "sha256": "3dbddbf244864725d49f728ac3f0eeff88cecc7cb07ea88cb8cd653d8b5b6b6b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-hierarchy|3.1.2": {
-        "sha256": "76629f25bb45e807b7bc7f047085c95543bb1d5439312e133d9a6062ccaecea3",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-interpolate|3.0.1": {
-        "sha256": "1cac9e620635227373962db64d32a56510f7f780df3bbdc1c787fa86a01aac47",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-path|1.0.9": {
-        "sha256": "85f8381e9d4b36723188d355f1aa6ebb37f34b5f308373c13be2a715f50ba9e4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-path|3.1.0": {
-        "sha256": "58bee222f700e928557cb4952637f3dc85bfb8767cac6d3f0fe2972ac7733295",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-polygon|3.0.1": {
-        "sha256": "8d762ed467cf35f2481be3336e51cbd8410a5e22a795534defd79f8dbcf4bd9a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-quadtree|3.0.1": {
-        "sha256": "786214a234747cef6402635f3933df995a14d6db88baba32b0ccf571487ae12d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-random|3.0.1": {
-        "sha256": "73cc07407a1759f9a25dafa9624f7371e43e8b0ca2b912ec3ecc4c5c9ef80b7a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-sankey|0.12.3": {
-        "sha256": "46feed6abbf699860aa8db2fa23be4a3d335ef856c46f428c75c614c01620bd9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-scale-chromatic|3.1.0": {
-        "sha256": "6e393d1b04b0f9e133e11a64bdc88d2a9574fe05f9565ba5b96ed7ea6785f0e7",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-scale|4.0.2": {
-        "sha256": "9acb61d0d65a8f23b3d4f8dd2c7a8c1b6d609d085ddbb887b18de8a91878a3b6",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-selection|3.0.0": {
-        "sha256": "dff4c988cb63cb0a6f75abae4cd69859f9c1e927223a5381f8c7f805f3046b61",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-shape|1.3.7": {
-        "sha256": "b1b89e1ce2f07b6081cc6150af156aa53ae127fb1721a180729d4ab800d73234",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-shape|3.2.0": {
-        "sha256": "b30e0396f540789efe5b136518574260888c18c7974506513a057305b2c5f720",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-time-format|4.1.0": {
-        "sha256": "8d32b0a1863c434cbe2a5b6f84e5e17eb59fa95072561b4bf17978e8c6804813",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-timer|3.0.1": {
-        "sha256": "99910c149d7e1f6704a8cc3aa847dbbfe10ddd952c383481484aa6a0ffa19537",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-time|3.1.0": {
-        "sha256": "86b262edccef737965120e9deeec5f725b4243db8ae9720101ea47417d24c0f3",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-transition|3.0.1": {
-        "sha256": "e2edcb1ce8f4120dc8a814669cb3737d02a61519069649127c5d344cd458a0a8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3-zoom|3.0.0": {
-        "sha256": "3f7290092a386f249e931e267ea5895a41dc58d77472a4b40f24cc0811238f2a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|d3|7.9.0": {
-        "sha256": "9bf82fb6f941f59fd02dda51b1a5ce2c9e88aa5163dcd5c4b6c91e3fed429270",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|dagre-d3-es|7.0.11": {
-        "sha256": "f2a6b69e2ba66a121749cf323593c07bea637143e2e202902fb589761bf6a3cc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|data-urls|5.0.0": {
-        "sha256": "e6f357a0fc72e6f06d60789985a7af0a6faa44043daa422bdf8609b6ba1e125e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|data-urls|8.0.0": {
-        "sha256": "ca280d775846eb2ca632fe21d5ee8e065e196b753114302147c210e2c1a24d43",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|dayjs|1.11.23": {
-        "sha256": "89117e3260521c02e861ee4014cdeea9963e8c08272c3c4f298649957ae4fdbc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|debug|4.4.3": {
-        "sha256": "05cdcd600f6995ea6172957b20deb243e7541d376066d84fbc0b9337a5a5124e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|decimal.js|10.6.0": {
-        "sha256": "7fd9b18686d52883c78613003616b7adc64f8714233c6386c7f451912bbb0456",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|delaunator|5.1.0": {
-        "sha256": "5f9356ce892f85de233b40c1a395d9df3b91b7f87627d17b2b7d66a593f69d4e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|dequal|2.0.3": {
-        "sha256": "b6a1bec261b63179153097b3234cade5e3685be8bdc56f51bf8d03fd49b17690",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|detect-libc|2.1.2": {
-        "sha256": "6a35c380f4a894ffcf2b3be028edcda75eec33824a3c3758f279da5145980064",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|dom-accessibility-api|0.5.16": {
-        "sha256": "79b9cd5175a0ad5ea8558d15142fc9633bf0e77996e031277faee30566f190d8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|dompurify|3.4.16": {
-        "sha256": "df5a5da8225e76b60ad202ef486dddc3f27bfec022bc88ce15011a32b3589989",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "npm|enhanced-resolve|5.26.0": {
-        "sha256": "af85a4d5825cacaebea5a8db1199b54f9bccf591802273c415c660ca8a962ebd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|entities|6.0.1": {
-        "sha256": "bd557fa18df432aff76e73e2f2e254d1e6f462a1187c8a52c15c2d242a91a18f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|entities|8.1.0": {
-        "sha256": "5e9949a9ee5381ad51c40e9d699b9659cfed6a504be6f6e0de7db8c604f6fc70",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|es-module-lexer|2.3.2": {
-        "sha256": "af73625c7dadaef7f324e8a0796239932359a21fc22d723f23a4acce3e6b0e07",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|estree-walker|3.0.3": {
-        "sha256": "1f37605018c1043b45d7692b828c48c4f54eae379025eea656ed53c4014b62de",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|expect-type|1.4.0": {
-        "sha256": "903f22b079cb7043e223328bf3e068bf99cad455097dfbb6917b8e21df928d06",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|fdir|6.5.0": {
-        "sha256": "6a9a9091e5c6df6f963f94a5e14d508686db301f4f553e4dbcb0904f2c95f400",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|fsevents|2.3.3": {
-        "sha256": "4719da961a769b62bffd8641aa7d6f15a27579ba99cd0fff0cc24fa366b907dc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|graceful-fs|4.2.11": {
-        "sha256": "827082f3a055d53ce0ce8616acc0dac07d757d2d16759cd9bb6c5e08305e7bbd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|hachure-fill|0.5.2": {
-        "sha256": "143c41a5b99bcd7bd122fef34472c2ba94d739093202ca03a275f032054c7338",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|html-encoding-sniffer|4.0.0": {
-        "sha256": "e58e5f503afc140e1ed369a7b6b8bda2083de94fd5690c12de055d25751de066",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|html-encoding-sniffer|7.0.0": {
-        "sha256": "180e5bcae0776ee56b154a0fc17c76a3b205183b48f96a02aeb063c4b235ab30",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|http-proxy-agent|7.0.2": {
-        "sha256": "1586f1b8d48a80e903fdeccf28a39c0424cdbd3500ddb52997844b4b72da655c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|https-proxy-agent|7.0.6": {
-        "sha256": "74cebd675c97c284b9f589cbf2e66a9aef5de9a9d325cc3b0616207d3c39cbcc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|iconv-lite|0.6.3": {
-        "sha256": "622dd6592b7cf2a47bc6c146d81c846f1fb9d2911782328f360983aa8944e455",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|import-meta-resolve|4.2.0": {
-        "sha256": "bc10df22ce18d40c120910ac04bc6f7035dbfa9d4411908eee6a191d82d2b566",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|internmap|1.0.1": {
-        "sha256": "353dbfcb38668b67bf8ff2208415d26bc680110c13afdb470b543b24a9decb81",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|internmap|2.0.3": {
-        "sha256": "b7573d7d032731174237c2b5de38741f8b168cc0d075bce96b257e45e516c4ef",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|is-potential-custom-element-name|1.0.1": {
-        "sha256": "7c03a81ae92d5ea7544a472b1ce0a139a62642265a39e463407b7ea957ce8f54",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|jiti|2.7.0": {
-        "sha256": "ff16840e79e2fbe9e98f6f3021c51e2f7951a13fdbe019cfd8913972bda72445",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|js-tokens|4.0.0": {
-        "sha256": "e2f7cb6f3f0231b62e6c7624cd76dc9f462f0a0fca7ae8db42de3fdc7f854fe6",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|jsdom|26.1.0": {
-        "sha256": "dc107e710ec2c05cc8ebcb67890a21914fbff17db04f264fd105abe588b43fb3",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|jsdom|30.1.2": {
-        "sha256": "1657a27b703b4e3598908241f4783d1a865867ef5dbd166b7b8d6435b9bba7ce",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|katex|0.16.47": {
-        "sha256": "4bc9bce6eff94296f8eb2e5651f0f3a407bd0f1e88a2dd2c1f35409640963e42",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|khroma|2.1.0": {
-        "sha256": "cd81139c98bc4b22fa28e3b9060772b2be4c1df27bcec2c239a40f8f1e8094c0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|langium|3.3.1": {
-        "sha256": "d049b74bdceee47bb78a05323f18b4a19b67d72470838058a591509c3ae6c379",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|layout-base|1.0.2": {
-        "sha256": "b8a19cb74f6964285c8b585443a3f6e1adb6e6f6fd2ed6b6d9175cff4da91d59",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|layout-base|2.0.1": {
-        "sha256": "3dd975435057c55de28661f41cf645a6e36151dfc550ac3a95c2e84da591d8bc",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|lodash-es|4.17.21": {
-        "sha256": "937aa163f0ee9fd6f20de7ed70d0719f4de4388ea426731ae6e9a60ffa8e3a6e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|lodash-es|4.18.1": {
-        "sha256": "7ad573c1506e571229eb14c00844afd67cdbe5a2a22fde498d2ae118cda65337",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|lru-cache|10.4.3": {
-        "sha256": "77273a607fa50e9b434a414698a57c77a9bbe0611731a9461a6b51262f13b5c9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|lru-cache|11.5.3": {
-        "sha256": "820463374ab8691c1523dc6965d68113d44e4bc2c9fa1c3ac23fe9d580ee27a1",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|lz-string|1.5.0": {
-        "sha256": "0bec2989d5a0d6705d0ab894b9e7cad661fa04c4478062ecf96efc2403f2081c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|magic-string|0.30.21": {
-        "sha256": "38d2b2621668f126e757e6d11ac043f3f66cd597d8b5fc684419d4df336fa97c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|magic-string|1.4.3": {
-        "sha256": "7906c5560414afc12c29036786712afaa00977e1ed096671590a4723c45d42b5",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|marked|16.4.2": {
-        "sha256": "027db66a3ff2c7bf8e248442ab88e1955eca0e5e7fc84980ced9bbe2d3e35bed",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|mdn-data|2.27.1": {
-        "sha256": "95f8ecfab96a9f7d6e6329ec3ce48afd080a64855817a3e6924377d9436a8c03",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|mermaid|11.12.0": {
-        "sha256": "486419b209e2146a80063da8c7ad6ce9c1650fe378b9927bb083424e6541445c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|ms|2.1.3": {
-        "sha256": "819cb83755df328bed676e3bc01275760238e027969bd13713f929779b5187f9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|nanoid|3.3.20": {
-        "sha256": "a720f8ea1ea0adaec1195c8094495f5a9847389e5102adfff04339d5e1db52bd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|nwsapi|2.2.28": {
-        "sha256": "85b62634edf62d76b67da02646904f6858aad1ea54b8b05f966322f86f061a91",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|obug|2.2.1": {
-        "sha256": "87d91efdd2f455599e8657f41ba45c815ca125dff9714b69ace4cfe4d8211e7f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|package-manager-detector|1.9.0": {
-        "sha256": "18cd395fd9f4466dc09e882ad9cdf05f903b7398eae494040f0c000e0232a832",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|parse5|7.3.0": {
-        "sha256": "c080508e49ac62af3ba66407dd8d53cdc1efd1ab6043d699359bd146b5fc335d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|parse5|8.0.1": {
-        "sha256": "e58351d57e72790c53604c59c617507516184cd4a30e402b575bdb5f26a2ea25",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|path-data-parser|0.1.0": {
-        "sha256": "d9a2b9e882318009484271902347fd839f2312158d3df26c9b2205340e98f501",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|picocolors|1.1.1": {
-        "sha256": "87d7605cdada9bb9491708f866e5732e6a219941521cf4f9bc98014e3dbb2c94",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|picomatch|4.0.7": {
-        "sha256": "f448e152aac96fbf0dd7fbe27917a9027d0ee6607e70cdea219e067aa3c56074",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|playwright-core|1.64.0": {
-        "sha256": "6c9833d60cee552dcd08156ae71da05dc8662506c3519cc71f19625ca742964d",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|playwright|1.64.0": {
-        "sha256": "ea2d94176ed74fb3cf530c282e0794862684e15c5713a9bf239bf2302250a3c4",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|points-on-curve|0.2.0": {
-        "sha256": "b6815be2e00ae54ef503f7798f307e5da157f7ff840f26a04c1246d50280a623",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|points-on-path|0.2.1": {
-        "sha256": "14b50b531429db993047b1d16b2edf3a664a1fdf099b827e5bbde112f7399b37",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|postcss|8.5.29": {
-        "sha256": "77c3669cb7d135f86665563b9e5fcce46508ba756b5e271ba2120bbca94a57d6",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|pretty-format|27.5.1": {
-        "sha256": "667711502620cf4a56723983adc2f921ddfe75dc1362d1ed236343f371813ba2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|punycode|2.3.1": {
-        "sha256": "5a5961d0a0fa84542f702285bed1571e18d3e1540bb506e39825320433b03ccb",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|react-dom|19.3.0": {
-        "sha256": "d771b9ce16e64a1dd4654780aa65b72e421cfd6b8b4a55caf1b134339ced5e03",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|react-is|17.0.2": {
-        "sha256": "c96598b04a711c8ae15ce39b7f500f9fc7867c6ccbe1d45490bf5e0ff70b8ad1",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|react|19.3.0": {
-        "sha256": "38729f9965018fdbba064d22819e640f65f48286a7d90f7264f3c2bc91f2c1d3",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|require-from-string|2.0.2": {
-        "sha256": "17456a6baa9bdd02446e12f577422b48194078b817fbfcb6f730cf1fdb29ec68",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|robust-predicates|3.0.3": {
-        "sha256": "5cbd7c6176cf7c01356c53ec398262601b33e21d1b6910ded37ca7138fa64ca2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|rolldown|1.2.13": {
-        "sha256": "b42d4d531a7c3b19b9f47efa08f12b90938409961652d7ac4d353b702a2b149b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|roughjs|4.6.6": {
-        "sha256": "99a6f13e8179361e4f8d76d41cd204780ed2a74d954abf2372090fe5d3ec4488",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|rrweb-cssom|0.8.0": {
-        "sha256": "0de1444b736962e29a3b34c873213a18270615f3ad354e13734a571a6ca165f7",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|rw|1.3.3": {
-        "sha256": "7b4f630bdf46c64c64f1380dec0d54c4d7437ce683584bba8b159ba0feadcf30",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|safer-buffer|2.1.2": {
-        "sha256": "01dcad2248005816f82d180a1905cd6e6ddc064b5fb36cf255a76fda0e56047e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|saxes|6.0.0": {
-        "sha256": "4cb930a38576500b79f56081f891f8fb1369eb12e9a9754d50993a9996e45a77",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|scheduler|0.28.0": {
-        "sha256": "e389da73af1b86cd995175e1983b12b778f0293173e165a7d75d5e1d360a5e4e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|source-map-js|1.2.2": {
-        "sha256": "3d3aa09e7c0ea3c310fd7a219a7b90d1b5edc6234bfec88a980a2999ddaa6bde",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|std-env|4.3.0": {
-        "sha256": "821108ecb9f293593aebc53e105b94d9103a27c5279022b9bed37d3c9a39d721",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|stylis|4.4.0": {
-        "sha256": "de03b59e553341fd13457db2095c8c2f36481474f888cf549023dc749eb4655f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|symbol-tree|3.2.4": {
-        "sha256": "2907b3dbfd8483178d49f3cf955c81f807036a7d5073aee366f46b349350162c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tailwindcss|4.3.3": {
-        "sha256": "34932109658217c54c52b13f9d9e30851054489321d6c7fe714d051197d6b834",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tapable|2.3.3": {
-        "sha256": "0be000a6f9bc0da4d821714b2b7444a6f4baf5c16945253d5f76c3313b68dc1e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tinybench|6.2.1": {
-        "sha256": "8a803f7c07834bd3f854b2cc22b75736c79f9afa3a6efa31203818e4e93e5b44",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tinyexec|1.3.1": {
-        "sha256": "21bb214cc0fec92013f615dd38a6c55ca2e44c0cb5c4e3ba8a0bbdf98332a7c9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tinyglobby|0.2.17": {
-        "sha256": "66108b1107a4d8bc6aad923a2758139160d2a54c80523bb19777bfdde954f588",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tldts-core|6.1.86": {
-        "sha256": "4a6f764e8bb0b051d3542de44395c90f976ee85353f6473d9d4d25998c673d4d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tldts-core|7.4.18": {
-        "sha256": "2891f4bb3e6af2640701c3d660f005c3c2bdd3e5cd9cc5e04ef952cd16c8b1e2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tldts|6.1.86": {
-        "sha256": "42570b5894f7394532d886a5e819cc21c0c5765687d2c84750b2ffc3b4ab65cd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tldts|7.4.18": {
-        "sha256": "fc884f503102826b590c5a7bc17c20c2742b7c9c28b546f6de92fd13eb837a01",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tough-cookie|5.1.2": {
-        "sha256": "ed6915c3147d03991405f764121b98b3b389546ecd6128f38f1ea3f57ea0ffa4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tough-cookie|6.0.2": {
-        "sha256": "a81cd53b1fd2b5d7bb3925e13cff69b6d7c4480955f74f67e5c868d1d5b7f153",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tr46|5.1.1": {
-        "sha256": "7e6569331c11e84a89c45a8808d5fa2f7cb23120b3f6e5376738e7a59d6c5fbf",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|tr46|7.0.0": {
-        "sha256": "70ce9d05a315e30cbbacee423bec653dab7bf704c5bebc10ae71ca74bce0eba9",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|ts-dedent|2.3.0": {
-        "sha256": "600a9c5078c2c17d746c80be3794bb67ec228e214a92ffd2ebd17277e074b2ec",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|typescript|7.0.2": {
-        "sha256": "67a88258acde30642e6f85ee98ea878cbf3ff3264436d74717c76d6787161b0b",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|undici|8.11.2": {
-        "sha256": "d01646f29bcb3634a273312264e1dd774432cf9ea34327f5a5026c730dda4ebf",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|uuid|11.1.1": {
-        "sha256": "77709c83592252aa0985ba3d0e3a60e29d16b8fb479a048623aa669c4d9d87f8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vitest|5.0.3": {
-        "sha256": "983ad9fd2c2f8053893def4254c39689cd763954d3fa8d9785814f3cdb5d1f49",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vite|8.3.4": {
-        "sha256": "55d1cce7cb10b98539cf72dc033c070cb2fb00faae8b7df6e40372aaf535daca",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vscode-jsonrpc|8.2.0": {
-        "sha256": "77cf18030c3908ee174411914b12bae9dcd4e0a6c2894b4712a762ffceff40c1",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vscode-languageserver-protocol|3.17.5": {
-        "sha256": "b0938653d9704b80dc99cf207dba49eccb4699044c58d42b1712a1358fc05a4b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vscode-languageserver-textdocument|1.0.15": {
-        "sha256": "10a942dc84f7e51c24142b2ac384dc298703e726eefd9affea79d11b20515f90",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vscode-languageserver-types|3.17.5": {
-        "sha256": "54c12fd3fdc4911dd8b0384a6be76a3e74aa753d5c55ffde928487fa880177a8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vscode-languageserver|9.0.1": {
-        "sha256": "532ceb23a30fbfb2346a64acaec3129016f38f638fad7202569cda2e9b2c7551",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|vscode-uri|3.0.8": {
-        "sha256": "6a7ad7f62b3270ba3bdd5a2050958f09827a7219a8a433bd8e17792d2bb768b2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|w3c-xmlserializer|5.0.0": {
-        "sha256": "e14a9fc52a75678b3d33b0a4e9383f3c2ef21c358e8fc6945024e109c374bb1e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|w3c-xmlserializer|6.0.0": {
-        "sha256": "7f65dfa590abeab4b3624700f8b37dfe691561fc233cf1e538f80d1ec8e8ff0a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|webidl-conversions|7.0.0": {
-        "sha256": "200d22261f1f4bcfa8dfe63711c254f5b93d534e1b7d952cb5a333274aa58c0f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|webidl-conversions|8.0.1": {
-        "sha256": "7acb036d35ff50ffee7afdeb434d756bf9198d68b5f988cae1b19008d82a6a59",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|whatwg-encoding|3.1.1": {
-        "sha256": "f5ee0b4dde036dc7c63b1cdc27803ffd8733b74c65ef10185676e5350ff4b65e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|whatwg-mimetype|4.0.0": {
-        "sha256": "3e71af28128be9c5700b80b2961913b3436f8cac1eedb7f68b03e0c172cfaf9f",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|whatwg-mimetype|5.0.0": {
-        "sha256": "296a71554f6a556cd01be60a8b49be32787619253175f380c4e810582fed7d06",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|whatwg-url|14.2.0": {
-        "sha256": "8ebcbf3c3d5fcbe31d29f6f8803c14bdfc4a907d58790b944d440cfecb2a86aa",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|whatwg-url|17.2.0": {
-        "sha256": "cc3285a4749733bcef2dc6497b509e80675be7f479cc47caceb708dcba289636",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|why-is-node-running|3.2.1": {
-        "sha256": "3fc446503224df00c3658441ae3dfc44471114f010854a02e47cadb8c7861d1a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|ws|8.22.0": {
-        "sha256": "e9de774928521e91390b457198022a7ac0aa7ec8eccc75ec6352e51102625afe",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "npm|xml-name-validator|5.0.0": {
-        "sha256": "80c6669c2c0cc9dc9e7066884ac59615e18b1827e08cc6fdf66400021e385969",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "npm|xmlchars|2.2.0": {
-        "sha256": "7740644876d61c46ccc6c4e00514ffb360dcc3e92ac52d3c47226744244b7b45",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/apache/apisix-ingress-controller|sha256:5c5efa4c7f2aa60e21d20fefc0388ad52faaefb71b840ee1e11ece303cd8ed86": {
-        "sha256": "c30ae88a2b7bfe6b9fd746140b872deafa47d0c39744315122a5ac4b7d736e35",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/apache/apisix|3.19.0-ubuntu": {
-        "sha256": "e6756dfaa20aeba1e104bc32b2c7946cc1306b399d51f26e4c4ae2e56c261e6e",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/apache/apisix|sha256:9a7e45dc943fbf10ec916d1232bae4cda9302ae28a4696cfb83c2da01d261141": {
-        "sha256": "2a09eedeb100248c1ffcb5dc22bd2b195cf4f9840b193c940b1722717a6923e9",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/envoyproxy/envoy|sha256:3e5f1b892f15d46a2674ffc81b9f86f4d0df7794e3ef49e92ee7062871b87be1": {
-        "sha256": "0c7f99554c5dd8ee5e1ce118b76dd03a4576d1affcbf266a64fd20d8e3b5cc52",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/library/busybox|sha256:bdf57e528e45e4433820e045b29b4597825a1c9e38353532d90a01445013f82e": {
-        "sha256": "706be87ea4bca5ee937b2d3273cadf494f3cbf67154562f30308d373eaef18fe",
-        "tier": 4,
-        "due": "2027-01-14"
-      },
-      "oci-image|docker.io/library/node|sha256:d1b3b4da11eefd5941e7f0b9cf17783fc99d9c6fc34884a665f40a06dbdfc94f": {
-        "sha256": "3b16a656c1aaec3de415d64ef70bf20f7aa9a5a1bdd3caf0c4326db1dead655d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/library/python|3.12.12-slim": {
-        "sha256": "315be0167877a8774455ae5709b4a1feec1839042b528bd55f697e6548724738",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/library/python|sha256:a2b82f3c48559aa0a8446d9af49826b6e2b2016f4cd2afabfe6013ec53729170": {
-        "sha256": "d9971a7e41f5fafcf22934fbbe8bf145965e3fc06fe63dc3f47f5de84a75aa1a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/library/python|sha256:b823ded4377ebb5ff1af5926702df2284e53cecbc6e3549e93a19d8632a1897e": {
-        "sha256": "7d2d1c21c9388143203f6e1df965ee4c472f2e3153613eef4d5b4c100f0e847b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/ministackorg/ministack|sha256:11d7308bfc75029d55625b9525e84a2401431ed1ff2148c6311800ff5009ae9c": {
-        "sha256": "5870a813ac8ba8b324751b3b4e90573c26f22a8d6795916cbf11b973698328e5",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/openbao/openbao|sha256:6d2b93856e3fcf7b18ad855a0b51eaba474dc8b79cf554379ea32034797d2acf": {
-        "sha256": "b32f9b47a92c5f9022ac021a2cc891000fc67231e9aca996f938cbef3f6cb64f",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "oci-image|docker.io/otel/opentelemetry-collector-contrib|sha256:39923a8e431bd1f57be82411999d389fcfe40857492e4365456d97a4c1f74be6": {
-        "sha256": "5d563f061093b92dc76bcffb55a6bc084d4ab5b1585bdc2abfc6c1b12de24fd6",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/rancher/mirrored-coredns-coredns|1.14.7": {
-        "sha256": "3f1d263c05ecf2ac6911876ad3c8470d5c5b066582daa196fc92484ffe57e86f",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/rancher/mirrored-library-busybox|1.37.0": {
-        "sha256": "9ae7625d870b5b17515fd6cb828b1e9f70dee25b1f1eded9decbe77fec427ad4",
-        "tier": 4,
-        "due": "2027-01-14"
-      },
-      "oci-image|docker.io/rancher/mirrored-pause|3.10.2": {
-        "sha256": "ef2b499a8a70a27ce19822f291d98a44bec381727109073f251b06300ebd9130",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/valkey/valkey|sha256:081c2f5cb575efc901aa80ff9cdbd1ec6a301682fd35e1ebb4b0990a4a4a8507": {
-        "sha256": "67f3f59019a741d1d2d8a29fab43ca944053aec7ef0e3d860edff7698430519e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|docker.io/vllm/vllm-openai|v0.31.0": {
-        "sha256": "819f1626b8dfcd7fcf83f6fe6550e6b290505bbfd387563b79d3e54da9ebb08b",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|gcr.io/knative-releases/knative.dev/net-kourier/cmd/kourier|sha256:eedfe3938f1efa93230863099f96400a0567909d383a585021f8727fa3a6cf0b": {
-        "sha256": "65f2576d7fc9f3aca0454fa6cc7a53573733399e8cea39ca0770a57b9d6ecdea",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|gcr.io/knative-releases/knative.dev/serving/cmd/activator|sha256:e5ab46f3b73fa2e3898fe47f6a3a0c2bd765596f4fb36ceb4c28c35d0a74b2e5": {
-        "sha256": "ee6322d138e54042818a050cde3c87a38d40d9fcdb5fa732e93e80f792a3a509",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|gcr.io/knative-releases/knative.dev/serving/cmd/autoscaler|sha256:879da127b23db65d862cafa6b23fb987381d0e44150f0027d44e1f5aee83bde2": {
-        "sha256": "6e2ea3f534a6c7d15e0ffa2e1c7383661f7907f79fb135c78d920f0ca14456c8",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|gcr.io/knative-releases/knative.dev/serving/cmd/controller|sha256:ca5062ece0329d002a81940cf4268d7898866434d70049bb93f27d3a786d3292": {
-        "sha256": "cdb9e493467872e628f4b477e2efc65bc30a20adf017c89f8ae0057dad0974ee",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|gcr.io/knative-releases/knative.dev/serving/cmd/queue|sha256:a3cc71ce80dbc6df8781f15eac2cf3531a4c9815271799afd8776bef9e6aeaf2": {
-        "sha256": "3e0fcbb4883b73dde7cbcfe1929326e3d1f163cdb59fe55b31d9bdebb7a2c48f",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|gcr.io/knative-releases/knative.dev/serving/cmd/webhook|sha256:3846e9a416665c5b9ec2e4de246cfcb5c4ab0d01ba19348aa008caf30144b650": {
-        "sha256": "f61347b6b8537ab6b9d91673cd2ba3434ac85b06f27b4fdc8bb9398cb380fa46",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|ghcr.io/api7/adc|sha256:f65f53dd966827ff485471d00b9ce8ca146f7aba187519817b7453e476a274b8": {
-        "sha256": "758cb47fc9b691e3edf4086ee77c1568d650e48eeb1c1570b216e05772c0f36a",
-        "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
       "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07": {
-        "sha256": "4feeabaed657d4ffac099fc57a42450249ae899960aae4e5e5723796ebf71308",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|ghcr.io/cloudnative-pg/pgvector|sha256:79fc129f885e2143bf6eb656a6b181ea449d1ef1a58c40fe5860986ed99bafcb": {
-        "sha256": "79a255cca94fa9ddfa2c1880e3770ba0afd9dd4a8c920c246d3168f8aa7144da",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3": {
-        "sha256": "38a1775bd2b5d7e9fc25c52f265940868f6711525f1051cefff9d26cc4405941",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|ghcr.io/dexidp/dex|v2.45.1": {
-        "sha256": "d7c08beab8c28c3e9514cbd00df5cea98e0a3143111b8b14f4301cd6f79233b3",
+        "sha256": "52abd1bd9c4ca261c51c00fd0840edbcb9f9a9c68f8b9374b89220aaf1e03ed0",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "oci-image|nvcr.io/nvidia/k8s-device-plugin|v0.20.1": {
-        "sha256": "8e3b2bb532ddbe0987174aa96c6920d9e12fb5879a2320d741f44b179796624e",
+      "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0": {
+        "sha256": "bbcb4583ecfefd07b11857bee8d7e557c30a91b91c649e6f9920aa805d017d13",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
-      "oci-image|quay.io/argoproj/argocd|sha256:dd3f47d5a5e4da563a7a398506e892481b358a7cec50abdf320c71aa55904bfa": {
-        "sha256": "f4ff3ee500f446e97c01a2303be28bb7f22945781429f4e822b8435a86a0f9f4",
+      "oci-image|ghcr.io/kube-vip/kube-vip-cloud-provider|v0.0.12": {
+        "sha256": "df40cbb398a1e189c7b781edd24c644e690c95eb33764999e31cd4e624c7ea8a",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
+      },
+      "oci-image|ghcr.io/kube-vip/kube-vip|v1.2.4": {
+        "sha256": "d8e84d49dfa0950c18d357aaec072a6aaa97c05b3c6539a88860a6cb9b2de2ab",
+        "tier": 2,
+        "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463": {
-        "sha256": "1a6ccb9b48c088a0cfca29c50dd1e760c5a85ce8c5f1579af549f23cc05415d5",
+        "sha256": "5cb273f5aa686b1a3d8c04a8254a473b74478a535c1f2af5af3731c9c7094875",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01": {
-        "sha256": "add1f304974343752787aa756203ee159938f06dbf4da4dbf3ce1a04cd03c8f5",
+        "sha256": "94ad20fee6f87e9beaddf9d853169fc056b56dbfe3c99dd7acc3b3e8dc6593da",
         "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc": {
-        "sha256": "7ec6cf8975b922c5e4bea5e4dd194fea932f4a6fe183c0c568a68030a00f0868",
+        "sha256": "d282ccf50a5824774ddeea0e3f61e7513174d3e4bd9530d54738bde588d87363",
         "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|quay.io/keycloak/keycloak|sha256:b0f60d489d51c5d113390bdf5461d4c06e6051be026c05549f2e1e10ec352bcc": {
-        "sha256": "354a9ae900c598c1ae38f5ea92d8f267d4370895047dcc6859696fd362f97b5a",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|quay.io/prometheus-operator/prometheus-config-reloader|sha256:06b52bd4dbe3ed6dd5905aadaf8b9987d9da4c31d37bb86deaadae68cee2d26b": {
-        "sha256": "24e78a8ad485351f53ea158407a517f43f237eed4e258753a85e2444053467c8",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|quay.io/prometheus-operator/prometheus-operator|sha256:7c88d4e7bae63bd8d0f8da986054337c23b4472fa8d3c6817f5bc4b8407a2d6a": {
-        "sha256": "4553594bcfc8c7ed1a57d9ac0870985d2a606cecfd3dc6ccb0d9a2368a9622d0",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|quay.io/prometheus/prometheus|sha256:efd719c99d83b060d9daefdcf00360461adf279f45ef5391f8d111892118753e": {
-        "sha256": "b957209fd4b00cd2e6e777ebc34f0fae3c343d9fbf0e8058f7e4c29512a52477",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/coredns/coredns|sha256:7efd3c635b03efd68c4e8398fc45f0d993d0e9ab016f72c1cefb0fd6d01aa286": {
-        "sha256": "421d40cd84c2667298065a2fe1144a05dc9727746508d6553d8003dd74e0c02b",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/etcd|sha256:397189418d1a00e500c0605ad18d1baf3b541a1004d768448c367e48071622e5": {
-        "sha256": "cdf552c07f9c347deaaef41e3103bc113e6e13de3a9848fa63a9c815ddc75d11",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/etcd|sha256:5ed4e32061aa061f970d6500629213e8579ef17571dcf9789074966acb9afad1": {
-        "sha256": "b2ae9100850243b4fe8926b04403a52209a8d068675b22694f415c84aea721f6",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/kube-apiserver|sha256:4b3e69973a1d58d3c1f670d3477a9b9f14a03a271823113e8e0c9a333eb84f48": {
-        "sha256": "9fbf8981eb4fee78c022ef510115ece68fe062b89a0a49ea5e5a7473cb7207c8",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/kube-controller-manager|sha256:2d717af134451db77ea053c3426bc82edc0e55415eb36e1260313c636ebe9a4d": {
-        "sha256": "c9afaac5f8a607534aea7626a8741229097495f012a219f7ddbb493393bf1644",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/kube-scheduler|sha256:3804f66442962cefbe11fcd5330d5e7a797bfb3dc8535c322d005637b404a85f": {
-        "sha256": "14791ec533d8c96354ab0ad363af486b7c20b74e765b5e6b00d5b91d842ce42d",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/kueue/kueue|v0.20.0": {
-        "sha256": "9e36d5696ade34f07eb9d1743b77a4b6c750642c523d18cc0ad945cb0eb8a1f2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/metrics-server/metrics-server|v0.9.0": {
-        "sha256": "24bfd04e9db36fb024a40b33c9ed74f0311d9813d95ffce616bcc73c63e4cfb8",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/pause|sha256:278fb9dbcca9518083ad1e11276933a2e96f23de604a3a08cc3c80002767d24c": {
-        "sha256": "ea49243b1b5f9a463d76b77020067bf3c2aaac49ace8f38d6f6b10fc9665a25c",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "oci-image|registry.k8s.io/pause|sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4": {
-        "sha256": "d7d0a444899d192544f8d5eabc163531798a66d0a7d191efa2d8db746f49bf16",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|annotated-doc|0.0.5": {
-        "sha256": "c7f6296d4cb0c6e954feda45cb7825433422fe6a5601afe70d531bc3ed6e360c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|annotated-types|0.8.0": {
-        "sha256": "ade5f493f3cef58f6c4796a72bfa8d8ee1f8216b0c5abb40f996ef67a40e88fb",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|anyio|4.15.1": {
-        "sha256": "ddb87f5edd11eea4c61308fda8032b6fadd6132696af323572a542f127dec79c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|asyncpg|0.31.0": {
-        "sha256": "e39365325529bc4140dacfae7b51441252e56a99963e2bd6e1ffd1f9a79ea24a",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|attrs|26.1.0": {
-        "sha256": "5437ab11e265e87b21247ca9db08e0f7e0a2bef8341ce2c9fa10adb1f9c62469",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|boto3|1.43.108": {
-        "sha256": "a0ff205fbbd7d2ab70618e15840202cf81e2cd2a89c179e9a88bc4793a4991df",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|botocore|1.43.108": {
-        "sha256": "cf22de16f77a370d94d5ef0cd1f68ab7bafc3ed5fb072a87d42c46ff85168b2c",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|certifi|2026.7.22": {
-        "sha256": "f0ae9a7c366f1aaaf0a220293dd9d611d16fa393a6818daef0defa87a8113951",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "pip|cffi|2.0.0": {
-        "sha256": "83a3d306fed1201079a40d03fc24c13255ea8ae7952e3b855b84b1b71512eb16",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|charset-normalizer|3.5.2": {
-        "sha256": "76474f784168684990f760b7e986adb7c89b8bc4e751119f7dc47bb41a2c4b72",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|click|8.5.0": {
-        "sha256": "5c1fb608e39f9020115dc366f0a93dad1644af89de578ee0d20cefd5ea38db25",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|cloudpickle|3.1.2": {
-        "sha256": "4791202ff2b4051508b0864fb0ad9acb5f13b5b98db0793f5b3fd8a8cdae8a63",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|cryptography|50.0.1": {
-        "sha256": "2ec662c2b3c4ec96763b45e16e82a70ed87e83d08aed0c424d53ceee3825579d",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|distro|1.9.0": {
-        "sha256": "eb70ce914896cfa1981e9cdcb12795195ece4d11f84c74a2985cc3845f17c745",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|filelock|4.0.12": {
-        "sha256": "e6d1b5d0a7089b7f3a77c0145b7aa9a4ddf2739431146b9cc2f40f6e555439e5",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|fsspec|2026.9.0": {
-        "sha256": "cb2558d558799a9e40a52b17f3adc6cbfda9bc37391393519cc005d5394b9246",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|greenlet|3.5.6": {
-        "sha256": "fdf6f32f0d5f675843b8f13ef066884b5fd15efc669e0e98ced59a8ff72b1e72",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|h11|0.16.0": {
-        "sha256": "39b87f9afe6b9deb1cd87f3bdd33b2fe1afcef1c3355b3107ad21c2047b48481",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|hf-xet|1.6.0": {
-        "sha256": "2a05f55d7528871988fed084f7b2a5eb2d19c4bb658452d57ee2582173829eb9",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|httpcore2|2.13.1": {
-        "sha256": "13d44bf9bc745c9bf3ef9368d797454b1965a719ef21d65cdb02f9161c7bba40",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|httpcore|1.0.9": {
-        "sha256": "6cbf0df9bfc51c9a07906798de85c05fcf9137c7a3bbce0c215468e5bfa0892b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|httpx2|2.13.1": {
-        "sha256": "4d14b33ca2016fe7ddee86200d9669d2a3d5a8d969806d4896dc2687aee46b03",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|httpx|0.28.1": {
-        "sha256": "b9e963cb1a4dd4093a5b5a9811de8c13ce587e6b945913e39335d12f50d5bfc4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|huggingface-hub|1.33.0": {
-        "sha256": "40aa897ee43324210fe29c764324380a8a3847a233f8b5cce0547914a0d63b4a",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|idna|3.20": {
-        "sha256": "73b33e7323eb2b100dc90d10de6c805d3344fb2d11cf24c959ce66188d52168e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|jinja2|3.1.6": {
-        "sha256": "549a7ca07e41474276db61e93a9edc2b475334e069503e26b195cd034cca9ab2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|jmespath|1.1.0": {
-        "sha256": "546261957807c4b09bd28c17c96aed3f39dcdb0a936575fcce71293a4f4ba8fd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|joblib|1.6.0": {
-        "sha256": "74d6300c9d519b1fd7dbb30bc33bd5b2db4944d74af6f07a6a05be5eff738c71",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|jsonpatch|1.33": {
-        "sha256": "56c3a619b0e65e545543429417c6eddff16dffae8265012d7bf62d88aee9a0f2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|jsonpointer|3.1.1": {
-        "sha256": "d0e0f74508f831036cf8a6701af453d520530db7d14d92cf935a11c0045065e0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|jsonschema|4.17.3": {
-        "sha256": "5b59c4acb7e2b2ce99663727f719b9e0645922040421ae30cc5cc57558982331",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|langchain-core|1.6.7": {
-        "sha256": "ec36814a444dc57305dc42c0e48c9ba536dcd15f085bd2183985fd84c0320bac",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|langchain-postgres|0.0.19": {
-        "sha256": "efd5c0dbb1368188cf65dc0027ae7a865a88bba61286e9d629e798dcf0ebc1fe",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|langchain-protocol|0.0.19": {
-        "sha256": "eb938fb068f00599f1117968f93233f7758698922cedb60482b691c48666165a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|langsmith|0.14.4": {
-        "sha256": "bafa2a05ea60da3799c5e90f2ffbb4b9cb1490714a1f73da039344882508ce9a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|markdown-it-py|4.2.0": {
-        "sha256": "acbb33b38d2c056c229fa82eb3c55fe70da57e57ce7dda634c02ed84c0b144ae",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|markupsafe|3.0.4": {
-        "sha256": "d528bd2daeac99aad3c64cafe3ed552063df327a0bf5e3846f3d1095fdd8692a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|mdurl|0.1.2": {
-        "sha256": "321f84356553941dd3173476fc48a52dc3249a61afa68d18c94b1d031e653e5e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|mpmath|1.3.0": {
-        "sha256": "18286071405bdc98ff064f220831f4ea53c3bf8707bdd30015bfe1bfb281ba77",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|narwhals|2.26.0": {
-        "sha256": "130bf11e9f63f44357bb97916f696c57bfafa1c1f02248a13304c814d1261ef0",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|networkx|3.7": {
-        "sha256": "27f4bb1e08539d5f4abbef27513d9369f362763b03ea0561b30161d46c153dc2",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|orjson|3.12.0": {
-        "sha256": "83fed1aed4ec7358e8007603b59f24fb4262cb75356f49f694e002c0ffa3e62a",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "pip|packaging|26.3": {
-        "sha256": "90dc87cdfa228153d2f6301a9bb0c0809c85edaa25f2d0e5ba4ef1c77e7dfccd",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|pgvector|0.3.6": {
-        "sha256": "2cfdbafa3ca5c3ea6ce74187d6a97c7b56d6d2e7435429e646f0e6ebb6c4d05e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|psycopg-binary|3.3.6": {
-        "sha256": "ad15fa118f1440b1e025a66123f61092e18382ff8837dd1d2e03b101391fcbc7",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "pip|psycopg-pool|3.3.3": {
-        "sha256": "2c59d2f5cc9ed060902999d15895dc681d047741da92769da2412cfdb701ac6a",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "pip|psycopg|3.3.6": {
-        "sha256": "f31f9f28d919c02eaf44392960f0f974e0f796d7437453062d52517c96786bda",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "pip|pycparser|3.0": {
-        "sha256": "65f7c6fc2f7cd6ceb7c309237531a04be75266061f0f9de3b0f85f8aee840fd3",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|pydantic-core|2.46.5": {
-        "sha256": "6e3855574909a2180cb0f58a283bdba52d2a7baaaed08c771f6dd4ecb6f67632",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|pydantic|2.13.5": {
-        "sha256": "0542008025b7394a3cf5b2f3a392fd47954316ed1878104e3485c86685b8c4ec",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|pygments|2.21.0": {
-        "sha256": "2b49599dd23e43828586fd21002bebb7fa2d40e58732c0b8f757709a2b2600cd",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|pyjwt|2.15.0": {
-        "sha256": "b06b2bca3b0c345db3b9118f2f84078da31a039fe882fb583d50465926f9745b",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|pyrsistent|0.20.0": {
-        "sha256": "6d862106aee80ab795095f01b8cfe245ec8cce0968705a0fb5b16460f7626a6e",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|python-dateutil|2.9.0.post0": {
-        "sha256": "8a7a66ebcbdeca649f9f0dd8800bc73a54a60497ab4b9fdfd809768ad18d0a4f",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|pyyaml|6.0.3": {
-        "sha256": "876d90e017c85e0a0cf2ee0e7b34d8925aaf00372c187e77e4018faff1aa4b28",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|regex|2026.9.29": {
-        "sha256": "1372b1a2803c7fcfdde198c41c15a2df2b536420a6312c5612eddb1ae9763a58",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|requests-toolbelt|1.0.0": {
-        "sha256": "be9b4a4ecce0552293999d5113989008467e14121c991f82b312c93d1872a9af",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|requests|2.34.2": {
-        "sha256": "2d6c01e161398984e3348a53d8a6c9e15f20b7a5140d33c18e7397f31ea9760a",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|rich|15.0.0": {
-        "sha256": "052697219d63d8f7f4352c87baa5f82a9fdecbbe7e90d7fa7b2977337529abab",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|s3transfer|0.19.2": {
-        "sha256": "2d44039528b983f31e6bfbf003b5d38da7791779609ad0265e46ce230c591766",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|safetensors|0.8.0": {
-        "sha256": "4e0f1d6857c9bf405bd9dc70fc15d134e6345efc73c6895acf304f441bdf1478",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|sentence-transformers|6.1.0": {
-        "sha256": "aa84145a0bba04061448ab0088558ea7bd6b66549b3fba88f0c65e4a001c5b12",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|setuptools|84.0.0": {
-        "sha256": "4aa611041b81a007bbe73af3b00523683a8432412845d9371f469df86d1f45aa",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|shellingham|1.5.4": {
-        "sha256": "560249303ea7675c77599ffe1e18b6ad8cd477d93cdbde75e57153a5a08bd92c",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|six|1.17.0": {
-        "sha256": "9316ce6d9bc78d297841520323242f331441730fc64f6e995e5fc85dceb1a8b4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|sniffio|1.3.1": {
-        "sha256": "c5cab26e64d307be0bea88d5fb55abb62e7eabab12a199c048d0ed9c1fff1e1e",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|sqlalchemy|2.1.3": {
-        "sha256": "1de776e84f8c52b3c62406af39096b4d1f5917fb0191691a3b6f2d9b1f9a1631",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|sympy|1.14.0": {
-        "sha256": "88002f1d0e19b6d74657c644bd669c025ac327ca10dce66ffaec21338978ef08",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|tenacity|9.1.4": {
-        "sha256": "69463e0f7e6115d4ff666629259348dd16a74a75be77cc315ad03fa97bba7bdb",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|threadpoolctl|3.7.0": {
-        "sha256": "2800368bfecf45d0820ff28daf6eda4825f542217dbd72e3f84f97f91a796ede",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|tokenizers|0.23.2": {
-        "sha256": "58ddc198f3e960d9b8e42045086f07635f3b1fc299debe5187189e499fe1bc3d",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|torch|2.14.1+cpu": {
-        "sha256": "562951b9a7ccc7712c7cf7578b077412999872e4f294ea9402d2669d0e9eade6",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|tqdm|4.70.1": {
-        "sha256": "1b70d30c2491a6542b75ee3d15f3c87eab208e0ff7f141a945a328d2435ef59c",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "pip|transformers|5.19.0": {
-        "sha256": "d1818c2f38d83fd8a457b4519f11f22f5dd4975ae5b33807f7c829cedbf478cf",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|truststore|0.10.4": {
-        "sha256": "df4f896f0a1b2b0519aaf2dc9b466cd3ca3f0d9262001dd98961c7e7834a6913",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|typer|0.27.3": {
-        "sha256": "c73cc3582211d6d2690a6b58842bcc83524cee41be0e150c9c09ff99e5dabd76",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|typing-extensions|4.16.0": {
-        "sha256": "4e6c5721fa63718ee6a6d59c2f03ab3f788939ff7f5ae6e804935c774ba4de5a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|typing-inspection|0.4.4": {
-        "sha256": "ad0c55afe3a7a973052fc806d5c7fa536b64e207efc18d5712fafc85a97939a4",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|tzdata|2026.5": {
-        "sha256": "1243469cd2ebe939ea955ca54a1a0efc08873b594958695e3d5f8147dc2f549e",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "pip|urllib3|2.8.0": {
-        "sha256": "59d6c6d52a4a228d66a1f5b589d77cab3db3d7c279af8c2d31b8d36c7ba27aae",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|uuid-utils|0.17.1": {
-        "sha256": "dd33b8e9f8d0cc84f8ef34f25236839ded649001e9bb2c22e5912854cab4a37d",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|websockets|17.2": {
-        "sha256": "f32857f817f304a6125978f1804598b5a45790d06c1e03f566cd118e75c19fd1",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|xxhash|4.0.1": {
-        "sha256": "bfef5c1871f40f8d3c3b700d4eb6dee989d723ca1cc68ab5f4c837d88b4d8369",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "pip|zstandard|0.25.0": {
-        "sha256": "2b365918b2b46d580b16f19cc3bd06519ad6a72678ae68b17ba1dade782289ef",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "tool|PowerShell/PowerShell/powershell-7.6.6-linux-x64.tar.gz|v7.6.6": {
-        "sha256": "1ac26fd61809acbe7a6959886a106fc3a88e094e9dfde9daa6d854d20b0a0e91",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "tool|argoproj/argo-cd/argocd-linux-amd64|v3.5.3": {
-        "sha256": "4a1de016960d7cd8ab255a4e2884e8ae690a17493fa102b14c297615525001e6",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|cilium/cilium-cli/cilium-linux-amd64.tar.gz|v0.20.1": {
-        "sha256": "6f9ed98906b03da631150db12cd999ae77e58766a3825a2b141e78c9cf677778",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|dl.k8s.io/release/v1.36.5/bin/linux/amd64/kubeadm|be2f2c73cd6d3414b37aafb05016bc3a1da3e17c8393aa75c34636198fefa77c": {
-        "sha256": "a46f5ba4638e3c2193f25cc1c97aa7ac1360728ee1d662fbe7ce21f45218d8cd",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|dl.k8s.io/release/v1.36.5/bin/linux/amd64/kubectl|33bc88a24c3b09cf55bfd59e6ca977881b61fc3f25ab65bc80c65b430248648e": {
-        "sha256": "d4ba9e148868c699bfc3448caf31ae3898af23cd77d74d3ee5d277bc7f3c00be",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|get.helm.sh/helm-v3.22.0-linux-amd64.tar.gz|1e4ab49e429626cf6c6958d914248b78c9730803c2751b87627e171dc800e7bb": {
-        "sha256": "0840ae5331623f66672ccf9620207714d0bc82a8d33fdd5196c68c93653a1a85",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|k3s-io/k3s/k3s-airgap-images-amd64.tar.gz|v1.36.5+k3s1": {
-        "sha256": "8c3be1e0787ac537bbf1e588fccacc5ca32802137467c41305f0c884357f9ba7",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|k3s-io/k3s/k3s|v1.36.5+k3s1": {
-        "sha256": "f93c78445493943d64ee116e58ca34692f7f681c01bdfc308afc82144fd47a14",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|kubernetes-sigs/cri-tools/crictl-v1.36.0-linux-amd64.tar.gz|v1.36.0": {
-        "sha256": "242c475b97df19a35e002d3d219b391b0440e859ffe5f4debfd6230bf7a04863",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|kubernetes-sigs/kustomize/kustomize_v5.8.1_linux_amd64.tar.gz|kustomize/v5.8.1": {
-        "sha256": "5faff0e4601e0edf0b75dac13bddb7e8f76b661486da59b8d4c9b434aa7dccb2",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|mikefarah/yq/yq_linux_amd64|v4.54.1": {
-        "sha256": "4aa007c88837d41e59ea45e040d637006ffb98f1b90e8ef6ada3c7044a731402",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "tool|moby/buildkit/buildkit-v0.33.1.linux-amd64.tar.gz|v0.33.1": {
-        "sha256": "45d5d8b6c681ba533b582f105fa7f8e388bf85100a84c2bc4b2a0f4e348dd785",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|node|24.21.0": {
-        "sha256": "9295a83716edd7b69309379631dcfbe05286ee402a624d132bd2c257d70468d5",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "tool|open-policy-agent/conftest/conftest_0.65.0_Linux_x86_64.tar.gz|v0.65.0": {
-        "sha256": "32bab1ce83a429451c2fe14f4c0ff532f4d66def4c740cb934b6371e4b948f23",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|openbao/openbao-csi-provider|2.0.3": {
-        "sha256": "c8a009977cc287e90c0b56cae6a3ce3f9f883fc6ab74b726e3c97c3ca782393f",
-        "tier": 3,
-        "due": "2027-01-14"
-      },
-      "tool|prometheus/prometheus/prometheus-3.15.0.linux-amd64.tar.gz|v3.15.0": {
-        "sha256": "10679bb5088f5154bb12c4fb2ff2b5690c1455204cc5a7d07d9453d869e699da",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|python|3.14.5": {
-        "sha256": "68ad7fbe5edf1a2bb4b1ccc07a352635375ae957c02a85ac9bfd3831261d4d5a",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "tool|rhysd/actionlint/actionlint_1.7.12_linux_amd64.tar.gz|v1.7.12": {
-        "sha256": "d5b3eb94f431da21e73cfdbc3c919fd3afbf1b609365eed49bb0817a05dfc148",
-        "tier": 1,
-        "due": "2027-04-16"
-      },
-      "tool|tektoncd/cli/tkn_0.46.1_Linux_x86_64.tar.gz|v0.46.1": {
-        "sha256": "e49f5dc9c861b751f058c830a4d92d262bf2382704313803c30ab2ab97f17b99",
-        "tier": 2,
-        "due": "2027-04-16"
-      },
-      "tool|yannh/kubeconform/kubeconform-linux-amd64.tar.gz|v0.8.0": {
-        "sha256": "9b367506334cfc27c0e659cfc07f4fae1e8b97fd8941dba2f4535b06f36225d0",
-        "tier": 2,
-        "due": "2027-04-16"
+        "due": "2027-04-20"
       }
+    }
+  },
+  "gatedMavenCommands": [
+    {
+      "goals": [
+        "--version"
+      ],
+      "profiles": [],
+      "properties": {},
+      "pom": null
+    },
+    {
+      "goals": [
+        "verify"
+      ],
+      "profiles": [],
+      "properties": {},
+      "pom": "pom.xml"
+    },
+    {
+      "goals": [
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+      ],
+      "profiles": [],
+      "pom": "pom.xml",
+      "properties": {
+        "includeTestScope": "true",
+        "includeProvidedScope": "true",
+        "includeSystemScope": "true",
+        "outputFormat": "json",
+        "outputName": "licence-all-scopes"
+      }
+    },
+    {
+      "goals": [
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+      ],
+      "profiles": [],
+      "pom": "pom.xml",
+      "properties": {
+        "includeTestScope": "false",
+        "includeProvidedScope": "true",
+        "includeSystemScope": "true",
+        "outputFormat": "json",
+        "outputName": "licence-shipped-scopes"
+      }
+    },
+    {
+      "goals": [
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+      ],
+      "profiles": [],
+      "pom": "target/licence/plugin-project-executed/plugin-*/pom.xml",
+      "properties": {
+        "includeTestScope": "false",
+        "includeProvidedScope": "true",
+        "includeSystemScope": "true",
+        "outputFormat": "json",
+        "outputName": "plugin-bom"
+      }
+    },
+    {
+      "goals": [
+        "org.apache.maven.plugins:maven-help-plugin:3.5.1:effective-pom"
+      ],
+      "profiles": [],
+      "pom": "pom.xml",
+      "properties": {
+        "output": "target/licence/effective-pom.xml",
+        "verbose": "true"
+      }
+    },
+    {
+      "goals": [
+        "org.apache.maven.plugins:maven-dependency-plugin:3.11.0:tree"
+      ],
+      "profiles": [],
+      "properties": {
+        "outputType": "json",
+        "outputFile": "target/licence-resolved-tree.json"
+      },
+      "pom": "pom.xml"
+    }
+  ],
+  "knownPermissiveBuildLicences": {
+    "LicenseRef-JDOM-2.0.6.1": {
+      "name": "org.jdom:jdom2",
+      "version": "2.0.6.1",
+      "notice": "security/licences/LicenseRef-JDOM-2.0.6.1.txt",
+      "source": "https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6.1/jdom2-2.0.6.1.jar",
+      "readOn": "2026-10-20",
+      "sha256": "9993501007d4a63f677b496a8d3783d69d3eb4772b532be00888529bbcc60a7c"
+    },
+    "LicenseRef-Indiana-Extreme-mxparser-1.2.2": {
+      "name": "io.github.x-stream:mxparser",
+      "version": "1.2.2",
+      "notice": "security/licences/LicenseRef-Indiana-Extreme-mxparser-1.2.2.txt",
+      "source": "https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar",
+      "readOn": "2026-10-20",
+      "sha256": "79f77e2e1ab271375ee45e3d9673fc78c024fe781ba6e3212d76f98bf3e60734"
+    },
+    "LicenseRef-public-domain-xmlpull-1.1.3.1": {
+      "name": "xmlpull:xmlpull",
+      "version": "1.1.3.1",
+      "notice": "security/licences/LicenseRef-public-domain-xmlpull-1.1.3.1.txt",
+      "source": "https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom",
+      "readOn": "2026-10-20",
+      "sha256": "4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612"
     }
   }
 }
