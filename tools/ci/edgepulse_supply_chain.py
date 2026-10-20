@@ -332,6 +332,19 @@ def canonical_sboms(plan, out):
     return result
 
 
+def image_sboms(root, tools_path, out, cache):
+    """Materialize real reviewed-byte inputs for the unchanged licence gate.
+
+    Rebuild/cache through pinned Syft; never fetch an unbound fallback SBOM.
+    The licence checker independently compares each file to its reviewed hash.
+    """
+    out.mkdir(parents=True, exist_ok=True)
+    plan = inventory(root)
+    tools = sc.verify_tools(tools_path, root)
+    sc.sboms(plan, tools, cache, out)
+    return canonical_sboms(plan, out)
+
+
 def run(root, tools_path, out, cache, base=None):
     out.mkdir(parents=True, exist_ok=True)
     plan = inventory(root, base)
@@ -366,7 +379,7 @@ def run(root, tools_path, out, cache, base=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('action', choices=['verify-manifests', 'inventory', 'run', 'watch'])
+    parser.add_argument('action', choices=['verify-manifests', 'inventory', 'image-sboms', 'run', 'watch'])
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--out', type=Path, default=ROOT/'target/supply-chain')
     parser.add_argument('--cache', type=Path, default=ROOT/'target/supply-chain-cache')
@@ -378,6 +391,8 @@ def main():
             verify_manifests(args.root)
         elif args.action == 'inventory':
             sc.write(args.out/'inventory.json', inventory(args.root, args.base))
+        elif args.action == 'image-sboms':
+            image_sboms(args.root, args.tools, args.out, args.cache)
         elif args.action == 'watch':
             import supply_chain_watch as upstream_watch
             # The upstream public API takes its inventory from the scanner

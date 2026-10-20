@@ -6,7 +6,7 @@ jobs:
   licence-gate:
     name: licence-gate
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0, MIT
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0, MIT
@@ -22,5 +22,16 @@ jobs:
       - run: mvn -B -f pom.xml verify
       - name: Collect per-module scope graphs and executed plugin classpaths
         run: python security/collect_maven.py
+      - name: Verify and stage the pinned SBOM tools
+        run: |
+          python tools/ci/edgepulse_supply_chain.py verify-manifests
+          python tools/ci/stage_tools.py --source . --destination target/scan-tools --only syft grype osv-scanner
+      - uses: actions/cache@caa296126883cff596d87d8935842f9db880ef25
+        with:
+          path: target/supply-chain-cache
+          key: syft-1.52.0-linux-amd64-${{ github.ref }}-${{ hashFiles('dev/kind/pins.json', 'charts/**/values*.yaml', 'security/toolchain.lock.json') }}
+          restore-keys: syft-1.52.0-linux-amd64-refs/heads/main-
+      - name: Materialize digest-bound image SBOMs for the evidence ratchet
+        run: python tools/ci/edgepulse_supply_chain.py image-sboms
       - name: Block unregistered or prohibited components
         run: python security/check_licences.py --report target/licence/report.json

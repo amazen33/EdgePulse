@@ -21,6 +21,7 @@
       "name": "actions/cache",
       "version": "caa296126883cff596d87d8935842f9db880ef25",
       "locations": [
+        ".github/workflows/licence-gate.yml",
         ".github/workflows/supply-chain-gate.yaml",
         ".github/workflows/supply-chain.yaml"
       ],

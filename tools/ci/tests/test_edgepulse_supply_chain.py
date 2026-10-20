@@ -145,7 +145,9 @@ class RepositoryWiring(unittest.TestCase):
             self.assertGreaterEqual((ON-date.fromisoformat(lock['artifacts'][name]['published'])).days, 14)
 
     def test_maven_scans_each_bom_with_no_resolution(self):
-        with tempfile.TemporaryDirectory() as tmp:
+        # Real collector inputs live under the repository. Keep that invariant
+        # on Linux too, where the system temporary directory is outside ROOT.
+        with tempfile.TemporaryDirectory(dir=ep.ROOT/'target') as tmp:
             out = Path(tmp)
             docs = [dict(path=str(out/'SYNTHETIC.cdx.json'), module='services/identity/pom.xml')]
             def run(command, destination, **kwargs):
