@@ -82,9 +82,15 @@ def inventory(root, base=None):
     old = image_references(root, base) if base else {}
     images, coverage = [], []
     for ref, origins in current.items():
+        repository = ref.split('@')[0]
+        components = [path+':'+repository for path in origins]
+        previous = [dict(target=prior,source='registry:'+prior,digest=prior.split('@')[1],
+                         platform='linux/amd64',component=path+':'+repository)
+                    for prior, paths in old.items() if prior.split('@')[0] == repository
+                    for path in origins if path in paths]
         images.append(dict(target=ref, source='registry:'+ref, digest=ref.split('@')[1],
-                           platform='linux/amd64', origins=origins, introduced=bool(base and ref not in old),
-                           previousInputs=[], historicalTargets=[]))
+                           platform='linux/amd64', origins=components, introduced=bool(base and ref not in old),
+                           previousInputs=previous,historicalTargets=sorted({p['target'] for p in previous})))
         coverage.append(dict(entry=', '.join(origins), pinned=ref, mode='pinned-registry',
                              selected=True, scannedInputs=[ref]))
     return dict(version=1, base=base, full=True, images=images, coverage=coverage,

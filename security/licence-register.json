@@ -3746,43 +3746,43 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "governance": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "activitySupport": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "securityProcess": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "supplyChain": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/component-1177f89231d49026.json",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact component passes without an exception; real CI SBOM and scan hashes retained. No environment acceptance."
           },
           "adoption": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           }
         }
       }
@@ -3807,43 +3807,43 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "governance": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "activitySupport": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "securityProcess": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "supplyChain": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/component-116e60574617e1af.json",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact component passes without an exception; real CI SBOM and scan hashes retained. No environment acceptance."
           },
           "adoption": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           }
         }
       }
@@ -3868,43 +3868,43 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "governance": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "activitySupport": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "securityProcess": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "supplyChain": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/component-3577d184e5899459.json",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact component passes without an exception; real CI SBOM and scan hashes retained. No environment acceptance."
           },
           "adoption": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           }
         }
       }
@@ -5930,6 +5930,10 @@
       "enterpriseGrade": {
         "status": "legacy-pending",
         "due": "2027-04-20"
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed.cdx.json",
+        "sha256": "5af9496f63c032509b78746e5cdda42f465d41087cdbc0374a5ceac5c5b02565"
       }
     },
     {
@@ -5955,6 +5959,10 @@
       "enterpriseGrade": {
         "status": "legacy-pending",
         "due": "2027-04-20"
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a.cdx.json",
+        "sha256": "846228ecfb6772d401249006ad32cd6a858d36073d698da07d9bf7ee1eab7c48"
       }
     },
     {
@@ -5979,6 +5987,10 @@
       "enterpriseGrade": {
         "status": "legacy-pending",
         "due": "2027-04-20"
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07.cdx.json",
+        "sha256": "6661668eb0308397e8f70990f2d8a9be2b23e11e5f709391d523af1fdc17e7fd"
       }
     },
     {
@@ -6002,45 +6014,49 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "governance": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "activitySupport": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "securityProcess": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           },
           "supplyChain": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/component-d41dcd8b03e342ee.json",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact component passes without an exception; real CI SBOM and scan hashes retained. No environment acceptance."
           },
           "adoption": {
-            "result": "pending",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
             "date": "2026-10-20",
-            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
-            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
           }
         }
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.cdx.json",
+        "sha256": "f42ce54dd54c2a1f2a62cfd8698de528fabc3e7cab0c14d4f8dc274a95bed954"
       }
     },
     {
@@ -6065,6 +6081,10 @@
       "enterpriseGrade": {
         "status": "legacy-pending",
         "due": "2027-04-20"
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463.cdx.json",
+        "sha256": "9ec07fdd12c3b24536a201bc02f718ee9f9aa5815aa568ffcc7b4b1bf2f6f63b"
       }
     },
     {
@@ -6089,6 +6109,10 @@
       "enterpriseGrade": {
         "status": "legacy-pending",
         "due": "2027-04-20"
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01.cdx.json",
+        "sha256": "c27c883e6bdc2a0f4411a6d9ab5af3262420280e7f721aa35352a6d0dfbc17b6"
       }
     },
     {
@@ -6113,6 +6137,10 @@
       "enterpriseGrade": {
         "status": "legacy-pending",
         "due": "2027-04-20"
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc.cdx.json",
+        "sha256": "e0675b6feb0440c321e7560ca766a45deee4441562a7830e32a4619c91c9953d"
       }
     },
     {

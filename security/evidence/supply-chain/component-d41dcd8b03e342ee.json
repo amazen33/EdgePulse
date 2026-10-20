@@ -1,0 +1,4706 @@
+{
+  "component": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+  "date": "2026-10-20",
+  "scan": "https://github.com/amazen33/EdgePulse/actions/runs/39434411230",
+  "sboms": [
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "path": "target/supply-chain/reviewed/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.cdx.json",
+      "sha256": "f42ce54dd54c2a1f2a62cfd8698de528fabc3e7cab0c14d4f8dc274a95bed954"
+    }
+  ],
+  "tools": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "grype": [
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "vulnerability": "CVE-2011-3389",
+      "aliases": [
+        "CVE-2011-3389"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libperl5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-82560",
+      "aliases": [
+        "CVE-2026-82560"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-82560",
+      "aliases": [
+        "CVE-2026-82560"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-82560",
+      "aliases": [
+        "CVE-2026-82560"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-modules-5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-82560",
+      "aliases": [
+        "CVE-2026-82560"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-74860",
+      "aliases": [
+        "CVE-2026-74860"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libncursesw6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libtinfo6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "ncurses-base",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "ncurses-bin",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap-common",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2017-17740",
+      "aliases": [
+        "CVE-2017-17740"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap2",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2017-17740",
+      "aliases": [
+        "CVE-2017-17740"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "dirmngr",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-24882",
+      "aliases": [
+        "CVE-2026-24882"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2026-24882",
+      "aliases": [
+        "CVE-2026-24882"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg-l10n",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2026-24882",
+      "aliases": [
+        "CVE-2026-24882"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-24882",
+      "aliases": [
+        "CVE-2026-24882"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg-agent",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-24882",
+      "aliases": [
+        "CVE-2026-24882"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgconf",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-24882",
+      "aliases": [
+        "CVE-2026-24882"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgsm",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-24882",
+      "aliases": [
+        "CVE-2026-24882"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libperl5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-9538",
+      "aliases": [
+        "CVE-2026-9538"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-9538",
+      "aliases": [
+        "CVE-2026-9538"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-9538",
+      "aliases": [
+        "CVE-2026-9538"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-modules-5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-9538",
+      "aliases": [
+        "CVE-2026-9538"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-6653",
+      "aliases": [
+        "CVE-2026-6653"
+      ],
+      "severity": "Critical",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libpam-modules",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libpam-modules-bin",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libpam-runtime",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libpam0g",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-5435",
+      "aliases": [
+        "CVE-2026-5435"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-5435",
+      "aliases": [
+        "CVE-2026-5435"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-5435",
+      "aliases": [
+        "CVE-2026-5435"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-5435",
+      "aliases": [
+        "CVE-2026-5435"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2018-20796",
+      "aliases": [
+        "CVE-2018-20796"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2018-20796",
+      "aliases": [
+        "CVE-2018-20796"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2018-20796",
+      "aliases": [
+        "CVE-2018-20796"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2018-20796",
+      "aliases": [
+        "CVE-2018-20796"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "vulnerability": "CVE-2026-85091",
+      "aliases": [
+        "CVE-2026-85091"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gcc-14-base",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-95619",
+      "aliases": [
+        "CVE-2026-95619"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgcc-s1",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-95619",
+      "aliases": [
+        "CVE-2026-95619"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libstdc++6",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-95619",
+      "aliases": [
+        "CVE-2026-95619"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap-common",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2015-3276",
+      "aliases": [
+        "CVE-2015-3276"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap2",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2015-3276",
+      "aliases": [
+        "CVE-2015-3276"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6238",
+      "aliases": [
+        "CVE-2026-6238"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6238",
+      "aliases": [
+        "CVE-2026-6238"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6238",
+      "aliases": [
+        "CVE-2026-6238"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6238",
+      "aliases": [
+        "CVE-2026-6238"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19499",
+      "aliases": [
+        "CVE-2026-19499"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19499",
+      "aliases": [
+        "CVE-2026-19499"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19499",
+      "aliases": [
+        "CVE-2026-19499"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19499",
+      "aliases": [
+        "CVE-2026-19499"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2026-5704",
+      "aliases": [
+        "CVE-2026-5704"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsasl2-2",
+      "version": "2.1.28+dfsg1-9",
+      "vulnerability": "CVE-2026-107161",
+      "aliases": [
+        "CVE-2026-107161"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsasl2-modules",
+      "version": "2.1.28+dfsg1-9",
+      "vulnerability": "CVE-2026-107161",
+      "aliases": [
+        "CVE-2026-107161"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsasl2-modules-db",
+      "version": "2.1.28+dfsg1-9",
+      "vulnerability": "CVE-2026-107161",
+      "aliases": [
+        "CVE-2026-107161"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2005-2541",
+      "aliases": [
+        "CVE-2005-2541"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-80489",
+      "aliases": [
+        "CVE-2026-80489"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-80489",
+      "aliases": [
+        "CVE-2026-80489"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-80489",
+      "aliases": [
+        "CVE-2026-80489"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-80489",
+      "aliases": [
+        "CVE-2026-80489"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-77117",
+      "aliases": [
+        "CVE-2026-77117"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-77117",
+      "aliases": [
+        "CVE-2026-77117"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-77117",
+      "aliases": [
+        "CVE-2026-77117"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-77117",
+      "aliases": [
+        "CVE-2026-77117"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gcc-14-base",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-102010",
+      "aliases": [
+        "CVE-2026-102010"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgcc-s1",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-102010",
+      "aliases": [
+        "CVE-2026-102010"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libstdc++6",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-102010",
+      "aliases": [
+        "CVE-2026-102010"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010022",
+      "aliases": [
+        "CVE-2019-1010022"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010022",
+      "aliases": [
+        "CVE-2019-1010022"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010022",
+      "aliases": [
+        "CVE-2019-1010022"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010022",
+      "aliases": [
+        "CVE-2019-1010022"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010024",
+      "aliases": [
+        "CVE-2019-1010024"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010024",
+      "aliases": [
+        "CVE-2019-1010024"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010024",
+      "aliases": [
+        "CVE-2019-1010024"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010024",
+      "aliases": [
+        "CVE-2019-1010024"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010023",
+      "aliases": [
+        "CVE-2019-1010023"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010023",
+      "aliases": [
+        "CVE-2019-1010023"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010023",
+      "aliases": [
+        "CVE-2019-1010023"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010023",
+      "aliases": [
+        "CVE-2019-1010023"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86143",
+      "aliases": [
+        "CVE-2026-86143"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86144",
+      "aliases": [
+        "CVE-2026-86144"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login.defs",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "passwd",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libperl5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-15534",
+      "aliases": [
+        "CVE-2026-15534"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-15534",
+      "aliases": [
+        "CVE-2026-15534"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-15534",
+      "aliases": [
+        "CVE-2026-15534"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-modules-5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-15534",
+      "aliases": [
+        "CVE-2026-15534"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2010-4756",
+      "aliases": [
+        "CVE-2010-4756"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2010-4756",
+      "aliases": [
+        "CVE-2010-4756"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2010-4756",
+      "aliases": [
+        "CVE-2010-4756"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2010-4756",
+      "aliases": [
+        "CVE-2010-4756"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6791",
+      "aliases": [
+        "CVE-2026-6791"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6791",
+      "aliases": [
+        "CVE-2026-6791"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6791",
+      "aliases": [
+        "CVE-2026-6791"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6791",
+      "aliases": [
+        "CVE-2026-6791"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86139",
+      "aliases": [
+        "CVE-2026-86139"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap-common",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2020-15719",
+      "aliases": [
+        "CVE-2020-15719"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap2",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2020-15719",
+      "aliases": [
+        "CVE-2020-15719"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010025",
+      "aliases": [
+        "CVE-2019-1010025"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010025",
+      "aliases": [
+        "CVE-2019-1010025"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010025",
+      "aliases": [
+        "CVE-2019-1010025"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010025",
+      "aliases": [
+        "CVE-2019-1010025"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-9192",
+      "aliases": [
+        "CVE-2019-9192"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-9192",
+      "aliases": [
+        "CVE-2019-9192"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-9192",
+      "aliases": [
+        "CVE-2019-9192"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-9192",
+      "aliases": [
+        "CVE-2019-9192"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86140",
+      "aliases": [
+        "CVE-2026-86140"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86142",
+      "aliases": [
+        "CVE-2026-86142"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19542",
+      "aliases": [
+        "CVE-2026-19542"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19542",
+      "aliases": [
+        "CVE-2026-19542"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19542",
+      "aliases": [
+        "CVE-2026-19542"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19542",
+      "aliases": [
+        "CVE-2026-19542"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxslt1.1",
+      "version": "1.1.35-1.2+deb13u3",
+      "vulnerability": "CVE-2015-9019",
+      "aliases": [
+        "CVE-2015-9019"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libp11-kit0",
+      "version": "0.25.5-3",
+      "vulnerability": "CVE-2026-13757",
+      "aliases": [
+        "CVE-2026-13757"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libacl1",
+      "version": "2.3.2-2+b1",
+      "vulnerability": "CVE-2026-54369",
+      "aliases": [
+        "CVE-2026-54369"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "vulnerability": "CVE-2026-27171",
+      "aliases": [
+        "CVE-2026-27171"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86137",
+      "aliases": [
+        "CVE-2026-86137"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2018-5709",
+      "aliases": [
+        "CVE-2018-5709"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2018-5709",
+      "aliases": [
+        "CVE-2018-5709"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2018-5709",
+      "aliases": [
+        "CVE-2018-5709"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2018-5709",
+      "aliases": [
+        "CVE-2018-5709"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86138",
+      "aliases": [
+        "CVE-2026-86138"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libncursesw6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libtinfo6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "ncurses-base",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "ncurses-bin",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxslt1.1",
+      "version": "1.1.35-1.2+deb13u3",
+      "vulnerability": "CVE-2025-10911",
+      "aliases": [
+        "CVE-2025-10911"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libbz2-1.0",
+      "version": "1.0.8-6",
+      "vulnerability": "CVE-2026-42250",
+      "aliases": [
+        "CVE-2026-42250"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgcrypt20",
+      "version": "1.11.0-7+deb13u1",
+      "vulnerability": "CVE-2018-6829",
+      "aliases": [
+        "CVE-2018-6829"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-76781",
+      "aliases": [
+        "CVE-2026-76781"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxslt1.1",
+      "version": "1.1.35-1.2+deb13u3",
+      "vulnerability": "CVE-2025-11731",
+      "aliases": [
+        "CVE-2025-11731"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libp11-kit0",
+      "version": "0.25.5-3",
+      "vulnerability": "CVE-2026-18938",
+      "aliases": [
+        "CVE-2026-18938"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2026-50812",
+      "aliases": [
+        "CVE-2026-50812"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2026-50813",
+      "aliases": [
+        "CVE-2026-50813"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libattr1",
+      "version": "1:2.5.2-3",
+      "vulnerability": "CVE-2026-54371",
+      "aliases": [
+        "CVE-2026-54371"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2021-45346",
+      "aliases": [
+        "CVE-2021-45346"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2026-18508",
+      "aliases": [
+        "CVE-2026-18508"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libacl1",
+      "version": "2.3.2-2+b1",
+      "vulnerability": "CVE-2026-54370",
+      "aliases": [
+        "CVE-2026-54370"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-15059",
+      "aliases": [
+        "CVE-2026-15059"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-15059",
+      "aliases": [
+        "CVE-2026-15059"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "apt",
+      "version": "3.0.3",
+      "vulnerability": "CVE-2011-3374",
+      "aliases": [
+        "CVE-2011-3374"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libapt-pkg7.0",
+      "version": "3.0.3",
+      "vulnerability": "CVE-2011-3374",
+      "aliases": [
+        "CVE-2011-3374"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgcrypt20",
+      "version": "1.11.0-7+deb13u1",
+      "vulnerability": "CVE-2024-2236",
+      "aliases": [
+        "CVE-2024-2236"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26461",
+      "aliases": [
+        "CVE-2024-26461"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26461",
+      "aliases": [
+        "CVE-2024-26461"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26461",
+      "aliases": [
+        "CVE-2024-26461"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26461",
+      "aliases": [
+        "CVE-2024-26461"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "dirmngr",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2025-68972",
+      "aliases": [
+        "CVE-2025-68972"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2025-68972",
+      "aliases": [
+        "CVE-2025-68972"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg-l10n",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2025-68972",
+      "aliases": [
+        "CVE-2025-68972"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2025-68972",
+      "aliases": [
+        "CVE-2025-68972"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg-agent",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2025-68972",
+      "aliases": [
+        "CVE-2025-68972"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgconf",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2025-68972",
+      "aliases": [
+        "CVE-2025-68972"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgsm",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2025-68972",
+      "aliases": [
+        "CVE-2025-68972"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-86141",
+      "aliases": [
+        "CVE-2026-86141"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login.defs",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2007-5686",
+      "aliases": [
+        "CVE-2007-5686"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "passwd",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2007-5686",
+      "aliases": [
+        "CVE-2007-5686"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "dirmngr",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-57062",
+      "aliases": [
+        "CVE-2026-57062"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2026-57062",
+      "aliases": [
+        "CVE-2026-57062"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg-l10n",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2026-57062",
+      "aliases": [
+        "CVE-2026-57062"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-57062",
+      "aliases": [
+        "CVE-2026-57062"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg-agent",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-57062",
+      "aliases": [
+        "CVE-2026-57062"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgconf",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-57062",
+      "aliases": [
+        "CVE-2026-57062"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgsm",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-57062",
+      "aliases": [
+        "CVE-2026-57062"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26458",
+      "aliases": [
+        "CVE-2024-26458"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26458",
+      "aliases": [
+        "CVE-2024-26458"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26458",
+      "aliases": [
+        "CVE-2024-26458"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2024-26458",
+      "aliases": [
+        "CVE-2024-26458"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "dirmngr",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg-l10n",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg-agent",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgconf",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgsm",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2026-18477",
+      "aliases": [
+        "CVE-2026-18477"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-16742",
+      "aliases": [
+        "CVE-2026-16742"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-16742",
+      "aliases": [
+        "CVE-2026-16742"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6368",
+      "aliases": [
+        "CVE-2026-6368"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc-l10n",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6368",
+      "aliases": [
+        "CVE-2026-6368"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6368",
+      "aliases": [
+        "CVE-2026-6368"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "locales",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6368",
+      "aliases": [
+        "CVE-2026-6368"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libperl5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2011-4116",
+      "aliases": [
+        "CVE-2011-4116"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2011-4116",
+      "aliases": [
+        "CVE-2011-4116"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2011-4116",
+      "aliases": [
+        "CVE-2011-4116"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "perl-modules-5.40",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2011-4116",
+      "aliases": [
+        "CVE-2011-4116"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2013-4392",
+      "aliases": [
+        "CVE-2013-4392"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2013-4392",
+      "aliases": [
+        "CVE-2013-4392"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31439",
+      "aliases": [
+        "CVE-2023-31439"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31439",
+      "aliases": [
+        "CVE-2023-31439"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap-common",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2017-14159",
+      "aliases": [
+        "CVE-2017-14159"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap2",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2017-14159",
+      "aliases": [
+        "CVE-2017-14159"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2017-18018",
+      "aliases": [
+        "CVE-2017-18018"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31437",
+      "aliases": [
+        "CVE-2023-31437"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31437",
+      "aliases": [
+        "CVE-2023-31437"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2025-70873",
+      "aliases": [
+        "CVE-2025-70873"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "diffutils",
+      "version": "1:3.10-4",
+      "vulnerability": "CVE-2026-53910",
+      "aliases": [
+        "CVE-2026-53910"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31438",
+      "aliases": [
+        "CVE-2023-31438"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31438",
+      "aliases": [
+        "CVE-2023-31438"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "dirmngr",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gnupg-l10n",
+      "version": "2.4.7-21+deb13u1",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpg-agent",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgconf",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "gpgsm",
+      "version": "2.4.7-21+deb13u1+b5",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2025-5278",
+      "aliases": [
+        "CVE-2025-5278"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-11850",
+      "aliases": [
+        "CVE-2026-11850"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-11850",
+      "aliases": [
+        "CVE-2026-11850"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-11850",
+      "aliases": [
+        "CVE-2026-11850"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "vulnerability": "CVE-2026-11850",
+      "aliases": [
+        "CVE-2026-11850"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "vulnerability": "CVE-2026-95210",
+      "aliases": [
+        "CVE-2026-95210"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "vulnerability": "CVE-2026-95209",
+      "aliases": [
+        "CVE-2026-95209"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "vulnerability": "CVE-2026-88647",
+      "aliases": [
+        "CVE-2026-88647"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "vulnerability": "CVE-2026-67693",
+      "aliases": [
+        "CVE-2026-67693"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2026-56392",
+      "aliases": [
+        "CVE-2026-56392"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "vulnerability": "CVE-2026-95184",
+      "aliases": [
+        "CVE-2026-95184"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2026-56391",
+      "aliases": [
+        "CVE-2026-56391"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap-common",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2026-22185",
+      "aliases": [
+        "CVE-2026-22185"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libldap2",
+      "version": "2.6.10+dfsg-1",
+      "vulnerability": "CVE-2026-22185",
+      "aliases": [
+        "CVE-2026-22185"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "vulnerability": "CVE-2026-11979",
+      "aliases": [
+        "CVE-2026-11979"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "dash",
+      "version": "0.5.12-12",
+      "vulnerability": "CVE-2026-102474",
+      "aliases": [
+        "CVE-2026-102474"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "dash",
+      "version": "0.5.12-12",
+      "vulnerability": "CVE-2026-102473",
+      "aliases": [
+        "CVE-2026-102473"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "package": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "vulnerability": "CVE-2026-88648",
+      "aliases": [
+        "CVE-2026-88648"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    }
+  ],
+  "osv": [],
+  "adr0049": {
+    "result": "pass",
+    "scope": "exact component; static scan only",
+    "initialExceptionApprovalPending": false,
+    "exceptionsSHA256": "cbb3bc3273f32a1800abb2746a635f2d4c9ec10823178649c762e916058548e1"
+  }
+}

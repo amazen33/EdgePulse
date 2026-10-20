@@ -160,6 +160,23 @@ class RepositoryWiring(unittest.TestCase):
             self.assertRegex(item['digest'], r'^sha256:[a-f0-9]{64}$')
             self.assertEqual(item['platform'], 'linux/amd64')
 
+    def test_image_base_identity_preserves_existing_risk_without_borrowing_another_repository(self):
+        old_ref = 'ghcr.io/SYNTHETIC/image@sha256:'+'a'*64
+        new_ref = 'ghcr.io/SYNTHETIC/image@sha256:'+'b'*64
+        other = 'ghcr.io/SYNTHETIC/other@sha256:'+'c'*64
+        with patch.object(ep,'image_references',side_effect=[{new_ref:['dev/kind/pins.json']},
+                                                           {old_ref:['dev/kind/pins.json'],other:['dev/kind/pins.json']}]),\
+             patch.object(sc,'tracked',return_value=[]):
+            plan = ep.inventory(ep.ROOT,'a'*40)
+        self.assertEqual([p['target'] for p in plan['images'][0]['previousInputs']],[old_ref])
+        prior = sc.finding(old_ref,'SYNTHETIC-package','1',['CVE-2099-12345'],'High',True,'grype')
+        current = sc.finding(new_ref,'SYNTHETIC-package','2',['CVE-2099-12345'],'High',True,'grype')
+        sc.classify_image_findings([current],[prior],plan['images'],True)
+        self.assertFalse(current['introduced'])
+        current['vulnerability']='CVE-2099-99999'
+        sc.classify_image_findings([current],[prior],plan['images'],True)
+        self.assertTrue(current['introduced'])
+
     def test_only_nightly_reporter_has_issue_write(self):
         for path in (ep.ROOT/'.github/workflows').glob('*.yaml'):
             raw = path.read_text(encoding='utf-8')

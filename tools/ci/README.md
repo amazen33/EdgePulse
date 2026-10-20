@@ -63,6 +63,12 @@ generated or fabricated. Amendment 5 applies ADR-0049 as written: findings
 with no fix are report-only and never receive exceptions. Remaining fixable
 findings reference IOT-WO-08 or Part C, due 2026-11-19; no KEV is excepted.
 
+The initial list uses the upstream `pending-owner` mechanism only for a
+same-repository PR from `codex/iot-wo-02-b` into `main`. A bootstrap PR pass is
+not approval. Ordinary pushes, main, forks and other branches reject that
+marker. The owner reviews the exact list and records approval before merge;
+the approved entries must name `amazen33` rather than `pending-owner`.
+
 ## Evidence and alerts
 
 The work order's evidence-only ruling permits adding `imageSBOM` to exactly

@@ -65,9 +65,10 @@ The existing runtime/input set uses the port's exact `legacy-pending`
 mechanism, with immutable fingerprints and **2027-04-20** due dates. The PR
 lists the full set; **owner approval of that PR approves that list**.
 Changing a fingerprint or adding a runtime component requires full verified
-enterprise-grade criteria. A deadline extension fails. Part B supplies the
-supply-chain criterion; Part C upgrades require full records, not legacy
-admission. Build and test-only components have no enterprise-grade record.
+enterprise-grade criteria. A deadline extension fails. Part B stores scan
+evidence separately; no criterion is attached to a legacy-pending entry.
+Supported Part B replacements and Part C upgrades require full records, not
+legacy admission. Build and test-only components have no enterprise-grade record.
 
 Jakarta Annotations is an unmodified linked API JAR, elected EPL-2.0 under
 ADR 0025. Its exact upstream source is recorded. It is **not a separate
@@ -76,11 +77,13 @@ tier-3 evidence are required before 2027-04-20. OpenBao's historical Twinfra
 MPL exception remains visible in the policy; no OpenBao component is used
 or registered by this repository's current inputs.
 
-Seven existing full-image SBOM evidence gaps retain their **2027-01-18**
-expiry. IOT-WO-07 removes the retired infrastructure images and their six
-obsolete evidence gaps. The primary image project licence does not clear
-its OS packages or transitive contents. Each remaining gap has an owner,
-reason and required evidence; none waives a known blocked licence.
+The seven active images have reviewed digest-bound SBOM paths and hashes in
+the register; [backfill evidence](evidence/supply-chain/image-backfills-2026-10-20.json)
+records the exact transitions and [scan evidence](evidence/supply-chain/scan-summary-2026-10-20.json)
+lists their removed baseline IDs. Six unchanged images add only `imageSBOM`;
+the supported minimal PostgreSQL replacement retires its old legacy admission
+and has full criteria. This is static artifact evidence. The primary image
+project licence does not independently clear its OS or transitive packages.
 
 ## Run the gate
 
@@ -97,6 +100,9 @@ python security/maven_commands.py
 python -m unittest discover -s security/tests -v
 mvn -B -f pom.xml verify
 python security/collect_maven.py
+python tools/ci/edgepulse_supply_chain.py verify-manifests
+python tools/ci/stage_tools.py --source . --destination target/scan-tools --only syft grype osv-scanner
+python tools/ci/edgepulse_supply_chain.py image-sboms
 python security/check_licences.py --report target/licence/report.json
 ```
 
@@ -105,6 +111,11 @@ Evidence, BOMs and trees are generated under the reactor modules' ignored
 disagreements, packaging observations, open baselines and legacy deadlines.
 CI runs the blocking job **`licence-gate`**, separately from existing
 `java-platform-bootstrap`, `naming-gate` and `release-checks`. Required check names are unchanged; agents do not edit the ruleset.
+
+The SBOM commands use Linux CI binaries and an integrity-checked Syft cache;
+they run without a container engine. On Windows use reviewed artifact files
+at their registered paths for the offline checker. Never substitute an empty
+or fallback SBOM to satisfy a hash check.
 
 The planted tests cover the work order's six Amendment 3 cases, four
 Amendment 4 cases, three legacy-ratchet cases, missing full LicenseRef text,

@@ -1,0 +1,762 @@
+[
+  {
+    "component": "maven|aopalliance:aopalliance|1.0",
+    "published": "2007-02-26T22:43:40+00:00",
+    "source": "https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom",
+    "aged": true,
+    "licence": "LicenseRef-public-domain-aopalliance",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|ch.qos.logback:logback-classic|1.5.38",
+    "published": "2026-07-09T08:55:33+00:00",
+    "source": "https://repo.maven.apache.org/maven2/ch/qos/logback/logback-classic/1.5.38/logback-classic-1.5.38.pom",
+    "aged": true,
+    "licence": "EPL-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|ch.qos.logback:logback-core|1.5.38",
+    "published": "2026-07-09T08:55:33+00:00",
+    "source": "https://repo.maven.apache.org/maven2/ch/qos/logback/logback-core/1.5.38/logback-core-1.5.38.pom",
+    "aged": true,
+    "licence": "EPL-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.ethlo.time:itu|1.14.0",
+    "published": "2025-02-21T09:55:58+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/ethlo/time/itu/1.14.0/itu-1.14.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.core:jackson-annotations|2.18.11",
+    "published": "2026-09-20T23:31:00+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.18.11/jackson-annotations-2.18.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.core:jackson-core|2.18.11",
+    "published": "2026-09-20T23:31:00+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.18.11/jackson-core-2.18.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.core:jackson-databind|2.18.11",
+    "published": "2026-09-20T23:43:03+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.18.11/jackson-databind-2.18.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-xml|2.18.11",
+    "published": "2026-09-21T00:51:08+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.18.11/jackson-dataformat-xml-2.18.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.18.11",
+    "published": "2026-09-21T00:56:03+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.11/jackson-dataformat-yaml-2.18.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.18.3",
+    "published": "2025-03-01T00:20:34+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.datatype:jackson-datatype-jsr310|2.18.11",
+    "published": "2026-09-21T00:56:03+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.11/jackson-datatype-jsr310-2.18.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.fasterxml.woodstox:woodstox-core|7.0.0",
+    "published": "2024-06-22T00:08:07+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/7.0.0/woodstox-core-7.0.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.github.javaparser:javaparser-core|3.28.2",
+    "published": "2026-05-31T13:33:17+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/github/javaparser/javaparser-core/3.28.2/javaparser-core-3.28.2.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.github.luben:zstd-jni|1.5.7-9",
+    "published": "2026-05-20T23:46:53+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-9/zstd-jni-1.5.7-9.pom",
+    "aged": true,
+    "licence": "BSD-2-Clause",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.google.guava:failureaccess|1.0.3",
+    "published": "2025-03-19T16:15:50+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.google.guava:guava|33.4.8-jre",
+    "published": "2025-04-14T17:25:22+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.google.inject:guice|5.1.0",
+    "published": "2022-01-24T22:06:17+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/google/inject/guice/5.1.0/guice-5.1.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.networknt:json-schema-validator|1.5.9",
+    "published": "2025-09-13T14:41:14+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/networknt/json-schema-validator/1.5.9/json-schema-validator-1.5.9.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|com.thoughtworks.xstream:xstream|1.4.21",
+    "published": "2024-11-07T19:15:09+00:00",
+    "source": "https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.21/xstream-1.4.21.pom",
+    "aged": true,
+    "licence": "BSD-3-Clause",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|commons-beanutils:commons-beanutils|1.11.0",
+    "published": "2025-05-25T13:18:55+00:00",
+    "source": "https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|commons-codec:commons-codec|1.22.0",
+    "published": "2026-04-19T11:13:28+00:00",
+    "source": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.22.0/commons-codec-1.22.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|commons-io:commons-io|2.22.0",
+    "published": "2026-04-19T12:01:24+00:00",
+    "source": "https://repo.maven.apache.org/maven2/commons-io/commons-io/2.22.0/commons-io-2.22.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|commons-logging:commons-logging|1.3.5",
+    "published": "2025-01-31T15:27:12+00:00",
+    "source": "https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|net.minidev:accessors-smart|2.5.2",
+    "published": "2025-02-12T04:39:28+00:00",
+    "source": "https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|net.minidev:json-smart|2.5.2",
+    "published": "2025-02-12T04:39:56+00:00",
+    "source": "https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.5.2/json-smart-2.5.2.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.commons:commons-collections4|4.5.0",
+    "published": "2025-04-19T13:59:49+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.commons:commons-lang3|3.18.0",
+    "published": "2025-07-06T17:43:05+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.commons:commons-lang3|3.19.0",
+    "published": "2025-09-19T22:21:06+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.enforcer:enforcer-api|3.6.3",
+    "published": "2026-05-15T10:39:02+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.3/enforcer-api-3.6.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.enforcer:enforcer-rules|3.6.3",
+    "published": "2026-05-15T10:39:10+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.3/enforcer-rules-3.6.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.plugin-tools:maven-plugin-tools-generators|3.15.2",
+    "published": "2025-10-20T19:21:57+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.15.2/maven-plugin-tools-generators-3.15.2.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.plugins:maven-compiler-plugin|3.16.0",
+    "published": "2026-08-30T16:10:32+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.16.0/maven-compiler-plugin-3.16.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.plugins:maven-enforcer-plugin|3.6.3",
+    "published": "2026-05-15T10:39:16+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-enforcer-plugin/3.6.3/maven-enforcer-plugin-3.6.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.plugins:maven-help-plugin|3.5.2",
+    "published": "2026-06-30T11:21:57+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.plugins:maven-jar-plugin|3.5.1",
+    "published": "2026-07-19T14:00:54+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.5.1/maven-jar-plugin-3.5.1.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.plugins:maven-resources-plugin|3.5.0",
+    "published": "2026-03-02T11:25:47+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.5.0/maven-resources-plugin-3.5.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.plugins:maven-surefire-plugin|3.6.0",
+    "published": "2026-08-31T10:36:40+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.6.0/maven-surefire-plugin-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.resolver:maven-resolver-api|1.9.24",
+    "published": "2025-06-26T19:11:08+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.24/maven-resolver-api-1.9.24.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.resolver:maven-resolver-api|1.9.27",
+    "published": "2026-02-20T15:50:18+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.27/maven-resolver-api-1.9.27.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.resolver:maven-resolver-impl|1.9.24",
+    "published": "2025-06-26T19:12:09+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/1.9.24/maven-resolver-impl-1.9.24.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.resolver:maven-resolver-named-locks|1.9.24",
+    "published": "2025-06-26T19:11:39+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/1.9.24/maven-resolver-named-locks-1.9.24.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.resolver:maven-resolver-spi|1.9.24",
+    "published": "2025-06-26T19:11:12+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/1.9.24/maven-resolver-spi-1.9.24.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.resolver:maven-resolver-util|1.9.24",
+    "published": "2025-06-26T19:11:22+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.24/maven-resolver-util-1.9.24.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.resolver:maven-resolver-util|1.9.27",
+    "published": "2026-02-20T15:50:36+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.27/maven-resolver-util-1.9.27.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.shared:file-management|3.2.0",
+    "published": "2025-04-13T21:19:29+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.2.0/file-management-3.2.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.shared:maven-filtering|3.5.0",
+    "published": "2026-03-02T11:12:11+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.5.0/maven-filtering-3.5.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.surefire:maven-surefire-common|3.6.0",
+    "published": "2026-08-31T10:36:36+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.6.0/maven-surefire-common-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.surefire:surefire-api|3.6.0",
+    "published": "2026-08-31T10:36:22+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.6.0/surefire-api-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.surefire:surefire-booter|3.6.0",
+    "published": "2026-08-31T10:36:29+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.6.0/surefire-booter-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.surefire:surefire-extensions-api|3.6.0",
+    "published": "2026-08-31T10:36:25+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.6.0/surefire-extensions-api-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.surefire:surefire-extensions-spi|3.6.0",
+    "published": "2026-08-31T10:36:27+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.6.0/surefire-extensions-spi-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.surefire:surefire-logger-api|3.6.0",
+    "published": "2026-08-31T10:36:20+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.6.0/surefire-logger-api-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.surefire:surefire-shared-utils|3.6.0",
+    "published": "2026-08-31T10:36:17+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.6.0/surefire-shared-utils-3.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven.wagon:wagon-provider-api|3.5.3",
+    "published": "2022-12-18T21:19:24+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/3.5.3/wagon-provider-api-3.5.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-archiver|3.6.6",
+    "published": "2025-12-20T18:36:53+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.6/maven-archiver-3.6.6.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-builder-support|3.9.11",
+    "published": "2025-07-12T18:31:57+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.9.11/maven-builder-support-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-compat|3.9.11",
+    "published": "2025-07-12T18:32:50+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.9.11/maven-compat-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-core|3.9.11",
+    "published": "2025-07-12T18:32:32+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.9.11/maven-core-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-model-builder|3.9.11",
+    "published": "2025-07-12T18:32:03+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.9.11/maven-model-builder-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-model|3.9.11",
+    "published": "2025-07-12T18:31:46+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.9.11/maven-model-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-repository-metadata|3.9.11",
+    "published": "2025-07-12T18:32:12+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.9.11/maven-repository-metadata-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-resolver-provider|3.9.11",
+    "published": "2025-07-12T18:32:17+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-resolver-provider/3.9.11/maven-resolver-provider-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-settings-builder|3.9.11",
+    "published": "2025-07-12T18:32:09+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.9.11/maven-settings-builder-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.maven:maven-settings|3.9.11",
+    "published": "2025-07-12T18:32:06+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.9.11/maven-settings-3.9.11.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.60",
+    "published": "2026-09-09T22:43:58+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.60/tomcat-embed-core-10.1.60.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "allowed"
+  },
+  {
+    "component": "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.60",
+    "published": "2026-09-09T22:44:18+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.60/tomcat-embed-el-10.1.60.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "allowed"
+  },
+  {
+    "component": "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.60",
+    "published": "2026-09-09T22:44:23+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.60/tomcat-embed-websocket-10.1.60.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "allowed"
+  },
+  {
+    "component": "maven|org.assertj:assertj-core|3.27.7",
+    "published": "2026-01-24T19:07:20+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.7/assertj-core-3.27.7.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-archiver|4.12.0",
+    "published": "2026-06-08T20:13:08+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.12.0/plexus-archiver-4.12.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-build-api|1.2.0",
+    "published": "2023-06-02T08:03:40+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-build-api/1.2.0/plexus-build-api-1.2.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-cipher|2.0",
+    "published": "2021-09-08T19:31:20+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-cipher/2.0/plexus-cipher-2.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-classworlds|2.9.0",
+    "published": "2025-04-05T16:29:52+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.9.0/plexus-classworlds-2.9.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-compiler-api|2.17.0",
+    "published": "2026-08-19T16:05:54+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.17.0/plexus-compiler-api-2.17.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-compiler-javac|2.17.0",
+    "published": "2026-08-19T16:05:54+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.17.0/plexus-compiler-javac-2.17.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-compiler-manager|2.17.0",
+    "published": "2026-08-19T16:05:54+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.17.0/plexus-compiler-manager-2.17.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-interactivity-api|1.5.1",
+    "published": "2025-11-07T17:25:40+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.5.1/plexus-interactivity-api-1.5.1.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-interpolation|1.28",
+    "published": "2025-04-05T08:27:53+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.28/plexus-interpolation-1.28.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-interpolation|1.29",
+    "published": "2025-11-07T17:46:40+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.29/plexus-interpolation-1.29.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-java|1.6.0",
+    "published": "2026-08-19T08:17:31+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.6.0/plexus-java-1.6.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-sec-dispatcher|2.0",
+    "published": "2021-09-10T11:23:40+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-utils|3.6.2",
+    "published": "2026-08-19T14:40:21+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.6.2/plexus-utils-3.6.2.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-utils|4.1.0",
+    "published": "2026-08-19T13:41:11+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.1.0/plexus-utils-4.1.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-xml|3.0.2",
+    "published": "2025-04-05T15:45:47+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.2/plexus-xml-3.0.2.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.codehaus.plexus:plexus-xml|3.1.0",
+    "published": "2026-08-19T07:42:18+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.1.0/plexus-xml-3.1.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.cyclonedx:cyclonedx-core-java|11.0.1",
+    "published": "2025-11-10T12:26:49+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/cyclonedx/cyclonedx-core-java/11.0.1/cyclonedx-core-java-11.0.1.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.cyclonedx:cyclonedx-maven-plugin|2.9.3",
+    "published": "2026-07-30T21:03:11+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/cyclonedx/cyclonedx-maven-plugin/2.9.3/cyclonedx-maven-plugin-2.9.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.eclipse.sisu:org.eclipse.sisu.inject|0.9.0.M4",
+    "published": "2025-05-20T11:30:28+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M4/org.eclipse.sisu.inject-0.9.0.M4.pom",
+    "aged": true,
+    "licence": "EPL-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.eclipse.sisu:org.eclipse.sisu.plexus|0.9.0.M4",
+    "published": "2025-05-20T11:30:28+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M4/org.eclipse.sisu.plexus-0.9.0.M4.pom",
+    "aged": true,
+    "licence": "EPL-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.jsoup:jsoup|1.23.2",
+    "published": "2026-08-26T00:12:52+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.23.2/jsoup-1.23.2.pom",
+    "aged": true,
+    "licence": "MIT",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.jspecify:jspecify|1.0.0",
+    "published": "2024-07-16T21:00:10+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.ow2.asm:asm|9.10.1",
+    "published": "2026-05-23T13:17:21+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.10.1/asm-9.10.1.pom",
+    "aged": true,
+    "licence": "BSD-3-Clause",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.ow2.asm:asm|9.7.1",
+    "published": "2024-10-06T07:26:10+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7.1/asm-9.7.1.pom",
+    "aged": true,
+    "licence": "BSD-3-Clause",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.ow2.asm:asm|9.8",
+    "published": "2025-03-29T15:13:19+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.8/asm-9.8.pom",
+    "aged": true,
+    "licence": "BSD-3-Clause",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.tukaani:xz|1.12",
+    "published": "2026-03-01T14:04:50+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/tukaani/xz/1.12/xz-1.12.pom",
+    "aged": true,
+    "licence": "0BSD",
+    "classification": "build-tool"
+  },
+  {
+    "component": "maven|org.yaml:snakeyaml|2.3",
+    "published": "2024-08-31T17:22:04+00:00",
+    "source": "https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.3/snakeyaml-2.3.pom",
+    "aged": true,
+    "licence": "Apache-2.0",
+    "classification": "build-tool"
+  }
+]

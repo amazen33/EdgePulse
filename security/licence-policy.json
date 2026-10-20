@@ -468,32 +468,32 @@
         "due": "2027-04-20"
       },
       "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed": {
-        "sha256": "2d156ce1b8f9bd895a8344b2235bb070a2ab05232b8d380c78a03614956f0740",
+        "sha256": "4ace6105bc78eaebd73b9aae395045622a3b3e265eb7ab38cc8a197fb26dae82",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a": {
-        "sha256": "af7b2038c200eecab2da5951ce3813d632f36a5fe7660a1fa7fe1364ebed0b99",
+        "sha256": "6d362b64447b4a558562073af14bc9024fd656dc762c0d295b18f0f010867d4c",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07": {
-        "sha256": "52abd1bd9c4ca261c51c00fd0840edbcb9f9a9c68f8b9374b89220aaf1e03ed0",
+        "sha256": "fd00365c0469e38cb7908bfc430052023f3af7c9a9e861e63af02c6c58add788",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463": {
-        "sha256": "5cb273f5aa686b1a3d8c04a8254a473b74478a535c1f2af5af3731c9c7094875",
+        "sha256": "346846f64ac33647890992724066aa3bf10ba4f3b6a13bbe0b2c2a90e9d930f7",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01": {
-        "sha256": "94ad20fee6f87e9beaddf9d853169fc056b56dbfe3c99dd7acc3b3e8dc6593da",
+        "sha256": "f9072aae10c1487d11531d23bb099993ebb833e3060ba54258fe875c865c78da",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc": {
-        "sha256": "d282ccf50a5824774ddeea0e3f61e7513174d3e4bd9530d54738bde588d87363",
+        "sha256": "460e33940250438496c00b40fa7d6b1e2d9306992b908ccd009e4f86aa4c1357",
         "tier": 2,
         "due": "2027-04-20"
       }
