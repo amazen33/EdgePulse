@@ -332,6 +332,22 @@ class LicenceGateTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unreviewed gated Maven invocation'):
             check_invocation(self.root, commands[0], self.policy)
 
+    def test_collector_inventory_uses_reviewed_goal_version_and_managed_realm(self):
+        self.make_audit_fixture(self.component('MIT'), [])
+        goal = next(g for c in self.policy['gatedMavenCommands'] for g in c['goals']
+                    if 'maven-dependency-plugin:' in g)
+        group, artifact, version, _ = goal.split(':')
+        path = self.root/'target/effective.xml'
+        path.write_text('<project xmlns="http://maven.apache.org/POM/4.0.0">'
+            '<artifactId>SYNTHETIC</artifactId><build><pluginManagement><plugins><plugin>'
+            '<groupId>'+group+'</groupId><artifactId>'+artifact+'</artifactId><version>'+version+'</version>'
+            '<dependencies><dependency><groupId>org.synthetic</groupId><artifactId>realm-override</artifactId>'
+            '<version>1.0.0</version></dependency></dependencies></plugin></plugins></pluginManagement></build></project>')
+        selected, _ = selected_plugins(self.root,path,Path.home()/'.m2/repository')
+        realm = selected[group+':'+artifact+':'+version]
+        self.assertEqual(realm['version'],version)
+        self.assertEqual(realm['dependencies'][0]['artifactId'],'realm-override')
+
     def effective_plugin(self,group,artifact,version):
         (self.root/'target/effective.xml').write_text(
             '<project xmlns="http://maven.apache.org/POM/4.0.0"><artifactId>SYNTHETIC</artifactId>'

@@ -300,11 +300,25 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.5.1</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>4.1.0</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.5.0</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-utils</artifactId>
+              <version>3.6.2</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <!-- IOT-WO-02 Amendment 5: collector tools are gated build tools. -->
         <plugin>
@@ -335,6 +349,33 @@
           <groupId>org.cyclonedx</groupId>
           <artifactId>cyclonedx-maven-plugin</artifactId>
           <version>2.9.3</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.cyclonedx</groupId>
+              <artifactId>cyclonedx-core-java</artifactId>
+              <version>11.0.1</version>
+            </dependency>
+            <dependency>
+              <groupId>com.fasterxml.jackson.core</groupId>
+              <artifactId>jackson-core</artifactId>
+              <version>2.18.11</version>
+            </dependency>
+            <dependency>
+              <groupId>com.fasterxml.jackson.core</groupId>
+              <artifactId>jackson-databind</artifactId>
+              <version>2.18.11</version>
+            </dependency>
+            <dependency>
+              <groupId>com.fasterxml.jackson.core</groupId>
+              <artifactId>jackson-annotations</artifactId>
+              <version>2.18.11</version>
+            </dependency>
+            <dependency>
+              <groupId>com.fasterxml.jackson.dataformat</groupId>
+              <artifactId>jackson-dataformat-xml</artifactId>
+              <version>2.18.11</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.springframework.boot</groupId>

@@ -2,6 +2,7 @@
 import copy
 from datetime import date, timedelta
 import json
+import os
 from pathlib import Path
 import re
 import sys
@@ -58,6 +59,16 @@ class PlantedViolations(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Expired/invalid exception lifetime'):
             ep.evaluate(result(v), {'version':1,'exceptions':[exception]}, KEV, ep.ROOT, on=ON)
 
+    def test_no_fix_is_report_only_and_does_not_get_an_exception(self):
+        v = finding('Critical', False)
+        report = ep.evaluate(result(v), EMPTY, KEV, ep.ROOT, on=ON)
+        self.assertEqual(report['status'], 'passed')
+        self.assertFalse(report['findings'][0]['blocked'])
+        exception = {k:v[k] for k in ('target','package','version','vulnerability','severity')}
+        with patch.object(ep,'validate_exception_evidence'):
+            with self.assertRaisesRegex(ValueError, 'No-fix findings are report-only'):
+                ep.evaluate(result(v), {'version':1,'exceptions':[exception]}, KEV, ep.ROOT, on=ON)
+
     def test_exception_without_evidence_fails(self):
         v = finding()
         exception = {k:v[k] for k in ('target','package','version','vulnerability','severity')}
@@ -105,8 +116,40 @@ class PlantedViolations(unittest.TestCase):
 
 
 class RepositoryWiring(unittest.TestCase):
+    def test_initial_list_bootstrap_is_only_the_same_repository_part_b_pr(self):
+        event = {'pull_request':{
+            'head':{'ref':'codex/iot-wo-02-b','repo':{'full_name':ep.REPOSITORY}},
+            'base':{'ref':'main','repo':{'full_name':ep.REPOSITORY}}}}
+        with patch.dict(os.environ,{'GITHUB_EVENT_NAME':'pull_request','GITHUB_EVENT_PATH':'SYNTHETIC-event'}):
+            with patch.object(sc,'read',return_value=event):
+                self.assertTrue(ep.initial_list_context())
+                event['pull_request']['head']['repo']['full_name'] = 'SYNTHETIC-fork/EdgePulse'
+                self.assertFalse(ep.initial_list_context())
+        with patch.dict(os.environ,{'GITHUB_EVENT_NAME':'push'}):
+            self.assertFalse(ep.initial_list_context())
+
     def test_actual_legacy_records_obey_the_evidence_only_ruling(self):
         self.assertLessEqual(len(ep.verify_backfill(ep.ROOT)), 7)
+
+    def test_remediation_cannot_smuggle_a_changed_licence_or_new_legacy_entry(self):
+        original = sc.read
+        def changed(path):
+            doc = original(path)
+            if str(path).endswith('licence-register.json'):
+                entry = next(e for e in doc['components'] if e['name']=='org.apache.tomcat.embed:tomcat-embed-core')
+                entry['electedSpdx'] = 'SYNTHETIC-changed'
+            return doc
+        with patch.object(sc,'read',side_effect=changed):
+            with self.assertRaisesRegex(ValueError,'Remediated runtime needs full'):
+                ep.verify_backfill(ep.ROOT)
+        def new_legacy(path):
+            doc = original(path)
+            if str(path).endswith('licence-policy.json'):
+                doc['ladder']['legacy']['SYNTHETIC-new-runtime'] = {}
+            return doc
+        with patch.object(sc,'read',side_effect=new_legacy):
+            with self.assertRaisesRegex(ValueError,'Legacy set changed'):
+                ep.verify_backfill(ep.ROOT)
 
     def test_every_current_image_is_covered_by_immutable_inventory(self):
         plan = ep.inventory(ep.ROOT)

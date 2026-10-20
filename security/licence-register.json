@@ -285,6 +285,25 @@
       }
     },
     {
+      "id": "maven|com.ethlo.time:itu|1.14.0",
+      "ecosystem": "maven",
+      "name": "com.ethlo.time:itu",
+      "version": "1.14.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:5cf40ab0cc77828ab2b875b1f3ecd71c8295d7721933476abc2e08fddcea164a"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/ethlo/time/itu/1.14.0/itu-1.14.0.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|com.fasterxml.jackson.core:jackson-annotations|2.17.2",
       "ecosystem": "maven",
       "name": "com.fasterxml.jackson.core:jackson-annotations",
@@ -308,6 +327,26 @@
         "status": "legacy-pending",
         "due": "2027-04-20"
       }
+    },
+    {
+      "id": "maven|com.fasterxml.jackson.core:jackson-annotations|2.18.11",
+      "ecosystem": "maven",
+      "name": "com.fasterxml.jackson.core:jackson-annotations",
+      "version": "2.18.11",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "contract-tests/pom.xml",
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:9eab0d36da981645392427eedcb087e13be542488e37f935723dc0be50d18a53"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.18.11/jackson-annotations-2.18.11.pom",
+      "unmodified": true
     },
     {
       "id": "maven|com.fasterxml.jackson.core:jackson-core|2.17.2",
@@ -335,6 +374,26 @@
       }
     },
     {
+      "id": "maven|com.fasterxml.jackson.core:jackson-core|2.18.11",
+      "ecosystem": "maven",
+      "name": "com.fasterxml.jackson.core:jackson-core",
+      "version": "2.18.11",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "contract-tests/pom.xml",
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:825fa72dfb9e2f8a642322f1390dbac22c30d15ebd6dc6b3772158821ee124eb"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.18.11/jackson-core-2.18.11.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|com.fasterxml.jackson.core:jackson-databind|2.17.2",
       "ecosystem": "maven",
       "name": "com.fasterxml.jackson.core:jackson-databind",
@@ -360,41 +419,42 @@
       }
     },
     {
-      "id": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-xml|2.17.2",
+      "id": "maven|com.fasterxml.jackson.core:jackson-databind|2.18.11",
       "ecosystem": "maven",
-      "name": "com.fasterxml.jackson.dataformat:jackson-dataformat-xml",
-      "version": "2.17.2",
+      "name": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.18.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
+        "contract-tests/pom.xml",
         "pom.xml"
       ],
       "integrities": [
-        "sha256:517add5f3848517894b319a93a7ebfc1c21737b2c17c9acccd38fea97d6adc6f"
+        "sha256:075ad94a76c3edf83e1972dc26f476361eb6b9d0e260d93fc11105509bc79cab"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.17.2/jackson-dataformat-xml-2.17.2.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.18.11/jackson-databind-2.18.11.pom",
       "unmodified": true
     },
     {
-      "id": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.17.1",
+      "id": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-xml|2.18.11",
       "ecosystem": "maven",
-      "name": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml",
-      "version": "2.17.1",
+      "name": "com.fasterxml.jackson.dataformat:jackson-dataformat-xml",
+      "version": "2.18.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:83f38459593bc10caeb1fa2653616813b1743b6bed67163c8ae8e5a4d32a5456"
+        "sha256:08ad14c8b335fd8cba6b46188a7a0071d328e81a5a545f46c6d0b333c3843694"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.1/jackson-dataformat-yaml-2.17.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.18.11/jackson-dataformat-xml-2.18.11.pom",
       "unmodified": true
     },
     {
@@ -420,6 +480,44 @@
         "status": "legacy-pending",
         "due": "2027-04-20"
       }
+    },
+    {
+      "id": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.18.11",
+      "ecosystem": "maven",
+      "name": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml",
+      "version": "2.18.11",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "contract-tests/pom.xml"
+      ],
+      "integrities": [
+        "sha256:20ed1e926bcfffb8a067dc45bb5ed4aef0dc2388be973e461c789781612c35ca"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.11/jackson-dataformat-yaml-2.18.11.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.18.3",
+      "ecosystem": "maven",
+      "name": "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml",
+      "version": "2.18.3",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:3ca00e47cfcb43e79438ddcfc8fc735e9ebac3824fb7769138609be6bd56e483"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.18.3/jackson-dataformat-yaml-2.18.3.pom",
+      "unmodified": true
     },
     {
       "id": "maven|com.fasterxml.jackson.datatype:jackson-datatype-jdk8|2.17.2",
@@ -469,6 +567,25 @@
       }
     },
     {
+      "id": "maven|com.fasterxml.jackson.datatype:jackson-datatype-jsr310|2.18.11",
+      "ecosystem": "maven",
+      "name": "com.fasterxml.jackson.datatype:jackson-datatype-jsr310",
+      "version": "2.18.11",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "contract-tests/pom.xml"
+      ],
+      "integrities": [
+        "sha256:b2bab3e2c34f7b0b7f83bdb4de4c869c884466f756d76ed661ab3d2d9f35d1d3"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.11/jackson-datatype-jsr310-2.18.11.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|com.fasterxml.jackson.module:jackson-module-parameter-names|2.17.2",
       "ecosystem": "maven",
       "name": "com.fasterxml.jackson.module:jackson-module-parameter-names",
@@ -492,22 +609,22 @@
       }
     },
     {
-      "id": "maven|com.fasterxml.woodstox:woodstox-core|6.7.0",
+      "id": "maven|com.fasterxml.woodstox:woodstox-core|7.0.0",
       "ecosystem": "maven",
       "name": "com.fasterxml.woodstox:woodstox-core",
-      "version": "6.7.0",
+      "version": "7.0.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:81cdeef50567735bda9f6b4aabe0cc0a3f6c04f15569192bc6505393d2612c25"
+        "sha256:eeb3853282c24964a93a6eb4c1bbcb60c8d09fd8e0ffc75ab64ad21045a1fa78"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/6.7.0/woodstox-core-6.7.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/fasterxml/woodstox/woodstox-core/7.0.0/woodstox-core-7.0.0.pom",
       "unmodified": true
     },
     {
@@ -1004,6 +1121,25 @@
       }
     },
     {
+      "id": "maven|com.networknt:json-schema-validator|1.5.9",
+      "ecosystem": "maven",
+      "name": "com.networknt:json-schema-validator",
+      "version": "1.5.9",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:e0b8baeb78fd1ba027454ee3974d8a02f54447eaa510d3052820a7d2160d9ae4"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/networknt/json-schema-validator/1.5.9/json-schema-validator-1.5.9.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|com.nimbusds:nimbus-jose-jwt|9.37.4",
       "ecosystem": "maven",
       "name": "com.nimbusds:nimbus-jose-jwt",
@@ -1247,25 +1383,6 @@
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|commons-io:commons-io|2.16.1",
-      "ecosystem": "maven",
-      "name": "commons-io:commons-io",
-      "version": "2.16.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:f41f7baacd716896447ace9758621f62c1c6b0a91d89acee488da26fc477c84f"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.pom",
       "class": "build-tool",
       "unmodified": true
     },
@@ -2177,22 +2294,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.commons:commons-collections4|4.4",
+      "id": "maven|org.apache.commons:commons-collections4|4.5.0",
       "ecosystem": "maven",
       "name": "org.apache.commons:commons-collections4",
-      "version": "4.4",
+      "version": "4.5.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:1df8b9430b5c8ed143d7815e403e33ef5371b2400aadbe9bda0883762e0846d1"
+        "sha256:00f93263c267be201b8ae521b44a7137271b16688435340bf629db1bac0a5845"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.5.0/commons-collections4-4.5.0.pom",
       "unmodified": true
     },
     {
@@ -4378,25 +4495,6 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-utils|3.6.0",
-      "ecosystem": "maven",
-      "name": "org.codehaus.plexus:plexus-utils",
-      "version": "3.6.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:27ef130e32c236090e408fb5498d94cb9ea26d14070fb1c8985d607b62d098d1"
-      ],
-      "class": "build-tool",
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.6.0/plexus-utils-3.6.0.pom",
-      "unmodified": true
-    },
-    {
       "id": "maven|org.codehaus.plexus:plexus-utils|3.6.2",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-utils",
@@ -4416,25 +4514,6 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-utils|4.0.2",
-      "ecosystem": "maven",
-      "name": "org.codehaus.plexus:plexus-utils",
-      "version": "4.0.2",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:8957274e75fe2c278b1428dd16a0daeee1dd38152cb6eff816177ac28fccb697"
-      ],
-      "class": "build-tool",
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.2/plexus-utils-4.0.2.pom",
-      "unmodified": true
-    },
-    {
       "id": "maven|org.codehaus.plexus:plexus-utils|4.0.3",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-utils",
@@ -4451,6 +4530,25 @@
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.3/plexus-utils-4.0.3.pom",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-utils|4.1.0",
+      "ecosystem": "maven",
+      "name": "org.codehaus.plexus:plexus-utils",
+      "version": "4.1.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:6a2fe69e98301882bb2bb05afe36414eb82d6f7c63299cccdb2dc02b4358a968"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.1.0/plexus-utils-4.1.0.pom",
       "unmodified": true
     },
     {
@@ -4549,22 +4647,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.cyclonedx:cyclonedx-core-java|9.0.5",
+      "id": "maven|org.cyclonedx:cyclonedx-core-java|11.0.1",
       "ecosystem": "maven",
       "name": "org.cyclonedx:cyclonedx-core-java",
-      "version": "9.0.5",
+      "version": "11.0.1",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:9474c73a81d9be6206367d357a3449e03e70c69bc672d82be04f15806ef170fa"
+        "sha256:989348cc6d385629a3ccb735d450b0f0f022167cb702c2fcb0e6f2bdd989dde7"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/cyclonedx/cyclonedx-core-java/9.0.5/cyclonedx-core-java-9.0.5.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/cyclonedx/cyclonedx-core-java/11.0.1/cyclonedx-core-java-11.0.1.pom",
       "unmodified": true
     },
     {
@@ -5768,6 +5866,25 @@
         "status": "legacy-pending",
         "due": "2027-04-20"
       }
+    },
+    {
+      "id": "maven|org.yaml:snakeyaml|2.3",
+      "ecosystem": "maven",
+      "name": "org.yaml:snakeyaml",
+      "version": "2.3",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:63a76fe66b652360bd4c2c107e6f0258daa7d4bb492008ba8c26fcd230ff9146"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.3/snakeyaml-2.3.pom",
+      "unmodified": true
     },
     {
       "id": "maven|xmlpull:xmlpull|1.1.3.1",

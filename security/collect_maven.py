@@ -76,6 +76,21 @@ def collect(root, maven):
             for k in ('groupId', 'artifactId', 'version', 'type', 'classifier'):
                 if dependency.get(k):
                     ET.SubElement(d, k).text = dependency[k]
+        # These stand-alone wrappers must execute the same patched collector
+        # realm as the reactor. Do not inherit runtime dependencyManagement:
+        # that would misrepresent the isolated plugin dependency graph.
+        g,a,v,_ = CYCLONEDX.split(':')
+        collector = plugins[g+':'+a+':'+v]
+        build = ET.SubElement(doc,'build')
+        active = ET.SubElement(ET.SubElement(build,'plugins'),'plugin')
+        for k,value in [('groupId',g),('artifactId',a),('version',v)]:
+            ET.SubElement(active,k).text = value
+        overrides = ET.SubElement(active,'dependencies')
+        for dependency in collector['dependencies']:
+            d = ET.SubElement(overrides,'dependency')
+            for k in ('groupId','artifactId','version','type','classifier'):
+                if dependency.get(k):
+                    ET.SubElement(d,k).text = dependency[k]
         ET.ElementTree(doc).write(directory / 'pom.xml', encoding='utf-8', xml_declaration=True)
         pom = (directory / 'pom.xml').relative_to(root).as_posix()
         invoke(maven, root, bom_args(pom, False, 'plugin-bom'), work / ('plugin-' + str(i) + '.log'))

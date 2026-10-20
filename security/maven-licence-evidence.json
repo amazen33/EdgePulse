@@ -156,7 +156,7 @@
     "sbomLicenses": [
       {
         "license": {
-          "name": "EPLv2",
+          "id": "EPL-2.0",
           "url": "https://www.eclipse.org/legal/epl-v20.html"
         }
       }
@@ -165,13 +165,13 @@
     "electedSpdx": "EPL-2.0",
     "source": "https://repo.maven.apache.org/maven2/eu/maveniverse/maven/domtrip/domtrip-maven/1.5.1/domtrip-maven-1.5.1.pom",
     "readOn": "2026-10-20",
-    "reason": "Exact-version POM header and declared EPLv2 link identify Eclipse Public License 2.0; build plugin classpath only."
+    "reason": "Exact-version POM header and declared EPLv2 link identify Eclipse Public License 2.0; build plugin classpath only. CycloneDX core 11 normalizes the same EPLv2 label and URL to SPDX EPL-2.0; the exact-source election is unchanged."
   },
   "eu.maveniverse.maven.domtrip:domtrip-core:1.5.1": {
     "sbomLicenses": [
       {
         "license": {
-          "name": "EPLv2",
+          "id": "EPL-2.0",
           "url": "https://www.eclipse.org/legal/epl-v20.html"
         }
       }
@@ -180,7 +180,7 @@
     "electedSpdx": "EPL-2.0",
     "source": "https://repo.maven.apache.org/maven2/eu/maveniverse/maven/domtrip/domtrip-core/1.5.1/domtrip-core-1.5.1.pom",
     "readOn": "2026-10-20",
-    "reason": "Exact-version POM header and declared EPLv2 link identify Eclipse Public License 2.0; build plugin classpath only."
+    "reason": "Exact-version POM header and declared EPLv2 link identify Eclipse Public License 2.0; build plugin classpath only. CycloneDX core 11 normalizes the same EPLv2 label and URL to SPDX EPL-2.0; the exact-source election is unchanged."
   },
   "ch.qos.logback:logback-classic:1.5.38": {
     "sbomLicenses": [

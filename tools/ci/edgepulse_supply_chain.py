@@ -214,8 +214,24 @@ def classify_maven_findings(findings, root, base):
     return findings
 
 
+def initial_list_context():
+    """Port ADR-0049's initial-list PR mechanism to this one owner branch.
+
+    A green bootstrap PR is not owner approval. Main and ordinary pushes
+    reject pending-owner; the owner must approve the concrete list in review.
+    """
+    if os.environ.get('GITHUB_EVENT_NAME') != 'pull_request':
+        return False
+    event = sc.read(Path(os.environ['GITHUB_EVENT_PATH']))['pull_request']
+    head = event['head']
+    return (head['ref'] == 'codex/iot-wo-02-b'
+            and head['repo']['full_name'] == REPOSITORY
+            and event['base']['ref'] == 'main'
+            and event['base']['repo']['full_name'] == REPOSITORY)
+
+
 def validate_exception_evidence(exceptions, root, on):
-    sc.validate_exceptions(exceptions, root, on, bootstrap=False)
+    sc.validate_exceptions(exceptions, root, on, bootstrap=initial_list_context())
     for entry in exceptions['exceptions']:
         evidence = entry.get('controls', [])
         if not evidence:
@@ -234,12 +250,19 @@ def validate_exception_evidence(exceptions, root, on):
 def evaluate(result, exceptions, kev, root, state=None, on=None):
     on = on or sc.today()
     validate_exception_evidence(exceptions, root, on)
-    report = sc.evaluate(result, exceptions, kev, state, on, bootstrap=False, root=root)
+    kev_ids = {v['cveID'] for v in kev['vulnerabilities']}
+    for value in result['findings']:
+        if not value['fixAvailable'] and not (set(value['aliases']) & kev_ids):
+            if any(all(e[k] == value[k] for k in ('target','package','version','vulnerability'))
+                   for e in exceptions['exceptions']):
+                raise ValueError('No-fix findings are report-only and cannot have exceptions')
+    report = sc.evaluate(result, exceptions, kev, state, on, bootstrap=initial_list_context(), root=root)
     for value in report['findings']:
         if value['kev']:
             value['blocked'] = True
             value['blockReason'] = 'KEV'
     report['status'] = 'failed' if any(v['blocked'] for v in report['findings']) else 'passed'
+    report['ownerApprovalPending'] = any(e['approvedBy']=='pending-owner' for e in exceptions['exceptions'])
     # No automatically invented exceptions, mitigations or environment claims.
     report['proposedExceptions'] = dict(version=1, exceptions=[])
     return report

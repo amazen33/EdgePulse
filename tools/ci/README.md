@@ -59,16 +59,19 @@ remain visible. Exceptions must match exact identities, carry owner approval,
 fit the unchanged 30/60/90-day limits and reference reviewed evidence in
 `security/evidence/vulnerability-exceptions/` through `controls`. JVM records
 also need a `Reachability:` call-path/classpath argument. No exceptions are
-generated or fabricated. Unfixable Critical/High findings stop implementation
-for an owner decision, even if the ADR's report-only rule applies to them.
+generated or fabricated. Amendment 5 applies ADR-0049 as written: findings
+with no fix are report-only and never receive exceptions. Remaining fixable
+findings reference IOT-WO-08 or Part C, due 2026-11-19; no KEV is excepted.
 
 ## Evidence and alerts
 
 The work order's evidence-only ruling permits adding `imageSBOM` to exactly
 seven existing image entries and updating only their matching legacy hashes.
 `verify_backfill` compares against immutable base `ca61776` and rejects any
-other change to those records, their tiers or deadlines. The other legacy
-entries retain their full register values and policy records. Baselines remain
+other change to unchanged records, their tiers or deadlines. Amendment 5's
+Tomcat and PostgreSQL replacements retire the old legacy admissions and need
+full ADR-0054 records. The out-of-support Spring and Jackson lines retain
+their exact runtime register values and fingerprints until Part C. Baselines remain
 open until actual reviewed evidence is attached. No `supplyChain` criterion is
 added to a `legacy-pending` record. Per-runtime-component scan receipts belong
 under `security/evidence/supply-chain/` for future full ADR-0054 records.
@@ -77,6 +80,11 @@ Canonical reviewed CycloneDX copies omit only their document-instance UUID
 and creation timestamp, preserving components, licences, relationships and
 provenance. Their SHA-256 binds the reviewed content. Original scanner output
 is also retained in the run artifact.
+
+The licence job materializes these same files with `image-sboms`, using the
+pinned Syft binary and integrity-checked cache. The unchanged licence checker
+compares their bytes against the reviewed hashes. Expired artifact retention
+cannot silently replace an SBOM or remove the evidence check.
 
 The nightly scanner has `contents: read` and no repository secrets. A separate
 main-only reporter consumes its artifact with only `issues: write`; it creates

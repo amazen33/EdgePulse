@@ -15,6 +15,9 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   digest-pinned image inputs, Maven reactor BOMs/resolved trees and lockfiles.
   Preserve the ADR 0014 policy and an evidence-only legacy SBOM backfill guard;
   scan results and any remaining acceptance blockers accompany the PR.
+- IOT-WO-02 Amendment 5: patch supported Tomcat 10.1 and gated build/test
+  dependencies, evaluate a dated minimal PostgreSQL image, and retain
+  out-of-support runtime lines for Part C with explicit dated findings.
 
 ### Added
 
