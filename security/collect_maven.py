@@ -10,8 +10,8 @@ import xml.etree.ElementTree as ET
 from maven_inventory import NS, reactor, sha
 from maven_commands import check_invocation, guard_workflows, selected_plugins
 
-CYCLONEDX = 'org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom'
-HELP = 'org.apache.maven.plugins:maven-help-plugin:3.5.1:effective-pom'
+CYCLONEDX = 'org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom'
+HELP = 'org.apache.maven.plugins:maven-help-plugin:3.5.2:effective-pom'
 TREE = 'org.apache.maven.plugins:maven-dependency-plugin:3.11.0:tree'
 
 

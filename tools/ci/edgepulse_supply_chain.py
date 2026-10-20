@@ -269,11 +269,38 @@ def verify_backfill(root):
     old_legacy = policy['ladder']['legacy']
     new_legacy = sc.read(root/'security/licence-policy.json')['ladder']['legacy']
     approved = {entry['component'] for entry in baseline['findings'] if entry['kind']=='image-sbom'}
-    if len(approved) != 7 or old_legacy.keys() != new_legacy.keys():
-        raise ValueError('Legacy set changed outside the seven evidence backfills')
+    # Amendment 5 explicitly authorizes supported-line remediation. Replacing
+    # an input retires its legacy admission; the new input needs full records,
+    # never a rewritten legacy fingerprint. Unchanged images use evidence_only.
+    replacements = {
+        'maven|org.apache.tomcat.embed:'+name+'|10.1.30':
+        'maven|org.apache.tomcat.embed:'+name+'|10.1.60'
+        for name in ('tomcat-embed-core','tomcat-embed-el','tomcat-embed-websocket')}
+    replacements['oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0'] = (
+        'oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3')
+    retired = {key for key in replacements if key not in new}
+    if len(approved) != 7 or old_legacy.keys()-retired != new_legacy.keys():
+        raise ValueError('Legacy set changed outside the approved remediation')
     remaining = {entry['id'] for entry in sc.read(root/'security/licence-baseline.json')['findings']}
     fingerprints = []
     for key, original in old_legacy.items():
+        if key in retired:
+            replacement = new.get(replacements[key], {})
+            if (replacement.get('class') != old[key]['class']
+                    or replacement.get('electedSpdx') != old[key]['electedSpdx']
+                    or replacement.get('tier') != old[key]['tier']
+                    or replacement.get('enterpriseGrade',{}).get('status') not in ('pending','verified')):
+                raise ValueError('Remediated runtime needs full ADR-0054 records: '+key)
+            if key in approved:
+                if 'imageSBOM' in replacement:
+                    if 'image-sbom:'+key in remaining:
+                        raise ValueError('Completed replacement still has an open baseline')
+                    from licence_ladder import fingerprint
+                    fingerprints.append(dict(id=key,replacement=replacements[key],old=original['sha256'],
+                        new=fingerprint(replacement),mode='Amendment 5 replacement; full ADR-0054 record'))
+                elif 'image-sbom:'+key not in remaining:
+                    raise ValueError('Replacement baseline removed without reviewed imageSBOM')
+            continue
         if key in approved and 'imageSBOM' in new[key]:
             evidence_only(old[key], new[key], original, new_legacy[key])
             if 'image-sbom:'+key in remaining:

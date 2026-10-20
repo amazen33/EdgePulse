@@ -396,9 +396,9 @@ class LicenceGateTest(unittest.TestCase):
         evidence=json.loads((self.root/'target/licence/maven-evidence.json').read_text())
         evidence['effectivePom']='target/effective.xml'
         evidence['executedPlugins']=[]
-        for i,(g,a,v) in enumerate([('org.cyclonedx','cyclonedx-maven-plugin','2.9.1'),
-                                    ('org.apache.maven.plugins','maven-help-plugin','3.5.1'),
-                                    ('org.apache.maven.plugins','maven-dependency-plugin','3.11.0')]):
+        cli = sorted({tuple(goal.split(':')[:3]) for command in self.policy['gatedMavenCommands']
+                      for goal in command['goals'] if len(goal.split(':')) == 4})
+        for i,(g,a,v) in enumerate(cli):
             ref='pkg:maven/'+g+'/'+a+'@'+v+'?type=jar'
             wrapper='pkg:maven/com.edgepulse.licence-evidence/SYNTHETIC-'+str(i)+'@1?type=jar'
             bom=dict(bomFormat='CycloneDX',metadata=dict(component={'bom-ref':wrapper}),

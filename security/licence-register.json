@@ -200,41 +200,62 @@
       }
     },
     {
-      "id": "maven|ch.qos.logback:logback-classic|1.5.8",
+      "id": "maven|aopalliance:aopalliance|1.0",
       "ecosystem": "maven",
-      "name": "ch.qos.logback:logback-classic",
-      "version": "1.5.8",
+      "name": "aopalliance:aopalliance",
+      "version": "1.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
-        "services/identity/pom.xml"
+        "pom.xml"
       ],
       "integrities": [
-        "sha256:89b0f7bec5fa8a9c9246acd1e99f0e84d6cb3bbadaa5b095a14c2cd0f4732d05"
+        "sha256:0addec670fedcd3f113c5c8091d783280d23f75e3acb841b61a9cdb079376a08"
       ],
-      "spdx": "EPL-1.0 OR LGPL-2.1-only",
-      "electedSpdx": "LGPL-2.1-only",
-      "licenceSource": "https://github.com/qos-ch/logback/blob/v_1.5.8/LICENSE.txt",
       "class": "build-tool",
+      "notice": "security/licences/LicenseRef-public-domain-aopalliance.txt",
+      "licenceTextSHA256": "1a37d4dfc27ba6f2104826277c1ed39f7915d495d2de902770a9f4be812b207c",
+      "spdx": "LicenseRef-public-domain-aopalliance",
+      "electedSpdx": "LicenseRef-public-domain-aopalliance",
+      "licenceSource": "https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar",
       "unmodified": true
     },
     {
-      "id": "maven|ch.qos.logback:logback-core|1.5.8",
+      "id": "maven|ch.qos.logback:logback-classic|1.5.38",
       "ecosystem": "maven",
-      "name": "ch.qos.logback:logback-core",
-      "version": "1.5.8",
+      "name": "ch.qos.logback:logback-classic",
+      "version": "1.5.38",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:a698e4cff3eac45eec9b2755df93bb7a9725d853f7938030654ce5430b37c41d"
+        "sha256:afb439c61fa287c9e1925523b13baab03617e724406a389d48b61c2c3e46b700"
       ],
-      "spdx": "EPL-1.0 OR LGPL-2.1-only",
-      "electedSpdx": "LGPL-2.1-only",
-      "licenceSource": "https://github.com/qos-ch/logback/blob/v_1.5.8/LICENSE.txt",
       "class": "build-tool",
+      "spdx": "EPL-2.0 OR LGPL-2.1-only",
+      "electedSpdx": "EPL-2.0",
+      "licenceSource": "https://github.com/qos-ch/logback/blob/v_1.5.38/LICENSE.txt",
+      "unmodified": true
+    },
+    {
+      "id": "maven|ch.qos.logback:logback-core|1.5.38",
+      "ecosystem": "maven",
+      "name": "ch.qos.logback:logback-core",
+      "version": "1.5.38",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "services/identity/pom.xml"
+      ],
+      "integrities": [
+        "sha256:a855a0fc97b1d06f4efb1c3bba5ebd0eb508d8b58e68e89e4bbc23a85135c883"
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0 OR LGPL-2.1-only",
+      "electedSpdx": "EPL-2.0",
+      "licenceSource": "https://github.com/qos-ch/logback/blob/v_1.5.38/LICENSE.txt",
       "unmodified": true
     },
     {
@@ -508,22 +529,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|com.github.luben:zstd-jni|1.5.5-11",
+      "id": "maven|com.github.javaparser:javaparser-core|3.28.2",
       "ecosystem": "maven",
-      "name": "com.github.luben:zstd-jni",
-      "version": "1.5.5-11",
+      "name": "com.github.javaparser:javaparser-core",
+      "version": "3.28.2",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:d75b2ced6059f81ad23e021c554259b906b6c4f2991cb772409827569ead4c1a"
+        "sha256:b5499a3b1c40b16c0671fabe478c9aafeab38160c6fde74a6c13f42d86716ecd"
       ],
-      "spdx": "BSD-2-Clause",
-      "electedSpdx": "BSD-2-Clause",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.5-11/zstd-jni-1.5.5-11.pom",
       "class": "build-tool",
+      "spdx": "LGPL-3.0-or-later OR Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://github.com/javaparser/javaparser/blob/javaparser-parent-3.28.2/LICENSE",
       "unmodified": true
     },
     {
@@ -543,6 +564,25 @@
       "electedSpdx": "BSD-2-Clause",
       "licenceSource": "https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-6/zstd-jni-1.5.7-6.pom",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "maven|com.github.luben:zstd-jni|1.5.7-9",
+      "ecosystem": "maven",
+      "name": "com.github.luben:zstd-jni",
+      "version": "1.5.7-9",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:087d02f39a46ab79b18f883ac7c3a3d6c2df1fd3bf7eaafeade699e0743d0dbe"
+      ],
+      "class": "build-tool",
+      "spdx": "BSD-2-Clause",
+      "electedSpdx": "BSD-2-Clause",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/github/luben/zstd-jni/1.5.7-9/zstd-jni-1.5.7-9.pom",
       "unmodified": true
     },
     {
@@ -727,6 +767,25 @@
       }
     },
     {
+      "id": "maven|com.google.guava:failureaccess|1.0.3",
+      "ecosystem": "maven",
+      "name": "com.google.guava:failureaccess",
+      "version": "1.0.3",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:cbfc3906b19b8f55dd7cfd6dfe0aa4532e834250d7f080bd8d211a3e246b59cb"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|com.google.guava:guava|33.2.1-android",
       "ecosystem": "maven",
       "name": "com.google.guava:guava",
@@ -750,6 +809,25 @@
       }
     },
     {
+      "id": "maven|com.google.guava:guava|33.4.8-jre",
+      "ecosystem": "maven",
+      "name": "com.google.guava:guava",
+      "version": "33.4.8-jre",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:f3d7f57f67fd622f4d468dfdd692b3a5e3909246c28017ac3263405f0fe617ed"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|com.google.guava:listenablefuture|9999.0-empty-to-avoid-conflict-with-guava",
       "ecosystem": "maven",
       "name": "com.google.guava:listenablefuture",
@@ -771,6 +849,25 @@
         "status": "legacy-pending",
         "due": "2027-04-20"
       }
+    },
+    {
+      "id": "maven|com.google.inject:guice|5.1.0",
+      "ecosystem": "maven",
+      "name": "com.google.inject:guice",
+      "version": "5.1.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:142ad4475e19524d2fe3ac995b3f7cbc962fc726f2edb9dbdccc61feab9b2bf9"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/inject/guice/5.1.0/guice-5.1.0.pom",
+      "unmodified": true
     },
     {
       "id": "maven|com.google.j2objc:j2objc-annotations|1.3",
@@ -929,41 +1026,22 @@
       }
     },
     {
-      "id": "maven|com.thoughtworks.qdox:qdox|2.0.3",
-      "ecosystem": "maven",
-      "name": "com.thoughtworks.qdox:qdox",
-      "version": "2.0.3",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:ff70c10165714fe9546c418a65d74ecd5d57623ba408cecde9428f0a609b5d1c"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|com.thoughtworks.xstream:xstream|1.4.20",
+      "id": "maven|com.thoughtworks.xstream:xstream|1.4.21",
       "ecosystem": "maven",
       "name": "com.thoughtworks.xstream:xstream",
-      "version": "1.4.20",
+      "version": "1.4.21",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:87df0f0be57c92037d0110fbb225a30b651702dc275653d285afcfef31bc2e81"
+        "sha256:f56586f3de59ae2a49430acbc9f27942b8c5cebec9245c869fae7136733333ec"
       ],
+      "class": "build-tool",
       "spdx": "BSD-3-Clause",
       "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.20/xstream-1.4.20.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/thoughtworks/xstream/xstream/1.4.21/xstream-1.4.21.pom",
       "unmodified": true
     },
     {
@@ -1096,79 +1174,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|commons-beanutils:commons-beanutils|1.9.4",
+      "id": "maven|commons-beanutils:commons-beanutils|1.11.0",
       "ecosystem": "maven",
       "name": "commons-beanutils:commons-beanutils",
-      "version": "1.9.4",
+      "version": "1.11.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:7d938c81789028045c08c065e94be75fc280527620d5bd62b519d5838532368a"
+        "sha256:9e44ba68ec9a3f21286fa2a8bbb003b735c0f69101bb43144b79f4f8aaa74709"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|commons-codec:commons-codec|1.16.1",
-      "ecosystem": "maven",
-      "name": "commons-codec:commons-codec",
-      "version": "1.16.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:ec87bfb55f22cbd1b21e2190eeda28b2b312ed2a431ee49fbdcc01812d04a5e4"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|commons-codec:commons-codec|1.17.0",
-      "ecosystem": "maven",
-      "name": "commons-codec:commons-codec",
-      "version": "1.17.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:f700de80ac270d0344fdea7468201d8b9c805e5c648331c3619f2ee067ccfc59"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.17.0/commons-codec-1.17.0.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|commons-codec:commons-codec|1.17.1",
-      "ecosystem": "maven",
-      "name": "commons-codec:commons-codec",
-      "version": "1.17.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:f9f6cb103f2ddc3c99a9d80ada2ae7bf0685111fd6bffccb72033d1da4e6ff23"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.17.1/commons-codec-1.17.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.pom",
       "unmodified": true
     },
     {
@@ -1191,6 +1212,25 @@
       "unmodified": true
     },
     {
+      "id": "maven|commons-codec:commons-codec|1.22.0",
+      "ecosystem": "maven",
+      "name": "commons-codec:commons-codec",
+      "version": "1.22.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:d164fe79f262c32d9b18a0b5b2d317d1c27653d5e98fd2b998c24bf901c72ce4"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.22.0/commons-codec-1.22.0.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|commons-collections:commons-collections|3.2.2",
       "ecosystem": "maven",
       "name": "commons-collections:commons-collections",
@@ -1206,25 +1246,6 @@
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|commons-io:commons-io|2.11.0",
-      "ecosystem": "maven",
-      "name": "commons-io:commons-io",
-      "version": "2.11.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:961b2f6d87dbacc5d54abf45ab7a6e2495f89b75598962d8c723cea9bc210908"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/commons-io/commons-io/2.11.0/commons-io-2.11.0.pom",
       "class": "build-tool",
       "unmodified": true
     },
@@ -1286,22 +1307,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|commons-logging:commons-logging|1.2",
+      "id": "maven|commons-io:commons-io|2.22.0",
       "ecosystem": "maven",
-      "name": "commons-logging:commons-logging",
-      "version": "1.2",
+      "name": "commons-io:commons-io",
+      "version": "2.22.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:daddea1ea0be0f56978ab3006b8ac92834afeefbd9b7e4e6316fca57df0fa636"
+        "sha256:2b9a7b1f726fb86216dbd2c8321eabe0221dbd5b1be81c18e1cb53811b104758"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/commons-io/commons-io/2.22.0/commons-io-2.22.0.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|commons-logging:commons-logging|1.3.5",
+      "ecosystem": "maven",
+      "name": "commons-logging:commons-logging",
+      "version": "1.3.5",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:6d7a744e4027649fbb50895df9497d109f98c766a637062fe8d2eabbb3140ba4"
+      ],
       "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.pom",
       "unmodified": true
     },
     {
@@ -1965,25 +2005,6 @@
       "unmodified": true
     },
     {
-      "id": "maven|javax.annotation:javax.annotation-api|1.2",
-      "ecosystem": "maven",
-      "name": "javax.annotation:javax.annotation-api",
-      "version": "1.2",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:5909b396ca3a2be10d0eea32c74ef78d816e1b4ead21de1d78de1f890d033e04"
-      ],
-      "spdx": "CDDL-1.0 OR (GPL-2.0-only WITH Classpath-exception-2.0)",
-      "electedSpdx": "CDDL-1.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "maven|javax.annotation:jsr250-api|1.0",
       "ecosystem": "maven",
       "name": "javax.annotation:jsr250-api",
@@ -2018,25 +2039,6 @@
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|javax.enterprise:cdi-api|1.2",
-      "ecosystem": "maven",
-      "name": "javax.enterprise:cdi-api",
-      "version": "1.2",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:cc5ce2cbc62fe96bf59af00bba00bde823a1094462b4364747863510b76c0518"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.2/cdi-api-1.2.pom",
       "class": "build-tool",
       "unmodified": true
     },
@@ -2117,41 +2119,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|net.minidev:accessors-smart|2.5.1",
+      "id": "maven|net.minidev:accessors-smart|2.5.2",
       "ecosystem": "maven",
       "name": "net.minidev:accessors-smart",
-      "version": "2.5.1",
+      "version": "2.5.2",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:2796ae857d0c7be4bc3580daa4d3828d555212355f4c83d38dd0af0742b3c812"
+        "sha256:9b8a7bc43861d6156c021166d941fb7dddbe4463e2fa5ee88077e4b01452a836"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.pom",
       "unmodified": true
     },
     {
-      "id": "maven|net.minidev:json-smart|2.5.1",
+      "id": "maven|net.minidev:json-smart|2.5.2",
       "ecosystem": "maven",
       "name": "net.minidev:json-smart",
-      "version": "2.5.1",
+      "version": "2.5.2",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:86c0c189581b79b57b0719f443a724e9f628ffbb9eef645cf79194f5973a1001"
+        "sha256:4fbdedb0105cedc7f766b95c297d2e88fb6a560da48f3bbaa0cc538ea8b7bf71"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.5.1/json-smart-2.5.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/net/minidev/json-smart/2.5.2/json-smart-2.5.2.pom",
       "unmodified": true
     },
     {
@@ -2189,25 +2191,6 @@
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.apache.commons:commons-compress|1.26.1",
-      "ecosystem": "maven",
-      "name": "org.apache.commons:commons-compress",
-      "version": "1.26.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:27bb5d40f37c3bb7205b4a0540247df057715e9f6cbbd97d626ab8b50318bb04"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.pom",
       "class": "build-tool",
       "unmodified": true
     },
@@ -2250,25 +2233,6 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.commons:commons-lang3|3.12.0",
-      "ecosystem": "maven",
-      "name": "org.apache.commons:commons-lang3",
-      "version": "3.12.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:d919d904486c037f8d193412da0c92e22a9fa24230b9d67a57855c5c31c7e94e"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "maven|org.apache.commons:commons-lang3|3.14.0",
       "ecosystem": "maven",
       "name": "org.apache.commons:commons-lang3",
@@ -2276,8 +2240,7 @@
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
-        "contract-tests/pom.xml",
-        "pom.xml"
+        "contract-tests/pom.xml"
       ],
       "integrities": [
         "sha256:7b96bf3ee68949abb5bc465559ac270e0551596fa34523fddf890ec418dde13c"
@@ -2289,22 +2252,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.commons:commons-lang3|3.17.0",
+      "id": "maven|org.apache.commons:commons-lang3|3.18.0",
       "ecosystem": "maven",
       "name": "org.apache.commons:commons-lang3",
-      "version": "3.17.0",
+      "version": "3.18.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:6ee731df5c8e5a2976a1ca023b6bb320ea8d3539fbe64c8a1d5cb765127c33b4"
+        "sha256:4eeeae8d20c078abb64b015ec158add383ac581571cddc45c68f0c9ae0230720"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.18.0/commons-lang3-3.18.0.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.commons:commons-lang3|3.19.0",
+      "ecosystem": "maven",
+      "name": "org.apache.commons:commons-lang3",
+      "version": "3.19.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:32733ab4bc90b45b63eb72677d886961003fd4ed113e07b1028f9877cb2ac735"
+      ],
       "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.pom",
       "unmodified": true
     },
     {
@@ -2582,41 +2564,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.enforcer:enforcer-api|3.5.0",
+      "id": "maven|org.apache.maven.enforcer:enforcer-api|3.6.3",
       "ecosystem": "maven",
       "name": "org.apache.maven.enforcer:enforcer-api",
-      "version": "3.5.0",
+      "version": "3.6.3",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:2b97963430f7bac04ecfb42ea98f30d0914c067693207e4f096595f5ca16eca3"
+        "sha256:cca55222e1de7cb3beb082eca5a18f43c80e4e748313a318b18b2b404d1bd340"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.5.0/enforcer-api-3.5.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-api/3.6.3/enforcer-api-3.6.3.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.enforcer:enforcer-rules|3.5.0",
+      "id": "maven|org.apache.maven.enforcer:enforcer-rules|3.6.3",
       "ecosystem": "maven",
       "name": "org.apache.maven.enforcer:enforcer-rules",
-      "version": "3.5.0",
+      "version": "3.6.3",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:5cfa057f693ebbd4d0a94bea8833dc8105ba2af6d4b7dca05acecc6235b9609c"
+        "sha256:24bad9159ed9af932488bad1be042471a170a5bc822bfc8f7b29f3c297c1e138"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.5.0/enforcer-rules-3.5.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/enforcer/enforcer-rules/3.6.3/enforcer-rules-3.6.3.pom",
       "unmodified": true
     },
     {
@@ -2639,41 +2621,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.plugin-tools:maven-plugin-tools-generators|3.13.1",
+      "id": "maven|org.apache.maven.plugin-tools:maven-plugin-tools-generators|3.15.2",
       "ecosystem": "maven",
       "name": "org.apache.maven.plugin-tools:maven-plugin-tools-generators",
-      "version": "3.13.1",
+      "version": "3.15.2",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:a201ac701319c9ce54bd85c7c8e877e867495cd5f509f26ae5f2b408eafbf68f"
+        "sha256:39e172718ad6c88200f1338e6fc866e3a7919fc755c32f8b7d7abd4a0e548221"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.13.1/maven-plugin-tools-generators-3.13.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools-generators/3.15.2/maven-plugin-tools-generators-3.15.2.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.plugins:maven-compiler-plugin|3.13.0",
+      "id": "maven|org.apache.maven.plugins:maven-compiler-plugin|3.16.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.plugins:maven-compiler-plugin",
-      "version": "3.13.0",
+      "version": "3.16.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:6f819947a2a773792dc91d17f906e22113bfb2fefb6b64dec836175715d7402a"
+        "sha256:f2a6a4668dd833cfe559dd345929196e7b61ed13f6c03f8e087ffba3d85be807"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.13.0/maven-compiler-plugin-3.13.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.16.0/maven-compiler-plugin-3.16.0.pom",
       "unmodified": true
     },
     {
@@ -2696,28 +2678,47 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.plugins:maven-enforcer-plugin|3.5.0",
+      "id": "maven|org.apache.maven.plugins:maven-enforcer-plugin|3.6.3",
       "ecosystem": "maven",
       "name": "org.apache.maven.plugins:maven-enforcer-plugin",
-      "version": "3.5.0",
+      "version": "3.6.3",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:be757f04f006348df247dcf235ca45a292fe4472b969fddf38ec2c6a70c4d964"
+        "sha256:32347686c513894a2fae96eeb11527883f47b8957850d793ea833646ad954dca"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-enforcer-plugin/3.5.0/maven-enforcer-plugin-3.5.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-enforcer-plugin/3.6.3/maven-enforcer-plugin-3.6.3.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.plugins:maven-help-plugin|3.5.1",
+      "id": "maven|org.apache.maven.plugins:maven-help-plugin|3.5.2",
       "ecosystem": "maven",
       "name": "org.apache.maven.plugins:maven-help-plugin",
+      "version": "3.5.2",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:fe53082c6c51b9b4778f4dfe3e9810c18e995c34b0780c30b73fb2a156c90c03"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.2/maven-help-plugin-3.5.2.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven.plugins:maven-jar-plugin|3.5.1",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.plugins:maven-jar-plugin",
       "version": "3.5.1",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
@@ -2725,69 +2726,50 @@
         "pom.xml"
       ],
       "integrities": [
-        "sha256:db1296f90c93cd1ac763f8262674dc376cf7670166dc2c270a498b1141a51865"
+        "sha256:c83db6059be3fec9a4a68a0e226caefaa944663008617c697e087444415181d5"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/3.5.1/maven-help-plugin-3.5.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.5.1/maven-jar-plugin-3.5.1.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.plugins:maven-jar-plugin|3.4.1",
-      "ecosystem": "maven",
-      "name": "org.apache.maven.plugins:maven-jar-plugin",
-      "version": "3.4.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:25e0a5b55b872d95e3a09a5d825bc1061f5ce25ee81f147e623405d8ebedfa5f"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.4.1/maven-jar-plugin-3.4.1.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.apache.maven.plugins:maven-resources-plugin|3.3.1",
+      "id": "maven|org.apache.maven.plugins:maven-resources-plugin|3.5.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.plugins:maven-resources-plugin",
-      "version": "3.3.1",
+      "version": "3.5.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:eb4069c7fe50a313b3f5295ccd214f30402f63971c26f443f7f3e798be8cc2a7"
+        "sha256:2c923c63a197565a3e78f2b16d762d0f49bb83250dd2b1e6286704ea0f447060"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.3.1/maven-resources-plugin-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.5.0/maven-resources-plugin-3.5.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.plugins:maven-surefire-plugin|3.3.1",
+      "id": "maven|org.apache.maven.plugins:maven-surefire-plugin|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.plugins:maven-surefire-plugin",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:004f2abbd1abd4e32476bce6bad9c0b191f6ad4854ea5259d24540116da46fcb"
+        "sha256:07117c7456920c14b9d3bdb9b1e82fbcb2fc5004ff2a3bd19c8fc6d25d6f15bb"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.3.1/maven-surefire-plugin-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.6.0/maven-surefire-plugin-3.6.0.pom",
       "unmodified": true
     },
     {
@@ -2848,6 +2830,101 @@
       "unmodified": true
     },
     {
+      "id": "maven|org.apache.maven.resolver:maven-resolver-api|1.9.24",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.resolver:maven-resolver-api",
+      "version": "1.9.24",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:c0ce14849298720dcf3b09fe9e263b3c576d2d6cd43c61f8aa9d6117e04e5e47"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.24/maven-resolver-api-1.9.24.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven.resolver:maven-resolver-api|1.9.27",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.resolver:maven-resolver-api",
+      "version": "1.9.27",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:a895d222283666a7320ddc76615e2e93a41fabd93ce9a6bf9ddee39272bb87b4"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.27/maven-resolver-api-1.9.27.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven.resolver:maven-resolver-impl|1.9.24",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.resolver:maven-resolver-impl",
+      "version": "1.9.24",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:3cd88edda00c46242cdbe57aefb47703519d176d9e8a500333de15faf41b0e1d"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-impl/1.9.24/maven-resolver-impl-1.9.24.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven.resolver:maven-resolver-named-locks|1.9.24",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.resolver:maven-resolver-named-locks",
+      "version": "1.9.24",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:a222b0a5ca4c145e8e0f45207a23bcce18bdbe1f1c980e4e9fb332591ee8c91a"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-named-locks/1.9.24/maven-resolver-named-locks-1.9.24.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven.resolver:maven-resolver-spi|1.9.24",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.resolver:maven-resolver-spi",
+      "version": "1.9.24",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:e3153906e93333c106ee18babb72ba7984ccb15e9116ea08f88c71b8d9387e01"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-spi/1.9.24/maven-resolver-spi-1.9.24.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|org.apache.maven.resolver:maven-resolver-util|1.4.1",
       "ecosystem": "maven",
       "name": "org.apache.maven.resolver:maven-resolver-util",
@@ -2864,6 +2941,25 @@
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.4.1/maven-resolver-util-1.4.1.pom",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven.resolver:maven-resolver-util|1.9.24",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.resolver:maven-resolver-util",
+      "version": "1.9.24",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:aeb7e776a8c47b1c317a2581f299e2525b044cb8abde31164e970bbbefab12b1"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.24/maven-resolver-util-1.9.24.pom",
       "unmodified": true
     },
     {
@@ -2886,22 +2982,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.shared:file-management|3.1.0",
+      "id": "maven|org.apache.maven.resolver:maven-resolver-util|1.9.27",
       "ecosystem": "maven",
-      "name": "org.apache.maven.shared:file-management",
-      "version": "3.1.0",
+      "name": "org.apache.maven.resolver:maven-resolver-util",
+      "version": "1.9.27",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:2e8cb2d546a01c2259cb17f1e06732db3d14b079d19622bf8400c82cb1ee6b96"
+        "sha256:74a12548f0d6aad13c728666288c1e81201c24bd05bb4e4ec8c1558517b379a7"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.1.0/file-management-3.1.0.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.27/maven-resolver-util-1.9.27.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven.shared:file-management|3.2.0",
+      "ecosystem": "maven",
+      "name": "org.apache.maven.shared:file-management",
+      "version": "3.2.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:32ac469785dd1547ac71437e4c3916c4a56a3d69303cb08d789ecdd0bfd1d6de"
+      ],
       "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/3.2.0/file-management-3.2.0.pom",
       "unmodified": true
     },
     {
@@ -2939,25 +3054,6 @@
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.4.0/maven-common-artifact-filters-3.4.0.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.apache.maven.shared:maven-dependency-analyzer|1.14.1",
-      "ecosystem": "maven",
-      "name": "org.apache.maven.shared:maven-dependency-analyzer",
-      "version": "1.14.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:88493689e519f1d2cee10d4e143d1001849c7d62db3746e98ce0c6f6facc4a2a"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-dependency-analyzer/1.14.1/maven-dependency-analyzer-1.14.1.pom",
       "class": "build-tool",
       "unmodified": true
     },
@@ -3000,22 +3096,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.shared:maven-filtering|3.3.1",
+      "id": "maven|org.apache.maven.shared:maven-filtering|3.5.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.shared:maven-filtering",
-      "version": "3.3.1",
+      "version": "3.5.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:b12663187d9ffc6a1ee76139c0ef497fe9400efbe2ebe01616fe2703656fb4f0"
+        "sha256:7adb0e46b5fff4fc03aab4baafbdee0b29e444cffe4478858c63082d497220bf"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.3.1/maven-filtering-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.5.0/maven-filtering-3.5.0.pom",
       "unmodified": true
     },
     {
@@ -3057,174 +3153,155 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.surefire:maven-surefire-common|3.3.1",
+      "id": "maven|org.apache.maven.surefire:maven-surefire-common|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.surefire:maven-surefire-common",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:e7df38d0a7b02e46c231d5e4409b48b6ca34dea7c6b01075f16422873a655d56"
+        "sha256:acf54c9a5dcdad4c5a30c2f731ee9892a80b4cc5126014c4f28851a5dc32c6ab"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.3.1/maven-surefire-common-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.6.0/maven-surefire-common-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.surefire:surefire-api|3.3.1",
+      "id": "maven|org.apache.maven.surefire:surefire-api|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.surefire:surefire-api",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:8affc11265b7cf476a737ab154438487dfb5195a4b7a578031f3c96f2b5b103c"
+        "sha256:b8cae78767db8c6660f9f07e635ec3e001b883f4e74087f60e995f39a848627e"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.3.1/surefire-api-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.6.0/surefire-api-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.surefire:surefire-booter|3.3.1",
+      "id": "maven|org.apache.maven.surefire:surefire-booter|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.surefire:surefire-booter",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:fdda4c7f94e61ebf263d955bb55a42f2962d8da8d51bbafc9e6c883fcffe5061"
+        "sha256:d4a5121988ec22355b54d84f68a2638bdb7315814e650756183ba90a9b7cd0d2"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.3.1/surefire-booter-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.6.0/surefire-booter-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.surefire:surefire-extensions-api|3.3.1",
+      "id": "maven|org.apache.maven.surefire:surefire-extensions-api|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.surefire:surefire-extensions-api",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:e6f0b0c1809244636e971de9a6ea6d791f27a898ef94ad1ebe277bf0c7d69efe"
+        "sha256:8e2c305480fde793118cf1257696b7797ba25f3a40c6b3f44a349fd9445e3022"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.3.1/surefire-extensions-api-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.6.0/surefire-extensions-api-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.surefire:surefire-extensions-spi|3.3.1",
+      "id": "maven|org.apache.maven.surefire:surefire-extensions-spi|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.surefire:surefire-extensions-spi",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:bd0fe59ac39fd8e3ae9ab06fad542d66f1ece061aea3ff5a716d76b9a3a99fb0"
+        "sha256:beadeb0485fc7f3505f26b0cfcf26602639b83e9badaebac4a3ce5345cc19c0e"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.3.1/surefire-extensions-spi-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.6.0/surefire-extensions-spi-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.surefire:surefire-logger-api|3.3.1",
+      "id": "maven|org.apache.maven.surefire:surefire-logger-api|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.surefire:surefire-logger-api",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:e927cb7988b2054763ab5d64b79c13bb5108e8c2d3b64cc7e4a23dd6955b4c0c"
+        "sha256:3872f9506242841831b3ee321d5ae325128d3329906c6b83474056d91d2a309a"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.3.1/surefire-logger-api-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.6.0/surefire-logger-api-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.surefire:surefire-shared-utils|3.3.1",
+      "id": "maven|org.apache.maven.surefire:surefire-shared-utils|3.6.0",
       "ecosystem": "maven",
       "name": "org.apache.maven.surefire:surefire-shared-utils",
-      "version": "3.3.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:147c69eb37b599558d2296569dafb51a06d11bf6100634d07f7543906f7eb974"
+        "sha256:ce8cc10ffb0e848a8078acc9ddfd447ff69e308f82f431c6311af50c43404c6b"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.3.1/surefire-shared-utils-3.3.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.6.0/surefire-shared-utils-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven.wagon:wagon-provider-api|1.0-beta-6",
+      "id": "maven|org.apache.maven.wagon:wagon-provider-api|3.5.3",
       "ecosystem": "maven",
       "name": "org.apache.maven.wagon:wagon-provider-api",
-      "version": "1.0-beta-6",
+      "version": "3.5.3",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:e116f32edcb77067289a3148143f2c0c97b27cf9a1342f8108ee37dec4868861"
+        "sha256:5e72000338945ed3e96f8e4f578d1d0672e1af7e19c0e9014197ae5b31af3ef4"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-6/wagon-provider-api-1.0-beta-6.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.apache.maven:maven-aether-provider|3.0",
-      "ecosystem": "maven",
-      "name": "org.apache.maven:maven-aether-provider",
-      "version": "3.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:1205a1f229999170dcadcfb885a278ad0bc2295540a251f4c438f887ead7bbd9"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/3.5.3/wagon-provider-api-3.5.3.pom",
       "unmodified": true
     },
     {
@@ -3244,6 +3321,25 @@
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.2/maven-archiver-3.6.2.pom",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven:maven-archiver|3.6.6",
+      "ecosystem": "maven",
+      "name": "org.apache.maven:maven-archiver",
+      "version": "3.6.6",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:9037dee318a68d7ee5dd2e20f2e657a39597ed2622b52e325ab9becddfbc4d38"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.6.6/maven-archiver-3.6.6.pom",
       "unmodified": true
     },
     {
@@ -3285,79 +3381,79 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven:maven-compat|3.0",
+      "id": "maven|org.apache.maven:maven-builder-support|3.9.11",
+      "ecosystem": "maven",
+      "name": "org.apache.maven:maven-builder-support",
+      "version": "3.9.11",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:5b1de1560ec19c4c69a655f986455888f3a0bcc3c160cac1f1edb87de3825f77"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-builder-support/3.9.11/maven-builder-support-3.9.11.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven:maven-compat|3.9.11",
       "ecosystem": "maven",
       "name": "org.apache.maven:maven-compat",
-      "version": "3.0",
+      "version": "3.9.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:3b8ad55703b8b60e6978b0efed24103a331c7ffd788374af85e2020f6c9b1f00"
+        "sha256:b0e2865fc808fd9fb3bee95bf37c0609eeb20c59bf1e6b958b37b365ee11f52e"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.0/maven-compat-3.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-compat/3.9.11/maven-compat-3.9.11.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven:maven-core|3.0",
+      "id": "maven|org.apache.maven:maven-core|3.9.11",
       "ecosystem": "maven",
       "name": "org.apache.maven:maven-core",
-      "version": "3.0",
+      "version": "3.9.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:ba03294ee53e7ba31838e4950f280d033c7744c6c7b31253afc75aa351fbd989"
+        "sha256:93d3c0523dda6c86c6620d9e692e7df39d0e2e4e4cd860061a8c0d274c2ad185"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.9.11/maven-core-3.9.11.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven:maven-model-builder|3.0",
+      "id": "maven|org.apache.maven:maven-model-builder|3.9.11",
       "ecosystem": "maven",
       "name": "org.apache.maven:maven-model-builder",
-      "version": "3.0",
+      "version": "3.9.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:1c98a4ec9eb0cb86ecf01710aa75c0346ee3f96edc6edeabcb21ed984120e154"
+        "sha256:c4c72accdcd848332c1a37995610a6a369d49fdaabc43e85f0022a5b77de3ba7"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.apache.maven:maven-model|3.0",
-      "ecosystem": "maven",
-      "name": "org.apache.maven:maven-model",
-      "version": "3.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:27e426d73f8662b47f60df0e43439b3dec2909c42b89175a6e4431dfed3edafd"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.9.11/maven-model-builder-3.9.11.pom",
       "unmodified": true
     },
     {
@@ -3377,6 +3473,25 @@
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.5.3/maven-model-3.5.3.pom",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven:maven-model|3.9.11",
+      "ecosystem": "maven",
+      "name": "org.apache.maven:maven-model",
+      "version": "3.9.11",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:163aa596f976264384efeb50b4cb8a806086fd64a9b755ad1f69195fed3998ad"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.9.11/maven-model-3.9.11.pom",
       "unmodified": true
     },
     {
@@ -3418,129 +3533,262 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven:maven-repository-metadata|3.0",
+      "id": "maven|org.apache.maven:maven-repository-metadata|3.9.11",
       "ecosystem": "maven",
       "name": "org.apache.maven:maven-repository-metadata",
-      "version": "3.0",
+      "version": "3.9.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:c938e4d8cdf0674496749a87e6d3b29aa41b1b35a39898a1ade2bc9eae214c17"
+        "sha256:f8655f5f0060e0032944f2a23688d186e140d2184749bcfa1927f83cd6a8b1a2"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.9.11/maven-repository-metadata-3.9.11.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven:maven-settings-builder|3.0",
+      "id": "maven|org.apache.maven:maven-resolver-provider|3.9.11",
+      "ecosystem": "maven",
+      "name": "org.apache.maven:maven-resolver-provider",
+      "version": "3.9.11",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:b5d6e52ae1ecf1cb62ede2234234ba3093149524066488e84415187ce478c582"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-resolver-provider/3.9.11/maven-resolver-provider-3.9.11.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.apache.maven:maven-settings-builder|3.9.11",
       "ecosystem": "maven",
       "name": "org.apache.maven:maven-settings-builder",
-      "version": "3.0",
+      "version": "3.9.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:e17e706c6f03c453f6000599cab607c2af5f1cc6e3a3b1e6fce27e5ef4999eab"
+        "sha256:33c96e4ca5a15b7c93180f6b2f8deb15f511dfc15dda0d2b671c968b22108972"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.9.11/maven-settings-builder-3.9.11.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.maven:maven-settings|3.0",
+      "id": "maven|org.apache.maven:maven-settings|3.9.11",
       "ecosystem": "maven",
       "name": "org.apache.maven:maven-settings",
-      "version": "3.0",
+      "version": "3.9.11",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:3b1a46b4bc26a0176acaf99312ff2f3a631faf3224b0996af546aa48bd73c647"
+        "sha256:026718d47d19e360d978857bc63d3dc065884fc2c801563d8a2a77b5ab74ccf8"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.9.11/maven-settings-3.9.11.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.30",
+      "id": "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.60",
       "ecosystem": "maven",
       "name": "org.apache.tomcat.embed:tomcat-embed-core",
-      "version": "10.1.30",
+      "version": "10.1.60",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:2eba5a20566f7ecb307508a6faef631652e59a865c0dba3c97c3bee1f4774bef"
+        "sha256:daa3f968c393485b7a5ee05a0b671112d78a071841a902a55466353c89ca7bef"
       ],
+      "class": "allowed",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.30/tomcat-embed-core-10.1.30.pom",
-      "class": "allowed",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/10.1.60/tomcat-embed-core-10.1.60.pom",
+      "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
+        "status": "pending",
+        "criteria": {
+          "maturity": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "governance": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "activitySupport": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "securityProcess": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "supplyChain": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "adoption": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          }
+        }
       }
     },
     {
-      "id": "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.30",
+      "id": "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.60",
       "ecosystem": "maven",
       "name": "org.apache.tomcat.embed:tomcat-embed-el",
-      "version": "10.1.30",
+      "version": "10.1.60",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:ee94bb23409ac67cc6c79c0f7c3e61be0262adcf6e4d778bfe292944109f6697"
+        "sha256:9286e21ec0b2abb42005cb7232f850d6849e47e7b6f1fc7d3f1d5d7b64f71d44"
       ],
+      "class": "allowed",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.30/tomcat-embed-el-10.1.30.pom",
-      "class": "allowed",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/10.1.60/tomcat-embed-el-10.1.60.pom",
+      "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
+        "status": "pending",
+        "criteria": {
+          "maturity": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "governance": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "activitySupport": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "securityProcess": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "supplyChain": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "adoption": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          }
+        }
       }
     },
     {
-      "id": "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.30",
+      "id": "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.60",
       "ecosystem": "maven",
       "name": "org.apache.tomcat.embed:tomcat-embed-websocket",
-      "version": "10.1.30",
+      "version": "10.1.60",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:75e7d188ef9577efd90542422f048826bfc2a0f80b955fab8bea6630d1b3465b"
+        "sha256:901f4d04f2ba4872fd074c99f2e1523c0a1024ff3f5845db6905553eab008f93"
       ],
+      "class": "allowed",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.30/tomcat-embed-websocket-10.1.30.pom",
-      "class": "allowed",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.60/tomcat-embed-websocket-10.1.60.pom",
+      "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
+        "status": "pending",
+        "criteria": {
+          "maturity": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "governance": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "activitySupport": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "securityProcess": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "supplyChain": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "adoption": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          }
+        }
       }
     },
     {
@@ -3627,22 +3875,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.assertj:assertj-core|3.25.3",
+      "id": "maven|org.assertj:assertj-core|3.27.7",
       "ecosystem": "maven",
       "name": "org.assertj:assertj-core",
-      "version": "3.25.3",
+      "version": "3.27.7",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:7fbdffa1996d43cc08e2576e01008b07e57bbad2b4741aa6c3ab73ce8511130e"
+        "sha256:c4a445426c3c2861666863b842cc4ec7bbb1c4226fefd370b6d2fe83d6c4ff0f"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.27.7/assertj-core-3.27.7.pom",
       "unmodified": true
     },
     {
@@ -3730,41 +3978,60 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-archiver|4.9.2",
+      "id": "maven|org.codehaus.plexus:plexus-archiver|4.12.0",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-archiver",
-      "version": "4.9.2",
+      "version": "4.12.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:a837bd7d73291564dc8e8c826de0fede75896527a35bdcddb77b0545ee656a4c"
+        "sha256:b1e9798a6d711d1e7760d50c78be8be746bb546b87df0a2d7ef67db5eda5431e"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.9.2/plexus-archiver-4.9.2.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/4.12.0/plexus-archiver-4.12.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-classworlds|2.2.3",
+      "id": "maven|org.codehaus.plexus:plexus-build-api|1.2.0",
       "ecosystem": "maven",
-      "name": "org.codehaus.plexus:plexus-classworlds",
-      "version": "2.2.3",
+      "name": "org.codehaus.plexus:plexus-build-api",
+      "version": "1.2.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:7d95ad21733b060bfda2142b62439a196bde7644f9f127c299ae86d92179b518"
+        "sha256:570ae55a95e1887c3004882d30dc4e9035d2a46ba8d58b991de04175f141d88f"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-build-api/1.2.0/plexus-build-api-1.2.0.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-cipher|2.0",
+      "ecosystem": "maven",
+      "name": "org.codehaus.plexus:plexus-cipher",
+      "version": "2.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:9a7f1b5c5a9effd61eadfd8731452a2f76a8e79111fac391ef75ea801bea203a"
+      ],
       "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-cipher/2.0/plexus-cipher-2.0.pom",
       "unmodified": true
     },
     {
@@ -3806,60 +4073,79 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-compiler-api|2.15.0",
+      "id": "maven|org.codehaus.plexus:plexus-classworlds|2.9.0",
+      "ecosystem": "maven",
+      "name": "org.codehaus.plexus:plexus-classworlds",
+      "version": "2.9.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:1ad3292cd563381e3fd632f3fded1988f9e9b2be7a9f3db63ff4c4cedba13fa5"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.9.0/plexus-classworlds-2.9.0.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-compiler-api|2.17.0",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-compiler-api",
-      "version": "2.15.0",
+      "version": "2.17.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:d31d744eb69f77dffd3722dca4094758e0f90e79918a7b3b9fdc37ce49b60342"
+        "sha256:b748c05658b1fed1ceb73f527a05983593572e351d90b411f780ed1fa05b4afa"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.15.0/plexus-compiler-api-2.15.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.17.0/plexus-compiler-api-2.17.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-compiler-javac|2.15.0",
+      "id": "maven|org.codehaus.plexus:plexus-compiler-javac|2.17.0",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-compiler-javac",
-      "version": "2.15.0",
+      "version": "2.17.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:89603334988453b9cf4d7ec404d4b54f140de28b678d6a8e8edc448240dd0e90"
+        "sha256:b183ab7658582be5b77105a96b69a57643fa0098d30217b9bb19967881f61de4"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.15.0/plexus-compiler-javac-2.15.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.17.0/plexus-compiler-javac-2.17.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-compiler-manager|2.15.0",
+      "id": "maven|org.codehaus.plexus:plexus-compiler-manager|2.17.0",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-compiler-manager",
-      "version": "2.15.0",
+      "version": "2.17.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:c13b12c32a18b00e457de9b93cfc3d5593bfa1fb992b2c46a3498be1a77c4889"
+        "sha256:0f18f85a552c6d3f702867938985d75ec32632209384fe8d76edf8014cedf2c2"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.15.0/plexus-compiler-manager-2.15.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.17.0/plexus-compiler-manager-2.17.0.pom",
       "unmodified": true
     },
     {
@@ -3939,60 +4225,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-interactivity-api|1.3",
+      "id": "maven|org.codehaus.plexus:plexus-interactivity-api|1.5.1",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-interactivity-api",
-      "version": "1.3",
+      "version": "1.5.1",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:c26de0f7a578a82f8116aced2c3c62f5e06dc1815a8fe22b1af0c1467f2edb25"
+        "sha256:722519f8e7fd2e9cc0e1bc0ed9f678107f7144fdd26b412550da947d013b16ac"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.3/plexus-interactivity-api-1.3.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.codehaus.plexus:plexus-interpolation|1.14",
-      "ecosystem": "maven",
-      "name": "org.codehaus.plexus:plexus-interpolation",
-      "version": "1.14",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:7fc63378d3e84663619b9bedace9f9fe78b276c2be3c62ca2245449294c84176"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.codehaus.plexus:plexus-interpolation|1.26",
-      "ecosystem": "maven",
-      "name": "org.codehaus.plexus:plexus-interpolation",
-      "version": "1.26",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:b3b5412ce17889103ea564bcdfcf9fb3dfa540344ffeac6b538a73c9d7182662"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.26/plexus-interpolation-1.26.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.5.1/plexus-interactivity-api-1.5.1.pom",
       "unmodified": true
     },
     {
@@ -4015,22 +4263,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-io|3.4.2",
+      "id": "maven|org.codehaus.plexus:plexus-interpolation|1.28",
       "ecosystem": "maven",
-      "name": "org.codehaus.plexus:plexus-io",
-      "version": "3.4.2",
+      "name": "org.codehaus.plexus:plexus-interpolation",
+      "version": "1.28",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:6ba7fb0db6bfa348c248df3f983ae31318e9c14f35a86a932af5ffd7450aa62a"
+        "sha256:ab2a8715570438a2e4164d85ad3e8d489eabc38ea5093c2eb8ab7f58403535b5"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.4.2/plexus-io-3.4.2.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.28/plexus-interpolation-1.28.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-interpolation|1.29",
+      "ecosystem": "maven",
+      "name": "org.codehaus.plexus:plexus-interpolation",
+      "version": "1.29",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:088d444dbcedfb384630d8686697ece3c401d6f33c8f8b3aa7259ea1c6996878"
+      ],
       "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.29/plexus-interpolation-1.29.pom",
       "unmodified": true
     },
     {
@@ -4053,22 +4320,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-java|1.2.0",
+      "id": "maven|org.codehaus.plexus:plexus-java|1.6.0",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-java",
-      "version": "1.2.0",
+      "version": "1.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:4d2d63cdcad46feba432110ef64bcdc8f8fad48538fda5cd2253686b45a94304"
+        "sha256:6baf4d39fe0797a5d623218215568252b2b94049c984d71e8b4da2925e024705"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.2.0/plexus-java-1.2.0.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.6.0/plexus-java-1.6.0.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-sec-dispatcher|2.0",
+      "ecosystem": "maven",
+      "name": "org.codehaus.plexus:plexus-sec-dispatcher",
+      "version": "2.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:873139960c4c780176dda580b003a2c4bf82188bdce5bb99234e224ef7acfceb"
+      ],
       "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-sec-dispatcher/2.0/plexus-sec-dispatcher-2.0.pom",
       "unmodified": true
     },
     {
@@ -4091,60 +4377,60 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-utils|3.5.1",
+      "id": "maven|org.codehaus.plexus:plexus-utils|3.6.0",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-utils",
-      "version": "3.5.1",
+      "version": "3.6.0",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:86e0255d4c879c61b4833ed7f13124e8bb679df47debb127326e7db7dd49a07b"
+        "sha256:27ef130e32c236090e408fb5498d94cb9ea26d14070fb1c8985d607b62d098d1"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.6.0/plexus-utils-3.6.0.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-utils|4.0.0",
+      "id": "maven|org.codehaus.plexus:plexus-utils|3.6.2",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-utils",
-      "version": "4.0.0",
+      "version": "3.6.2",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:270cd703b48c6e5c8c691f1875f22d62d22cfe072c73ae2f5814d83d68c1da0b"
+        "sha256:7c2cdf8b4a02a2ee3f0514b8d74ad5eb6e2365eeb073a5cabd6f2d61d8f871df"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.0/plexus-utils-4.0.0.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.6.2/plexus-utils-3.6.2.pom",
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-utils|4.0.1",
+      "id": "maven|org.codehaus.plexus:plexus-utils|4.0.2",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-utils",
-      "version": "4.0.1",
+      "version": "4.0.2",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:96b9cc44439191d2d0635974e2d44e768736b4fb2abcb65f94cd95e41912fa8b"
+        "sha256:8957274e75fe2c278b1428dd16a0daeee1dd38152cb6eff816177ac28fccb697"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.2/plexus-utils-4.0.2.pom",
       "unmodified": true
     },
     {
@@ -4186,25 +4472,6 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.codehaus.plexus:plexus-xml|3.0.0",
-      "ecosystem": "maven",
-      "name": "org.codehaus.plexus:plexus-xml",
-      "version": "3.0.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:d2622dc9339b16f5b8c9cad2add440e965831d0e16f19ae1de24e1202b0de536"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.0/plexus-xml-3.0.0.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "maven|org.codehaus.plexus:plexus-xml|3.0.1",
       "ecosystem": "maven",
       "name": "org.codehaus.plexus:plexus-xml",
@@ -4221,6 +4488,44 @@
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.1/plexus-xml-3.0.1.pom",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-xml|3.0.2",
+      "ecosystem": "maven",
+      "name": "org.codehaus.plexus:plexus-xml",
+      "version": "3.0.2",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:6a49fe0c49a06b5bcd6073ff16580fcb0dd87c50295e97a9fa9f95619b69921c"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.2/plexus-xml-3.0.2.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-xml|3.1.0",
+      "ecosystem": "maven",
+      "name": "org.codehaus.plexus:plexus-xml",
+      "version": "3.1.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:c2bf931dd1512d228dd4cdbe755100df0430c3284e712b4d1d38795dd27629bd"
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.1.0/plexus-xml-3.1.0.pom",
       "unmodified": true
     },
     {
@@ -4262,22 +4567,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.cyclonedx:cyclonedx-maven-plugin|2.9.1",
+      "id": "maven|org.cyclonedx:cyclonedx-maven-plugin|2.9.3",
       "ecosystem": "maven",
       "name": "org.cyclonedx:cyclonedx-maven-plugin",
-      "version": "2.9.1",
+      "version": "2.9.3",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:698e0f37184a5b28c245c4065fd036dfce253b52f82fbb7113d81d36326cc249"
+        "sha256:c452d5eebe28bc86bef2e7c72d129f04f60877bef843eac8120f01fb655be293"
       ],
+      "class": "build-tool",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/cyclonedx/cyclonedx-maven-plugin/2.9.1/cyclonedx-maven-plugin-2.9.1.pom",
-      "class": "build-tool",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/cyclonedx/cyclonedx-maven-plugin/2.9.3/cyclonedx-maven-plugin-2.9.3.pom",
       "unmodified": true
     },
     {
@@ -4300,25 +4605,6 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.eclipse.sisu:org.eclipse.sisu.inject|0.9.0.M2",
-      "ecosystem": "maven",
-      "name": "org.eclipse.sisu:org.eclipse.sisu.inject",
-      "version": "0.9.0.M2",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:9b62bcfc352a2ec87da8b01e37c952a54d358bbb1af3f212648aeafe7ab2dbb5"
-      ],
-      "spdx": "EPL-1.0",
-      "electedSpdx": "EPL-1.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M2/org.eclipse.sisu.inject-0.9.0.M2.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "maven|org.eclipse.sisu:org.eclipse.sisu.inject|0.9.0.M3",
       "ecosystem": "maven",
       "name": "org.eclipse.sisu:org.eclipse.sisu.inject",
@@ -4335,6 +4621,25 @@
       "electedSpdx": "EPL-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M3/org.eclipse.sisu.inject-0.9.0.M3.pom",
       "class": "build-tool",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.eclipse.sisu:org.eclipse.sisu.inject|0.9.0.M4",
+      "ecosystem": "maven",
+      "name": "org.eclipse.sisu:org.eclipse.sisu.inject",
+      "version": "0.9.0.M4",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:1cbd7a965a5e2a9ea823bab311962a4e5aa5c240705bdbad5a52b40ffdfa1004"
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.9.0.M4/org.eclipse.sisu.inject-0.9.0.M4.pom",
       "unmodified": true
     },
     {
@@ -4395,6 +4700,25 @@
       "unmodified": true
     },
     {
+      "id": "maven|org.eclipse.sisu:org.eclipse.sisu.plexus|0.9.0.M4",
+      "ecosystem": "maven",
+      "name": "org.eclipse.sisu:org.eclipse.sisu.plexus",
+      "version": "0.9.0.M4",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:b90579bc652eac7331436e0a25533fce14130b9c6e015f2dd3a3d4bb07e942b7"
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.9.0.M4/org.eclipse.sisu.plexus-0.9.0.M4.pom",
+      "unmodified": true
+    },
+    {
       "id": "maven|org.hamcrest:hamcrest|2.2",
       "ecosystem": "maven",
       "name": "org.hamcrest:hamcrest",
@@ -4410,25 +4734,6 @@
       "spdx": "BSD-3-Clause",
       "electedSpdx": "BSD-3-Clause",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest/2.2/hamcrest-2.2.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.iq80.snappy:snappy|0.4",
-      "ecosystem": "maven",
-      "name": "org.iq80.snappy:snappy",
-      "version": "0.4",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:46a0c87d504ce9d6063e1ff6e4d20738feb49d8abf85b5071a7d18df4f11bac9"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom",
       "class": "build-tool",
       "unmodified": true
     },
@@ -4454,22 +4759,41 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.jsoup:jsoup|1.17.2",
+      "id": "maven|org.jsoup:jsoup|1.23.2",
       "ecosystem": "maven",
       "name": "org.jsoup:jsoup",
-      "version": "1.17.2",
+      "version": "1.23.2",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:f60b33b38e9d7ac93eaaa68a6c70f706bb99036494b2e2add2bfee11d09ac6f5"
+        "sha256:e9d8c856856680427f096d156f02a414289985c930998fcb519ce5be39b42003"
       ],
+      "class": "build-tool",
       "spdx": "MIT",
       "electedSpdx": "MIT",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.17.2/jsoup-1.17.2.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.23.2/jsoup-1.23.2.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.jspecify:jspecify|1.0.0",
+      "ecosystem": "maven",
+      "name": "org.jspecify:jspecify",
+      "version": "1.0.0",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:1fad6e6be7557781e4d33729d49ae1cdc8fdda6fe477bb0cc68ce351eafdfbab"
+      ],
       "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.pom",
       "unmodified": true
     },
     {
@@ -4684,42 +5008,60 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.ow2.asm:asm|9.6",
+      "id": "maven|org.ow2.asm:asm|9.10.1",
       "ecosystem": "maven",
       "name": "org.ow2.asm:asm",
-      "version": "9.6",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml",
-        "services/identity/pom.xml"
-      ],
-      "integrities": [
-        "sha256:3c6fac2424db3d4a853b669f4e3d1d9c3c552235e19a319673f887083c2303a1"
-      ],
-      "spdx": "BSD-3-Clause",
-      "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.6/asm-9.6.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.ow2.asm:asm|9.7",
-      "ecosystem": "maven",
-      "name": "org.ow2.asm:asm",
-      "version": "9.7",
+      "version": "9.10.1",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:adf46d5e34940bdf148ecdd26a9ee8eea94496a72034ff7141066b3eea5c4e9d"
+        "sha256:ed825d10ab1399c8c0cb669e688cf0c8c82629b4c8399b58352b68e92ca10fcb"
       ],
+      "class": "build-tool",
       "spdx": "BSD-3-Clause",
       "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7/asm-9.7.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.10.1/asm-9.10.1.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.ow2.asm:asm|9.7.1",
+      "ecosystem": "maven",
+      "name": "org.ow2.asm:asm",
+      "version": "9.7.1",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "services/identity/pom.xml"
+      ],
+      "integrities": [
+        "sha256:8cadd43ac5eb6d09de05faecca38b917a040bb9139c7edeb4cc81c740b713281"
+      ],
       "class": "build-tool",
+      "spdx": "BSD-3-Clause",
+      "electedSpdx": "BSD-3-Clause",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7.1/asm-9.7.1.pom",
+      "unmodified": true
+    },
+    {
+      "id": "maven|org.ow2.asm:asm|9.8",
+      "ecosystem": "maven",
+      "name": "org.ow2.asm:asm",
+      "version": "9.8",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:876eab6a83daecad5ca67eb9fcabb063c97b5aeb8cf1fca7a989ecde17522051"
+      ],
+      "class": "build-tool",
+      "spdx": "BSD-3-Clause",
+      "electedSpdx": "BSD-3-Clause",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.8/asm-9.8.pom",
       "unmodified": true
     },
     {
@@ -4829,82 +5171,6 @@
       }
     },
     {
-      "id": "maven|org.sonatype.aether:aether-api|1.7",
-      "ecosystem": "maven",
-      "name": "org.sonatype.aether:aether-api",
-      "version": "1.7",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:1c5c5ac5e8f29aefc8faa051ffa14eccd85b9e20f4bb35dc82fba7d5da50d326"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.sonatype.aether:aether-impl|1.7",
-      "ecosystem": "maven",
-      "name": "org.sonatype.aether:aether-impl",
-      "version": "1.7",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:288149850d8d131763df4151f7e443fd2739e48510a6e4cfe49ca082c76130fa"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.sonatype.aether:aether-spi|1.7",
-      "ecosystem": "maven",
-      "name": "org.sonatype.aether:aether-spi",
-      "version": "1.7",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:f54a0a28ce3d62af0e1cfe41dde616f645c28e452e77f77b78bc36e74d5e1a69"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.sonatype.aether:aether-util|1.7",
-      "ecosystem": "maven",
-      "name": "org.sonatype.aether:aether-util",
-      "version": "1.7",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:ff690ffc550b7ada3a4b79ef4ca89bf002b24f43a13a35d10195c3bba63d7654"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
       "id": "maven|org.sonatype.plexus:plexus-build-api|0.0.7",
       "ecosystem": "maven",
       "name": "org.sonatype.plexus:plexus-build-api",
@@ -4920,44 +5186,6 @@
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.sonatype.plexus:plexus-cipher|1.4",
-      "ecosystem": "maven",
-      "name": "org.sonatype.plexus:plexus-cipher",
-      "version": "1.4",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:5a15fdba22669e0fdd06e10dcce6320879e1f7398fbc910cd0677b50672a78c4"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom",
-      "class": "build-tool",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.sonatype.plexus:plexus-sec-dispatcher|1.3",
-      "ecosystem": "maven",
-      "name": "org.sonatype.plexus:plexus-sec-dispatcher",
-      "version": "1.3",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:3b0559bb8432f28937efe6ca193ef54a8506d0075d73fd7406b9b116c6a11063"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom",
       "class": "build-tool",
       "unmodified": true
     },
@@ -5459,24 +5687,22 @@
       "unmodified": true
     },
     {
-      "id": "maven|org.tukaani:xz|1.9",
+      "id": "maven|org.tukaani:xz|1.12",
       "ecosystem": "maven",
       "name": "org.tukaani:xz",
-      "version": "1.9",
+      "version": "1.12",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:211b306cfc44f8f96df3a0a3ddaf75ba8c5289eed77d60d72f889bb855f535e5"
+        "sha256:3e158a87bd73d8afb4b6e8239c013b7d049c48563f45860ce99cd2e448cf4a6b"
       ],
-      "notice": "security/licences/LicenseRef-public-domain-xz-1.9.txt",
-      "licenceTextSHA256": "63997db6203cd0ef500120f746c2901f0ead9c1ef690025842197afd3f1a2453",
-      "spdx": "LicenseRef-public-domain-xz-1.9",
-      "electedSpdx": "LicenseRef-public-domain-xz-1.9",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/tukaani/xz/1.9/xz-1.9.pom",
       "class": "build-tool",
+      "spdx": "0BSD",
+      "electedSpdx": "0BSD",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/tukaani/xz/1.12/xz-1.12.pom",
       "unmodified": true
     },
     {
@@ -5638,10 +5864,10 @@
       }
     },
     {
-      "id": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0",
+      "id": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
       "ecosystem": "oci-image",
       "name": "ghcr.io/cloudnative-pg/postgresql",
-      "version": "sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0",
+      "version": "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
       "recordedOn": "2026-10-20",
       "verifiedOn": "2026-10-20",
       "locations": [
@@ -5649,17 +5875,54 @@
         "dev/kind/pins.json"
       ],
       "integrities": [
-        "sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0"
+        "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3"
       ],
-      "notes": "Primary upstream project/container packaging licence; full image and OS-package licence SBOM is pending IOT-WO-02 Part B under the dated baseline. Existing source input; no deployment claim.",
+      "class": "allowed",
       "spdx": "Apache-2.0 AND PostgreSQL",
       "electedSpdx": "Apache-2.0 AND PostgreSQL",
-      "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/main/LICENSE",
-      "class": "allowed",
+      "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/ff34de135f29e04a841247ea9686d7a80b663005/LICENSE",
+      "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
+        "status": "pending",
+        "criteria": {
+          "maturity": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "governance": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "activitySupport": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "securityProcess": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "supplyChain": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          },
+          "adoption": {
+            "result": "pending",
+            "date": "2026-10-20",
+            "evidence": "https://github.com/amazen33/EdgePulse/tree/codex/iot-wo-02-b/security/evidence/supply-chain",
+            "notes": "Qualification remains pending until evidence and reviewed scan pass exist."
+          }
+        }
       }
     },
     {

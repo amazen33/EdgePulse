@@ -362,21 +362,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.30": {
-        "sha256": "d864335255fe8b501a8be7df1c79de8257638f5bedfb358497cf1a2b215a8fa0",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.30": {
-        "sha256": "b8c40628e3f64fe6cd051107f81cd67b13c081d9bf7c7804638a35e728e9079c",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.30": {
-        "sha256": "a08423038bc647a0b6f0f31db3c67effaae452d4bf094becb030a933f3d5398e",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|org.apache.tomcat:annotations-api|6.0.53": {
         "sha256": "3cb2fef8e05a671aa45b495fae27f9a6129086aa689703a57d6421847839c37b",
         "tier": 2,
@@ -497,11 +482,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0": {
-        "sha256": "bbcb4583ecfefd07b11857bee8d7e557c30a91b91c649e6f9920aa805d017d13",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463": {
         "sha256": "5cb273f5aa686b1a3d8c04a8254a473b74478a535c1f2af5af3731c9c7094875",
         "tier": 2,
@@ -538,7 +518,7 @@
     },
     {
       "goals": [
-        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom"
       ],
       "profiles": [],
       "pom": "pom.xml",
@@ -552,7 +532,7 @@
     },
     {
       "goals": [
-        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom"
       ],
       "profiles": [],
       "pom": "pom.xml",
@@ -566,7 +546,7 @@
     },
     {
       "goals": [
-        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom"
       ],
       "profiles": [],
       "pom": "target/licence/plugin-project-executed/plugin-*/pom.xml",
@@ -580,7 +560,7 @@
     },
     {
       "goals": [
-        "org.apache.maven.plugins:maven-help-plugin:3.5.1:effective-pom"
+        "org.apache.maven.plugins:maven-help-plugin:3.5.2:effective-pom"
       ],
       "profiles": [],
       "pom": "pom.xml",

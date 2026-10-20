@@ -181,5 +181,82 @@
     "source": "https://repo.maven.apache.org/maven2/eu/maveniverse/maven/domtrip/domtrip-core/1.5.1/domtrip-core-1.5.1.pom",
     "readOn": "2026-10-20",
     "reason": "Exact-version POM header and declared EPLv2 link identify Eclipse Public License 2.0; build plugin classpath only."
+  },
+  "ch.qos.logback:logback-classic:1.5.38": {
+    "sbomLicenses": [
+      {
+        "license": {
+          "id": "EPL-2.0",
+          "url": "https://www.eclipse.org/legal/epl-2.0"
+        }
+      },
+      {
+        "license": {
+          "id": "LGPL-2.1-only",
+          "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html"
+        }
+      }
+    ],
+    "spdx": "EPL-2.0 OR LGPL-2.1-only",
+    "electedSpdx": "EPL-2.0",
+    "source": "https://github.com/qos-ch/logback/blob/v_1.5.38/LICENSE.txt",
+    "readOn": "2026-10-20",
+    "reason": "Exact-version upstream text reviewed; explicit build-only election under ADR 0026, no shipped permission."
+  },
+  "ch.qos.logback:logback-core:1.5.38": {
+    "sbomLicenses": [
+      {
+        "license": {
+          "id": "EPL-2.0",
+          "url": "https://www.eclipse.org/legal/epl-2.0"
+        }
+      },
+      {
+        "license": {
+          "id": "LGPL-2.1-only",
+          "url": "https://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html"
+        }
+      }
+    ],
+    "spdx": "EPL-2.0 OR LGPL-2.1-only",
+    "electedSpdx": "EPL-2.0",
+    "source": "https://github.com/qos-ch/logback/blob/v_1.5.38/LICENSE.txt",
+    "readOn": "2026-10-20",
+    "reason": "Exact-version upstream text reviewed; explicit build-only election under ADR 0026, no shipped permission."
+  },
+  "com.github.javaparser:javaparser-core:3.28.2": {
+    "sbomLicenses": [
+      {
+        "license": {
+          "name": "GNU Lesser General Public License",
+          "url": "http://www.gnu.org/licenses/lgpl-3.0.html"
+        }
+      },
+      {
+        "license": {
+          "id": "Apache-2.0"
+        }
+      }
+    ],
+    "spdx": "LGPL-3.0-or-later OR Apache-2.0",
+    "electedSpdx": "Apache-2.0",
+    "source": "https://github.com/javaparser/javaparser/blob/javaparser-parent-3.28.2/LICENSE",
+    "readOn": "2026-10-20",
+    "reason": "Exact-version upstream text reviewed; explicit build-only election under ADR 0026, no shipped permission."
+  },
+  "aopalliance:aopalliance:1.0": {
+    "sbomLicenses": [
+      {
+        "license": {
+          "name": "Public Domain"
+        }
+      }
+    ],
+    "spdx": "LicenseRef-public-domain-aopalliance",
+    "electedSpdx": "LicenseRef-public-domain-aopalliance",
+    "source": "https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar",
+    "readOn": "2026-10-20",
+    "reason": "Exact-version upstream text reviewed; explicit build-only election under ADR 0026, no shipped permission.",
+    "notice": "security/licences/LicenseRef-public-domain-aopalliance.txt"
   }
 }
