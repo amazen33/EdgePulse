@@ -178,6 +178,10 @@ def enumerate_maven(root, register, add):
                     for x in doc['pluginModules']}
     if not set(selected) <= plugin_roots:
         raise ValueError('Executed plugin classpath evidence missing')
+    # IOT-WO-06 ruling 2026-10-21. POM imports are separate build inputs;
+    # importing a coordinate never exempts a runtime or packaged observation.
+    from maven_boms import enumerate_boms, reject_packaged_boms
+    imported_boms = enumerate_boms(root, doc, add)
     seen, shipping_archives = set(), []
     for pom, module in doc['modules'].items():
         all_components, all_reached = bom_graph(root / module['allBom'])
@@ -196,6 +200,8 @@ def enumerate_maven(root, register, add):
                 raise ValueError('Unsupported Maven SBOM component identity')
             name, version = bom.get('group', '') + ':' + bom['name'], bom['version']
             scope = scopes[(name, version)]
+            if (name, version) in imported_boms and scope != 'test':
+                raise ValueError('Imported BOM coordinate reachable at runtime: ' + name + ':' + version)
             shipped = scope != 'test'
             bom_shipped = ref in non_test_reached
             if bom.get('group') == GROUP:
@@ -259,6 +265,7 @@ def enumerate_maven(root, register, add):
                 hashes=[x['content'] for x in bom.get('hashes', []) if x['alg'] == 'SHA-256'])
     packaged = set().union(*(nested_jars(p) for p in shipping_archives)) if shipping_archives else set()
     for archive in shipping_archives:
+        reject_packaged_boms(archive, imported_boms)
         with zipfile.ZipFile(archive) as jar:
             if any(n.startswith(('org/junit/', 'com/tngtech/archunit/', 'org/apache/maven/'))
                    for n in jar.namelist()):

@@ -1,0 +1,1678 @@
+{
+  "ruling": "IOT-WO-06 ruling 2026-10-21",
+  "scope": "Every BOM import in reactor and resolved dependency/executed-plugin POM models. Exact POM bytes; no runtime classification inferred.",
+  "components": [
+    {
+      "name": "com.fasterxml.jackson:jackson-bom",
+      "version": "2.17.2",
+      "sha256": "1f472b0bc2004d5cf421ac48871417f84189e78f35c049718387fd8b44fb9f32",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.17.2/jackson-bom-2.17.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "com.fasterxml.jackson:jackson-bom",
+      "version": "2.18.11",
+      "sha256": "3d929643b852c463090a3597c63d04fcb88d9bc0f22c5a0c781ae624b49deb40",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.18.11/jackson-bom-2.18.11.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "com.fasterxml.jackson:jackson-bom",
+      "version": "2.19.2",
+      "sha256": "22006be70fd018099e99c6c27ac0982320f3a0f3c2ce053c55703579a5eea303",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.19.2/jackson-bom-2.19.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "com.fasterxml.jackson:jackson-bom",
+      "version": "2.20.1",
+      "sha256": "0c6467ed4c8c7392524ce703ca6ce3ed88596eec390f13b0c264f2f961308a54",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.20.1/jackson-bom-2.20.1.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "com.google.protobuf:protobuf-bom",
+      "version": "3.21.10",
+      "sha256": "70543163bce890e8b6a97c5a6d8051e08fdc7d739eef495374f7cbb06ac0ca44",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-bom/3.21.10/protobuf-bom-3.21.10.pom",
+      "licences": [
+        {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/licenses/BSD-3-Clause"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "BSD-3-Clause",
+      "electedSpdx": "BSD-3-Clause"
+    },
+    {
+      "name": "com.google.protobuf:protobuf-bom",
+      "version": "3.25.5",
+      "sha256": "080e2984173238b50e064c226afffbb1b0233520295c790a7fd3d6ae4593f063",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-bom/3.25.5/protobuf-bom-3.25.5.pom",
+      "licences": [
+        {
+          "name": "BSD-3-Clause",
+          "url": "https://opensource.org/licenses/BSD-3-Clause"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "BSD-3-Clause",
+      "electedSpdx": "BSD-3-Clause"
+    },
+    {
+      "name": "com.querydsl:querydsl-bom",
+      "version": "5.1.0",
+      "sha256": "8853dce132c9ece4c295c7f4d4f3c2832eee0d7d44930870c0666fa72043ca56",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/querydsl/querydsl-bom/5.1.0/querydsl-bom-5.1.0.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "com.squareup.okhttp3:okhttp-bom",
+      "version": "4.12.0",
+      "sha256": "780838ee67f2a1ee580887de8a748e5b259f9e81542e1c4244d5042659922e14",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-bom/4.12.0/okhttp-bom-4.12.0.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.fabric8:kubernetes-client-bom",
+      "version": "6.9.2",
+      "sha256": "d6bede8c2c978fa44fbaf15c99bca76a6246d6077e229b3c59aad241d715aab4",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/fabric8/kubernetes-client-bom/6.9.2/kubernetes-client-bom-6.9.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.github.openfeign:feign-bom",
+      "version": "13.3",
+      "sha256": "d40b85ded5edc174e9927fcb699eb2bb66036eed65e9becb1976d8c741971302",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/github/openfeign/feign-bom/13.3/feign-bom-13.3.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.github.resilience4j:resilience4j-bom",
+      "version": "2.1.0",
+      "sha256": "09eafe8b2addc9d8165afcd5301ba1a9631f13c35ec69ea20a43f0c1d3ec88f4",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/github/resilience4j/resilience4j-bom/2.1.0/resilience4j-bom-2.1.0.pom",
+      "licences": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://github.com/resilience4j/resilience4j/blob/master/LICENSE.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.grpc:grpc-bom",
+      "version": "1.68.1",
+      "sha256": "406a7692d6d85f234cd22c42556236b3af58fcfd5a91962c6fde9a241cbfefd3",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/grpc/grpc-bom/1.68.1/grpc-bom-1.68.1.pom",
+      "licences": [
+        {
+          "name": "Apache 2.0",
+          "url": "https://opensource.org/licenses/Apache-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.micrometer:micrometer-bom",
+      "version": "1.13.4",
+      "sha256": "af7e0be05e24b13f967e18056b38643af3d585231b963e3bbdafdd352ea1c352",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-bom/1.13.4/micrometer-bom-1.13.4.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.micrometer:micrometer-tracing-bom",
+      "version": "1.3.4",
+      "sha256": "0f8c22f9862108c97a512860650b72a932c3cf900a6d923fbb3b172cc40fde57",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-tracing-bom/1.3.4/micrometer-tracing-bom-1.3.4.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.netty:netty-bom",
+      "version": "4.1.113.Final",
+      "sha256": "e5ac44e41a4b5c87910b4e72a67ee73332635032cfaedee8a83fb2fb94cbf440",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.1.113.Final/netty-bom-4.1.113.Final.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.netty:netty-bom",
+      "version": "4.2.17.Final",
+      "sha256": "0951aa35bdcbf6dbc87af75a67e9af43c01687ed571f77c2e9195417c3afe969",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/netty/netty-bom/4.2.17.Final/netty-bom-4.2.17.Final.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.opentelemetry:opentelemetry-bom",
+      "version": "1.37.0",
+      "sha256": "c1409111c5a85ad8905630e1ca4eaaeea9379f2c78a3a1939883c009e6ff2409",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/opentelemetry/opentelemetry-bom/1.37.0/opentelemetry-bom-1.37.0.pom",
+      "licences": [
+        {
+          "name": "The Apache License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.projectreactor:reactor-bom",
+      "version": "2023.0.10",
+      "sha256": "84e86099681e39fb999b6defea3975b0dbd1ec5a362a8b59d976ce2cb1aeb79e",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/projectreactor/reactor-bom/2023.0.10/reactor-bom-2023.0.10.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.prometheus:prometheus-metrics-bom",
+      "version": "1.2.1",
+      "sha256": "8da77a7d98063f48152ebe8b5f5a7e0a7163e499fdd22048f1966756020e6a7b",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/prometheus/prometheus-metrics-bom/1.2.1/prometheus-metrics-bom-1.2.1.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.prometheus:simpleclient_bom",
+      "version": "0.16.0",
+      "sha256": "af441d3295de11a70e35febeb3d919ba2ed17552753163325b954d53594d55c3",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/prometheus/simpleclient_bom/0.16.0/simpleclient_bom-0.16.0.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.rest-assured:rest-assured-bom",
+      "version": "5.4.0",
+      "sha256": "3f03da385d3fc79ccca5b32236e2bd20e45c8049501cd0317e7f8d966082d6ab",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/rest-assured/rest-assured-bom/5.4.0/rest-assured-bom-5.4.0.pom",
+      "licences": [
+        {
+          "name": "Apache 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.rsocket:rsocket-bom",
+      "version": "1.1.3",
+      "sha256": "e5ccd8fed3415bb4385e4d0787e3e33624cb2c7c002d2550c39788f2bb9b0fae",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/rsocket/rsocket-bom/1.1.3/rsocket-bom-1.1.3.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.zipkin.brave:brave-bom",
+      "version": "6.0.3",
+      "sha256": "3d1a3ebff9597d16e8998a1053dfcc5b2e5f10773e5da66161c43d288ca614f1",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/zipkin/brave/brave-bom/6.0.3/brave-bom-6.0.3.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "io.zipkin.reporter2:zipkin-reporter-bom",
+      "version": "3.4.2",
+      "sha256": "d9d56cea4aebc2a4b4deb6f9ddf21e7d54dada9a6a132be27235c11530d4f518",
+      "pomURL": "https://repo.maven.apache.org/maven2/io/zipkin/reporter2/zipkin-reporter-bom/3.4.2/zipkin-reporter-bom-3.4.2.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "jakarta.platform:jakarta.jakartaee-bom",
+      "version": "9.1.0",
+      "sha256": "df98e0266219fdbb82562826d79a3a20776a8ba02aa787f0f0765a538654c8a4",
+      "pomURL": "https://repo.maven.apache.org/maven2/jakarta/platform/jakarta.jakartaee-bom/9.1.0/jakarta.jakartaee-bom-9.1.0.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v. 2.0",
+          "url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt"
+        },
+        {
+          "name": "GNU General Public License, version 2 with the GNU Classpath Exception",
+          "url": "https://www.gnu.org/software/classpath/license.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.apache.activemq:activemq-bom",
+      "version": "6.1.3",
+      "sha256": "f69b165f3af04be4bdd702d70efddbad3dc0321d1795484dd3958a627741d372",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/activemq/activemq-bom/6.1.3/activemq-bom-6.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.apache.activemq:artemis-bom",
+      "version": "2.33.0",
+      "sha256": "02c0fea0e8e6ab94663b42eff3b71613be2b941c54a0aad8f5d07c13720242f2",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/activemq/artemis-bom/2.33.0/artemis-bom-2.33.0.pom",
+      "licences": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.apache.cassandra:java-driver-bom",
+      "version": "4.18.1",
+      "sha256": "84c8643b0f01ae44762f22cb79820c4961ce58bdb51743329f6f2038713c9b65",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/cassandra/java-driver-bom/4.18.1/java-driver-bom-4.18.1.pom",
+      "licences": [
+        {
+          "name": "Apache 2",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.apache.groovy:groovy-bom",
+      "version": "4.0.23",
+      "sha256": "f87690727ad21a30c7409791a29c3b5a5d5bea961a87d139d899d30ab42521a8",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.23/groovy-bom-4.0.23.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.apache.groovy:groovy-bom",
+      "version": "4.0.27",
+      "sha256": "aa44eb52bfdfe61d27b3e450d2b348d88deaa3437ab4d9d49a84095348f9f6fb",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/groovy/groovy-bom/4.0.27/groovy-bom-4.0.27.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.apache.logging.log4j:log4j-bom",
+      "version": "2.23.1",
+      "sha256": "372396e0458d4cd32c096cadabe0cc9330ec10f4f57fa3be2e74f79b5e178a35",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-bom/2.23.1/log4j-bom-2.23.1.pom",
+      "licences": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.apache.logging.log4j:log4j-bom",
+      "version": "2.26.1",
+      "sha256": "4415ad189dd04db54958a43e23b37cc397a1edee9e888214b8bd47fbe819072e",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-bom/2.26.1/log4j-bom-2.26.1.pom",
+      "licences": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.apache.pulsar:pulsar-bom",
+      "version": "3.2.4",
+      "sha256": "b589e35140d1ab960047e4d51e18a83b07696ea859c6d062cd0a66147f7534fd",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/apache/pulsar/pulsar-bom/3.2.4/pulsar-bom-3.2.4.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.assertj:assertj-bom",
+      "version": "3.25.3",
+      "sha256": "91b7a19b77af5462c7290b91ac7c72c44d6483afea0b62536816e98f8d53f257",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.25.3/assertj-bom-3.25.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.assertj:assertj-bom",
+      "version": "3.27.7",
+      "sha256": "1c09f6c04c905e1e5cdb22d5dfa5f11a496e19e881de0850b523ed53a0519f5b",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.27.7/assertj-bom-3.27.7.pom",
+      "licences": [
+        {
+          "name": "Apache-2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.eclipse.jetty.ee10:jetty-ee10-bom",
+      "version": "12.0.13",
+      "sha256": "9e7754ff4ab2384ba383ac10b0753964752f1c2e9dd762079d440fa36cab69f4",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/ee10/jetty-ee10-bom/12.0.13/jetty-ee10-bom-12.0.13.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License - Version 2.0",
+          "url": "https://www.eclipse.org/legal/epl-2.0/"
+        },
+        {
+          "name": "Apache Software License - Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0 OR Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.eclipse.jetty:jetty-bom",
+      "version": "12.0.13",
+      "sha256": "83b6acd988754836b2be1df8c07944af7dd4ea914aa60c0491541b7e21c972bb",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/eclipse/jetty/jetty-bom/12.0.13/jetty-bom-12.0.13.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License - Version 2.0",
+          "url": "https://www.eclipse.org/legal/epl-2.0/"
+        },
+        {
+          "name": "Apache Software License - Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0 OR Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.glassfish.jaxb:jaxb-bom",
+      "version": "4.0.5",
+      "sha256": "ec97ec42d937d3c89519797e44246f80de0850819ac7a7ae675c4497b7075c39",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-bom/4.0.5/jaxb-bom-4.0.5.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v. 2.0",
+          "url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt"
+        },
+        {
+          "name": "GNU General Public License, version 2 with the GNU Classpath Exception",
+          "url": "https://www.gnu.org/software/classpath/license.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.glassfish.jersey:jersey-bom",
+      "version": "3.1.8",
+      "sha256": "2a5ab2015eb1e0fcef4989d448fb6dc8befe2ccf3b3d13863e186d62c7bbed16",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/glassfish/jersey/jersey-bom/3.1.8/jersey-bom-3.1.8.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v. 2.0",
+          "url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt"
+        },
+        {
+          "name": "GNU General Public License, version 2 with the GNU Classpath Exception",
+          "url": "https://www.gnu.org/software/classpath/license.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.infinispan:infinispan-bom",
+      "version": "15.0.8.Final",
+      "sha256": "47d5148ed851313a37c2bb3d90bd5beddcadf4ecaf63f7761595659318b9e932",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/infinispan/infinispan-bom/15.0.8.Final/infinispan-bom-15.0.8.Final.pom",
+      "licences": [
+        {
+          "name": "Apache License 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.jetbrains.kotlin:kotlin-bom",
+      "version": "1.9.25",
+      "sha256": "199ae7a589eba1681846a9549a695cf3b0a42c1d92119a50a830ff12babba023",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-bom/1.9.25/kotlin-bom-1.9.25.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.jetbrains.kotlinx:kotlinx-coroutines-bom",
+      "version": "1.8.1",
+      "sha256": "563e4aa29fa8fe09a6e1746d0a5b51308f7c7dedc468dc5a0ca810a485877030",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.8.1/kotlinx-coroutines-bom-1.8.1.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.jetbrains.kotlinx:kotlinx-serialization-bom",
+      "version": "1.6.3",
+      "sha256": "29d69842bb7d449be2aa4ade6a4a7ce6aa55827d0ab13d168745fe6d95739332",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlinx/kotlinx-serialization-bom/1.6.3/kotlinx-serialization-bom-1.6.3.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.10.0",
+      "sha256": "e006dd8894f9fc7b75fc32bb12fe5ed8be65667d5b454f99e2e0b8c5bb8d30b3",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.0/junit-bom-5.10.0.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.10.1",
+      "sha256": "21c4b0286f4b20069577ff4b20978a85c100ac8a46b6f1c8672fbaab337bc3f2",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.1/junit-bom-5.10.1.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.10.2",
+      "sha256": "169dd904a4b0f6520cffe658cc62292bfe9f3c14a989fa92120724cde43a9968",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.2/junit-bom-5.10.2.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.10.3",
+      "sha256": "10937d44c425984cb8739225d34712e1a3145641ca93ac3f7ef186fa25f6babc",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.3/junit-bom-5.10.3.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.11.0",
+      "sha256": "e67459d4882424ac6374f40db1c8f4a2e88946b340ba072c80be932a2be4644d",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.0/junit-bom-5.11.0.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.11.1",
+      "sha256": "c72124a9c9a79910c1858766b72c350e1a39244cbfb4b076348fbfe078281965",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.1/junit-bom-5.11.1.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.11.2",
+      "sha256": "f48e88538aac145eb3ae0345a9ebd055b28f329a35dce8d1e9281325ca9b0ea2",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.2/junit-bom-5.11.2.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.11.4",
+      "sha256": "19d4b747b204805325b6334553296f986562277a4ac1cb5e593a5e4c4f5e4115",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.11.4/junit-bom-5.11.4.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.12.1",
+      "sha256": "7c826bc72beddc817dad9263027f9012a0f55a377d38df89c42932a2501c2bf0",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.12.1/junit-bom-5.12.1.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.12.2",
+      "sha256": "cef80fec86454f6806bfb0df24669b5c6f32e2cb728539ea859f47dfdc9bbc17",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.12.2/junit-bom-5.12.2.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.13.1",
+      "sha256": "fa68451ea830572ed43ffe51d75b6a05f7a5e665a602a51f49d6be02063a65f3",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.13.1/junit-bom-5.13.1.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.13.4",
+      "sha256": "d7a08a99b2502f0bb68cd4e1f984f0bf69324aaa208bd0f73366c03fc3548a42",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.13.4/junit-bom-5.13.4.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.14.0",
+      "sha256": "f5aa47b366483e8d1f9bef10e67a0c66f66afc0f331c9f966b1310bad60d0f6f",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.0/junit-bom-5.14.0.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.14.1",
+      "sha256": "01b01dfa366550b40ac5760548a7d728b6109d17c451e83864d1e5e0ce862c94",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.1/junit-bom-5.14.1.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.14.2",
+      "sha256": "ed2dcc7855bd460bccc93a1bf0c962e63b566ff7d8f1ded0f1f2593ba8183aaf",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.2/junit-bom-5.14.2.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.14.4",
+      "sha256": "5706e8f29a0a07f56efbbea4a0670793414194bb8d24d8143ba1e787a2f32856",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.14.4/junit-bom-5.14.4.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.junit:junit-bom",
+      "version": "5.9.3",
+      "sha256": "4d0329cd9e72f2420e5ca15724cbfe6ffa6e5fd2888361516271190fdc342ed7",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.3/junit-bom-5.9.3.pom",
+      "licences": [
+        {
+          "name": "Eclipse Public License v2.0",
+          "url": "https://www.eclipse.org/legal/epl-v20.html"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "EPL-2.0",
+      "electedSpdx": "EPL-2.0"
+    },
+    {
+      "name": "org.mockito:mockito-bom",
+      "version": "4.11.0",
+      "sha256": "d8531a746c988f7f68ed5f188cdea945006aea993ec5df9e524e0d27d61491da",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/4.11.0/mockito-bom-4.11.0.pom",
+      "licences": [
+        {
+          "name": "The MIT License",
+          "url": "https://github.com/mockito/mockito/blob/main/LICENSE"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "MIT",
+      "electedSpdx": "MIT"
+    },
+    {
+      "name": "org.mockito:mockito-bom",
+      "version": "5.11.0",
+      "sha256": "9d2f46b14c21ffcc8eb7f02901e37d9dc5497e65843050184d1a2134071d56b3",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/mockito/mockito-bom/5.11.0/mockito-bom-5.11.0.pom",
+      "licences": [
+        {
+          "name": "MIT",
+          "url": "https://opensource.org/licenses/MIT"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "MIT",
+      "electedSpdx": "MIT"
+    },
+    {
+      "name": "org.seleniumhq.selenium:selenium-bom",
+      "version": "4.19.1",
+      "sha256": "f101f9fb1b6e0b39d3739499a00e821d35e1f3f6e817619137368260964cda68",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/seleniumhq/selenium/selenium-bom/4.19.1/selenium-bom-4.19.1.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "http://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.amqp:spring-amqp-bom",
+      "version": "3.1.7",
+      "sha256": "f80f141c14a0b4fd9f4fd9e39d9d6ce352d46a5d9584498f652f476aae9c7c0c",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/amqp/spring-amqp-bom/3.1.7/spring-amqp-bom-3.1.7.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.batch:spring-batch-bom",
+      "version": "5.1.2",
+      "sha256": "b15bd655bec44a22ca7bf56785ca4f7ee6d47003816aa07026d1746db102c008",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/batch/spring-batch-bom/5.1.2/spring-batch-bom-5.1.2.pom",
+      "licences": [
+        {
+          "name": "Apache 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-dependencies",
+      "version": "3.3.4",
+      "sha256": "c1c0df91f54e3d89e29248ff7424d27438ca526c78f0eb854b14ff0b24b836e4",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/3.3.4/spring-boot-dependencies-3.3.4.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-bus-dependencies",
+      "version": "4.1.2",
+      "sha256": "ec852eb651e405ccd9300b1c11ee446fe4a7f636bfd020c15896d14fcfa403d2",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-bus-dependencies/4.1.2/spring-cloud-bus-dependencies-4.1.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-circuitbreaker-dependencies",
+      "version": "3.1.2",
+      "sha256": "6a6e592306c0f0fd31d294f2709f3948c28a2f6889731dbac92b620b3951f6c5",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-circuitbreaker-dependencies/3.1.2/spring-cloud-circuitbreaker-dependencies-3.1.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-commons-dependencies",
+      "version": "4.1.4",
+      "sha256": "3fcd6547c718193829a1cc0ad2d00bead562d3b57e94f3cdb52631612d063959",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-commons-dependencies/4.1.4/spring-cloud-commons-dependencies-4.1.4.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-config-dependencies",
+      "version": "4.1.3",
+      "sha256": "fbcdd46c65e19efd67e90b773bb1155d5fa02b8744b74046c6cf5cf6b45fbc6c",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-config-dependencies/4.1.3/spring-cloud-config-dependencies-4.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-consul-dependencies",
+      "version": "4.1.2",
+      "sha256": "86294708d4a15dee9de8a95313371e079f32f90a9744a8b64639d99a1e2022fd",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-consul-dependencies/4.1.2/spring-cloud-consul-dependencies-4.1.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-contract-dependencies",
+      "version": "4.1.4",
+      "sha256": "c9937b96815447d74d395308e9b2f0a5b5aa5e5b77a36c2b6ab007b92e3cdea4",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-contract-dependencies/4.1.4/spring-cloud-contract-dependencies-4.1.4.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-dependencies",
+      "version": "2023.0.3",
+      "sha256": "831a494a2380d1089b17eed5c134e9b26863833ee04cf39bb0c639b5b9be3169",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-dependencies/2023.0.3/spring-cloud-dependencies-2023.0.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-function-dependencies",
+      "version": "4.1.3",
+      "sha256": "0ad7aaed2cf843383d4717bf2293ed1a1ce7a763df12c1f9a54bf1a3a222ea08",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-function-dependencies/4.1.3/spring-cloud-function-dependencies-4.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-gateway-dependencies",
+      "version": "4.1.5",
+      "sha256": "74262318e3cbf6f91cdd8b354655968c3459de47fb2d2b5b5b1bf7f6a005f121",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-gateway-dependencies/4.1.5/spring-cloud-gateway-dependencies-4.1.5.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-kubernetes-dependencies",
+      "version": "3.1.3",
+      "sha256": "bc2f8574ba7551642386ab0e6ee4db73e42b4a8254dbb91ccdae4a28527c6ac6",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-kubernetes-dependencies/3.1.3/spring-cloud-kubernetes-dependencies-3.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-netflix-dependencies",
+      "version": "4.1.3",
+      "sha256": "e82da57fb64f5e6d4b3a12d49691dc3b91b5ea3901ff7e83c7545704d81694af",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-netflix-dependencies/4.1.3/spring-cloud-netflix-dependencies-4.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-openfeign-dependencies",
+      "version": "4.1.3",
+      "sha256": "41392491ce8ccdbd705799ceefd1462effdb6975cc6af433dc236d0bad868a6f",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-openfeign-dependencies/4.1.3/spring-cloud-openfeign-dependencies-4.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-stream-dependencies",
+      "version": "4.1.3",
+      "sha256": "2f7dd8ad96c92cffd3ef78d5308983c4d272035ca3eca409dbd2c376c8d178a6",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-stream-dependencies/4.1.3/spring-cloud-stream-dependencies-4.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-task-dependencies",
+      "version": "3.1.2",
+      "sha256": "341f40bd7194c417a77783bb2d5c6ec2c1732ddaa47d2486737f6cc2a5596953",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-task-dependencies/3.1.2/spring-cloud-task-dependencies-3.1.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-vault-dependencies",
+      "version": "4.1.3",
+      "sha256": "a3346a2f347f81d14f76313a13ee73d713b1b6f644ea34d6ee8d85a56aaf223e",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-vault-dependencies/4.1.3/spring-cloud-vault-dependencies-4.1.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.cloud:spring-cloud-zookeeper-dependencies",
+      "version": "4.1.2",
+      "sha256": "cbd8b1eb65200398df736be167459610f87f491187da001f04ffb5d08bf2aff8",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/cloud/spring-cloud-zookeeper-dependencies/4.1.2/spring-cloud-zookeeper-dependencies-4.1.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.data:spring-data-bom",
+      "version": "2024.0.4",
+      "sha256": "a92660a2da46231faa7288c0c759def298e53372171c0cf27e1e724b7ad8649a",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/data/spring-data-bom/2024.0.4/spring-data-bom-2024.0.4.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.integration:spring-integration-bom",
+      "version": "6.3.4",
+      "sha256": "c8fbe73f5ad1a9f191afda15dc8da61d20354c65123b61567656e15bfc92adcc",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/integration/spring-integration-bom/6.3.4/spring-integration-bom-6.3.4.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.pulsar:spring-pulsar-bom",
+      "version": "1.1.4",
+      "sha256": "fbb5c0d6b768e038847c622b887f90e7a45e5ebc0e857e29e4d4be3f1a6739cb",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/pulsar/spring-pulsar-bom/1.1.4/spring-pulsar-bom-1.1.4.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.restdocs:spring-restdocs-bom",
+      "version": "3.0.1",
+      "sha256": "5120225bcafe641dcc2667e90d348531719a50ebdd5f8af07fba345199ad58ce",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/restdocs/spring-restdocs-bom/3.0.1/spring-restdocs-bom-3.0.1.pom",
+      "licences": [
+        {
+          "name": "The Apache Software License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.security:spring-security-bom",
+      "version": "6.3.3",
+      "sha256": "e58e833922e3ca5ffa65a46e04bf826374d70769fdfb10f1040ef50f7429b656",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/security/spring-security-bom/6.3.3/spring-security-bom-6.3.3.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.session:spring-session-bom",
+      "version": "3.3.2",
+      "sha256": "25e79e1afc7fbe4d4fa5bb417840f29ed8bff91927c547e7bb24a8d5a0ce1b71",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/session/spring-session-bom/3.3.2/spring-session-bom-3.3.2.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework.ws:spring-ws-bom",
+      "version": "4.0.11",
+      "sha256": "79b71aa1c2bf8a449d30ac7e83aa893a8d008792fc294bc860261552fa10edf0",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/ws/spring-ws-bom/4.0.11/spring-ws-bom-4.0.11.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework:spring-framework-bom",
+      "version": "5.3.39",
+      "sha256": "f6d481093e75767cba1ac7e1db38f8f692cbe3e38744693371a75aeb21c6148b",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/5.3.39/spring-framework-bom-5.3.39.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.springframework:spring-framework-bom",
+      "version": "6.1.13",
+      "sha256": "e4e03603cb4d1e8c85fa13c60050b9c3353ec66668a2af8758a97db20f803d2d",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/springframework/spring-framework-bom/6.1.13/spring-framework-bom-6.1.13.pom",
+      "licences": [
+        {
+          "name": "Apache License, Version 2.0",
+          "url": "https://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0"
+    },
+    {
+      "name": "org.testcontainers:testcontainers-bom",
+      "version": "1.19.8",
+      "sha256": "364f24464bd26e87aff464e2d4917d3cc4d2f45342c2e32eba9be6a6193c954b",
+      "pomURL": "https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/1.19.8/testcontainers-bom-1.19.8.pom",
+      "licences": [
+        {
+          "name": "MIT",
+          "url": "http://opensource.org/licenses/MIT"
+        }
+      ],
+      "class": "build-tool",
+      "spdx": "MIT",
+      "electedSpdx": "MIT"
+    }
+  ],
+  "modelSources": {
+    "com.fasterxml.jackson.dataformat:jackson-dataformats-text:2.17.2": "e698323330a9a82c920e5a89b65b0f7225c8e733c122a18f796a04a6e31fa5cb",
+    "com.fasterxml.jackson.dataformat:jackson-dataformats-text:2.18.11": "389eecbcb8cec5ec948463d3b3c85ee6ae00396aba4dd0871829e96c6aceed73",
+    "com.fasterxml.jackson.dataformat:jackson-dataformats-text:2.18.3": "5673daacc6e855976decedeb46dc63395a6b1ac9a483e672f0831cf46fe06e25",
+    "com.fasterxml.jackson.module:jackson-modules-java8:2.17.2": "3f39c55109f51a228817b4b185e4351b9ef0501c09fc1e1a3075ae9547cc2d03",
+    "com.fasterxml.jackson.module:jackson-modules-java8:2.18.11": "f731726357dd086c3b1056b1ffc428a830b06a729b190c70ae9489b30122647b",
+    "com.fasterxml.jackson:jackson-base:2.17.2": "7cf9c59fbd14c9056747137b90d70a95e87760dfe1b82456b9f02317d5b56faf",
+    "com.fasterxml.jackson:jackson-base:2.18.11": "f0db390604b15535e42b9540dc2a4e74912a4ca73c4b2dfe88b8e6b24af18bfb",
+    "com.fasterxml.jackson:jackson-base:2.18.3": "d5bbfd3c8445230e498b6092de809afd65cf504d013932dab7b3dfd6e9f3a4fd",
+    "com.fasterxml.jackson:jackson-bom:2.17.2": "1f472b0bc2004d5cf421ac48871417f84189e78f35c049718387fd8b44fb9f32",
+    "com.fasterxml.jackson:jackson-bom:2.18.11": "3d929643b852c463090a3597c63d04fcb88d9bc0f22c5a0c781ae624b49deb40",
+    "com.fasterxml.jackson:jackson-bom:2.18.3": "f1d4c6aeb32118650c805fe9bbc5ee940fa8f2cd7d0f04fa4360551e9a27b290",
+    "com.fasterxml.jackson:jackson-bom:2.19.2": "22006be70fd018099e99c6c27ac0982320f3a0f3c2ce053c55703579a5eea303",
+    "com.fasterxml.jackson:jackson-bom:2.20.1": "0c6467ed4c8c7392524ce703ca6ce3ed88596eec390f13b0c264f2f961308a54",
+    "com.fasterxml.jackson:jackson-parent:2.17": "aee6de4a97283b040e43f4dad575e7b74796cd984d89276f7ec7567380c8a29d",
+    "com.fasterxml.jackson:jackson-parent:2.18.1": "d0822fac1a0226844b8ad445c920c49a4f619169d09b1010a7dfeed19910998c",
+    "com.fasterxml.jackson:jackson-parent:2.18.4": "916e9bbf43fc0994292f3fde2d385764bd21060c60dffe9c695c091978087d00",
+    "com.fasterxml.jackson:jackson-parent:2.19.3": "23d186c8d8cd06015d022c710c715423d660d49e2973b15870b029cc26018682",
+    "com.fasterxml.jackson:jackson-parent:2.20": "b43b7f5c62e86b164fae70ae17d6911c5db60799af01057360afda82e4845be5",
+    "com.fasterxml:oss-parent:55": "0f5e18f2b35ebf6d839f7fd549972883f696c210f9ae3230afd2c20ba886c04d",
+    "com.fasterxml:oss-parent:58": "5670e6ac1c4ddcc9d413cf87997a5da2efaa4d2abe439363af9ef102a0a09e40",
+    "com.fasterxml:oss-parent:59": "8e54db60e1080e03b6ddb96b14db3e3e6dbde244a713040204106c167f135233",
+    "com.fasterxml:oss-parent:61": "3649513cf597e9186da0855986a8c543e12bdbd805edeef9c124db56dd036544",
+    "com.fasterxml:oss-parent:69": "3856d584aaa1c8e33ce94c67244f71f6f70538a259ffe8e781761b9faaad875f",
+    "com.fasterxml:oss-parent:70": "26ca8ed6f82c9d2ed7cd32298105bb65c0f9d899db61757a09741586fa93a639",
+    "com.github.javaparser:javaparser-parent:3.28.2": "0358ce75bca1a54c141e16b7f1621e973fa177ddf64fe02b0f38df23ad400543",
+    "com.google.code.gson:gson-parent:2.10.1": "4248e0882426c615182385d6086c3ef3262e769957189e29306280b85482b833",
+    "com.google.errorprone:error_prone_parent:2.28.0": "accefdbb5416cef5fcd2ddc37db4f1fcb34a2193cc1a55dfe5970a131b3e7683",
+    "com.google.guava:guava-parent:26.0-android": "f8698ab46ca996ce889c1afc8ca4f25eb8ac6b034dc898d4583742360016cc04",
+    "com.google.guava:guava-parent:33.2.1-android": "5af287a2deb741f38c24a0b390a7a388faee5d7cf0edc4c7b7b98559a5f29fbf",
+    "com.google.guava:guava-parent:33.4.0-android": "7220ede61026596fbc720ee4b93246fa2d14f328058532b59ef053de397c7d83",
+    "com.google.guava:guava-parent:33.4.8-jre": "a03c5199a1be14443df7fd40ba8673b1c6aae04deef6688ce7d573ea489e3a20",
+    "com.google.inject:guice-parent:5.1.0": "63d5c0c641797deba6c051c47d5f6923f3a103ef71e4ebc3a85d01c3e878596c",
+    "com.google.protobuf:protobuf-bom:3.21.10": "70543163bce890e8b6a97c5a6d8051e08fdc7d739eef495374f7cbb06ac0ca44",
+    "com.google.protobuf:protobuf-bom:3.25.5": "080e2984173238b50e064c226afffbb1b0233520295c790a7fd3d6ae4593f063",
+    "com.google.protobuf:protobuf-parent:3.21.10": "5f593898eb49922e0e16ca4976941229858ee48fbd68262c658fe9400320b88d",
+    "com.google.protobuf:protobuf-parent:3.25.5": "64cc0e3ad6e85f5aec8f9dcf9341d1379e9525364ff53e23e16d8d5824673ef7",
+    "com.google:google:5": "e09d345e73ca3fbca7f3e05f30deb74e9d39dd6b79a93fee8c511f23417b6828",
+    "com.querydsl:querydsl-bom:5.1.0": "8853dce132c9ece4c295c7f4d4f3c2832eee0d7d44930870c0666fa72043ca56",
+    "com.squareup.okhttp3:okhttp-bom:4.12.0": "780838ee67f2a1ee580887de8a748e5b259f9e81542e1c4244d5042659922e14",
+    "com.thoughtworks.xstream:xstream-parent:1.4.21": "00157e30fc1dcfe5e6543e88cb8763db6dca566e52589ced852bbf798dacdde6",
+    "eu.maveniverse.maven.domtrip:domtrip:1.5.1": "f109fb70888e5ec9b42ffd42d2324004a35f9b0eb64ec89092134f0dee3128cc",
+    "eu.maveniverse.maven.parent:parent:52": "ec0c2694d9958218506861f70a4c202efa746d7675b3a61ddcd95be43715f6ab",
+    "io.cloudevents:cloudevents-parent:3.0.0": "1839b80c8df0f8742f7cccb6c03f12092d5cedc542141d4e360841ec94c3c521",
+    "io.fabric8:kubernetes-client-bom:6.9.2": "d6bede8c2c978fa44fbaf15c99bca76a6246d6077e229b3c59aad241d715aab4",
+    "io.github.openfeign:feign-bom:13.3": "d40b85ded5edc174e9927fcb699eb2bb66036eed65e9becb1976d8c741971302",
+    "io.github.resilience4j:resilience4j-bom:2.1.0": "09eafe8b2addc9d8165afcd5301ba1a9631f13c35ec69ea20a43f0c1d3ec88f4",
+    "io.grpc:grpc-bom:1.68.1": "406a7692d6d85f234cd22c42556236b3af58fcfd5a91962c6fde9a241cbfefd3",
+    "io.micrometer:micrometer-bom:1.13.4": "af7e0be05e24b13f967e18056b38643af3d585231b963e3bbdafdd352ea1c352",
+    "io.micrometer:micrometer-tracing-bom:1.3.4": "0f8c22f9862108c97a512860650b72a932c3cf900a6d923fbb3b172cc40fde57",
+    "io.netty:netty-bom:4.1.113.Final": "e5ac44e41a4b5c87910b4e72a67ee73332635032cfaedee8a83fb2fb94cbf440",
+    "io.netty:netty-bom:4.2.17.Final": "0951aa35bdcbf6dbc87af75a67e9af43c01687ed571f77c2e9195417c3afe969",
+    "io.opentelemetry:opentelemetry-bom:1.37.0": "c1409111c5a85ad8905630e1ca4eaaeea9379f2c78a3a1939883c009e6ff2409",
+    "io.projectreactor:reactor-bom:2023.0.10": "84e86099681e39fb999b6defea3975b0dbd1ec5a362a8b59d976ce2cb1aeb79e",
+    "io.prometheus:client_java:1.2.1": "fc8f7fe2b4ef0ceedc84393b8900a93d64b19c983ff82166c84a33667070ba7d",
+    "io.prometheus:parent:0.16.0": "722b55119097b04d711479dfb60dd54b27b5920a1aeb7702027c44a215ffc596",
+    "io.prometheus:prometheus-metrics-bom:1.2.1": "8da77a7d98063f48152ebe8b5f5a7e0a7163e499fdd22048f1966756020e6a7b",
+    "io.prometheus:simpleclient_bom:0.16.0": "af441d3295de11a70e35febeb3d919ba2ed17552753163325b954d53594d55c3",
+    "io.rest-assured:rest-assured-bom:5.4.0": "3f03da385d3fc79ccca5b32236e2bd20e45c8049501cd0317e7f8d966082d6ab",
+    "io.rsocket:rsocket-bom:1.1.3": "e5ccd8fed3415bb4385e4d0787e3e33624cb2c7c002d2550c39788f2bb9b0fae",
+    "io.swagger.core.v3:swagger-project:2.2.26": "071b8af4a822b948f83fe1957215a1d80291a289daff25ebd6a83fd4234bc0c2",
+    "io.swagger.parser.v3:swagger-parser-project:2.1.24": "9f527217825c65810b817cde154213d72aeb5cd97edfed73ffec22345b8d833c",
+    "io.zipkin.brave:brave-bom:6.0.3": "3d1a3ebff9597d16e8998a1053dfcc5b2e5f10773e5da66161c43d288ca614f1",
+    "io.zipkin.reporter2:zipkin-reporter-bom:3.4.2": "d9d56cea4aebc2a4b4deb6f9ddf21e7d54dada9a6a132be27235c11530d4f518",
+    "jakarta.platform:jakarta.jakartaee-bom:9.1.0": "df98e0266219fdbb82562826d79a3a20776a8ba02aa787f0f0765a538654c8a4",
+    "jakarta.platform:jakartaee-api-parent:9.1.0": "a7702c487026802784b5797b62330a8b8d6592bf0f4737b25c67a5eac82659c0",
+    "jakarta.xml.bind:jakarta.xml.bind-api-parent:4.0.2": "482cdb46d4dd2f5af7dc884c8a6de73ddffe6daf549ef36a6c077fd6e41eed08",
+    "net.bytebuddy:byte-buddy-parent:1.14.19": "4b0bb297d5b3e20a2fe632e5a2b0adf10a32dbb09d52e69e31b1adba67de9a6d",
+    "org.apache.activemq:activemq-bom:6.1.3": "f69b165f3af04be4bdd702d70efddbad3dc0321d1795484dd3958a627741d372",
+    "org.apache.activemq:artemis-bom:2.33.0": "02c0fea0e8e6ab94663b42eff3b71613be2b941c54a0aad8f5d07c13720242f2",
+    "org.apache.activemq:artemis-project:2.33.0": "a1eccd2890f61f074ba02850e5a7a53acf30fa290e582e1365c78bae3829d167",
+    "org.apache.cassandra:java-driver-bom:4.18.1": "84c8643b0f01ae44762f22cb79820c4961ce58bdb51743329f6f2038713c9b65",
+    "org.apache.commons:commons-parent:22": "fb8c5e55e30a7addb4ff210858a0e8d2494ed6757bbe19012da99d51586c3cbb",
+    "org.apache.commons:commons-parent:39": "87cd27e1a02a5c3eb6d85059ce98696bb1b44c2b8b650f0567c86df60fa61da7",
+    "org.apache.commons:commons-parent:41": "b2877c8016f8b28924c8e90dd5ae40cd11f328d02a1de98d80de22574ab36ec7",
+    "org.apache.commons:commons-parent:64": "6f19638994e8357b4ed734696f992057efaafa1235673998133299798e2ccddb",
+    "org.apache.commons:commons-parent:69": "d50da9c39bdca823d618d1b4a03b73f196497fcb8616fd0da727c8623592a9bb",
+    "org.apache.commons:commons-parent:74": "80eb61b0c87fdd826a069313b28b672da3f1885832da447b51e6e8a6197e7ecb",
+    "org.apache.commons:commons-parent:81": "348d4e7c131be6114c854a719ce7a44307a7c39bd366084977b24fd29ad0edb4",
+    "org.apache.commons:commons-parent:84": "9239fb97101db27070e4983d10d33a0e91cf676cad91bf53815422c3561ef9b1",
+    "org.apache.commons:commons-parent:85": "d189ff2c0027e96bb65d31e6f227ed2af966169b36af1e973dd5ba08926dc7b5",
+    "org.apache.commons:commons-parent:88": "8bf726150d1d6a43ba0aa92060e552933caf2873aa193952d9d496470fa9fbd8",
+    "org.apache.commons:commons-parent:91": "d2f8b6fd4800b6aaf120f5a38226d5f9d5fc6db837af99e2f9b33067868b9872",
+    "org.apache.commons:commons-parent:92": "94f6c027b15f6402995dd1b2c7ea35bfe1ebc88b6832b3134368b41998721953",
+    "org.apache.commons:commons-parent:98": "d40318527f56033e0ff0789971cc38c856aa99a685eea11270814e7f1eda9fba",
+    "org.apache.groovy:groovy-bom:4.0.23": "f87690727ad21a30c7409791a29c3b5a5d5bea961a87d139d899d30ab42521a8",
+    "org.apache.groovy:groovy-bom:4.0.27": "aa44eb52bfdfe61d27b3e450d2b348d88deaa3437ab4d9d49a84095348f9f6fb",
+    "org.apache.logging.log4j:log4j-bom:2.23.1": "372396e0458d4cd32c096cadabe0cc9330ec10f4f57fa3be2e74f79b5e178a35",
+    "org.apache.logging.log4j:log4j-bom:2.26.1": "4415ad189dd04db54958a43e23b37cc397a1edee9e888214b8bd47fbe819072e",
+    "org.apache.logging.log4j:log4j:2.26.1": "ea4705725fd94bf5debe2911d4ea7af20898603f68354e64b2461a0f249e445d",
+    "org.apache.logging:logging-parent:10.6.0": "f827475840a64083b585ec8dbbf7093b6fd02624293cec37d56edf9fc354109e",
+    "org.apache.maven.doxia:doxia-modules:2.0.0": "9c56654ceff62d08b19b802d7d4d77dca54b17548b9802a0ba493f72f2adaf34",
+    "org.apache.maven.doxia:doxia-sitetools:2.0.0": "ad3dcd30a40d45148350f066f2312ed9f946b7fd94f9c197ede0f3b9558b80a3",
+    "org.apache.maven.doxia:doxia:2.0.0": "59f40c92b9f525bb6ca6f8845ec63b13dab18c3c1da93d17620cb8d2ea4c61b8",
+    "org.apache.maven.doxia:doxia:2.1.0": "60d320f3a7b36047cc2969397aa8f0ce673afcd88a60ef04e2b032b7c0011969",
+    "org.apache.maven.enforcer:enforcer:3.6.3": "63ea934ece526118aab7963da5078f976e29355e1a472e24c54e2c0efecdfb47",
+    "org.apache.maven.plugin-tools:maven-plugin-tools:3.15.2": "c6b46826a30f98091eb294a449b062178c3e107a9be1f5afb05d202a1a30cb28",
+    "org.apache.maven.plugin-tools:maven-plugin-tools:3.5.2": "441ffde95bfa0b6fa235797b00341c3c622be8fb568e2c2490ed35cd5b34cf8f",
+    "org.apache.maven.plugins:maven-plugins:47": "58ddbb8e429cb5e9054c2f5f7b7cdfeb7adbcdfda21d92b67f67fa2b94edf982",
+    "org.apache.maven.plugins:maven-plugins:48": "57014e98ba621d9d254cf79ad4dfcdcf690290fd97a935bab9ebe72bd5be40d3",
+    "org.apache.maven.plugins:maven-plugins:49": "4225f860bccdcb48a315de478e70ab817b411077974de5c9d1b8e2761be5f515",
+    "org.apache.maven.resolver:maven-resolver:1.4.1": "831c3849751101226495acfe9119582feb734a4539b070e0fbd9e85b03b501ce",
+    "org.apache.maven.resolver:maven-resolver:1.9.24": "6ad2158ab7ea911d4e0b66ba3838f8e5b1d6b5ab31721770d914d0e8771d2917",
+    "org.apache.maven.resolver:maven-resolver:1.9.25": "c0870a6e68e160851cc7c1108ffc77198edf90715520d1a87c50484e7281c06e",
+    "org.apache.maven.resolver:maven-resolver:1.9.27": "8924b41711cce058f83c46d79ad83d6e04edcf13ed5631ec11135656e0b87f56",
+    "org.apache.maven.shared:maven-shared-components:19": "d82408269aada2eb1521ee8ff17f7c67333684f8ed2a09a9e35badd2e7575957",
+    "org.apache.maven.shared:maven-shared-components:34": "64d0edb5f21cfff600b1c3ab7d45f9754cd18ba5fbf83b3d1bb7c4849437d8e3",
+    "org.apache.maven.shared:maven-shared-components:39": "17e81388d88ba61c4055450ec90a32ee30acd07f46dc6e31e096b8e53735f4b2",
+    "org.apache.maven.shared:maven-shared-components:41": "c6bd81e2588e0f0f87392d4db590e1d81c126a25ee9253252ef89c506cde1e34",
+    "org.apache.maven.shared:maven-shared-components:42": "aa66faa11c11b900d099bfef0ee9fe8485d7e7fc74e87193e1f74572ed9587c5",
+    "org.apache.maven.shared:maven-shared-components:43": "6072dd103bdba3199584c5b73ed45b00567cd3ea918e2160b10bc7437c9e8181",
+    "org.apache.maven.shared:maven-shared-components:44": "41fbab97912beb3a061b1e3845d2e06d2bb214cc71f92fa7f396480dc765a14e",
+    "org.apache.maven.shared:maven-shared-components:45": "5879e023d9bcafda006d28b42b2495c6f3db587d3e71eefa0a3cedeeea36d987",
+    "org.apache.maven.shared:maven-shared-components:47": "3bd3d07c910477091bb9602f931f696c4aa115c86a322bff6a604ec7543afc07",
+    "org.apache.maven.shared:maven-shared-components:48": "4a8f3bc226f6f1b7f7362fa2a6e1da451561f86783ec512176e1c467a03708eb",
+    "org.apache.maven.surefire:surefire:3.6.0": "172f76e8ad94a07a700ed7d5afc775c91f80cbd131eb60378b0d83d57d8131d9",
+    "org.apache.maven.wagon:wagon:3.5.3": "7c10b8bac59268fe7957f2ab2b50965d90069ebf850c756bb55ea807ce440f0b",
+    "org.apache.maven:maven-parent:15": "e25770d5d46dcdfdbb9e38ca04f272c5bdf476d88392ab4044ba90678e616d54",
+    "org.apache.maven:maven-parent:23": "5425501edd9e0bd7b01eca53cc92e06836d24851151304f9c6759e1713541685",
+    "org.apache.maven:maven-parent:31": "42fde763a6e6fe8480b1608adff2c35d02612e279ec9ce72fabb4fd8fb5c5753",
+    "org.apache.maven:maven-parent:33": "3856e3fcd169502d5f12fe2452604ebf6c7c025f15656bfa558ea99ed29d73ea",
+    "org.apache.maven:maven-parent:34": "1a8faf7a6a2b848acb26a959954ee115c0d79dbe75a6206fb3b8c7c2f45a237f",
+    "org.apache.maven:maven-parent:39": "cfe4820aa1d96ae51d1dc5b0e2a9dc582c42478c24c95ca8238f547e60bef721",
+    "org.apache.maven:maven-parent:41": "762fcdd4ce8621c5fa0a2cf6495ad26972a8093eb432aa3e402bc2d4e2500c53",
+    "org.apache.maven:maven-parent:42": "04534dea350a2187970a5b74444338bcf78ba8e537d44f262acfba16ebb33056",
+    "org.apache.maven:maven-parent:43": "468a1262e9aaa5febf9d604e2836267f815351f2b4520f28fb17f53c71e33554",
+    "org.apache.maven:maven-parent:44": "1c0a088d7352d52ea8f3581d05778c0c4a679613fff2c58737fba55f1007fe24",
+    "org.apache.maven:maven-parent:45": "94fe869eb9b4ce9fce3995d05ea86b168c85d927f9d17beb814a1960c76d7e6f",
+    "org.apache.maven:maven-parent:47": "82d0112ba1907ff5fd13a2485829c97df66c6a81e075359a561a422f7d1582d3",
+    "org.apache.maven:maven-parent:48": "cc9eed84b90a96cbc33aefecc93facb9a49f960ad678909162c579356cfe12c9",
+    "org.apache.maven:maven-parent:49": "ca906201ee34de09e76632c5dec04a9b868ee38ce68c134b765fd1871d1d3eed",
+    "org.apache.maven:maven:3.0": "28fc63720c4a5ff92bf0e358ed55a6f24626f35bccc13cc3e194231e158848f6",
+    "org.apache.maven:maven:3.5.3": "fba211c7e62eb4abb97e06fbe6aa958ec5c16bf20b55813452330bc0937600b8",
+    "org.apache.maven:maven:3.9.11": "2cbd997caf71fe79c8010c440d0dcf72ec5d7aa346b89a20171b7f1ba289af42",
+    "org.apache.pulsar:pulsar-bom:3.2.4": "b589e35140d1ab960047e4d51e18a83b07696ea859c6d062cd0a66147f7534fd",
+    "org.apache.velocity.tools:velocity-tools-parent:3.1": "5a597b88dba795090e77015bcdf53461b41d45da2d7d1764e4ece8b30a226fcd",
+    "org.apache.velocity:velocity-engine-parent:2.4.1": "8efb661b7e1b44b7a056f23650ab2b43b8fcdb09bbe2ec3d3d02185d5658fd4a",
+    "org.apache.velocity:velocity-master:4": "7a2ac73c90dd104b5a07e6e2cd03e95ec28d29f3b8304f3dd7fffcecb049712e",
+    "org.apache.velocity:velocity-master:7": "943a046c1fe36b28b3cea11fb0d34e8b836b245433087f8fa916c0a752393181",
+    "org.apache:apache:13": "ff513db0361fd41237bef4784968bc15aae478d4ec0a9496f811072ccaf3841d",
+    "org.apache:apache:16": "9f85ff2fd7d6cb3097aa47fb419ee7f0ebe869109f98aba9f4eca3f49e74a40e",
+    "org.apache:apache:18": "7831307285fd475bbc36b20ae38e7882f11c3153b1d5930f852d44eda8f33c17",
+    "org.apache:apache:19": "91f7a33096ea69bac2cbaf6d01feb934cac002c48d8c8cfa9c240b40f1ec21df",
+    "org.apache:apache:21": "af10c108da014f17cafac7b52b2b4b5a3a1c18265fa2af97a325d9143537b380",
+    "org.apache:apache:23": "bc10624e0623f36577fac5639ca2936d3240ed152fb6d8d533ab4d270543491c",
+    "org.apache:apache:29": "3e49037174820bbd0df63420a977255886398954c2a06291fa61f727ac35b377",
+    "org.apache:apache:30": "63dd4a393a9c0dfcb314efe83871a41d243bc8d200cbc7f2d197f30da78239d8",
+    "org.apache:apache:31": "555d0c9eaa69c042aff924927b9381e8f8174136d355eead445224452e6291cc",
+    "org.apache:apache:32": "cfd872c0ec27f53ae68f43dbc0fecded8add773079a53afbd390e407b42ce72f",
+    "org.apache:apache:33": "d78bd8524c5f8380a190a6525686629a95dfe512df21111383a6d8c0923a4415",
+    "org.apache:apache:34": "3671ae9d4d062ae3bb985731c76088bb2f6f7d7254e2d304ee9f690b97651328",
+    "org.apache:apache:35": "ea297dcd114136e8b8e8b630230d52a76c2fc69f6c5db25d672b1857000728b8",
+    "org.apache:apache:37": "524ec4787aff73af6b3a9fafa154c7f1881b648299b663fdbfcadda1286f2353",
+    "org.apache:apache:38": "9b0a5f28ddfb4b7500a37022bee8245efdd044fb9a3d79fb827550923eccc4b5",
+    "org.apache:apache:39": "71752ed4c2435a1d8385fe0a4d330f39d04efec89f0d1ba5d1598d39f7397a44",
+    "org.apache:apache:6": "12edb5096e13f40c362d0bd40902589fa9586505123fa26799ce50b116fa5bb3",
+    "org.apache:apache:9": "4946e60a547c8eda69f3bc23c5b6f0dadcf8469ea49b1d1da7de34aecfcf18dd",
+    "org.assertj:assertj-bom:3.25.3": "91b7a19b77af5462c7290b91ac7c72c44d6483afea0b62536816e98f8d53f257",
+    "org.assertj:assertj-bom:3.27.7": "1c09f6c04c905e1e5cdb22d5dfa5f11a496e19e881de0850b523ed53a0519f5b",
+    "org.awaitility:awaitility-parent:4.2.2": "5f5db7a19a9032454794e24fe600ac7ded1426a28919dc4ac14c4aee168c5a25",
+    "org.codehaus.mojo:animal-sniffer-parent:1.24": "49ddab43c8361dc2ef0c1ff87cb590fa7231702ab9f62e26d512dc18a1f1cd04",
+    "org.codehaus.mojo:mojo-parent:84": "2fe510618b2f60fcd5f2fb82bc4b2c2c344048d74f30be719fcb86829ee8ac30",
+    "org.codehaus.plexus:plexus-compiler:2.17.0": "62eae3b1bb053060b4375c393664a9559afdfafd6de133924f81794aa20caf68",
+    "org.codehaus.plexus:plexus-compilers:2.17.0": "a7bd62ce59cd3822b8202228471eb363af269128af71db9c3b24ec56c2b1a850",
+    "org.codehaus.plexus:plexus-containers:1.5.5": "1bc264824ec876b0ca6f4f5838175c541c638cbc43326a268b9aee7d4778b5ef",
+    "org.codehaus.plexus:plexus-containers:1.7.1": "5566a0bb51dc994c0350206608c7b4cdcc9b66881497bab56a32c42edca53e79",
+    "org.codehaus.plexus:plexus-containers:2.0.0": "be5e3f8e59edce852a0fdaef8caedb32f364bf13db654d15f98e17930e456487",
+    "org.codehaus.plexus:plexus-interactivity:1.5.1": "a302283571901cd1337e4141e03b5399ac8570c1d602b467eee2282a33841504",
+    "org.codehaus.plexus:plexus-languages:1.6.0": "57b98b5fd9c81bf78bd34cbe0faf11d9613b2f472ffad0194c0395677ccfcb0a",
+    "org.codehaus.plexus:plexus:13": "575945dc08966c66eb03d5bae9135bd22ca3920a1865bb99d3ecd93bef55abd3",
+    "org.codehaus.plexus:plexus:16": "68d4eed65a3dbbc342ed80dd138fbe9c67cb7fb4c2abc4f5201cdb5b9f645868",
+    "org.codehaus.plexus:plexus:18": "b43ee89c8890b9e5bc48d079fcb4c44f082b5139253356dc455806a33c3dd8fd",
+    "org.codehaus.plexus:plexus:19": "8d3e51c3902fd7596e548eab121ebf6b0d4aa73857077f26a24fc86f9b8455b4",
+    "org.codehaus.plexus:plexus:2.0.7": "2b59062030ab0a15c5d0977ba22421706368926488739a65f25793e715cc8a74",
+    "org.codehaus.plexus:plexus:20": "a7b594b002fc791733c8e94470d09045f4fd69a93ad5c375752f2057f84633b4",
+    "org.codehaus.plexus:plexus:24": "89a1bc79e46c35ab108b7e215bb2c5c215ff8f3af1ae3cfef82d9a2b33b06c51",
+    "org.codehaus.plexus:plexus:25": "faa7947c2020967ad0c92b259ee9fa361d05e90cd036d17c37098bb1edaea3a3",
+    "org.codehaus.plexus:plexus:27": "dbc7d80d79d3760fed777bea9e41b1c0a370442ea8ecf930d04a6a5620d36b6e",
+    "org.codehaus.plexus:plexus:3.3.1": "6ec96f889bc29250f90b167c14e547f1b05aa23565c63f9079595befbde816bb",
+    "org.codehaus.plexus:plexus:4.0": "0a1b692d7fcc90d6a45dae2e50f4660d48f7a44504f174aa60ef34fbe1327f6a",
+    "org.codehaus.plexus:plexus:5.1": "a343e44ff5796aed0ea60be11454c935ce20ab1c5f164acc8da574482dcbc7e9",
+    "org.codehaus.plexus:plexus:8": "ffa349db04e7abf65885bdc5a2062f4197c0ff9d3f1f4e2aa5720b77233f742c",
+    "org.eclipse.ee4j:project:1.0.6": "4e7d8329d8da7dcf30779d824241be145f27108932f5a5a24eb907677bc8d72d",
+    "org.eclipse.ee4j:project:1.0.7": "205c039a42cbae3556efbeb04a483eb3a3cf9550bd75bf84260dc8f28218f105",
+    "org.eclipse.ee4j:project:1.0.9": "825379934a1cf29249f349f2d18adaf79a7b2cb2dbe231518974e1ee70941c17",
+    "org.eclipse.jetty.ee10:jetty-ee10-bom:12.0.13": "9e7754ff4ab2384ba383ac10b0753964752f1c2e9dd762079d440fa36cab69f4",
+    "org.eclipse.jetty:jetty-bom:12.0.13": "83b6acd988754836b2be1df8c07944af7dd4ea914aa60c0491541b7e21c972bb",
+    "org.eclipse.sisu:sisu-inject:0.3.3": "6476b9c3d9a0314226b6f4ea41c2f1e5db1ceb04d031ca9650c7b0b99fa0af3d",
+    "org.eclipse.sisu:sisu-inject:0.9.0.M3": "2e436563d5caea351bce5f0863ebc6376405cb65a6f664b255faad9e72e3b854",
+    "org.eclipse.sisu:sisu-inject:0.9.0.M4": "0c829c9641ccac870d7d7ff012cbbad8447e912eb9a26d0d7283f09cba44c0d9",
+    "org.eclipse.sisu:sisu-plexus:0.3.3": "5f3668799cb6936767868cc2267038eb7e4031bad59d2cf5e5223b8462eca731",
+    "org.eclipse.sisu:sisu-plexus:0.9.0.M2": "ec6e99407036014f81a39d81c56ba40d924c72d96e402ad14f7efd29b2c775cd",
+    "org.glassfish.jaxb:jaxb-bom:4.0.5": "ec97ec42d937d3c89519797e44246f80de0850819ac7a7ae675c4497b7075c39",
+    "org.glassfish.jersey:jersey-bom:3.1.8": "2a5ab2015eb1e0fcef4989d448fb6dc8befe2ccf3b3d13863e186d62c7bbed16",
+    "org.infinispan:infinispan-bom:15.0.8.Final": "47d5148ed851313a37c2bb3d90bd5beddcadf4ecaf63f7761595659318b9e932",
+    "org.infinispan:infinispan-build-configuration-parent:15.0.8.Final": "a3f97d1e8926a8a5d21448646febfe15b3b06c5558938c607b8704fa8b9d7aa3",
+    "org.jboss.weld:weld-api-bom:1.0": "8f74dc3a67c107376168b9f7b1b94e317e172768d398f826330931a02ff57b98",
+    "org.jboss.weld:weld-api-parent:1.0": "1fb0dbd26fba2b009a75355e87620256b0689cb46f124f4836bc66fc296942c1",
+    "org.jboss.weld:weld-parent:6": "74ab64d978a3415cab65c3639b7c5ba5a20599ca5578251b748dd81c882a6088",
+    "org.jboss:jboss-parent:43": "3c3ade76fb883acdb9a8a03355d1df4066ffb9c8c78f09b219e9c0fc2a3f4317",
+    "org.jetbrains.kotlin:kotlin-bom:1.9.25": "199ae7a589eba1681846a9549a695cf3b0a42c1d92119a50a830ff12babba023",
+    "org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.8.1": "563e4aa29fa8fe09a6e1746d0a5b51308f7c7dedc468dc5a0ca810a485877030",
+    "org.jetbrains.kotlinx:kotlinx-serialization-bom:1.6.3": "29d69842bb7d449be2aa4ade6a4a7ce6aa55827d0ab13d168745fe6d95739332",
+    "org.junit:junit-bom:5.10.0": "e006dd8894f9fc7b75fc32bb12fe5ed8be65667d5b454f99e2e0b8c5bb8d30b3",
+    "org.junit:junit-bom:5.10.1": "21c4b0286f4b20069577ff4b20978a85c100ac8a46b6f1c8672fbaab337bc3f2",
+    "org.junit:junit-bom:5.10.2": "169dd904a4b0f6520cffe658cc62292bfe9f3c14a989fa92120724cde43a9968",
+    "org.junit:junit-bom:5.10.3": "10937d44c425984cb8739225d34712e1a3145641ca93ac3f7ef186fa25f6babc",
+    "org.junit:junit-bom:5.11.0": "e67459d4882424ac6374f40db1c8f4a2e88946b340ba072c80be932a2be4644d",
+    "org.junit:junit-bom:5.11.1": "c72124a9c9a79910c1858766b72c350e1a39244cbfb4b076348fbfe078281965",
+    "org.junit:junit-bom:5.11.2": "f48e88538aac145eb3ae0345a9ebd055b28f329a35dce8d1e9281325ca9b0ea2",
+    "org.junit:junit-bom:5.11.4": "19d4b747b204805325b6334553296f986562277a4ac1cb5e593a5e4c4f5e4115",
+    "org.junit:junit-bom:5.12.1": "7c826bc72beddc817dad9263027f9012a0f55a377d38df89c42932a2501c2bf0",
+    "org.junit:junit-bom:5.12.2": "cef80fec86454f6806bfb0df24669b5c6f32e2cb728539ea859f47dfdc9bbc17",
+    "org.junit:junit-bom:5.13.1": "fa68451ea830572ed43ffe51d75b6a05f7a5e665a602a51f49d6be02063a65f3",
+    "org.junit:junit-bom:5.13.4": "d7a08a99b2502f0bb68cd4e1f984f0bf69324aaa208bd0f73366c03fc3548a42",
+    "org.junit:junit-bom:5.14.0": "f5aa47b366483e8d1f9bef10e67a0c66f66afc0f331c9f966b1310bad60d0f6f",
+    "org.junit:junit-bom:5.14.1": "01b01dfa366550b40ac5760548a7d728b6109d17c451e83864d1e5e0ce862c94",
+    "org.junit:junit-bom:5.14.2": "ed2dcc7855bd460bccc93a1bf0c962e63b566ff7d8f1ded0f1f2593ba8183aaf",
+    "org.junit:junit-bom:5.14.4": "5706e8f29a0a07f56efbbea4a0670793414194bb8d24d8143ba1e787a2f32856",
+    "org.junit:junit-bom:5.9.3": "4d0329cd9e72f2420e5ca15724cbfe6ffa6e5fd2888361516271190fdc342ed7",
+    "org.mockito:mockito-bom:4.11.0": "d8531a746c988f7f68ed5f188cdea945006aea993ec5df9e524e0d27d61491da",
+    "org.mockito:mockito-bom:5.11.0": "9d2f46b14c21ffcc8eb7f02901e37d9dc5497e65843050184d1a2134071d56b3",
+    "org.objenesis:objenesis-parent:3.3": "305c384aa2f1e1c7fe53a96da41c3ec35243b97d428d24a8f779818cc10be4ff",
+    "org.ow2:ow2:1.5.1": "321ddbb7ee6fe4f53dea6b4cd6db74154d6bfa42391c1f763b361b9f485acf05",
+    "org.seleniumhq.selenium:selenium-bom:4.19.1": "f101f9fb1b6e0b39d3739499a00e821d35e1f3f6e817619137368260964cda68",
+    "org.slf4j:slf4j-bom:2.0.16": "0566048ec825cdf28758620af64d9e14ae38a9cd8748dd6fafa6df4a4194c279",
+    "org.slf4j:slf4j-parent:1.7.36": "bb388d37fbcdd3cde64c3cede21838693218dc451f04040c5df360a78ed7e812",
+    "org.slf4j:slf4j-parent:2.0.16": "09a0b4cc814d7274616c9b16d4c0fd9aaf1ecc813334de5131e547271b1982e5",
+    "org.sonatype.forge:forge-parent:10": "c14fb9c32b59cc03251f609416db7c0cff01f811edcccb4f6a865d6e7046bd0b",
+    "org.sonatype.forge:forge-parent:5": "e56188aa8ce51278006aa90bc7e0f304a81e2f1219f462e7d21f262535cd2795",
+    "org.sonatype.forge:forge-parent:6": "9c5f7cd5226ac8c3798cb1f800c031f7dedc1606dc50dc29567877c8224459a7",
+    "org.sonatype.oss:oss-parent:5": "1678d4120a585d8a630131aeec4c524d928398583b7eab616ee7d5a87f520d3d",
+    "org.sonatype.oss:oss-parent:7": "b51f8867c92b6a722499557fc3a1fdea77bdf9ef574722fe90ce436a29559454",
+    "org.sonatype.oss:oss-parent:9": "fb40265f982548212ff82e362e59732b2187ec6f0d80182885c14ef1f982827a",
+    "org.sonatype.sisu.inject:guice-bean:1.4.2": "d2ee7efbcdc82206c69559548aef86a99add95378f03cc58b4d9696b3969c8bb",
+    "org.sonatype.sisu.inject:guice-plexus:1.4.2": "13a66ca6e6ad1a186076513eea822db2c3c0e460a983a0a31f4d937de336ad98",
+    "org.sonatype.sisu:sisu-inject:1.4.2": "a5991ead85259ba9f8c985d194aace3b069e14bcd8cde68fce928223714d3968",
+    "org.sonatype.sisu:sisu-parent:1.4.2": "abb04084d0885319fd0b372d77655f8feb8aa8bb091699fcd99b45798a9587d5",
+    "org.sonatype.spice:spice-parent:15": "13d15ddfe9946b8427bb7b4b081ab63962285eed0bf6fa5142aea25a46e15814",
+    "org.sonatype.spice:spice-parent:17": "9151f9a5b33ec36ee8778842fc56144fb0242d39cbcc42061b053b8909969bdf",
+    "org.springframework.amqp:spring-amqp-bom:3.1.7": "f80f141c14a0b4fd9f4fd9e39d9d6ce352d46a5d9584498f652f476aae9c7c0c",
+    "org.springframework.batch:spring-batch-bom:5.1.2": "b15bd655bec44a22ca7bf56785ca4f7ee6d47003816aa07026d1746db102c008",
+    "org.springframework.boot:spring-boot-dependencies:3.3.4": "c1c0df91f54e3d89e29248ff7424d27438ca526c78f0eb854b14ff0b24b836e4",
+    "org.springframework.cloud:spring-cloud-bus-dependencies:4.1.2": "ec852eb651e405ccd9300b1c11ee446fe4a7f636bfd020c15896d14fcfa403d2",
+    "org.springframework.cloud:spring-cloud-circuitbreaker-dependencies:3.1.2": "6a6e592306c0f0fd31d294f2709f3948c28a2f6889731dbac92b620b3951f6c5",
+    "org.springframework.cloud:spring-cloud-commons-dependencies:4.1.4": "3fcd6547c718193829a1cc0ad2d00bead562d3b57e94f3cdb52631612d063959",
+    "org.springframework.cloud:spring-cloud-config-dependencies:4.1.3": "fbcdd46c65e19efd67e90b773bb1155d5fa02b8744b74046c6cf5cf6b45fbc6c",
+    "org.springframework.cloud:spring-cloud-consul-dependencies:4.1.2": "86294708d4a15dee9de8a95313371e079f32f90a9744a8b64639d99a1e2022fd",
+    "org.springframework.cloud:spring-cloud-contract-dependencies:4.1.4": "c9937b96815447d74d395308e9b2f0a5b5aa5e5b77a36c2b6ab007b92e3cdea4",
+    "org.springframework.cloud:spring-cloud-dependencies-parent:4.1.3": "69f85731bec55c4bf4dfcb6c819141e6027ceba0992e4fa0a7fc9361869b2cf0",
+    "org.springframework.cloud:spring-cloud-dependencies:2023.0.3": "831a494a2380d1089b17eed5c134e9b26863833ee04cf39bb0c639b5b9be3169",
+    "org.springframework.cloud:spring-cloud-function-dependencies:4.1.3": "0ad7aaed2cf843383d4717bf2293ed1a1ce7a763df12c1f9a54bf1a3a222ea08",
+    "org.springframework.cloud:spring-cloud-gateway-dependencies:4.1.5": "74262318e3cbf6f91cdd8b354655968c3459de47fb2d2b5b5b1bf7f6a005f121",
+    "org.springframework.cloud:spring-cloud-kubernetes-dependencies:3.1.3": "bc2f8574ba7551642386ab0e6ee4db73e42b4a8254dbb91ccdae4a28527c6ac6",
+    "org.springframework.cloud:spring-cloud-netflix-dependencies:4.1.3": "e82da57fb64f5e6d4b3a12d49691dc3b91b5ea3901ff7e83c7545704d81694af",
+    "org.springframework.cloud:spring-cloud-openfeign-dependencies:4.1.3": "41392491ce8ccdbd705799ceefd1462effdb6975cc6af433dc236d0bad868a6f",
+    "org.springframework.cloud:spring-cloud-stream-dependencies:4.1.3": "2f7dd8ad96c92cffd3ef78d5308983c4d272035ca3eca409dbd2c376c8d178a6",
+    "org.springframework.cloud:spring-cloud-task-dependencies:3.1.2": "341f40bd7194c417a77783bb2d5c6ec2c1732ddaa47d2486737f6cc2a5596953",
+    "org.springframework.cloud:spring-cloud-vault-dependencies:4.1.3": "a3346a2f347f81d14f76313a13ee73d713b1b6f644ea34d6ee8d85a56aaf223e",
+    "org.springframework.cloud:spring-cloud-zookeeper-dependencies:4.1.2": "cbd8b1eb65200398df736be167459610f87f491187da001f04ffb5d08bf2aff8",
+    "org.springframework.data:spring-data-bom:2024.0.4": "a92660a2da46231faa7288c0c759def298e53372171c0cf27e1e724b7ad8649a",
+    "org.springframework.integration:spring-integration-bom:6.3.4": "c8fbe73f5ad1a9f191afda15dc8da61d20354c65123b61567656e15bfc92adcc",
+    "org.springframework.pulsar:spring-pulsar-bom:1.1.4": "fbb5c0d6b768e038847c622b887f90e7a45e5ebc0e857e29e4d4be3f1a6739cb",
+    "org.springframework.restdocs:spring-restdocs-bom:3.0.1": "5120225bcafe641dcc2667e90d348531719a50ebdd5f8af07fba345199ad58ce",
+    "org.springframework.security:spring-security-bom:6.3.3": "e58e833922e3ca5ffa65a46e04bf826374d70769fdfb10f1040ef50f7429b656",
+    "org.springframework.session:spring-session-bom:3.3.2": "25e79e1afc7fbe4d4fa5bb417840f29ed8bff91927c547e7bb24a8d5a0ce1b71",
+    "org.springframework.ws:spring-ws-bom:4.0.11": "79b71aa1c2bf8a449d30ac7e83aa893a8d008792fc294bc860261552fa10edf0",
+    "org.springframework:spring-framework-bom:5.3.39": "f6d481093e75767cba1ac7e1db38f8f692cbe3e38744693371a75aeb21c6148b",
+    "org.springframework:spring-framework-bom:6.1.13": "e4e03603cb4d1e8c85fa13c60050b9c3353ec66668a2af8758a97db20f803d2d",
+    "org.testcontainers:testcontainers-bom:1.19.8": "364f24464bd26e87aff464e2d4917d3cc4d2f45342c2e32eba9be6a6193c954b",
+    "org.xmlunit:xmlunit-parent:2.9.1": "d7e458fbd5c644504878e5fbce094b1d3078d369a7fee17dddece3d199fdaac0"
+  }
+}

@@ -9,6 +9,7 @@ import xml.etree.ElementTree as ET
 
 from maven_inventory import NS, reactor, sha
 from maven_commands import check_invocation, guard_workflows, selected_plugins
+from maven_boms import inputs as bom_inputs
 
 CYCLONEDX = 'org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom'
 HELP = 'org.apache.maven.plugins:maven-help-plugin:3.5.2:effective-pom'
@@ -107,11 +108,17 @@ def collect(root, maven):
                             archive=(parent / 'target' / (artifact + '-' + version + '.jar')).as_posix())
     inputs = {p:sha(root / p) for p in sorted(docs)}
     for p in ['security/collect_maven.py', 'security/maven_commands.py',
+              'security/maven_boms.py', 'security/ImportedBoms.java',
               'security/maven-unexecuted-plugins.json', 'security/licence-policy.json']:
         inputs[p] = sha(root / p)
     document = dict(sourceInputs=inputs, modules=modules, pluginModules=plugin_modules,
                     effectivePom="target/licence/effective-pom.xml",
                     executedPlugins=sorted(plugins), candidateBindings=candidates)
+    # IOT-WO-06 ruling 2026-10-21: every imported POM-only BOM, including
+    # transitive imports and parent model inputs, using this pinned Maven's API.
+    document['mavenHome'] = str(Path(maven).resolve().parents[1])
+    classpaths = [m['allBom'] for m in modules.values()] + [m['sbom'] for m in plugin_modules]
+    document['importedBoms'] = bom_inputs(root, document['mavenHome'], cache, work/'effective-pom.xml', classpaths)
     (work / 'maven-evidence.json').write_text(json.dumps(document, indent=2) + '\n', encoding='utf-8')
     print('Maven licence evidence: per-module scope graphs and executed plugin classpaths')
 

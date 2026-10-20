@@ -182,6 +182,23 @@ class RepositoryWiring(unittest.TestCase):
     def test_actual_legacy_records_obey_the_evidence_only_ruling(self):
         self.assertLessEqual(len(ep.verify_backfill(ep.ROOT)), 7)
 
+    # IOT-WO-06 ruling 2026-10-21: resolved absence, not register editing.
+    def test_retiring_still_resolved_legacy_component_fails(self):
+        with self.assertRaisesRegex(ValueError, 'still in the resolved inventory'):
+            ep.legacy_retirements({'SYNTHETIC-runtime': {'due':'2027-04-20'}}, {}, {'SYNTHETIC-runtime'})
+
+    def test_retiring_absent_legacy_component_passes(self):
+        self.assertEqual({'SYNTHETIC-runtime'}, ep.legacy_retirements(
+            {'SYNTHETIC-runtime': {'due':'2027-04-20'}}, {}, set()))
+
+    def test_adding_or_altering_legacy_admission_fails(self):
+        old = {'SYNTHETIC-runtime': dict(sha256='a'*64, tier=2, due='2027-04-20')}
+        with self.assertRaisesRegex(ValueError, 'additions are forbidden'):
+            ep.legacy_retirements(old, {**old, 'SYNTHETIC-new':{}}, set())
+        for field, changed in [('sha256','b'*64), ('tier',1), ('due','2027-04-21')]:
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'Unapproved legacy change'):
+                ep.legacy_retirements(old, {'SYNTHETIC-runtime':{**old['SYNTHETIC-runtime'],field:changed}}, set())
+
     def test_remediation_cannot_smuggle_a_changed_licence_or_new_legacy_entry(self):
         original = sc.read
         def changed(path):
