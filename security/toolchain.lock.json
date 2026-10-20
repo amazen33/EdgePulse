@@ -24,20 +24,6 @@
       "spdx": "GPL-2.0-only WITH Classpath-exception-2.0",
       "published": "2025-07-15",
       "licenceSource": "https://github.com/adoptium/jdk17u/blob/jdk-17.0.16%2B8/LICENSE"
-    },
-    {
-      "name": "opentofu",
-      "version": "1.11.5",
-      "spdx": "MPL-2.0",
-      "published": "2026-02-12",
-      "licenceSource": "https://github.com/opentofu/opentofu/blob/v1.11.5/LICENSE"
-    },
-    {
-      "name": "kubeconform",
-      "version": "0.7.0",
-      "spdx": "Apache-2.0",
-      "published": "2025-05-12",
-      "licenceSource": "https://github.com/yannh/kubeconform/blob/v0.7.0/LICENSE"
     }
   ]
 }

@@ -89,14 +89,16 @@ Usage metering finalizes UsageMetered events. Optional, separately deployable mo
 
 Deployment Studio is dropped by MILESTONES.md; Twinfra supplies deployment.
 Future EdgePulse delivery must provide application images, Helm charts and Argo CD Applications into
-EdgePulse namespaces with default-deny ingress. Existing infrastructure packages
-are frozen by ADR 0021 (see [freeze notice](../deploy/FROZEN.md)); removal requires a later deletion work order. This document
-authorizes no host, cluster, infrastructure, deployment or cutover action.
+EdgePulse namespaces with default-deny ingress. Own-infrastructure history is
+preserved in [archive/iot-ee-own-infra](https://github.com/amazen33/EdgePulse/tree/archive/iot-ee-own-infra/deploy/)
+under ADR 0021 and IOT-WO-07. Active application sources are in `charts/`,
+with the isolated test harness in `dev/kind/`. This document authorizes no
+host, cluster, infrastructure, deployment or cutover action.
 
 Packaging follows ADR 0021 Amendment 1: arbitrary UID, non-root, restricted
 security context, portable Ingress/Service, configurable storage class and
 platform values profiles. OpenShift/OKD is a compatibility target; support
-requires an accepted live compatibility receipt. Application charts remain
-unimplemented. Twinfra dependencies, gates and real-environment runs remain pending
+requires an accepted live compatibility receipt. Twinfra application delivery,
+dependencies, gates and real-environment runs remain pending
 their work orders. Instrumentation uses Twinfra's observability baseline.
 Supply-chain scanning follows ADR 0014; implementation is pending IOT-WO-02.

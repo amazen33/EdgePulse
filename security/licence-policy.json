@@ -487,11 +487,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "oci-image|docker.io/library/busybox|1.36.1": {
-        "sha256": "724c1e682589e8db240c92392abb85ccedee96251ac35cc26b3e8852a7afa4b3",
-        "tier": 4,
-        "due": "2027-04-20"
-      },
       "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a": {
         "sha256": "af7b2038c200eecab2da5951ce3813d632f36a5fe7660a1fa7fe1364ebed0b99",
         "tier": 2,
@@ -504,16 +499,6 @@
       },
       "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0": {
         "sha256": "bbcb4583ecfefd07b11857bee8d7e557c30a91b91c649e6f9920aa805d017d13",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "oci-image|ghcr.io/kube-vip/kube-vip-cloud-provider|v0.0.12": {
-        "sha256": "df40cbb398a1e189c7b781edd24c644e690c95eb33764999e31cd4e624c7ea8a",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "oci-image|ghcr.io/kube-vip/kube-vip|v1.2.4": {
-        "sha256": "d8e84d49dfa0950c18d357aaec072a6aaa97c05b3c6539a88860a6cb9b2de2ab",
         "tier": 2,
         "due": "2027-04-20"
       },

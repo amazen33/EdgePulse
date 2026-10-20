@@ -28,7 +28,7 @@ below evidence only their stated foundation artifacts and tests.
 | Decision records | ADRs 0014 and 0020–0023, the draft dispositions and approved milestone plan define the target | Later work orders implement the decisions |
 | TB CE core | Inventory and plan-only customization manifest from merged [#13](https://github.com/amazen33/EdgePulse/pull/13); dated spike retained as historical input | MS3 deployment/upgrade rehearsal and MS5 event path await implementation and acceptance receipts |
 | Migration | M1/M9 moved to EdgeMig; execution plan retained as its input specification | EdgePulse readiness MR-1 to MR-14: MS2 contracts, then MS4–MS6 implementation |
-| Deployment | Frozen package sources (see [freeze notice](deploy/FROZEN.md)) retained from merged [#30](https://github.com/amazen33/EdgePulse/pull/30), [#31](https://github.com/amazen33/EdgePulse/pull/31) and [#34](https://github.com/amazen33/EdgePulse/pull/34); no deployment claim | Images, Helm charts and Argo CD Applications for Twinfra remain unimplemented |
+| Deployment | Own-infrastructure history is preserved in [archive/iot-ee-own-infra](https://github.com/amazen33/EdgePulse/tree/archive/iot-ee-own-infra/deploy/); active application sources are under [charts/](charts/) and the isolated [kind harness](dev/kind/) | Runtime integration and Argo CD application delivery require their work orders and acceptance receipts |
 | Gates and runtime | Java gate from merged [#14](https://github.com/amazen33/EdgePulse/pull/14); archived Python gate in tag archive/python-spec-final; release checks from merged [#36](https://github.com/amazen33/EdgePulse/pull/36) | MS1 / IOT-WO-02 implements accepted licence/supply-chain gates and runtime upgrade |
 
 The snapshot is preserved at `archive/reconcile-snapshot-2026-09-26`;
@@ -77,8 +77,9 @@ The naming gate checks tracked paths and contents, with approved historical
 and frozen-file exceptions and exact historical path/tag references. Its CI
 self-test proves that an exempt reference cannot hide a separate retired name.
 The Python reference and its former gate are available only in tag
-archive/python-spec-final. Existing static infrastructure CI runs on its
-path scope and is unchanged. Passing these
+archive/python-spec-final. Own-infrastructure sources and their former static
+gate are preserved in [archive/iot-ee-own-infra](https://github.com/amazen33/EdgePulse/tree/archive/iot-ee-own-infra).
+The current licence gate is documented in [security/README.md](security/README.md). Passing these
 gates does not establish deployment, security clearance, legacy parity,
 WORM conformance, recovery or production readiness. Root Multipass scripts
 are outside the supported test path and must not be executed by CI.
