@@ -69,6 +69,19 @@ class PlantedViolations(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'No-fix findings are report-only'):
                 ep.evaluate(result(v), {'version':1,'exceptions':[exception]}, KEV, ep.ROOT, on=ON)
 
+    def test_edgepulse_day_one_anchor_is_observed_scan_date_without_resetting_issue_history(self):
+        v = finding('High');v['introduced'] = False
+        upstream_anchor = sc.INITIAL_DATE
+        report = ep.evaluate(result(v),EMPTY,KEV,ep.ROOT,on=ON)
+        self.assertEqual(report['findings'][0]['firstSeen'],'2026-10-20')
+        self.assertIs(sc.INITIAL_DATE,upstream_anchor)
+        later = ep.evaluate(result(v),EMPTY,KEV,ep.ROOT,on=date(2026,11,3))
+        self.assertEqual(later['findings'][0]['firstSeen'],'2026-10-20')
+        self.assertTrue(later['findings'][0]['blocked'])
+        recorded = {v['key']:'2026-10-19'}
+        retained = ep.evaluate(result(v),EMPTY,KEV,ep.ROOT,state=recorded,on=ON)
+        self.assertEqual(retained['findings'][0]['firstSeen'],'2026-10-19')
+
     def test_exception_without_evidence_fails(self):
         v = finding()
         exception = {k:v[k] for k in ('target','package','version','vulnerability','severity')}

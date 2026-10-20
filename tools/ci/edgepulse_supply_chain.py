@@ -289,7 +289,16 @@ def evaluate(result, exceptions, kev, root, state=None, on=None):
             if any(all(e[k] == value[k] for k in ('target','package','version','vulnerability'))
                    for e in exceptions['exceptions']):
                 raise ValueError('No-fix findings are report-only and cannot have exceptions')
-    report = sc.evaluate(result, exceptions, kev, state, on, bootstrap=initial_list_context(), root=root)
+    # The port's fallback date belongs to Twinfra's first scan. EdgePulse's
+    # first observed scan is run 39427228778 on October 20 (Amendment 5).
+    # Bind only that repository datum; never reset an existing issue clock.
+    previous_anchor = sc.INITIAL_DATE
+    try:
+        sc.INITIAL_DATE = date(2026,10,20)
+        report = sc.evaluate(result, exceptions, kev, state, on,
+                             bootstrap=initial_list_context(), root=root)
+    finally:
+        sc.INITIAL_DATE = previous_anchor
     for value in report['findings']:
         if value['kev']:
             value['blocked'] = True
