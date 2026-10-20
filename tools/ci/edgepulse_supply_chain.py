@@ -151,8 +151,12 @@ def scan_maven(root, tools, out):
     for item in inputs:
         command.extend(['--sbom', item['path']])
     sc.run(command, out/'osv-maven.json', allowed=(0, 1))
-    aliases = {item['path']:item['module'] for item in inputs}
-    values = sc.osv_findings(sc.read(out/'osv-maven.json'), root, aliases)
+    aliases = {}
+    for item in inputs:
+        aliases[item['path']] = item['module']
+        aliases[Path(item['path']).relative_to(root).as_posix()] = item['module']
+    normalized = normalize_maven_result(sc.read(out/'osv-maven.json'), inputs)
+    values = sc.osv_findings(normalized, root, aliases)
     results = []
     for value in values:
         module = value['target'].removeprefix('lockfile:')
@@ -163,6 +167,51 @@ def scan_maven(root, tools, out):
         results.append(finding)
     sc.write(out/'maven-findings.json', results)
     return results
+
+
+def normalize_maven_result(data, inputs):
+    """OSV's SBOM output uses artifactId; advisories use groupId:artifactId.
+
+    Resolve this join through the exact scanned BOM, never through a guessed
+    group or a vulnerable advisory's list of other affected artifacts. Preserve
+    the raw scanner JSON separately for audit.
+    """
+    value = copy.deepcopy(data)
+    if not isinstance(value.get('results'), list):
+        raise ValueError('Invalid OSV Maven result')
+    for source in value['results']:
+        path = source['source']['path']
+        matches = [item for item in inputs if path in (item['path'], Path(item['path']).as_posix())]
+        if len(matches) != 1:
+            raise ValueError('OSV source is not one of the scanned Maven BOMs')
+        components = sc.read(Path(matches[0]['path']))['components']
+        for item in source.get('packages', []):
+            package = item['package']
+            if package.get('ecosystem') != 'Maven':
+                raise ValueError('Unexpected ecosystem in Maven SBOM results')
+            candidates = {component.get('group','')+':'+component['name'] for component in components
+                          if component['version']==package['version'] and package['name'] in
+                          (component['name'], component.get('group','')+':'+component['name'])}
+            if len(candidates) != 1:
+                raise ValueError('Ambiguous or absent Maven package identity in scanned BOM')
+            package['name'] = candidates.pop()
+    return value
+
+
+def classify_maven_findings(findings, root, base):
+    if not base:
+        return findings
+    previous = json.loads(sc.git(root, 'show', base+':security/licence-register.json'))
+    components = {(entry['name'],entry['version']):entry for entry in previous['components']
+                  if entry['ecosystem']=='maven'}
+    for value in findings:
+        entry = components.get((value['package'],value['version']))
+        module = value['target'].removeprefix('maven:')
+        # Per-module runtime/test dependencies must already belong to that
+        # module. Executed plugin dependencies are inventoried at the root POM.
+        location = 'pom.xml' if module.startswith('executed-plugin-') else module
+        value['introduced'] = not (entry and location in entry['locations'])
+    return findings
 
 
 def validate_exception_evidence(exceptions, root, on):
@@ -263,7 +312,7 @@ def run(root, tools_path, out, cache, base=None):
         raise ValueError('Image inventory unexpectedly empty')
     sc.write(out/'inventory.json', plan)
     tools = sc.verify_tools(tools_path, root)
-    maven = scan_maven(root, tools, out)
+    maven = classify_maven_findings(scan_maven(root, tools, out), root, base)
     result = sc.scan(plan, tools, cache, out, root)
     for image in plan['images']:
         raw = sc.read(out/(image['digest'].split(':')[1]+'.grype.json'))

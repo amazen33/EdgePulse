@@ -48,7 +48,9 @@ jobs:
         if: ${{ always() }}
         with:
           name: supply-chain-nightly
-          path: target/supply-chain/
+          path: |
+            target/supply-chain/
+            !target/supply-chain/database/**
           retention-days: 90
       - name: Preserve gate failure
         if: ${{ steps.evaluation.outcome == 'failure' }}

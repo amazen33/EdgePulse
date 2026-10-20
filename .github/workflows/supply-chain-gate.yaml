@@ -38,5 +38,6 @@ jobs:
           name: edgepulse-supply-chain-${{ github.run_id }}
           path: |
             target/supply-chain/
+            !target/supply-chain/database/**
             target/licence/maven-evidence.json
           retention-days: 90

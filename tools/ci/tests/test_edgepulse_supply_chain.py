@@ -155,6 +155,42 @@ class RepositoryWiring(unittest.TestCase):
             with patch.object(ep,'maven_inputs',return_value=docs),patch.object(sc,'run',side_effect=run):
                 self.assertEqual(ep.scan_maven(ep.ROOT,{'osv-scanner':'SYNTHETIC-scanner'},out), [])
 
+    def test_new_maven_high_finding_is_immediate_while_existing_scope_is_carried(self):
+        value = finding('High')
+        old = {'components':[{'ecosystem':'maven','name':value['package'],
+                              'version':value['version'],'locations':['services/identity/pom.xml']}]}
+        with patch.object(sc,'git',return_value=json.dumps(old)):
+            ep.classify_maven_findings([value],ep.ROOT,'a'*40)
+        self.assertFalse(value['introduced'])
+        value['version'] = 'SYNTHETIC-new-version'
+        with patch.object(sc,'git',return_value=json.dumps(old)):
+            ep.classify_maven_findings([value],ep.ROOT,'a'*40)
+        self.assertTrue(value['introduced'])
+        report = ep.evaluate(result(value), EMPTY, KEV, ep.ROOT, on=ON)
+        self.assertEqual(report['findings'][0]['blockReason'], 'High introduced by PR')
+
+    def test_osv_artifact_id_joins_the_bom_coordinate_before_matching_fix_ranges(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp)/'SYNTHETIC.cdx.json'
+            sc.write(path, {'components':[{'group':'SYNTHETIC.group','name':'SYNTHETIC-artifact','version':'1.0'}]})
+            vulnerability = {'id':'CVE-2099-12345','database_specific':{'severity':'CRITICAL'},'affected':[
+                {'package':{'ecosystem':'Maven','name':'SYNTHETIC.group:SYNTHETIC-artifact'},
+                 'ranges':[{'events':[{'introduced':'0'},{'fixed':'2.0'}]}]}]}
+            raw = {'results':[{'source':{'path':str(path)},'packages':[
+                {'package':{'name':'SYNTHETIC-artifact','version':'1.0','ecosystem':'Maven'},
+                 'vulnerabilities':[vulnerability]}]}]}
+            normalized = ep.normalize_maven_result(raw, [{'path':str(path)}])
+            values = sc.osv_findings(normalized, Path(tmp))
+            self.assertEqual(values[0]['package'], 'SYNTHETIC.group:SYNTHETIC-artifact')
+            self.assertTrue(values[0]['fixAvailable'])
+            self.assertEqual(values[0]['fixVersions'], ['2.0'])
+            self.assertEqual(raw['results'][0]['packages'][0]['package']['name'], 'SYNTHETIC-artifact')
+            sc.write(path, {'components':[
+                {'group':'SYNTHETIC.first','name':'SYNTHETIC-artifact','version':'1.0'},
+                {'group':'SYNTHETIC.second','name':'SYNTHETIC-artifact','version':'1.0'}]})
+            with self.assertRaisesRegex(ValueError,'Ambiguous or absent'):
+                ep.normalize_maven_result(raw, [{'path':str(path)}])
+
 
 if __name__ == '__main__':
     unittest.main()
