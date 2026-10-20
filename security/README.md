@@ -137,4 +137,6 @@ the EdgePulse adapter suppresses those proposals.
 
 [IOT-WO-08](../docs/work-orders/IOT-WO-08-image-and-dependency-refresh.md)
 defines the image and dependency refresh due 2026-11-19. Initial exception
-approval remains pending; a namespaced reference does not approve a risk.
+approval for the exact 303-entry list was given explicitly by the owner
+on 2026-10-20 ([record](evidence/vulnerability-exceptions/owner-approval-2026-10-20.json)).
+Human PR review and merge remain separate owner actions.

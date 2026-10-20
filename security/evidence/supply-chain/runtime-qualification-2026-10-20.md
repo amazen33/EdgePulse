@@ -3,8 +3,9 @@
 IOT-WO-02 Amendment 5. These are upstream supplier checks and static artifact
 inputs, not EdgePulse runtime acceptance. Per-component supply-chain results
 and SBOM hashes are in the [evidence index](runtime-evidence-index-2026-10-20.json).
-The new Tomcat and minimal PostgreSQL inputs need no exceptions; the initial
-exception list for other components remains pending owner review.
+The new Tomcat and minimal PostgreSQL inputs need no exceptions; the owner
+explicitly approved the exact initial exception list for other components
+on 2026-10-20 ([record](../vulnerability-exceptions/owner-approval-2026-10-20.json)).
 Nothing was deployed or run against an environment.
 
 ## Tomcat 10.1.60: core, EL and WebSocket

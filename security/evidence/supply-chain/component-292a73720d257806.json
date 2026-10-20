@@ -298,7 +298,7 @@
   "adr0049": {
     "result": "pass",
     "scope": "exact component; static scan only",
-    "initialExceptionApprovalPending": true,
-    "exceptionsSHA256": "c44cc3eba942f528418a7b6aee7a46e471eb6f34bc285daa929a49145b6631f1"
+    "initialExceptionApprovalPending": false,
+    "exceptionsSHA256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce"
   }
 }
