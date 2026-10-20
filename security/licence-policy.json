@@ -1,0 +1,645 @@
+{
+  "version": 1,
+  "decision": "0054",
+  "permitted": [
+    "MIT",
+    "MIT-0",
+    "Apache-2.0",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "0BSD",
+    "PostgreSQL",
+    "BlueOak-1.0.0",
+    "CC0-1.0",
+    "PSF-2.0",
+    "Python-2.0",
+    "CNRI-Python",
+    "Zlib",
+    "Unlicense",
+    "BSL-1.0",
+    "BSD-3-Clause-Open-MPI",
+    "ICU"
+  ],
+  "permittedExceptions": [
+    "GCC-exception-3.1",
+    "LLVM-exception"
+  ],
+  "classes": [
+    "allowed",
+    "build-tool",
+    "weak-copyleft",
+    "base-os",
+    "operator-pulled",
+    "disabled-module",
+    "exception",
+    "pending-removal",
+    "blocked"
+  ],
+  "blocked": [
+    "AGPL-*",
+    "GPL-*",
+    "LGPL-*",
+    "SSPL-1.0",
+    "BUSL-1.1",
+    "Elastic-2.0",
+    "account-gated"
+  ],
+  "disabledModules": [
+    "module-5a/",
+    "module-5b/"
+  ],
+  "baseOSRepositories": [
+    "docker.io/library/python",
+    "docker.io/library/busybox",
+    "docker.io/rancher/mirrored-library-busybox",
+    "docker.io/library/alpine",
+    "docker.io/library/debian",
+    "docker.io/library/ubuntu"
+  ],
+  "operatorPulledRepositories": [
+    "docker.io/nvidia/cuda"
+  ],
+  "pendingRemoval": [],
+  "baselineKinds": [
+    "apt-pins",
+    "image-sbom",
+    "schema-source",
+    "inert-default",
+    "image-digest",
+    "licence-source",
+    "artifact-integrity",
+    "notice-evidence"
+  ],
+  "exceptions": {
+    "psycopg": {
+      "spdx": "LGPL-3.0-only",
+      "adr": "0043",
+      "module": "module-5a/"
+    },
+    "psycopg-binary": {
+      "spdx": "LGPL-3.0-only",
+      "adr": "0043",
+      "module": "module-5a/"
+    },
+    "psycopg-pool": {
+      "spdx": "LGPL-3.0-only",
+      "adr": "0043",
+      "module": "module-5a/"
+    },
+    "jakarta.annotation:jakarta.annotation-api": {
+      "spdx": "EPL-2.0",
+      "adr": "0025"
+    }
+  },
+  "historicalExceptions": [
+    {
+      "component": "OpenBao",
+      "spdx": "MPL-2.0",
+      "adr": "0030",
+      "currentClass": "weak-copyleft"
+    },
+    {
+      "component": "certifi",
+      "spdx": "MPL-2.0",
+      "adr": "0043",
+      "currentClass": "weak-copyleft"
+    }
+  ],
+  "expiryAnchor": "Initial approval 2026-10-09; conservative fixed dates, no later than merge + 60/120 days. No automatic extensions.",
+  "baseOSCloudImages": [
+    "cloud-images.ubuntu.com/noble/20260926/noble-server-cloudimg-amd64.img"
+  ],
+  "ladder": {
+    "effectiveOn": "2026-10-16",
+    "decision": "docs/adr/0054-licence-ladder-and-enterprise-grade-gate.md",
+    "tiers": {
+      "1": [
+        "MIT",
+        "MIT-0",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "ISC",
+        "0BSD",
+        "PostgreSQL",
+        "BlueOak-1.0.0",
+        "CC0-1.0",
+        "PSF-2.0",
+        "Python-2.0",
+        "CNRI-Python",
+        "Zlib",
+        "Unlicense",
+        "BSL-1.0",
+        "BSD-3-Clause-Open-MPI",
+        "ICU"
+      ],
+      "2": [
+        "Apache-2.0"
+      ],
+      "3": [
+        "MPL-2.0",
+        "LGPL-*",
+        "EPL-2.0"
+      ],
+      "4": [
+        "GPL-*"
+      ]
+    },
+    "never": [
+      "AGPL-*",
+      "SSPL-*",
+      "BUSL-*",
+      "Elastic-*",
+      "Commons-Clause*",
+      "LicenseRef-*",
+      "account-gated",
+      "proprietary",
+      "source-available"
+    ],
+    "legacy": {
+      "helm-chart|cilium|1.20.2": {
+        "sha256": "4eebd81b8ecd94b2014f90da780082566d6358e2e4113b51c3f87926b26a9783",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "manifest|cnpg|1.30.1": {
+        "sha256": "8483e7af31acbbe8487dae11342142384ff9bc39efaeecf6a939b4ceadffe7c2",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.ethlo.time:itu|1.10.2": {
+        "sha256": "7c6ac39ba82ace5cefddd49e93298fc55f31e605032c34d066b32395f050a8f2",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.core:jackson-annotations|2.17.2": {
+        "sha256": "6a1b76f0694b1a3014138543f26c107d0725bfd712936eb95cd0fc3712ed76c0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.core:jackson-core|2.17.2": {
+        "sha256": "fd7c7b9ed675ed506f32bfcbd6b00e5c3b109c377cf688486a1a4c2d2a7efcd5",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.core:jackson-databind|2.17.2": {
+        "sha256": "ae595bcd7b8b8bb64c9c563b9a01cd1d6dd2854afa4dfe2427422a0b3b781b24",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.17.2": {
+        "sha256": "fec2ea8a2cce8d6739ffea1f39446dde841fccc144402bf1eae4d7c2fdf29a5e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.datatype:jackson-datatype-jdk8|2.17.2": {
+        "sha256": "14bdfd34df325fff5f1b50574d56a99c4639950e9ca6fb27d400c200f0578ee8",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.datatype:jackson-datatype-jsr310|2.17.2": {
+        "sha256": "aab7151911b9e4e8e9b674f57dec0d6fba733f0d43a62a075b670fd8c2f1a190",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.fasterxml.jackson.module:jackson-module-parameter-names|2.17.2": {
+        "sha256": "b13c7156154f14e0a68f2e5703b9f407f670ef422ceebc28b1fdb5436d5ede0c",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.github.stephenc.jcip:jcip-annotations|1.0-1": {
+        "sha256": "431efc6f50783a91e310f6c9ae573313d1b87913e8541195a84ab79bf7c7a1c0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.android:annotations|4.1.1.4": {
+        "sha256": "2f4ff33742f4613f219b0c594393185c458c1178f41b868ba89fe785be4bfbd8",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.api.grpc:proto-google-common-protos|2.41.0": {
+        "sha256": "fb800a4bd1fda53ce8bc2679c7ab624b6be70b597f24d1cf5dba66120e0efd2f",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.code.findbugs:jsr305|3.0.2": {
+        "sha256": "e6c160679742ca0835b5813db14dd21add85b5a2b7154c488bc0fb121bb9b034",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.code.gson:gson|2.10.1": {
+        "sha256": "b62c71589be7c0f19e35a9d7b7e7ef96404a5f44a2641e9c4bc09aaa3521c402",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.errorprone:error_prone_annotations|2.28.0": {
+        "sha256": "64da99e8d3e39a8295365a73cb0edfa47c24c3ad80104f62a70a16959ca9a469",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.guava:failureaccess|1.0.2": {
+        "sha256": "48f7190a2bddfe78c0cf73c78206e510408d414eb6765989e13cb9648a2e77a7",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.guava:guava|33.2.1-android": {
+        "sha256": "91095d31101476395bf7181516cdd3a7f5c51cf358bd7b9db74e273d7a91271f",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.guava:listenablefuture|9999.0-empty-to-avoid-conflict-with-guava": {
+        "sha256": "9dfa504c621c100b2c983d94ab52b668a4ba9679e6e201049bbcce877ca98f12",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.j2objc:j2objc-annotations|1.3": {
+        "sha256": "20bf643a49fc389982947447803900598259b3a232fc47a7ec2cd2711a59e417",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.protobuf:protobuf-java-util|3.21.10": {
+        "sha256": "975f4980ff61966f87b7060986c51b7b71a9f0caecb5291b41a0d8f1c6c8a552",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|com.google.protobuf:protobuf-java|3.25.5": {
+        "sha256": "aa03bc1c2180eda6b742a7896df4d964370b54487514090820948814c1017715",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|com.networknt:json-schema-validator|1.5.1": {
+        "sha256": "86727c33669024e40a4395b7ca13c7fe7bd6cdb648a59bb1431b22dc404597cc",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|com.nimbusds:nimbus-jose-jwt|9.37.4": {
+        "sha256": "e6ae66e6b530197718f384c2e749b2b912ca5c54c5bce0ecf2d166fdccf1832b",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.cloudevents:cloudevents-api|3.0.0": {
+        "sha256": "f9e73673475bfe6cb3867f13e0b936dcdd516095f783d41ae0cd14244b36b36a",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.cloudevents:cloudevents-core|3.0.0": {
+        "sha256": "66d4a1e54419e1adac4ddeafea32d3e2f6ba42a455c14f9a659037e11cfe727e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.cloudevents:cloudevents-protobuf|3.0.0": {
+        "sha256": "c4e526a7924b404cbe9f587dd29892506509cda45369f5565147af0c1702bef6",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-api|1.68.1": {
+        "sha256": "22bb169360fb2e697ef5fa19b6aae5749ca0a3ce69180dd5260b95cf21212104",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-context|1.68.1": {
+        "sha256": "2b749c80e33b5a9c0fe4f6b441c2b7307fa3b50edfb903aed4c8fe587d4777e0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-core|1.68.1": {
+        "sha256": "21649804b36f22b8949feadbe81317e123228592b1b2e5d03fe4a93cc4c3258d",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-netty-shaded|1.68.1": {
+        "sha256": "a6b70ac15f871b24e945d0cc9756e68c842817338a1c96e6eacc807df9463c2f",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-protobuf-lite|1.68.1": {
+        "sha256": "186e32dbd759b0ffacf4802ac2609659fa1dba619835a8767a372a1b990c80b1",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-protobuf|1.68.1": {
+        "sha256": "5b18852098ebfcb3d2da2420f7979f63acb689be6658128822c2dece3f7af330",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-stub|1.68.1": {
+        "sha256": "ce241d595ca76d052d3a61681144b1cdaf32b90e87100090df79081d7c44e6be",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.grpc:grpc-util|1.68.1": {
+        "sha256": "36d5350fb0164b255429f24e231f811781ddb0133ed8078e164beca8dea87339",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.micrometer:micrometer-commons|1.13.4": {
+        "sha256": "b1603c16de47af4ee1d0ac567bec8ba944f1a56bebcc1010a8eed852e24377e8",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.micrometer:micrometer-observation|1.13.4": {
+        "sha256": "6df4ed2cbacfa7cb227269e17d3dd280aec77ba4117114f590c6bb18a7d0777c",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|io.perfmark:perfmark-api|0.27.0": {
+        "sha256": "ba9df6a62039f71bee32df2d493b355a00fa57f4a5bf29add9b301206c382447",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|jakarta.annotation:jakarta.annotation-api|2.1.1": {
+        "sha256": "82ab0c342bbe27a5ff3da4dd48e39e65a594f519363ad2733777bac4c6da38aa",
+        "tier": 3,
+        "due": "2027-04-20"
+      },
+      "maven|org.apache.logging.log4j:log4j-api|2.23.1": {
+        "sha256": "98bcb8cf725240f11a82455ad715735015862b87b9603b3fcfb2cb335bdd81d5",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.apache.logging.log4j:log4j-to-slf4j|2.23.1": {
+        "sha256": "9efd8a05dc1be6b475f8e2afe55ec2590b13192078297fcb4e79ab70b6374cd7",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.30": {
+        "sha256": "d864335255fe8b501a8be7df1c79de8257638f5bedfb358497cf1a2b215a8fa0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.30": {
+        "sha256": "b8c40628e3f64fe6cd051107f81cd67b13c081d9bf7c7804638a35e728e9079c",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.30": {
+        "sha256": "a08423038bc647a0b6f0f31db3c67effaae452d4bf094becb030a933f3d5398e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.apache.tomcat:annotations-api|6.0.53": {
+        "sha256": "3cb2fef8e05a671aa45b495fae27f9a6129086aa689703a57d6421847839c37b",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.checkerframework:checker-qual|3.42.0": {
+        "sha256": "1ceff5425ba9403729e06e904320c9ef01726b60c66ea5d71105e80309c4c21d",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.codehaus.mojo:animal-sniffer-annotations|1.24": {
+        "sha256": "70bb2d016c7f348fceb983131f692e2a127d021259891aa0a723bd6e5318a78b",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.slf4j:jul-to-slf4j|2.0.16": {
+        "sha256": "3a3d9fb36a09f8c21d46ceb57a099bf239198e93e302300071a073f2562b29c4",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.slf4j:slf4j-api|2.0.16": {
+        "sha256": "1320307b400808c2d39f5cf27f5185cd556567a8ccc7462282e26e92045e0fd7",
+        "tier": 1,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-autoconfigure|3.3.4": {
+        "sha256": "bba05c229ae96b13f4daaeb55af2f20e93521e68bd72c1ddb763f8d0cdced1b4",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-starter-json|3.3.4": {
+        "sha256": "b667e0a65606f0b46dcaa28b6cac34fe70aff38d1d63ea2afcaa1667fe5892f2",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-starter-logging|3.3.4": {
+        "sha256": "d6074e754f3f6989dab49e738101aee3bcb64ed90a049a325d863820e6a4c781",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-starter-tomcat|3.3.4": {
+        "sha256": "31a035cc26f57c99a70b3f7c24d0f347eff26b0562fde33a93fa3f93d01804a9",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-starter-web|3.3.4": {
+        "sha256": "ca9b5941d0c77fe03141100afc40a264beb9c2eebc8c26226959d04ddf7268c4",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot-starter|3.3.4": {
+        "sha256": "1618a15364a87ffe3ad4a97005bb5e97f4dae81d2e33aa2594d4268c11229931",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework.boot:spring-boot|3.3.4": {
+        "sha256": "43aa287b2023ef0112d6fb27a754f507dea83a3122d596736ad1f610aa229f19",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-aop|6.1.13": {
+        "sha256": "46cafa80b983efc9e98b10b56ef57fa390bafd903bb6449019e7974cdcc9d62e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-beans|6.1.13": {
+        "sha256": "d0deff3899b6be9c6672ba8c30168f2b7f4e39a62ce92f06d69903bf03f800a4",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-context|6.1.13": {
+        "sha256": "b0fc4a1bbb7746e13b34e48c10b5aaf57e1179537d67edeee0551e715e9608ae",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-core|6.1.13": {
+        "sha256": "8d889063a847023426f63a8f10458e607770f6dc2f960a1e16663354842550ea",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-expression|6.1.13": {
+        "sha256": "2fa52900589510115eecd805191c09d67505f0d79a9a772e0800748c3ad879e4",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-jcl|6.1.13": {
+        "sha256": "d0747a289232877eb99e9696e1a3fda5f8f700aeb2ea3501e814b8888743fe9e",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-webmvc|6.1.13": {
+        "sha256": "135094bf9bb4e777848a1fd4baae3783dd1c136d6ff73d99ac4ac6c6a3fcefd7",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.springframework:spring-web|6.1.13": {
+        "sha256": "47f56de41321f9b1b6c02fb39cddb92119cb22cd17219d6af9fde21975d795ee",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "maven|org.yaml:snakeyaml|2.2": {
+        "sha256": "93d2fa707173d1d7c6957875bc2fadf3da8e2c4e61237fa41d0179c4ad4cacdf",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed": {
+        "sha256": "2d156ce1b8f9bd895a8344b2235bb070a2ab05232b8d380c78a03614956f0740",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|docker.io/library/busybox|1.36.1": {
+        "sha256": "724c1e682589e8db240c92392abb85ccedee96251ac35cc26b3e8852a7afa4b3",
+        "tier": 4,
+        "due": "2027-04-20"
+      },
+      "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a": {
+        "sha256": "af7b2038c200eecab2da5951ce3813d632f36a5fe7660a1fa7fe1364ebed0b99",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07": {
+        "sha256": "52abd1bd9c4ca261c51c00fd0840edbcb9f9a9c68f8b9374b89220aaf1e03ed0",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0": {
+        "sha256": "bbcb4583ecfefd07b11857bee8d7e557c30a91b91c649e6f9920aa805d017d13",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|ghcr.io/kube-vip/kube-vip-cloud-provider|v0.0.12": {
+        "sha256": "df40cbb398a1e189c7b781edd24c644e690c95eb33764999e31cd4e624c7ea8a",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|ghcr.io/kube-vip/kube-vip|v1.2.4": {
+        "sha256": "d8e84d49dfa0950c18d357aaec072a6aaa97c05b3c6539a88860a6cb9b2de2ab",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463": {
+        "sha256": "5cb273f5aa686b1a3d8c04a8254a473b74478a535c1f2af5af3731c9c7094875",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01": {
+        "sha256": "94ad20fee6f87e9beaddf9d853169fc056b56dbfe3c99dd7acc3b3e8dc6593da",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc": {
+        "sha256": "d282ccf50a5824774ddeea0e3f61e7513174d3e4bd9530d54738bde588d87363",
+        "tier": 2,
+        "due": "2027-04-20"
+      }
+    }
+  },
+  "gatedMavenCommands": [
+    {
+      "goals": [
+        "--version"
+      ],
+      "profiles": [],
+      "properties": {},
+      "pom": null
+    },
+    {
+      "goals": [
+        "verify"
+      ],
+      "profiles": [],
+      "properties": {},
+      "pom": "pom.xml"
+    },
+    {
+      "goals": [
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+      ],
+      "profiles": [],
+      "pom": "pom.xml",
+      "properties": {
+        "includeTestScope": "true",
+        "includeProvidedScope": "true",
+        "includeSystemScope": "true",
+        "outputFormat": "json",
+        "outputName": "licence-all-scopes"
+      }
+    },
+    {
+      "goals": [
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+      ],
+      "profiles": [],
+      "pom": "pom.xml",
+      "properties": {
+        "includeTestScope": "false",
+        "includeProvidedScope": "true",
+        "includeSystemScope": "true",
+        "outputFormat": "json",
+        "outputName": "licence-shipped-scopes"
+      }
+    },
+    {
+      "goals": [
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+      ],
+      "profiles": [],
+      "pom": "target/licence/plugin-project-executed/plugin-*/pom.xml",
+      "properties": {
+        "includeTestScope": "false",
+        "includeProvidedScope": "true",
+        "includeSystemScope": "true",
+        "outputFormat": "json",
+        "outputName": "plugin-bom"
+      }
+    },
+    {
+      "goals": [
+        "org.apache.maven.plugins:maven-help-plugin:3.5.1:effective-pom"
+      ],
+      "profiles": [],
+      "pom": "pom.xml",
+      "properties": {
+        "output": "target/licence/effective-pom.xml",
+        "verbose": "true"
+      }
+    },
+    {
+      "goals": [
+        "org.apache.maven.plugins:maven-dependency-plugin:3.11.0:tree"
+      ],
+      "profiles": [],
+      "properties": {
+        "outputType": "json",
+        "outputFile": "target/licence-resolved-tree.json"
+      },
+      "pom": "pom.xml"
+    }
+  ],
+  "knownPermissiveBuildLicences": {
+    "LicenseRef-JDOM-2.0.6.1": {
+      "name": "org.jdom:jdom2",
+      "version": "2.0.6.1",
+      "notice": "security/licences/LicenseRef-JDOM-2.0.6.1.txt",
+      "source": "https://repo.maven.apache.org/maven2/org/jdom/jdom2/2.0.6.1/jdom2-2.0.6.1.jar",
+      "readOn": "2026-10-20",
+      "sha256": "9993501007d4a63f677b496a8d3783d69d3eb4772b532be00888529bbcc60a7c"
+    },
+    "LicenseRef-Indiana-Extreme-mxparser-1.2.2": {
+      "name": "io.github.x-stream:mxparser",
+      "version": "1.2.2",
+      "notice": "security/licences/LicenseRef-Indiana-Extreme-mxparser-1.2.2.txt",
+      "source": "https://repo.maven.apache.org/maven2/io/github/x-stream/mxparser/1.2.2/mxparser-1.2.2.jar",
+      "readOn": "2026-10-20",
+      "sha256": "79f77e2e1ab271375ee45e3d9673fc78c024fe781ba6e3212d76f98bf3e60734"
+    },
+    "LicenseRef-public-domain-xmlpull-1.1.3.1": {
+      "name": "xmlpull:xmlpull",
+      "version": "1.1.3.1",
+      "notice": "security/licences/LicenseRef-public-domain-xmlpull-1.1.3.1.txt",
+      "source": "https://repo.maven.apache.org/maven2/xmlpull/xmlpull/1.1.3.1/xmlpull-1.1.3.1.pom",
+      "readOn": "2026-10-20",
+      "sha256": "4eeafa29d1d9a0cdbdad0f5178cd553527329b57b5808ffe912cb9c698343612"
+    }
+  }
+}

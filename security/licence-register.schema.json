@@ -1,0 +1,482 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "components",
+    "testOnlyModules"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "ecosystem",
+          "name",
+          "version",
+          "spdx",
+          "class",
+          "licenceSource",
+          "verifiedOn",
+          "recordedOn",
+          "locations",
+          "integrities",
+          "electedSpdx"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "spdx": {
+            "type": "string",
+            "minLength": 1
+          },
+          "licenceSource": {
+            "type": "string",
+            "minLength": 1,
+            "format": "uri"
+          },
+          "adr": {
+            "type": "string",
+            "minLength": 1
+          },
+          "followUp": {
+            "type": "string",
+            "minLength": 1
+          },
+          "module": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notice": {
+            "type": "string",
+            "minLength": 1
+          },
+          "ecosystem": {
+            "enum": [
+              "oci-image",
+              "helm-chart",
+              "manifest",
+              "npm",
+              "pip",
+              "github-action",
+              "tool",
+              "maven"
+            ]
+          },
+          "class": {
+            "enum": [
+              "allowed",
+              "build-tool",
+              "weak-copyleft",
+              "base-os",
+              "operator-pulled",
+              "disabled-module",
+              "exception",
+              "pending-removal",
+              "blocked"
+            ]
+          },
+          "verifiedOn": {
+            "type": "string",
+            "format": "date"
+          },
+          "recordedOn": {
+            "type": "string",
+            "format": "date"
+          },
+          "expires": {
+            "type": "string",
+            "format": "date"
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "integrities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "unmodified": {
+            "type": "boolean"
+          },
+          "separateUnit": {
+            "type": "boolean"
+          },
+          "evidencePending": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "imageSBOM": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "path",
+              "sha256"
+            ],
+            "properties": {
+              "path": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            }
+          },
+          "tier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "approvedBy": {
+            "const": "amazen33"
+          },
+          "enterpriseGrade": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "status",
+                  "due"
+                ],
+                "properties": {
+                  "status": {
+                    "const": "legacy-pending"
+                  },
+                  "due": {
+                    "type": "string",
+                    "format": "date"
+                  }
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "status",
+                  "criteria"
+                ],
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "verified",
+                      "pending"
+                    ]
+                  },
+                  "criteria": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "maturity",
+                      "governance",
+                      "activitySupport",
+                      "securityProcess",
+                      "supplyChain",
+                      "adoption"
+                    ],
+                    "properties": {
+                      "maturity": {
+                        "$ref": "#/$defs/criterion"
+                      },
+                      "governance": {
+                        "$ref": "#/$defs/criterion"
+                      },
+                      "activitySupport": {
+                        "$ref": "#/$defs/criterion"
+                      },
+                      "securityProcess": {
+                        "$ref": "#/$defs/criterion"
+                      },
+                      "supplyChain": {
+                        "$ref": "#/$defs/criterion"
+                      },
+                      "adoption": {
+                        "$ref": "#/$defs/criterion"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "climbing": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "reviewedOn",
+              "reevaluateOn",
+              "reviewAtMinorUpgrade",
+              "rejectedCandidates"
+            ],
+            "properties": {
+              "reviewedOn": {
+                "type": "string",
+                "format": "date"
+              },
+              "reevaluateOn": {
+                "type": "string",
+                "format": "date"
+              },
+              "reviewAtMinorUpgrade": {
+                "const": true
+              },
+              "rejectedCandidates": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "name",
+                    "tier",
+                    "failedCriterion",
+                    "evidence"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "tier": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 3
+                    },
+                    "failedCriterion": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "evidence": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "electedSpdx": {
+            "type": "string",
+            "minLength": 1
+          },
+          "upstreamSource": {
+            "type": "string",
+            "format": "uri"
+          },
+          "licenceTextSHA256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "class": {
+                  "enum": [
+                    "exception",
+                    "pending-removal"
+                  ]
+                }
+              },
+              "not": {
+                "properties": {
+                  "name": {
+                    "const": "jakarta.annotation:jakarta.annotation-api"
+                  },
+                  "adr": {
+                    "const": "0025"
+                  }
+                },
+                "required": [
+                  "name",
+                  "adr"
+                ]
+              }
+            },
+            "then": {
+              "required": [
+                "adr",
+                "expires"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "class": {
+                  "const": "disabled-module"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "adr",
+                "module",
+                "followUp"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "class": {
+                  "enum": [
+                    "weak-copyleft",
+                    "operator-pulled"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "notice",
+                "adr"
+              ]
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "tier"
+              ]
+            },
+            "then": {
+              "required": [
+                "enterpriseGrade"
+              ]
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "tier"
+              ],
+              "properties": {
+                "tier": {
+                  "minimum": 3
+                }
+              },
+              "not": {
+                "required": [
+                  "enterpriseGrade"
+                ],
+                "properties": {
+                  "enterpriseGrade": {
+                    "required": [
+                      "status"
+                    ],
+                    "properties": {
+                      "status": {
+                        "const": "legacy-pending"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "approvedBy",
+                "enterpriseGrade",
+                "climbing",
+                "unmodified",
+                "separateUnit",
+                "notice"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "testOnlyModules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "artifactId",
+          "enforcerExecution",
+          "restriction"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "artifactId": {
+            "type": "string"
+          },
+          "enforcerExecution": {
+            "type": "string"
+          },
+          "restriction": {
+            "enum": [
+              "test-scope",
+              "no-consumers"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "evidence",
+        "date"
+      ],
+      "properties": {
+        "result": {
+          "enum": [
+            "pass",
+            "pending",
+            "fail"
+          ]
+        },
+        "evidence": {
+          "type": "string",
+          "format": "uri"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

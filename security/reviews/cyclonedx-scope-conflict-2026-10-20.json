@@ -1,0 +1,78 @@
+{
+  "evidenceDate": "2026-10-20",
+  "authority": "IOT-WO-02 resolved-scope fallback ruling; Dependency Plugin 3.11.0",
+  "sourceHashes": {
+    "services/identity/pom.xml": "5a90d3a468008fdd4e422161cf9df4fbdc8cc03f5ed22d44fd9ba5701f99906c",
+    "services/identity/target/licence-all-scopes.json": "8b7182c0f1fbb09f0fcc26df187b13a0edfd92baa3cc5604c40853d7ff61458b",
+    "services/identity/target/licence-shipped-scopes.json": "5b05525afa23b33626aded0eff6d278155de5b8ea12185b37326b28c5a4dc613",
+    "services/identity/target/licence-resolved-tree.json": "8a49ae12e80d1076a65cbf2442fcdad956a994d4178d754a4595bdb4acffe43e"
+  },
+  "scopeDisagreements": [
+    {
+      "id": "maven|ch.qos.logback:logback-classic|1.5.8",
+      "module": "services/identity/pom.xml",
+      "resolvedScope": "test",
+      "bomNonTestReachable": true
+    },
+    {
+      "id": "maven|ch.qos.logback:logback-core|1.5.8",
+      "module": "services/identity/pom.xml",
+      "resolvedScope": "test",
+      "bomNonTestReachable": true
+    }
+  ],
+  "logbackPackaging": [
+    {
+      "id": "maven|ch.qos.logback:logback-classic|1.5.8",
+      "resolvedScope": "test",
+      "packaged": false,
+      "artifact": "services/identity/target/edgepulse-service-identity-2.0.0.jar",
+      "sha256": "0e35af6d622a060c0886fcc34bc570e9fb720eff651f5e8467247ac78894e467",
+      "nestedJars": [],
+      "manifestClassPath": [],
+      "logbackClassesPresent": false
+    },
+    {
+      "id": "maven|ch.qos.logback:logback-core|1.5.8",
+      "resolvedScope": "test",
+      "packaged": false,
+      "artifact": "services/identity/target/edgepulse-service-identity-2.0.0.jar",
+      "sha256": "0e35af6d622a060c0886fcc34bc570e9fb720eff651f5e8467247ac78894e467",
+      "nestedJars": [],
+      "manifestClassPath": [],
+      "logbackClassesPresent": false
+    }
+  ],
+  "resolvedTreeNodes": [
+    {
+      "groupId": "ch.qos.logback",
+      "artifactId": "logback-classic",
+      "version": "1.5.8",
+      "type": "jar",
+      "scope": "test",
+      "classifier": "",
+      "optional": "false",
+      "children": [
+        {
+          "groupId": "ch.qos.logback",
+          "artifactId": "logback-core",
+          "version": "1.5.8",
+          "type": "jar",
+          "scope": "test",
+          "classifier": "",
+          "optional": "false"
+        }
+      ]
+    },
+    {
+      "groupId": "ch.qos.logback",
+      "artifactId": "logback-core",
+      "version": "1.5.8",
+      "type": "jar",
+      "scope": "test",
+      "classifier": "",
+      "optional": "false"
+    }
+  ],
+  "gateStatus": "passed"
+}

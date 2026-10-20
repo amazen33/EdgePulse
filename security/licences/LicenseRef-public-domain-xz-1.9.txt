@@ -1,0 +1,7 @@
+<licenses>
+        <license>
+            <name>Public Domain</name>
+            <comments>You can do whatever you want with this package.</comments>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
