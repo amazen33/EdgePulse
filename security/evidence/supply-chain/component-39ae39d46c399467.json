@@ -1,0 +1,3713 @@
+{
+  "component": "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+  "date": "2026-10-20",
+  "scan": "https://github.com/amazen33/EdgePulse/actions/runs/39434411230",
+  "sboms": [
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "path": "target/supply-chain/reviewed/36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a.cdx.json",
+      "sha256": "846228ecfb6772d401249006ad32cd6a858d36073d698da07d9bf7ee1eab7c48"
+    }
+  ],
+  "tools": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "grype": [
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "vulnerability": "CVE-2026-66046",
+      "aliases": [
+        "CVE-2026-66046"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.9.0-1~deb13u1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "spring-webmvc",
+      "version": "6.2.19",
+      "vulnerability": "CVE-2026-47884",
+      "aliases": [
+        "CVE-2026-47884",
+        "GHSA-pc63-qcmh-9cmg"
+      ],
+      "severity": "Critical",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "spring-webflux",
+      "version": "6.2.19",
+      "vulnerability": "CVE-2026-47890",
+      "aliases": [
+        "CVE-2026-47890",
+        "GHSA-j9f9-w8pj-32f8"
+      ],
+      "severity": "Critical",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "spring-webmvc",
+      "version": "6.2.19",
+      "vulnerability": "CVE-2026-47890",
+      "aliases": [
+        "CVE-2026-47890",
+        "GHSA-j9f9-w8pj-32f8"
+      ],
+      "severity": "Critical",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "spring-webflux",
+      "version": "6.2.19",
+      "vulnerability": "CVE-2026-47892",
+      "aliases": [
+        "CVE-2026-47892",
+        "GHSA-9qf2-26p9-2q2q"
+      ],
+      "severity": "Critical",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "jakarta.mail",
+      "version": "2.0.1",
+      "vulnerability": "CVE-2025-7962",
+      "aliases": [
+        "CVE-2025-7962",
+        "GHSA-9342-92gg-6v29"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.0.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-82560",
+      "aliases": [
+        "CVE-2026-82560"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "log4j-api",
+      "version": "2.24.3",
+      "vulnerability": "CVE-2026-49844",
+      "aliases": [
+        "CVE-2026-49844",
+        "GHSA-qv9r-c865-cp47"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.25.5"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "vulnerability": "CVE-2026-77214",
+      "aliases": [
+        "CVE-2026-77214"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.9.0-1~deb13u1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libncursesw6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libtinfo6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "ncurses-base",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "ncurses-bin",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-69720",
+      "aliases": [
+        "CVE-2025-69720"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54873",
+      "aliases": [
+        "CVE-2026-54873"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54873",
+      "aliases": [
+        "CVE-2026-54873"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54873",
+      "aliases": [
+        "CVE-2026-54873"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-9538",
+      "aliases": [
+        "CVE-2026-9538"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "vulnerability": "CVE-2026-93990",
+      "aliases": [
+        "CVE-2026-93990"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.9.0-1~deb13u1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-84784",
+      "aliases": [
+        "CVE-2026-84784"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-84784",
+      "aliases": [
+        "CVE-2026-84784"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-84784",
+      "aliases": [
+        "CVE-2026-84784"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpam-modules",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpam-modules-bin",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpam-runtime",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpam0g",
+      "version": "1.7.0-5",
+      "vulnerability": "CVE-2026-54411",
+      "aliases": [
+        "CVE-2026-54411"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-5435",
+      "aliases": [
+        "CVE-2026-5435"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-5435",
+      "aliases": [
+        "CVE-2026-5435"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2018-20796",
+      "aliases": [
+        "CVE-2018-20796"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2018-20796",
+      "aliases": [
+        "CVE-2018-20796"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "vulnerability": "CVE-2026-85091",
+      "aliases": [
+        "CVE-2026-85091"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "gcc-14-base",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-95619",
+      "aliases": [
+        "CVE-2026-95619"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libatomic1",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-95619",
+      "aliases": [
+        "CVE-2026-95619"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libgcc-s1",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-95619",
+      "aliases": [
+        "CVE-2026-95619"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libstdc++6",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-95619",
+      "aliases": [
+        "CVE-2026-95619"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "lz4-java",
+      "version": "1.10.1",
+      "vulnerability": "CVE-2026-59949",
+      "aliases": [
+        "CVE-2026-59949",
+        "GHSA-xx22-p4ch-683r"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.11.1"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "amqp-client",
+      "version": "5.34.0",
+      "vulnerability": "CVE-2026-106122",
+      "aliases": [
+        "CVE-2026-106122",
+        "GHSA-7822-rcf6-97fx"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "5.36.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6238",
+      "aliases": [
+        "CVE-2026-6238"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6238",
+      "aliases": [
+        "CVE-2026-6238"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "amqp-client",
+      "version": "5.34.0",
+      "vulnerability": "CVE-2026-106121",
+      "aliases": [
+        "CVE-2026-106121",
+        "GHSA-cqgh-8p3p-mx4m"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "5.36.1"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19499",
+      "aliases": [
+        "CVE-2026-19499"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19499",
+      "aliases": [
+        "CVE-2026-19499"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-3184",
+      "aliases": [
+        "CVE-2026-3184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "vulnerability": "CVE-2026-76956",
+      "aliases": [
+        "CVE-2026-76956"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.9.0-1~deb13u1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2026-5704",
+      "aliases": [
+        "CVE-2026-5704"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2005-2541",
+      "aliases": [
+        "CVE-2005-2541"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-72897",
+      "aliases": [
+        "CVE-2026-72897"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-72897",
+      "aliases": [
+        "CVE-2026-72897"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-72897",
+      "aliases": [
+        "CVE-2026-72897"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-80489",
+      "aliases": [
+        "CVE-2026-80489"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-80489",
+      "aliases": [
+        "CVE-2026-80489"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-77117",
+      "aliases": [
+        "CVE-2026-77117"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-77117",
+      "aliases": [
+        "CVE-2026-77117"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "lz4-java",
+      "version": "1.10.1",
+      "vulnerability": "CVE-2026-106452",
+      "aliases": [
+        "CVE-2026-106452",
+        "GHSA-4v53-57pg-c464"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.11.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "lz4-java",
+      "version": "1.10.1",
+      "vulnerability": "CVE-2026-106450",
+      "aliases": [
+        "CVE-2026-106450",
+        "GHSA-gm45-99xc-r7wv"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.11.4"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "lz4-java",
+      "version": "1.10.1",
+      "vulnerability": "CVE-2026-106453",
+      "aliases": [
+        "CVE-2026-106453",
+        "GHSA-6cx8-rjf8-pr8g"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.11.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "vulnerability": "CVE-2026-102633",
+      "aliases": [
+        "CVE-2026-102633"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.9.0-1~deb13u1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75804",
+      "aliases": [
+        "CVE-2026-75804"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75804",
+      "aliases": [
+        "CVE-2026-75804"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75804",
+      "aliases": [
+        "CVE-2026-75804"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "gcc-14-base",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-102010",
+      "aliases": [
+        "CVE-2026-102010"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libatomic1",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-102010",
+      "aliases": [
+        "CVE-2026-102010"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libgcc-s1",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-102010",
+      "aliases": [
+        "CVE-2026-102010"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libstdc++6",
+      "version": "14.2.0-19",
+      "vulnerability": "CVE-2026-102010",
+      "aliases": [
+        "CVE-2026-102010"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-42772",
+      "aliases": [
+        "CVE-2026-42772"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-42772",
+      "aliases": [
+        "CVE-2026-42772"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-42772",
+      "aliases": [
+        "CVE-2026-42772"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010022",
+      "aliases": [
+        "CVE-2019-1010022"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010022",
+      "aliases": [
+        "CVE-2019-1010022"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1~deb13u2",
+      "vulnerability": "CVE-2026-103111",
+      "aliases": [
+        "CVE-2026-103111"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "10.46-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010024",
+      "aliases": [
+        "CVE-2019-1010024"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010024",
+      "aliases": [
+        "CVE-2019-1010024"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010023",
+      "aliases": [
+        "CVE-2019-1010023"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010023",
+      "aliases": [
+        "CVE-2019-1010023"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login.defs",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "passwd",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2026-15534",
+      "aliases": [
+        "CVE-2026-15534"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2010-4756",
+      "aliases": [
+        "CVE-2010-4756"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2010-4756",
+      "aliases": [
+        "CVE-2010-4756"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6791",
+      "aliases": [
+        "CVE-2026-6791"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6791",
+      "aliases": [
+        "CVE-2026-6791"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010025",
+      "aliases": [
+        "CVE-2019-1010025"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-1010025",
+      "aliases": [
+        "CVE-2019-1010025"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-9192",
+      "aliases": [
+        "CVE-2019-9192"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2019-9192",
+      "aliases": [
+        "CVE-2019-9192"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19542",
+      "aliases": [
+        "CVE-2026-19542"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-19542",
+      "aliases": [
+        "CVE-2026-19542"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-35191",
+      "aliases": [
+        "CVE-2026-35191"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-35191",
+      "aliases": [
+        "CVE-2026-35191"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-35191",
+      "aliases": [
+        "CVE-2026-35191"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "lz4-java",
+      "version": "1.10.1",
+      "vulnerability": "CVE-2026-106449",
+      "aliases": [
+        "CVE-2026-106449",
+        "GHSA-343h-94h5-c4wr"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.11.4"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libacl1",
+      "version": "2.3.2-2+b1",
+      "vulnerability": "CVE-2026-54369",
+      "aliases": [
+        "CVE-2026-54369"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "vulnerability": "CVE-2026-27171",
+      "aliases": [
+        "CVE-2026-27171"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "vulnerability": "CVE-2025-66382",
+      "aliases": [
+        "CVE-2025-66382"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libglib2.0-0t64",
+      "version": "2.84.4-3~deb13u5",
+      "vulnerability": "CVE-2012-0039",
+      "aliases": [
+        "CVE-2012-0039"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54875",
+      "aliases": [
+        "CVE-2026-54875"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54875",
+      "aliases": [
+        "CVE-2026-54875"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54875",
+      "aliases": [
+        "CVE-2026-54875"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libncursesw6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libtinfo6",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "ncurses-base",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "ncurses-bin",
+      "version": "6.5+20250216-2",
+      "vulnerability": "CVE-2025-6141",
+      "aliases": [
+        "CVE-2025-6141"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libfreetype6",
+      "version": "2.13.3+dfsg-1+deb13u1",
+      "vulnerability": "CVE-2026-95512",
+      "aliases": [
+        "CVE-2026-95512"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libbz2-1.0",
+      "version": "1.0.8-6",
+      "vulnerability": "CVE-2026-42250",
+      "aliases": [
+        "CVE-2026-42250"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2026-50812",
+      "aliases": [
+        "CVE-2026-50812"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "amqp-client",
+      "version": "5.34.0",
+      "vulnerability": "CVE-2026-106123",
+      "aliases": [
+        "CVE-2026-106123",
+        "GHSA-h6w7-qmcm-q6xr"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "5.35.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2026-50813",
+      "aliases": [
+        "CVE-2026-50813"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libattr1",
+      "version": "1:2.5.2-3",
+      "vulnerability": "CVE-2026-54371",
+      "aliases": [
+        "CVE-2026-54371"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libexpat1",
+      "version": "2.8.3-1~deb13u1",
+      "vulnerability": "CVE-2026-76957",
+      "aliases": [
+        "CVE-2026-76957"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.9.0-1~deb13u1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u2",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.7-1~deb13u3"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2021-45346",
+      "aliases": [
+        "CVE-2021-45346"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libglib2.0-0t64",
+      "version": "2.84.4-3~deb13u5",
+      "vulnerability": "CVE-2026-86469",
+      "aliases": [
+        "CVE-2026-86469"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "eddsa",
+      "version": "0.3.0",
+      "vulnerability": "CVE-2020-36843",
+      "aliases": [
+        "CVE-2020-36843",
+        "GHSA-p53j-g8pw-4w5f"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2026-18508",
+      "aliases": [
+        "CVE-2026-18508"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libacl1",
+      "version": "2.3.2-2+b1",
+      "vulnerability": "CVE-2026-54370",
+      "aliases": [
+        "CVE-2026-54370"
+      ],
+      "severity": "High",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-15059",
+      "aliases": [
+        "CVE-2026-15059"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-15059",
+      "aliases": [
+        "CVE-2026-15059"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "lz4-java",
+      "version": "1.10.1",
+      "vulnerability": "CVE-2026-106451",
+      "aliases": [
+        "CVE-2026-106451",
+        "GHSA-mcr4-qmvw-px4g"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.11.4"
+      ],
+      "scanner": "grype",
+      "packageClass": "java-archive",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "apt",
+      "version": "3.0.3",
+      "vulnerability": "CVE-2011-3374",
+      "aliases": [
+        "CVE-2011-3374"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "apt-transport-https",
+      "version": "3.0.3",
+      "vulnerability": "CVE-2011-3374",
+      "aliases": [
+        "CVE-2011-3374"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libapt-pkg7.0",
+      "version": "3.0.3",
+      "vulnerability": "CVE-2011-3374",
+      "aliases": [
+        "CVE-2011-3374"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "liblcms2-2",
+      "version": "2.16-2+deb13u2",
+      "vulnerability": "CVE-2025-29070",
+      "aliases": [
+        "CVE-2025-29070"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login.defs",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2007-5686",
+      "aliases": [
+        "CVE-2007-5686"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "passwd",
+      "version": "1:4.17.4-2",
+      "vulnerability": "CVE-2007-5686",
+      "aliases": [
+        "CVE-2007-5686"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "tar",
+      "version": "1.35+dfsg-3.1",
+      "vulnerability": "CVE-2026-18477",
+      "aliases": [
+        "CVE-2026-18477"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libnss3",
+      "version": "2:3.110-1+deb13u4",
+      "vulnerability": "CVE-2017-11696",
+      "aliases": [
+        "CVE-2017-11696"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libnss3",
+      "version": "2:3.110-1+deb13u4",
+      "vulnerability": "CVE-2017-11698",
+      "aliases": [
+        "CVE-2017-11698"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libnss3",
+      "version": "2:3.110-1+deb13u4",
+      "vulnerability": "CVE-2017-11695",
+      "aliases": [
+        "CVE-2017-11695"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-16742",
+      "aliases": [
+        "CVE-2026-16742"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2026-16742",
+      "aliases": [
+        "CVE-2026-16742"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6368",
+      "aliases": [
+        "CVE-2026-6368"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "vulnerability": "CVE-2026-6368",
+      "aliases": [
+        "CVE-2026-6368"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "perl-base",
+      "version": "5.40.1-6+deb13u1",
+      "vulnerability": "CVE-2011-4116",
+      "aliases": [
+        "CVE-2011-4116"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpng16-16t64",
+      "version": "1.6.48-1+deb13u5",
+      "vulnerability": "CVE-2021-4214",
+      "aliases": [
+        "CVE-2021-4214"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libnss3",
+      "version": "2:3.110-1+deb13u4",
+      "vulnerability": "CVE-2017-11697",
+      "aliases": [
+        "CVE-2017-11697"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2013-4392",
+      "aliases": [
+        "CVE-2013-4392"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2013-4392",
+      "aliases": [
+        "CVE-2013-4392"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "bsdutils",
+      "version": "1:2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libblkid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "liblastlog2-2",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libmount1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsmartcols1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libuuid1",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "mount",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "util-linux",
+      "version": "2.41.5-0+deb13u1",
+      "vulnerability": "CVE-2022-0563",
+      "aliases": [
+        "CVE-2022-0563"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31439",
+      "aliases": [
+        "CVE-2023-31439"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31439",
+      "aliases": [
+        "CVE-2023-31439"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2017-18018",
+      "aliases": [
+        "CVE-2017-18018"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31437",
+      "aliases": [
+        "CVE-2023-31437"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31437",
+      "aliases": [
+        "CVE-2023-31437"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "vulnerability": "CVE-2025-70873",
+      "aliases": [
+        "CVE-2025-70873"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "diffutils",
+      "version": "1:3.10-4",
+      "vulnerability": "CVE-2026-53910",
+      "aliases": [
+        "CVE-2026-53910"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libsystemd0",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31438",
+      "aliases": [
+        "CVE-2023-31438"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libudev1",
+      "version": "257.13-1~deb13u1",
+      "vulnerability": "CVE-2023-31438",
+      "aliases": [
+        "CVE-2023-31438"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2025-5278",
+      "aliases": [
+        "CVE-2025-5278"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2026-56392",
+      "aliases": [
+        "CVE-2026-56392"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpng16-16t64",
+      "version": "1.6.48-1+deb13u5",
+      "vulnerability": "CVE-2026-3713",
+      "aliases": [
+        "CVE-2026-3713"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "coreutils",
+      "version": "9.7-3",
+      "vulnerability": "CVE-2026-56391",
+      "aliases": [
+        "CVE-2026-56391"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "dash",
+      "version": "0.5.12-12",
+      "vulnerability": "CVE-2026-102474",
+      "aliases": [
+        "CVE-2026-102474"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "dash",
+      "version": "0.5.12-12",
+      "vulnerability": "CVE-2026-102473",
+      "aliases": [
+        "CVE-2026-102473"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "package": "libpng16-16t64",
+      "version": "1.6.48-1+deb13u5",
+      "vulnerability": "CVE-2026-46675",
+      "aliases": [
+        "CVE-2026-46675"
+      ],
+      "severity": "Unknown",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.6.48-1+deb13u6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    }
+  ],
+  "osv": [],
+  "adr0049": {
+    "result": "pass",
+    "scope": "exact component; static scan only",
+    "initialExceptionApprovalPending": false,
+    "exceptionsSHA256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce"
+  }
+}

@@ -169,3 +169,46 @@ Evidence (Codex trace, 2026-10-20): `dom4j:dom4j:1.1` reaches the plugin graph o
    - In the Part A PR, report the resolved scope, and whether the packaged identity artifact contains Logback.
    - **Change no behaviour in Part A.** Classify by the resolved tree.
    - The fix is a separate, owner-approved follow-up. Logback is `EPL-1.0 OR LGPL-2.1`, so shipping it needs its own runtime licence decision, like ADR 0025, before or with the fix.
+
+### Ruling (architect, 2026-10-20): attaching Part B evidence to legacy entries
+
+The legacy fingerprint (`licence_ladder.fingerprint`) covers every register field except `tier` and `enterpriseGrade`. The schema forbids `criteria` alongside `legacy-pending`. The checker and schema stay unchanged.
+
+1. **Image SBOMs, with a re-fingerprint for evidence only.** For the seven images whose `image-sbom` baseline entries expire on 2027-01-18:
+   - add `imageSBOM` (path and SHA-256) to the register entry;
+   - update **only** that entry's `sha256` in `ladder.legacy`;
+   - remove the `image-sbom:` baseline entry.
+   - Its `tier` and `due` (2027-04-20) stay unchanged.
+2. **Guard test.** For each re-fingerprinted entry, the old and new register entries must differ **only** by the added `imageSBOM` key: the same coordinates, digest, licence, class and tier, and the same due date in policy. A planted case that changes anything else alongside `imageSBOM` must fail. List the seven old and new fingerprints in the PR. The owner's approval of the Part B PR re-approves those seven.
+3. **Supply-chain criterion evidence is not attached to legacy entries.** Store each runtime component's scan evidence under `security/evidence/supply-chain/`: the SBOM digest, the Grype and OSV results, the tool versions, the date, and the pass result under ADR-0049. When full ADR-0054 records are written (Part C, IOT-WO-06, or the backfill before 2027-04-20), their `supplyChain` criterion links to that file. This replaces the second sentence of the Part B prompt's item 3.
+4. Everything else in Part B stands, including the stop rule for unfixable Critical or High findings.
+
+## Amendment 5 (architect, 2026-10-20): Part B day-one findings under ADR-0049
+
+**Status:** Approved (owner, 2026-10-20), including the item 3 waiver: "I waive the 14-day cooling-off for the Tomcat KEV fix if needed".
+**Why:** The first scan ([run 39427228778](https://github.com/amazen33/EdgePulse/actions/runs/39427228778)) found 74 Critical and 559 High findings (scanner severities), 270 of them with no fix available, and one KEV (CVE-2025-24813, Tomcat 10.1.30 in identity). The Part B prompt's stop rule ("any unfixable Critical or High") was stricter than ADR-0049, which this amendment applies instead.
+
+1. **Policy as written in ADR-0049.**
+   - Findings with **no fix available** are report-only: no exception, and they stay visible in the nightly issue.
+   - A fixed Critical blocks. A fixed High blocks 14 days after it is first seen, or at once if a PR introduces it.
+   - KEV findings are never excepted.
+2. **Fix now, in Part B** (versions at least 14 days old, except as item 3 says):
+   - **Identity runtime:** override the Spring-managed versions with patched versions within the same minor lines (Tomcat at least 10.1.35, plus any other managed library with an in-line fix). No Spring Boot or Spring Framework line change; that is Part C.
+   - **Maven plugins and test-scope dependencies:** bump to fixed versions.
+   - **Images:** move to the newest digest at least 14 days old for the kind node, the three Cilium images, the CNPG operator and the CNPG PostgreSQL image. For PostgreSQL, evaluate CNPG's **minimal** image flavour, and report the reduction. The TB image stays at 4.3.1.6 unless a newer 4.3.1.x patch at least 14 days old exists; never fork or rebuild TB.
+   - **Rescan,** then update the licence-register pins and `imageSBOM` entries using the re-fingerprint ruling, and record supply-chain evidence.
+3. **KEV expedite.** The owner waives the 14-day cooling-off for the Tomcat fix, if the KEV-fixed patch is younger than 14 days (ADR-0049 expedite rule).
+4. **The initial exception list** covers only what remains **with** a fix available after item 2:
+   - one entry per Critical (30 days at most), and Highs grouped per image and package (60 days at most);
+   - each entry referencing the remediation work order that applies the fix: **IOT-WO-08**, image and dependency refresh, due 2026-11-19 (the 30-day Critical limit). Findings that need a newer Spring line reference **IOT-WO-02 Part C** instead.
+   - The owner approves the list in the Part B PR.
+5. **Order change:** Part C (Java 21, then the Spring line decision) moves **before** Part D, because the identity service's remaining Spring-line findings can only be fixed by a supported Spring line.
+
+### Ruling (architect, 2026-10-20): Amendment 5 patches on lines out of public support
+
+1. **Only supported lines are upgraded in Part B.** Upgrade a runtime component only if its line is in public support, so that a **full, verified** ADR-0054 record is true. Tomcat 10.1 qualifies; build-tool, test and image work is unaffected.
+2. **Lines out of support stay unchanged:** Spring Framework 6.1.x, Spring Boot 3.3.x and Jackson 2.17.x (and any other runtime component in the same position). They keep their `legacy-pending` record and fingerprint unchanged. No `activitySupport` pass is recorded, and no legacy admission is extended.
+3. **Their fixable findings go into the initial exception list referencing IOT-WO-02 Part C**: one entry per Critical (30 days at most), and Highs grouped per package (60 days at most).
+   - Part C's **due date is 2026-11-19**, the 30-day Critical limit. Part C moves to the supported Spring Boot line, which on today's support calendar is the 4.x line.
+   - Its stop-and-report breakage analysis must arrive early enough for that date. The owner decides the Spring path as soon as Part B merges.
+4. **The PR lists each out-of-support component:** current version, newest public patch and its date, the support end date with its source, the findings, and the Part C reference.

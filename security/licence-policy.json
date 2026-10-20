@@ -362,21 +362,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.30": {
-        "sha256": "d864335255fe8b501a8be7df1c79de8257638f5bedfb358497cf1a2b215a8fa0",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.30": {
-        "sha256": "b8c40628e3f64fe6cd051107f81cd67b13c081d9bf7c7804638a35e728e9079c",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.30": {
-        "sha256": "a08423038bc647a0b6f0f31db3c67effaae452d4bf094becb030a933f3d5398e",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|org.apache.tomcat:annotations-api|6.0.53": {
         "sha256": "3cb2fef8e05a671aa45b495fae27f9a6129086aa689703a57d6421847839c37b",
         "tier": 2,
@@ -483,37 +468,32 @@
         "due": "2027-04-20"
       },
       "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed": {
-        "sha256": "2d156ce1b8f9bd895a8344b2235bb070a2ab05232b8d380c78a03614956f0740",
+        "sha256": "4ace6105bc78eaebd73b9aae395045622a3b3e265eb7ab38cc8a197fb26dae82",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a": {
-        "sha256": "af7b2038c200eecab2da5951ce3813d632f36a5fe7660a1fa7fe1364ebed0b99",
+        "sha256": "6d362b64447b4a558562073af14bc9024fd656dc762c0d295b18f0f010867d4c",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07": {
-        "sha256": "52abd1bd9c4ca261c51c00fd0840edbcb9f9a9c68f8b9374b89220aaf1e03ed0",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0": {
-        "sha256": "bbcb4583ecfefd07b11857bee8d7e557c30a91b91c649e6f9920aa805d017d13",
+        "sha256": "fd00365c0469e38cb7908bfc430052023f3af7c9a9e861e63af02c6c58add788",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463": {
-        "sha256": "5cb273f5aa686b1a3d8c04a8254a473b74478a535c1f2af5af3731c9c7094875",
+        "sha256": "346846f64ac33647890992724066aa3bf10ba4f3b6a13bbe0b2c2a90e9d930f7",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01": {
-        "sha256": "94ad20fee6f87e9beaddf9d853169fc056b56dbfe3c99dd7acc3b3e8dc6593da",
+        "sha256": "f9072aae10c1487d11531d23bb099993ebb833e3060ba54258fe875c865c78da",
         "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc": {
-        "sha256": "d282ccf50a5824774ddeea0e3f61e7513174d3e4bd9530d54738bde588d87363",
+        "sha256": "460e33940250438496c00b40fa7d6b1e2d9306992b908ccd009e4f86aa4c1357",
         "tier": 2,
         "due": "2027-04-20"
       }
@@ -538,7 +518,7 @@
     },
     {
       "goals": [
-        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom"
       ],
       "profiles": [],
       "pom": "pom.xml",
@@ -552,7 +532,7 @@
     },
     {
       "goals": [
-        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom"
       ],
       "profiles": [],
       "pom": "pom.xml",
@@ -566,7 +546,7 @@
     },
     {
       "goals": [
-        "org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom"
+        "org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom"
       ],
       "profiles": [],
       "pom": "target/licence/plugin-project-executed/plugin-*/pom.xml",
@@ -580,7 +560,7 @@
     },
     {
       "goals": [
-        "org.apache.maven.plugins:maven-help-plugin:3.5.1:effective-pom"
+        "org.apache.maven.plugins:maven-help-plugin:3.5.2:effective-pom"
       ],
       "profiles": [],
       "pom": "pom.xml",

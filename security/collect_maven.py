@@ -10,8 +10,8 @@ import xml.etree.ElementTree as ET
 from maven_inventory import NS, reactor, sha
 from maven_commands import check_invocation, guard_workflows, selected_plugins
 
-CYCLONEDX = 'org.cyclonedx:cyclonedx-maven-plugin:2.9.1:makeBom'
-HELP = 'org.apache.maven.plugins:maven-help-plugin:3.5.1:effective-pom'
+CYCLONEDX = 'org.cyclonedx:cyclonedx-maven-plugin:2.9.3:makeBom'
+HELP = 'org.apache.maven.plugins:maven-help-plugin:3.5.2:effective-pom'
 TREE = 'org.apache.maven.plugins:maven-dependency-plugin:3.11.0:tree'
 
 
@@ -76,6 +76,21 @@ def collect(root, maven):
             for k in ('groupId', 'artifactId', 'version', 'type', 'classifier'):
                 if dependency.get(k):
                     ET.SubElement(d, k).text = dependency[k]
+        # These stand-alone wrappers must execute the same patched collector
+        # realm as the reactor. Do not inherit runtime dependencyManagement:
+        # that would misrepresent the isolated plugin dependency graph.
+        g,a,v,_ = CYCLONEDX.split(':')
+        collector = plugins[g+':'+a+':'+v]
+        build = ET.SubElement(doc,'build')
+        active = ET.SubElement(ET.SubElement(build,'plugins'),'plugin')
+        for k,value in [('groupId',g),('artifactId',a),('version',v)]:
+            ET.SubElement(active,k).text = value
+        overrides = ET.SubElement(active,'dependencies')
+        for dependency in collector['dependencies']:
+            d = ET.SubElement(overrides,'dependency')
+            for k in ('groupId','artifactId','version','type','classifier'):
+                if dependency.get(k):
+                    ET.SubElement(d,k).text = dependency[k]
         ET.ElementTree(doc).write(directory / 'pom.xml', encoding='utf-8', xml_declaration=True)
         pom = (directory / 'pom.xml').relative_to(root).as_posix()
         invoke(maven, root, bom_args(pom, False, 'plugin-bom'), work / ('plugin-' + str(i) + '.log'))

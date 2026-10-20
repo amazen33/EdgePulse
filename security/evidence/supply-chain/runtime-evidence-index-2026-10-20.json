@@ -1,0 +1,290 @@
+[
+  {
+    "component": "helm-chart|cilium|1.20.2",
+    "evidence": "security/evidence/supply-chain/component-e571b5f74f7d1989.json"
+  },
+  {
+    "component": "manifest|cnpg|1.30.1",
+    "evidence": "security/evidence/supply-chain/component-f203f3deb96cbcf9.json"
+  },
+  {
+    "component": "maven|com.ethlo.time:itu|1.10.2",
+    "evidence": "security/evidence/supply-chain/component-69f25201f7b85e9b.json"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.core:jackson-annotations|2.17.2",
+    "evidence": "security/evidence/supply-chain/component-217284dd08618ee6.json"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.core:jackson-core|2.17.2",
+    "evidence": "security/evidence/supply-chain/component-5ffab53311a13220.json"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.core:jackson-databind|2.17.2",
+    "evidence": "security/evidence/supply-chain/component-ec613a77c4b34bac.json"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.17.2",
+    "evidence": "security/evidence/supply-chain/component-3c6d7c86a1dfcf90.json"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.datatype:jackson-datatype-jdk8|2.17.2",
+    "evidence": "security/evidence/supply-chain/component-ed0766684da12ba6.json"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.datatype:jackson-datatype-jsr310|2.17.2",
+    "evidence": "security/evidence/supply-chain/component-cac74d85d60bafbc.json"
+  },
+  {
+    "component": "maven|com.fasterxml.jackson.module:jackson-module-parameter-names|2.17.2",
+    "evidence": "security/evidence/supply-chain/component-8db3a823d62950e3.json"
+  },
+  {
+    "component": "maven|com.github.stephenc.jcip:jcip-annotations|1.0-1",
+    "evidence": "security/evidence/supply-chain/component-b8aeffd0dc29755c.json"
+  },
+  {
+    "component": "maven|com.google.android:annotations|4.1.1.4",
+    "evidence": "security/evidence/supply-chain/component-bb17ee92c1c05b98.json"
+  },
+  {
+    "component": "maven|com.google.api.grpc:proto-google-common-protos|2.41.0",
+    "evidence": "security/evidence/supply-chain/component-dfb978e054c7ef30.json"
+  },
+  {
+    "component": "maven|com.google.code.findbugs:jsr305|3.0.2",
+    "evidence": "security/evidence/supply-chain/component-0d0aa5c17cca1bbb.json"
+  },
+  {
+    "component": "maven|com.google.code.gson:gson|2.10.1",
+    "evidence": "security/evidence/supply-chain/component-77477628b734a5a2.json"
+  },
+  {
+    "component": "maven|com.google.errorprone:error_prone_annotations|2.28.0",
+    "evidence": "security/evidence/supply-chain/component-28afc0dc32bd239a.json"
+  },
+  {
+    "component": "maven|com.google.guava:failureaccess|1.0.2",
+    "evidence": "security/evidence/supply-chain/component-6c6fa46d3239212a.json"
+  },
+  {
+    "component": "maven|com.google.guava:guava|33.2.1-android",
+    "evidence": "security/evidence/supply-chain/component-ee7c0fe8e040b682.json"
+  },
+  {
+    "component": "maven|com.google.guava:listenablefuture|9999.0-empty-to-avoid-conflict-with-guava",
+    "evidence": "security/evidence/supply-chain/component-dfd5c1cea437bde0.json"
+  },
+  {
+    "component": "maven|com.google.j2objc:j2objc-annotations|1.3",
+    "evidence": "security/evidence/supply-chain/component-a46f2b142c2a70d5.json"
+  },
+  {
+    "component": "maven|com.google.protobuf:protobuf-java-util|3.21.10",
+    "evidence": "security/evidence/supply-chain/component-a468cb80d07dac40.json"
+  },
+  {
+    "component": "maven|com.google.protobuf:protobuf-java|3.25.5",
+    "evidence": "security/evidence/supply-chain/component-a64821e5c8348b55.json"
+  },
+  {
+    "component": "maven|com.networknt:json-schema-validator|1.5.1",
+    "evidence": "security/evidence/supply-chain/component-ab84fcaffd28a3f0.json"
+  },
+  {
+    "component": "maven|com.nimbusds:nimbus-jose-jwt|9.37.4",
+    "evidence": "security/evidence/supply-chain/component-e7ec6088d0fec85d.json"
+  },
+  {
+    "component": "maven|io.cloudevents:cloudevents-api|3.0.0",
+    "evidence": "security/evidence/supply-chain/component-1694accef262468c.json"
+  },
+  {
+    "component": "maven|io.cloudevents:cloudevents-core|3.0.0",
+    "evidence": "security/evidence/supply-chain/component-f889c3443a5e223d.json"
+  },
+  {
+    "component": "maven|io.cloudevents:cloudevents-protobuf|3.0.0",
+    "evidence": "security/evidence/supply-chain/component-b00d4672e662a34d.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-api|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-a37d2dc2508188e2.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-context|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-8ead97da7c315b4d.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-core|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-48f1728905256e93.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-netty-shaded|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-31863cc5c34923a9.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-protobuf-lite|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-fe397b54020a5b5e.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-protobuf|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-92d402d54582cc74.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-stub|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-42ff5d814890e410.json"
+  },
+  {
+    "component": "maven|io.grpc:grpc-util|1.68.1",
+    "evidence": "security/evidence/supply-chain/component-d00ada4672fb70f1.json"
+  },
+  {
+    "component": "maven|io.micrometer:micrometer-commons|1.13.4",
+    "evidence": "security/evidence/supply-chain/component-77969111d8f78f2a.json"
+  },
+  {
+    "component": "maven|io.micrometer:micrometer-observation|1.13.4",
+    "evidence": "security/evidence/supply-chain/component-805ab1168f2aec62.json"
+  },
+  {
+    "component": "maven|io.perfmark:perfmark-api|0.27.0",
+    "evidence": "security/evidence/supply-chain/component-b305819c29e125d6.json"
+  },
+  {
+    "component": "maven|jakarta.annotation:jakarta.annotation-api|2.1.1",
+    "evidence": "security/evidence/supply-chain/component-83e9ef0d885c6c37.json"
+  },
+  {
+    "component": "maven|org.apache.logging.log4j:log4j-api|2.23.1",
+    "evidence": "security/evidence/supply-chain/component-96354d9355608735.json"
+  },
+  {
+    "component": "maven|org.apache.logging.log4j:log4j-to-slf4j|2.23.1",
+    "evidence": "security/evidence/supply-chain/component-ece6c51ebf029efb.json"
+  },
+  {
+    "component": "maven|org.apache.tomcat.embed:tomcat-embed-core|10.1.60",
+    "evidence": "security/evidence/supply-chain/component-1177f89231d49026.json"
+  },
+  {
+    "component": "maven|org.apache.tomcat.embed:tomcat-embed-el|10.1.60",
+    "evidence": "security/evidence/supply-chain/component-116e60574617e1af.json"
+  },
+  {
+    "component": "maven|org.apache.tomcat.embed:tomcat-embed-websocket|10.1.60",
+    "evidence": "security/evidence/supply-chain/component-3577d184e5899459.json"
+  },
+  {
+    "component": "maven|org.apache.tomcat:annotations-api|6.0.53",
+    "evidence": "security/evidence/supply-chain/component-70eccbe5050caa91.json"
+  },
+  {
+    "component": "maven|org.checkerframework:checker-qual|3.42.0",
+    "evidence": "security/evidence/supply-chain/component-a027c39ebc0afd3c.json"
+  },
+  {
+    "component": "maven|org.codehaus.mojo:animal-sniffer-annotations|1.24",
+    "evidence": "security/evidence/supply-chain/component-574dffc0feff7fc1.json"
+  },
+  {
+    "component": "maven|org.slf4j:jul-to-slf4j|2.0.16",
+    "evidence": "security/evidence/supply-chain/component-a8b30e22dc1876d8.json"
+  },
+  {
+    "component": "maven|org.slf4j:slf4j-api|2.0.16",
+    "evidence": "security/evidence/supply-chain/component-bbbd575399252e58.json"
+  },
+  {
+    "component": "maven|org.springframework.boot:spring-boot-autoconfigure|3.3.4",
+    "evidence": "security/evidence/supply-chain/component-c510ab854c58f81a.json"
+  },
+  {
+    "component": "maven|org.springframework.boot:spring-boot-starter-json|3.3.4",
+    "evidence": "security/evidence/supply-chain/component-8b2021210c3add3b.json"
+  },
+  {
+    "component": "maven|org.springframework.boot:spring-boot-starter-logging|3.3.4",
+    "evidence": "security/evidence/supply-chain/component-1e899046297b03de.json"
+  },
+  {
+    "component": "maven|org.springframework.boot:spring-boot-starter-tomcat|3.3.4",
+    "evidence": "security/evidence/supply-chain/component-1ac3e96e9a28b44c.json"
+  },
+  {
+    "component": "maven|org.springframework.boot:spring-boot-starter-web|3.3.4",
+    "evidence": "security/evidence/supply-chain/component-6e693d4453329c81.json"
+  },
+  {
+    "component": "maven|org.springframework.boot:spring-boot-starter|3.3.4",
+    "evidence": "security/evidence/supply-chain/component-d17264644a12baa4.json"
+  },
+  {
+    "component": "maven|org.springframework.boot:spring-boot|3.3.4",
+    "evidence": "security/evidence/supply-chain/component-367e4ee1524bc5c0.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-aop|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-4c461f42932d6484.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-beans|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-78b538b1a0c39c75.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-context|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-ed482764e52753fa.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-core|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-a23332f7d695d15d.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-expression|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-219136c3617307ac.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-jcl|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-1df0d1d708bfb92e.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-webmvc|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-292a73720d257806.json"
+  },
+  {
+    "component": "maven|org.springframework:spring-web|6.1.13",
+    "evidence": "security/evidence/supply-chain/component-38449835061b20b3.json"
+  },
+  {
+    "component": "maven|org.yaml:snakeyaml|2.2",
+    "evidence": "security/evidence/supply-chain/component-d472fc6fbc74d5ce.json"
+  },
+  {
+    "component": "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+    "evidence": "security/evidence/supply-chain/component-ad33bdde863d4c44.json"
+  },
+  {
+    "component": "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+    "evidence": "security/evidence/supply-chain/component-39ae39d46c399467.json"
+  },
+  {
+    "component": "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+    "evidence": "security/evidence/supply-chain/component-5a26e4ca2fe644be.json"
+  },
+  {
+    "component": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+    "evidence": "security/evidence/supply-chain/component-d41dcd8b03e342ee.json"
+  },
+  {
+    "component": "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+    "evidence": "security/evidence/supply-chain/component-1f55846d63216a48.json"
+  },
+  {
+    "component": "oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+    "evidence": "security/evidence/supply-chain/component-efdf40e9eef62fa8.json"
+  },
+  {
+    "component": "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+    "evidence": "security/evidence/supply-chain/component-a6c7a5d2e30aa83d.json"
+  }
+]

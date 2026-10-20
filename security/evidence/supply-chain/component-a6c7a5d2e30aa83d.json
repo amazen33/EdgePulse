@@ -1,0 +1,552 @@
+{
+  "component": "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+  "date": "2026-10-20",
+  "scan": "https://github.com/amazen33/EdgePulse/actions/runs/39434411230",
+  "sboms": [
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "path": "target/supply-chain/reviewed/64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc.cdx.json",
+      "sha256": "e0675b6feb0440c321e7560ca766a45deee4441562a7830e32a4619c91c9953d"
+    }
+  ],
+  "tools": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "grype": [
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.6.12",
+      "vulnerability": "CVE-2026-73500",
+      "aliases": [
+        "CVE-2026-73500",
+        "GHSA-6vch-q96h-7gc3",
+        "GO-2026-6107"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.33",
+        "3.6.14",
+        "3.7.1"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "google.golang.org/grpc",
+      "version": "v1.83.1",
+      "vulnerability": "CVE-2026-84445",
+      "aliases": [
+        "CVE-2026-84445",
+        "GHSA-2v4p-qf9q-27wj"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.83.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56857",
+      "aliases": [
+        "CVE-2026-56857",
+        "GO-2026-6604"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56855",
+      "aliases": [
+        "CVE-2026-56855",
+        "GO-2026-6355"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.56.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56854",
+      "aliases": [
+        "CVE-2026-56854",
+        "GO-2026-6303"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.55.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-78662",
+      "aliases": [
+        "CVE-2026-78662",
+        "GO-2026-6354"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.56.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94440",
+      "aliases": [
+        "CVE-2026-94440",
+        "GO-2026-6608"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97031",
+      "aliases": [
+        "CVE-2026-97031",
+        "GO-2026-6607"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78667",
+      "aliases": [
+        "CVE-2026-78667",
+        "GO-2026-6609"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/text",
+      "version": "v0.39.0",
+      "vulnerability": "CVE-2026-56851",
+      "aliases": [
+        "CVE-2026-56851",
+        "GO-2026-6629"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.41.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94439",
+      "aliases": [
+        "CVE-2026-94439",
+        "GO-2026-6613"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56866",
+      "aliases": [
+        "CVE-2026-56866",
+        "GO-2026-6605"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94448",
+      "aliases": [
+        "CVE-2026-94448",
+        "GO-2026-6599"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97030",
+      "aliases": [
+        "CVE-2026-97030",
+        "GO-2026-6600"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/sys",
+      "version": "v0.30.0",
+      "vulnerability": "CVE-2026-39824",
+      "aliases": [
+        "CVE-2026-39824",
+        "GO-2026-5024"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.44.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "github.com/google/cel-go",
+      "version": "v0.28.1",
+      "vulnerability": "GHSA-gcjh-h69q-9w9g",
+      "aliases": [
+        "GHSA-gcjh-h69q-9w9g"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.29.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "github.com/klauspost/compress",
+      "version": "v1.18.6",
+      "vulnerability": "GHSA-259r-337f-4rfw",
+      "aliases": [
+        "GHSA-259r-337f-4rfw",
+        "GO-2026-5841"
+      ],
+      "severity": "Unknown",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.18.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "GO-2026-5932",
+      "aliases": [
+        "GO-2026-5932"
+      ],
+      "severity": "Unknown",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    }
+  ],
+  "osv": [],
+  "adr0049": {
+    "result": "pass",
+    "scope": "exact component; static scan only",
+    "initialExceptionApprovalPending": false,
+    "exceptionsSHA256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce"
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "component": "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+  "date": "2026-10-20",
+  "scan": "https://github.com/amazen33/EdgePulse/actions/runs/39434411230",
+  "sboms": [
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "path": "target/supply-chain/reviewed/923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07.cdx.json",
+      "sha256": "6661668eb0308397e8f70990f2d8a9be2b23e11e5f709391d523af1fdc17e7fd"
+    }
+  ],
+  "tools": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "grype": [
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56857",
+      "aliases": [
+        "CVE-2026-56857",
+        "GO-2026-6604"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94440",
+      "aliases": [
+        "CVE-2026-94440",
+        "GO-2026-6608"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97031",
+      "aliases": [
+        "CVE-2026-97031",
+        "GO-2026-6607"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78667",
+      "aliases": [
+        "CVE-2026-78667",
+        "GO-2026-6609"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94439",
+      "aliases": [
+        "CVE-2026-94439",
+        "GO-2026-6613"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56866",
+      "aliases": [
+        "CVE-2026-56866",
+        "GO-2026-6605"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94448",
+      "aliases": [
+        "CVE-2026-94448",
+        "GO-2026-6599"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97030",
+      "aliases": [
+        "CVE-2026-97030",
+        "GO-2026-6600"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    }
+  ],
+  "osv": [],
+  "adr0049": {
+    "result": "pass",
+    "scope": "exact component; static scan only",
+    "initialExceptionApprovalPending": false,
+    "exceptionsSHA256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce"
+  }
+}

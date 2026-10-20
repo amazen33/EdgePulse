@@ -1,0 +1,5834 @@
+{
+  "component": "helm-chart|cilium|1.20.2",
+  "date": "2026-10-20",
+  "scan": "https://github.com/amazen33/EdgePulse/actions/runs/39434411230",
+  "sboms": [
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "path": "target/supply-chain/reviewed/af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463.cdx.json",
+      "sha256": "9ec07fdd12c3b24536a201bc02f718ee9f9aa5815aa568ffcc7b4b1bf2f6f63b"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "path": "target/supply-chain/reviewed/2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01.cdx.json",
+      "sha256": "c27c883e6bdc2a0f4411a6d9ab5af3262420280e7f721aa35352a6d0dfbc17b6"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "path": "target/supply-chain/reviewed/64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc.cdx.json",
+      "sha256": "e0675b6feb0440c321e7560ca766a45deee4441562a7830e32a4619c91c9953d"
+    }
+  ],
+  "tools": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "grype": [
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56857",
+      "aliases": [
+        "CVE-2026-56857",
+        "GO-2026-6604"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "perl-base",
+      "version": "5.38.2-3.2ubuntu0.4",
+      "vulnerability": "CVE-2026-82560",
+      "aliases": [
+        "CVE-2026-82560"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94440",
+      "aliases": [
+        "CVE-2026-94440",
+        "GO-2026-6608"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97031",
+      "aliases": [
+        "CVE-2026-97031",
+        "GO-2026-6607"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libssl3t64",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "openssl",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78667",
+      "aliases": [
+        "CVE-2026-78667",
+        "GO-2026-6609"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94439",
+      "aliases": [
+        "CVE-2026-94439",
+        "GO-2026-6613"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56866",
+      "aliases": [
+        "CVE-2026-56866",
+        "GO-2026-6605"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "perl-base",
+      "version": "5.38.2-3.2ubuntu0.4",
+      "vulnerability": "CVE-2026-19487",
+      "aliases": [
+        "CVE-2026-19487"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "5.38.2-3.2ubuntu0.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpcre2-8-0",
+      "version": "10.42-4ubuntu2.1",
+      "vulnerability": "CVE-2026-86145",
+      "aliases": [
+        "CVE-2026-86145"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg-3.1ubuntu2.2",
+      "vulnerability": "CVE-2026-85091",
+      "aliases": [
+        "CVE-2026-85091"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc-bin",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc6",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpcre2-8-0",
+      "version": "10.42-4ubuntu2.1",
+      "vulnerability": "CVE-2026-89156",
+      "aliases": [
+        "CVE-2026-89156"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc-bin",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc6",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpcre2-8-0",
+      "version": "10.42-4ubuntu2.1",
+      "vulnerability": "CVE-2026-89157",
+      "aliases": [
+        "CVE-2026-89157"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpcre2-8-0",
+      "version": "10.42-4ubuntu2.1",
+      "vulnerability": "CVE-2026-89160",
+      "aliases": [
+        "CVE-2026-89160"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpam-modules",
+      "version": "1.5.3-5ubuntu5.7",
+      "vulnerability": "CVE-2024-10041",
+      "aliases": [
+        "CVE-2024-10041"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpam-modules-bin",
+      "version": "1.5.3-5ubuntu5.7",
+      "vulnerability": "CVE-2024-10041",
+      "aliases": [
+        "CVE-2024-10041"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpam-runtime",
+      "version": "1.5.3-5ubuntu5.7",
+      "vulnerability": "CVE-2024-10041",
+      "aliases": [
+        "CVE-2024-10041"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpam0g",
+      "version": "1.5.3-5ubuntu5.7",
+      "vulnerability": "CVE-2024-10041",
+      "aliases": [
+        "CVE-2024-10041"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "coreutils",
+      "version": "9.4-3ubuntu6.3",
+      "vulnerability": "CVE-2016-2781",
+      "aliases": [
+        "CVE-2016-2781"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "perl-base",
+      "version": "5.38.2-3.2ubuntu0.4",
+      "vulnerability": "CVE-2026-15534",
+      "aliases": [
+        "CVE-2026-15534"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "5.38.2-3.2ubuntu0.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "login",
+      "version": "1:4.13+dfsg1-4ubuntu3.2",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "passwd",
+      "version": "1:4.13+dfsg1-4ubuntu3.2",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpcre2-8-0",
+      "version": "10.42-4ubuntu2.1",
+      "vulnerability": "CVE-2026-89158",
+      "aliases": [
+        "CVE-2026-89158"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc-bin",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc6",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libssl3t64",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "openssl",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libgnutls30t64",
+      "version": "3.8.3-1.1ubuntu3.6",
+      "vulnerability": "CVE-2026-95210",
+      "aliases": [
+        "CVE-2026-95210"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libgnutls30t64",
+      "version": "3.8.3-1.1ubuntu3.6",
+      "vulnerability": "CVE-2026-95209",
+      "aliases": [
+        "CVE-2026-95209"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94448",
+      "aliases": [
+        "CVE-2026-94448",
+        "GO-2026-6599"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97030",
+      "aliases": [
+        "CVE-2026-97030",
+        "GO-2026-6600"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc-bin",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2016-20013",
+      "aliases": [
+        "CVE-2016-20013"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc6",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2016-20013",
+      "aliases": [
+        "CVE-2016-20013"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "bsdutils",
+      "version": "1:2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libblkid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libmount1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libsmartcols1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libuuid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "mount",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "util-linux",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpcre2-8-0",
+      "version": "10.42-4ubuntu2.1",
+      "vulnerability": "CVE-2026-103111",
+      "aliases": [
+        "CVE-2026-103111"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libgnutls30t64",
+      "version": "3.8.3-1.1ubuntu3.6",
+      "vulnerability": "CVE-2026-88647",
+      "aliases": [
+        "CVE-2026-88647"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libgnutls30t64",
+      "version": "3.8.3-1.1ubuntu3.6",
+      "vulnerability": "CVE-2026-67693",
+      "aliases": [
+        "CVE-2026-67693"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "bsdutils",
+      "version": "1:2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libblkid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libmount1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libsmartcols1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libuuid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "mount",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "util-linux",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libgnutls30t64",
+      "version": "3.8.3-1.1ubuntu3.6",
+      "vulnerability": "CVE-2026-95184",
+      "aliases": [
+        "CVE-2026-95184"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "gpgv",
+      "version": "2.4.4-2ubuntu17.6",
+      "vulnerability": "CVE-2022-3219",
+      "aliases": [
+        "CVE-2022-3219"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libssl3t64",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "openssl",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libssl3t64",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "openssl",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "bsdutils",
+      "version": "1:2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libblkid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libmount1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libsmartcols1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libuuid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "mount",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "util-linux",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "bsdutils",
+      "version": "1:2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libblkid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libmount1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libsmartcols1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libuuid1",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "mount",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "util-linux",
+      "version": "2.39.3-9ubuntu6.6",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libacl1",
+      "version": "2.3.2-1build1.1",
+      "vulnerability": "CVE-2026-54369",
+      "aliases": [
+        "CVE-2026-54369"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libssl3t64",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "openssl",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "dash",
+      "version": "0.5.12-6ubuntu5",
+      "vulnerability": "CVE-2026-102474",
+      "aliases": [
+        "CVE-2026-102474"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc-bin",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc6",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "tar",
+      "version": "1.35+dfsg-3ubuntu0.4",
+      "vulnerability": "CVE-2026-18508",
+      "aliases": [
+        "CVE-2026-18508"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libssl3t64",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "openssl",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.0.13-0ubuntu3.16"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "dash",
+      "version": "0.5.12-6ubuntu5",
+      "vulnerability": "CVE-2026-102473",
+      "aliases": [
+        "CVE-2026-102473"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc-bin",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc6",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libpcre2-8-0",
+      "version": "10.42-4ubuntu2.1",
+      "vulnerability": "CVE-2026-89161",
+      "aliases": [
+        "CVE-2026-89161"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libgnutls30t64",
+      "version": "3.8.3-1.1ubuntu3.6",
+      "vulnerability": "CVE-2026-88648",
+      "aliases": [
+        "CVE-2026-88648"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc-bin",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libc6",
+      "version": "2.39-0ubuntu8.9",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libacl1",
+      "version": "2.3.2-1build1.1",
+      "vulnerability": "CVE-2026-54370",
+      "aliases": [
+        "CVE-2026-54370"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libsystemd0",
+      "version": "255.4-1ubuntu8.17",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libudev1",
+      "version": "255.4-1ubuntu8.17",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "tar",
+      "version": "1.35+dfsg-3ubuntu0.4",
+      "vulnerability": "CVE-2026-18477",
+      "aliases": [
+        "CVE-2026-18477"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "gpgv",
+      "version": "2.4.4-2ubuntu17.6",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.6.12",
+      "vulnerability": "CVE-2026-73500",
+      "aliases": [
+        "CVE-2026-73500",
+        "GHSA-6vch-q96h-7gc3",
+        "GO-2026-6107"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.33",
+        "3.6.14",
+        "3.7.1"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-39821",
+      "aliases": [
+        "CVE-2026-39821",
+        "GO-2026-5026"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.25.13",
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "google.golang.org/grpc",
+      "version": "v1.83.1",
+      "vulnerability": "CVE-2026-84445",
+      "aliases": [
+        "CVE-2026-84445",
+        "GHSA-2v4p-qf9q-27wj"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.83.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56857",
+      "aliases": [
+        "CVE-2026-56857",
+        "GO-2026-6604"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56857",
+      "aliases": [
+        "CVE-2026-56857",
+        "GO-2026-6604"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-33818",
+      "aliases": [
+        "CVE-2026-33818",
+        "GO-2026-5972"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.25.13",
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56853",
+      "aliases": [
+        "CVE-2026-56853",
+        "GO-2026-6089"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.25.13",
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56859",
+      "aliases": [
+        "CVE-2026-56859",
+        "GO-2026-6088"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.25.13",
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56862",
+      "aliases": [
+        "CVE-2026-56862",
+        "GO-2026-6090"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.25.13",
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-46600",
+      "aliases": [
+        "CVE-2026-46600",
+        "GO-2026-5942"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56855",
+      "aliases": [
+        "CVE-2026-56855",
+        "GO-2026-6355"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.56.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56854",
+      "aliases": [
+        "CVE-2026-56854",
+        "GO-2026-6303"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.55.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-78662",
+      "aliases": [
+        "CVE-2026-78662",
+        "GO-2026-6354"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.56.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2026-82560",
+      "aliases": [
+        "CVE-2026-82560"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2026-48959",
+      "aliases": [
+        "CVE-2026-48959"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-94440",
+      "aliases": [
+        "CVE-2026-94440",
+        "GO-2026-6608"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94440",
+      "aliases": [
+        "CVE-2026-94440",
+        "GO-2026-6608"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56860",
+      "aliases": [
+        "CVE-2026-56860",
+        "GO-2026-6218"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.25.13",
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-97031",
+      "aliases": [
+        "CVE-2026-97031",
+        "GO-2026-6607"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97031",
+      "aliases": [
+        "CVE-2026-97031",
+        "GO-2026-6607"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84782",
+      "aliases": [
+        "CVE-2026-84782"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78667",
+      "aliases": [
+        "CVE-2026-78667",
+        "GO-2026-6609"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78667",
+      "aliases": [
+        "CVE-2026-78667",
+        "GO-2026-6609"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libgssapi-krb5-2",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libk5crypto3",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libkrb5-3",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libkrb5support0",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107708",
+      "aliases": [
+        "CVE-2026-107708"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/text",
+      "version": "v0.39.0",
+      "vulnerability": "CVE-2026-56851",
+      "aliases": [
+        "CVE-2026-56851",
+        "GO-2026-6629"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.41.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2026-48962",
+      "aliases": [
+        "CVE-2026-48962"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-94439",
+      "aliases": [
+        "CVE-2026-94439",
+        "GO-2026-6613"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94439",
+      "aliases": [
+        "CVE-2026-94439",
+        "GO-2026-6613"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2026-42497",
+      "aliases": [
+        "CVE-2026-42497"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56866",
+      "aliases": [
+        "CVE-2026-56866",
+        "GO-2026-6605"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56866",
+      "aliases": [
+        "CVE-2026-56866",
+        "GO-2026-6605"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2026-9538",
+      "aliases": [
+        "CVE-2026-9538"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libgssapi-krb5-2",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libk5crypto3",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libkrb5-3",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libkrb5support0",
+      "version": "1.22.1-2ubuntu4.1",
+      "vulnerability": "CVE-2026-107778",
+      "aliases": [
+        "CVE-2026-107778"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2026-48961",
+      "aliases": [
+        "CVE-2026-48961"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libelf1t64",
+      "version": "0.194-4",
+      "vulnerability": "CVE-2025-1352",
+      "aliases": [
+        "CVE-2025-1352"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-86145",
+      "aliases": [
+        "CVE-2026-86145"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1ubuntu3.1",
+      "vulnerability": "CVE-2026-85091",
+      "aliases": [
+        "CVE-2026-85091"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56858",
+      "aliases": [
+        "CVE-2026-56858",
+        "GO-2026-6091"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.25.13",
+        "1.26.6",
+        "1.27.0-rc.3"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-bin",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-gconv-modules-extra",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc6",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-8674",
+      "aliases": [
+        "CVE-2026-8674"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-89156",
+      "aliases": [
+        "CVE-2026-89156"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-bin",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-gconv-modules-extra",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc6",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-97399",
+      "aliases": [
+        "CVE-2026-97399"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-89157",
+      "aliases": [
+        "CVE-2026-89157"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54873",
+      "aliases": [
+        "CVE-2026-54873"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54873",
+      "aliases": [
+        "CVE-2026-54873"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54873",
+      "aliases": [
+        "CVE-2026-54873"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-89160",
+      "aliases": [
+        "CVE-2026-89160"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "login.defs",
+      "version": "1:4.17.4-2ubuntu3",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "passwd",
+      "version": "1:4.17.4-2ubuntu3",
+      "vulnerability": "CVE-2024-56433",
+      "aliases": [
+        "CVE-2024-56433"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2026-7017",
+      "aliases": [
+        "CVE-2026-7017"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-89158",
+      "aliases": [
+        "CVE-2026-89158"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84784",
+      "aliases": [
+        "CVE-2026-84784"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84784",
+      "aliases": [
+        "CVE-2026-84784"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84784",
+      "aliases": [
+        "CVE-2026-84784"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-bin",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-gconv-modules-extra",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc6",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-89092",
+      "aliases": [
+        "CVE-2026-89092"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75806",
+      "aliases": [
+        "CVE-2026-75806"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-94448",
+      "aliases": [
+        "CVE-2026-94448",
+        "GO-2026-6599"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94448",
+      "aliases": [
+        "CVE-2026-94448",
+        "GO-2026-6599"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-97030",
+      "aliases": [
+        "CVE-2026-97030",
+        "GO-2026-6600"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97030",
+      "aliases": [
+        "CVE-2026-97030",
+        "GO-2026-6600"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "bsdutils",
+      "version": "1:2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libblkid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libmount1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libsmartcols1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libuuid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "mount",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "util-linux",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-76642",
+      "aliases": [
+        "CVE-2026-76642"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-35191",
+      "aliases": [
+        "CVE-2026-35191"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-35191",
+      "aliases": [
+        "CVE-2026-35191"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-35191",
+      "aliases": [
+        "CVE-2026-35191"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-103111",
+      "aliases": [
+        "CVE-2026-103111"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75804",
+      "aliases": [
+        "CVE-2026-75804"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75804",
+      "aliases": [
+        "CVE-2026-75804"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75804",
+      "aliases": [
+        "CVE-2026-75804"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-42772",
+      "aliases": [
+        "CVE-2026-42772"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-42772",
+      "aliases": [
+        "CVE-2026-42772"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-42772",
+      "aliases": [
+        "CVE-2026-42772"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "bsdutils",
+      "version": "1:2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libblkid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libmount1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libsmartcols1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libuuid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "mount",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "util-linux",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78408",
+      "aliases": [
+        "CVE-2026-78408"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libelf1t64",
+      "version": "0.194-4",
+      "vulnerability": "CVE-2025-1376",
+      "aliases": [
+        "CVE-2025-1376"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54875",
+      "aliases": [
+        "CVE-2026-54875"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54875",
+      "aliases": [
+        "CVE-2026-54875"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54875",
+      "aliases": [
+        "CVE-2026-54875"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "coreutils",
+      "version": "9.5-1ubuntu2+0.0.0~ubuntu25",
+      "vulnerability": "CVE-2025-5278",
+      "aliases": [
+        "CVE-2025-5278"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "9.7-3ubuntu2.1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35363",
+      "aliases": [
+        "CVE-2026-35363"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "coreutils",
+      "version": "9.5-1ubuntu2+0.0.0~ubuntu25",
+      "vulnerability": "CVE-2026-56391",
+      "aliases": [
+        "CVE-2026-56391"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "9.7-3ubuntu2.1"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-49839",
+      "aliases": [
+        "CVE-2026-49839"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-49839",
+      "aliases": [
+        "CVE-2026-49839"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-35189",
+      "aliases": [
+        "CVE-2026-35189"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-72897",
+      "aliases": [
+        "CVE-2026-72897"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-72897",
+      "aliases": [
+        "CVE-2026-72897"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-72897",
+      "aliases": [
+        "CVE-2026-72897"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-54872",
+      "aliases": [
+        "CVE-2026-54872"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-41256",
+      "aliases": [
+        "CVE-2026-41256"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-41256",
+      "aliases": [
+        "CVE-2026-41256"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-44777",
+      "aliases": [
+        "CVE-2026-44777"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-44777",
+      "aliases": [
+        "CVE-2026-44777"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-40612",
+      "aliases": [
+        "CVE-2026-40612"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-47770",
+      "aliases": [
+        "CVE-2026-47770"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-40612",
+      "aliases": [
+        "CVE-2026-40612"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-47770",
+      "aliases": [
+        "CVE-2026-47770"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-89162",
+      "aliases": [
+        "CVE-2026-89162"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "bsdutils",
+      "version": "1:2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libblkid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libmount1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libsmartcols1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libuuid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "mount",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "util-linux",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78410",
+      "aliases": [
+        "CVE-2026-78410"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "bsdutils",
+      "version": "1:2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libblkid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libmount1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libsmartcols1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libuuid1",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "login",
+      "version": "1:4.16.0-2+really2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "mount",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "util-linux",
+      "version": "2.41.3-3ubuntu2.2",
+      "vulnerability": "CVE-2026-78409",
+      "aliases": [
+        "CVE-2026-78409"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-43894",
+      "aliases": [
+        "CVE-2026-43894"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-43894",
+      "aliases": [
+        "CVE-2026-43894"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libacl1",
+      "version": "2.3.2-2",
+      "vulnerability": "CVE-2026-54369",
+      "aliases": [
+        "CVE-2026-54369"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-43895",
+      "aliases": [
+        "CVE-2026-43895"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-43895",
+      "aliases": [
+        "CVE-2026-43895"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-43896",
+      "aliases": [
+        "CVE-2026-43896"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-43896",
+      "aliases": [
+        "CVE-2026-43896"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35368",
+      "aliases": [
+        "CVE-2026-35368"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-54679",
+      "aliases": [
+        "CVE-2026-54679"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-54679",
+      "aliases": [
+        "CVE-2026-54679"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-77696",
+      "aliases": [
+        "CVE-2026-77696"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "dash",
+      "version": "0.5.12-12ubuntu3",
+      "vulnerability": "CVE-2026-102474",
+      "aliases": [
+        "CVE-2026-102474"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-bin",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-gconv-modules-extra",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc6",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-18374",
+      "aliases": [
+        "CVE-2026-18374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35341",
+      "aliases": [
+        "CVE-2026-35341"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "tar",
+      "version": "1.35+dfsg-4ubuntu0.4",
+      "vulnerability": "CVE-2026-18508",
+      "aliases": [
+        "CVE-2026-18508"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35351",
+      "aliases": [
+        "CVE-2026-35351"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-93658",
+      "aliases": [
+        "CVE-2026-93658"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-41257",
+      "aliases": [
+        "CVE-2026-41257"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2026-41257",
+      "aliases": [
+        "CVE-2026-41257"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35371",
+      "aliases": [
+        "CVE-2026-35371"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35373",
+      "aliases": [
+        "CVE-2026-35373"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35348",
+      "aliases": [
+        "CVE-2026-35348"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-75805",
+      "aliases": [
+        "CVE-2026-75805"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.5-1ubuntu3.6"
+      ],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35350",
+      "aliases": [
+        "CVE-2026-35350"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35344",
+      "aliases": [
+        "CVE-2026-35344"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "dash",
+      "version": "0.5.12-12ubuntu3",
+      "vulnerability": "CVE-2026-102473",
+      "aliases": [
+        "CVE-2026-102473"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35367",
+      "aliases": [
+        "CVE-2026-35367"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-bin",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-gconv-modules-extra",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc6",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-95818",
+      "aliases": [
+        "CVE-2026-95818"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "perl-base",
+      "version": "5.40.1-7ubuntu0.3",
+      "vulnerability": "CVE-2025-15649",
+      "aliases": [
+        "CVE-2025-15649"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35370",
+      "aliases": [
+        "CVE-2026-35370"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1build1",
+      "vulnerability": "CVE-2026-89161",
+      "aliases": [
+        "CVE-2026-89161"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35377",
+      "aliases": [
+        "CVE-2026-35377"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35352",
+      "aliases": [
+        "CVE-2026-35352"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35359",
+      "aliases": [
+        "CVE-2026-35359"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35360",
+      "aliases": [
+        "CVE-2026-35360"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35345",
+      "aliases": [
+        "CVE-2026-35345"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/sys",
+      "version": "v0.30.0",
+      "vulnerability": "CVE-2026-39824",
+      "aliases": [
+        "CVE-2026-39824",
+        "GO-2026-5024"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.44.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/sys",
+      "version": "v0.35.0",
+      "vulnerability": "CVE-2026-39824",
+      "aliases": [
+        "CVE-2026-39824",
+        "GO-2026-5024"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.44.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-bin",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc-gconv-modules-extra",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libc6",
+      "version": "2.43-2ubuntu2.4",
+      "vulnerability": "CVE-2026-86805",
+      "aliases": [
+        "CVE-2026-86805"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35364",
+      "aliases": [
+        "CVE-2026-35364"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35357",
+      "aliases": [
+        "CVE-2026-35357"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35354",
+      "aliases": [
+        "CVE-2026-35354"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "rust-coreutils",
+      "version": "0.8.0-0ubuntu3",
+      "vulnerability": "CVE-2026-35374",
+      "aliases": [
+        "CVE-2026-35374"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libacl1",
+      "version": "2.3.2-2",
+      "vulnerability": "CVE-2026-54370",
+      "aliases": [
+        "CVE-2026-54370"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libsystemd0",
+      "version": "259.5-0ubuntu3.4",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libudev1",
+      "version": "259.5-0ubuntu3.4",
+      "vulnerability": "CVE-2026-40228",
+      "aliases": [
+        "CVE-2026-40228"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "tar",
+      "version": "1.35+dfsg-4ubuntu0.4",
+      "vulnerability": "CVE-2026-18477",
+      "aliases": [
+        "CVE-2026-18477"
+      ],
+      "severity": "Medium",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "gpgv",
+      "version": "2.4.8-4ubuntu3.1",
+      "vulnerability": "CVE-2026-105712",
+      "aliases": [
+        "CVE-2026-105712"
+      ],
+      "severity": "Low",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "jq",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2025-9403",
+      "aliases": [
+        "CVE-2025-9403"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libjq1",
+      "version": "1.8.1-4ubuntu2",
+      "vulnerability": "CVE-2025-9403",
+      "aliases": [
+        "CVE-2025-9403"
+      ],
+      "severity": "Negligible",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "deb",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "github.com/google/cel-go",
+      "version": "v0.28.1",
+      "vulnerability": "GHSA-gcjh-h69q-9w9g",
+      "aliases": [
+        "GHSA-gcjh-h69q-9w9g"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.29.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "github.com/klauspost/compress",
+      "version": "v1.18.6",
+      "vulnerability": "GHSA-259r-337f-4rfw",
+      "aliases": [
+        "GHSA-259r-337f-4rfw",
+        "GO-2026-5841"
+      ],
+      "severity": "Unknown",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.18.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "GO-2026-5932",
+      "aliases": [
+        "GO-2026-5932"
+      ],
+      "severity": "Unknown",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.6.12",
+      "vulnerability": "CVE-2026-73500",
+      "aliases": [
+        "CVE-2026-73500",
+        "GHSA-6vch-q96h-7gc3",
+        "GO-2026-6107"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "3.5.33",
+        "3.6.14",
+        "3.7.1"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78663",
+      "aliases": [
+        "CVE-2026-78663",
+        "GO-2026-6612"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "google.golang.org/grpc",
+      "version": "v1.83.1",
+      "vulnerability": "CVE-2026-84445",
+      "aliases": [
+        "CVE-2026-84445",
+        "GHSA-2v4p-qf9q-27wj"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.83.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56857",
+      "aliases": [
+        "CVE-2026-56857",
+        "GO-2026-6604"
+      ],
+      "severity": "Critical",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78659",
+      "aliases": [
+        "CVE-2026-78659",
+        "GO-2026-6603"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78669",
+      "aliases": [
+        "CVE-2026-78669",
+        "GO-2026-6611"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56855",
+      "aliases": [
+        "CVE-2026-56855",
+        "GO-2026-6355"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.56.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56854",
+      "aliases": [
+        "CVE-2026-56854",
+        "GO-2026-6303"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.55.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-78662",
+      "aliases": [
+        "CVE-2026-78662",
+        "GO-2026-6354"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.56.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97032",
+      "aliases": [
+        "CVE-2026-97032",
+        "GO-2026-6617"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94440",
+      "aliases": [
+        "CVE-2026-94440",
+        "GO-2026-6608"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97031",
+      "aliases": [
+        "CVE-2026-97031",
+        "GO-2026-6607"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78667",
+      "aliases": [
+        "CVE-2026-78667",
+        "GO-2026-6609"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/text",
+      "version": "v0.39.0",
+      "vulnerability": "CVE-2026-56851",
+      "aliases": [
+        "CVE-2026-56851",
+        "GO-2026-6629"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.41.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94439",
+      "aliases": [
+        "CVE-2026-94439",
+        "GO-2026-6613"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56866",
+      "aliases": [
+        "CVE-2026-56866",
+        "GO-2026-6605"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.60.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78660",
+      "aliases": [
+        "CVE-2026-78660",
+        "GO-2026-6610"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94448",
+      "aliases": [
+        "CVE-2026-94448",
+        "GO-2026-6599"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97030",
+      "aliases": [
+        "CVE-2026-97030",
+        "GO-2026-6600"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.26.9",
+        "1.27.2"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/sys",
+      "version": "v0.30.0",
+      "vulnerability": "CVE-2026-39824",
+      "aliases": [
+        "CVE-2026-39824",
+        "GO-2026-5024"
+      ],
+      "severity": "Low",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.44.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "github.com/google/cel-go",
+      "version": "v0.28.1",
+      "vulnerability": "GHSA-gcjh-h69q-9w9g",
+      "aliases": [
+        "GHSA-gcjh-h69q-9w9g"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "0.29.0"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "github.com/klauspost/compress",
+      "version": "v1.18.6",
+      "vulnerability": "GHSA-259r-337f-4rfw",
+      "aliases": [
+        "GHSA-259r-337f-4rfw",
+        "GO-2026-5841"
+      ],
+      "severity": "Unknown",
+      "fixAvailable": true,
+      "fixVersions": [
+        "1.18.7"
+      ],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "GO-2026-5932",
+      "aliases": [
+        "GO-2026-5932"
+      ],
+      "severity": "Unknown",
+      "fixAvailable": false,
+      "fixVersions": [],
+      "scanner": "grype",
+      "packageClass": "go-module",
+      "kev": false
+    }
+  ],
+  "osv": [],
+  "adr0049": {
+    "result": "pass",
+    "scope": "exact component; static scan only",
+    "initialExceptionApprovalPending": false,
+    "exceptionsSHA256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce"
+  }
+}

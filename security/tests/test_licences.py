@@ -332,6 +332,22 @@ class LicenceGateTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unreviewed gated Maven invocation'):
             check_invocation(self.root, commands[0], self.policy)
 
+    def test_collector_inventory_uses_reviewed_goal_version_and_managed_realm(self):
+        self.make_audit_fixture(self.component('MIT'), [])
+        goal = next(g for c in self.policy['gatedMavenCommands'] for g in c['goals']
+                    if 'maven-dependency-plugin:' in g)
+        group, artifact, version, _ = goal.split(':')
+        path = self.root/'target/effective.xml'
+        path.write_text('<project xmlns="http://maven.apache.org/POM/4.0.0">'
+            '<artifactId>SYNTHETIC</artifactId><build><pluginManagement><plugins><plugin>'
+            '<groupId>'+group+'</groupId><artifactId>'+artifact+'</artifactId><version>'+version+'</version>'
+            '<dependencies><dependency><groupId>org.synthetic</groupId><artifactId>realm-override</artifactId>'
+            '<version>1.0.0</version></dependency></dependencies></plugin></plugins></pluginManagement></build></project>')
+        selected, _ = selected_plugins(self.root,path,Path.home()/'.m2/repository')
+        realm = selected[group+':'+artifact+':'+version]
+        self.assertEqual(realm['version'],version)
+        self.assertEqual(realm['dependencies'][0]['artifactId'],'realm-override')
+
     def effective_plugin(self,group,artifact,version):
         (self.root/'target/effective.xml').write_text(
             '<project xmlns="http://maven.apache.org/POM/4.0.0"><artifactId>SYNTHETIC</artifactId>'
@@ -396,9 +412,9 @@ class LicenceGateTest(unittest.TestCase):
         evidence=json.loads((self.root/'target/licence/maven-evidence.json').read_text())
         evidence['effectivePom']='target/effective.xml'
         evidence['executedPlugins']=[]
-        for i,(g,a,v) in enumerate([('org.cyclonedx','cyclonedx-maven-plugin','2.9.1'),
-                                    ('org.apache.maven.plugins','maven-help-plugin','3.5.1'),
-                                    ('org.apache.maven.plugins','maven-dependency-plugin','3.11.0')]):
+        cli = sorted({tuple(goal.split(':')[:3]) for command in self.policy['gatedMavenCommands']
+                      for goal in command['goals'] if len(goal.split(':')) == 4})
+        for i,(g,a,v) in enumerate(cli):
             ref='pkg:maven/'+g+'/'+a+'@'+v+'?type=jar'
             wrapper='pkg:maven/com.edgepulse.licence-evidence/SYNTHETIC-'+str(i)+'@1?type=jar'
             bom=dict(bomFormat='CycloneDX',metadata=dict(component={'bom-ref':wrapper}),

@@ -1,0 +1,45 @@
+name: Pinned CI tool SBOM regression
+
+on:
+  push:
+    paths:
+      - 'tools/ci/**'
+      - '.github/workflows/supply-chain-tools.yaml'
+  pull_request:
+    paths:
+      - 'tools/ci/supply_chain.py'
+      - 'tools/ci/supply_chain_watch.py'
+      - 'tools/ci/check_tool_sbom.py'
+      - 'tools/ci/stage_tools.py'
+      - 'security/toolchain.lock.json'
+      - 'tools/ci/tests/test_supply_chain_watch.py'
+      - '.github/workflows/supply-chain-tools.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actionlint-sbom:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.12'
+      - run: python tools/ci/edgepulse_supply_chain.py verify-manifests
+      - run: python tools/ci/stage_tools.py --source . --destination target/local-tool-tools --only syft grype osv-scanner actionlint
+      - name: Verify the real pinned extraction and blocking Syft/Grype scan
+        run: python tools/ci/check_tool_sbom.py --staged target/local-tool-tools --out target/local-tool-scan
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: ${{ always() }}
+        with:
+          name: pinned-actionlint-sbom
+          path: |
+            target/local-tool-scan/*.json
+            target/local-tool-scan/sboms/
+            target/local-tool-scan/diagnostics/
+          retention-days: 14

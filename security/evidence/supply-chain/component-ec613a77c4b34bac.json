@@ -1,0 +1,281 @@
+{
+  "component": "maven|com.fasterxml.jackson.core:jackson-databind|2.17.2",
+  "date": "2026-10-20",
+  "scan": "https://github.com/amazen33/EdgePulse/actions/runs/39434411230",
+  "sboms": [
+    {
+      "module": "services/identity/pom.xml",
+      "sha256": "5c96fa86d2620ac62eb1115f29e2105c5e7ff52ecfac1964dca58fd978efc308",
+      "resolvedTreeSHA256": "befec0551c523e6aa6f6b1ea0fb37609855ebd4ae39657dbcaa364fe7eb488d9"
+    }
+  ],
+  "tools": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "grype": [],
+  "osv": [
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-59888",
+      "aliases": [
+        "CVE-2026-59888",
+        "GHSA-3pjw-73gf-8qr5"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.8",
+        "2.21.4"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-59889",
+      "aliases": [
+        "CVE-2026-59889",
+        "GHSA-5gvw-p9qm-jgwh"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.9",
+        "2.21.5",
+        "2.22.1"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-54515",
+      "aliases": [
+        "CVE-2026-54515",
+        "GHSA-5jmj-h7xm-6q6v"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.9",
+        "2.21.5",
+        "2.22.1",
+        "3.1.4"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-91777",
+      "aliases": [
+        "CVE-2026-91777",
+        "GHSA-cxp5-3px4-pw24"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.11",
+        "2.21.7",
+        "2.22.3"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-83557",
+      "aliases": [
+        "CVE-2026-83557",
+        "GHSA-gx83-3vf8-gh7j"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.10",
+        "2.21.6",
+        "2.22.2"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-54514",
+      "aliases": [
+        "CVE-2026-54514",
+        "GHSA-hgj6-7826-r7m5"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.8",
+        "2.21.4",
+        "3.1.4"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-54512",
+      "aliases": [
+        "CVE-2026-54512",
+        "GHSA-j3rv-43j4-c7qm"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.8",
+        "2.21.4",
+        "3.1.4"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-68497",
+      "aliases": [
+        "CVE-2026-68497",
+        "GHSA-q4xh-88c3-wmh7"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.10",
+        "2.21.6",
+        "2.22.2"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-54513",
+      "aliases": [
+        "CVE-2026-54513",
+        "GHSA-rmj7-2vxq-3g9f"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.8",
+        "2.21.4",
+        "3.1.4"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-77310",
+      "aliases": [
+        "CVE-2026-77310",
+        "GHSA-vvgp-rfg2-7rr6"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.9",
+        "2.21.5",
+        "2.22.1"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-19032",
+      "aliases": [
+        "CVE-2026-19032",
+        "GHSA-wjgm-6hv5-3cvf"
+      ],
+      "severity": "Medium",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.10",
+        "2.21.6",
+        "2.22.2"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    },
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "com.fasterxml.jackson.core:jackson-databind",
+      "version": "2.17.2",
+      "vulnerability": "CVE-2026-91776",
+      "aliases": [
+        "CVE-2026-91776",
+        "GHSA-wv8q-qhhj-9h54"
+      ],
+      "severity": "High",
+      "fixAvailable": true,
+      "fixVersions": [
+        "2.18.11",
+        "2.21.7",
+        "2.22.3"
+      ],
+      "scanner": "osv",
+      "packageClass": "java-archive (Maven)",
+      "kev": false
+    }
+  ],
+  "adr0049": {
+    "result": "pass",
+    "scope": "exact component; static scan only",
+    "initialExceptionApprovalPending": false,
+    "exceptionsSHA256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce"
+  }
+}

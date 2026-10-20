@@ -1,6 +1,28 @@
 {
   "tools": [
     {
+      "name": "actionlint",
+      "version": "1.7.12",
+      "spdx": "MIT",
+      "published": "2026-03-30",
+      "archiveUrl": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz",
+      "sha256": [
+        "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8"
+      ],
+      "licenceSource": "https://raw.githubusercontent.com/rhysd/actionlint/v1.7.12/LICENSE.txt"
+    },
+    {
+      "name": "grype",
+      "version": "0.119.0",
+      "spdx": "Apache-2.0",
+      "published": "2026-09-17",
+      "archiveUrl": "https://github.com/anchore/grype/releases/download/v0.119.0/grype_0.119.0_linux_amd64.tar.gz",
+      "sha256": [
+        "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b"
+      ],
+      "licenceSource": "https://raw.githubusercontent.com/anchore/grype/v0.119.0/LICENSE"
+    },
+    {
       "name": "maven",
       "version": "3.9.11",
       "spdx": "Apache-2.0",
@@ -12,11 +34,33 @@
       "licenceSource": "https://github.com/apache/maven/blob/maven-3.9.11/LICENSE"
     },
     {
+      "name": "osv-scanner",
+      "version": "2.6.0",
+      "spdx": "Apache-2.0",
+      "published": "2026-09-14",
+      "archiveUrl": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_amd64",
+      "sha256": [
+        "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108"
+      ],
+      "licenceSource": "https://raw.githubusercontent.com/google/osv-scanner/v2.6.0/LICENSE"
+    },
+    {
       "name": "python",
       "version": "3.12.12",
       "spdx": "PSF-2.0",
       "published": "2025-10-09",
       "licenceSource": "https://github.com/python/cpython/blob/v3.12.12/LICENSE"
+    },
+    {
+      "name": "syft",
+      "version": "1.52.0",
+      "spdx": "Apache-2.0",
+      "published": "2026-09-17",
+      "archiveUrl": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_linux_amd64.tar.gz",
+      "sha256": [
+        "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d"
+      ],
+      "licenceSource": "https://raw.githubusercontent.com/anchore/syft/v1.52.0/LICENSE"
     },
     {
       "name": "temurin",
@@ -25,5 +69,48 @@
       "published": "2025-07-15",
       "licenceSource": "https://github.com/adoptium/jdk17u/blob/jdk-17.0.16%2B8/LICENSE"
     }
-  ]
+  ],
+  "artifacts": {
+    "grype": {
+      "url": "https://github.com/anchore/grype/releases/download/v0.119.0/grype_0.119.0_linux_amd64.tar.gz",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "output": "bin/grype",
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "checksumURL": "https://github.com/anchore/grype/releases/download/v0.119.0/grype_0.119.0_checksums.txt",
+      "checksumSHA256": "9cb7f68e8fa2b039e67f33d1fda29e7224946167f3b8abb43c51a6fff0c0de78",
+      "member": "grype",
+      "version": "0.119.0",
+      "published": "2026-09-17"
+    },
+    "syft": {
+      "url": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_linux_amd64.tar.gz",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "output": "bin/syft",
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "checksumURL": "https://github.com/anchore/syft/releases/download/v1.52.0/syft_1.52.0_checksums.txt",
+      "checksumSHA256": "21d9ee36c7c6fb43d6493718a387ecca021321791d1815c716e56c99b9c8d6b9",
+      "member": "syft",
+      "version": "1.52.0",
+      "published": "2026-09-17"
+    },
+    "osv-scanner": {
+      "url": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_linux_amd64",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "output": "bin/osv-scanner",
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "checksumURL": "https://github.com/google/osv-scanner/releases/download/v2.6.0/osv-scanner_SHA256SUMS",
+      "checksumSHA256": "29f6fbc8bdd02d977df4b0987705d046233c36b70469a7021c623e8c155c9ddc",
+      "version": "2.6.0",
+      "published": "2026-09-14"
+    },
+    "actionlint": {
+      "url": "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_1.7.12_linux_amd64.tar.gz",
+      "sha256": "8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8",
+      "output": "bin/actionlint",
+      "member": "actionlint",
+      "version": "1.7.12",
+      "published": "2026-03-30"
+    }
+  },
+  "scannerSourceCommit": "0d950075a8bf43358d9fd406b80b67d657f804e1"
 }

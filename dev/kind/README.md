@@ -79,7 +79,7 @@ This inventory is not a supply-chain or licence-gate pass.
 | Cilium | 1.20.2, chart SHA-256 in pins.json | Apache-2.0; [upstream chart](https://helm.cilium.io/cilium-1.20.2.tgz) |
 | CNPG | 1.30.1, operator image digest and manifest checksum | Apache-2.0; [release](https://github.com/cloudnative-pg/cloudnative-pg/releases/tag/v1.30.1) |
 | TB CE tb-node | 4.3.1.6, OCI index digest, commit c77335f4a524bb9fe0209806672c6ec7aea76141 | [Apache-2.0 at the pinned source](https://github.com/thingsboard/thingsboard/blob/c77335f4a524bb9fe0209806672c6ec7aea76141/LICENSE) |
-| CNPG PostgreSQL image | 18.6-system-trixie, OCI index digest | [PostgreSQL](https://www.postgresql.org/about/licence/); [image source](https://github.com/cloudnative-pg/postgres-containers) (Apache-2.0 build packaging) |
+| CNPG PostgreSQL image | 18.6-202610050823-minimal-trixie, OCI index digest | [PostgreSQL](https://www.postgresql.org/about/licence/); [image source](https://github.com/cloudnative-pg/postgres-containers) (Apache-2.0 build packaging) |
 | PyYAML | 6.0.3 | [MIT](https://pypi.org/project/PyYAML/6.0.3/), static test dependency only |
 | actions/checkout | 5.0.0, 08c6903cd8c0fde910a37f88322edcfb5dd907a8 | MIT |
 | actions/setup-python | 5.6.0, a26af69be951a213d495a4c3e4e4022e16d87065 | MIT |

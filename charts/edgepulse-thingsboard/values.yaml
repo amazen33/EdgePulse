@@ -10,7 +10,7 @@ tb:
 bootstrap:
   enabled: false
 database:
-  image: ghcr.io/cloudnative-pg/postgresql:18.6-system-trixie@sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0
+  image: ghcr.io/cloudnative-pg/postgresql:18.6-202610050823-minimal-trixie@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3
   storageClass: edgepulse-postgres
   size: 20Gi
   resources:

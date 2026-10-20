@@ -147,12 +147,26 @@ def selected_plugins(root, effective, cache):
                                      ('groupId', 'artifactId', 'version', 'type', 'classifier')})
                     selected[key] = dict(name=g+':'+a, version=v, kind='plugin', module=module,
                                          dependencies=deps)
-    # These exact CLI plugins are executed by this gate's own collector.
-    for g, a, v in [('org.cyclonedx', 'cyclonedx-maven-plugin', '2.9.1'),
-                     ('org.apache.maven.plugins', 'maven-help-plugin', '3.5.1'),
-                     ('org.apache.maven.plugins', 'maven-dependency-plugin', '3.11.0')]:
+    # The reviewed invocation policy is the version authority for collector
+    # plugins too. Include effective pluginManagement overrides in their realms.
+    policy = json.loads((root / 'security/licence-policy.json').read_text(encoding='utf-8'))
+    cli = {tuple(goal.split(':')[:3]) for command in policy['gatedMavenCommands']
+           for goal in command['goals'] if len(goal.split(':')) == 4}
+    for g, a, v in sorted(cli):
         key = g+':'+a+':'+v
-        selected[key] = dict(name=g+':'+a, version=v, kind='plugin', module='collector', dependencies=[])
+        deps = []
+        for project in projects:
+            for plugin in project.findall('m:build/m:pluginManagement/m:plugins/m:plugin', NS):
+                if (plugin.findtext('m:groupId', 'org.apache.maven.plugins', NS),
+                    plugin.findtext('m:artifactId', '', NS), plugin.findtext('m:version', '', NS)) != (g,a,v):
+                    continue
+                values = [{k:d.findtext('m:'+k, '', NS) for k in
+                           ('groupId','artifactId','version','type','classifier')}
+                          for d in plugin.findall('m:dependencies/m:dependency', NS)]
+                if deps and deps != values:
+                    raise ValueError('Collector plugin realm differs between modules: '+key)
+                deps = values
+        selected[key] = dict(name=g+':'+a, version=v, kind='plugin', module='collector', dependencies=deps)
     exclusions = json.loads((root / 'security/maven-unexecuted-plugins.json').read_text(encoding='utf-8'))
     excluded = {e['coordinates'] for e in exclusions['plugins']}
     overlap = excluded & selected.keys()

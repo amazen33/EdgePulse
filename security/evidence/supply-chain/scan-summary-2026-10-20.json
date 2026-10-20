@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-20",
+  "before": {
+    "run": "https://github.com/amazen33/EdgePulse/actions/runs/39427228778",
+    "total": 1780,
+    "bySeverity": {
+      "Negligible": 303,
+      "Critical": 74,
+      "High": 559,
+      "Medium": 610,
+      "Low": 191,
+      "Unknown": 43
+    },
+    "kev": 1
+  },
+  "after": {
+    "run": "https://github.com/amazen33/EdgePulse/actions/runs/39434411230",
+    "commit": "1ea6a8fbc97ae4005c92d0c118036775bedb0a75",
+    "total": 1577,
+    "bySeverity": {
+      "Negligible": 281,
+      "Critical": 60,
+      "High": 489,
+      "Medium": 535,
+      "Low": 169,
+      "Unknown": 43
+    },
+    "kev": 0
+  },
+  "exceptions": {
+    "count": 303,
+    "bySeverity": {
+      "Critical": 43,
+      "High": 260
+    },
+    "groups": 69,
+    "sha256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce",
+    "approval": "approved by amazen33 via explicit owner reply on 2026-10-20",
+    "expires": "2026-11-19"
+  },
+  "reportOnly": {
+    "count": 1274,
+    "highCriticalNoFix": 246
+  },
+  "tools": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "database": {
+    "built": "2026-10-20T06:29:49Z",
+    "from": "https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.10_2026-10-20T00:32:16Z_1792477789.tar.zst?checksum=sha256%3Af75997cdf079db4a477dcb5b12d2aaa805a16619a61d60100c598739478b9172",
+    "path": "/home/runner/work/EdgePulse/EdgePulse/target/supply-chain/database/6/vulnerability.db",
+    "schemaVersion": "v6.1.10",
+    "valid": true
+  },
+  "kev": {
+    "catalogVersion": "2026.10.16",
+    "downloadSHA256": "b6e27975f6635ecfc546fbd4fd6e444ba63a07ab2abc8876229d77fe083d357d",
+    "sha256": "b85b2fdbecb00dec6e950a1dbebf517a457bf4cca522beda3c26688ab26c8a2f"
+  },
+  "policyPreview": "pass in initial-list PR mode; this diagnostic is not owner approval",
+  "closedBaselineEntries": [
+    "image-sbom:oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+    "image-sbom:oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+    "image-sbom:oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+    "image-sbom:oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0",
+    "image-sbom:oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+    "image-sbom:oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+    "image-sbom:oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc"
+  ],
+  "imageBackfills": [
+    {
+      "component": "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "previousComponent": "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "oldFingerprint": "2d156ce1b8f9bd895a8344b2235bb070a2ab05232b8d380c78a03614956f0740",
+      "newFingerprint": "4ace6105bc78eaebd73b9aae395045622a3b3e265eb7ab38cc8a197fb26dae82",
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed.cdx.json",
+        "sha256": "5af9496f63c032509b78746e5cdda42f465d41087cdbc0374a5ceac5c5b02565"
+      },
+      "tier": 2,
+      "mode": "imageSBOM addition only",
+      "due": "2027-04-20"
+    },
+    {
+      "component": "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "previousComponent": "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "oldFingerprint": "af7b2038c200eecab2da5951ce3813d632f36a5fe7660a1fa7fe1364ebed0b99",
+      "newFingerprint": "6d362b64447b4a558562073af14bc9024fd656dc762c0d295b18f0f010867d4c",
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a.cdx.json",
+        "sha256": "846228ecfb6772d401249006ad32cd6a858d36073d698da07d9bf7ee1eab7c48"
+      },
+      "tier": 2,
+      "mode": "imageSBOM addition only",
+      "due": "2027-04-20"
+    },
+    {
+      "component": "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "previousComponent": "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "oldFingerprint": "52abd1bd9c4ca261c51c00fd0840edbcb9f9a9c68f8b9374b89220aaf1e03ed0",
+      "newFingerprint": "fd00365c0469e38cb7908bfc430052023f3af7c9a9e861e63af02c6c58add788",
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07.cdx.json",
+        "sha256": "6661668eb0308397e8f70990f2d8a9be2b23e11e5f709391d523af1fdc17e7fd"
+      },
+      "tier": 2,
+      "mode": "imageSBOM addition only",
+      "due": "2027-04-20"
+    },
+    {
+      "component": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "previousComponent": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0",
+      "oldFingerprint": "bbcb4583ecfefd07b11857bee8d7e557c30a91b91c649e6f9920aa805d017d13",
+      "newFingerprint": "3ec92df430b829b5e7b37e6cced8ab52134cd8b10fa9279a518b2b03b5bf8b16",
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.cdx.json",
+        "sha256": "f42ce54dd54c2a1f2a62cfd8698de528fabc3e7cab0c14d4f8dc274a95bed954"
+      },
+      "tier": 2,
+      "mode": "Amendment 5 supported replacement; old legacy admission retired; full ADR-0054 record"
+    },
+    {
+      "component": "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "previousComponent": "oci-image|quay.io/cilium/cilium-envoy|sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "oldFingerprint": "5cb273f5aa686b1a3d8c04a8254a473b74478a535c1f2af5af3731c9c7094875",
+      "newFingerprint": "346846f64ac33647890992724066aa3bf10ba4f3b6a13bbe0b2c2a90e9d930f7",
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463.cdx.json",
+        "sha256": "9ec07fdd12c3b24536a201bc02f718ee9f9aa5815aa568ffcc7b4b1bf2f6f63b"
+      },
+      "tier": 2,
+      "mode": "imageSBOM addition only",
+      "due": "2027-04-20"
+    },
+    {
+      "component": "oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "previousComponent": "oci-image|quay.io/cilium/cilium|sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "oldFingerprint": "94ad20fee6f87e9beaddf9d853169fc056b56dbfe3c99dd7acc3b3e8dc6593da",
+      "newFingerprint": "f9072aae10c1487d11531d23bb099993ebb833e3060ba54258fe875c865c78da",
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01.cdx.json",
+        "sha256": "c27c883e6bdc2a0f4411a6d9ab5af3262420280e7f721aa35352a6d0dfbc17b6"
+      },
+      "tier": 2,
+      "mode": "imageSBOM addition only",
+      "due": "2027-04-20"
+    },
+    {
+      "component": "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "previousComponent": "oci-image|quay.io/cilium/operator-generic|sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "oldFingerprint": "d282ccf50a5824774ddeea0e3f61e7513174d3e4bd9530d54738bde588d87363",
+      "newFingerprint": "460e33940250438496c00b40fa7d6b1e2d9306992b908ccd009e4f86aa4c1357",
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc.cdx.json",
+        "sha256": "e0675b6feb0440c321e7560ca766a45deee4441562a7830e32a4619c91c9953d"
+      },
+      "tier": 2,
+      "mode": "imageSBOM addition only",
+      "due": "2027-04-20"
+    }
+  ]
+}

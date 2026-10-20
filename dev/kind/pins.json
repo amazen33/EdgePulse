@@ -51,13 +51,13 @@
     "image": "thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a"
   },
   "postgresql": {
-    "version": "18.6-system-trixie",
+    "version": "18.6-202610050823-minimal-trixie",
     "licence": "PostgreSQL",
-    "image": "ghcr.io/cloudnative-pg/postgresql:18.6-system-trixie@sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0",
-    "published": "2026-08-13",
-    "publicationSource": "https://www.postgresql.org/docs/release/18.6/",
-    "publicationScope": "PostgreSQL 18.6 upstream release; image build timestamp is recorded separately",
-    "imageCreated": "2026-10-12T08:28:52Z",
+    "image": "ghcr.io/cloudnative-pg/postgresql:18.6-202610050823-minimal-trixie@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+    "published": "2026-10-05",
+    "publicationSource": "https://github.com/cloudnative-pg/postgres-containers/pkgs/container/postgresql",
+    "publicationScope": "Dated immutable image tag; PostgreSQL 18.6 upstream release 2026-08-13",
+    "imageCreated": "2026-10-05T08:23:19Z",
     "imageCreatedSource": "OCI index annotations for the pinned digest; build time is not publication time"
   }
 }
