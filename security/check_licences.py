@@ -348,7 +348,7 @@ def main():
             lines.append('')
         for kind in ('openBaseline', 'pendingRemoval'):
             lines.append('Open ' + kind + ':')
-            lines.extend(f'- `{e["id"]}` â€” expires **{e["expires"]}**' for e in report.get(kind, []))
+            lines.extend(f'- `{e["id"]}` — expires **{e["expires"]}**' for e in report.get(kind, []))
             lines.append('')
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
             stream.write('\n'.join(lines) + '\n')
