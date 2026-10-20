@@ -2488,6 +2488,250 @@
       }
     },
     {
+      "id": "maven|org.apache.logging.log4j:log4j-api|2.26.1",
+      "ecosystem": "maven",
+      "name": "org.apache.logging.log4j:log4j-api",
+      "version": "2.26.1",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "services/identity/pom.xml"
+      ],
+      "integrities": [
+        "sha256:f1810a4704ccce019d02bba029dc02a4f2ac0c997f647b465e7d409c1927f822"
+      ],
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.26.1/log4j-api-2.26.1.pom",
+      "tier": 2,
+      "enterpriseGrade": {
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/scan-2026-10-21.json",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          }
+        }
+      },
+      "notes": "ADR 0027 / IOT-WO-06. Climbing decision: Logback (tier 3) rejected because this tier-2 candidate passes qualification; no runtime licence exception. https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md#licence-ladder--climbing-decision",
+      "class": "allowed"
+    },
+    {
+      "id": "maven|org.apache.logging.log4j:log4j-core|2.26.1",
+      "ecosystem": "maven",
+      "name": "org.apache.logging.log4j:log4j-core",
+      "version": "2.26.1",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "services/identity/pom.xml"
+      ],
+      "integrities": [
+        "sha256:2ec8c3bf5a6d7c89be8620116a2fc973f7dda1ad0261ad393c4d4726edfd3dcb"
+      ],
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/2.26.1/log4j-core-2.26.1.pom",
+      "tier": 2,
+      "enterpriseGrade": {
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/scan-2026-10-21.json",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          }
+        }
+      },
+      "notes": "ADR 0027 / IOT-WO-06. Climbing decision: Logback (tier 3) rejected because this tier-2 candidate passes qualification; no runtime licence exception. https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md#licence-ladder--climbing-decision",
+      "class": "allowed"
+    },
+    {
+      "id": "maven|org.apache.logging.log4j:log4j-jul|2.26.1",
+      "ecosystem": "maven",
+      "name": "org.apache.logging.log4j:log4j-jul",
+      "version": "2.26.1",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "services/identity/pom.xml"
+      ],
+      "integrities": [
+        "sha256:6ac54ce38bdf0334d36b9ff30433c2a650e37747b907d6e040e9d47d12659e9f"
+      ],
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-jul/2.26.1/log4j-jul-2.26.1.pom",
+      "tier": 2,
+      "enterpriseGrade": {
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/scan-2026-10-21.json",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          }
+        }
+      },
+      "notes": "ADR 0027 / IOT-WO-06. Climbing decision: Logback (tier 3) rejected because this tier-2 candidate passes qualification; no runtime licence exception. https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md#licence-ladder--climbing-decision",
+      "class": "allowed"
+    },
+    {
+      "id": "maven|org.apache.logging.log4j:log4j-slf4j2-impl|2.26.1",
+      "ecosystem": "maven",
+      "name": "org.apache.logging.log4j:log4j-slf4j2-impl",
+      "version": "2.26.1",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "services/identity/pom.xml"
+      ],
+      "integrities": [
+        "sha256:cbdfb4c2bcc10f0927c61036db54924250f3924ecd13ea913cefe4f99c08fa66"
+      ],
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-slf4j2-impl/2.26.1/log4j-slf4j2-impl-2.26.1.pom",
+      "tier": 2,
+      "enterpriseGrade": {
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/scan-2026-10-21.json",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md",
+            "date": "2026-10-20",
+            "notes": "Exact candidate evidence and its scope are documented in the linked record."
+          }
+        }
+      },
+      "notes": "ADR 0027 / IOT-WO-06. Climbing decision: Logback (tier 3) rejected because this tier-2 candidate passes qualification; no runtime licence exception. https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-06-logging/security/evidence/identity-logging/qualification-2026-10-21.md#licence-ladder--climbing-decision",
+      "class": "allowed"
+    },
+    {
       "id": "maven|org.apache.logging.log4j:log4j-to-slf4j|2.23.1",
       "ecosystem": "maven",
       "name": "org.apache.logging.log4j:log4j-to-slf4j",
