@@ -28,6 +28,7 @@ jobs:
       - name: Scan all digest-pinned images, Maven graphs and lockfiles
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           args=()
           if [[ -n "$BASE_SHA" ]]; then args=(--base "$BASE_SHA"); fi

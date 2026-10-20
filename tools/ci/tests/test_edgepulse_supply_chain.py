@@ -116,6 +116,22 @@ class PlantedViolations(unittest.TestCase):
 
 
 class RepositoryWiring(unittest.TestCase):
+    def test_workflow_token_is_only_used_for_read_only_github_api_requests(self):
+        with patch.object(sc,'fetch',return_value=b'{}') as fetch,\
+             patch.dict(os.environ,{'GH_TOKEN':'SYNTHETIC-workflow-token'}):
+            original = sc.fetch
+            with ep.github_reads():
+                sc.fetch('https://api.github.com/repos/amazen33/EdgePulse/issues')
+                self.assertEqual(fetch.call_args.kwargs['token'],'SYNTHETIC-workflow-token')
+                for url in ('https://ghcr.io/v2/example/image/manifests/test',
+                            'https://api.github.com.SYNTHETIC.invalid/',
+                            'http://api.github.com/repos/example/project'):
+                    sc.fetch(url)
+                    self.assertNotIn('token',fetch.call_args.kwargs)
+                with self.assertRaisesRegex(ValueError,'read-only'):
+                    sc.fetch('https://api.github.com/repos/amazen33/EdgePulse/issues',payload={})
+            self.assertIs(sc.fetch,original)
+
     def test_initial_list_bootstrap_is_only_the_same_repository_part_b_pr(self):
         event = {'pull_request':{
             'head':{'ref':'codex/iot-wo-02-b','repo':{'full_name':ep.REPOSITORY}},

@@ -5,6 +5,7 @@ cluster commands, host configuration, or candidate application code are run.
 """
 import argparse
 import copy
+from contextlib import contextmanager
 from datetime import date
 import hashlib
 import json
@@ -12,6 +13,7 @@ import os
 from pathlib import Path
 import re
 import sys
+from urllib.parse import urlsplit
 
 import supply_chain as sc
 from stage_tools import verified
@@ -19,6 +21,31 @@ from stage_tools import verified
 ROOT = Path(__file__).resolve().parents[2]
 REPOSITORY = 'amazen33/EdgePulse'
 BASE = 'ca6177636893b497fde6f58db2a917dbf4b216d6'
+
+
+@contextmanager
+def github_reads():
+    """Authenticate public API reads without granting scanner write access.
+
+    The workflow token avoids the shared runner IP's anonymous rate limit.
+    It is never attached to registry/download URLs or a mutation request.
+    The unchanged port retains its own issue-state validation and clock rules.
+    """
+    original = sc.fetch
+    def fetch(url, **kwargs):
+        target = urlsplit(url)
+        if target.scheme == 'https' and target.netloc == 'api.github.com':
+            if kwargs.get('payload') is not None or kwargs.get('method') not in (None,'GET'):
+                raise ValueError('Scanner GitHub access is read-only')
+            token = os.environ.get('GH_TOKEN')
+            if token:
+                kwargs['token'] = token
+        return original(url, **kwargs)
+    sc.fetch = fetch
+    try:
+        yield
+    finally:
+        sc.fetch = original
 
 
 def canonical(reference):
@@ -395,7 +422,8 @@ def run(root, tools_path, out, cache, base=None):
     result['scanConfiguration'] = dict(platform='linux/amd64', scope='all referenced images, all Maven scopes and executed plugin classpaths, lockfiles')
     raw = sc.fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json')
     (out/'kev.json').write_bytes(raw)
-    state, link = sc.previous_state(REPOSITORY)
+    with github_reads():
+        state, link = sc.previous_state(REPOSITORY)
     report = evaluate(result, sc.read(root/'security/vulnerability-exceptions.json'), json.loads(raw), root,
                       state if link else None)
     report['trackingIssue'] = link
@@ -431,7 +459,8 @@ def main():
             try:
                 sc.inventory = lambda root, **kwargs: inventory(root)
                 args.out.mkdir(parents=True, exist_ok=True)
-                value = upstream_watch.watch(args.root, sc.verify_tools(args.tools, args.root), args.out, args.cache)
+                with github_reads():
+                    value = upstream_watch.watch(args.root, sc.verify_tools(args.tools, args.root), args.out, args.cache)
                 sc.write(args.out/'watch.json', value)
                 (args.out/'watch.md').write_text(value['markdown'], encoding='utf-8')
             finally:

@@ -101,6 +101,12 @@ change locks or execute candidate code. Missing verifiable candidates remain
 explicitly unavailable. The upstream watch's isolated scan/retry behavior is
 retained. No exception, pin, scanner failure or required check is bypassed.
 
+GitHub API reads use the workflow's read-only token to avoid the shared
+runner's anonymous rate limit. The adapter attaches it only to HTTPS requests
+to `api.github.com` and rejects mutation requests. Registry, download and
+other URLs receive no GitHub token. The scanner still has no issue-write
+permission; the first-seen parser and its fail-closed checks are unchanged.
+
 The adapter generates an ignored compatibility lock at `tools/ci/toolchain.lock.json`
 from the tracked security lock before the unchanged staging/verifier runs. CI
 uses `security/requirements.txt`; the duplicate upstream requirements copy is
