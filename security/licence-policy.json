@@ -217,11 +217,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|com.google.api.grpc:proto-google-common-protos|2.41.0": {
-        "sha256": "fb800a4bd1fda53ce8bc2679c7ab624b6be70b597f24d1cf5dba66120e0efd2f",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|com.google.code.findbugs:jsr305|3.0.2": {
         "sha256": "e6c160679742ca0835b5813db14dd21add85b5a2b7154c488bc0fb121bb9b034",
         "tier": 2,
@@ -237,16 +232,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|com.google.guava:failureaccess|1.0.2": {
-        "sha256": "48f7190a2bddfe78c0cf73c78206e510408d414eb6765989e13cb9648a2e77a7",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|com.google.guava:guava|33.2.1-android": {
-        "sha256": "91095d31101476395bf7181516cdd3a7f5c51cf358bd7b9db74e273d7a91271f",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|com.google.guava:listenablefuture|9999.0-empty-to-avoid-conflict-with-guava": {
         "sha256": "9dfa504c621c100b2c983d94ab52b668a4ba9679e6e201049bbcce877ca98f12",
         "tier": 2,
@@ -259,11 +244,6 @@
       },
       "maven|com.google.protobuf:protobuf-java-util|3.21.10": {
         "sha256": "975f4980ff61966f87b7060986c51b7b71a9f0caecb5291b41a0d8f1c6c8a552",
-        "tier": 1,
-        "due": "2027-04-20"
-      },
-      "maven|com.google.protobuf:protobuf-java|3.25.5": {
-        "sha256": "aa03bc1c2180eda6b742a7896df4d964370b54487514090820948814c1017715",
         "tier": 1,
         "due": "2027-04-20"
       },
@@ -292,46 +272,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|io.grpc:grpc-api|1.68.1": {
-        "sha256": "22bb169360fb2e697ef5fa19b6aae5749ca0a3ce69180dd5260b95cf21212104",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.grpc:grpc-context|1.68.1": {
-        "sha256": "2b749c80e33b5a9c0fe4f6b441c2b7307fa3b50edfb903aed4c8fe587d4777e0",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.grpc:grpc-core|1.68.1": {
-        "sha256": "21649804b36f22b8949feadbe81317e123228592b1b2e5d03fe4a93cc4c3258d",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.grpc:grpc-netty-shaded|1.68.1": {
-        "sha256": "a6b70ac15f871b24e945d0cc9756e68c842817338a1c96e6eacc807df9463c2f",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.grpc:grpc-protobuf-lite|1.68.1": {
-        "sha256": "186e32dbd759b0ffacf4802ac2609659fa1dba619835a8767a372a1b990c80b1",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.grpc:grpc-protobuf|1.68.1": {
-        "sha256": "5b18852098ebfcb3d2da2420f7979f63acb689be6658128822c2dece3f7af330",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.grpc:grpc-stub|1.68.1": {
-        "sha256": "ce241d595ca76d052d3a61681144b1cdaf32b90e87100090df79081d7c44e6be",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.grpc:grpc-util|1.68.1": {
-        "sha256": "36d5350fb0164b255429f24e231f811781ddb0133ed8078e164beca8dea87339",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|io.micrometer:micrometer-commons|1.13.4": {
         "sha256": "b1603c16de47af4ee1d0ac567bec8ba944f1a56bebcc1010a8eed852e24377e8",
         "tier": 2,
@@ -355,16 +295,6 @@
       "maven|org.apache.tomcat:annotations-api|6.0.53": {
         "sha256": "3cb2fef8e05a671aa45b495fae27f9a6129086aa689703a57d6421847839c37b",
         "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.checkerframework:checker-qual|3.42.0": {
-        "sha256": "1ceff5425ba9403729e06e904320c9ef01726b60c66ea5d71105e80309c4c21d",
-        "tier": 1,
-        "due": "2027-04-20"
-      },
-      "maven|org.codehaus.mojo:animal-sniffer-annotations|1.24": {
-        "sha256": "70bb2d016c7f348fceb983131f692e2a127d021259891aa0a723bd6e5318a78b",
-        "tier": 1,
         "due": "2027-04-20"
       },
       "maven|org.slf4j:slf4j-api|2.0.16": {

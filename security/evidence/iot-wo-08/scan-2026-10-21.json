@@ -1,0 +1,300 @@
+{
+  "workOrder": "IOT-WO-08",
+  "reviewDate": "2026-10-21",
+  "scope": "Static public artifact scanning and local/CI foundation tests; no environment action or acceptance",
+  "run": "https://github.com/amazen33/EdgePulse/actions/runs/39534328211",
+  "artifactId": 12317261840,
+  "artifactSHA256": "8d9388aaab183189d001dca35af7bba7630d04eb9c2acd72936a88821c56909c",
+  "gitCommit": "e6805ce95a2a5e4ffd9a56cf81b2362692cb9c40",
+  "policyResult": "passed",
+  "ownerApprovalPending": false,
+  "scannerVersions": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "kev": {
+    "catalogVersion": "2026.10.20",
+    "downloadSHA256": "a3591cd3f9b803d7ba43782fdbc9c89feb66bca6d6ae3dc73689667e77645a7f",
+    "sha256": "869bf89e0abdac938842ac38eb2c3afae7b821697cef722aefe8df9a3e661edb"
+  },
+  "database": {
+    "built": "2026-10-20T06:29:49Z",
+    "schemaVersion": "v6.1.10",
+    "sameAsBaseline": true
+  },
+  "baseline": {
+    "run": "https://github.com/amazen33/EdgePulse/actions/runs/39504344710",
+    "gitCommit": "cbfbf04543b60bb114155e84be950ced2a225f87",
+    "date": "2026-10-20"
+  },
+  "counts": {
+    "allBefore": {
+      "Negligible": 281,
+      "Critical": 60,
+      "High": 489,
+      "Medium": 534,
+      "Low": 169,
+      "Unknown": 43
+    },
+    "allAfter": {
+      "Negligible": 281,
+      "Critical": 60,
+      "High": 488,
+      "Medium": 534,
+      "Low": 169,
+      "Unknown": 43
+    },
+    "identityBefore": {
+      "High": 16,
+      "Medium": 21,
+      "Low": 6,
+      "Critical": 1
+    },
+    "identityAfter": {
+      "Medium": 21,
+      "High": 15,
+      "Low": 6,
+      "Critical": 1
+    }
+  },
+  "removedFindings": [
+    {
+      "target": "maven:services/identity/pom.xml",
+      "package": "io.grpc:grpc-netty-shaded",
+      "version": "1.68.1",
+      "vulnerability": "CVE-2025-55163",
+      "severity": "High"
+    }
+  ],
+  "addedFindings": [],
+  "runtimeComponents": [
+    {
+      "id": "maven|com.google.protobuf:protobuf-java|3.25.9",
+      "integrities": [
+        "sha256:df18b719cd0c5a11e569013216cc9de47a0a954adeede685c0f98ce4c42d4d1a"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-api|1.84.0",
+      "integrities": [
+        "sha256:a2a57594571a4392751609bf4c63cf838ba7dcdbc8e5fd07983c313cb1565ac8"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|com.google.guava:guava|33.6.0-android",
+      "integrities": [
+        "sha256:9532ca9ba8aceb4cd2067171f981c799988b7f5844e3e274811a3bb757034bc4"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|com.google.guava:failureaccess|1.0.3",
+      "integrities": [
+        "sha256:cbfc3906b19b8f55dd7cfd6dfe0aa4532e834250d7f080bd8d211a3e246b59cb"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-stub|1.84.0",
+      "integrities": [
+        "sha256:5d7c9eac0386fbf6f1c9dc90171034939093c9f72196bd9242acf819c5f10a4a"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-protobuf|1.84.0",
+      "integrities": [
+        "sha256:076ad68d91d59132970dd739ff908d0b8fffea9fb0ccbea9310d933e0a677802"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|com.google.api.grpc:proto-google-common-protos|2.64.1",
+      "integrities": [
+        "sha256:beb8107f340dc0bb04bf40d1a61631a21e450c58aad93c160959f0292136d99f"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-protobuf-lite|1.84.0",
+      "integrities": [
+        "sha256:12827fd4ba3d75f7ab5fceb3296c5ac9f473826e6b2aa67684d32879b7fa239b"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-netty-shaded|1.84.0",
+      "integrities": [
+        "sha256:f07624d7ca0b0bce8dded33dfe261fd9be59168bb6a77f0580ab09ecd22f113d"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-util|1.84.0",
+      "integrities": [
+        "sha256:b64b8eedb714ec8c22ddc57361c7f2c0718cd51fa9d44a8cff68b30c117a6c23"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-core|1.84.0",
+      "integrities": [
+        "sha256:750c08018e22014cb5e6b6ac64fd4d0b2302b7db9cb2b83a1e0914d0561ed71c"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    },
+    {
+      "id": "maven|io.grpc:grpc-context|1.84.0",
+      "integrities": [
+        "sha256:e6f6e5db0d704e34d03f013cceb6be326c9ed3916346378ca1587ed41f943080"
+      ],
+      "resolvedScope": "compile/runtime in identity",
+      "osvFindings": 0,
+      "exceptionsUsed": []
+    }
+  ],
+  "imageDigests": [
+    "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+    "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+    "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+    "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+    "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+    "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+    "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc"
+  ],
+  "imageRegisterEvidenceUnchanged": true,
+  "inputHashes": {
+    "report.json": "e352b74d823130c93cf9283674064cd7c4f83a3929f9f94e8c1259138c8aef64",
+    "osv-maven.json": "da49eddd3f9fcfa4044d33c2b5baeb4154a19bafbce6365dc95ea36cf1220e6f",
+    "maven-findings.json": "2e98f3d750c7c816d2ba686b024f642925f1d35f757834572ebdebc5e292b3b5",
+    "maven-inputs.json": "63db3ff5f07b58d4e93afd48a4fe54c6dc3ff6ce4a58ed987b96798dd7313404",
+    "kev.json": "a3591cd3f9b803d7ba43782fdbc9c89feb66bca6d6ae3dc73689667e77645a7f"
+  },
+  "mavenInputs": [
+    {
+      "module": "architecture/pom.xml",
+      "resolvedTreeSHA256": "526da124c63ac91b85b5c1c7e4d5c36938040417aeae7beb1aab40007424850d",
+      "sbomSHA256": "ff14f25f193136d52e0bdb62839546f7a9ff8719aca13cb52632e01dcbe11cf8"
+    },
+    {
+      "module": "services/identity/pom.xml",
+      "resolvedTreeSHA256": "d832b239b24dd317a4e7dca2a8d6b0e427f10f0a6d6138442f4abf47112e01c4",
+      "sbomSHA256": "a04b6670cc3d516205f633f2f0740c52043faad15e02191fe1a7df4c9677d16c"
+    },
+    {
+      "module": "contract-tests/pom.xml",
+      "resolvedTreeSHA256": "56196aff8a04cf955e915fc9bc9f2bfa98b977f03883f195207f1aa68bad9c4a",
+      "sbomSHA256": "ae820df6b02929b90a7a5a8cdb8c5f2e9f7ab45d7473cef2f9e7019949d189c3"
+    },
+    {
+      "module": "executed-plugin-0",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "ca0b4016cd124c35064124411466bdbc82eae36413bb780910e438153dea4f63"
+    },
+    {
+      "module": "executed-plugin-1",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "6a2b32e045a2e5e9337768403e63b85b31abc3395f498719d316f33b46af28b0"
+    },
+    {
+      "module": "executed-plugin-2",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "b3ec5669e8178bb5dbaa2bb1ef3dac39c6e09d526e44cfe02139310ed69d5de3"
+    },
+    {
+      "module": "executed-plugin-3",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "936a0e873d88c1791d97644d453fcdc38c0c409db0ab840297020fd5a228003d"
+    },
+    {
+      "module": "executed-plugin-4",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "7a616990585c9a43cfe721ea7188364231f587e912e13381c133b4f998138c71"
+    },
+    {
+      "module": "executed-plugin-5",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "04080922eb120d1eaacd77d0b5d5c0055cc66002914a1e857d13f1819d7c9a1f"
+    },
+    {
+      "module": "executed-plugin-6",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "c0a520144ca42077ba9bc2a134d1b98d2aa4936d7c65ad8a44e0b0c2daedd314"
+    },
+    {
+      "module": "executed-plugin-7",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "aa88a889d446daa3fd6e5aee1d9172fd0b308c90b5d7073922c2520c869f7da1"
+    },
+    {
+      "module": "executed-plugin-8",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "677e406cb8e660680ed055c7ab81a8b1590478760f0266a05647075ed1a22614"
+    },
+    {
+      "module": "executed-plugin-9",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "dd0246810d5f859fa1cb7047c98dd6ee8fb73c1280e83d453e88f8f26ad086f2"
+    },
+    {
+      "module": "executed-plugin-10",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "e88530d0529fe41a1c443d153915dc18bf2d1963d0f368ab09614a0f9f947c01"
+    },
+    {
+      "module": "executed-plugin-11",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "eae6a65d6a1433ab40bb6a7e8eac972d8427cf74ed0a3a7f037f7e407a27ac11"
+    },
+    {
+      "module": "executed-plugin-12",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "d2b016d01fda2e2acce077d2a7a3c6d704da1820beb666096048d0a917cb5e03"
+    },
+    {
+      "module": "executed-plugin-13",
+      "resolvedTreeSHA256": null,
+      "sbomSHA256": "caedc7e5fa8ba671e3221e4e79658ed00aee184b547d86e78c0326a3e8da72bd"
+    }
+  ]
+}

@@ -811,27 +811,65 @@
       }
     },
     {
-      "id": "maven|com.google.api.grpc:proto-google-common-protos|2.41.0",
-      "ecosystem": "maven",
+      "id": "maven|com.google.api.grpc:proto-google-common-protos|2.64.1",
       "name": "com.google.api.grpc:proto-google-common-protos",
-      "version": "2.41.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "2.64.1",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:49edeba62f334053b91aa9455c95e38449269891b920dbc36daa74e959a3d89a"
+        "sha256:beb8107f340dc0bb04bf40d1a61631a21e450c58aad93c160959f0292136d99f"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/2.41.0/proto-google-common-protos-2.41.0.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/api/grpc/proto-google-common-protos/2.64.1/proto-google-common-protos-2.64.1.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
       "id": "maven|com.google.code.findbugs:jsr305|3.0.2",
@@ -904,69 +942,66 @@
       }
     },
     {
-      "id": "maven|com.google.guava:failureaccess|1.0.2",
-      "ecosystem": "maven",
-      "name": "com.google.guava:failureaccess",
-      "version": "1.0.2",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "services/identity/pom.xml"
-      ],
-      "integrities": [
-        "sha256:8a8f81cf9b359e3f6dfa691a1e776985c061ef2f223c9b2c80753e1b458e8064"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.pom",
-      "class": "allowed",
-      "tier": 2,
-      "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
-    },
-    {
       "id": "maven|com.google.guava:failureaccess|1.0.3",
-      "ecosystem": "maven",
       "name": "com.google.guava:failureaccess",
       "version": "1.0.3",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
       "locations": [
-        "pom.xml"
+        "pom.xml",
+        "services/identity/pom.xml"
       ],
       "integrities": [
         "sha256:cbfc3906b19b8f55dd7cfd6dfe0aa4532e834250d7f080bd8d211a3e246b59cb"
       ],
-      "class": "build-tool",
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.pom",
-      "unmodified": true
-    },
-    {
-      "id": "maven|com.google.guava:guava|33.2.1-android",
-      "ecosystem": "maven",
-      "name": "com.google.guava:guava",
-      "version": "33.2.1-android",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "services/identity/pom.xml"
-      ],
-      "integrities": [
-        "sha256:6b55fbe6ffee621454c03df7bea720d189789e136391a524e29506ff40654180"
-      ],
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.2.1-android/guava-33.2.1-android.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
       "id": "maven|com.google.guava:guava|33.4.8-jre",
@@ -986,6 +1021,67 @@
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.pom",
       "unmodified": true
+    },
+    {
+      "id": "maven|com.google.guava:guava|33.6.0-android",
+      "name": "com.google.guava:guava",
+      "version": "33.6.0-android",
+      "locations": [
+        "services/identity/pom.xml"
+      ],
+      "integrities": [
+        "sha256:9532ca9ba8aceb4cd2067171f981c799988b7f5844e3e274811a3bb757034bc4"
+      ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.6.0-android/guava-33.6.0-android.pom",
+      "class": "allowed",
+      "tier": 2,
+      "enterpriseGrade": {
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
       "id": "maven|com.google.guava:listenablefuture|9999.0-empty-to-avoid-conflict-with-guava",
@@ -1073,24 +1169,24 @@
       "notes": "IOT-WO-06 ruling 2026-10-21: imported POM-only BOM, including nested/inherited imports. Licence from effective POM; source model hashes generated by the pinned Maven 3.9.11 model builder. No runtime or packaged reachability permitted."
     },
     {
-      "id": "maven|com.google.protobuf:protobuf-bom|3.25.5",
-      "ecosystem": "maven",
+      "id": "maven|com.google.protobuf:protobuf-bom|3.25.9",
       "name": "com.google.protobuf:protobuf-bom",
-      "version": "3.25.5",
+      "version": "3.25.9",
       "locations": [
         "imported-bom"
       ],
+      "integrities": [
+        "sha256:f1854333f37366fc8c0d9bcdaedb25b9ddb35c4194bcb207ad1577a703709994"
+      ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "BSD-3-Clause",
       "electedSpdx": "BSD-3-Clause",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-bom/3.25.9/protobuf-bom-3.25.9.pom",
       "class": "build-tool",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-bom/3.25.5/protobuf-bom-3.25.5.pom",
-      "verifiedOn": "2026-10-20",
-      "recordedOn": "2026-10-20",
-      "integrities": [
-        "sha256:080e2984173238b50e064c226afffbb1b0233520295c790a7fd3d6ae4593f063"
-      ],
       "unmodified": true,
-      "notes": "IOT-WO-06 ruling 2026-10-21: imported POM-only BOM, including nested/inherited imports. Licence from effective POM; source model hashes generated by the pinned Maven 3.9.11 model builder. No runtime or packaged reachability permitted."
+      "notes": "IOT-WO-08: imported BOM, protoc/code generator or test-only gRPC transport; not runtime-reachable or packaged."
     },
     {
       "id": "maven|com.google.protobuf:protobuf-java-util|3.21.10",
@@ -1116,47 +1212,86 @@
       }
     },
     {
-      "id": "maven|com.google.protobuf:protobuf-java|3.25.5",
-      "ecosystem": "maven",
+      "id": "maven|com.google.protobuf:protobuf-java|3.25.9",
       "name": "com.google.protobuf:protobuf-java",
-      "version": "3.25.5",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "3.25.9",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:8540247fad9e06baefa8fb45eb313802d019f485f14300e0f9d6b556ed88e753"
+        "sha256:df18b719cd0c5a11e569013216cc9de47a0a954adeede685c0f98ce4c42d4d1a"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "BSD-3-Clause",
       "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.25.5/protobuf-java-3.25.5.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.25.9/protobuf-java-3.25.9.pom",
       "class": "allowed",
       "tier": 1,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|com.google.protobuf:protoc|3.25.5",
-      "ecosystem": "maven",
+      "id": "maven|com.google.protobuf:protoc|3.25.9",
       "name": "com.google.protobuf:protoc",
-      "version": "3.25.5",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "3.25.9",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:b0a77918138b42de5692c94ad5c099c203cede89b1132acc614ddffc82672da9",
-        "sha256:d69b0a9ac8264bb3d464ae22742430943aa0a6cdf3734180af5a607c0bf8adaa"
+        "sha256:277c8548ead748ac3e600d3b860f114d36a1311dff29568cd95115ad65f59e2f",
+        "sha256:614f1fa619853cd8aa05817bd6b97eb03dd96d4bdbb79561fa8ae005e44d3973"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "BSD-3-Clause",
       "electedSpdx": "BSD-3-Clause",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/3.25.5/protoc-3.25.5.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/protobuf/protoc/3.25.9/protoc-3.25.9.pom",
       "class": "build-tool",
-      "unmodified": true
+      "unmodified": true,
+      "notes": "IOT-WO-08: imported BOM, protoc/code generator or test-only gRPC transport; not runtime-reachable or packaged."
     },
     {
       "id": "maven|com.jayway.jsonpath:json-path|2.9.0",
@@ -1792,247 +1927,553 @@
       "unmodified": true
     },
     {
-      "id": "maven|io.grpc:grpc-api|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-api|1.84.0",
       "name": "io.grpc:grpc-api",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:d88d815e07fe58a7572dda5d2823485b61706564f289a1e74281705d50ac2d5b"
+        "sha256:a2a57594571a4392751609bf4c63cf838ba7dcdbc8e5fd07983c313cb1565ac8"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-api/1.68.1/grpc-api-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-api/1.84.0/grpc-api-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:grpc-bom|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-bom|1.84.0",
       "name": "io.grpc:grpc-bom",
-      "version": "1.68.1",
+      "version": "1.84.0",
       "locations": [
         "imported-bom"
       ],
+      "integrities": [
+        "sha256:780bc46975a529e9e68ad49a325b7bb98a103fa61310549b615cac333935e6ae"
+      ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-bom/1.84.0/grpc-bom-1.84.0.pom",
       "class": "build-tool",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-bom/1.68.1/grpc-bom-1.68.1.pom",
-      "verifiedOn": "2026-10-20",
-      "recordedOn": "2026-10-20",
-      "integrities": [
-        "sha256:406a7692d6d85f234cd22c42556236b3af58fcfd5a91962c6fde9a241cbfefd3"
-      ],
       "unmodified": true,
-      "notes": "IOT-WO-06 ruling 2026-10-21: imported POM-only BOM, including nested/inherited imports. Licence from effective POM; source model hashes generated by the pinned Maven 3.9.11 model builder. No runtime or packaged reachability permitted."
+      "notes": "IOT-WO-08: imported BOM, protoc/code generator or test-only gRPC transport; not runtime-reachable or packaged."
     },
     {
-      "id": "maven|io.grpc:grpc-context|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-context|1.84.0",
       "name": "io.grpc:grpc-context",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:1df4f0310a7e7836bc2948afa95105f5ee27b5d468488aded74e7ff620359076"
+        "sha256:e6f6e5db0d704e34d03f013cceb6be326c9ed3916346378ca1587ed41f943080"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-context/1.68.1/grpc-context-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-context/1.84.0/grpc-context-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:grpc-core|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-core|1.84.0",
       "name": "io.grpc:grpc-core",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:e1eddfe433aa850783cb6af9ad6da1ad3dfe2fb9b4c385b9a98d7a596e4d382a"
+        "sha256:750c08018e22014cb5e6b6ac64fd4d0b2302b7db9cb2b83a1e0914d0561ed71c"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-core/1.68.1/grpc-core-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-core/1.84.0/grpc-core-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:grpc-inprocess|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-inprocess|1.84.0",
       "name": "io.grpc:grpc-inprocess",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:0a73d3b36a96f21ed450c6017e7b1c7a22ae4104213ed86f70089254af2b3c3a"
+        "sha256:b20985726f7d68ba336356580bde09395f3b2fc55dc3d6f38d5fa01abe25b89e"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-inprocess/1.68.1/grpc-inprocess-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-inprocess/1.84.0/grpc-inprocess-1.84.0.pom",
       "class": "build-tool",
-      "unmodified": true
+      "unmodified": true,
+      "notes": "IOT-WO-08: imported BOM, protoc/code generator or test-only gRPC transport; not runtime-reachable or packaged."
     },
     {
-      "id": "maven|io.grpc:grpc-netty-shaded|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-netty-shaded|1.84.0",
       "name": "io.grpc:grpc-netty-shaded",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:b931d039ef1ac7666b7657078e629d8b6a542069c9d9929f64f40eec656bea47"
+        "sha256:f07624d7ca0b0bce8dded33dfe261fd9be59168bb6a77f0580ab09ecd22f113d"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.68.1/grpc-netty-shaded-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-netty-shaded/1.84.0/grpc-netty-shaded-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:grpc-protobuf-lite|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-protobuf-lite|1.84.0",
       "name": "io.grpc:grpc-protobuf-lite",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:f039759f64d365e7495a05bebee938713c85720236b91f628c21a7c3bc7f98de"
+        "sha256:12827fd4ba3d75f7ab5fceb3296c5ac9f473826e6b2aa67684d32879b7fa239b"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/1.68.1/grpc-protobuf-lite-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf-lite/1.84.0/grpc-protobuf-lite-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:grpc-protobuf|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-protobuf|1.84.0",
       "name": "io.grpc:grpc-protobuf",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:75329d9aa328a0b1feef6803d59b93b527bceed9c97ceaaa0f8bd2d78ce98d14"
+        "sha256:076ad68d91d59132970dd739ff908d0b8fffea9fb0ccbea9310d933e0a677802"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.68.1/grpc-protobuf-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-protobuf/1.84.0/grpc-protobuf-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:grpc-stub|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-stub|1.84.0",
       "name": "io.grpc:grpc-stub",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:3d0260ba925cdeb63930b672daac815245f1c76d67ec111dd82e4dac6c9abd47"
+        "sha256:5d7c9eac0386fbf6f1c9dc90171034939093c9f72196bd9242acf819c5f10a4a"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/1.68.1/grpc-stub-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-stub/1.84.0/grpc-stub-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:grpc-util|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:grpc-util|1.84.0",
       "name": "io.grpc:grpc-util",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:d489e40de9209981272fb9e7b0f61a5f0e5c1ce230195a5f23fb1078cd1baade"
+        "sha256:b64b8eedb714ec8c22ddc57361c7f2c0718cd51fa9d44a8cff68b30c117a6c23"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-util/1.68.1/grpc-util-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/grpc-util/1.84.0/grpc-util-1.84.0.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "date": "2026-10-21",
+            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-08-grpc/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "date": "2026-10-21",
+            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+          }
+        }
+      },
+      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|io.grpc:protoc-gen-grpc-java|1.68.1",
-      "ecosystem": "maven",
+      "id": "maven|io.grpc:protoc-gen-grpc-java|1.84.0",
       "name": "io.grpc:protoc-gen-grpc-java",
-      "version": "1.68.1",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "1.84.0",
       "locations": [
         "pom.xml"
       ],
       "integrities": [
-        "sha256:6eb5bfb8dde3d4b657920dbb42dd2f8ed2e36a3ffd5f46128a4f7f0e2c181c40",
-        "sha256:d34c6dd11d307660bf34fb9aca6381cb8d2c77019c9e4b6e2a9fd0494badc4d8"
+        "sha256:1d0b584f436c2521542a98914d8e6c42ba0aa5d86b459bc632e4c3884a3b5d4d",
+        "sha256:907c2d4efc2bae9b21cada75c31b36f3821e15b7be96311e214a6be65bcd20aa"
       ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-10-21",
+      "verifiedOn": "2026-10-21",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.68.1/protoc-gen-grpc-java-1.68.1.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/io/grpc/protoc-gen-grpc-java/1.84.0/protoc-gen-grpc-java-1.84.0.pom",
       "class": "build-tool",
-      "unmodified": true
+      "unmodified": true,
+      "notes": "IOT-WO-08: imported BOM, protoc/code generator or test-only gRPC transport; not runtime-reachable or packaged."
     },
     {
       "id": "maven|io.micrometer:micrometer-bom|1.13.4",
@@ -4889,52 +5330,6 @@
       "licenceSource": "https://repo.maven.apache.org/maven2/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.pom",
       "class": "build-tool",
       "unmodified": true
-    },
-    {
-      "id": "maven|org.checkerframework:checker-qual|3.42.0",
-      "ecosystem": "maven",
-      "name": "org.checkerframework:checker-qual",
-      "version": "3.42.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "services/identity/pom.xml"
-      ],
-      "integrities": [
-        "sha256:ccaedd33af0b7894d9f2f3b644f4d19e43928e32902e61ac4d10777830f5aac7"
-      ],
-      "spdx": "MIT",
-      "electedSpdx": "MIT",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.pom",
-      "class": "allowed",
-      "tier": 1,
-      "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
-    },
-    {
-      "id": "maven|org.codehaus.mojo:animal-sniffer-annotations|1.24",
-      "ecosystem": "maven",
-      "name": "org.codehaus.mojo:animal-sniffer-annotations",
-      "version": "1.24",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "services/identity/pom.xml"
-      ],
-      "integrities": [
-        "sha256:c720e6e5bcbe6b2f48ded75a47bccdb763eede79d14330102e0d352e3d89ed92"
-      ],
-      "spdx": "MIT",
-      "electedSpdx": "MIT",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations/1.24/animal-sniffer-annotations-1.24.pom",
-      "class": "allowed",
-      "tier": 1,
-      "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      }
     },
     {
       "id": "maven|org.codehaus.plexus:plexus-archiver|4.11.0",

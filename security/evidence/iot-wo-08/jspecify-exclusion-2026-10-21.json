@@ -405,6 +405,7 @@
   },
   "licenceUnitTests": 48,
   "supplyChainUnitTests": 65,
-  "scanStatus": "pending pinned Linux CI scan",
-  "registrationStatus": "pending candidate qualification and absent-component retirement"
+  "scanStatus": "passed: pinned run 39534328211",
+  "registrationStatus": "Twelve full verified runtime records; no excluded artifact runtime entry; fourteen absent legacy entries retired",
+  "excludedRuntimeRegisterEntries": 0
 }
