@@ -352,16 +352,6 @@
         "tier": 3,
         "due": "2027-04-20"
       },
-      "maven|org.apache.logging.log4j:log4j-api|2.23.1": {
-        "sha256": "98bcb8cf725240f11a82455ad715735015862b87b9603b3fcfb2cb335bdd81d5",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.apache.logging.log4j:log4j-to-slf4j|2.23.1": {
-        "sha256": "9efd8a05dc1be6b475f8e2afe55ec2590b13192078297fcb4e79ab70b6374cd7",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|org.apache.tomcat:annotations-api|6.0.53": {
         "sha256": "3cb2fef8e05a671aa45b495fae27f9a6129086aa689703a57d6421847839c37b",
         "tier": 2,
@@ -377,11 +367,6 @@
         "tier": 1,
         "due": "2027-04-20"
       },
-      "maven|org.slf4j:jul-to-slf4j|2.0.16": {
-        "sha256": "3a3d9fb36a09f8c21d46ceb57a099bf239198e93e302300071a073f2562b29c4",
-        "tier": 1,
-        "due": "2027-04-20"
-      },
       "maven|org.slf4j:slf4j-api|2.0.16": {
         "sha256": "1320307b400808c2d39f5cf27f5185cd556567a8ccc7462282e26e92045e0fd7",
         "tier": 1,
@@ -394,11 +379,6 @@
       },
       "maven|org.springframework.boot:spring-boot-starter-json|3.3.4": {
         "sha256": "b667e0a65606f0b46dcaa28b6cac34fe70aff38d1d63ea2afcaa1667fe5892f2",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework.boot:spring-boot-starter-logging|3.3.4": {
-        "sha256": "d6074e754f3f6989dab49e738101aee3bcb64ed90a049a325d863820e6a4c781",
         "tier": 2,
         "due": "2027-04-20"
       },

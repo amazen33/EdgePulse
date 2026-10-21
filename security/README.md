@@ -140,3 +140,33 @@ defines the image and dependency refresh due 2026-11-19. Initial exception
 approval for the exact 303-entry list was given explicitly by the owner
 on 2026-10-20 ([record](evidence/vulnerability-exceptions/owner-approval-2026-10-20.json)).
 Human PR review and merge remain separate owner actions.
+
+## IOT-WO-06 ruling 2026-10-21
+
+The owner-approved extensions live only in EdgePulse wiring. The ported
+checker, licence ladder and schemas retain their existing bytes.
+
+Imported POM-only BOMs are build-tool inputs. `ImportedBoms.java` uses the
+registered Maven 3.9.11 model builder offline to enumerate every import,
+including nested imports and parent models of reactor dependencies and
+executed plugin classpaths, and obtains the effective POM
+licence declarations. The collector hashes exact POM bytes and compares
+the resulting managed model with the gated Maven effective model. This
+does not execute another Maven goal or add a tool/dependency. Unreviewed
+licence declarations and model disagreements fail closed. Reviewed OR
+elections are bound to exact POM hashes and declarations in
+`maven-bom-licence-evidence.json`. An import cannot authorize a runtime or
+packaged coordinate; both paths fail. New explicit gated profiles require
+a matching model request before the collector can admit their inputs.
+
+Legacy admission retirement is removal-only: the component must be absent
+from independently resolved inputs. IOT-WO-06 retires the four admissions
+for Log4j API 2.23.1, log4j-to-slf4j 2.23.1, jul-to-slf4j 2.0.16 and
+spring-boot-starter-logging 3.3.4. The two test-only Logback 1.5.38 entries
+also leave the register. Retained legacy fingerprints and deadlines stay
+unchanged, with no new legacy admission. Part B's seven image evidence
+transitions and supported-line replacement checks still apply.
+
+Planted tests reject missing BOM registration, runtime/package reachability,
+omitted BOM evidence, retirement while a component remains resolved, and
+any new or altered legacy admission; an absent-component retirement passes.

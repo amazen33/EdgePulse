@@ -324,6 +324,23 @@ def evidence_only(old, new, old_policy, new_policy):
         raise ValueError('Evidence backfill fingerprint mismatch')
 
 
+def legacy_retirements(before, after, resolved, image_backfills=()):
+    """IOT-WO-06 ruling 2026-10-21: removal only, never a new admission.
+
+    Existing image evidence backfills are checked separately by evidence_only;
+    all other retained fingerprints/deadlines still require exact equality.
+    """
+    if after.keys() - before.keys():
+        raise ValueError('Legacy set changed: additions are forbidden')
+    retired = before.keys() - after.keys()
+    if retired & set(resolved):
+        raise ValueError('Retired legacy component is still in the resolved inventory: ' + ', '.join(sorted(retired & set(resolved))))
+    for key in before.keys() & after.keys() - set(image_backfills):
+        if before[key] != after[key]:
+            raise ValueError('Unapproved legacy change: ' + key)
+    return retired
+
+
 def verify_backfill(root):
     """Compare the seven authorized transitions against immutable pre-Part-B Git objects."""
     before = json.loads(sc.git(root, 'show', BASE+':security/licence-register.json'))
@@ -343,13 +360,22 @@ def verify_backfill(root):
         for name in ('tomcat-embed-core','tomcat-embed-el','tomcat-embed-websocket')}
     replacements['oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0'] = (
         'oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3')
-    retired = {key for key in replacements if key not in new}
-    if len(approved) != 7 or old_legacy.keys()-retired != new_legacy.keys():
+    # IOT-WO-06 ruling 2026-10-21: independently resolved inputs, not absence
+    # from the editable register, authorize a removal-only legacy retirement.
+    sys.path.insert(0, str(ROOT/'security'))
+    from licence_inventory import enumerate_inputs
+    resolved, _ = enumerate_inputs(root)
+    retired = legacy_retirements(old_legacy, new_legacy, resolved, approved)
+    if len(approved) != 7:
         raise ValueError('Legacy set changed outside the approved remediation')
     remaining = {entry['id'] for entry in sc.read(root/'security/licence-baseline.json')['findings']}
     fingerprints = []
     for key, original in old_legacy.items():
         if key in retired:
+            if key not in replacements:
+                if key in new:
+                    raise ValueError('Retired legacy entry remains in the register: ' + key)
+                continue
             replacement = new.get(replacements[key], {})
             if (replacement.get('class') != old[key]['class']
                     or replacement.get('electedSpdx') != old[key]['electedSpdx']
@@ -412,6 +438,9 @@ def image_sboms(root, tools_path, out, cache):
 
 def run(root, tools_path, out, cache, base=None):
     out.mkdir(parents=True, exist_ok=True)
+    # IOT-WO-06 ruling 2026-10-21: check retirement against actual resolution
+    # in the blocking gate, as well as in the planted-test suite.
+    sc.write(out/'legacy-backfill.json', verify_backfill(root))
     plan = inventory(root, base)
     if not plan['images']:
         raise ValueError('Image inventory unexpectedly empty')

@@ -48,14 +48,8 @@ class CorrelationIdHandlerInterceptorTest {
 
     @Test
     void preHandleBindsToMdcSoLogLinesCarryTheCorrelationId() {
-        // This test needs a real SLF4J provider on the test classpath (see
-        // this module's pom.xml: logback-classic, test scope). Without one,
-        // org.slf4j.MDC falls back to the NOP logger's MDC implementation,
-        // and MDC.get(...) returns null regardless of what MDC.put(...)
-        // stored -- this test would then fail even though the interceptor's
-        // own binding logic is correct. If this starts failing again with
-        // "No SLF4J providers were found" in the log, check the pom.xml
-        // dependency was not removed as apparently-unused.
+        // ADR 0027: the runtime Log4j 2 provider supplies the MDC binding.
+        // RuntimeLoggingTest separately verifies the production classpath.
         HttpServletRequest request = mock(HttpServletRequest.class);
         HttpServletResponse response = mock(HttpServletResponse.class);
 

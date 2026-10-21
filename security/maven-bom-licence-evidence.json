@@ -1,0 +1,97 @@
+{
+  "org.eclipse.jetty.ee10:jetty-ee10-bom:12.0.13": {
+    "sha256": "9e7754ff4ab2384ba383ac10b0753964752f1c2e9dd762079d440fa36cab69f4",
+    "licences": [
+      {
+        "name": "Eclipse Public License - Version 2.0",
+        "url": "https://www.eclipse.org/legal/epl-2.0/"
+      },
+      {
+        "name": "Apache Software License - Version 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "spdx": "EPL-2.0 OR Apache-2.0",
+    "electedSpdx": "Apache-2.0",
+    "source": "https://github.com/jetty/jetty.project/blob/jetty-12.0.13/LICENSE",
+    "sourceSHA256": "a59137290e5765724793162c89ac3bdd340b00ea3a32207de6e39f6188f1efbb",
+    "readOn": "2026-10-21",
+    "reason": "Exact release licence explicitly states OR; elect a declared option for this POM-only build input. No runtime permission is inferred."
+  },
+  "org.eclipse.jetty:jetty-bom:12.0.13": {
+    "sha256": "83b6acd988754836b2be1df8c07944af7dd4ea914aa60c0491541b7e21c972bb",
+    "licences": [
+      {
+        "name": "Eclipse Public License - Version 2.0",
+        "url": "https://www.eclipse.org/legal/epl-2.0/"
+      },
+      {
+        "name": "Apache Software License - Version 2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0"
+      }
+    ],
+    "spdx": "EPL-2.0 OR Apache-2.0",
+    "electedSpdx": "Apache-2.0",
+    "source": "https://github.com/jetty/jetty.project/blob/jetty-12.0.13/LICENSE",
+    "sourceSHA256": "a59137290e5765724793162c89ac3bdd340b00ea3a32207de6e39f6188f1efbb",
+    "readOn": "2026-10-21",
+    "reason": "Exact release licence explicitly states OR; elect a declared option for this POM-only build input. No runtime permission is inferred."
+  },
+  "org.glassfish.jaxb:jaxb-bom:4.0.5": {
+    "sha256": "ec97ec42d937d3c89519797e44246f80de0850819ac7a7ae675c4497b7075c39",
+    "licences": [
+      {
+        "name": "Eclipse Public License v. 2.0",
+        "url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt"
+      },
+      {
+        "name": "GNU General Public License, version 2 with the GNU Classpath Exception",
+        "url": "https://www.gnu.org/software/classpath/license.html"
+      }
+    ],
+    "spdx": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+    "electedSpdx": "EPL-2.0",
+    "source": "https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.9/project-1.0.9.pom",
+    "sourceSHA256": "825379934a1cf29249f349f2d18adaf79a7b2cb2dbe231518974e1ee70941c17",
+    "readOn": "2026-10-21",
+    "reason": "Exact release licence explicitly states OR; elect a declared option for this POM-only build input. No runtime permission is inferred."
+  },
+  "org.glassfish.jersey:jersey-bom:3.1.8": {
+    "sha256": "2a5ab2015eb1e0fcef4989d448fb6dc8befe2ccf3b3d13863e186d62c7bbed16",
+    "licences": [
+      {
+        "name": "Eclipse Public License v. 2.0",
+        "url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt"
+      },
+      {
+        "name": "GNU General Public License, version 2 with the GNU Classpath Exception",
+        "url": "https://www.gnu.org/software/classpath/license.html"
+      }
+    ],
+    "spdx": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+    "electedSpdx": "EPL-2.0",
+    "source": "https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.9/project-1.0.9.pom",
+    "sourceSHA256": "825379934a1cf29249f349f2d18adaf79a7b2cb2dbe231518974e1ee70941c17",
+    "readOn": "2026-10-21",
+    "reason": "Exact release licence explicitly states OR; elect a declared option for this POM-only build input. No runtime permission is inferred."
+  },
+  "jakarta.platform:jakarta.jakartaee-bom:9.1.0": {
+    "sha256": "df98e0266219fdbb82562826d79a3a20776a8ba02aa787f0f0765a538654c8a4",
+    "licences": [
+      {
+        "name": "Eclipse Public License v. 2.0",
+        "url": "https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.txt"
+      },
+      {
+        "name": "GNU General Public License, version 2 with the GNU Classpath Exception",
+        "url": "https://www.gnu.org/software/classpath/license.html"
+      }
+    ],
+    "spdx": "EPL-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0",
+    "electedSpdx": "EPL-2.0",
+    "source": "https://repo.maven.apache.org/maven2/jakarta/platform/jakarta.jakartaee-bom/9.1.0/jakarta.jakartaee-bom-9.1.0.pom",
+    "sourceSHA256": "df98e0266219fdbb82562826d79a3a20776a8ba02aa787f0f0765a538654c8a4",
+    "readOn": "2026-10-21",
+    "reason": "The exact POM header explicitly states OR. Elect EPL-2.0 for this POM-only build input; no runtime permission is inferred."
+  }
+}

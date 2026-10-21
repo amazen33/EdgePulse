@@ -85,6 +85,58 @@ class LicenceGateTest(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'reachable from a shipped classpath'):
             self.check(entry, component)
 
+    # IOT-WO-06 ruling 2026-10-21: POM imports are inventoried, not runtime exemptions.
+    def imported_bom(self, name='org.synthetic:probe'):
+        bom = dict(name=name, version='1.0.0', sha256='a'*64,
+                   licences=[dict(name='MIT', url='https://example.invalid/SYNTHETIC-licence')],
+                   pomURL='https://example.invalid/SYNTHETIC.pom')
+        self.bom_inputs['components'].append(bom)
+        path = self.root/'target/licence/maven-evidence.json'
+        evidence = json.loads(path.read_text())
+        evidence['importedBoms'] = deepcopy(self.bom_inputs)
+        self.write(path, evidence)
+
+    def test_imported_bom_missing_from_register_fails(self):
+        # Synthetic BOM exists only as an import, not as a dependency fixture.
+        self.make_audit_fixture(self.component('MIT'), [])
+        self.imported_bom('org.synthetic:import-only')
+        report = self.run_fixture_audit()
+        self.assertIn('Unregistered component: maven|org.synthetic:import-only|1.0.0', report['errors'])
+
+    def test_imported_bom_coordinate_at_runtime_scope_fails(self):
+        component = self.component('MIT')
+        self.make_audit_fixture(component, [self.entry(component, 'MIT')])
+        self.imported_bom()
+        path = self.root/'services/identity/target/tree.json'
+        tree = json.loads(path.read_text())
+        tree['children'][0]['scope'] = 'runtime'
+        self.write(path, tree)
+        with self.assertRaisesRegex(ValueError, 'Imported BOM coordinate reachable at runtime'):
+            self.run_fixture_audit()
+
+    def test_imported_bom_evidence_cannot_omit_an_input(self):
+        self.make_audit_fixture(self.component('MIT'), [])
+        self.bom_inputs['components'].append(dict(name='org.synthetic:missing',version='1.0.0'))
+        with self.assertRaisesRegex(ValueError, 'Stale or incomplete imported BOM evidence'):
+            self.run_fixture_audit()
+
+    def test_imported_bom_packaged_in_service_fails(self):
+        self.make_audit_fixture(self.component('MIT'), [])
+        self.imported_bom('org.synthetic:import-only')
+        with zipfile.ZipFile(self.root/'services/identity/target/synthetic.jar', 'a') as jar:
+            jar.writestr('BOOT-INF/lib/import-only-1.0.0.pom', '<project/>')
+        with self.assertRaisesRegex(ValueError, 'Imported BOM coordinate is packaged'):
+            self.run_fixture_audit()
+
+    def test_pom_import_is_build_tool_but_jar_import_is_not(self):
+        from edgepulse_licences import maven_build_tool
+        component = self.component('MIT', scope='import', kind='bom-import')
+        component['observations'][0].update(type='pom', shippedReachable=False)
+        maven_build_tool(component)
+        component['observations'][0]['type'] = 'jar'
+        with self.assertRaisesRegex(ValueError, 'neither test-scoped nor a build plugin'):
+            maven_build_tool(component)
+
     def test_architecture_compile_consumer_fails(self):
         component = self.component(spdx='MIT')
         self.make_audit_fixture(component, [])
@@ -361,6 +413,8 @@ class LicenceGateTest(unittest.TestCase):
         path.write_text(json.dumps(value), encoding='utf-8')
 
     def make_audit_fixture(self, component, entries):
+        self.bom_inputs = dict(components=[], modelSources={})
+        self.write(self.root/'security/maven-bom-licence-evidence.json', {})
         self.write(self.root / 'security/licence-policy.json', self.policy)
         shutil.copyfile(SECURITY / 'licence-register.schema.json', self.root / 'security/licence-register.schema.json')
         self.write(self.root / 'security/licence-register.json', dict(version=1,
@@ -411,6 +465,8 @@ class LicenceGateTest(unittest.TestCase):
             '<project xmlns="http://maven.apache.org/POM/4.0.0"><artifactId>SYNTHETIC</artifactId></project>')
         evidence=json.loads((self.root/'target/licence/maven-evidence.json').read_text())
         evidence['effectivePom']='target/effective.xml'
+        evidence['mavenHome']='SYNTHETIC-Maven-home'
+        evidence['importedBoms']=deepcopy(self.bom_inputs)
         evidence['executedPlugins']=[]
         cli = sorted({tuple(goal.split(':')[:3]) for command in self.policy['gatedMavenCommands']
                       for goal in command['goals'] if len(goal.split(':')) == 4})
@@ -433,7 +489,8 @@ class LicenceGateTest(unittest.TestCase):
     def run_fixture_audit(self):
         tracked = [p.relative_to(self.root).as_posix() for p in self.root.rglob('*')
                    if p.is_file() and 'target' not in p.relative_to(self.root).parts]
-        with patch('licence_inventory.files', return_value=tracked):
+        with patch('licence_inventory.files', return_value=tracked), \
+                patch('maven_boms.inputs', side_effect=lambda *args: deepcopy(self.bom_inputs)):
             return audit(self.root, TODAY)
 
 

@@ -94,6 +94,8 @@ def maven_build_tool(component):
     if any(x.get('shippedReachable') or x.get('packaged') for x in observations):
         raise ValueError('Build-tool is reachable from a shipped classpath or packaged')
     if any(not (x.get('testOnlyModule') or x.get('scope') == 'test'
+                # IOT-WO-06 ruling 2026-10-21: mechanically inventoried POM imports.
+                or (x.get('kind') == 'bom-import' and x.get('type') == 'pom' and x.get('scope') == 'import')
                 or x.get('kind') in ('plugin', 'plugin-dependency', 'build-extension', 'code-generator'))
            for x in observations):
         raise ValueError('Maven build-tool is neither test-scoped nor a build plugin')

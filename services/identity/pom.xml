@@ -33,9 +33,32 @@
   </description>
 
   <dependencies>
+    <!-- ADR 0027; IOT-WO-06 ruling 2026-10-21: no Boot Log4j starter.
+         The Log4j BOM manages this one backend; no reverse SLF4J bridges. -->
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j2-impl</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-jul</artifactId>
+      <scope>runtime</scope>
+    </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <!-- Protobuf/CloudEvents runtime for this service's OWN generated
@@ -134,6 +157,12 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
@@ -147,26 +176,27 @@
       <artifactId>grpc-inprocess</artifactId>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <!-- SLF4J provider for tests only. Without one on the classpath,
-           org.slf4j.MDC is backed by the NOP logger and MDC.get(...)
-           always returns null regardless of what MDC.put(...) stored;
-           see CorrelationIdHandlerInterceptorTest's
-           preHandleBindsToMdcSoLogLinesCarryTheCorrelationId, which
-           asserts the real MDC binding, not just the interceptor's own
-           bookkeeping. Logback is Spring Boot's default provider, so
-           this matches what this service already has on its runtime
-           classpath via spring-boot-starter-web /
-           spring-boot-starter-logging; no runtime dependency change
-           here, test scope only. -->
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <scope>test</scope>
-    </dependency>
+
   </dependencies>
 
   <build>
     <plugins>
+      <!-- Test evidence uses the actual runtime graph, without JUnit/Mockito. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>identity-runtime-classpath</id>
+            <phase>generate-test-resources</phase>
+            <goals><goal>build-classpath</goal></goals>
+            <configuration>
+              <includeScope>runtime</includeScope>
+              <outputFile>${project.build.directory}/runtime-classpath.txt</outputFile>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>

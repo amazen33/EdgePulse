@@ -11,6 +11,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-06 / ADR 0027: use BOM-managed Log4j 2.26.1 for identity runtime
+  logging, with a console-only correlation-ID pattern and runtime-classpath
+  provider/context/request-log tests; remove Logback and reverse bridges.
+  The 2026-10-21 ruling adds POM-only BOM inventory and removal-only legacy
+  retirement guards in EdgePulse wiring, with planted-violation tests.
 - IOT-WO-02 Part B: wire checksum-pinned Syft, Grype and OSV-Scanner over
   digest-pinned image inputs, Maven reactor BOMs/resolved trees and lockfiles.
   Preserve the ADR 0014 policy and an evidence-only legacy SBOM backfill guard;

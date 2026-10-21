@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="CONSOLE" target="SYSTEM_OUT" follow="true">
+      <PatternLayout charset="UTF-8" pattern="%d{ISO8601} %-5level [%X{correlationId}] %logger - %msg%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO"><AppenderRef ref="CONSOLE"/></Root>
+  </Loggers>
+</Configuration>

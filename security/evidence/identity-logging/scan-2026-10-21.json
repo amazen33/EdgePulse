@@ -1,0 +1,108 @@
+{
+  "workOrder": "IOT-WO-06",
+  "reviewedLocalDate": "2026-10-21",
+  "timeZone": "Africa/Cairo",
+  "scanUTCDate": "2026-10-20",
+  "run": "https://github.com/amazen33/EdgePulse/actions/runs/39504344710",
+  "artifactId": 12302648864,
+  "pullRequestHead": "f8408ba98ce069f2b37669bd1dd06ff95f2b8cb3",
+  "scanMergeCommit": "cbfbf04543b60bb114155e84be950ced2a225f87",
+  "policyResult": "passed",
+  "ownerApprovalPending": false,
+  "sbomSHA256": "71f40f8c432b02a52dc6677bd7623c0bb2dc958d0e5ba5df68fceeeb7d64f1d5",
+  "resolvedTreeSHA256": "35b940eda89fd1740ab209ad028e736436e32351e037d1afd2809641f086c9dc",
+  "rawOSVMavenSHA256": "7eae8418af64e629c3f787629bf1e20b59eb1fea38b02eb44ccf3d990846590b",
+  "normalizedMavenFindingsSHA256": "69ae0855340f6d146f2b5dec5b61cc2b6e9d6f95c3220e1c80cb4119c858aca9",
+  "toolVersions": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "kev": {
+    "catalogVersion": "2026.10.20",
+    "downloadSHA256": "a3591cd3f9b803d7ba43782fdbc9c89feb66bca6d6ae3dc73689667e77645a7f",
+    "sha256": "869bf89e0abdac938842ac38eb2c3afae7b821697cef722aefe8df9a3e661edb"
+  },
+  "log4jComponents": [
+    {
+      "name": "org.apache.logging.log4j:log4j-api",
+      "version": "2.26.1",
+      "pomSHA256": "c8ab868f9c532233bd12f311cea90a3f6de65ea07a7aa470c3e2bbf83b5c79fb",
+      "source": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/2.26.1/log4j-api-2.26.1.pom",
+      "jarSHA256": "f1810a4704ccce019d02bba029dc02a4f2ac0c997f647b465e7d409c1927f822",
+      "licenceEntries": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "apache2LicenseHeaderPresent": true,
+      "resolvedScope": "runtime",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.apache.logging.log4j:log4j-core",
+      "version": "2.26.1",
+      "pomSHA256": "1a3fd9a4467c3ab9b127e7141bef129b62428fe132f7f925c3af7f524dd7a8b5",
+      "source": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-core/2.26.1/log4j-core-2.26.1.pom",
+      "jarSHA256": "2ec8c3bf5a6d7c89be8620116a2fc973f7dda1ad0261ad393c4d4726edfd3dcb",
+      "licenceEntries": {
+        "META-INF/LICENSE": "e118ad8e5f2d3c71f0e7d6202d5829e7580ccd9e3609a546c692788e657afbe2"
+      },
+      "apache2LicenseHeaderPresent": true,
+      "resolvedScope": "runtime",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.apache.logging.log4j:log4j-jul",
+      "version": "2.26.1",
+      "pomSHA256": "0fd974e23412873d60e46705cace1d1369820d52ccbf3ec993262c50e7069213",
+      "source": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-jul/2.26.1/log4j-jul-2.26.1.pom",
+      "jarSHA256": "6ac54ce38bdf0334d36b9ff30433c2a650e37747b907d6e040e9d47d12659e9f",
+      "licenceEntries": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "apache2LicenseHeaderPresent": true,
+      "resolvedScope": "runtime",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.apache.logging.log4j:log4j-slf4j2-impl",
+      "version": "2.26.1",
+      "pomSHA256": "257b0fc57763454af8718a93fd245ca05e06b2830602b6090bfbe191edd11d11",
+      "source": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-slf4j2-impl/2.26.1/log4j-slf4j2-impl-2.26.1.pom",
+      "jarSHA256": "cbdfb4c2bcc10f0927c61036db54924250f3924ecd13ea913cefe4f99c08fa66",
+      "licenceEntries": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      "apache2LicenseHeaderPresent": true,
+      "resolvedScope": "runtime",
+      "osvFindings": [],
+      "exceptions": []
+    }
+  ],
+  "bomInput": {
+    "name": "org.apache.logging.log4j:log4j-bom",
+    "version": "2.26.1",
+    "pomSHA256": "4415ad189dd04db54958a43e23b37cc397a1edee9e888214b8bd47fbe819072e",
+    "source": "https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-bom/2.26.1/log4j-bom-2.26.1.pom",
+    "role": "build-time BOM input",
+    "registration": "pending approved inventory support"
+  },
+  "scope": "Static artifact scanning and local/CI code tests only. The four Log4j artifacts pass without exceptions; other existing components retain the approved Part B exceptions. Not an environment or milestone receipt."
+}
