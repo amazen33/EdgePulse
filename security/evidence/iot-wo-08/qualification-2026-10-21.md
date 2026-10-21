@@ -19,7 +19,7 @@ grpc-netty-shaded, grpc-util, grpc-core and grpc-context; Apache-2.0, tier 2.
   [published Java/transport compatibility policy](https://github.com/grpc/grpc-java/blob/v1.84.0/README.md)
   and [security compatibility table](https://github.com/grpc/grpc-java/security/policy)
   cover the 1.84.x line, including its shaded Netty dependency. The upstream
-  [CVE process](https://grpc.io/about/cve/)
+  [CVE process](https://github.com/grpc/proposal/blob/master/P4-grpc-cve-process.md)
   describes supported security handling. The pinned scan confirms that the
   old MadeYouReset advisory is absent from this exact candidate.
 - **Security process:** the same policy links private reporting, coordinated
