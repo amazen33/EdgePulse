@@ -1,0 +1,2439 @@
+{
+  "authority": "ADR 0028 / IOT-WO-08 Amendment 1",
+  "base": "c126d1e00b345d0721ed08fbcc4e92a87384055d",
+  "previousExceptionsSHA256": "265416466c4d0301dfbb9e6b12d790969802b9607c05e7512eea5fe7c5200f2e",
+  "exceptionsSHA256": "329c0525e545507ef68c1bfeca8e6b96bd34c3a38a3850ebf71d441cb40aac05",
+  "before": {
+    "Critical": 43,
+    "High": 259
+  },
+  "removed": {
+    "Critical": 42,
+    "High": 224
+  },
+  "after": {
+    "High": 35,
+    "Critical": 1
+  },
+  "retainedEntriesByteIdentical": true,
+  "removedExceptions": [
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "curl",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-8924",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "curl",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-8927",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "curl",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-8286",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "curl",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-92392",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "github.com/containerd/containerd/v2",
+      "version": "v2.2.0",
+      "vulnerability": "CVE-2026-46680",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "github.com/containerd/containerd/v2",
+      "version": "v2.2.0",
+      "vulnerability": "CVE-2026-53488",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "github.com/containerd/containerd/v2",
+      "version": "v2.2.0",
+      "vulnerability": "CVE-2026-53489",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "github.com/containerd/containerd/v2",
+      "version": "v2.2.0",
+      "vulnerability": "CVE-2026-53492",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "github.com/containerd/containerd/v2",
+      "version": "v2.2.0",
+      "vulnerability": "CVE-2026-95837",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.6.8",
+      "vulnerability": "CVE-2026-73500",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "go.opentelemetry.io/otel/sdk",
+      "version": "v1.40.0",
+      "vulnerability": "CVE-2026-39883",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "go.opentelemetry.io/otel/sdk",
+      "version": "v1.42.0",
+      "vulnerability": "CVE-2026-39883",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56854",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56855",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-78662",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/mod",
+      "version": "v0.33.0",
+      "vulnerability": "CVE-2026-56864",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/mod",
+      "version": "v0.33.0",
+      "vulnerability": "CVE-2026-56865",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/mod",
+      "version": "v0.36.0",
+      "vulnerability": "CVE-2026-56864",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/mod",
+      "version": "v0.36.0",
+      "vulnerability": "CVE-2026-56865",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-33814",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-39821",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-46600",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.43.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-33814",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-39821",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-46600",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.51.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.55.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.55.0",
+      "vulnerability": "CVE-2026-46600",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.55.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.55.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.55.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.55.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/text",
+      "version": "v0.28.0",
+      "vulnerability": "CVE-2026-56851",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/text",
+      "version": "v0.28.0",
+      "vulnerability": "CVE-2026-56852",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/text",
+      "version": "v0.35.0",
+      "vulnerability": "CVE-2026-56851",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/text",
+      "version": "v0.35.0",
+      "vulnerability": "CVE-2026-56852",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/text",
+      "version": "v0.38.0",
+      "vulnerability": "CVE-2026-56851",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/text",
+      "version": "v0.38.0",
+      "vulnerability": "CVE-2026-56852",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "golang.org/x/text",
+      "version": "v0.39.0",
+      "vulnerability": "CVE-2026-56851",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.76.0",
+      "vulnerability": "CVE-2026-33186",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.76.0",
+      "vulnerability": "CVE-2026-84304",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.76.0",
+      "vulnerability": "CVE-2026-84445",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.76.0",
+      "vulnerability": "GHSA-hrxh-6v49-42gf",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.79.3",
+      "vulnerability": "CVE-2026-84304",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.79.3",
+      "vulnerability": "CVE-2026-84445",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.79.3",
+      "vulnerability": "GHSA-hrxh-6v49-42gf",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.80.0",
+      "vulnerability": "CVE-2026-84304",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.80.0",
+      "vulnerability": "CVE-2026-84445",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "google.golang.org/grpc",
+      "version": "v1.80.0",
+      "vulnerability": "GHSA-hrxh-6v49-42gf",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "gzip",
+      "version": "1.13-1",
+      "vulnerability": "CVE-2026-41992",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u3",
+      "vulnerability": "CVE-2026-5450",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libc-bin",
+      "version": "2.41-12+deb13u3",
+      "vulnerability": "CVE-2026-5928",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libc6",
+      "version": "2.41-12+deb13u3",
+      "vulnerability": "CVE-2026-5450",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libc6",
+      "version": "2.41-12+deb13u3",
+      "vulnerability": "CVE-2026-5928",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libcurl4t64",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-8924",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libcurl4t64",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-8927",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libcurl4t64",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-8286",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libcurl4t64",
+      "version": "8.14.1-2+deb13u4",
+      "vulnerability": "CVE-2026-92392",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.12-stable-10+b1",
+      "vulnerability": "CVE-2026-63382",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.12-stable-10+b1",
+      "vulnerability": "CVE-2026-63385",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.12-stable-10+b1",
+      "vulnerability": "CVE-2026-63383",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.12-stable-10+b1",
+      "vulnerability": "CVE-2026-63384",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.12-stable-10+b1",
+      "vulnerability": "CVE-2026-63387",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libevent-core-2.1-7t64",
+      "version": "2.1.12-stable-10+b1",
+      "vulnerability": "CVE-2026-63388",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1~deb13u1",
+      "vulnerability": "CVE-2026-103111",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1~deb13u1",
+      "vulnerability": "CVE-2026-86145",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1~deb13u1",
+      "vulnerability": "CVE-2026-89157",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libpcre2-8-0",
+      "version": "10.46-1~deb13u1",
+      "vulnerability": "CVE-2026-89161",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u1",
+      "vulnerability": "CVE-2026-11822",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u1",
+      "vulnerability": "CVE-2026-11824",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u1",
+      "vulnerability": "CVE-2026-58050",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u1",
+      "vulnerability": "CVE-2026-58051",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u1",
+      "vulnerability": "CVE-2026-66032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u1",
+      "vulnerability": "CVE-2026-66033",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u1",
+      "vulnerability": "CVE-2026-66034",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u1",
+      "vulnerability": "CVE-2026-66035",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63073",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-75803",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-14456",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-14457",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-18798",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-54873",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-54874",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63072",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63075",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63076",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-72897",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "libssl3t64",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-84784",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63073",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-75803",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-14456",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-14457",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-18798",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-54873",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-54874",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63072",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63075",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63076",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-72897",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-84784",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63073",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-75803",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-14456",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-14457",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-18798",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-54873",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-54874",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63072",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63075",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-63076",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-72897",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.6-1~deb13u2",
+      "vulnerability": "CVE-2026-84784",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-12087",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-13221",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-42496",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-57433",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-8376",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-42497",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-48959",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-48961",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-48962",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-57432",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "perl-base",
+      "version": "5.40.1-6",
+      "vulnerability": "CVE-2026-7017",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56857",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-33818",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-39821",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-46600",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56853",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56859",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56862",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56866",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78667",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-94439",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-94440",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-97031",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-56857",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-56866",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-78667",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-94439",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-94440",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-97031",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "package": "stdlib",
+      "version": "go1.26.7",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56857",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56866",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78667",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94439",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94440",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97031",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "golang.org/x/net",
+      "version": "v0.58.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "libssl3t64",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "openssl",
+      "version": "3.0.13-0ubuntu3.15",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56857",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-56866",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78667",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94439",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-94440",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97031",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "package": "stdlib",
+      "version": "go1.27.1",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.6.12",
+      "vulnerability": "CVE-2026-73500",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56854",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56855",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-78662",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "golang.org/x/text",
+      "version": "v0.39.0",
+      "vulnerability": "CVE-2026-56851",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "google.golang.org/grpc",
+      "version": "v1.83.1",
+      "vulnerability": "CVE-2026-84445",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "libssl3t64",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "openssl-provider-legacy",
+      "version": "3.5.5-1ubuntu3.5",
+      "vulnerability": "CVE-2026-84782",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56857",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-33818",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-39821",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-46600",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56853",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56859",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56862",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-56866",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78667",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-94439",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-94440",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-97031",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.5",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56857",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56866",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78667",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94439",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94440",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97031",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "go.etcd.io/etcd/client/pkg/v3",
+      "version": "v3.6.12",
+      "vulnerability": "CVE-2026-73500",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56854",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-56855",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/crypto",
+      "version": "v0.53.0",
+      "vulnerability": "CVE-2026-78662",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/net",
+      "version": "v0.56.0",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "golang.org/x/text",
+      "version": "v0.39.0",
+      "vulnerability": "CVE-2026-56851",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "google.golang.org/grpc",
+      "version": "v1.83.1",
+      "vulnerability": "CVE-2026-84445",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56857",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78663",
+      "severity": "Critical",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-56866",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78659",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78660",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78667",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-78669",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94439",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-94440",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97031",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    },
+    {
+      "target": "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc",
+      "package": "stdlib",
+      "version": "go1.26.8",
+      "vulnerability": "CVE-2026-97032",
+      "severity": "High",
+      "workOrder": "IOT-WO-08",
+      "expires": "2026-11-19"
+    }
+  ],
+  "protectedGitBlobSHA256": {
+    "security/check_licences.py": "7692df0824aed93a7aabdcec5fd973468542d3aadb53c3a806658d15c9e72564",
+    "security/licence_ladder.py": "04082cd7ef61e45bace233fdd7324cbd088a8654286a9dea76e5a5540051bb4c",
+    "security/licence_inventory.py": "3adbbf7d20df95480fab0b8200e061f61f92b11ee8e9e59efd0a785c4ca2de3c",
+    "security/licence-register.json": "5f5d82ff6f70f22a010e1304de3ae1b4129a8ab291c7275407578d6b9f1e4fa5",
+    "security/licence-policy.json": "a3c253e7adf6fa87e1a729ba2300b2182364fe8582bb043144c457909cf1a069",
+    "security/licence-baseline.json": "23382e9acc3665232ef7490805c0fba4ece0eb1568956e86ed2537dbada5a613",
+    "security/licence-register.schema.json": "fe5249741f7aca3153d0829270d687eafc74abd013f1ff4815a74a9ce9c6e3dc",
+    "security/vulnerability-exceptions.schema.json": "2e058082aa9991ca14e6a41dba69bbbf4c07ddb0b8185102d93194403a4b3097",
+    "tools/ci/supply_chain.py": "6e117cc750133d55ae603023d19a925d4838ac5fd8f9445bff350a2e26bd378b",
+    "tools/ci/supply_chain_report.py": "14b8ee32da19e39bad955956f604f5679d764589b25dcd568ff98e6a4cdf5328",
+    "tools/ci/supply_chain_watch.py": "14ee92be1c80702f6665ab1f17623578822aa2de337bc1cbeebfd7b8f09bf089",
+    "tools/ci/tests/test_supply_chain.py": "fcf33cbc41eafd51b481e4fcabe35193e16b01b5d60189d63ca45c2f912f8ef7",
+    "tools/ci/tests/test_supply_chain_watch.py": "027c20acf0ea9864dee3d21b061727ed7a82dcb46bc73f8479fb1a8f5db87ad6",
+    "dev/kind/pins.json": "cf357fd6609711ea237306a745b6e95d638771f24986e865a633514b5718f795"
+  },
+  "localTests": {
+    "identity": 214,
+    "contractTests": 61,
+    "licence": 48,
+    "supplyChain": 84,
+    "newHarnessTests": 19
+  },
+  "scope": "Static contract/build validation only. No environment action or harness execution."
+}
