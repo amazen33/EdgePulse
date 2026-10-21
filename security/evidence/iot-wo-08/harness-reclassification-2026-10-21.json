@@ -2432,8 +2432,8 @@
     "identity": 214,
     "contractTests": 61,
     "licence": 48,
-    "supplyChain": 84,
-    "newHarnessTests": 19
+    "supplyChain": 85,
+    "newHarnessTests": 20
   },
   "scope": "Static contract/build validation only. No environment action or harness execution."
 }

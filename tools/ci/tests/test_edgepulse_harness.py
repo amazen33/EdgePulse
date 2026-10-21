@@ -4,6 +4,7 @@ from datetime import date
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -204,6 +205,11 @@ jobs:
 
 
 class HarnessRepository(unittest.TestCase):
+    def test_checksum_only_entrypoint_remains_stdlib_only(self):
+        subprocess.run([sys.executable, '-S', '-c',
+                        "import sys;sys.path.insert(0,'tools/ci');import edgepulse_supply_chain"],
+                       cwd=ep.ROOT, check=True, capture_output=True)
+
     def test_exactly_266_exceptions_removed_and_all_other_entry_bytes_retained(self):
         before = sc.git(ep.ROOT, 'show', 'c126d1e00b345d0721ed08fbcc4e92a87384055d:security/vulnerability-exceptions.json')
         after = (ep.ROOT/'security/vulnerability-exceptions.json').read_text(encoding='utf-8')

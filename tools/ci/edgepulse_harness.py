@@ -10,7 +10,6 @@ import re
 
 import supply_chain as sc
 import supply_chain_watch as watch
-import yaml
 
 
 def policy(root):
@@ -35,6 +34,7 @@ def check_references(root, references, paths=None):
     describe scan inputs rather than packaging them. Test sources may plant
     violations. None of these exclusions applies under charts/ or deploy/.
     """
+    import yaml  # The checksum-only/tool-SBOM entrypoints remain stdlib-only.
     config = policy(root)
     repositories = {v['repository'] for v in config['testHarnessImages']}
     for ref, origins in references.items():
