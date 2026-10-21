@@ -43,12 +43,12 @@
     <log4j2.version>2.26.1</log4j2.version>
     <spring-cloud.version>2023.0.3</spring-cloud.version>
     <archunit.version>1.3.0</archunit.version>
-    <protobuf.version>3.25.5</protobuf.version>
+    <protobuf.version>3.25.9</protobuf.version>
     <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
-    <!-- gRPC-Java 1.68.1 is the release whose own README pairs it with
-         protoc 3.25.5, the same protobuf.version above (checked against
-         grpc-java's v1.68.1 README, not assumed). Bump both together. -->
-    <grpc.version>1.68.1</grpc.version>
+    <!-- IOT-WO-08: gRPC-Java 1.84.0's published grpc-protobuf POM requires
+         protobuf-java 3.25.9. Keep the runtime and protoc aligned on that
+         supported Java maintenance line; no Spring or Java line change. -->
+    <grpc.version>1.84.0</grpc.version>
     <!-- Required at compile time by grpc-java generated stubs on Java 9+
          (javax.annotation.Generated), per grpc-java's own README. -->
     <tomcat-annotations-api.version>6.0.53</tomcat-annotations-api.version>
@@ -72,6 +72,14 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- IOT-WO-08 clarification 2026-10-21: Error Prone has a real enum;
+           preserve the exact already-admitted legacy annotation artifact
+           and fingerprint instead of excluding or re-qualifying it. -->
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>2.28.0</version>
+      </dependency>
       <!-- IOT-WO-02 Amendment 5: same-minor KEV remediation. Explicit
            entries override the imported Boot BOM without changing its line. -->
       <dependency>

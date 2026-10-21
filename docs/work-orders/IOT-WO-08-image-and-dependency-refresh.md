@@ -24,3 +24,26 @@ Clear every exception in `security/vulnerability-exceptions.json` whose `workOrd
 
 - **2026-11-12:** a status report on what remains, with the decisions under items 2 and 3.
 - **Before 2026-11-19:** approve any renewal entries.
+
+### Ruling (architect, 2026-10-21): JSpecify in the gRPC refresh
+
+gRPC 1.84.0 brings `org.jspecify:jspecify` (stable 1.0.1, or prerelease 0.3.0 by default) as a runtime dependency. Its published disclosure policy can't be verified, so a true ADR-0054 `securityProcess` pass isn't possible. JSpecify holds nullness annotations only, and the JVM ignores annotation types that are missing at runtime.
+- **Exclude it** from the runtime graph on the gRPC dependency that brings it in. Proof: the identity tests, including transport equivalence, pass; it is absent from the resolved runtime tree; and there is no runtime licence entry.
+- **Known follow-up for Part C:** Spring Framework 7 (the Spring Boot 4 line) depends on JSpecify directly. The Part C trial must report whether it can be excluded there too, or whether the owner needs to decide how ADR-0054's `securityProcess` applies to code-free annotation artifacts.
+
+### Ruling (architect, 2026-10-21): annotation-only artifacts introduced by a refresh
+
+This generalises the JSpecify ruling. When a refresh introduces a new runtime-reachable artifact that contains **only annotation types**, exclude it from the runtime graph instead of qualifying it. Examples: `org.codehaus.mojo:animal-sniffer-annotations`, JSpecify, and similar annotation JARs.
+1. **Proof the artifact is annotation-only:** a check reads every `.class` entry in the exact JAR and confirms that each one has the `ACC_ANNOTATION` flag (or is `package-info` or `module-info`). The JAR contains nothing executable, and has no service-loader files or other resources besides licence, notice and manifest. Record the check's output in the PR.
+2. **Runtime proof:** all tests pass, including transport equivalence; the artifact is absent from the resolved runtime tree and the classpath; and there is no runtime register entry.
+3. **The rule covers only artifacts the refresh introduces.** Annotation artifacts already in the legacy set stay as they are. Any artifact that fails check 1 needs a full ADR-0054 record or a stop.
+4. **Planted tests:**
+   - excluding an artifact that contains a non-annotation class is rejected by the check;
+   - an annotation-only artifact left at runtime scope still needs a record.
+
+**Clarification (architect, 2026-10-21) to item 1:** the permitted resources also include the Maven-generated build metadata `META-INF/maven/<groupId>/<artifactId>/pom.xml` and `pom.properties`, only for the artifact's own coordinates. All other rules stay strict: `META-INF/services/*`, other resources, and any non-annotation class (an enum or an ordinary class) make the artifact ineligible.
+
+**Error Prone annotations** (`com.google.errorprone:error_prone_annotations`; 2.50.0 contains the enum `Modifier`) isn't eligible for exclusion. In order:
+- (a) If the legacy set already admits an `error_prone_annotations` version, pin that version through `dependencyManagement`, so its fingerprint doesn't change, and prove that all tests pass.
+- (b) Otherwise, write a full ADR-0054 record for the new version, but only if every criterion can truthfully pass, with evidence (Google-hosted project, with its disclosure policy).
+- (c) Otherwise, stop and report.
