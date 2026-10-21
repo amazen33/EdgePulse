@@ -833,37 +833,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#google-common-protos-2641",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -965,37 +965,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -1045,37 +1045,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -1234,37 +1234,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#protobuf-java-3259",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -1949,37 +1949,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -2030,37 +2030,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -2091,37 +2091,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -2172,37 +2172,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -2233,37 +2233,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -2294,37 +2294,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -2355,37 +2355,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
@@ -2416,37 +2416,37 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/scan-2026-10-21.json",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
             "date": "2026-10-21",
             "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/6fc5c487af6f7169ba177faef41c815dc8931932/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#grpc-1840-eight-runtime-artifacts",
             "date": "2026-10-21",
             "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
           }
