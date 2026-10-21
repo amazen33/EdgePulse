@@ -120,19 +120,35 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-api</artifactId>
+      <!-- IOT-WO-08 ruling 2026-10-21: annotation-only JSpecify is not
+           needed at runtime. Exclude on every gRPC/Guava entry path. -->
+      <exclusions>
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-stub</artifactId>
+      <exclusions>
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
+        <exclusion><groupId>org.codehaus.mojo</groupId><artifactId>animal-sniffer-annotations</artifactId></exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-protobuf</artifactId>
+      <exclusions>
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-netty-shaded</artifactId>
       <scope>runtime</scope>
+      <exclusions>
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
+        <exclusion><groupId>org.codehaus.mojo</groupId><artifactId>animal-sniffer-annotations</artifactId></exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <!-- javax.annotation.Generated for grpc-java generated stubs on
@@ -175,6 +191,10 @@
       <groupId>io.grpc</groupId>
       <artifactId>grpc-inprocess</artifactId>
       <scope>test</scope>
+      <exclusions>
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
+        <exclusion><groupId>org.codehaus.mojo</groupId><artifactId>animal-sniffer-annotations</artifactId></exclusion>
+      </exclusions>
     </dependency>
 
   </dependencies>

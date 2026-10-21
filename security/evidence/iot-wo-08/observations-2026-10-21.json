@@ -1,0 +1,80 @@
+{
+  "status": "gRPC adopted for PR review; candidate pinned scan passed; final CI pending",
+  "base": "6d07e9afabf863a095c7d26c154c8640792ff2f1",
+  "reviewDate": "2026-10-21",
+  "knownCandidate": {
+    "package": "io.grpc:grpc-netty-shaded",
+    "fromVersion": "1.68.1",
+    "toVersion": "1.84.0",
+    "potentialExceptionsCleared": 1,
+    "pinnedScannerVerified": true,
+    "exceptionsCleared": 1
+  },
+  "protectedInputsUnchanged": true,
+  "exceptionsRemoved": 1,
+  "localJavaTests": {
+    "services/identity": {
+      "tests": 214,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "contract-tests": {
+      "tests": 61,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "proof": "security/evidence/iot-wo-08/jspecify-exclusion-2026-10-21.json",
+  "gateTests": {
+    "licence": 48,
+    "supplyChain": 65
+  },
+  "remainingIOTWO08Exceptions": {
+    "Critical": 42,
+    "High": 244,
+    "total": 286
+  },
+  "remainingAllExceptions": {
+    "Critical": 43,
+    "High": 259,
+    "total": 302
+  },
+  "initialExceptionFileSHA256": "968d4e478b3f8007004a8d433ee04153929d46879c8b4c43e5124df78e1a42ce",
+  "exceptionFileSHA256": "265416466c4d0301dfbb9e6b12d790969802b9607c05e7512eea5fe7c5200f2e",
+  "initialExceptionCounts": {
+    "docker.io/kindest/node@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed": {
+      "Critical": 28,
+      "High": 140
+    },
+    "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a": {
+      "Critical": 0,
+      "High": 19
+    },
+    "ghcr.io/cloudnative-pg/cloudnative-pg@sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07": {
+      "Critical": 3,
+      "High": 13
+    },
+    "maven:executed-plugin-9": {
+      "Critical": 0,
+      "High": 1
+    },
+    "maven:services/identity/pom.xml": {
+      "Critical": 0,
+      "High": 1
+    },
+    "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463": {
+      "Critical": 3,
+      "High": 15
+    },
+    "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01": {
+      "Critical": 5,
+      "High": 37
+    },
+    "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc": {
+      "Critical": 3,
+      "High": 19
+    }
+  }
+}

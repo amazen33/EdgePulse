@@ -11,6 +11,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08: refresh identity's gRPC to 1.84.0 with Protobuf 3.25.9;
+  prove and exclude annotation-only JSpecify and Animal Sniffer artifacts,
+  and preserve the exact legacy Error Prone annotations 2.28.0 admission.
+  Remove CVE-2025-55163's cleared exception after the pinned scan.
 - IOT-WO-06 / ADR 0027: use BOM-managed Log4j 2.26.1 for identity runtime
   logging, with a console-only correlation-ID pattern and runtime-classpath
   provider/context/request-log tests; remove Logback and reverse bridges.
@@ -27,7 +31,7 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 ### Added
 
 - IOT-WO-02 Part A: a separate licence gate, the Maven/component register and
-  planted-violation checks under ADRs 0024–0026, ported from Twinfra `0d95007`.
+  planted-violation checks under ADRs 0024ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“0026, ported from Twinfra `0d95007`.
   Supply-chain, quality and runtime-baseline work remain in later parts.
 
 ### Removed
@@ -68,7 +72,7 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Added
 
-- IOT-WO-01 Part B decision records: ADRs 0014 and 0020–0023, the approved
+- IOT-WO-01 Part B decision records: ADRs 0014 and 0020ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“0023, the approved
   milestone plan, snapshot draft dispositions and aligned architecture pointers.
   Runtime integration, infrastructure freeze, Python archival and renaming remain
   separate work orders.
@@ -90,7 +94,7 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   IOT-WO-05 and its receipt. No deployment or identifier rename is included.
 
 - The version is now `2.0.0`, the next base version: EdgePulse continues after the IOT-EE
-  tags (`v0.3.0`–`v1.0.0`). It was `0.1.0-SNAPSHOT` in the root and module poms.
+  tags (`v0.3.0`ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“`v1.0.0`). It was `0.1.0-SNAPSHOT` in the root and module poms.
 
 ## [1.0.0] - 2026-09-23
 

@@ -1,0 +1,208 @@
+{
+  "decision": "Not excluded; retain exact legacy 2.28.0 via dependencyManagement",
+  "artifact": {
+    "coordinates": "com.google.errorprone:error_prone_annotations:2.50.0",
+    "jar": "error_prone_annotations-2.50.0.jar",
+    "sha256": "4667724877f1d37a689202da191e23efa7657c62eef93ccdac406eccfe5cdd0a",
+    "status": "failed",
+    "classes": [
+      {
+        "entry": "com/google/errorprone/annotations/FormatString.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/CanIgnoreReturnValue.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/InlineMeValidationDisabled.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/CompileTimeConstant.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/DoNotMock.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/concurrent/GuardedBy.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/concurrent/LockMethod.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/concurrent/UnlockMethod.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/concurrent/LazyInit.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/Var.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/ForOverride.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/DoNotCall.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/SuppressPackageLocation.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/InlineMe.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/RestrictedApi.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/NoAllocation.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/ThreadSafe.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/CheckReturnValue.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/OverridingMethodsMustInvokeSuper.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/FormatMethod.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/CompatibleWith.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/ImmutableTypeParameter.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/ThreadSafeTypeParameter.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/RequiredModifiers.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/Immutable.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/Modifier.class",
+        "accessFlags": "0x4031",
+        "annotation": false,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/IncompatibleModifiers.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/MustBeClosed.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "com/google/errorprone/annotations/Keep.class",
+        "accessFlags": "0x2601",
+        "annotation": true,
+        "descriptor": false
+      },
+      {
+        "entry": "META-INF/versions/9/module-info.class",
+        "accessFlags": "0x8000",
+        "annotation": false,
+        "descriptor": true
+      }
+    ],
+    "resources": [
+      {
+        "entry": "META-INF/MANIFEST.MF",
+        "permitted": true
+      },
+      {
+        "entry": "META-INF/maven/com.google.errorprone/error_prone_annotations/pom.xml",
+        "permitted": true
+      },
+      {
+        "entry": "META-INF/maven/com.google.errorprone/error_prone_annotations/pom.properties",
+        "permitted": true
+      }
+    ],
+    "errors": [
+      "Class lacks ACC_ANNOTATION: com/google/errorprone/annotations/Modifier.class"
+    ]
+  }
+}

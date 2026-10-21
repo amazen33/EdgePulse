@@ -1,0 +1,143 @@
+{
+  "baseCommit": "6d07e9afabf863a095c7d26c154c8640792ff2f1",
+  "rule": "Unchanged IOT-WO-06 removal-only resolved-absence guard",
+  "retired": [
+    {
+      "id": "maven|com.google.api.grpc:proto-google-common-protos|2.41.0",
+      "sha256": "fb800a4bd1fda53ce8bc2679c7ab624b6be70b597f24d1cf5dba66120e0efd2f",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|com.google.guava:failureaccess|1.0.2",
+      "sha256": "48f7190a2bddfe78c0cf73c78206e510408d414eb6765989e13cb9648a2e77a7",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|com.google.guava:guava|33.2.1-android",
+      "sha256": "91095d31101476395bf7181516cdd3a7f5c51cf358bd7b9db74e273d7a91271f",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|com.google.protobuf:protobuf-java|3.25.5",
+      "sha256": "aa03bc1c2180eda6b742a7896df4d964370b54487514090820948814c1017715",
+      "tier": 1,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-api|1.68.1",
+      "sha256": "22bb169360fb2e697ef5fa19b6aae5749ca0a3ce69180dd5260b95cf21212104",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-context|1.68.1",
+      "sha256": "2b749c80e33b5a9c0fe4f6b441c2b7307fa3b50edfb903aed4c8fe587d4777e0",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-core|1.68.1",
+      "sha256": "21649804b36f22b8949feadbe81317e123228592b1b2e5d03fe4a93cc4c3258d",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-netty-shaded|1.68.1",
+      "sha256": "a6b70ac15f871b24e945d0cc9756e68c842817338a1c96e6eacc807df9463c2f",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-protobuf-lite|1.68.1",
+      "sha256": "186e32dbd759b0ffacf4802ac2609659fa1dba619835a8767a372a1b990c80b1",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-protobuf|1.68.1",
+      "sha256": "5b18852098ebfcb3d2da2420f7979f63acb689be6658128822c2dece3f7af330",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-stub|1.68.1",
+      "sha256": "ce241d595ca76d052d3a61681144b1cdaf32b90e87100090df79081d7c44e6be",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|io.grpc:grpc-util|1.68.1",
+      "sha256": "36d5350fb0164b255429f24e231f811781ddb0133ed8078e164beca8dea87339",
+      "tier": 2,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|org.checkerframework:checker-qual|3.42.0",
+      "sha256": "1ceff5425ba9403729e06e904320c9ef01726b60c66ea5d71105e80309c4c21d",
+      "tier": 1,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    },
+    {
+      "id": "maven|org.codehaus.mojo:animal-sniffer-annotations|1.24",
+      "sha256": "70bb2d016c7f348fceb983131f692e2a127d021259891aa0a723bd6e5318a78b",
+      "tier": 1,
+      "due": "2027-04-20",
+      "reason": "Absent from independently resolved inventory after gRPC refresh; removal-only retirement."
+    }
+  ],
+  "retainedEntriesUnchanged": true,
+  "retainedErrorProneFingerprint": "64da99e8d3e39a8295365a73cb0edfa47c24c3ad80104f62a70a16959ca9a469",
+  "newLegacyAdmissions": 0,
+  "newOrUpdatedComponents": [
+    "maven|com.google.protobuf:protobuf-bom|3.25.9",
+    "maven|io.grpc:grpc-bom|1.84.0",
+    "maven|com.google.protobuf:protobuf-java|3.25.9",
+    "maven|io.grpc:grpc-api|1.84.0",
+    "maven|com.google.guava:guava|33.6.0-android",
+    "maven|com.google.guava:failureaccess|1.0.3",
+    "maven|io.grpc:grpc-stub|1.84.0",
+    "maven|io.grpc:grpc-protobuf|1.84.0",
+    "maven|com.google.api.grpc:proto-google-common-protos|2.64.1",
+    "maven|io.grpc:grpc-protobuf-lite|1.84.0",
+    "maven|io.grpc:grpc-netty-shaded|1.84.0",
+    "maven|io.grpc:grpc-util|1.84.0",
+    "maven|io.grpc:grpc-core|1.84.0",
+    "maven|io.grpc:grpc-context|1.84.0",
+    "maven|io.grpc:grpc-inprocess|1.84.0",
+    "maven|com.google.protobuf:protoc|3.25.9",
+    "maven|io.grpc:protoc-gen-grpc-java|1.84.0"
+  ],
+  "removedException": {
+    "vulnerability": "CVE-2025-55163",
+    "target": "maven:services/identity/pom.xml",
+    "package": "io.grpc:grpc-netty-shaded",
+    "version": "1.68.1",
+    "severity": "High",
+    "owner": "amazen33",
+    "approvedBy": "amazen33",
+    "workOrder": "IOT-WO-08",
+    "createdOn": "2026-10-20",
+    "expires": "2026-11-19",
+    "controls": [
+      "security/evidence/vulnerability-exceptions/group-aae0033ac186deb2.md"
+    ],
+    "reason": "CVE-2025-55163 in io.grpc:grpc-netty-shaded 1.68.1; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-aae0033ac186deb2.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+  },
+  "remainingExceptionsUnchanged": true
+}

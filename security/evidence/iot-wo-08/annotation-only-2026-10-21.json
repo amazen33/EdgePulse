@@ -1,0 +1,109 @@
+{
+  "rule": "IOT-WO-08 annotation-only ruling and own-coordinate Maven metadata clarification, 2026-10-21",
+  "status": "passed",
+  "artifacts": [
+    {
+      "coordinates": "org.jspecify:jspecify:0.3.0",
+      "jar": "jspecify-0.3.0.jar",
+      "sha256": "e1c7e1832b6095fcfcbe57485700c7330d53d4e57e2c5bbf9c71819b02e978be",
+      "status": "passed",
+      "classes": [
+        {
+          "entry": "org/jspecify/annotations/NullMarked.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        },
+        {
+          "entry": "org/jspecify/annotations/NullUnmarked.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        },
+        {
+          "entry": "org/jspecify/annotations/NonNull.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        },
+        {
+          "entry": "org/jspecify/annotations/Nullable.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        },
+        {
+          "entry": "META-INF/versions/9/module-info.class",
+          "accessFlags": "0x8000",
+          "annotation": false,
+          "descriptor": true
+        }
+      ],
+      "resources": [
+        {
+          "entry": "META-INF/MANIFEST.MF",
+          "permitted": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "coordinates": "org.codehaus.mojo:animal-sniffer-annotations:1.27",
+      "jar": "animal-sniffer-annotations-1.27.jar",
+      "sha256": "cfd7e51a828fe6b98bc0dbb99e34900c9e9012322cb9ddd57fd8dd0b02da5e27",
+      "status": "passed",
+      "classes": [
+        {
+          "entry": "org/codehaus/mojo/animal_sniffer/IgnoreJRERequirement.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        }
+      ],
+      "resources": [
+        {
+          "entry": "META-INF/MANIFEST.MF",
+          "permitted": true
+        },
+        {
+          "entry": "META-INF/maven/org.codehaus.mojo/animal-sniffer-annotations/pom.xml",
+          "permitted": true
+        },
+        {
+          "entry": "META-INF/maven/org.codehaus.mojo/animal-sniffer-annotations/pom.properties",
+          "permitted": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "coordinates": "org.codehaus.mojo:animal-sniffer-annotations:1.28",
+      "jar": "animal-sniffer-annotations-1.28.jar",
+      "sha256": "9f13635596a6f8bd12f5557c3c88e0bb4ab15c314ed1c816f9172dae5897f917",
+      "status": "passed",
+      "classes": [
+        {
+          "entry": "org/codehaus/mojo/animal_sniffer/IgnoreJRERequirement.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        }
+      ],
+      "resources": [
+        {
+          "entry": "META-INF/MANIFEST.MF",
+          "permitted": true
+        },
+        {
+          "entry": "META-INF/maven/org.codehaus.mojo/animal-sniffer-annotations/pom.xml",
+          "permitted": true
+        },
+        {
+          "entry": "META-INF/maven/org.codehaus.mojo/animal-sniffer-annotations/pom.properties",
+          "permitted": true
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

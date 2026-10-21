@@ -70,6 +70,23 @@ class LicenceGateTest(unittest.TestCase):
         component = self.component()
         self.check(self.entry(component), component)
 
+    def test_annotation_only_left_at_runtime_still_needs_full_record(self):
+        # IOT-WO-08 ruling 2026-10-21 planted violation 2. The bytecode
+        # proof never bypasses the unchanged runtime admission path.
+        from annotation_only import require_annotation_only
+        from test_annotation_only import synthetic_class
+        jar = self.root / 'SYNTHETIC-annotations.jar'
+        with zipfile.ZipFile(jar, 'w') as output:
+            output.writestr('synthetic/Marker.class', synthetic_class('synthetic/Marker'))
+        self.assertEqual('passed', require_annotation_only(jar, ('org.synthetic', 'probe', '1.0.0'))['status'])
+        component = self.component('MIT', scope='runtime')
+        entry = self.entry(component, 'MIT', kind='allowed')
+        entry['tier'] = 1
+        self.make_audit_fixture(component, [entry])
+        from jsonschema.exceptions import ValidationError
+        with self.assertRaisesRegex(ValidationError, "'enterpriseGrade' is a required property"):
+            self.run_fixture_audit()
+
     def test_unregistered_maven_dependency_fails_real_audit(self):
         component = self.component(spdx='MIT')
         self.make_audit_fixture(component, [])
