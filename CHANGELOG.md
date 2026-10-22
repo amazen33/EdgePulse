@@ -38,6 +38,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Added
 
+- Owner direction 2026-10-22: record the EdgePulse team without OpenCode,
+  retain human approval and receipt authority, provide Copilot review guidance,
+  and synchronize standing MS1 progress and the Part C-before-D sequence.
+
 - IOT-WO-02 Part A: a separate licence gate, the Maven/component register and
   planted-violation checks under ADRs 0024ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“0026, ported from Twinfra `0d95007`.
   Supply-chain, quality and runtime-baseline work remain in later parts.

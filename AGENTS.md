@@ -3,6 +3,8 @@
 Development contract and architectural conventions for the EdgePulse platform.
 All changes require PR, CI, and human review; an agent must not approve its own work.
 
+The [development team](docs/development-team.md) records the owner's 2026-10-22 direction: Codex prepares proposals and implements authorized work; Copilot provides bounded housekeeping and explicitly assigned read-only reviews; OpenCode is excluded. Claude is not a required workflow participant. Historical authorship and accepted ADRs remain unchanged. Human approval, merge and receipt authority stays with the owner.
+
 Prompt frame: state the milestone, bounded context, verified inputs, acceptance criteria, security constraints, intended files, relevant tests, and non-goals. Distinguish assumptions from observations. Inspect before editing and preserve unrelated work.
 
 Secrets and PII: never include raw PII, credentials, keys, production dumps, or vault secret values in prompts, Git, app databases, events, logs, or audit evidence. Use synthetic inputs. Enter source secrets once directly into the scaffold-configured vault; persist only references. Never automatically import secrets from legacy exports. No unrestricted cloud commands or cloud admin credentials in browser flows.
@@ -33,7 +35,7 @@ MS2 defines contracts; MS4–MS6 implement readiness; MS8–MS9 are joint runs.
 Readiness precedes customer-facing feature work beyond the core. Discovery,
 extraction, transformation and migration orchestration belong to EdgeMig.
 
-MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): not started.
+MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): in progress; licence-gate code/CI merged in [PR #46](https://github.com/amazen33/EdgePulse/pull/46), supply-chain-gate code/CI merged in [PR #48](https://github.com/amazen33/EdgePulse/pull/48). Part C (runtime) precedes Part D (quality) under Amendment 5; both remain incomplete, and no MS1 receipt is accepted.
 [MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
 runtime integrations remain pending.
 
@@ -186,9 +188,12 @@ A stage is not complete without all of:
 Supply-chain security scanning follows accepted ADR 0014: pinned Syft
 SBOMs, Grype image/SBOM scanning and OSV-Scanner for lockfiles and the Maven
 graph, with KEV blocking, cool-off and evidenced exceptions. ADR 0021 adds
-Twinfra's licence gate. Implementation of these CI gates is pending
-IOT-WO-02. Signing/provenance follows Twinfra's later adoption and is
-outside ADR 0014. Green current CI does not prove these gates exist.
+Twinfra's licence gate. Merged [PR #46](https://github.com/amazen33/EdgePulse/pull/46)
+and [PR #48](https://github.com/amazen33/EdgePulse/pull/48) provide the licence
+and supply-chain code/CI foundations. Their setup and evidence requirements
+are in [security/README.md](security/README.md). Quality and supported-runtime
+work remain in IOT-WO-02. Signing/provenance follows Twinfra's later adoption
+and is outside ADR 0014. CI does not establish real-environment acceptance.
 
 M0–M8 legacy constraints (still binding)
 The original M0 constraint remains in force as a standing rule:

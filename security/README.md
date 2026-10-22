@@ -2,8 +2,11 @@
 
 This gate inventories existing EdgePulse build and runtime inputs. It does
 not prove a deployment, runtime integration, vulnerability clearance or
-milestone acceptance. Supply-chain evidence is **pending IOT-WO-02 Part B**;
-quality is Part D and the Java/Spring baseline is Part C.
+milestone acceptance. Merged [PR #48](https://github.com/amazen33/EdgePulse/pull/48)
+adds the supply-chain gate and static artifact evidence. Under Amendment 5,
+the Java/Spring baseline is Part C, before the Part D quality gate; both
+remain incomplete. Existing legacy deadlines and security exceptions retain
+their recorded scope and expiry.
 
 ## Authority and port
 
