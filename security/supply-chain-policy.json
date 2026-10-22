@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "authority": "ADR 0028",
+  "testHarnessImages": [
+    {
+      "repository": "docker.io/kindest/node",
+      "pinFamily": "kind"
+    },
+    {
+      "repository": "quay.io/cilium/cilium",
+      "pinFamily": "cilium"
+    },
+    {
+      "repository": "quay.io/cilium/cilium-envoy",
+      "pinFamily": "cilium"
+    },
+    {
+      "repository": "quay.io/cilium/operator-generic",
+      "pinFamily": "cilium"
+    },
+    {
+      "repository": "ghcr.io/cloudnative-pg/cloudnative-pg",
+      "pinFamily": "cnpg"
+    }
+  ],
+  "ownerReasons": []
+}

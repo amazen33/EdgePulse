@@ -47,3 +47,27 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
 - (a) If the legacy set already admits an `error_prone_annotations` version, pin that version through `dependencyManagement`, so its fingerprint doesn't change, and prove that all tests pass.
 - (b) Otherwise, write a full ADR-0054 record for the new version, but only if every criterion can truthfully pass, with evidence (Google-hosted project, with its disclosure policy).
 - (c) Otherwise, stop and report.
+
+## Amendment 1 (architect, 2026-10-21): test-harness images (ADR 0028)
+
+**Status:** Approved (owner, 2026-10-21), with ADR `XXXX-proposed-test-harness-images.md`, which the owner accepted on 2026-10-21 and which lands as 0028.
+
+1. **One PR** (`codex/iot-wo-08-harness-class`):
+   - add ADR 0028 to `docs/adr/` word for word, except the title's number and "(proposed)", and update `docs/adr/README.md` (next free number 0029);
+   - implement the `test-harness` class in EdgePulse's wiring only (`tools/ci/edgepulse_supply_chain.py` or similar), marked with ADR 0028. The ported supply-chain tools and schemas stay byte-identical.
+2. **Mechanical checks (ADR 0028 Decision 1):**
+   - references only from `dev/kind/**`;
+   - none from `charts/**` or any packaging or deploy input;
+   - every workflow job that runs these images has `contents: read` and no secrets.
+3. **Gate behaviour (Decision 2):**
+   - KEV blocks;
+   - fixed Critical and High findings are report-only (in the nightly issue and the PR summary);
+   - the staleness rule: a newer eligible release unadopted for more than 30 days fails the gate.
+4. **Remove** the 266 `IOT-WO-08` exceptions for the five harness images: `kindest/node`, the three Cilium images and the CNPG operator. List them in the PR. Every other exception stays unchanged.
+5. **Planted tests:**
+   - a harness image referenced from `charts/` fails;
+   - a harness job given a secret, or `contents: write`, fails;
+   - a KEV in a harness image fails;
+   - a stale harness image fails;
+   - a fixed High in a harness image is report-only and passes.
+6. **What remains under strict ADR-0049:** TB (19 entries, with the 2026-11-12 checkpoint), the executed Maven plugin, and the IOT-WO-02 Part C entries.

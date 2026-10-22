@@ -16,6 +16,7 @@ import sys
 from urllib.parse import urlsplit
 
 import supply_chain as sc
+import edgepulse_harness as harness  # ADR 0028: EdgePulse wiring only.
 from stage_tools import verified
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -280,7 +281,7 @@ def validate_exception_evidence(exceptions, root, on):
                     raise ValueError('JVM exception requires recorded call-path/classpath evidence')
 
 
-def evaluate(result, exceptions, kev, root, state=None, on=None):
+def evaluate(result, exceptions, kev, root, state=None, on=None, harness_guard=None, staleness=None):
     on = on or sc.today()
     validate_exception_evidence(exceptions, root, on)
     kev_ids = {v['cveID'] for v in kev['vulnerabilities']}
@@ -307,7 +308,20 @@ def evaluate(result, exceptions, kev, root, state=None, on=None):
     report['ownerApprovalPending'] = any(e['approvedBy']=='pending-owner' for e in exceptions['exceptions'])
     # No automatically invented exceptions, mitigations or environment claims.
     report['proposedExceptions'] = dict(version=1, exceptions=[])
+    if harness_guard is not None:
+        # ADR 0028: classification never changes upstream scans/first-seen state.
+        harness.apply(report, harness_guard, staleness or [])
     return report
+
+
+def report_files(report, out):
+    """ADR 0028: put the compact harness section first, also in the nightly issue."""
+    original = sc.markdown
+    try:
+        sc.markdown = lambda value: harness.markdown(value)+'\n'+original(value)
+        sc.report_files(report, out)
+    finally:
+        sc.markdown = original
 
 
 def evidence_only(old, new, old_policy, new_policy):
@@ -442,6 +456,11 @@ def run(root, tools_path, out, cache, base=None):
     # in the blocking gate, as well as in the planted-test suite.
     sc.write(out/'legacy-backfill.json', verify_backfill(root))
     plan = inventory(root, base)
+    # ADR 0028: no finding can gain the class before all isolation checks pass.
+    guard = harness.check_references(root, image_references(root))
+    with github_reads():
+        staleness = harness.release_checks(root, guard['targets'])
+    sc.write(out/'harness-checks.json', guard | dict(staleness=staleness))
     if not plan['images']:
         raise ValueError('Image inventory unexpectedly empty')
     sc.write(out/'inventory.json', plan)
@@ -463,11 +482,11 @@ def run(root, tools_path, out, cache, base=None):
     with github_reads():
         state, link = sc.previous_state(REPOSITORY)
     report = evaluate(result, sc.read(root/'security/vulnerability-exceptions.json'), json.loads(raw), root,
-                      state if link else None)
+                      state if link else None, harness_guard=guard, staleness=staleness)
     report['trackingIssue'] = link
     report['kev']['downloadSHA256'] = sc.sha(raw)
     report['reviewedSBOMs'] = canonical_sboms(plan, out)
-    sc.report_files(report, out)
+    report_files(report, out)
     print('Supply-chain: '+report['status']+'; '+str(len(plan['images']))+' images; '+str(len(report['findings']))+' findings')
     return int(report['status'] != 'passed')
 
@@ -494,15 +513,38 @@ def main():
             # module. Adapt that one repository seam in this single-purpose
             # process; restore it even when the blocking pinned scan fails.
             original = sc.inventory
+            original_scan = sc.scan
+            current = []
             try:
+                # ADR 0028: observe the real baseline scan; keep candidate scans,
+                # pinned scanner verification and the upstream watch unchanged.
+                guard = harness.check_references(args.root, image_references(args.root))
+                def scan(plan, *pos, **kwargs):
+                    result = original_scan(plan, *pos, **kwargs)
+                    if not current:
+                        current.append(result)
+                    return result
                 sc.inventory = lambda root, **kwargs: inventory(root)
+                sc.scan = scan
                 args.out.mkdir(parents=True, exist_ok=True)
                 with github_reads():
+                    checks = harness.release_checks(args.root, guard['targets'])
                     value = upstream_watch.watch(args.root, sc.verify_tools(args.tools, args.root), args.out, args.cache)
+                    state, link = sc.previous_state(REPOSITORY)
+                raw = sc.fetch('https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json')
+                report = evaluate(current[0], sc.read(args.root/'security/vulnerability-exceptions.json'),
+                                  json.loads(raw), args.root, state if link else None,
+                                  harness_guard=guard, staleness=checks)
+                value['testHarness'] = report['testHarness']
+                value['markdown'] = harness.markdown(report)+'\n'+value['markdown']
+                value['status'] = report['status']
                 sc.write(args.out/'watch.json', value)
                 (args.out/'watch.md').write_text(value['markdown'], encoding='utf-8')
+                if value['status'] != 'passed':
+                    return 1
             finally:
                 sc.inventory = original
+                sc.scan = original_scan
         else:
             return run(args.root, args.tools, args.out, args.cache, args.base)
         return 0
