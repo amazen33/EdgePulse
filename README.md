@@ -10,7 +10,7 @@ around it, under [ADR 0020](docs/adr/0020-tb-ce-operational-core.md),
 and [migration-manager integration](docs/adr/0022-migration-manager-integration.md).
 The approved roadmap is [MILESTONES.md](MILESTONES.md).
 
-MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): not started.
+MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): in progress; licence and supply-chain code/CI foundations are merged ([#46](https://github.com/amazen33/EdgePulse/pull/46), [#48](https://github.com/amazen33/EdgePulse/pull/48)). Part C runtime work precedes Part D quality work under Amendment 5; MS1 acceptance remains pending.
 [MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
 runtime integrations remain pending.
 
@@ -29,7 +29,7 @@ below evidence only their stated foundation artifacts and tests.
 | TB CE core | Inventory and plan-only customization manifest from merged [#13](https://github.com/amazen33/EdgePulse/pull/13); dated spike retained as historical input | MS3 deployment/upgrade rehearsal and MS5 event path await implementation and acceptance receipts |
 | Migration | M1/M9 moved to EdgeMig; execution plan retained as its input specification | EdgePulse readiness MR-1 to MR-14: MS2 contracts, then MS4–MS6 implementation |
 | Deployment | Own-infrastructure history is preserved in [archive/iot-ee-own-infra](https://github.com/amazen33/EdgePulse/tree/archive/iot-ee-own-infra/deploy/); active application sources are under [charts/](charts/) and the isolated [kind harness](dev/kind/) | Runtime integration and Argo CD application delivery require their work orders and acceptance receipts |
-| Gates and runtime | Java gate from merged [#14](https://github.com/amazen33/EdgePulse/pull/14); archived Python gate in tag archive/python-spec-final; release checks from merged [#36](https://github.com/amazen33/EdgePulse/pull/36) | MS1 / IOT-WO-02 implements accepted licence/supply-chain gates and runtime upgrade |
+| Gates and runtime | Java [#14](https://github.com/amazen33/EdgePulse/pull/14), release [#36](https://github.com/amazen33/EdgePulse/pull/36), licence [#46](https://github.com/amazen33/EdgePulse/pull/46) and supply-chain [#48](https://github.com/amazen33/EdgePulse/pull/48) code/CI foundations are merged | IOT-WO-02 Part C runtime baseline, then Part D quality gate; MS1 receipt remains pending |
 
 The snapshot is preserved at `archive/reconcile-snapshot-2026-09-26`;
 it is not a merge source wholesale. The dated
@@ -90,3 +90,5 @@ Read [architecture](docs/architecture.md), [test plan](docs/test-plan.md),
 [work order](docs/work-orders/IOT-WO-01-snapshot-and-decisions.md).
 [AGENTS.md](AGENTS.md) and [CLAUDE.md](CLAUDE.md) carry the same development
 contract. All changes require a PR, CI and human review.
+
+Current contributor roles and approval boundaries are in [development team](docs/development-team.md). OpenCode is excluded from the EdgePulse team.

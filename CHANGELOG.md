@@ -16,6 +16,14 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   archive hashes and a build-tool register entry. Spring and all application
   dependency versions remain unchanged; the supported Spring trial is separate.
 
+- PR #51 developer review: include workflow-level environment references in
+  the ADR 0028 job guard, with planted write/secret and read-only regressions.
+
+- IOT-WO-08 / ADR 0028: mechanically isolate five test-harness images in
+  EdgePulse supply-chain wiring, retain KEV blocking and add release-staleness
+  blocking; report fixed Critical/High findings without the 266 harness
+  exceptions. Shipped inputs keep their strict policy and licence records.
+
 - IOT-WO-08: refresh identity's gRPC to 1.84.0 with Protobuf 3.25.9;
   prove and exclude annotation-only JSpecify and Animal Sniffer artifacts,
   and preserve the exact legacy Error Prone annotations 2.28.0 admission.
@@ -34,6 +42,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   out-of-support runtime lines for Part C with explicit dated findings.
 
 ### Added
+
+- Owner direction 2026-10-22: record the EdgePulse team without OpenCode,
+  retain human approval and receipt authority, provide Copilot review guidance,
+  and synchronize standing MS1 progress and the Part C-before-D sequence.
 
 - IOT-WO-02 Part A: a separate licence gate, the Maven/component register and
   planted-violation checks under ADRs 0024ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“0026, ported from Twinfra `0d95007`.

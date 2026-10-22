@@ -13,11 +13,12 @@ sibling branch respectively).
 ## Current numbers and supersession map
 
 Records **0024–0026** define the EdgePulse licence-gate extensions. The next
-free number is **0028**. Other drafts retain XXXX until accepted and numbered
+free number is **0029**. Other drafts retain XXXX until accepted and numbered
 at merge.
 
 | Record | Current authority |
 | --- | --- |
+| [0028 test-harness images](0028-test-harness-images.md) | Accepted; EdgePulse-only ADR 0014 refinement: mechanically isolated harness images, KEV blocking, report-only fixed Critical/High findings and blocking staleness. |
 | [0027 identity logging backend](0027-identity-logging-backend.md) | Accepted; Log4j 2 backend. Decision 1 implemented with direct Log4j 2 artifacts instead of spring-boot-starter-log4j2 (IOT-WO-06 ruling, 2026-10-21); intent unchanged. |
 | [0024 build-tool licences and Maven ecosystem](0024-build-tool-licences-and-maven-ecosystem.md) | Accepted; build-tool licence scope amended by 0026 |
 | [0025 test-only modules and Jakarta annotation exception](0025-test-only-modules-and-jakarta-annotation-exception.md) | Accepted; clarifies 0024 Decision 2 and names the Jakarta runtime exception |

@@ -2,8 +2,11 @@
 
 This gate inventories existing EdgePulse build and runtime inputs. It does
 not prove a deployment, runtime integration, vulnerability clearance or
-milestone acceptance. Supply-chain evidence is **pending IOT-WO-02 Part B**;
-quality is Part D and the Java/Spring baseline is Part C.
+milestone acceptance. Merged [PR #48](https://github.com/amazen33/EdgePulse/pull/48)
+adds the supply-chain gate and static artifact evidence. Under Amendment 5,
+the Java/Spring baseline is Part C, before the Part D quality gate; both
+remain incomplete. Existing legacy deadlines and security exceptions retain
+their recorded scope and expiry.
 
 ## Authority and port
 
@@ -170,3 +173,40 @@ transitions and supported-line replacement checks still apply.
 Planted tests reject missing BOM registration, runtime/package reachability,
 omitted BOM evidence, retirement while a component remains resolved, and
 any new or altered legacy admission; an absent-component retirement passes.
+
+## ADR 0028: test-harness image class
+
+`security/supply-chain-policy.json` lists the five architect-reviewed harness
+repositories. This vulnerability class is independent of licence classes:
+all licence records, image pins, SBOM requirements and upstream tool bytes stay
+unchanged. EdgePulse's `edgepulse_harness.py` wiring checks tracked references,
+packaging inputs, transitive workflow callers, effective permissions and secret
+references before a finding can receive the class. Documentation links to the
+harness do not package an image; literal harness image references in charts fail.
+
+The blocking supply-chain gate and nightly scan still scan every image and
+check the current CISA KEV catalogue. Harness KEV findings cannot be excepted.
+Fixed Critical/High harness findings appear in a separate report-only section
+with the original first-seen state, before the general findings table. The
+unchanged trusted reporter carries this section into the single nightly issue;
+full findings and SBOMs remain in the run artifact. TB, PostgreSQL and Maven
+findings retain strict ADR-0049 handling.
+
+Every gate/nightly/weekly run checks official release metadata live. The
+14-day eligibility cutoff and the strictly-more-than-30-day publication-age
+limit use UTC. Kind node candidates come from kind release notes for the pinned
+Kubernetes minor; Cilium and its bundled Envoy follow the pinned Cilium minor;
+CNPG uses published stable operator releases. A newer release does not reset
+the clock of any older eligible, unadopted release. Missing or uninterpretable
+publication evidence fails closed. The report records source hashes and dates.
+
+A stale candidate blocks until adoption or a reviewed `ownerReasons` record
+in the policy identifies its exact repository/release, owner `amazen33`, date
+and reason. There are no owner overrides in this change. KEV cannot be waived
+by such a record. Weekly comparison scans retain their upstream logic; the
+EdgePulse wrapper adds the same isolation, KEV and staleness checks.
+
+Amendment 1 removes exactly 266 `IOT-WO-08` harness exceptions. The remaining
+36 entries preserve their exact bytes and order. The repository regression
+test compares them with immutable base `c126d1e`; the removal list is in
+`security/evidence/iot-wo-08/harness-reclassification-2026-10-21.json`.
