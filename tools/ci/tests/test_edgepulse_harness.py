@@ -103,6 +103,30 @@ jobs:
         with self.assertRaisesRegex(ValueError, 'cannot receive secrets'):
             self.guard()
 
+    def workflow_image(self, permissions, env=None):
+        import yaml
+        path = '.github/workflows/synthetic.yml'
+        value = yaml.safe_load((self.root/path).read_text(encoding='utf-8'))
+        value['env'] = {'SYNTHETIC_IMAGE': 'kindest/node@sha256:'+'a'*64}
+        value['jobs']['indirect-image'] = dict(
+            permissions=permissions, env=env or {},
+            steps=[{'run': 'docker inspect "$SYNTHETIC_IMAGE"'}])
+        self.put(path, yaml.safe_dump(value))
+
+    def test_workflow_env_image_cannot_hide_contents_write(self):
+        self.workflow_image({'contents': 'write'})
+        with self.assertRaisesRegex(ValueError, 'only contents: read'):
+            self.guard()
+
+    def test_workflow_env_image_cannot_hide_secret_access(self):
+        self.workflow_image({'contents': 'read'}, {'SYNTHETIC_INPUT': '${{ secrets.SYNTHETIC_VALUE }}'})
+        with self.assertRaisesRegex(ValueError, 'cannot receive secrets'):
+            self.guard()
+
+    def test_workflow_env_image_with_read_only_permissions_passes(self):
+        self.workflow_image({'contents': 'read'})
+        self.assertIn('.github/workflows/synthetic.yml:indirect-image', self.guard()['readOnlySecretlessJobs'])
+
     def test_indirect_script_and_reusable_workflow_callers_are_guarded(self):
         self.put('tools/synthetic.ps1', './dev/kind/up.ps1')
         self.flow(lambda job:job.update(steps=[{'run':'./tools/synthetic.ps1'}],permissions={'contents':'write'}))

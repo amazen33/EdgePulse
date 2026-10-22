@@ -11,6 +11,9 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- PR #51 developer review: include workflow-level environment references in
+  the ADR 0028 job guard, with planted write/secret and read-only regressions.
+
 - IOT-WO-08 / ADR 0028: mechanically isolate five test-harness images in
   EdgePulse supply-chain wiring, retain KEV blocking and add release-staleness
   blocking; report fixed Critical/High findings without the 266 harness

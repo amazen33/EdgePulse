@@ -83,12 +83,12 @@ def check_references(root, references, paths=None):
         flow = yaml.safe_load(text)
         for name, job in flow['jobs'].items():
             body = json.dumps(job)
-            if not (mentions(body, repositories) or reached(body)):
+            inherited = json.dumps(flow.get('env', {}))+' '+body
+            if not (mentions(inherited, repositories) or reached(inherited)):
                 continue
             permissions = job.get('permissions', flow.get('permissions'))
             if permissions != {'contents': 'read'}:
                 raise ValueError('ADR 0028 harness job must have only contents: read: '+path+':'+name)
-            inherited = json.dumps(flow.get('env', {}))+' '+body
             if re.search(r'\bsecrets\b', inherited) or job.get('environment') is not None:
                 raise ValueError('ADR 0028 harness job cannot receive secrets/environment: '+path+':'+name)
             jobs.append(path+':'+name)
