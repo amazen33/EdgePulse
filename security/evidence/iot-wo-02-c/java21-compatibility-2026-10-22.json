@@ -1,0 +1,66 @@
+{
+  "base": "c126d1e00b345d0721ed08fbcc4e92a87384055d",
+  "date": "2026-10-22",
+  "compilerRelease": 21,
+  "jdk": "Temurin 21.0.12.1+1",
+  "springBoot": "3.3.4",
+  "springCloud": "2023.0.3",
+  "modules": {
+    "pom.xml": {
+      "sameResolvedNodesAndEdges": true,
+      "nodes": 15,
+      "edges": 14,
+      "beforeTreeSHA256": "dc958661654b9ee0f37161ad98adbc17340efa9d0f5a403988b32a9c8d712c24",
+      "afterTreeSHA256": "dc958661654b9ee0f37161ad98adbc17340efa9d0f5a403988b32a9c8d712c24"
+    },
+    "architecture/pom.xml": {
+      "sameResolvedNodesAndEdges": true,
+      "nodes": 15,
+      "edges": 14,
+      "beforeTreeSHA256": "26af374e43e2d0a245b9395a1681d7db64d0938831cb7e97f4ab82d8ff5a1349",
+      "afterTreeSHA256": "26af374e43e2d0a245b9395a1681d7db64d0938831cb7e97f4ab82d8ff5a1349"
+    },
+    "services/identity/pom.xml": {
+      "sameResolvedNodesAndEdges": true,
+      "nodes": 98,
+      "edges": 97,
+      "beforeTreeSHA256": "4486054ba0923866935dcce1a95bd373eef25dc6515b28c6cb29dbfb4ff4e606",
+      "afterTreeSHA256": "4486054ba0923866935dcce1a95bd373eef25dc6515b28c6cb29dbfb4ff4e606"
+    },
+    "contract-tests/pom.xml": {
+      "sameResolvedNodesAndEdges": true,
+      "nodes": 36,
+      "edges": 35,
+      "beforeTreeSHA256": "2d1f1369a954980ead36c660e3dc17a72b1fbaaf41fadbdb23a1f4e8c3268a79",
+      "afterTreeSHA256": "2d1f1369a954980ead36c660e3dc17a72b1fbaaf41fadbdb23a1f4e8c3268a79"
+    }
+  },
+  "tests": {
+    "services/identity": {
+      "tests": 214,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "contract-tests": {
+      "tests": 61,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "nonJdkRegisterEntriesUnchanged": true,
+  "legacyPolicyUnchanged": true,
+  "identityBytecodeMajor": 65,
+  "testInstrumentation": {
+    "coordinate": "net.bytebuddy:byte-buddy-agent:1.14.19",
+    "scope": "test-only startup agent",
+    "resolvedBy": "maven-dependency-plugin:3.11.0:properties at initialize",
+    "absentFromRuntimeClasspath": true,
+    "newDependency": false
+  },
+  "gateTests": {
+    "licence": 48,
+    "supplyChain": 65
+  }
+}

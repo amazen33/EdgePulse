@@ -8737,19 +8737,22 @@
       "electedSpdx": "Apache-2.0"
     },
     {
-      "id": "tool|temurin|17.0.16+8",
+      "id": "tool|temurin|21.0.12.1+1",
       "ecosystem": "tool",
       "name": "temurin",
-      "version": "17.0.16+8",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "21.0.12.1+1",
+      "recordedOn": "2026-10-22",
+      "verifiedOn": "2026-10-22",
       "locations": [
         "security/toolchain.lock.json"
       ],
-      "integrities": [],
+      "integrities": [
+        "sha256:ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+        "sha256:f9d6e191ab098c0d416e7d588a24420a8621cd2f4720dab2459b8b7b2d2d8b4e"
+      ],
       "spdx": "GPL-2.0-only WITH Classpath-exception-2.0",
       "electedSpdx": "GPL-2.0-only WITH Classpath-exception-2.0",
-      "licenceSource": "https://github.com/adoptium/jdk17u/blob/jdk-17.0.16%2B8/LICENSE",
+      "licenceSource": "https://github.com/adoptium/jdk21u/blob/jdk-21.0.12.1%2B1_adopt/LICENSE",
       "class": "build-tool",
       "unmodified": true
     }

@@ -207,6 +207,13 @@
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
+            <!-- Java 21: use the already-resolved test agent at JVM startup.
+                 No hard-coded repository path or duplicate artifact version. -->
+            <id>identity-test-agent-properties</id>
+            <phase>initialize</phase>
+            <goals><goal>properties</goal></goals>
+          </execution>
+          <execution>
             <id>identity-runtime-classpath</id>
             <phase>generate-test-resources</phase>
             <goals><goal>build-classpath</goal></goals>
@@ -216,6 +223,13 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <argLine>@{argLine} -javaagent:"${net.bytebuddy:byte-buddy-agent:jar}"</argLine>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>

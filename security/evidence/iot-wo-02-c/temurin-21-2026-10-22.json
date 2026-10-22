@@ -1,0 +1,47 @@
+{
+  "workOrder": "IOT-WO-02 Part C, Java-only step",
+  "reviewDate": "2026-10-22",
+  "base": "c126d1e00b345d0721ed08fbcc4e92a87384055d",
+  "version": "21.0.12.1+1",
+  "setupJavaVersion": "21.0.12+101.0.LTS",
+  "releaseURL": "https://github.com/adoptium/temurin21-binaries/releases/tag/jdk-21.0.12.1%2B1",
+  "releasePublishedAt": "2026-08-19T12:10:19Z",
+  "conservativeToolPublished": "2026-08-21",
+  "licence": "GPL-2.0-only WITH Classpath-exception-2.0",
+  "class": "build-tool",
+  "classificationAuthority": "ADR 0026 Decision 1; CI/compiler input only, no shipped JDK/image change",
+  "assets": [
+    {
+      "name": "OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz",
+      "digest": "sha256:ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+      "created_at": "2026-08-19T17:13:13Z",
+      "browser_download_url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz"
+    },
+    {
+      "name": "OpenJDK21U-jdk_x64_windows_hotspot_21.0.12.1_1.zip",
+      "digest": "sha256:f9d6e191ab098c0d416e7d588a24420a8621cd2f4720dab2459b8b7b2d2d8b4e",
+      "created_at": "2026-08-21T11:43:14Z",
+      "browser_download_url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_windows_hotspot_21.0.12.1_1.zip"
+    }
+  ],
+  "licenceSources": [
+    {
+      "url": "https://github.com/adoptium/jdk21u/blob/jdk-21.0.12.1%2B1_adopt/LICENSE",
+      "sha256": "4b9abebc4338048a7c2dc184e9f800deb349366bdf28eb23c2677a77b4c87726"
+    },
+    {
+      "url": "https://github.com/adoptium/jdk21u/blob/jdk-21.0.12.1%2B1_adopt/ADDITIONAL_LICENSE_INFO",
+      "sha256": "a69bce275ba7a3570af6579cb0f55682cd75fedfcd49e0e8e9022270c447c916"
+    },
+    {
+      "url": "https://github.com/adoptium/jdk21u/blob/jdk-21.0.12.1%2B1_adopt/ASSEMBLY_EXCEPTION",
+      "sha256": "75292f03bf23d3db7c985aecc191029b93883200721ed23ed34a2e601463df33"
+    }
+  ],
+  "packageMetadata": {
+    "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_linux_hotspot_21.0.12.1_1.tar.gz.json",
+    "sha256": "38a0a65a131f1044978c857f560e55936c45a384a8d75d96aeb81d6ddf4c4b1d"
+  },
+  "actionSource": "https://github.com/actions/setup-java/blob/c5195efecf7bdfc987ee8bae7a71cb8b11521c00/src/util.ts",
+  "scope": "Static build/tool provenance. No environment integration or MS1 acceptance."
+}
