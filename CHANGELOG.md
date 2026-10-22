@@ -11,6 +11,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-02 Part C, Java-only step: target Java 21 and pin CI Temurin
+  21.0.12.1+1 (setup-java SemVer 21.0.12+101.0.LTS), with verified official
+  archive hashes and a build-tool register entry. Spring and all application
+  dependency versions remain unchanged; the supported Spring trial is separate.
+
 - IOT-WO-08: refresh identity's gRPC to 1.84.0 with Protobuf 3.25.9;
   prove and exclude annotation-only JSpecify and Animal Sniffer artifacts,
   and preserve the exact legacy Error Prone annotations 2.28.0 admission.

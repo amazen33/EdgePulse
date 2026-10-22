@@ -66,7 +66,7 @@ artifacts likewise inherit Apache-2.0 from their published project POMs.
   main classes and is forbidden as a dependency in every scope.
 - Diagnostic graph command: `org.apache.maven.plugins:maven-dependency-plugin:3.7.0:tree`
   (Apache-2.0), an existing Maven diagnostic plugin; not added to CI or a runtime.
-  JDK SHA-256, UTF-8, epoch-time conversion and sorting use the existing Java 17
+  JDK SHA-256, UTF-8, epoch-time conversion and sorting use the pinned Java 21
   target's standard library, with no cryptography dependency added.
 
 ## CI action pins
