@@ -11,6 +11,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-02 Part C, Java-only step: target Java 21 and pin CI Temurin
+  21.0.12.1+1 (setup-java SemVer 21.0.12+101.0.LTS), with verified official
+  archive hashes and a build-tool register entry. Spring and all application
+  dependency versions remain unchanged; the supported Spring trial is separate.
+
 - PR #51 developer review: include workflow-level environment references in
   the ADR 0028 job guard, with planted write/secret and read-only regressions.
 

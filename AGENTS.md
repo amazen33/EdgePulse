@@ -40,9 +40,11 @@ MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.m
 runtime integrations remain pending.
 
 ### Language and implementation status
-The current build remains Java 17 + Spring Boot / Spring Cloud. ADR 0021
-selects Java 21 and a supported Spring line; the build upgrade is pending
-IOT-WO-02. Python remains limited to RAG and standalone adapters
+The build targets Java 21 with pinned Temurin 21.0.12.1+1 in CI. Spring Boot
+3.3.4 and Spring Cloud 2023.0.3 are unchanged. ADR 0021's supported Spring
+line upgrade remains pending IOT-WO-02 Part C; this Java-only change does
+not accept MS1. [Java baseline evidence](docs/runtime/java21-baseline.md)
+records the pin and compatibility checks. Python remains limited to RAG and standalone adapters
 (ADR 0011 Decision 1). The frozen M0–M8 Python reference implementation
 is archived at [archive/python-spec-final](https://github.com/amazen33/EdgePulse/tree/archive/python-spec-final/spec); its former relocation
 is recorded in merged [PR #12](https://github.com/amazen33/EdgePulse/pull/12).

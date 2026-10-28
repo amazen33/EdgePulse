@@ -64,10 +64,15 @@
     },
     {
       "name": "temurin",
-      "version": "17.0.16+8",
+      "version": "21.0.12.1+1",
       "spdx": "GPL-2.0-only WITH Classpath-exception-2.0",
-      "published": "2025-07-15",
-      "licenceSource": "https://github.com/adoptium/jdk17u/blob/jdk-17.0.16%2B8/LICENSE"
+      "published": "2026-08-21",
+      "licenceSource": "https://github.com/adoptium/jdk21u/blob/jdk-21.0.12.1%2B1_adopt/LICENSE",
+      "sha256": [
+        "ce79869e1307ed8ee1e2baa86a412b1eb5b75d10a01006d788a6f968bcfaee94",
+        "f9d6e191ab098c0d416e7d588a24420a8621cd2f4720dab2459b8b7b2d2d8b4e"
+      ],
+      "setupJavaVersion": "21.0.12+101.0.LTS"
     }
   ],
   "artifacts": {

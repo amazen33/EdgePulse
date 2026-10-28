@@ -45,7 +45,7 @@ an ADR alone does not prove implementation, portability or runtime acceptance.
 
 | Concern | Accepted direction / implementation limit | Authority |
 | --- | --- | --- |
-| Runtime | Current Java 17, Spring Boot 3.3 / Spring Cloud 2023.0; Java 21 and supported Spring line in later IOT-WO-02 | 0011, 0012, 0021 |
+| Runtime | Java 21 build/CI baseline; Spring Boot 3.3.4 / Spring Cloud 2023.0.3 unchanged. Supported Spring upgrade remains IOT-WO-02 Part C; [pin and checks](docs/runtime/java21-baseline.md) | 0011, 0012, 0021 |
 | Structure | Autonomous services, versioned contracts, hexagonal ports/adapters; no shared runtime libraries | 0013, 0017 |
 | TB CE and devices | TB CE owns MQTT/HTTP/CoAP transports, devices/assets/relations, telemetry/attributes, rules, alarms and dashboards; unforked | 0020 |
 | Events | TB outbound Kafka node → raw topic → ingestion adapter → canonical topics; Apache Kafka only; outbox/idempotent consumers for EdgePulse service publishing | 0018 as amended by 0021, 0020 |
