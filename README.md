@@ -65,6 +65,10 @@ contracts and APIs as future work. Legacy facts and approvals remain external in
 Feature epics follow MS5 in the approved plan; Deployment Studio is dropped
 because Twinfra supplies deployment.
 
+## Security
+
+See [SECURITY.md](SECURITY.md) for supported versions and private vulnerability reporting.
+
 ## Gates
 
 ```sh
