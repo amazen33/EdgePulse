@@ -11,6 +11,13 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08 Amendments 2 and 3: propose the TB CE 4.3.1.8 supplier
+  qualification and two individual, unapproved OpenJDK Critical dispositions;
+  retain full Linux image comparison evidence and reject new fixable
+  Critical/High identities. Pause the kind rehearsal and remove its node
+  from active inputs while its KEV remains; retain a weekly candidate scan
+  and the 14-day restoration duty. No exception is activated by the proposal.
+
 - IOT-WO-02 Part C, Java-only step: target Java 21 and pin CI Temurin
   21.0.12.1+1 (setup-java SemVer 21.0.12+101.0.LTS), with verified official
   archive hashes and a build-tool register entry. Spring and all application

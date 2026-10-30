@@ -29,6 +29,10 @@ class HarnessPolicy(unittest.TestCase):
         self.put('security/supply-chain-policy.json', (ep.ROOT/'security/supply-chain-policy.json').read_text(encoding='utf-8'))
         self.put('security/vulnerability-exceptions.schema.json', (ep.ROOT/'security/vulnerability-exceptions.schema.json').read_text(encoding='utf-8'))
         self.put('dev/kind/pins.json', (ep.ROOT/'dev/kind/pins.json').read_text(encoding='utf-8'))
+        # Existing five-image rules remain tested independently of the owned pause.
+        pins = sc.read(self.root/'dev/kind/pins.json')
+        pins['kind']['node'] = 'kindest/node:v1.36.4@sha256:'+'a'*64
+        self.put('dev/kind/pins.json', json.dumps(pins))
         self.put('dev/kind/up.ps1', '# SYNTHETIC harness entry point')
         self.put('.github/workflows/synthetic.yml', '''permissions: {contents: read}
 jobs:
@@ -248,7 +252,9 @@ class HarnessRepository(unittest.TestCase):
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))
-        self.assertEqual(len(guard['targets']), 5)
+        self.assertEqual(len(guard['targets']), 4)
+        self.assertEqual(guard['pausedInputs'][0]['repository'], 'docker.io/kindest/node')
+        self.assertEqual(guard['pausedInputs'][0]['restoreWithinDays'], 14)
         self.assertIn('.github/workflows/kind-rehearsal.yml:kind-smoke', guard['readOnlySecretlessJobs'])
 
 

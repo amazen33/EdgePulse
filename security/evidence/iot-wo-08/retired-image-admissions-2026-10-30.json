@@ -1,0 +1,24 @@
+{
+  "authority": "IOT-WO-08 Amendments 2 and 3",
+  "retired": [
+    {
+      "id": "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+      "fingerprint": {
+        "sha256": "4ace6105bc78eaebd73b9aae395045622a3b3e265eb7ab38cc8a197fb26dae82",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "reason": "IOT-WO-08 Amendment 2: paused input"
+    },
+    {
+      "id": "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "fingerprint": {
+        "sha256": "6d362b64447b4a558562073af14bc9024fd656dc762c0d295b18f0f010867d4c",
+        "tier": 2,
+        "due": "2027-04-20"
+      },
+      "reason": "IOT-WO-08 Amendment 3: changed digest requires a full record"
+    }
+  ],
+  "scope": "Removal only. No retained legacy fingerprint, tier or deadline changes."
+}

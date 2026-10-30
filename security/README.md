@@ -80,7 +80,7 @@ tier-3 evidence are required before 2027-04-20. OpenBao's historical Twinfra
 MPL exception remains visible in the policy; no OpenBao component is used
 or registered by this repository's current inputs.
 
-The seven active images have reviewed digest-bound SBOM paths and hashes in
+The original seven image inputs had reviewed digest-bound SBOM paths and hashes in
 the register; [backfill evidence](evidence/supply-chain/image-backfills-2026-10-20.json)
 records the exact transitions and [scan evidence](evidence/supply-chain/scan-summary-2026-10-20.json)
 lists their removed baseline IDs. Six unchanged images add only `imageSBOM`;
@@ -210,3 +210,35 @@ Amendment 1 removes exactly 266 `IOT-WO-08` harness exceptions. The remaining
 36 entries preserve their exact bytes and order. The repository regression
 test compares them with immutable base `c126d1e`; the removal list is in
 `security/evidence/iot-wo-08/harness-reclassification-2026-10-21.json`.
+
+## IOT-WO-08 Amendments 2 and 3: paused kind and proposed TB qualification
+
+The kind node is absent from active image inputs while its Brotli KEV is
+unfixed. `dev/kind/rehearsal-pause.json` records its historical identity and
+the restore duty; `kind-smoke` is explicitly skipped and local up, install
+and smoke scripts refuse before engine access. Chart renders and context
+guard tests still run. The harness policy still has five repositories;
+four are active. KEV rules and the upstream tools remain unchanged.
+
+The weekly watch scans official node candidates on Kubernetes 1.36 with
+the pinned scanners, retaining the SBOM, scan and KEV evidence. It reports
+availability only when the image contains the fixed Brotli version and no
+KEV finding. Restore rehearsal through review within 14 days of the first
+verified fixed publication; a newer candidate does not reset that clock.
+
+TB 4.3.1.8 replaces the old digest with a **pending**, full ADR-0054 record.
+The [supplier review](evidence/iot-wo-08/tb-4.3.1.8-qualification-2026-10-30.md)
+lists five primary-source criteria for architect review. The sixth,
+`supplyChain`, and the reviewed imageSBOM remain pending the full Linux
+comparison and ADR-0049 pass. The `tb-refresh-evidence` job scans both complete
+TB images with one database snapshot and rejects new fixable Critical/High
+identities. Its output is evidence, not an admission bypass.
+
+The two OpenJDK rows stay in
+`vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json`,
+with empty `approvedBy`; the active exceptions ledger is unchanged. CI
+remains blocked until exact-row approval and qualification are complete.
+The two absent old image admissions are retired under the existing
+removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
+preserves their old fingerprints. Every retained legacy deadline and
+fingerprint stays unchanged. Nothing is deployed or accepted as MS3.

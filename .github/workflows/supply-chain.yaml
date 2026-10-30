@@ -97,4 +97,5 @@ jobs:
             target/supply-chain/watch.md
             target/supply-chain/watch-inputs/
             target/supply-chain/watch-candidates/
+            target/supply-chain/paused-kind/
           retention-days: 90

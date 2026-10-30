@@ -1,5 +1,5 @@
 # Twinfra profile. Harness/operator/namespace provisioning is outside this chart.
-image: thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a
+image: thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872
 tb:
   enabled: true
   resources:

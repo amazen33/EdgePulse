@@ -43,6 +43,18 @@ try {
     if (-not $rejected) { throw 'Remote endpoint accepted' }
     Write-Output 'Remote endpoint refused: PASS'
     $global:MockServer = 'https://127.0.0.1:1'
+    if (Test-Path -LiteralPath "$PSScriptRoot/../rehearsal-pause.json") {
+        foreach ($entry in @('up','install','smoke')) {
+            $rejected = $false
+            try { & "$PSScriptRoot/../$entry.ps1" -Engine CI }
+            catch {
+                if ($_.Exception.Message -cne 'Refusing: kind rehearsal is paused by IOT-WO-08 Amendment 2.') { throw }
+                $rejected = $true
+            }
+            if (-not $rejected -or $global:MutationCalls -ne 0) { throw "$entry bypassed the rehearsal pause" }
+        }
+        Write-Output 'Paused up/install/smoke refuse before engine access: three checks PASS.'
+    }
     Invoke-Kube @('get','pods','-n','edgepulse-dev')
     $expected = @('--kubeconfig',$env:KUBECONFIG,'--context','kind-edgepulse-dev','get','pods','-n','edgepulse-dev')
     if (($global:LastKubeArguments -join '|') -cne ($expected -join '|')) { throw 'kubectl arguments changed' }

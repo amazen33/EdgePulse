@@ -221,7 +221,9 @@ class RepositoryWiring(unittest.TestCase):
 
     def test_every_current_image_is_covered_by_immutable_inventory(self):
         plan = ep.inventory(ep.ROOT)
-        self.assertEqual(len(plan['images']), 7)
+        # IOT-WO-08 Amendment 2: the paused node is watch-only, not gated.
+        self.assertEqual(len(plan['images']), 6)
+        self.assertFalse(any(i['target'].startswith('docker.io/kindest/node@') for i in plan['images']))
         expected = set(ep.image_references(ep.ROOT))
         self.assertEqual({i['target'] for i in plan['images']}, expected)
         for item in plan['images']:

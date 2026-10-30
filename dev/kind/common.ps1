@@ -5,6 +5,12 @@ $script:State = Join-Path $script:Repo 'target/kind'
 $script:Pins = Get-Content (Join-Path $PSScriptRoot 'pins.json') -Raw | ConvertFrom-Json
 $script:Context = 'kind-edgepulse-dev'
 
+function Assert-RehearsalActive {
+    if (Test-Path -LiteralPath (Join-Path $PSScriptRoot 'rehearsal-pause.json')) {
+        throw 'Refusing: kind rehearsal is paused by IOT-WO-08 Amendment 2.'
+    }
+}
+
 function Assert-Context {
     $expected = Join-Path $script:State 'kubeconfig'
     if (-not $env:KUBECONFIG -or [IO.Path]::GetFullPath($env:KUBECONFIG) -cne $expected) {

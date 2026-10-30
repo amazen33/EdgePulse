@@ -377,16 +377,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed": {
-        "sha256": "4ace6105bc78eaebd73b9aae395045622a3b3e265eb7ab38cc8a197fb26dae82",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a": {
-        "sha256": "6d362b64447b4a558562073af14bc9024fd656dc762c0d295b18f0f010867d4c",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07": {
         "sha256": "fd00365c0469e38cb7908bfc430052023f3af7c9a9e861e63af02c6c58add788",
         "tier": 2,

@@ -51,7 +51,8 @@ jobs:
           ./dev/kind/tests/guards.ps1
   kind-smoke:
     needs: [changed-paths, openshift-render]
-    if: needs.changed-paths.outputs.harness == 'true'
+    # IOT-WO-08 Amendment 2 E-2(a): restore within 14 days of a verified fixed node image.
+    if: ${{ false }}
     # Informational job, not added to required-check rulesets.
     runs-on: ubuntu-24.04
     timeout-minutes: 45

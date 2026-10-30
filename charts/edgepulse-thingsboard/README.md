@@ -15,7 +15,10 @@ Live arbitrary-UID compatibility remains unverified until the owner-approved run
 An upstream-image incompatibility stops the run for the minimal permissions fix
 specified by the amendment; do not add a privileged init container or fixed UID.
 
-TB is `tb-node` monolith 4.3.1.6, in-memory queue, one replica, at most 4 GiB.
+The proposed TB pin is `tb-node` monolith 4.3.1.8, in-memory queue, one replica,
+at most 4 GiB. IOT-WO-08 qualification and exact OpenJDK exception approval
+remain pending; the kind rehearsal is paused. See the
+[supplier review](../../security/evidence/iot-wo-08/tb-4.3.1.8-qualification-2026-10-30.md).
 Its external CNPG PostgreSQL 18 instance is limited to 2 GiB. The [official TB
 4.3.1.6 installation guide](https://thingsboard.io/docs/installation/ubuntu/)
 uses PostgreSQL 18. Restarts lose in-flight in-memory messages. Memory limits do

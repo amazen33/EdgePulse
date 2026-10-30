@@ -10,6 +10,7 @@ import re
 
 import supply_chain as sc
 import supply_chain_watch as watch
+import edgepulse_kind_pause as kind_pause
 
 
 def policy(root):
@@ -22,7 +23,7 @@ def policy(root):
 
 
 def mentions(text, repositories):
-    return any(re.search(r'(?<![\w./-])(?:docker\.io/)?' +
+    return any(re.search(r'(?<![\w./-])(?:(?:docker\.io|index\.docker\.io|registry-1\.docker\.io)/)?' +
                          re.escape(repo.removeprefix('docker.io/')) + r'(?=[:@\s\x22\x27`,/]|$)', text)
                for repo in repositories)
 
@@ -37,9 +38,13 @@ def check_references(root, references, paths=None):
     import yaml  # The checksum-only/tool-SBOM entrypoints remain stdlib-only.
     config = policy(root)
     repositories = {v['repository'] for v in config['testHarnessImages']}
+    paused = kind_pause.record(root)
+    inactive = {paused['repository']} if paused else set()
     for ref, origins in references.items():
         if ref.split('@')[0] in repositories and any(not p.startswith('dev/kind/') for p in origins):
             raise ValueError('ADR 0028 harness image in shipped input: '+', '.join(origins))
+        if ref.split('@')[0] in inactive:
+            raise ValueError('Paused kind node must not remain an active image input')
     paths = paths if paths is not None else sc.tracked(root)
     texts = {}
     permitted = ('dev/kind/', 'security/evidence/', 'docs/adr/', 'docs/work-orders/', 'tools/ci/tests/')
@@ -58,7 +63,7 @@ def check_references(root, references, paths=None):
                 and Path(path).suffix != '.md' and 'dev/kind/' in text):
             raise ValueError('ADR 0028 harness input reused by packaging: '+path)
         if mentions(text, repositories) and not (path.startswith(permitted) or path in records or path in (
-                'tools/ci/supply_chain_watch.py', 'tools/ci/edgepulse_harness.py')):
+                'tools/ci/supply_chain_watch.py', 'tools/ci/edgepulse_harness.py', 'tools/ci/edgepulse_kind_pause.py')):
             if not path.startswith('.github/workflows/'):
                 raise ValueError('ADR 0028 harness image reference outside harness/records: '+path)
     # A workflow can reach the harness through an intermediate script/action.
@@ -82,8 +87,13 @@ def check_references(root, references, paths=None):
             continue
         flow = yaml.safe_load(text)
         for name, job in flow['jobs'].items():
+            if paused and path == '.github/workflows/kind-rehearsal.yml' and name == 'kind-smoke':
+                if job.get('if') not in (False, '${{ false }}'):
+                    raise ValueError('Paused kind rehearsal job must be explicitly skipped')
             body = json.dumps(job)
             inherited = json.dumps(flow.get('env', {}))+' '+body
+            if inactive and mentions(inherited, inactive):
+                raise ValueError('Paused kind node cannot be executed by a workflow')
             if not (mentions(inherited, repositories) or reached(inherited)):
                 continue
             permissions = job.get('permissions', flow.get('permissions'))
@@ -95,10 +105,10 @@ def check_references(root, references, paths=None):
     if not jobs:
         raise ValueError('ADR 0028 harness workflow coverage unexpectedly empty')
     targets = sorted(ref for ref in references if ref.split('@')[0] in repositories)
-    if len(targets) != len(repositories):
+    if len(targets) != len(repositories-inactive) or {t.split('@')[0] for t in targets} != repositories-inactive:
         raise ValueError('ADR 0028 harness image inventory does not match class list')
     return dict(authority='ADR 0028', targets=targets, references={t:references[t] for t in targets},
-                readOnlySecretlessJobs=sorted(jobs))
+                readOnlySecretlessJobs=sorted(jobs), pausedInputs=[paused] if paused else [])
 
 
 def version(value):
@@ -120,6 +130,9 @@ def release_checks(root, targets, on=None):
     memo, checks = {}, []
     for entry in config['testHarnessImages']:
         repository, family = entry['repository'], entry['pinFamily']
+        paused = kind_pause.record(root)
+        if paused and repository == paused['repository']:
+            continue
         target = next(t for t in targets if t.split('@')[0] == repository)
         upstream = {'kind':'kubernetes-sigs/kind', 'cilium':'cilium/cilium',
                     'cnpg':'cloudnative-pg/cloudnative-pg'}[family]
@@ -192,6 +205,9 @@ def apply(report, guard, checks):
 def markdown(report):
     lines = ['## ADR 0028 test-harness report-only findings', '',
              'Static scan evidence; residual developer/runner risk is owner-accepted by ADR 0028. KEV and staleness block.', '']
+    for paused in report['testHarness'].get('pausedInputs', []):
+        lines.append('- Kind rehearsal paused under '+paused['authority']+
+                     '; node excluded from active inputs; weekly watch retains the 14-day restore duty.')
     for check in report['testHarness']['staleness']:
         lines.append('- `'+sc.safe(check['target'])+'`: newest eligible '+sc.safe(check['newestEligibleRelease'])+
                      ' ('+sc.safe(check['publishedAt'])+'); staleness '+('FAIL' if check['blocked'] else 'pass')+'.')
