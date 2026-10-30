@@ -147,3 +147,33 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
 4. The two OpenJDK rows stay as separate proposals with `approvedBy` empty (Amendment 2 ruling).
 
 **Owner decision (2026-10-30): E-3 ACCEPTED** (full evidence review for TB 4.3.1.8 under the unchanged ladder; E-4 fallback only if a criterion cannot be evidenced).
+
+## Review of PR #56 (2026-10-30, architect)
+
+**PR:** amazen33/EdgePulse#56, commit `e919644` (owner commit, no attribution line).
+- **Full Linux scan** (run 41054030008): six images, the Maven graph and lockfiles; 1,024 findings; **zero KEV**.
+- **TB comparison** (run 41054030074): net improvement 327 → 269, with no new fixable Critical or High identities.
+- **Exactly two blocking rows:** CVE-2026-91403 (Critical, non-KEV, first seen 2026-10-23) in `openjdk-25-jdk-headless` and `openjdk-25-jre-headless` 25.0.4.1+1-1~deb13u1. The fix is 25.0.5+8-1~deb13u1, which no published TB 4.3.1.x image contains yet.
+- **Other checks:** the Maven tests (214 + 61), the supply-chain tests (105), naming, release checks and OpenShift renders all pass. The licence gate fails only because `supplyChain` is pending. `java-platform-bootstrap` fails because Python 3.12.12 is missing on the Ubuntu 26.04 runner: a fault already on main, fixed by PR #55 (whose only failure is the supply-chain gate this PR clears).
+- **Evidence review (E-3):** maturity, governance, activitySupport, securityProcess and adoption cite primary ThingsBoard, GitHub and Docker Hub sources. The earlier third-party adoption link is gone. **Accepted.**
+
+**Proposal review:** `security/vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json`, blob `a716edf`, SHA-256 `2a14597cadf94c4365f1dbad0f446aa251f556ee9bf941d06dd6e5d6f8c953c9`.
+- Each Critical gets a separate row, expiring 2026-11-19 (within the 30-day cap from first-seen), with a checkpoint on 2026-11-12 and no extension in place.
+- The compensating control is that TB runs nowhere: the kind rehearsal is paused and MS3 is not reached.
+- The replacement duty is to promote the first upstream TB patch with the fixed JDK. TB is never forked or rebuilt.
+- **Recommendation: approve both rows**, under the conditions in A-1.
+
+**Owner decisions:**
+- **A-1:** approve both CVE-2026-91403 rows exactly as in the file with the SHA-256 above, under three conditions:
+  1. Starting TB anywhere (kind rehearsal, lab or deployment) before the fixed image voids both rows.
+  2. They expire on 2026-11-19 and are not extended.
+  3. The two OpenJDK Highs that reach the blocking threshold on 2026-11-05 are **not** covered.
+- **A-2:** Codex prepares separate proposals for those two Highs by 2026-11-03 (same pattern, empty `approvedBy`, expiry no later than 2026-11-19), unless an upstream TB patch clears them first.
+
+**Merge order after A-1:**
+1. Codex sets `approvedBy` on the two rows (nothing else changes) and reruns CI.
+2. Codex records `supplyChain` as `pass`, citing the green rerun.
+3. The architect does a final diff review.
+4. The owner merges PR #56 (`java-platform-bootstrap` red is the known main fault).
+5. Codex updates PR #55 from main.
+6. The owner merges PR #55 once green.
