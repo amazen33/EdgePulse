@@ -5,7 +5,7 @@
     "published": "2026-08-26",
     "windowsSha256": "4b22adaa135368c5a465d56bbd8e520cbea87272a06ca00b6078e7b81515c9fc",
     "linuxSha256": "aee6151561422756b764a4ae28e7f44cda5af5a9eead3cc9985112b1de8d8e0d",
-    "node": "kindest/node:v1.36.4@sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed"
+    "kubernetesMinor": "1.36"
   },
   "kubectl": {
     "version": "1.36.5",
@@ -44,11 +44,11 @@
     "publicationSource": "https://github.com/cloudnative-pg/cloudnative-pg/releases/tag/v1.30.1"
   },
   "thingsboard": {
-    "version": "4.3.1.6",
-    "sourceCommit": "c77335f4a524bb9fe0209806672c6ec7aea76141",
+    "version": "4.3.1.8",
+    "sourceCommit": "ebbfc6789b81a4e04cae2711208130fb2841b31f",
     "licence": "Apache-2.0",
-    "published": "2026-09-29",
-    "image": "thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a"
+    "published": "2026-10-26",
+    "image": "thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872"
   },
   "postgresql": {
     "version": "18.6-202610050823-minimal-trixie",

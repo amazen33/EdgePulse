@@ -4,7 +4,7 @@ permissions:
   contents: read
 jobs:
   naming-gate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -75,7 +75,7 @@ jobs:
     #
     # Uses the registered Maven archive, verified by security/bootstrap_maven.py;
     # the same version is used by the licence collector. No wrapper is needed.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0

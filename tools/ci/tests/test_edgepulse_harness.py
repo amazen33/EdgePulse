@@ -29,6 +29,10 @@ class HarnessPolicy(unittest.TestCase):
         self.put('security/supply-chain-policy.json', (ep.ROOT/'security/supply-chain-policy.json').read_text(encoding='utf-8'))
         self.put('security/vulnerability-exceptions.schema.json', (ep.ROOT/'security/vulnerability-exceptions.schema.json').read_text(encoding='utf-8'))
         self.put('dev/kind/pins.json', (ep.ROOT/'dev/kind/pins.json').read_text(encoding='utf-8'))
+        # Existing five-image rules remain tested independently of the owned pause.
+        pins = sc.read(self.root/'dev/kind/pins.json')
+        pins['kind']['node'] = 'kindest/node:v1.36.4@sha256:'+'a'*64
+        self.put('dev/kind/pins.json', json.dumps(pins))
         self.put('dev/kind/up.ps1', '# SYNTHETIC harness entry point')
         self.put('.github/workflows/synthetic.yml', '''permissions: {contents: read}
 jobs:
@@ -244,11 +248,24 @@ class HarnessRepository(unittest.TestCase):
         removed = [v for v in old if json.loads(v)['target'].split('@')[0] in names
                    and json.loads(v)['workOrder'] == 'IOT-WO-08']
         self.assertEqual(len(removed), 266)
-        self.assertEqual(new, [v for v in old if v not in removed])
+        retained = [v for v in old if v not in removed]
+        self.assertEqual(new[:len(retained)], retained)
+        # IOT-WO-08, Review of PR #56 A-1 (owner, 2026-10-30): the
+        # original proposals stay immutable; only these exact approved
+        # copies may be appended. No other row or field is authorized.
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), '2a14597cadf94c4365f1dbad0f446aa251f556ee9bf941d06dd6e5d6f8c953c9')
+        proposals = json.loads(payload)['exceptions']
+        self.assertEqual(len(proposals), 2)
+        self.assertEqual([json.loads(v) for v in new[len(retained):]],
+                         [v | {'approvedBy':'amazen33'} for v in proposals])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))
-        self.assertEqual(len(guard['targets']), 5)
+        self.assertEqual(len(guard['targets']), 4)
+        self.assertEqual(guard['pausedInputs'][0]['repository'], 'docker.io/kindest/node')
+        self.assertEqual(guard['pausedInputs'][0]['restoreWithinDays'], 14)
         self.assertIn('.github/workflows/kind-rehearsal.yml:kind-smoke', guard['readOnlySecretlessJobs'])
 
 

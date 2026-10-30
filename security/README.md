@@ -80,7 +80,7 @@ tier-3 evidence are required before 2027-04-20. OpenBao's historical Twinfra
 MPL exception remains visible in the policy; no OpenBao component is used
 or registered by this repository's current inputs.
 
-The seven active images have reviewed digest-bound SBOM paths and hashes in
+The original seven image inputs had reviewed digest-bound SBOM paths and hashes in
 the register; [backfill evidence](evidence/supply-chain/image-backfills-2026-10-20.json)
 records the exact transitions and [scan evidence](evidence/supply-chain/scan-summary-2026-10-20.json)
 lists their removed baseline IDs. Six unchanged images add only `imageSBOM`;
@@ -210,3 +210,43 @@ Amendment 1 removes exactly 266 `IOT-WO-08` harness exceptions. The remaining
 36 entries preserve their exact bytes and order. The repository regression
 test compares them with immutable base `c126d1e`; the removal list is in
 `security/evidence/iot-wo-08/harness-reclassification-2026-10-21.json`.
+
+## IOT-WO-08 Amendments 2 and 3: paused kind and TB qualification
+
+The kind node is absent from active image inputs while its Brotli KEV is
+unfixed. `dev/kind/rehearsal-pause.json` records its historical identity and
+the restore duty; `kind-smoke` is explicitly skipped and local up, install
+and smoke scripts refuse before engine access. Chart renders and context
+guard tests still run. The harness policy still has five repositories;
+four are active. KEV rules and the upstream tools remain unchanged.
+
+The weekly watch scans official node candidates on Kubernetes 1.36 with
+the pinned scanners, retaining the SBOM, scan and KEV evidence. It reports
+availability only when the image contains the fixed Brotli version and no
+KEV finding. Restore rehearsal through review within 14 days of the first
+verified fixed publication; a newer candidate does not reset that clock.
+
+TB 4.3.1.8 replaces the old digest with a full ADR-0054 record.
+The [supplier review](evidence/iot-wo-08/tb-4.3.1.8-qualification-2026-10-30.md)
+lists the five primary-source criteria accepted in the recorded E-3 review.
+The sixth, `supplyChain`, cites the
+[green Linux ADR-0049 run](https://github.com/amazen33/EdgePulse/actions/runs/41098298463).
+The [green TB comparison](https://github.com/amazen33/EdgePulse/actions/runs/41098298743)
+scans both complete images with one database snapshot and rejects new fixable
+Critical/High identities. The reviewed generated imageSBOM hash is bound to
+the new digest. Final architect diff review and owner merge remain pending;
+these records prove static artifact qualification, not runtime integration.
+
+The immutable pre-approval OpenJDK rows stay in
+`vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json`,
+with empty `approvedBy`. Under A-1, exactly two copies were added to the
+active ledger, changing only `approvedBy` to `amazen33`; the original 36
+active rows are unchanged. Starting TB anywhere before the fixed upstream
+image voids both approvals. They expire 2026-11-19, with no extension, and
+do not cover the two OpenJDK Highs that become blocking on 2026-11-05.
+Separate A-2 proposals are due by 2026-11-03 unless an upstream fix clears
+them. No High approval is granted by the Critical disposition.
+The two absent old image admissions are retired under the existing
+removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
+preserves their old fingerprints. Every retained legacy deadline and
+fingerprint stays unchanged. Nothing is deployed or accepted as MS3.

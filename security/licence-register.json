@@ -23,7 +23,8 @@
       "locations": [
         ".github/workflows/licence-gate.yml",
         ".github/workflows/supply-chain-gate.yaml",
-        ".github/workflows/supply-chain.yaml"
+        ".github/workflows/supply-chain.yaml",
+        ".github/workflows/tb-refresh-evidence.yml"
       ],
       "spdx": "MIT",
       "class": "build-tool",
@@ -47,7 +48,8 @@
         ".github/workflows/licence-gate.yml",
         ".github/workflows/supply-chain-gate.yaml",
         ".github/workflows/supply-chain-tools.yaml",
-        ".github/workflows/supply-chain.yaml"
+        ".github/workflows/supply-chain.yaml",
+        ".github/workflows/tb-refresh-evidence.yml"
       ],
       "integrities": [],
       "spdx": "MIT",
@@ -126,7 +128,8 @@
         ".github/workflows/release.yml",
         ".github/workflows/supply-chain-gate.yaml",
         ".github/workflows/supply-chain-tools.yaml",
-        ".github/workflows/supply-chain.yaml"
+        ".github/workflows/supply-chain.yaml",
+        ".github/workflows/tb-refresh-evidence.yml"
       ],
       "integrities": [],
       "spdx": "MIT",
@@ -143,7 +146,8 @@
       "locations": [
         ".github/workflows/supply-chain-gate.yaml",
         ".github/workflows/supply-chain-tools.yaml",
-        ".github/workflows/supply-chain.yaml"
+        ".github/workflows/supply-chain.yaml",
+        ".github/workflows/tb-refresh-evidence.yml"
       ],
       "spdx": "MIT",
       "class": "build-tool",
@@ -8257,61 +8261,69 @@
       "unmodified": true
     },
     {
-      "id": "oci-image|docker.io/kindest/node|sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
-      "ecosystem": "oci-image",
-      "name": "docker.io/kindest/node",
-      "version": "sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "dev/kind/cluster.yaml",
-        "dev/kind/pins.json"
-      ],
-      "integrities": [
-        "sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed"
-      ],
-      "notes": "Primary upstream project/container packaging licence; full image and OS-package licence SBOM is pending IOT-WO-02 Part B under the dated baseline. Existing source input; no deployment claim.",
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://github.com/kubernetes-sigs/kind/blob/v0.33.0/LICENSE",
-      "class": "allowed",
-      "tier": 2,
-      "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
-      },
-      "imageSBOM": {
-        "path": "target/supply-chain/reviewed/099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed.cdx.json",
-        "sha256": "5af9496f63c032509b78746e5cdda42f465d41087cdbc0374a5ceac5c5b02565"
-      }
-    },
-    {
-      "id": "oci-image|docker.io/thingsboard/tb-node|sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+      "id": "oci-image|docker.io/thingsboard/tb-node|sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
       "ecosystem": "oci-image",
       "name": "docker.io/thingsboard/tb-node",
-      "version": "sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+      "recordedOn": "2026-10-30",
+      "verifiedOn": "2026-10-30",
       "locations": [
         "charts/edgepulse-thingsboard/values.yaml",
         "dev/kind/pins.json"
       ],
       "integrities": [
-        "sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a"
+        "sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872"
       ],
-      "notes": "Primary upstream project/container packaging licence; full image and OS-package licence SBOM is pending IOT-WO-02 Part B under the dated baseline. Existing source input; no deployment claim.",
+      "notes": "IOT-WO-08 E-3 and Review of PR #56 A-1: five supplier criteria accepted; supplyChain evidenced by green Linux run 41098298463 and TB comparison 41098298743. Full artifact qualification, no legacy admission. The two exact Critical exceptions expire 2026-11-19 and are void if TB starts anywhere before the fixed upstream image; Highs are not covered. Final architect diff review and owner merge remain pending. No deployment or milestone claim.",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://github.com/thingsboard/thingsboard/blob/c77335f4a524bb9fe0209806672c6ec7aea76141/LICENSE",
+      "licenceSource": "https://github.com/thingsboard/thingsboard/blob/v4.3.1.8/LICENSE",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "legacy-pending",
-        "due": "2027-04-20"
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://api.github.com/repos/thingsboard/thingsboard/releases/tags/v4.3.1.8",
+            "date": "2026-10-30",
+            "notes": "Stable 4.3.1.8 release, published 2026-10-27T07:41:52Z; draft=false and prerelease=false. Supplier qualification only."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://api.github.com/orgs/thingsboard",
+            "date": "2026-10-30",
+            "notes": "The thingsboard GitHub organization owns thingsboard/thingsboard; the exact 4.3.1.8 POM attributes copyright to The Thingsboard Authors. The official contribution guide identifies the ThingsBoard team as issue reviewers and documents proposal feedback, tests, pull requests and CLA review; the exact-tag PR template requires issue/milestone references, compatibility and tests. See companion review for primary links and source hashes. Vendor/team-maintained project governance; no foundation status, multi-employer count or paid support entitlement is inferred."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://thingsboard.io/docs/releases/releases-table/",
+            "date": "2026-10-30",
+            "notes": "CE 4.3.x is Active LTS through 2027-07-20. Stable patch 4.3.1.8 was published within six months and documents delivered security fixes. The KEV expedite authorizes its shorter cooling-off."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/thingsboard/thingsboard/blob/v4.3.1.8/security.md",
+            "date": "2026-10-30",
+            "notes": "Private disclosure and response process; exact release notes document CVE fixes; official release API publishes SHA-256 checksums for three distribution assets. OpenSSF Scorecard 4.9 dated 2026-10-26 is below the stated target of 6, which ADR-0054 does not define as a hard admission floor. Signed-Releases=0: no signed-artifact or provenance claim. See companion review for primary links and hashes."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41098298463",
+            "date": "2026-10-30",
+            "notes": "Green Linux PR run 41098298463 on owner commit 64ad953: all six active images, Maven graph and lockfiles scanned with pinned Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0; 1,024 findings, zero blockers and zero KEVs. ADR-0049 passed with exactly the two A-1 approved TB Critical rows. Green TB comparison run 41098298743 proves 327 to 269 findings and no new fixable Critical/High identities. Full report uses CISA catalogue 2026.10.29; TB comparison uses 2026.10.30. The reviewed digest-bound SBOM and artifact/report hashes are in the companion review. Starting TB anywhere before the fixed image voids both approvals; expiry 2026-11-19, no extension. The two Highs remain outside A-1 and become blocking on 2026-11-05 if unresolved. Static artifact qualification only, not runtime or milestone acceptance."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://api.github.com/repos/thingsboard/thingsboard",
+            "date": "2026-10-30",
+            "notes": "Primary project metrics read 2026-10-30T12:04:50Z: GitHub 22,631 stars and 6,543 forks; Docker Hub thingsboard/tb-node 5,567,518 pulls. ThingsBoard itself publishes Supertech Agroline as a named end-user platform using its backend in cloud and on-premise installations. See companion review for HTTPS sources and response hashes. Metrics are repository/image-wide cumulative adoption signals, not unique users, production installation counts, CE-only totals or proof of this exact patch or any EdgePulse deployment; the vendor case does not specify edition."
+          }
+        }
       },
       "imageSBOM": {
-        "path": "target/supply-chain/reviewed/36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a.cdx.json",
-        "sha256": "846228ecfb6772d401249006ad32cd6a858d36073d698da07d9bf7ee1eab7c48"
+        "path": "target/supply-chain/reviewed/5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872.cdx.json",
+        "sha256": "b50daf45349bc6a90bf6c6da64cc6c5e9ee2f602f1e0d37467c541026cf70349"
       }
     },
     {

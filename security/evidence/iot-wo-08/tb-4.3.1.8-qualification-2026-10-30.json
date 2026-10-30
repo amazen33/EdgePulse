@@ -1,0 +1,61 @@
+{
+  "workOrder": "IOT-WO-08 Amendment 3",
+  "status": "Evidence recorded; five supplier criteria accepted in Review of PR #56; final architect diff review and owner merge pending",
+  "reviewedOn": "2026-10-30",
+  "candidate": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+  "baseline": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+  "release": "4.3.1.8",
+  "sourceCommit": "ebbfc6789b81a4e04cae2711208130fb2841b31f",
+  "licence": "Apache-2.0",
+  "licenceEvidence": "https://github.com/thingsboard/thingsboard/blob/v4.3.1.8/LICENSE",
+  "licenceSHA256": "c1b9df1275e769f3dbab000d1e457a2d4b0f28eb5da6c77e48dc37eeba202ed7",
+  "criteria": {
+    "maturity": {
+      "result": "pass",
+      "evidence": "https://api.github.com/repos/thingsboard/thingsboard/releases/tags/v4.3.1.8",
+      "date": "2026-10-30",
+      "notes": "Stable 4.3.1.8 release, published 2026-10-27T07:41:52Z; draft=false and prerelease=false. Supplier qualification only."
+    },
+    "governance": {
+      "result": "pass",
+      "evidence": "https://api.github.com/orgs/thingsboard",
+      "date": "2026-10-30",
+      "notes": "The thingsboard GitHub organization owns thingsboard/thingsboard; the exact 4.3.1.8 POM attributes copyright to The Thingsboard Authors. The official contribution guide identifies the ThingsBoard team as issue reviewers and documents proposal feedback, tests, pull requests and CLA review; the exact-tag PR template requires issue/milestone references, compatibility and tests. See companion review for primary links and source hashes. Vendor/team-maintained project governance; no foundation status, multi-employer count or paid support entitlement is inferred."
+    },
+    "activitySupport": {
+      "result": "pass",
+      "evidence": "https://thingsboard.io/docs/releases/releases-table/",
+      "date": "2026-10-30",
+      "notes": "CE 4.3.x is Active LTS through 2027-07-20. Stable patch 4.3.1.8 was published within six months and documents delivered security fixes. The KEV expedite authorizes its shorter cooling-off."
+    },
+    "securityProcess": {
+      "result": "pass",
+      "evidence": "https://github.com/thingsboard/thingsboard/blob/v4.3.1.8/security.md",
+      "date": "2026-10-30",
+      "notes": "Private disclosure and response process; exact release notes document CVE fixes; official release API publishes SHA-256 checksums for three distribution assets. OpenSSF Scorecard 4.9 dated 2026-10-26 is below the stated target of 6, which ADR-0054 does not define as a hard admission floor. Signed-Releases=0: no signed-artifact or provenance claim. See companion review for primary links and hashes."
+    },
+    "supplyChain": {
+      "result": "pass",
+      "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41098298463",
+      "date": "2026-10-30",
+      "notes": "Green Linux PR run 41098298463 on owner commit 64ad953: all six active images, Maven graph and lockfiles scanned with pinned Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0; 1,024 findings, zero blockers and zero KEVs. ADR-0049 passed with exactly the two A-1 approved TB Critical rows. Green TB comparison run 41098298743 proves 327 to 269 findings and no new fixable Critical/High identities. Full report uses CISA catalogue 2026.10.29; TB comparison uses 2026.10.30. The reviewed digest-bound SBOM and artifact/report hashes are in the companion review. Starting TB anywhere before the fixed image voids both approvals; expiry 2026-11-19, no extension. The two Highs remain outside A-1 and become blocking on 2026-11-05 if unresolved. Static artifact qualification only, not runtime or milestone acceptance."
+    },
+    "adoption": {
+      "result": "pass",
+      "evidence": "https://api.github.com/repos/thingsboard/thingsboard",
+      "date": "2026-10-30",
+      "notes": "Primary project metrics read 2026-10-30T12:04:50Z: GitHub 22,631 stars and 6,543 forks; Docker Hub thingsboard/tb-node 5,567,518 pulls. ThingsBoard itself publishes Supertech Agroline as a named end-user platform using its backend in cloud and on-premise installations. See companion review for HTTPS sources and response hashes. Metrics are repository/image-wide cumulative adoption signals, not unique users, production installation counts, CE-only totals or proof of this exact patch or any EdgePulse deployment; the vendor case does not specify edition."
+    }
+  },
+  "scorecard": {
+    "evidence": "https://api.securityscorecards.dev/projects/github.com/thingsboard/thingsboard",
+    "date": "2026-10-26",
+    "readOn": "2026-10-30",
+    "score": 4.9,
+    "target": 6,
+    "commit": "7a53801216e14dd8b2127787f54838ebd7a3a526",
+    "securityPolicyScore": 10,
+    "signedReleasesScore": 0,
+    "scope": "Project-wide default-branch assessment, not the exact CE release commit"
+  }
+}

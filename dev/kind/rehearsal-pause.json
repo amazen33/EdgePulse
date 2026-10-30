@@ -1,0 +1,13 @@
+{
+  "authority": "IOT-WO-08 Amendment 2 E-2(a)",
+  "paused": true,
+  "pausedOn": "2026-10-30",
+  "repository": "docker.io/kindest/node",
+  "kubernetesMinor": "1.36",
+  "lastVersion": "v1.36.4",
+  "lastDigest": "sha256:099e049362a1526b2db71494e1947aae99bd16290d7c895f2b7ea312e3cbfaed",
+  "reason": "CVE-2026-111497 is KEV; no fixed upstream node image exists on the approved Kubernetes line. No KEV exception is granted.",
+  "package": "libbrotli1",
+  "minimumVersion": "1.1.0-2+deb13u1",
+  "restoreWithinDays": 14
+}

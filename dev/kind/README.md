@@ -6,6 +6,20 @@ proves an MS3 fact or creates a milestone receipt. The authoritative scope is
 Local operations need separate owner approvals for up, install, upgrade and down.
 No lab, other project, controller or distro is inspected or changed by a script.
 
+**Paused by IOT-WO-08 Amendment 2 E-2(a), 2026-10-30.** The Kubernetes 1.36
+node image contains a KEV and has been removed from active pins and gated
+inputs. `up`, `install` and `smoke` refuse before engine access; `kind-smoke`
+is skipped. Static chart and context-guard checks still run. The pause marker
+holds historical identity only and is not an executable image input.
+
+The weekly watch scans published upstream node candidates. Restore a
+digest-pinned node containing `libbrotli1 >= 1.1.0-2+deb13u1`, its licence and
+SBOM records, the cluster image and rehearsal job **within 14 days of fixed
+image availability**, through review and CI. Remove the marker only in that
+restoration change. KEV blocking and ADRs 0014/0028 remain unchanged. No kind
+rehearsal or MS3 acceptance is claimed during the pause; cleanup still needs
+the owner's separate approval.
+
 ## Static gate
 
 PowerShell 7, an existing kubectl for local kubeconfig parsing, Python and
@@ -23,8 +37,8 @@ initialization renders. Eleven tests plant forbidden identities, host access,
 external exposure, missing restrictions, cluster-scoped objects and missing CNPG
 version metadata. Guard tests
 parse only the committed credential-free seed, then mock the clients: all four entry points must reject a wrong context before any
-engine call. CI renders on every PR; kind-smoke runs for chart/harness changes
-on a disposable GitHub-hosted runner. It is not a required ruleset check.
+engine call. CI renders on every PR; kind-smoke is paused as described above.
+It is not a required ruleset check.
 
 ## Before the first up
 
@@ -64,21 +78,22 @@ logs or the rehearsal record. Additional Secrets use standard input only.
 
 ## Pins, sources and licences
 
-Every exact digest/checksum is in [pins.json](pins.json); no mutable image tag
-is used for application or node execution. The TB patch was published
-2026-09-29; kind 2026-08-26; CNPG 2026-09-23; Helm 2025-09-11. All predate the
-2026-10-05 cool-off cutoff. Images are **not scanned**: IOT-WO-02 is unmerged.
-This inventory is not a supply-chain or licence-gate pass.
+Active digest/checksum inputs are in [pins.json](pins.json). The paused
+node's historical digest is in [rehearsal-pause.json](rehearsal-pause.json).
+The proposed TB image was published 2026-10-26; its shorter cooling-off is
+authorized by IOT-WO-08's KEV expedite. Kind was published 2026-08-26, CNPG
+2026-09-23 and Helm 2025-09-11. TB's full Linux comparison, imageSBOM and
+ADR-0049 qualification remain pending; this inventory is not an admission.
 
 | Component | Pin / identity | Licence / source |
 | --- | --- | --- |
 | kind | 0.33.0, binary checksums in pins.json | Apache-2.0; [release assets and node index](https://github.com/kubernetes-sigs/kind/releases/tag/v0.33.0) |
-| kind node / Kubernetes | 1.36.4, index digest in pins.json | Apache-2.0; same release |
+| kind node / Kubernetes | Paused; historical 1.36.4 in rehearsal-pause.json, absent from active pins | Apache-2.0; same release |
 | kubectl | 1.36.5, Linux/Windows amd64 checksums | Apache-2.0; [official binaries](https://dl.k8s.io/release/v1.36.5/bin/) |
 | Helm | 3.19.0, Linux/Windows archive checksums | Apache-2.0; [release](https://github.com/helm/helm/releases/tag/v3.19.0), [checksums](https://get.helm.sh/helm-v3.19.0-windows-amd64.zip.sha256sum) |
 | Cilium | 1.20.2, chart SHA-256 in pins.json | Apache-2.0; [upstream chart](https://helm.cilium.io/cilium-1.20.2.tgz) |
 | CNPG | 1.30.1, operator image digest and manifest checksum | Apache-2.0; [release](https://github.com/cloudnative-pg/cloudnative-pg/releases/tag/v1.30.1) |
-| TB CE tb-node | 4.3.1.6, OCI index digest, commit c77335f4a524bb9fe0209806672c6ec7aea76141 | [Apache-2.0 at the pinned source](https://github.com/thingsboard/thingsboard/blob/c77335f4a524bb9fe0209806672c6ec7aea76141/LICENSE) |
+| TB CE tb-node | Proposed 4.3.1.8, OCI index digest, commit ebbfc6789b81a4e04cae2711208130fb2841b31f | [Apache-2.0 at the pinned source](https://github.com/thingsboard/thingsboard/blob/v4.3.1.8/LICENSE) |
 | CNPG PostgreSQL image | 18.6-202610050823-minimal-trixie, OCI index digest | [PostgreSQL](https://www.postgresql.org/about/licence/); [image source](https://github.com/cloudnative-pg/postgres-containers) (Apache-2.0 build packaging) |
 | PyYAML | 6.0.3 | [MIT](https://pypi.org/project/PyYAML/6.0.3/), static test dependency only |
 | actions/checkout | 5.0.0, 08c6903cd8c0fde910a37f88322edcfb5dd907a8 | MIT |

@@ -3,4 +3,4 @@ name: edgepulse-thingsboard
 description: Namespaced TB CE rehearsal packaging; no environment acceptance claim
 type: application
 version: 0.1.0
-appVersion: "4.3.1.6"
+appVersion: "4.3.1.8"

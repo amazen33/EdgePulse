@@ -57,6 +57,9 @@ def canonical(reference):
     if ':' in repository.rsplit('/', 1)[-1]:
         repository = repository.rsplit(':', 1)[0]
     first = repository.split('/')[0]
+    if first in ('index.docker.io', 'registry-1.docker.io'):
+        repository = 'docker.io/'+repository.split('/', 1)[1]
+        first = 'docker.io'
     if '.' not in first and ':' not in first and first != 'localhost':
         repository = 'docker.io/' + (repository if '/' in repository else 'library/' + repository)
     return repository + '@' + digest
@@ -536,8 +539,13 @@ def main():
                                   json.loads(raw), args.root, state if link else None,
                                   harness_guard=guard, staleness=checks)
                 value['testHarness'] = report['testHarness']
-                value['markdown'] = harness.markdown(report)+'\n'+value['markdown']
-                value['status'] = report['status']
+                # IOT-WO-08 Amendment 2: paused kind remains watched, never admitted.
+                with github_reads():
+                    paused = harness.kind_pause.run_watch(args.root, sc.verify_tools(args.tools, args.root),
+                                                         args.out/'paused-kind', args.cache, args.out)
+                value['pausedKindWatch'] = paused
+                value['markdown'] = harness.kind_pause.markdown(paused)+harness.markdown(report)+'\n'+value['markdown']
+                value['status'] = 'failed' if report['status'] != 'passed' or (paused and paused['blocked']) else 'passed'
                 sc.write(args.out/'watch.json', value)
                 (args.out/'watch.md').write_text(value['markdown'], encoding='utf-8')
                 if value['status'] != 'passed':

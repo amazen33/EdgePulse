@@ -71,3 +71,109 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
    - a stale harness image fails;
    - a fixed High in a harness image is report-only and passes.
 6. **What remains under strict ADR-0049:** TB (19 entries, with the 2026-11-12 checkpoint), the executed Maven plugin, and the IOT-WO-02 Part C entries.
+
+## Amendment (2026-10-30, architect): expedite for the Brotli KEV and the TB OpenJDK Critical
+
+**Facts (Codex, nightly scan 41029265094, 2026-10-30).** There are 4 blockers, all first seen 2026-10-23, and none has an exception. They block every PR, including #55.
+
+| Image | Package | Advisory | Why it blocks | Fixed package |
+| --- | --- | --- | --- | --- |
+| kind node | `libbrotli1` 1.1.0-2+b7 | CVE-2026-111497 | Critical, **KEV** | 1.1.0-2+deb13u1 |
+| TB node | `libbrotli1` 1.1.0-2+b7 | CVE-2026-111497 | Critical, **KEV** | 1.1.0-2+deb13u1 |
+| TB node | `openjdk-25-jdk-headless` 25.0.4.1 | CVE-2026-91403 | Critical with a fix (TB is the strict image class) | 25.0.5+8 |
+| TB node | `openjdk-25-jre-headless` 25.0.4.1 | CVE-2026-91403 | Critical with a fix | 25.0.5+8 |
+
+**What the rules allow.** ADR 0014 and ADR 0028 permit **no exception** for a KEV, the harness included.
+
+**Ruling:**
+1. **Expedite now under the KEV rule.** The 14-day cooling-off is waived for releases that fix these findings.
+2. **Codex finds the newest upstream images that contain the fixed packages.** That means a kind node image for our Kubernetes line, and a ThingsBoard 4.3.1.x `tb-node` image.
+   - Package availability in Debian alone does not prove a fixed image exists; check by scanning the candidate digest.
+   - If a fixed image exists, open the refresh PR (pins, register, rescan) under the net-improvement rule.
+3. **No self-rebuild.** TB is never forked, patched or rebuilt (existing rule). The kind node image is not rebuilt either.
+4. **If no fixed image exists for one of them,** Codex stops and reports the candidates and their dates. The owner then chooses between:
+   - **(a) Keep EdgePulse merges blocked** until upstream ships a fixed image.
+   - **(b) Amend ADR 0014** to allow one time-boxed KEV exception **only for images that are not shipped or deployed** (harness and dev-only), with a reachability analysis, the same 14-day leash and checkpoint as Twinfra WO-40 Amendments 10a and 10b, and owner approval.
+
+   Option (b) needs its own ADR amendment; this work order does not grant it.
+5. **The profile's vulnerability-management status is now BLOCKED,** not CONDITIONAL PASS (profile updated).
+
+## Amendment 2 (2026-10-30, architect): partial fix available; options for what remains
+
+**Codex's result (stop rule applied correctly).**
+- **kind v1.36.4** (2026-08-26) is still the newest node image on our line. It still carries `libbrotli1` 1.1.0-2+b7, the KEV.
+- **TB 4.3.1.8** (image 2026-10-26) fixes `libbrotli1` (1.1.0-2+deb13u1), but OpenJDK 25.0.4.1 remains: CVE-2026-91403, Critical; the fix needs 25.0.5+8.
+- The full TB scan failed on Windows because of a filename defect in the pinned Syft, so net improvement is not yet proven.
+
+**Ruling and owner decisions:**
+1. **E-1: promote TB 4.3.1.8** (recommended), because it removes the TB KEV.
+   - Run the **full scan and net-improvement check in CI on Linux**, not on Windows.
+   - The OpenJDK Critical gets **one individual Critical exception per package, 30 days at most**. ADR 0014 caps exceptions by severity and requires evidence. The record states:
+     - the reason: no TB 4.3.1.x image with OpenJDK 25.0.5 exists yet;
+     - reachability: TB is not deployed anywhere, because MS3 is not reached;
+     - a replacement duty: promote the first TB patch with the fixed JDK under the expedite rule;
+     - `approvedBy` empty until the owner approves.
+   - TB is never forked or rebuilt.
+2. **E-2: the kind node image KEV (harness).** ADR 0028 forbids a KEV in a harness image, and no fixed kind node image exists. Options:
+   - **(a), recommended: pause the kind rehearsal.**
+     - Remove the kind node image from the gated inputs, and disable or skip the kind rehearsal job, until kind publishes a node image with `libbrotli1` ≥ 1.1.0-2+deb13u1.
+     - The weekly watch reports when one exists; restore it within 14 days of that.
+     - **No exception is needed, and ADR 0028 stays intact.**
+     - The cost: chart and `dev/kind` changes are not rehearsed in kind meanwhile. Static chart checks still run.
+   - **(b): amend ADR 0028** to allow one 14-day KEV exception for harness-only images that have no secrets and no write permission.
+3. **If the owner accepts E-1 and E-2(a), PR #55 and every other PR can pass again.** The only remaining exceptions are the two OpenJDK ones.
+
+**Owner decisions (2026-10-30): E-1 ACCEPTED** (promote TB 4.3.1.8; one 30-day Critical exception per OpenJDK package, proposed with `approvedBy` empty for row approval in the PR). **E-2 option (a) ACCEPTED** (pause the kind rehearsal; no KEV exception; ADR 0014 and ADR 0028 unchanged).
+
+**Ruling (2026-10-30, architect): option 1, separate proposals; no PR-preview mechanism.**
+- The exceptions schema requires a non-empty `approvedBy`, so the two OpenJDK rows go into a **separate proposal file**, the same pattern as Twinfra R12.
+- CI stays red until the owner approves the exact rows in the PR. Codex then activates them, setting `approvedBy` and changing nothing else, and CI turns green.
+- **No new gate mechanism and no schema change:** building one for two rows is not worth the risk.
+- **The TB digest's `supplyChain` qualification** comes from the full Linux CI scan of the new digest, recorded as the criterion's evidence.
+- **If the licence ladder demands more for the changed TB record** (for example full enterprise-grade records for a changed legacy fingerprint), Codex stops and reports. No criterion is recorded without evidence.
+
+## Amendment 3 (2026-10-30, architect): the TB digest change needs a full ADR-0054 record
+
+**Codex's stop is right.**
+- TB's record is `legacy-pending`. EdgePulse's ladder (`security/licence_ladder.py`) requires all six verified criteria for any changed digest.
+- EdgePulse has **no** security-fix carry-forward rule; Twinfra's ADR-0054 Amendment 1 applies to Twinfra only.
+
+**Ruling: E-3, a full evidence review for TB under the unchanged ladder** (recommended over porting the carry-forward rule, because it produces real assurance and changes no rule).
+1. Codex completes the five missing criteria for ThingsBoard CE 4.3.1.8 from **primary HTTPS sources only**: maturity, governance, activity and support, security process, adoption. Supply chain comes from the full Linux CI scan.
+   - Each criterion needs a `pass` result, an HTTPS evidence link and a date, exactly as the ladder requires.
+   - A criterion that the evidence does not clearly meet is recorded as **not passing**, and Codex stops.
+2. The architect reviews every criterion's evidence in the PR before activation; the owner approves with the PR. This is the two-party rule.
+3. **Fallback, decision E-4, only if a criterion cannot be evidenced:** port the security-fix carry-forward rule (Twinfra ADR-0054 Amendment 1) into EdgePulse as an ADR amendment and ladder change. In phase 1 the architect will propose making carry-forward a shared SEC-01 rule, because a security fix must never be harder than keeping the vulnerable version.
+4. The two OpenJDK rows stay as separate proposals with `approvedBy` empty (Amendment 2 ruling).
+
+**Owner decision (2026-10-30): E-3 ACCEPTED** (full evidence review for TB 4.3.1.8 under the unchanged ladder; E-4 fallback only if a criterion cannot be evidenced).
+
+## Review of PR #56 (2026-10-30, architect)
+
+**PR:** amazen33/EdgePulse#56, commit `e919644` (owner commit, no attribution line).
+- **Full Linux scan** (run 41054030008): six images, the Maven graph and lockfiles; 1,024 findings; **zero KEV**.
+- **TB comparison** (run 41054030074): net improvement 327 → 269, with no new fixable Critical or High identities.
+- **Exactly two blocking rows:** CVE-2026-91403 (Critical, non-KEV, first seen 2026-10-23) in `openjdk-25-jdk-headless` and `openjdk-25-jre-headless` 25.0.4.1+1-1~deb13u1. The fix is 25.0.5+8-1~deb13u1, which no published TB 4.3.1.x image contains yet.
+- **Other checks:** the Maven tests (214 + 61), the supply-chain tests (105), naming, release checks and OpenShift renders all pass. The licence gate fails only because `supplyChain` is pending. `java-platform-bootstrap` fails because Python 3.12.12 is missing on the Ubuntu 26.04 runner: a fault already on main, fixed by PR #55 (whose only failure is the supply-chain gate this PR clears).
+- **Evidence review (E-3):** maturity, governance, activitySupport, securityProcess and adoption cite primary ThingsBoard, GitHub and Docker Hub sources. The earlier third-party adoption link is gone. **Accepted.**
+
+**Proposal review:** `security/vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json`, blob `a716edf`, SHA-256 `2a14597cadf94c4365f1dbad0f446aa251f556ee9bf941d06dd6e5d6f8c953c9`.
+- Each Critical gets a separate row, expiring 2026-11-19 (within the 30-day cap from first-seen), with a checkpoint on 2026-11-12 and no extension in place.
+- The compensating control is that TB runs nowhere: the kind rehearsal is paused and MS3 is not reached.
+- The replacement duty is to promote the first upstream TB patch with the fixed JDK. TB is never forked or rebuilt.
+- **Recommendation: approve both rows**, under the conditions in A-1.
+
+**Owner decisions:**
+- **A-1:** approve both CVE-2026-91403 rows exactly as in the file with the SHA-256 above, under three conditions:
+  1. Starting TB anywhere (kind rehearsal, lab or deployment) before the fixed image voids both rows.
+  2. They expire on 2026-11-19 and are not extended.
+  3. The two OpenJDK Highs that reach the blocking threshold on 2026-11-05 are **not** covered.
+- **A-2:** Codex prepares separate proposals for those two Highs by 2026-11-03 (same pattern, empty `approvedBy`, expiry no later than 2026-11-19), unless an upstream TB patch clears them first.
+
+**Merge order after A-1:**
+1. Codex sets `approvedBy` on the two rows (nothing else changes) and reruns CI.
+2. Codex records `supplyChain` as `pass`, citing the green rerun.
+3. The architect does a final diff review.
+4. The owner merges PR #56 (`java-platform-bootstrap` red is the known main fault).
+5. Codex updates PR #55 from main.
+6. The owner merges PR #55 once green.

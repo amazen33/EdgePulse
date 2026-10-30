@@ -4,6 +4,7 @@ param(
 )
 . "$PSScriptRoot/common.ps1"
 Assert-Context
+Assert-RehearsalActive
 Assert-Engine $Engine -OwnerChecksConfirmed:$OwnerChecksConfirmed
 Initialize-Tools
 $timer = [Diagnostics.Stopwatch]::StartNew()
