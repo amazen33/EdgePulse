@@ -145,6 +145,52 @@ jobs:
         with self.assertRaisesRegex(ValueError, 'only contents: read'):
             self.guard()
 
+    def test_pr57_markdown_chain_does_not_mark_release_job(self):
+        # IOT-WO-08 Amendment 4: reproduce the exact prose-reference chain.
+        self.put('dev/kind/README.md', '# SYNTHETIC harness documentation')
+        self.put('README.md', '[Local kind](dev/kind/README.md)')
+        self.put('CHANGELOG.md', 'SEC-01: add the policy and link it from README.md.')
+        self.put('.github/scripts/release_check.py',
+                 "from pathlib import Path\nPath('CHANGELOG.md').read_text()\n")
+        self.put('.github/workflows/release.yml', '''permissions: {contents: write}
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - run: python .github/scripts/release_check.py check
+''')
+        jobs = self.guard()['readOnlySecretlessJobs']
+        self.assertNotIn('.github/workflows/release.yml:release', jobs)
+        self.assertIn('.github/workflows/synthetic.yml:harness', jobs)
+
+    def test_workflow_script_harness_chain_still_requires_read_only(self):
+        self.put('tools/synthetic.ps1', './dev/kind/up.ps1')
+        self.put('.github/actions/synthetic/action.yml', '''name: SYNTHETIC harness caller
+runs:
+  using: composite
+  steps:
+    - run: ./tools/synthetic.ps1
+      shell: pwsh
+''')
+        for step in ({'run':'./tools/synthetic.ps1'}, {'uses':'./.github/actions/synthetic'}):
+            with self.subTest(step=step):
+                self.flow(lambda job:job.update(steps=[step], permissions={'contents':'write'}))
+                with self.assertRaisesRegex(ValueError, 'only contents: read: .github/workflows/synthetic.yml:harness'):
+                    self.guard()
+                self.flow(lambda job:job.update(permissions={'contents':'read'}))
+                self.assertIn('.github/workflows/synthetic.yml:harness',
+                              self.guard()['readOnlySecretlessJobs'])
+
+    def test_direct_harness_image_job_still_requires_read_only(self):
+        image = 'quay.io/cilium/cilium@sha256:'+'a'*64
+        self.flow(lambda job:job.update(steps=[{'run':'docker inspect '+image}],
+                                       permissions={'contents':'write'}))
+        with self.assertRaisesRegex(ValueError, 'only contents: read: .github/workflows/synthetic.yml:harness'):
+            self.guard()
+        self.flow(lambda job:job.update(permissions={'contents':'read'}))
+        self.assertIn('.github/workflows/synthetic.yml:harness',
+                      self.guard()['readOnlySecretlessJobs'])
+
     def test_kev_in_harness_blocks(self):
         report = self.report(kev=True)
         self.assertEqual(report['status'], 'failed')

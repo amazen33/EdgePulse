@@ -68,13 +68,14 @@ def check_references(root, references, paths=None):
                 raise ValueError('ADR 0028 harness image reference outside harness/records: '+path)
     # A workflow can reach the harness through an intermediate script/action.
     # Conservatively follow literal tracked file names and harness directories.
-    callers = {p for p in paths if p.startswith('dev/kind/')}
+    # IOT-WO-08 Amendment 4: Markdown is prose, never a caller or traversal hop.
+    callers = {p for p in paths if p.startswith('dev/kind/') and Path(p).suffix != '.md'}
     def reached(text):
         return 'dev/kind/' in text or any(c in text or (Path(c).suffix in ('.ps1', '.py', '.sh')
                                                        and Path(c).name in text) for c in callers)
     changed = True
     while changed:
-        added = {p for p, text in texts.items() if p not in callers and not p.startswith(
+        added = {p for p, text in texts.items() if Path(p).suffix != '.md' and p not in callers and not p.startswith(
             ('security/', 'docs/', 'tools/ci/tests/'))
             and reached(text)}
         changed = bool(added)
