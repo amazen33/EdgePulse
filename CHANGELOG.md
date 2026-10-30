@@ -11,6 +11,9 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- SEC-01: add the EdgePulse security disclosure policy with release-stream
+  status and repository scope, and link it from the README.
+
 - IOT-WO-08 Amendments 2 and 3: propose the TB CE 4.3.1.8 supplier
   qualification and two individual, unapproved OpenJDK Critical dispositions;
   retain full Linux image comparison evidence and reject new fixable
