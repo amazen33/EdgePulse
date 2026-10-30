@@ -8274,14 +8274,14 @@
       "integrities": [
         "sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872"
       ],
-      "notes": "IOT-WO-08 Amendments 2/3: proposed TB 4.3.1.8. Five supplier criteria await architect review; supplyChain and reviewed imageSBOM await full Linux CI and exact exception-row approval. No legacy admission or deployment claim.",
+      "notes": "IOT-WO-08 E-3 and Review of PR #56 A-1: five supplier criteria accepted; supplyChain evidenced by green Linux run 41098298463 and TB comparison 41098298743. Full artifact qualification, no legacy admission. The two exact Critical exceptions expire 2026-11-19 and are void if TB starts anywhere before the fixed upstream image; Highs are not covered. Final architect diff review and owner merge remain pending. No deployment or milestone claim.",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
       "licenceSource": "https://github.com/thingsboard/thingsboard/blob/v4.3.1.8/LICENSE",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
             "result": "pass",
@@ -8308,10 +8308,10 @@
             "notes": "Private disclosure and response process; exact release notes document CVE fixes; official release API publishes SHA-256 checksums for three distribution assets. OpenSSF Scorecard 4.9 dated 2026-10-26 is below the stated target of 6, which ADR-0054 does not define as a hard admission floor. Signed-Releases=0: no signed-artifact or provenance claim. See companion review for primary links and hashes."
           },
           "supplyChain": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/actions",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41098298463",
             "date": "2026-10-30",
-            "notes": "No passing qualification recorded. Requires the full Linux current/candidate scan, net-improvement proof and ADR-0049 disposition. Two OpenJDK Critical proposals remain unapproved. This link is a workflow index, not scan evidence."
+            "notes": "Green Linux PR run 41098298463 on owner commit 64ad953: all six active images, Maven graph and lockfiles scanned with pinned Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0; 1,024 findings, zero blockers and zero KEVs. ADR-0049 passed with exactly the two A-1 approved TB Critical rows. Green TB comparison run 41098298743 proves 327 to 269 findings and no new fixable Critical/High identities. Full report uses CISA catalogue 2026.10.29; TB comparison uses 2026.10.30. The reviewed digest-bound SBOM and artifact/report hashes are in the companion review. Starting TB anywhere before the fixed image voids both approvals; expiry 2026-11-19, no extension. The two Highs remain outside A-1 and become blocking on 2026-11-05 if unresolved. Static artifact qualification only, not runtime or milestone acceptance."
           },
           "adoption": {
             "result": "pass",
@@ -8320,6 +8320,10 @@
             "notes": "Primary project metrics read 2026-10-30T12:04:50Z: GitHub 22,631 stars and 6,543 forks; Docker Hub thingsboard/tb-node 5,567,518 pulls. ThingsBoard itself publishes Supertech Agroline as a named end-user platform using its backend in cloud and on-premise installations. See companion review for HTTPS sources and response hashes. Metrics are repository/image-wide cumulative adoption signals, not unique users, production installation counts, CE-only totals or proof of this exact patch or any EdgePulse deployment; the vendor case does not specify edition."
           }
         }
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872.cdx.json",
+        "sha256": "b50daf45349bc6a90bf6c6da64cc6c5e9ee2f602f1e0d37467c541026cf70349"
       }
     },
     {

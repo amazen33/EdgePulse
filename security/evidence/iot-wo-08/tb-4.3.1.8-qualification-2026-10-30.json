@@ -1,6 +1,6 @@
 {
   "workOrder": "IOT-WO-08 Amendment 3",
-  "status": "proposed; architect and owner review pending",
+  "status": "Evidence recorded; five supplier criteria accepted in Review of PR #56; final architect diff review and owner merge pending",
   "reviewedOn": "2026-10-30",
   "candidate": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
   "baseline": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
@@ -35,10 +35,10 @@
       "notes": "Private disclosure and response process; exact release notes document CVE fixes; official release API publishes SHA-256 checksums for three distribution assets. OpenSSF Scorecard 4.9 dated 2026-10-26 is below the stated target of 6, which ADR-0054 does not define as a hard admission floor. Signed-Releases=0: no signed-artifact or provenance claim. See companion review for primary links and hashes."
     },
     "supplyChain": {
-      "result": "pending",
-      "evidence": "https://github.com/amazen33/EdgePulse/actions",
+      "result": "pass",
+      "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41098298463",
       "date": "2026-10-30",
-      "notes": "No passing qualification recorded. Requires the full Linux current/candidate scan, net-improvement proof and ADR-0049 disposition. Two OpenJDK Critical proposals remain unapproved. This link is a workflow index, not scan evidence."
+      "notes": "Green Linux PR run 41098298463 on owner commit 64ad953: all six active images, Maven graph and lockfiles scanned with pinned Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0; 1,024 findings, zero blockers and zero KEVs. ADR-0049 passed with exactly the two A-1 approved TB Critical rows. Green TB comparison run 41098298743 proves 327 to 269 findings and no new fixable Critical/High identities. Full report uses CISA catalogue 2026.10.29; TB comparison uses 2026.10.30. The reviewed digest-bound SBOM and artifact/report hashes are in the companion review. Starting TB anywhere before the fixed image voids both approvals; expiry 2026-11-19, no extension. The two Highs remain outside A-1 and become blocking on 2026-11-05 if unresolved. Static artifact qualification only, not runtime or milestone acceptance."
     },
     "adoption": {
       "result": "pass",

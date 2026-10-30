@@ -1,10 +1,15 @@
 # ThingsBoard CE 4.3.1.8 supplier review
 
-IOT-WO-08 Amendment 3, E-3. Reviewed **2026-10-30**. Proposed for architect
-and owner review; this is not an admission, deployment or milestone receipt.
+IOT-WO-08 Amendment 3, E-3 and Review of PR #56, A-1. Reviewed **2026-10-30**.
+The five supplier criteria were accepted in the
+[recorded review](../../../docs/work-orders/IOT-WO-08-image-and-dependency-refresh.md#review-of-pr-56-2026-10-30-architect).
+The sixth criterion is evidenced by the green Linux reruns below. Final
+architect diff review and owner merge remain pending; this is not a
+deployment or milestone receipt.
 The [machine record](tb-4.3.1.8-qualification-2026-10-30.json) contains the
-unchanged ladder's result, HTTPS evidence and date fields. Supply chain is
-pending; no active exception, legacy admission or gate rule is changed here.
+unchanged ladder's result, HTTPS evidence and date fields. The full register
+record has no legacy admission. A-1's two exact approved exceptions retain
+their conditions; no gate rule or High approval is changed here.
 
 ## Candidate and release scope
 
@@ -39,7 +44,7 @@ No 4.4, source-available release, fork or rebuild is proposed.
   release notes enumerate security fixes. The publisher also
   [explicitly preserves CE 4.3 security updates](https://thingsboard.io/blog/one-thingsboard-source-available/).
   The accepted KEV expedite applies to the shorter cooling-off period.
-- **Security process — pass, with a target shortfall for review:** the
+- **Security process — pass, with a disclosed target shortfall:** the
   [tagged disclosure policy](https://github.com/thingsboard/thingsboard/blob/v4.3.1.8/security.md)
   provides private reporting, investigation and a three-business-day response.
   The exact release documents CVE fixes. The
@@ -92,17 +97,52 @@ reports **4.9**, dated 2026-10-26, for default-branch commit
 `7a53801216e14dd8b2127787f54838ebd7a3a526`. Security-Policy is 10 and
 Signed-Releases is 0. This is below the ADR's target of 6. The accepted
 wording states a target, not an absolute score floor; that interpretation
-and the shortfall require explicit architect review. No score is fabricated,
+and the shortfall were accepted in the recorded E-3 review. No score is fabricated,
 and this assessment does not establish signing or provenance. A verified
 GitHub commit signature is not release-artifact signature evidence.
 
-## Supply-chain qualification remains pending
+## Supply-chain qualification — pass under A-1
 
-The full current/candidate comparison must run with the pinned scanners on
-Linux CI, using one vulnerability database snapshot and the current KEV
-catalogue. It must retain both complete image SBOMs and scan outputs and
-reject newly introduced fixable Critical/High package/advisory identities.
-The earlier Windows package-database check does not replace that comparison.
-The two OpenJDK Critical proposals have empty approval fields and are not
-active exceptions. A scan blocked by those proposals does not qualify as an
-ADR-0049 pass. No supplier criterion establishes real-environment acceptance.
+The [full Linux PR scan](https://github.com/amazen33/EdgePulse/actions/runs/41098298463)
+passed on owner commit `64ad953aeac124ae7a9d60fa574651926972e47a`:
+six active digest-pinned images, the Maven graph (all scopes and executed
+plugin classpaths) and lockfiles; **1,024 findings, zero blockers and zero
+KEVs**. Pinned tools were Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0.
+The Grype database was built 2026-10-30T06:23:28Z. The full scan's fetched
+CISA catalogue was 2026.10.29; the separate TB comparison fetched 2026.10.30.
+These are the catalogues reported by the two runs, not an inferred single
+snapshot. Both report zero KEVs.
+
+The [full current/candidate TB comparison](https://github.com/amazen33/EdgePulse/actions/runs/41098298743)
+also passed. Both complete images used one database snapshot. Findings fell
+**327 → 269**, Critical **9 → 8** and High **83 → 61**, with **zero new
+fixable Critical/High identities**. Brotli is `1.1.0-2+deb13u1` in the
+candidate. Both OpenJDK packages remain `25.0.4.1+1-1~deb13u1`.
+
+The only TB exception matches are the two owner-approved A-1 Critical rows
+for CVE-2026-91403. The original proposal file remains immutable, SHA-256
+`2a14597cadf94c4365f1dbad0f446aa251f556ee9bf941d06dd6e5d6f8c953c9`;
+its active copies differ only by `approvedBy: amazen33`. This is a passing
+ADR-0049 disposition with evidenced exceptions, not a vulnerability-free image.
+
+**A-1 conditions remain binding:** starting TB anywhere (kind rehearsal,
+lab or deployment) before the fixed upstream image voids both rows. They
+expire 2026-11-19, with no in-place extension. They do not cover the two
+OpenJDK Highs, CVE-2026-91415, first seen 2026-10-22 and blocking from
+2026-11-05 if unresolved. Their separate A-2 proposals remain unapproved.
+
+| Retained evidence | Identity / SHA-256 |
+| --- | --- |
+| [Full scan artifact](https://github.com/amazen33/EdgePulse/actions/runs/41098298463/artifacts/12997955992) | `edgepulse-supply-chain-41098298463`, ID `12997955992`; GitHub-reported archive SHA-256 `1305a7684fcfd5d4bd59d5ae335ba98ae11a1906af9dc9db0edbb6c8b2bc5ea0` |
+| Full scan `report.json` | `7fa06ffc8b1ae99519e5455874f3435078bd4157f54b3f562a40c672743d7b0f` |
+| [TB comparison artifact](https://github.com/amazen33/EdgePulse/actions/runs/41098298743/artifacts/12996554331) | `tb-refresh-evidence-41098298743`, ID `12996554331`; GitHub-reported archive SHA-256 `43e7f76724939e7a853ceae635a6810857f49c08257106576f451425566982b1` |
+| TB comparison `report.json` | `94a698eadc4236e93e1cf5d5585894fae0820118db9843873a51d3116ffff4bc` |
+| Reviewed TB CycloneDX SBOM, identical in both runs | `b50daf45349bc6a90bf6c6da64cc6c5e9ee2f602f1e0d37467c541026cf70349` |
+
+The register's `imageSBOM` path is
+`target/supply-chain/reviewed/5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872.cdx.json`.
+It is generated by the pinned Linux scanner and verified against the hash
+above; no placeholder or hand-edited SBOM is used. Linux Maven verification
+passed with **214 identity + 61 contract tests**, no skips; the supply-chain
+suite passed **105 tests**. No supplier criterion, scan or local test
+establishes real-environment acceptance or authorizes starting TB.
