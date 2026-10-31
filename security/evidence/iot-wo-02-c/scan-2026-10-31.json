@@ -1,0 +1,421 @@
+{
+  "workOrder": "IOT-WO-02 Part C (Amendment 6)",
+  "reviewedLocalDate": "2026-11-01",
+  "timeZone": "Africa/Cairo",
+  "scanUTCDate": "2026-10-31",
+  "run": "https://github.com/amazen33/EdgePulse/actions/runs/41235622618",
+  "artifactId": 13056220068,
+  "commit": "4909f2eb5bd54d95478822ee55adf17577f318c1",
+  "event": "push",
+  "policyResult": "passed",
+  "ownerApprovalPending": false,
+  "identitySbomSHA256": "7b51f3ec42249dd7ed2b94f56fa0d074f39b5ec6108192d6b56630b5668d2576",
+  "identityResolvedTreeSHA256": "f8d002d86c2afa1b7a2785b3398584660ed15245052f2dc6e4cc41dcf4c6fcac",
+  "rawOSVMavenSHA256": "6240afc57b7ff99e99858578fcfbecd6bf17901ae6a32b38c9ebb7792bdc30db",
+  "normalizedMavenFindingsSHA256": "91ec43ff266b39d4db349aff10394ca87660692213708410d8e13c3fb06ca4ab",
+  "toolVersions": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "kev": {
+    "catalogVersion": "2026.10.30",
+    "downloadSHA256": "3aa9cf3c01f116362a29d111702979175453c425e3733bde80fc4f6f8e2294e5",
+    "sha256": "f3a0e37bc6e0be13b0b2c2f47d74f2f8e8eb622c43a9f3a34c695e2b5ca52b06"
+  },
+  "runtimeComponents": [
+    {
+      "name": "com.fasterxml.jackson.core:jackson-annotations",
+      "version": "2.21",
+      "source": "https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.pom",
+      "jarSHA256": "53ca085f4a150f703f49e1aabd935bd03b43e1ea3d55d135438292af22cef56b",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "com.google.protobuf:protobuf-java-util",
+      "version": "3.25.9",
+      "source": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util/3.25.9/protobuf-java-util-3.25.9.pom",
+      "jarSHA256": "805da7926a7615f2e26b66634ed352d50364550052163a50c3759d8ac075dc25",
+      "spdx": "BSD-3-Clause",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "commons-logging:commons-logging",
+      "version": "1.4.0",
+      "source": "https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.4.0/commons-logging-1.4.0.pom",
+      "jarSHA256": "d175dbd751dd782a63bde28c7a039520e971f25e84b79c19b8435edc3603e0dc",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "io.micrometer:micrometer-commons",
+      "version": "1.17.2",
+      "source": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-commons/1.17.2/micrometer-commons-1.17.2.pom",
+      "jarSHA256": "af8c85e879025ce30c381e6810e14c4f52b4150894e36c815860d14763271348",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "io.micrometer:micrometer-observation",
+      "version": "1.17.2",
+      "source": "https://repo.maven.apache.org/maven2/io/micrometer/micrometer-observation/1.17.2/micrometer-observation-1.17.2.pom",
+      "jarSHA256": "d3ff53cfa0532dc1af0de349073f9aeb985e01f4b88c1d904350178805859695",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.apache.tomcat.embed:tomcat-embed-core",
+      "version": "11.0.27",
+      "source": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.pom",
+      "jarSHA256": "b71785ff101c0df501064b3e3b8c4a02e4f9cc3047a7fa686c41fc4edc2f0cb4",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.apache.tomcat.embed:tomcat-embed-el",
+      "version": "11.0.27",
+      "source": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-el/11.0.27/tomcat-embed-el-11.0.27.pom",
+      "jarSHA256": "206d6c6b1b6ce67b1c9af9ed0f6f43b4dbbc26164dd47bb49b9aad1583191f33",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.apache.tomcat.embed:tomcat-embed-websocket",
+      "version": "11.0.27",
+      "source": "https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.pom",
+      "jarSHA256": "cbcd7ed6d7428fa71af6572d541a3ef74ceff42dfc523273950fe586062dc60f",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-autoconfigure",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-autoconfigure/4.1.2/spring-boot-autoconfigure-4.1.2.pom",
+      "jarSHA256": "a3582f417c8194a621776d14ea281e072d84e85bdbabc1e02df5c035835b5096",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-http-converter",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-http-converter/4.1.2/spring-boot-http-converter-4.1.2.pom",
+      "jarSHA256": "d1e655ce47617315c6d87e754597928a31d21478b5c28b0e3300963b0915b551",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-jackson",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-jackson/4.1.2/spring-boot-jackson-4.1.2.pom",
+      "jarSHA256": "83a8d3ca9ac434f22e6d148e41ba82aeb52add220484bf7f9551c74323d9cbc7",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-servlet",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.pom",
+      "jarSHA256": "0ff3618e8b37143843d1a8824e42ffd66b4ff73d6225b2087acce4dfc676d0e8",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-starter-jackson",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-jackson/4.1.2/spring-boot-starter-jackson-4.1.2.pom",
+      "jarSHA256": "d580732a43d7bb5793dc7ea8dc67020ab55a0af2e7923454d92758ca31d3c046",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-starter-tomcat-runtime",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.pom",
+      "jarSHA256": "05371dcfb766c50238f3f5cce398622189e3e4f131a3c0c8b583d24f37c99716",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-starter-tomcat",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.pom",
+      "jarSHA256": "a8d9201be15c70d0c3c17205eff462de9d40146f6da131d140e9644105e8b0a0",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-starter-web",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-web/4.1.2/spring-boot-starter-web-4.1.2.pom",
+      "jarSHA256": "7c5127d615cee819211f1b296d96afc5fa834c450ba6ddc37d40d7a9619eef05",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-starter",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter/4.1.2/spring-boot-starter-4.1.2.pom",
+      "jarSHA256": "38e64ef99846b0f64a2cac43c2bc54f729cd13fcd5db25983a99cb5c8669a443",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-tomcat",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.pom",
+      "jarSHA256": "f0b1d8d33b090bc773298005708b4df1576d1c4b1bbf9583afce065580e13002",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-web-server",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-web-server/4.1.2/spring-boot-web-server-4.1.2.pom",
+      "jarSHA256": "e5b2fa7222baf36621566a2d0f7d924aa92a8462680f8e67d972f965ef18356a",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot-webmvc",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.pom",
+      "jarSHA256": "3c39a0578d1e66b5b5371641790a66c89b14f8099731987a7dd6502e2fdd32b5",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework.boot:spring-boot",
+      "version": "4.1.2",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot/4.1.2/spring-boot-4.1.2.pom",
+      "jarSHA256": "1fbf6443a301eb9a098bd024149c0edc6578b073f75da8c98bc1af84c43a8f59",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework:spring-aop",
+      "version": "7.0.10",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/spring-aop/7.0.10/spring-aop-7.0.10.pom",
+      "jarSHA256": "babf50a645f4f788e1267078cf891e472f657cabf65518055cf5214220574e3f",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework:spring-beans",
+      "version": "7.0.10",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/spring-beans/7.0.10/spring-beans-7.0.10.pom",
+      "jarSHA256": "bd67c6fc887afa30cbcb489ff4f82bf19f818e79ab1cf1bef98dff8a289108ec",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework:spring-context",
+      "version": "7.0.10",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/spring-context/7.0.10/spring-context-7.0.10.pom",
+      "jarSHA256": "f0065166b6a5101a871ab8702d6c4011cf39faed370a64e7ef14a3ad2bf2a99a",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework:spring-core",
+      "version": "7.0.10",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/spring-core/7.0.10/spring-core-7.0.10.pom",
+      "jarSHA256": "a236f31a7c07e3a1a8e7839ec5c0d47b5cc75709132db50416d5dad320341f12",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework:spring-expression",
+      "version": "7.0.10",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/spring-expression/7.0.10/spring-expression-7.0.10.pom",
+      "jarSHA256": "12067b66548f7613fa8938ca6051a6d1dd8c397bf478e0bb1adb9936358ec81d",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework:spring-webmvc",
+      "version": "7.0.10",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.pom",
+      "jarSHA256": "8ad0e813999d0ef1c65b8d5e55c21e4a6c0d6895cd3df32a33f9cc57bf9d226a",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "org.springframework:spring-web",
+      "version": "7.0.10",
+      "source": "https://repo.maven.apache.org/maven2/org/springframework/spring-web/7.0.10/spring-web-7.0.10.pom",
+      "jarSHA256": "76ddb03d236547f6852def8cb303e1cf2cd2c1954dec5bf2abd87d11b89dfee7",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "tools.jackson.core:jackson-core",
+      "version": "3.1.7",
+      "source": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.pom",
+      "jarSHA256": "7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    },
+    {
+      "name": "tools.jackson.core:jackson-databind",
+      "version": "3.1.7",
+      "source": "https://repo.maven.apache.org/maven2/tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.pom",
+      "jarSHA256": "48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3",
+      "spdx": "Apache-2.0",
+      "sbomScope": "required",
+      "resolvedScope": "compile",
+      "osvFindings": [],
+      "exceptions": []
+    }
+  ],
+  "otherMavenFindings": [
+    {
+      "package": "com.google.guava:guava",
+      "version": "33.6.0-android",
+      "target": "maven:services/identity/pom.xml",
+      "vulnerability": "CVE-2026-102554",
+      "severity": "High",
+      "fixVersions": [
+        "33.7.2"
+      ],
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "package": "com.google.guava:guava",
+      "version": "33.4.8-jre",
+      "target": "maven:executed-plugin-8",
+      "vulnerability": "CVE-2026-102554",
+      "severity": "High",
+      "fixVersions": [
+        "33.7.2"
+      ],
+      "firstSeen": "2026-10-28"
+    },
+    {
+      "package": "org.apache.commons:commons-lang3",
+      "version": "3.5",
+      "target": "maven:executed-plugin-9",
+      "vulnerability": "CVE-2025-48924",
+      "severity": "Medium",
+      "fixVersions": [
+        "3.18.0"
+      ],
+      "firstSeen": "2026-10-20"
+    },
+    {
+      "package": "org.codehaus.plexus:plexus-utils",
+      "version": "3.1.0",
+      "target": "maven:executed-plugin-9",
+      "vulnerability": "CVE-2025-67030",
+      "severity": "High",
+      "fixVersions": [
+        "3.6.1",
+        "4.0.3"
+      ],
+      "firstSeen": "2026-10-20"
+    }
+  ],
+  "scope": "Static artifact scanning of the exact final Part C dependency set and local/CI code tests only. The 30 new runtime components have zero OSV findings and no exceptions. The other Maven findings listed here are not Part C components, were first seen before this branch and are reported for IOT-WO-08. Not an environment or milestone receipt."
+}

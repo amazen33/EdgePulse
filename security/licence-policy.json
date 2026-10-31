@@ -172,41 +172,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|com.fasterxml.jackson.core:jackson-annotations|2.17.2": {
-        "sha256": "6a1b76f0694b1a3014138543f26c107d0725bfd712936eb95cd0fc3712ed76c0",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|com.fasterxml.jackson.core:jackson-core|2.17.2": {
-        "sha256": "fd7c7b9ed675ed506f32bfcbd6b00e5c3b109c377cf688486a1a4c2d2a7efcd5",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|com.fasterxml.jackson.core:jackson-databind|2.17.2": {
-        "sha256": "ae595bcd7b8b8bb64c9c563b9a01cd1d6dd2854afa4dfe2427422a0b3b781b24",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|com.fasterxml.jackson.dataformat:jackson-dataformat-yaml|2.17.2": {
-        "sha256": "fec2ea8a2cce8d6739ffea1f39446dde841fccc144402bf1eae4d7c2fdf29a5e",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|com.fasterxml.jackson.datatype:jackson-datatype-jdk8|2.17.2": {
-        "sha256": "14bdfd34df325fff5f1b50574d56a99c4639950e9ca6fb27d400c200f0578ee8",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|com.fasterxml.jackson.datatype:jackson-datatype-jsr310|2.17.2": {
-        "sha256": "aab7151911b9e4e8e9b674f57dec0d6fba733f0d43a62a075b670fd8c2f1a190",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|com.fasterxml.jackson.module:jackson-module-parameter-names|2.17.2": {
-        "sha256": "b13c7156154f14e0a68f2e5703b9f407f670ef422ceebc28b1fdb5436d5ede0c",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|com.github.stephenc.jcip:jcip-annotations|1.0-1": {
         "sha256": "431efc6f50783a91e310f6c9ae573313d1b87913e8541195a84ab79bf7c7a1c0",
         "tier": 2,
@@ -242,11 +207,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|com.google.protobuf:protobuf-java-util|3.21.10": {
-        "sha256": "975f4980ff61966f87b7060986c51b7b71a9f0caecb5291b41a0d8f1c6c8a552",
-        "tier": 1,
-        "due": "2027-04-20"
-      },
       "maven|com.networknt:json-schema-validator|1.5.1": {
         "sha256": "86727c33669024e40a4395b7ca13c7fe7bd6cdb648a59bb1431b22dc404597cc",
         "tier": 2,
@@ -272,16 +232,6 @@
         "tier": 2,
         "due": "2027-04-20"
       },
-      "maven|io.micrometer:micrometer-commons|1.13.4": {
-        "sha256": "b1603c16de47af4ee1d0ac567bec8ba944f1a56bebcc1010a8eed852e24377e8",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|io.micrometer:micrometer-observation|1.13.4": {
-        "sha256": "6df4ed2cbacfa7cb227269e17d3dd280aec77ba4117114f590c6bb18a7d0777c",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
       "maven|io.perfmark:perfmark-api|0.27.0": {
         "sha256": "ba9df6a62039f71bee32df2d493b355a00fa57f4a5bf29add9b301206c382447",
         "tier": 2,
@@ -300,81 +250,6 @@
       "maven|org.slf4j:slf4j-api|2.0.16": {
         "sha256": "1320307b400808c2d39f5cf27f5185cd556567a8ccc7462282e26e92045e0fd7",
         "tier": 1,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework.boot:spring-boot-autoconfigure|3.3.4": {
-        "sha256": "bba05c229ae96b13f4daaeb55af2f20e93521e68bd72c1ddb763f8d0cdced1b4",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework.boot:spring-boot-starter-json|3.3.4": {
-        "sha256": "b667e0a65606f0b46dcaa28b6cac34fe70aff38d1d63ea2afcaa1667fe5892f2",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework.boot:spring-boot-starter-tomcat|3.3.4": {
-        "sha256": "31a035cc26f57c99a70b3f7c24d0f347eff26b0562fde33a93fa3f93d01804a9",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework.boot:spring-boot-starter-web|3.3.4": {
-        "sha256": "ca9b5941d0c77fe03141100afc40a264beb9c2eebc8c26226959d04ddf7268c4",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework.boot:spring-boot-starter|3.3.4": {
-        "sha256": "1618a15364a87ffe3ad4a97005bb5e97f4dae81d2e33aa2594d4268c11229931",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework.boot:spring-boot|3.3.4": {
-        "sha256": "43aa287b2023ef0112d6fb27a754f507dea83a3122d596736ad1f610aa229f19",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-aop|6.1.13": {
-        "sha256": "46cafa80b983efc9e98b10b56ef57fa390bafd903bb6449019e7974cdcc9d62e",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-beans|6.1.13": {
-        "sha256": "d0deff3899b6be9c6672ba8c30168f2b7f4e39a62ce92f06d69903bf03f800a4",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-context|6.1.13": {
-        "sha256": "b0fc4a1bbb7746e13b34e48c10b5aaf57e1179537d67edeee0551e715e9608ae",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-core|6.1.13": {
-        "sha256": "8d889063a847023426f63a8f10458e607770f6dc2f960a1e16663354842550ea",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-expression|6.1.13": {
-        "sha256": "2fa52900589510115eecd805191c09d67505f0d79a9a772e0800748c3ad879e4",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-jcl|6.1.13": {
-        "sha256": "d0747a289232877eb99e9696e1a3fda5f8f700aeb2ea3501e814b8888743fe9e",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-webmvc|6.1.13": {
-        "sha256": "135094bf9bb4e777848a1fd4baae3783dd1c136d6ff73d99ac4ac6c6a3fcefd7",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.springframework:spring-web|6.1.13": {
-        "sha256": "47f56de41321f9b1b6c02fb39cddb92119cb22cd17219d6af9fde21975d795ee",
-        "tier": 2,
-        "due": "2027-04-20"
-      },
-      "maven|org.yaml:snakeyaml|2.2": {
-        "sha256": "93d2fa707173d1d7c6957875bc2fadf3da8e2c4e61237fa41d0179c4ad4cacdf",
-        "tier": 2,
         "due": "2027-04-20"
       },
       "oci-image|ghcr.io/cloudnative-pg/cloudnative-pg|sha256:923c267ec29636db3bee20f993d0ec4973fa22998e1adad37da79e4d32b5bc07": {

@@ -212,3 +212,40 @@ The legacy fingerprint (`licence_ladder.fingerprint`) covers every register fiel
    - Part C's **due date is 2026-11-19**, the 30-day Critical limit. Part C moves to the supported Spring Boot line, which on today's support calendar is the 4.x line.
    - Its stop-and-report breakage analysis must arrive early enough for that date. The owner decides the Spring path as soon as Part B merges.
 4. **The PR lists each out-of-support component:** current version, newest public patch and its date, the support end date with its source, the findings, and the Part C reference.
+
+## Amendment 6 (architect, 2026-10-31): merge-ready Part C, the Spring Boot 4.1 line
+
+**Status:** Approved (owner, 2026-10-31).
+**Deadline:** the 16 `IOT-WO-02 Part C` exceptions expire **2026-11-19**. The PR must be open by **2026-11-07** and merged by the **2026-11-12** checkpoint.
+
+### Trial results (branch `codex/iot-wo-02-c-trial`, commits `e5cf4d3`, `3f7eaa6`, `9f48881`)
+
+- **Target:** Spring Boot **4.1.2**. Spring Boot 4.1.x and Spring Framework 7.0.x have OSS support until 2027-07-31 (spring.io; calendars in `security/evidence/iot-wo-02-c/trial-2026-10-31/`). Spring Boot 3.x has no OSS-supported line left.
+- **Build:** `mvn clean verify` passes with 214 identity and 61 contract tests, including REST/gRPC equivalence, ArchUnit and the separate-JVM runtime-logging probes. The Java and naming gates pass on Linux CI.
+- **Findings** (Grype on the identity runtime SBOM, Linux CI run 41227933548): `main` has 43 findings (1 Critical, 16 High); the trial has **1** (1 High: Guava GHSA-xxph-c9ww-hj94, also present on `main` and not caused by the upgrade). **All Spring MVC, Spring Boot and Jackson 2.17.2 findings behind the 16 Part C rows are gone.**
+
+### Scope of the merge-ready PR (start from the trial branch, rebased on `main`)
+
+1. **Keep the trial's code changes as they are:**
+   - Spring Boot 4.1.2; the unused Spring Cloud BOM removed; Tomcat 11.0.27 from Boot's BOM (the Tomcat 10.1.60 overrides removed);
+   - `spring-boot-starter-webmvc-test` replaces `spring-boot-starter-test`;
+   - JSpecify excluded under the IOT-WO-08 annotation-only ruling (evidence: `jspecify-1.0.1-annotation-only.json`);
+   - the Log4j 2.26.1 override kept (Boot 4.1.2 manages 2.25.5, below the ADR 0027 floor);
+   - `protobuf-java-util` pinned to `protobuf.version` (Boot 4.1's BOM would split the protobuf family);
+   - **SnakeYAML out of the shipped runtime:** `application.yml` becomes `application.properties` with the same keys, and SnakeYAML is excluded. It can't pass ADR-0054's governance or security-process criteria.
+   - **Test-only libraries move to test scope:** `json-schema-validator`, `jackson-databind` 2.x and `jackson-dataformat-yaml` serve only `CfgSchemaValidationTest`, and no main code uses them. They return to compile scope, with full records, when main code reads `cfg.yaml`.
+   - **Already admitted versions kept:** `gson` 2.10.1, `j2objc-annotations` 1.3, `slf4j-api` 2.0.16, and gRPC 1.84.0 (`grpc-bom` imported before Spring Boot's BOM).
+2. **Licence gate:**
+   - review every newly imported BOM's licence declaration in `security/maven-bom-licence-evidence.json`, as the trial did for Jetty 12.1.14. The next one is the BOM declaring "EPL-2.0 or GPL-2.0 with Classpath exception". Build-tool BOMs may carry the ADR 0026 families;
+   - **full verified ADR-0054 records** for every new or changed shipped runtime component: the Spring Boot 4.1.2 modules, Spring Framework 7.0.10, Tomcat 11.0.27, Micrometer 1.17.2, Jackson 3.1.7 (`tools.jackson`) and the annotations it uses, `commons-logging` 1.3.6, `protobuf-java-util` 3.25.9, and anything else the final resolved tree shows;
+   - **removal-only retirement** of legacy entries whose components leave the runtime;
+   - stop and report any component whose record can't truthfully pass.
+3. **Supply-chain gate:** remove the 16 `IOT-WO-02 Part C` rows, citing the trial's scan and the PR's own gate run as evidence. The Guava High isn't Part C: it goes to IOT-WO-08 (a refresh, or an exception with first-seen evidence before its 14-day threshold).
+4. **Documentation:** the runtime baseline note (Spring Boot 4.1.2, Spring Framework 7.0.10, Java 21); the status lines in `CLAUDE.md`, `AGENTS.md` and `README.md`; a CHANGELOG entry. No new ADR: ADR 0021 already requires a supported Spring line, and this amendment records the rest.
+
+### Acceptance
+
+- `mvn clean verify` passes, with 214 identity and 61 contract tests or more.
+- CI is green on every required check (`java-platform-bootstrap`, `naming-gate`, `release-checks`, `licence-gate`, `supply-chain-gate`), with no `IOT-WO-02 Part C` exception left.
+- Every new runtime component has a full verified record. Nothing is recorded without evidence.
+- When it merges, MS1 needs only Part D (the quality gate) and its receipt.
