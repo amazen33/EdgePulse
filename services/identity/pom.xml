@@ -58,6 +58,8 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
+        <!-- IOT-WO-08 annotation-only ruling: exact 1.0.1 JAR checked. -->
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
       </exclusions>
     </dependency>
 
@@ -171,13 +173,15 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+      <artifactId>spring-boot-starter-webmvc-test</artifactId>
       <scope>test</scope>
       <exclusions>
         <exclusion>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
+        <!-- IOT-WO-08 annotation-only ruling: exact 1.0.1 JAR checked. -->
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
       </exclusions>
     </dependency>
     <dependency>
