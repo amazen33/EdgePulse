@@ -93,5 +93,43 @@
     "sourceSHA256": "df98e0266219fdbb82562826d79a3a20776a8ba02aa787f0f0765a538654c8a4",
     "readOn": "2026-10-21",
     "reason": "The exact POM header explicitly states OR. Elect EPL-2.0 for this POM-only build input; no runtime permission is inferred."
+  },
+  "org.eclipse.jetty:jetty-bom:12.1.14": {
+    "sha256": "12b8d0878a7eafd9f1de7a50ed2e742881c320a90a970546e3e67b269dd03f4f",
+    "licences": [
+      {
+        "name": "EPL-2.0",
+        "url": "https://www.eclipse.org/legal/epl-2.0/"
+      },
+      {
+        "name": "Apache-2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+      }
+    ],
+    "spdx": "EPL-2.0 OR Apache-2.0",
+    "electedSpdx": "Apache-2.0",
+    "source": "https://github.com/jetty/jetty.project/blob/jetty-12.1.14/LICENSE",
+    "sourceSHA256": "a59137290e5765724793162c89ac3bdd340b00ea3a32207de6e39f6188f1efbb",
+    "readOn": "2026-10-31",
+    "reason": "Part C trial (Spring Boot 4.1.2). Same LICENSE text (identical SHA-256) as the reviewed 12.0.13 entries, which states OR; elect a declared option for this POM-only build input. No runtime permission is inferred."
+  },
+  "org.eclipse.jetty.ee11:jetty-ee11-bom:12.1.14": {
+    "sha256": "e023db6c81ee70cf4387a37ff3d2db84d2b3a2d9901978cd365e0057ea66da79",
+    "licences": [
+      {
+        "name": "EPL-2.0",
+        "url": "https://www.eclipse.org/legal/epl-2.0/"
+      },
+      {
+        "name": "Apache-2.0",
+        "url": "https://www.apache.org/licenses/LICENSE-2.0.txt"
+      }
+    ],
+    "spdx": "EPL-2.0 OR Apache-2.0",
+    "electedSpdx": "Apache-2.0",
+    "source": "https://github.com/jetty/jetty.project/blob/jetty-12.1.14/LICENSE",
+    "sourceSHA256": "a59137290e5765724793162c89ac3bdd340b00ea3a32207de6e39f6188f1efbb",
+    "readOn": "2026-10-31",
+    "reason": "Part C trial (Spring Boot 4.1.2). Same LICENSE text (identical SHA-256) as the reviewed 12.0.13 entries, which states OR; elect a declared option for this POM-only build input. No runtime permission is inferred."
   }
 }
