@@ -42,15 +42,23 @@
         "do_not_enforce_on_create": false,
         "required_status_checks": [
           {
-            "context": "release-checks",
-            "integration_id": 15368
-          },
-          {
             "context": "java-platform-bootstrap",
             "integration_id": 15368
           },
           {
+            "context": "licence-gate",
+            "integration_id": 15368
+          },
+          {
             "context": "naming-gate",
+            "integration_id": 15368
+          },
+          {
+            "context": "release-checks",
+            "integration_id": 15368
+          },
+          {
+            "context": "supply-chain-gate",
             "integration_id": 15368
           }
         ]

@@ -9,6 +9,8 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+Sync the main-and-release ruleset file with the live required checks (licence-gate, supply-chain-gate).
+
 ### Security
 
 - IOT-WO-08 Amendment 4: exclude Markdown prose from harness caller
