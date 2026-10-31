@@ -39,12 +39,11 @@
     <!-- Test JVM startup instrumentation; late evaluation also preserves a
          future coverage agent without changing application/runtime arguments. -->
     <argLine></argLine>
-    <spring-boot.version>3.3.4</spring-boot.version>
+    <spring-boot.version>4.1.2</spring-boot.version>
     <!-- ADR 0027; IOT-WO-06 rulings 2026-10-21: import Log4j's BOM first,
          using direct artifacts without the unsupported Boot logging starter.
          Part C must re-evaluate this override with the Spring line upgrade. -->
     <log4j2.version>2.26.1</log4j2.version>
-    <spring-cloud.version>2023.0.3</spring-cloud.version>
     <archunit.version>1.3.0</archunit.version>
     <protobuf.version>3.25.9</protobuf.version>
     <protobuf-maven-plugin.version>0.6.1</protobuf-maven-plugin.version>
@@ -75,6 +74,12 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- IOT-WO-08: an existing legacy annotation API stays unchanged. -->
+      <dependency>
+        <groupId>jakarta.annotation</groupId>
+        <artifactId>jakarta.annotation-api</artifactId>
+        <version>2.1.1</version>
+      </dependency>
       <!-- IOT-WO-08 clarification 2026-10-21: Error Prone has a real enum;
            preserve the exact already-admitted legacy annotation artifact
            and fingerprint instead of excluding or re-qualifying it. -->
@@ -83,23 +88,8 @@
         <artifactId>error_prone_annotations</artifactId>
         <version>2.28.0</version>
       </dependency>
-      <!-- IOT-WO-02 Amendment 5: same-minor KEV remediation. Explicit
-           entries override the imported Boot BOM without changing its line. -->
-      <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-core</artifactId>
-        <version>10.1.60</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-el</artifactId>
-        <version>10.1.60</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-websocket</artifactId>
-        <version>10.1.60</version>
-      </dependency>
+      <!-- Part C trial: Boot 4 requires Servlet 6.1; use its tested
+           Tomcat 11 BOM rather than the old Boot 3/Tomcat 10 overrides. -->
       <!-- Test classpaths only; no logging-backend or service change. -->
       <dependency>
         <groupId>org.assertj</groupId>
@@ -132,13 +122,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
         <version>${spring-boot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -253,6 +236,14 @@
       <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java</artifactId>
+        <version>${protobuf.version}</version>
+      </dependency>
+      <!-- Part C trial: Spring Boot 4.1's BOM manages protobuf-java-util at
+           4.x, which would split the protobuf family (util 4.x needs the 4.x
+           runtime). Keep it on the same version as protobuf-java. -->
+      <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java-util</artifactId>
         <version>${protobuf.version}</version>
       </dependency>
       <dependency>

@@ -64,7 +64,7 @@
       "evidence": "Effective POM plus gated verify execution log; see docs/work-orders/IOT-WO-02-gates-and-runtime-baseline.md"
     },
     {
-      "coordinates": "org.springframework.boot:spring-boot-maven-plugin:3.3.4",
+      "coordinates": "org.springframework.boot:spring-boot-maven-plugin:4.1.2",
       "binding": "pluginManagement only; unbound",
       "reason": "No gated command reaches these bindings/profiles or explicitly invokes this plugin",
       "evidenceDate": "2026-10-20",
