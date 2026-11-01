@@ -58,6 +58,12 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
+        <!-- IOT-WO-08 annotation-only ruling: exact 1.0.1 JAR checked. -->
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
+        <!-- Part C trial: configuration is application.properties, so the
+             service ships no YAML parser. SnakeYAML cannot pass ADR-0054's
+             governance and security-process criteria. -->
+        <exclusion><groupId>org.yaml</groupId><artifactId>snakeyaml</artifactId></exclusion>
       </exclusions>
     </dependency>
 
@@ -81,18 +87,24 @@
     <!-- cfg.yaml validation against contracts/cfg/cfg.schema.json (ADR
          0012 Decision 3) ; this service validates its own
          configuration directly against the shared contract file; no
-         shared validation library is involved. -->
+         shared validation library is involved. Only tests exercise it
+         today (no main code reads cfg.yaml yet), so these are test scope
+         and do not ship (Part C trial). Move them back to compile scope,
+         with full ADR-0054 records, when main code starts reading cfg.yaml. -->
     <dependency>
       <groupId>com.networknt</groupId>
       <artifactId>json-schema-validator</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.dataformat</groupId>
       <artifactId>jackson-dataformat-yaml</artifactId>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -171,13 +183,15 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+      <artifactId>spring-boot-starter-webmvc-test</artifactId>
       <scope>test</scope>
       <exclusions>
         <exclusion>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-logging</artifactId>
         </exclusion>
+        <!-- IOT-WO-08 annotation-only ruling: exact 1.0.1 JAR checked. -->
+        <exclusion><groupId>org.jspecify</groupId><artifactId>jspecify</artifactId></exclusion>
       </exclusions>
     </dependency>
     <dependency>

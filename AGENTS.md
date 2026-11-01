@@ -35,16 +35,18 @@ MS2 defines contracts; MS4–MS6 implement readiness; MS8–MS9 are joint runs.
 Readiness precedes customer-facing feature work beyond the core. Discovery,
 extraction, transformation and migration orchestration belong to EdgeMig.
 
-MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): in progress; licence-gate code/CI merged in [PR #46](https://github.com/amazen33/EdgePulse/pull/46), supply-chain-gate code/CI merged in [PR #48](https://github.com/amazen33/EdgePulse/pull/48). Part C (runtime) precedes Part D (quality) under Amendment 5; both remain incomplete, and no MS1 receipt is accepted.
+MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): in progress; licence-gate code/CI merged in [PR #46](https://github.com/amazen33/EdgePulse/pull/46), supply-chain-gate code/CI merged in [PR #48](https://github.com/amazen33/EdgePulse/pull/48). Part C (runtime) precedes Part D (quality) under Amendment 5: the Java 21 pin is merged in [PR #54](https://github.com/amazen33/EdgePulse/pull/54), and Amendment 6's Spring Boot 4.1 line is [PR #60](https://github.com/amazen33/EdgePulse/pull/60). Part D remains incomplete, and no MS1 receipt is accepted.
 [MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
 runtime integrations remain pending.
 
 ### Language and implementation status
-The build targets Java 21 with pinned Temurin 21.0.12.1+1 in CI. Spring Boot
-3.3.4 and Spring Cloud 2023.0.3 are unchanged. ADR 0021's supported Spring
-line upgrade remains pending IOT-WO-02 Part C; this Java-only change does
-not accept MS1. [Java baseline evidence](docs/runtime/java21-baseline.md)
-records the pin and compatibility checks. Python remains limited to RAG and standalone adapters
+The build targets Java 21 with pinned Temurin 21.0.12.1+1 in CI. The identity
+service uses Spring Boot 4.1.2 and Spring Framework 7.0.10, a supported Spring
+line (OSS support to 2027-07-31; IOT-WO-02 Part C, [PR #60](https://github.com/amazen33/EdgePulse/pull/60)); the unused
+Spring Cloud BOM is removed. Neither change accepts MS1.
+[Java baseline evidence](docs/runtime/java21-baseline.md) and the
+[Spring Boot 4.1 baseline](docs/runtime/spring-boot-4.1-baseline.md) record
+the pins and checks. Python remains limited to RAG and standalone adapters
 (ADR 0011 Decision 1). The frozen M0–M8 Python reference implementation
 is archived at [archive/python-spec-final](https://github.com/amazen33/EdgePulse/tree/archive/python-spec-final/spec); its former relocation
 is recorded in merged [PR #12](https://github.com/amazen33/EdgePulse/pull/12).
