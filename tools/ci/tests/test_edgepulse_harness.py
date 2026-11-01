@@ -296,7 +296,7 @@ class HarnessRepository(unittest.TestCase):
                    == ['maven:executed-plugin-9', 'org.codehaus.plexus:plexus-utils', '3.1.0', 'CVE-2025-67030']]
         self.assertEqual(len(cleared), 1)
         old = [v for v in old if v not in cleared]
-        names ={v['repository'] for v in h.policy(ep.ROOT)['testHarnessImages']}
+        names = {v['repository'] for v in h.policy(ep.ROOT)['testHarnessImages']}
         removed = [v for v in old if json.loads(v)['target'].split('@')[0] in names
                    and json.loads(v)['workOrder'] == 'IOT-WO-08']
         self.assertEqual(len(removed), 266)
