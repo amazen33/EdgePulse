@@ -210,6 +210,8 @@ first seen before this branch, and the PR does not introduce them:
   (`protobuf-maven-plugin`): GHSA-xxph-c9ww-hj94, High, fixed in 33.7.2,
   first seen 2026-10-28. It blocks from **2026-11-11**.
 - `plexus-utils` 3.1.0 (the `os-maven-plugin` 1.7.1 build extension):
-  CVE-2025-67030, High, fixed in 3.6.1, first seen 2026-10-20. It blocks
-  from **2026-11-03**.
+  CVE-2025-67030, High, fixed in 3.6.1, first seen 2026-10-20. An approved
+  IOT-WO-08 exception covers it until 2026-11-19; draft
+  [PR #61](https://github.com/amazen33/EdgePulse/pull/61) removes the
+  extension and that exception.
 - `commons-lang3` 3.5 (same extension): CVE-2025-48924, Medium, report-only.
