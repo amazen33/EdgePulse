@@ -293,12 +293,38 @@
         </executions>
       </plugin>
     </plugins>
-    <extensions>
-      <extension>
-        <groupId>kr.motd.maven</groupId>
-        <artifactId>os-maven-plugin</artifactId>
-        <version>1.7.1</version>
-      </extension>
-    </extensions>
   </build>
+
+  <!-- IOT-WO-08: protoc and protoc-gen-grpc-java classifiers come from
+       OS-activated profiles, not the os-maven-plugin build extension, whose
+       unmaintained classpath carries plexus-utils 3.1.0 (CVE-2025-67030).
+       The classifiers match the two platforms security/collect_maven.py
+       inventories as code generators; any other platform has no
+       inventoried protoc binary and fails to resolve until one is added. -->
+  <profiles>
+    <profile>
+      <id>protoc-linux-x86_64</id>
+      <activation>
+        <os>
+          <name>Linux</name>
+          <arch>amd64</arch>
+        </os>
+      </activation>
+      <properties>
+        <os.detected.classifier>linux-x86_64</os.detected.classifier>
+      </properties>
+    </profile>
+    <profile>
+      <id>protoc-windows-x86_64</id>
+      <activation>
+        <os>
+          <family>windows</family>
+          <arch>amd64</arch>
+        </os>
+      </activation>
+      <properties>
+        <os.detected.classifier>windows-x86_64</os.detected.classifier>
+      </properties>
+    </profile>
+  </profiles>
 </project>

@@ -15,6 +15,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08: replace the os-maven-plugin build extension with OS-activated
+  profiles for the protoc classifiers, clearing plexus-utils 3.1.0
+  (CVE-2025-67030) from the executed build tools. Retire its twelve
+  build-tool register records removal-only and remove the one cleared
+  `IOT-WO-08` exception (38 to 37 entries).
+
 - IOT-WO-08 Amendment 4: exclude Markdown prose from harness caller
   reachability while retaining workflow, script, action and direct image
   guards, with three regression tests.

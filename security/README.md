@@ -250,3 +250,17 @@ The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and
 fingerprint stays unchanged. Nothing is deployed or accepted as MS3.
+
+## IOT-WO-08: os-maven-plugin removal
+
+The identity build no longer loads the os-maven-plugin 1.7.1 extension,
+which has no newer release and whose classpath carried plexus-utils 3.1.0
+(CVE-2025-67030, High). Two OS-activated profiles in
+`services/identity/pom.xml` set `os.detected.classifier` to
+`linux-x86_64` or `windows-x86_64`, the two classifiers the collector
+already inventories for protoc and protoc-gen-grpc-java. Other platforms
+have no inventoried generator binary and fail to resolve. The twelve
+build-tool records found only on that classpath leave the register
+removal-only, and the cleared exception is removed; the
+[record](evidence/iot-wo-08/os-maven-plugin-removal-2026-11-01.json)
+keeps their exact bytes. No component or exception is added.

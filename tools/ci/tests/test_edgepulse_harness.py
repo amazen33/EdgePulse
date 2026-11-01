@@ -290,7 +290,13 @@ class HarnessRepository(unittest.TestCase):
         blocks = lambda text:re.findall(r'^    \{\n.*?^    \}', text, re.M | re.S)
         old, new = blocks(before), blocks(after)
         self.assertEqual(len(old), 302)
-        names = {v['repository'] for v in h.policy(ep.ROOT)['testHarnessImages']}
+        # IOT-WO-08 item 1: removing the os-maven-plugin build extension
+        # clears exactly this executed-plugin row; nothing else changes.
+        cleared = [v for v in old if [json.loads(v)[k] for k in ('target', 'package', 'version', 'vulnerability')]
+                   == ['maven:executed-plugin-9', 'org.codehaus.plexus:plexus-utils', '3.1.0', 'CVE-2025-67030']]
+        self.assertEqual(len(cleared), 1)
+        old = [v for v in old if v not in cleared]
+        names ={v['repository'] for v in h.policy(ep.ROOT)['testHarnessImages']}
         removed = [v for v in old if json.loads(v)['target'].split('@')[0] in names
                    and json.loads(v)['workOrder'] == 'IOT-WO-08']
         self.assertEqual(len(removed), 266)
