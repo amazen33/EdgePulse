@@ -304,8 +304,16 @@ class HarnessRepository(unittest.TestCase):
         self.assertEqual(sc.sha(payload), '2a14597cadf94c4365f1dbad0f446aa251f556ee9bf941d06dd6e5d6f8c953c9')
         proposals = json.loads(payload)['exceptions']
         self.assertEqual(len(proposals), 2)
+        # IOT-WO-08 A-2 (owner, 2026-11-02): the two OpenJDK High copies
+        # of this exact proposal follow the A-1 copies, changing only
+        # approvedBy.
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-tb-openjdk-high-2026-10-31.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), 'a2df007b98c9aed735c4cb55590e004df8d9f6f82cae67b6eb591b1091c366f1')
+        highs = json.loads(payload)['exceptions']
+        self.assertEqual(len(highs), 2)
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v | {'approvedBy':'amazen33'} for v in proposals])
+                         [v | {'approvedBy':'amazen33'} for v in proposals + highs])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))
