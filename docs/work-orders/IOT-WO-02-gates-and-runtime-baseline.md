@@ -249,3 +249,9 @@ The legacy fingerprint (`licence_ladder.fingerprint`) covers every register fiel
 - CI is green on every required check (`java-platform-bootstrap`, `naming-gate`, `release-checks`, `licence-gate`, `supply-chain-gate`), with no `IOT-WO-02 Part C` exception left.
 - Every new runtime component has a full verified record. Nothing is recorded without evidence.
 - When it merges, MS1 needs only Part D (the quality gate) and its receipt.
+
+### Review dispositions (owner, 2026-11-02, PR #60)
+
+- **Commons Logging 1.4.0** replaces the 1.3.6 named in item 2: accepted. It is the project's current release, and the build and runtime-logging tests pass.
+- **Spring Session BOM 4.1.1:** the POM declares "Broadcom Foundation License" with no URL; the exact-tag `LICENSE.txt` is Apache-2.0. Apache-2.0 accepted for this POM-only import, which is never on a classpath. Re-check at the next Spring Boot upgrade.
+- The 22 Spring Boot, Spring Framework and Micrometer records pass maturity only once ADR 0014's 14-day cool-off ends on 2026-11-05. No waiver.

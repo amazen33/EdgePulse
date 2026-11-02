@@ -148,7 +148,7 @@ Apache-2.0, tier 2 ([tagged LICENSE](https://github.com/FasterXML/jackson-databi
 
 Apache-2.0, tier 2 ([tagged LICENSE](https://github.com/apache/commons-logging/blob/rel/commons-logging-1.4.0/LICENSE.txt)).
 
-- **Version choice (reviewer: deviation from Amendment 6):** Amendment 6
+- **Version choice (deviation from Amendment 6, owner-accepted 2026-11-02):** Amendment 6
   names 1.3.6, the version Spring Boot 4.1.2 manages. 1.3.6 was published
   2026-03-04, and the [project page](https://commons.apache.org/proper/commons-logging/)
   lists 1.4.0 as the current release. The root POM overrides to 1.4.0;

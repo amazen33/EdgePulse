@@ -194,6 +194,6 @@
     "source": "https://github.com/spring-projects/spring-session/blob/4.1.1/LICENSE.txt",
     "sourceSHA256": "00b3a7b0bb5bd5a1f1983260dfea0c8b404efa2f9c8dfc9968e05f9e76af28c7",
     "readOn": "2026-10-31",
-    "reason": "DISCREPANCY FOR REVIEWER: the POM declares \"Broadcom Foundation License\" with no URL, but the exact 4.1.1 tag LICENSE.txt is the Apache License 2.0 and GitHub reports Apache-2.0. No other Spring POM in the build declares this name (Spring Framework 7.0.10 and Spring Boot 4.1.2 declare Apache-2.0). Recorded as Apache-2.0 from the tagged source for this POM-only build input, which EdgePulse never uses; no runtime permission is inferred. Reviewer to accept or reject."
+    "reason": "POM/LICENCE DISCREPANCY, owner-accepted 2026-11-02: the POM declares \"Broadcom Foundation License\" with no URL, but the exact 4.1.1 tag LICENSE.txt is the Apache License 2.0 and GitHub reports Apache-2.0. No other Spring POM in the build declares this name (Spring Framework 7.0.10 and Spring Boot 4.1.2 declare Apache-2.0). Recorded as Apache-2.0 from the tagged source for this POM-only build input, which EdgePulse never uses; no runtime permission is inferred. The owner accepted Apache-2.0 from the tagged LICENSE.txt (IOT-WO-02 Amendment 6 review); re-check at the next Spring Boot upgrade."
   }
 }
