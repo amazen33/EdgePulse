@@ -169,6 +169,7 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
   2. They expire on 2026-11-19 and are not extended.
   3. The two OpenJDK Highs that reach the blocking threshold on 2026-11-05 are **not** covered.
 - **A-2:** Codex prepares separate proposals for those two Highs by 2026-11-03 (same pattern, empty `approvedBy`, expiry no later than 2026-11-19), unless an upstream TB patch clears them first.
+  - **Approved (owner, 2026-11-02):** "I approve both rows" for proposal `security/vulnerability-exception-proposals/iot-wo-08-tb-openjdk-high-2026-10-31.json`, SHA-256 `a2df007b98c9aed735c4cb55590e004df8d9f6f82cae67b6eb591b1091c366f1`, under the A-1 conditions. No upstream TB 4.3.1.x patch clears them; IOT-WO-09 is the replacement.
 
 **Merge order after A-1:**
 1. Codex sets `approvedBy` on the two rows (nothing else changes) and reruns CI.
