@@ -38,10 +38,10 @@
       "notes": "Private Google vulnerability intake and coordinated advisories. OpenSSF Scorecard 8.8 dated 2026-11-02T18:15:11Z; exact JAR/POM hashes retained."
     },
     "supplyChain": {
-      "result": "pending",
-      "evidence": "https://github.com/amazen33/EdgePulse/actions/workflows/supply-chain-gate.yaml",
+      "result": "pass",
+      "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41642485897",
       "date": "2026-11-03",
-      "notes": "Pending the exact candidate full Linux CI scan and ADR-0049 disposition. No pass is asserted from the previous version or Windows build."
+      "notes": "Full Linux/amd64 ADR-0049 run 41642485897 passed; exact candidate JAR hashes match both scanned BOMs; zero findings in the two targets, zero blockers, no introduced fixable Critical/High identity and no Guava exception. See guava-33.7.2-scan-2026-11-03.json."
     },
     "adoption": {
       "result": "pass",
@@ -131,7 +131,7 @@
     "skipped": 0
   },
   "limits": [
-    "Linux supply-chain validation is pending; no clearance is asserted yet.",
+    "Full Linux supply-chain run 41642485897 passed; exact candidate scan record retained separately.",
     "The separately pinned Maven 3.9.11 distribution bundles its own Guava 33.4.8-jre; this request changes the two named project/plugin scan targets only.",
     "The 22 inherited Spring cooling-off records are unchanged.",
     "No deployment or real-backend acceptance."
@@ -242,5 +242,6 @@
     "identityBomSHA256": "b6059c7e55c81d90e51a11d12381b2517a4f26137777f18f4e3ef51f4a26465a",
     "identityTreeSHA256": "aba9b0c482255200fc17e95c7f71fd318a6bd26ccd49d4b5992774c71f0d36d6",
     "pluginBomSHA256": "5c5a09244cd4f0bb5862fff60f6abef04fec78d123e412f514a295ed4b599504"
-  }
+  },
+  "linuxScanRecord": "guava-33.7.2-scan-2026-11-03.json"
 }

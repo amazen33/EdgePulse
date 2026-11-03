@@ -999,7 +999,7 @@
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
             "result": "pass",
@@ -1026,10 +1026,10 @@
             "notes": "Private Google vulnerability intake and coordinated advisories. OpenSSF Scorecard 8.8 dated 2026-11-02T18:15:11Z; exact JAR/POM hashes retained."
           },
           "supplyChain": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/actions/workflows/supply-chain-gate.yaml",
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41642485897",
             "date": "2026-11-03",
-            "notes": "Pending the exact candidate full Linux CI scan and ADR-0049 disposition. No pass is asserted from the previous version or Windows build."
+            "notes": "Full Linux/amd64 ADR-0049 run 41642485897 passed; exact candidate JAR hashes match both scanned BOMs; zero findings in the two targets, zero blockers, no introduced fixable Critical/High identity and no Guava exception. See guava-33.7.2-scan-2026-11-03.json."
           },
           "adoption": {
             "result": "pass",
@@ -1039,7 +1039,7 @@
           }
         }
       },
-      "notes": "IOT-WO-08 Guava refresh: full runtime qualification; supply-chain result remains pending until the exact Linux CI run is reviewed. No legacy admission."
+      "notes": "IOT-WO-08 Guava refresh: full verified ADR-0054 runtime qualification; exact artifact cleared by the linked full Linux ADR-0049 run. No legacy admission or runtime exception."
     },
     {
       "id": "maven|com.google.guava:guava|33.7.2-jre",

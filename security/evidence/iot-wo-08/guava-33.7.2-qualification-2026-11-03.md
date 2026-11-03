@@ -52,10 +52,13 @@ Read on 2026-11-03, following the
   and release identify the allocation fix. The supplier's
   [OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/google/guava)
   is 8.8, dated 2026-11-02T18:15:11Z; the response hash is recorded.
-- **Supply chain: pending.** The exact candidate full Linux CI scan and
-  ADR-0049 disposition must be linked here before marking this criterion
-  and the runtime record verified. Neither a previous-version scan nor a
-  Windows build is accepted as that evidence.
+- **Supply chain: pass.** The exact candidate
+  [full Linux/amd64 CI run](https://github.com/amazen33/EdgePulse/actions/runs/41642485897)
+  passed ADR-0049 with zero blockers, no introduced fixable Critical/High
+  identity, and zero findings or exceptions in either requested Guava target.
+  The [scan record](guava-33.7.2-scan-2026-11-03.json) binds the artifact,
+  exact BOM/JAR hashes, raw OSV results, tool versions and before/after rows.
+  The runtime Guava record now has all six verified criteria.
 - **Adoption: pass.** The supplier's tagged README describes extensive use
   within Google Java projects and by other companies. This is library-family
   adoption evidence; it does not claim a named installation uses this patch.
@@ -75,8 +78,8 @@ collector proved they were absent from the resolved inventory.
 `mvn -B -f pom.xml clean verify` passed locally on Windows with registered
 Maven 3.9.11 and Temurin 21.0.12.1+1: identity 214, contract tests 61,
 including 15 REST/gRPC transport-equivalence tests; no failures or skips.
-These checks preserve legitimate behavior; the pinned Linux scan is the
-remaining security-clearance proof. No native-deserialization denial-of-service
+These checks preserve legitimate behavior; the pinned Linux scan supplies
+the static security-clearance evidence above. No native-deserialization denial-of-service
 PoC was executed.
 
 The Maven 3.9.11 distribution separately bundles Guava 33.4.8-jre. The
