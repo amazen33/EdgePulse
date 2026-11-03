@@ -51,6 +51,8 @@
          protobuf-java 3.25.9. Keep the runtime and protoc aligned on that
          supported Java maintenance line; no Spring or Java line change. -->
     <grpc.version>1.84.0</grpc.version>
+    <!-- IOT-WO-08: CVE-2026-102554; both flavours share the patched release. -->
+    <guava.version>33.7.2</guava.version>
     <!-- Required at compile time by grpc-java generated stubs on Java 9+
          (javax.annotation.Generated), per grpc-java's own README. -->
     <tomcat-annotations-api.version>6.0.53</tomcat-annotations-api.version>
@@ -74,6 +76,12 @@
 
   <dependencyManagement>
     <dependencies>
+      <!-- IOT-WO-08: keep gRPC's Android flavour, with the deserialization fix. -->
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${guava.version}-android</version>
+      </dependency>
       <!-- IOT-WO-08: an existing legacy annotation API stays unchanged. -->
       <dependency>
         <groupId>jakarta.annotation</groupId>
@@ -430,6 +438,12 @@
           <version>${protobuf-maven-plugin.version}</version>
           <!-- Amendment 5: retain the generator; patch its build-only realm. -->
           <dependencies>
+            <!-- IOT-WO-08: project dependency management does not control plugins. -->
+            <dependency>
+              <groupId>com.google.guava</groupId>
+              <artifactId>guava</artifactId>
+              <version>${guava.version}-jre</version>
+            </dependency>
             <dependency>
               <groupId>org.apache.maven</groupId>
               <artifactId>maven-core</artifactId>
