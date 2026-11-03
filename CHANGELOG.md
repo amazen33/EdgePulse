@@ -11,9 +11,23 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Changed
 
+- IOT-WO-02 Part C (Amendment 6): move the identity service to Spring Boot
+  4.1.2 and Spring Framework 7.0.10, a supported Spring line, with Tomcat
+  11.0.27, Jackson 3.1.7, Micrometer 1.17.2 and Commons Logging 1.4.0.
+  Remove the unused Spring Cloud BOM and the Tomcat 10.1 overrides. Replace
+  `application.yml` with `application.properties` so SnakeYAML leaves the
+  shipped runtime, and move test-only libraries to test scope. Record
+  ADR-0054 qualification for the 30 new runtime components, review six new
+  imported BOM licences, retire departed legacy admissions removal-only, and
+  remove the 16 `IOT-WO-02 Part C` vulnerability exceptions. MS1 still
+  needs Part D and its receipt.
 - Sync the main-and-release ruleset file with the live required checks (licence-gate, supply-chain-gate).
 
 ### Security
+
+- IOT-WO-08: pin identity runtime Guava to 33.7.2-android and the Protobuf
+  generator plugin classpath to 33.7.2-jre for CVE-2026-102554, retaining
+  the gRPC annotation exclusions and independent runtime/plugin inventories.
 
 - IOT-WO-08 Amendment 4: exclude Markdown prose from harness caller
   reachability while retaining workflow, script, action and direct image

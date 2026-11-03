@@ -294,7 +294,13 @@ class HarnessRepository(unittest.TestCase):
         removed = [v for v in old if json.loads(v)['target'].split('@')[0] in names
                    and json.loads(v)['workOrder'] == 'IOT-WO-08']
         self.assertEqual(len(removed), 266)
-        retained = [v for v in old if v not in removed]
+        # IOT-WO-02 Amendment 6 (owner, 2026-10-31): the Spring Boot 4.1
+        # line removes exactly the 16 'IOT-WO-02 Part C' rows; every other
+        # retained row keeps its bytes and order.
+        part_c = [v for v in old if v not in removed
+                  and json.loads(v)['workOrder'] == 'IOT-WO-02 Part C']
+        self.assertEqual(len(part_c), 16)
+        retained = [v for v in old if v not in removed and v not in part_c]
         self.assertEqual(new[:len(retained)], retained)
         # IOT-WO-08, Review of PR #56 A-1 (owner, 2026-10-30): the
         # original proposals stay immutable; only these exact approved

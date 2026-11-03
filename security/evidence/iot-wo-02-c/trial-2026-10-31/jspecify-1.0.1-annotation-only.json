@@ -1,0 +1,51 @@
+{
+  "rule": "IOT-WO-08 annotation-only artifacts introduced by a refresh (2026-10-21)",
+  "status": "passed",
+  "artifacts": [
+    {
+      "coordinates": "org.jspecify:jspecify:1.0.1",
+      "jar": "jspecify-1.0.1.jar",
+      "sha256": "070d75f261fe4c5b8202508366715f7f2d4660f88c8ef7e6d3575e48c9683b66",
+      "status": "passed",
+      "classes": [
+        {
+          "entry": "module-info.class",
+          "accessFlags": "0x8000",
+          "annotation": false,
+          "descriptor": true
+        },
+        {
+          "entry": "org/jspecify/annotations/NonNull.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        },
+        {
+          "entry": "org/jspecify/annotations/NullMarked.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        },
+        {
+          "entry": "org/jspecify/annotations/NullUnmarked.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        },
+        {
+          "entry": "org/jspecify/annotations/Nullable.class",
+          "accessFlags": "0x2601",
+          "annotation": true,
+          "descriptor": false
+        }
+      ],
+      "resources": [
+        {
+          "entry": "META-INF/MANIFEST.MF",
+          "permitted": true
+        }
+      ],
+      "errors": []
+    }
+  ]
+}
