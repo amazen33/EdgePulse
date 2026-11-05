@@ -2533,13 +2533,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#micrometer-1172",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -2595,13 +2595,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#micrometer-1172",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7339,13 +7339,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7421,13 +7421,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7483,13 +7483,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7564,13 +7564,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7645,13 +7645,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7726,13 +7726,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7788,13 +7788,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7888,13 +7888,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -7950,13 +7950,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8050,13 +8050,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8112,13 +8112,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8193,13 +8193,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8255,13 +8255,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-boot-412",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8457,13 +8457,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-framework-7010",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8519,13 +8519,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-framework-7010",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8581,13 +8581,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-framework-7010",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8643,13 +8643,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-framework-7010",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8705,13 +8705,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-framework-7010",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8826,13 +8826,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-framework-7010",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",
@@ -8888,13 +8888,13 @@
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
-        "status": "pending",
+        "status": "verified",
         "criteria": {
           "maturity": {
-            "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#cooling-off-status",
-            "date": "2026-10-31",
-            "notes": "ADR 0014 14-day cool-off is met from 2026-11-05 (published 2026-10-22). Change to pass, dated then, on or after that date."
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/main/security/evidence/iot-wo-02-c/qualification-2026-10-31.md#spring-framework-7010",
+            "date": "2026-11-05",
+            "notes": "Final GA release; ADR 0014 14-day cool-off met on 2026-11-05 (published 2026-10-22). Supplier evidence and its scope are in the linked record."
           },
           "governance": {
             "result": "pass",

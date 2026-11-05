@@ -43,8 +43,8 @@ The Spring calendars are retained in
 
 - Licence gate: 30 new runtime components carry ADR-0054 records, with
   evidence in the qualification record. The 22 Spring Boot, Spring Framework
-  and Micrometer records keep `maturity: pending` until ADR 0014's 14-day
-  cool-off ends on **2026-11-05**. Departed runtime components are retired
+  and Micrometer records passed maturity on **2026-11-05**, when ADR 0014's
+  14-day cool-off ended. Departed runtime components are retired
   removal-only ([record](../../security/evidence/iot-wo-02-c/legacy-retirements-2026-10-31.json)).
   New imported BOMs and test-scope libraries are build-tool entries; the six
   reviewed BOM licence declarations are in `security/maven-bom-licence-evidence.json`.

@@ -34,6 +34,10 @@ The Spring Boot, Spring Framework and Micrometer records therefore carry
 The maturity result is changed to `pass`, with that date, only on or after
 2026-11-05; the licence gate fails until then, by design.
 
+**Update 2026-11-05:** the cool-off has ended for all three releases. The
+Maven Central publication dates above were re-checked and are unchanged. The
+22 records now pass maturity, dated 2026-11-05, and are verified.
+
 ## Spring Boot 4.1.2
 
 Thirteen modules: `spring-boot`, `-autoconfigure`, `-starter`, `-starter-web`,
