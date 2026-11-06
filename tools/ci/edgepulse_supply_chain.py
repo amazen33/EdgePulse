@@ -371,9 +371,12 @@ def verify_backfill(root):
     # Amendment 5 explicitly authorizes supported-line remediation. Replacing
     # an input retires its legacy admission; the new input needs full records,
     # never a rewritten legacy fingerprint. Unchanged images use evidence_only.
+    # IOT-WO-02 Amendment 6 (owner, 2026-10-31): the Spring Boot 4.1 line
+    # replaces Amendment 5's 10.1.60 with Boot-managed 11.0.27; the current
+    # replacement still needs full ADR-0054 records.
     replacements = {
         'maven|org.apache.tomcat.embed:'+name+'|10.1.30':
-        'maven|org.apache.tomcat.embed:'+name+'|10.1.60'
+        'maven|org.apache.tomcat.embed:'+name+'|11.0.27'
         for name in ('tomcat-embed-core','tomcat-embed-el','tomcat-embed-websocket')}
     replacements['oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0'] = (
         'oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3')

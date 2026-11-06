@@ -27,7 +27,7 @@
       "version": "3.9.11",
       "spdx": "Apache-2.0",
       "published": "2025-07-12",
-      "archiveUrl": "https://archive.apache.org/dist/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz",
+      "archiveUrl": "https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.tar.gz",
       "sha256": [
         "4b7195b6a4f5c81af4c0212677a32ee8143643401bc6e1e8412e6b06ea82beac"
       ],
