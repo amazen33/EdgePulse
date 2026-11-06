@@ -21,6 +21,9 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   imported BOM licences, retire departed legacy admissions removal-only, and
   remove the 16 `IOT-WO-02 Part C` vulnerability exceptions. MS1 still
   needs Part D and its receipt.
+- Fetch the pinned Maven 3.9.11 archive from Maven Central after
+  `archive.apache.org` became unreachable. The version and SHA-256 pin are
+  unchanged, and the bootstrap still verifies the hash before use.
 - Sync the main-and-release ruleset file with the live required checks (licence-gate, supply-chain-gate).
 
 ### Security
