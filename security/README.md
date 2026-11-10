@@ -246,6 +246,11 @@ image voids both approvals. They expire 2026-11-19, with no extension, and
 do not cover the two OpenJDK Highs that become blocking on 2026-11-05.
 Separate A-2 proposals are due by 2026-11-03 unless an upstream fix clears
 them. No High approval is granted by the Critical disposition.
+Under A-2 (owner, 2026-11-02), the two CVE-2026-91415 High rows in
+`vulnerability-exception-proposals/iot-wo-08-tb-openjdk-high-2026-10-31.json`
+were approved by exact SHA-256 and copied after the A-1 rows, changing only
+`approvedBy`. The same conditions apply: starting TB anywhere voids them,
+and they expire 2026-11-19 with no extension.
 The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and

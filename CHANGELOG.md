@@ -28,6 +28,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08 A-2: activate the two owner-approved CVE-2026-91415 High
+  exceptions for the TB 4.3.1.8 OpenJDK packages (exact proposal SHA-256,
+  only `approvedBy` changed, expiry 2026-11-19, void if TB starts anywhere),
+  bridging until the IOT-WO-09 runtime image clears them.
+
 - IOT-WO-08 Amendment 4: exclude Markdown prose from harness caller
   reachability while retaining workflow, script, action and direct image
   guards, with three regression tests.
