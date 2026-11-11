@@ -12,7 +12,16 @@ The pinned setup-java action uses Adoptium's SemVer spelling
 The official package metadata binds those representations. The action's
 existing `isVersionSatisfies` uses exact `compareBuild` matching when a
 build-qualified version is provided; omitting `.LTS` would not be the same
-exact pin. The action SHA is unchanged.
+exact pin. The Java-only step left the action SHA unchanged.
+
+The 2026-11-11 Node 24 pin refresh moves setup-java from v4.7.1 to v6.1.0
+(`b843ebf9b913146b38da2eaa7aeddf76074ae1ad`); the Temurin version string
+is unchanged. At that commit
+[`isVersionSatisfies`](https://github.com/actions/setup-java/blob/b843ebf9b913146b38da2eaa7aeddf76074ae1ad/src/util.ts#L279-L299)
+keeps the exact `compareBuild` match, and the
+[Temurin installer](https://github.com/actions/setup-java/blob/b843ebf9b913146b38da2eaa7aeddf76074ae1ad/src/distributions/temurin/installer.ts#L89-L107)
+still tests the request against Adoptium's `semver` field. This is a source
+review; the dated tool evidence still cites the v4.7.1 source it reviewed.
 
 Temurin remains a `build-tool` under ADR 0026 Decision 1, elected
 `GPL-2.0-only WITH Classpath-exception-2.0`. Its register entry binds both

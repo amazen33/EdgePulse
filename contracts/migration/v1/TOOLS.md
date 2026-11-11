@@ -77,10 +77,10 @@ no new action or job is introduced. Exact immutable pins, MIT (tier 1):
 | Action | Exact version | Source commit | Commit date (UTC) |
 | --- | --- | --- | --- |
 | actions/checkout | v5.0.0 | `08c6903cd8c0fde910a37f88322edcfb5dd907a8` | 2025-08-11 |
-| actions/setup-java | v4.7.1 | `c5195efecf7bdfc987ee8bae7a71cb8b11521c00` | 2025-04-08 |
+| actions/setup-java | v6.1.0 | `b843ebf9b913146b38da2eaa7aeddf76074ae1ad` | 2026-10-14 |
 
 Both pins are over 14 days old. Sources:
 [checkout](https://github.com/actions/checkout/tree/08c6903cd8c0fde910a37f88322edcfb5dd907a8),
-[setup-java](https://github.com/actions/setup-java/tree/c5195efecf7bdfc987ee8bae7a71cb8b11521c00).
+[setup-java](https://github.com/actions/setup-java/tree/b843ebf9b913146b38da2eaa7aeddf76074ae1ad).
 The existing release-checks workflow already uses an immutable action SHA.
 No action was taken against a deployment, host, vault, WSL distro or consumer.
