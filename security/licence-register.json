@@ -899,6 +899,26 @@
       }
     },
     {
+      "id": "maven|com.google.errorprone:error_prone_annotations|2.50.0",
+      "name": "com.google.errorprone:error_prone_annotations",
+      "version": "2.50.0",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:4667724877f1d37a689202da191e23efa7657c62eef93ccdac406eccfe5cdd0a"
+      ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-11-03",
+      "verifiedOn": "2026-11-03",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.pom",
+      "class": "build-tool",
+      "unmodified": true,
+      "notes": "IOT-WO-08 Guava refresh: exact executed protobuf plugin dependency; not shipped or runtime reachable."
+    },
+    {
       "id": "maven|com.google.guava:failureaccess|1.0.3",
       "name": "com.google.guava:failureaccess",
       "version": "1.0.3",
@@ -961,40 +981,21 @@
       "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
     },
     {
-      "id": "maven|com.google.guava:guava|33.4.8-jre",
-      "ecosystem": "maven",
+      "id": "maven|com.google.guava:guava|33.7.2-android",
       "name": "com.google.guava:guava",
-      "version": "33.4.8-jre",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:f3d7f57f67fd622f4d468dfdd692b3a5e3909246c28017ac3263405f0fe617ed"
-      ],
-      "class": "build-tool",
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.4.8-jre/guava-33.4.8-jre.pom",
-      "unmodified": true
-    },
-    {
-      "id": "maven|com.google.guava:guava|33.6.0-android",
-      "name": "com.google.guava:guava",
-      "version": "33.6.0-android",
+      "version": "33.7.2-android",
       "locations": [
         "services/identity/pom.xml"
       ],
       "integrities": [
-        "sha256:9532ca9ba8aceb4cd2067171f981c799988b7f5844e3e274811a3bb757034bc4"
+        "sha256:b949fe975a32421c1a2633c07a4f1578b462f2f467668aa0a4023c5ff7c4a808"
       ],
       "ecosystem": "maven",
-      "recordedOn": "2026-10-21",
-      "verifiedOn": "2026-10-21",
+      "recordedOn": "2026-11-03",
+      "verifiedOn": "2026-11-03",
       "spdx": "Apache-2.0",
       "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.6.0-android/guava-33.6.0-android.pom",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.7.2-android/guava-33.7.2-android.pom",
       "class": "allowed",
       "tier": 2,
       "enterpriseGrade": {
@@ -1002,43 +1003,63 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
-            "date": "2026-10-21",
-            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+            "evidence": "https://github.com/google/guava/releases/tag/v33.7.2",
+            "date": "2026-11-03",
+            "notes": "Final release published 2026-09-29T14:53:52Z; exact Central artifacts published 2026-09-29T14:47:28Z, more than 14 days old."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
-            "date": "2026-10-21",
-            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+            "evidence": "https://github.com/google/guava",
+            "date": "2026-11-03",
+            "notes": "Google maintains Guava. The vendor-backed route follows the previously accepted Guava-family review; Google Assured OSS lists Guava. No purchased support or Assured OSS artifact use is claimed."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
-            "date": "2026-10-21",
-            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+            "evidence": "https://github.com/google/guava/wiki/ReleasePolicy",
+            "date": "2026-11-03",
+            "notes": "Maintained 33.x family with September 2026 security-fix release; Android/JRE flavour and compatibility policies apply. No invented LTS or EOL date."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
-            "date": "2026-10-21",
-            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+            "evidence": "https://github.com/google/guava/security/policy",
+            "date": "2026-11-03",
+            "notes": "Private Google vulnerability intake and coordinated advisories. OpenSSF Scorecard 8.8 dated 2026-11-02T18:15:11Z; exact JAR/POM hashes retained."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/scan-2026-10-21.json",
-            "date": "2026-10-21",
-            "notes": "Pinned ADR-0049 run 39534328211 passed; exact BOM hash matches this JAR; zero candidate advisories and no exception."
+            "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41642485897",
+            "date": "2026-11-03",
+            "notes": "Full Linux/amd64 ADR-0049 run 41642485897 passed; exact candidate JAR hashes match both scanned BOMs; zero findings in the two targets, zero blockers, no introduced fixable Critical/High identity and no Guava exception. See guava-33.7.2-scan-2026-11-03.json."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/9e97e1d37a3fc7741fbbb67c19414ee16ad0fdd2/security/evidence/iot-wo-08/qualification-2026-10-21.md#guava-3360-android-and-failureaccess-103",
-            "date": "2026-10-21",
-            "notes": "Exact supplier criterion, candidate publication/support scope and bounded evidence are recorded in the linked review."
+            "evidence": "https://github.com/google/guava/blob/v33.7.2/README.md",
+            "date": "2026-11-03",
+            "notes": "Supplier identifies broad use across Google Java projects and other companies; project adoption, not an exact-patch deployment receipt."
           }
         }
       },
-      "notes": "IOT-WO-08: full verified runtime qualification; no legacy admission or runtime licence exception. Supplier activity and exact candidate support are distinguished in the review."
+      "notes": "IOT-WO-08 Guava refresh: full verified ADR-0054 runtime qualification; exact artifact cleared by the linked full Linux ADR-0049 run. No legacy admission or runtime exception."
+    },
+    {
+      "id": "maven|com.google.guava:guava|33.7.2-jre",
+      "name": "com.google.guava:guava",
+      "version": "33.7.2-jre",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:b530942257fb935f8b2cfaa5f8eb5bd59c555fd8e8d01b8ce98912e077ea606c"
+      ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-11-03",
+      "verifiedOn": "2026-11-03",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.7.2-jre/guava-33.7.2-jre.pom",
+      "class": "build-tool",
+      "unmodified": true,
+      "notes": "IOT-WO-08 Guava refresh: exact executed protobuf plugin dependency; not shipped or runtime reachable."
     },
     {
       "id": "maven|com.google.guava:listenablefuture|9999.0-empty-to-avoid-conflict-with-guava",
@@ -1104,6 +1125,26 @@
         "status": "legacy-pending",
         "due": "2027-04-20"
       }
+    },
+    {
+      "id": "maven|com.google.j2objc:j2objc-annotations|3.1",
+      "name": "com.google.j2objc:j2objc-annotations",
+      "version": "3.1",
+      "locations": [
+        "pom.xml"
+      ],
+      "integrities": [
+        "sha256:84d3a150518485f8140ea99b8a985656749629f6433c92b80c75b36aba3b099b"
+      ],
+      "ecosystem": "maven",
+      "recordedOn": "2026-11-03",
+      "verifiedOn": "2026-11-03",
+      "spdx": "Apache-2.0",
+      "electedSpdx": "Apache-2.0",
+      "licenceSource": "https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.pom",
+      "class": "build-tool",
+      "unmodified": true,
+      "notes": "IOT-WO-08 Guava refresh: exact executed protobuf plugin dependency; not shipped or runtime reachable."
     },
     {
       "id": "maven|com.google.protobuf:protobuf-bom|3.21.10",
@@ -6329,25 +6370,6 @@
       "spdx": "MIT",
       "electedSpdx": "MIT",
       "licenceSource": "https://repo.maven.apache.org/maven2/org/jsoup/jsoup/1.23.2/jsoup-1.23.2.pom",
-      "unmodified": true
-    },
-    {
-      "id": "maven|org.jspecify:jspecify|1.0.0",
-      "ecosystem": "maven",
-      "name": "org.jspecify:jspecify",
-      "version": "1.0.0",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "pom.xml"
-      ],
-      "integrities": [
-        "sha256:1fad6e6be7557781e4d33729d49ae1cdc8fdda6fe477bb0cc68ce351eafdfbab"
-      ],
-      "class": "build-tool",
-      "spdx": "Apache-2.0",
-      "electedSpdx": "Apache-2.0",
-      "licenceSource": "https://repo.maven.apache.org/maven2/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.pom",
       "unmodified": true
     },
     {

@@ -33,6 +33,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   only `approvedBy` changed, expiry 2026-11-19, void if TB starts anywhere),
   bridging until the IOT-WO-09 runtime image clears them.
 
+- IOT-WO-08: pin identity runtime Guava to 33.7.2-android and the Protobuf
+  generator plugin classpath to 33.7.2-jre for CVE-2026-102554, retaining
+  the gRPC annotation exclusions and independent runtime/plugin inventories.
+
 - IOT-WO-08 Amendment 4: exclude Markdown prose from harness caller
   reachability while retaining workflow, script, action and direct image
   guards, with three regression tests.
