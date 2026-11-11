@@ -60,7 +60,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
  * deny-by-default policy data (Decision 4).
  *
  * <p>Every value below is externally configurable via
- * {@code application.yml} / environment (never hardcoded), per the
+ * {@code application.properties} / environment (never hardcoded), per the
  * identity ADR's Decision 1 ("configurable issuer/JWKS") and its rejected
  * alternative "hand-written JWT signature verification" -- but the
  * defaults are placeholders (there is no real identity provider deployed

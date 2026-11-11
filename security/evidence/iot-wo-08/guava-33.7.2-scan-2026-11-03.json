@@ -1,0 +1,158 @@
+{
+  "workOrder": "IOT-WO-08",
+  "date": "2026-11-03",
+  "run": "https://github.com/amazen33/EdgePulse/actions/runs/41642485897",
+  "artifactId": 13233487961,
+  "artifactSHA256": "fae0b7d1dd72bf58b7a3f692d764b103cc2cbd47b7a7d764f4d2536c2679b29b",
+  "event": "pull_request",
+  "headCommit": "dfb1eda1b5b794ab93b53dc813529800fd631969",
+  "scanCommit": "7261488fd6031e431c245bd27dc8de6ba3da7257",
+  "policyResult": "passed",
+  "ownerApprovalPending": false,
+  "scanConfiguration": {
+    "platform": "linux/amd64",
+    "scope": "all referenced images, all Maven scopes and executed plugin classpaths, lockfiles"
+  },
+  "targetComparison": [
+    {
+      "target": "maven:services/identity/pom.xml",
+      "beforeVersion": "33.6.0-android",
+      "afterVersion": "33.7.2-android",
+      "beforeHighFindings": 1,
+      "afterHighFindings": 0,
+      "advisory": "GHSA-xxph-c9ww-hj94",
+      "cve": "CVE-2026-102554",
+      "firstSeen": "2026-10-28",
+      "blockingFrom": "2026-11-11",
+      "sbomPath": "supply-chain/maven/1.cdx.json",
+      "sbomSHA256": "bed7157b70484310f1ba36b1e8ef1a7b854adfdfb8a4ab87196f0ceee6a49f6b",
+      "resolvedTreeSHA256": "28acf5b69f8047b929f8e25c737674ad41e40439e5bbd0abe301a5261deca08a",
+      "jarSHA256": "b949fe975a32421c1a2633c07a4f1578b462f2f467668aa0a4023c5ff7c4a808",
+      "candidateFindings": [],
+      "exceptions": []
+    },
+    {
+      "target": "maven:executed-plugin-8",
+      "beforeVersion": "33.4.8-jre",
+      "afterVersion": "33.7.2-jre",
+      "beforeHighFindings": 1,
+      "afterHighFindings": 0,
+      "advisory": "GHSA-xxph-c9ww-hj94",
+      "cve": "CVE-2026-102554",
+      "firstSeen": "2026-10-28",
+      "blockingFrom": "2026-11-11",
+      "sbomPath": "supply-chain/maven/11.cdx.json",
+      "sbomSHA256": "5454a5f2815ae2c5b452078365670222fd96b4a0cecb9571d93999942aedefe4",
+      "resolvedTreeSHA256": null,
+      "jarSHA256": "b530942257fb935f8b2cfaa5f8eb5bd59c555fd8e8d01b8ce98912e077ea606c",
+      "candidateFindings": [],
+      "exceptions": []
+    }
+  ],
+  "beforeEvidence": {
+    "run": "https://github.com/amazen33/EdgePulse/actions/runs/41235622618",
+    "record": "security/evidence/iot-wo-02-c/scan-2026-10-31.json",
+    "date": "2026-10-31"
+  },
+  "netImprovement": {
+    "newFixableCriticalHighIdentities": 0,
+    "allMavenFixableCriticalHighBefore": 3,
+    "allMavenFixableCriticalHighAfter": 1,
+    "remainingMavenFindings": [
+      {
+        "aliases": [
+          "CVE-2025-48924",
+          "GHSA-j288-q9x7-2f5v"
+        ],
+        "fixAvailable": true,
+        "fixVersions": [
+          "3.18.0"
+        ],
+        "introduced": false,
+        "key": "819e3c6496f1bfd92afe6eff4024f4ae38277dcaee37f63ba42623a565d2671c",
+        "package": "org.apache.commons:commons-lang3",
+        "packageClass": "java-archive (Maven)",
+        "scanner": "osv",
+        "severity": "Medium",
+        "target": "maven:executed-plugin-9",
+        "version": "3.5",
+        "vulnerability": "CVE-2025-48924"
+      },
+      {
+        "aliases": [
+          "CVE-2025-67030",
+          "GHSA-6fmv-xxpf-w3cw"
+        ],
+        "fixAvailable": true,
+        "fixVersions": [
+          "3.6.1",
+          "4.0.3"
+        ],
+        "introduced": false,
+        "key": "72a2938577e08db7421bdd1882f4436885accb34386ad835a91fb5ccd933de6a",
+        "package": "org.codehaus.plexus:plexus-utils",
+        "packageClass": "java-archive (Maven)",
+        "scanner": "osv",
+        "severity": "High",
+        "target": "maven:executed-plugin-9",
+        "version": "3.1.0",
+        "vulnerability": "CVE-2025-67030"
+      }
+    ],
+    "scope": "Prior stacked scan versus candidate Maven targets; full candidate ADR-0049 report separately verifies no introduced fixable Critical/High identity."
+  },
+  "fullScanSummary": {
+    "images": 6,
+    "mavenSboms": 17,
+    "findings": 1025,
+    "severityCounts": {
+      "Critical": 23,
+      "Medium": 449,
+      "High": 249,
+      "Negligible": 166,
+      "Low": 128,
+      "Unknown": 10
+    },
+    "blockers": 0,
+    "newFixableCriticalHighIdentities": 0,
+    "kevBlockers": 0
+  },
+  "evidenceHashes": {
+    "report.json": "bfa619e177cf2905c471b6aba58bc421990034044392d4709fe3e15210be542d",
+    "maven-findings.json": "39d84c7f0915ed65d43686d8732dab19f10138857ab1b7f3ca5193492e1b38dd",
+    "maven-inputs.json": "b4bf7ffa9453d4e321825ffb598f17cc677867bc965f77566c66656bfe729379",
+    "osv-maven.json": "9bc300dc53074cc68a39c7bacbc101963aa0a5c1b37426f3b3e090bbf6634ab4",
+    "kev.json": "3aa9cf3c01f116362a29d111702979175453c425e3733bde80fc4f6f8e2294e5"
+  },
+  "toolVersions": {
+    "grype": {
+      "binarySHA256": "e02ba25615668c6bae03473e3c6493b6dfffc2e4e419f65f9bd62555ac10cd0e",
+      "published": "2026-09-17",
+      "sha256": "3fa2dc4b924621ab65404cf08d0b8438d896d80ab949c9d5a4ca283c36004c9b",
+      "version": "0.119.0"
+    },
+    "osv-scanner": {
+      "binarySHA256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "published": "2026-09-14",
+      "sha256": "ca69b3d3cd08f889a49dc0a383122f71cc528b83803671df5fd874d97485b108",
+      "version": "2.6.0"
+    },
+    "syft": {
+      "binarySHA256": "15a52d0122953081d16e6695f48055216a4de293bb005948663bb739a63880f9",
+      "published": "2026-09-17",
+      "sha256": "caeedb81fb0491615f1ebd1761e4145d41ee86dd2cc7bf80669f9f5ad9d6133d",
+      "version": "1.52.0"
+    }
+  },
+  "kev": {
+    "catalogVersion": "2026.10.30",
+    "downloadSHA256": "3aa9cf3c01f116362a29d111702979175453c425e3733bde80fc4f6f8e2294e5",
+    "sha256": "f3a0e37bc6e0be13b0b2c2f47d74f2f8e8eb622c43a9f3a34c695e2b5ca52b06"
+  },
+  "limits": [
+    "The scan is static artifact evidence, not deployment or real-backend acceptance.",
+    "Existing image findings retain ADR-0049/ADR0028 dispositions; a passing report does not mean zero vulnerabilities.",
+    "The separately installed Maven distribution is outside the two specified scan targets.",
+    "The inherited Spring cool-off records remain unchanged."
+  ]
+}
