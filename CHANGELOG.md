@@ -11,6 +11,19 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Changed
 
+- IOT-WO-02 Part C (Amendment 6): move the identity service to Spring Boot
+  4.1.2 and Spring Framework 7.0.10, a supported Spring line, with Tomcat
+  11.0.27, Jackson 3.1.7, Micrometer 1.17.2 and Commons Logging 1.4.0.
+  Remove the unused Spring Cloud BOM and the Tomcat 10.1 overrides. Replace
+  `application.yml` with `application.properties` so SnakeYAML leaves the
+  shipped runtime, and move test-only libraries to test scope. Record
+  ADR-0054 qualification for the 30 new runtime components, review six new
+  imported BOM licences, retire departed legacy admissions removal-only, and
+  remove the 16 `IOT-WO-02 Part C` vulnerability exceptions. MS1 still
+  needs Part D and its receipt.
+- Fetch the pinned Maven 3.9.11 archive from Maven Central after
+  `archive.apache.org` became unreachable. The version and SHA-256 pin are
+  unchanged, and the bootstrap still verifies the hash before use.
 - Sync the main-and-release ruleset file with the live required checks (licence-gate, supply-chain-gate).
 
 ### Security
@@ -19,7 +32,22 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   profiles for the protoc classifiers, clearing plexus-utils 3.1.0
   (CVE-2025-67030) from the executed build tools. Retire its twelve
   build-tool register records removal-only and remove the one cleared
-  `IOT-WO-08` exception (38 to 37 entries).
+  `IOT-WO-08` exception (26 to 25 entries).
+
+- IOT-WO-08 A-3: activate the two owner-approved CVE-2026-85091 High
+  exceptions for `zlib1g` on TB 4.3.1.8 and CNPG PostgreSQL 18.6, blocked
+  since the Debian fix appeared on 2026-11-09 (exact proposal SHA-256, only
+  `approvedBy` changed; TB row expires 2026-11-19, CNPG row 2026-11-30;
+  deploying either image voids its row).
+
+- IOT-WO-08 A-2: activate the two owner-approved CVE-2026-91415 High
+  exceptions for the TB 4.3.1.8 OpenJDK packages (exact proposal SHA-256,
+  only `approvedBy` changed, expiry 2026-11-19, void if TB starts anywhere),
+  bridging until the IOT-WO-09 runtime image clears them.
+
+- IOT-WO-08: pin identity runtime Guava to 33.7.2-android and the Protobuf
+  generator plugin classpath to 33.7.2-jre for CVE-2026-102554, retaining
+  the gRPC annotation exclusions and independent runtime/plugin inventories.
 
 - IOT-WO-08 Amendment 4: exclude Markdown prose from harness caller
   reachability while retaining workflow, script, action and direct image
