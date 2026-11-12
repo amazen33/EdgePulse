@@ -261,3 +261,16 @@ The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and
 fingerprint stays unchanged. Nothing is deployed or accepted as MS3.
+
+## IOT-WO-08: retired TB 4.3.1.6 exception rows
+
+PR #56 replaced the TB 4.3.1.6 digest with 4.3.1.8 but left that digest's
+19 High rows in the ledger. The gate matches an exception only on its exact
+target, package, version and vulnerability, so these rows match nothing:
+main's [2026-11-11 scan](https://github.com/amazen33/EdgePulse/actions/runs/43068337295)
+no longer scans the old digest and matches 7 other rows. The gate also
+validates every row's lifetime before matching, so a row left after its
+2026-11-19 expiry would fail every scan from 2026-11-20 UTC. Under item 1
+they leave removal-only (26 to 7 rows); the
+[record](evidence/iot-wo-08/retired-tb-4.3.1.6-exceptions-2026-11-12.json)
+keeps each row and its block hash. No row is added or changed.
