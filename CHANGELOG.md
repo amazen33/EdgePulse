@@ -28,6 +28,13 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08 A-4: activate six owner-approved High bridge rows for
+  CVE-2026-109518 (`apt` 3.0.3) and CVE-2026-76844 (`zlib1g`) on TB 4.3.1.8
+  and CNPG PostgreSQL 18.6, which block from 2026-11-19 and 2026-11-20
+  (exact proposal SHA-256, only `approvedBy` changed; tb-node rows expire
+  2026-11-19, PostgreSQL rows 2026-11-30; starting TB or deploying the
+  PostgreSQL image voids its rows). CVE-2026-76844 on tb-node is not covered.
+
 - IOT-WO-08 A-3: activate the two owner-approved CVE-2026-85091 High
   exceptions for `zlib1g` on TB 4.3.1.8 and CNPG PostgreSQL 18.6, blocked
   since the Debian fix appeared on 2026-11-09 (exact proposal SHA-256, only
