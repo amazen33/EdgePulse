@@ -28,6 +28,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08: retire the 19 High exception rows for the replaced TB 4.3.1.6
+  digest removal-only (26 to 7 entries). They match no scanned input since
+  PR #56, and any row left after its 2026-11-19 expiry would fail every
+  scan from 2026-11-20. The record keeps each row and its block hash.
+
 - IOT-WO-08 A-3: activate the two owner-approved CVE-2026-85091 High
   exceptions for `zlib1g` on TB 4.3.1.8 and CNPG PostgreSQL 18.6, blocked
   since the Debian fix appeared on 2026-11-09 (exact proposal SHA-256, only
