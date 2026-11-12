@@ -28,6 +28,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08: replace the os-maven-plugin build extension with OS-activated
+  profiles for the protoc classifiers, clearing plexus-utils 3.1.0
+  (CVE-2025-67030) from the executed build tools. Retire its twelve
+  build-tool register records removal-only and remove the one cleared
+  `IOT-WO-08` exception (26 to 25 entries).
+
 - IOT-WO-08 A-3: activate the two owner-approved CVE-2026-85091 High
   exceptions for `zlib1g` on TB 4.3.1.8 and CNPG PostgreSQL 18.6, blocked
   since the Debian fix appeared on 2026-11-09 (exact proposal SHA-256, only

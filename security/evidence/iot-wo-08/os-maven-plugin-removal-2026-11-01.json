@@ -1,0 +1,404 @@
+{
+  "authority": "IOT-WO-08 item 1 (adopt a qualifying fix; remove the exceptions it clears); amendment text proposed for owner approval in the PR",
+  "baseCommit": "901ec5767743da790eb49073b0cfecbf5fa59250",
+  "baseScan": "https://github.com/amazen33/EdgePulse/actions/runs/41234298144",
+  "rule": "Removal-only: a build-tool register entry leaves only with its component, when the independently resolved inventory no longer contains it. No record is added or changed.",
+  "finding": {
+    "target": "maven:executed-plugin-9",
+    "root": "kr.motd.maven:os-maven-plugin:1.7.1 (build extension, services/identity/pom.xml)",
+    "package": "org.codehaus.plexus:plexus-utils",
+    "version": "3.1.0",
+    "vulnerability": "CVE-2025-67030",
+    "severity": "High",
+    "firstSeen": "2026-10-20",
+    "alsoCleared": "org.apache.commons:commons-lang3 3.5, CVE-2025-48924, Medium, report-only"
+  },
+  "change": {
+    "removed": "os-maven-plugin 1.7.1 build extension; no newer release exists (latest published 2022-11-07)",
+    "replacement": "OS-activated profiles in services/identity/pom.xml set os.detected.classifier; no plugin, extension or dependency is added",
+    "profiles": {
+      "protoc-linux-x86_64": {
+        "activation": "os name Linux, arch amd64",
+        "classifier": "linux-x86_64"
+      },
+      "protoc-windows-x86_64": {
+        "activation": "os family windows, arch amd64",
+        "classifier": "windows-x86_64"
+      }
+    },
+    "codeGeneratorInventory": "Unchanged: security/collect_maven.py already inventories protoc 3.25.9 and protoc-gen-grpc-java 1.84.0 for exactly these two classifiers"
+  },
+  "retired": [
+    {
+      "id": "maven|javax.annotation:jsr250-api|1.0",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:a1a922d0d9b6d183ed3800dfac01d1e1eb159f0e8c6f94736931c1def54a941f"
+      ],
+      "record": {
+        "id": "maven|javax.annotation:jsr250-api|1.0",
+        "ecosystem": "maven",
+        "name": "javax.annotation:jsr250-api",
+        "version": "1.0",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:a1a922d0d9b6d183ed3800dfac01d1e1eb159f0e8c6f94736931c1def54a941f"
+        ],
+        "spdx": "CDDL-1.0",
+        "electedSpdx": "CDDL-1.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|javax.enterprise:cdi-api|1.0",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:1f10b2204cc77c919301f20ff90461c3df1b6e6cb148be1c2d22107f4851d423"
+      ],
+      "record": {
+        "id": "maven|javax.enterprise:cdi-api|1.0",
+        "ecosystem": "maven",
+        "name": "javax.enterprise:cdi-api",
+        "version": "1.0",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:1f10b2204cc77c919301f20ff90461c3df1b6e6cb148be1c2d22107f4851d423"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.0/cdi-api-1.0.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|kr.motd.maven:os-maven-plugin|1.7.1",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:f47aeef86821e52b2b18758978bd045f03d722292e32e747082122c6228952e0"
+      ],
+      "record": {
+        "id": "maven|kr.motd.maven:os-maven-plugin|1.7.1",
+        "ecosystem": "maven",
+        "name": "kr.motd.maven:os-maven-plugin",
+        "version": "1.7.1",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:f47aeef86821e52b2b18758978bd045f03d722292e32e747082122c6228952e0"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/kr/motd/maven/os-maven-plugin/1.7.1/os-maven-plugin-1.7.1.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.apache.commons:commons-lang3|3.5",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:8ac96fc686512d777fca85e144f196cd7cfe0c0aec23127229497d1a38ff651c"
+      ],
+      "record": {
+        "id": "maven|org.apache.commons:commons-lang3|3.5",
+        "ecosystem": "maven",
+        "name": "org.apache.commons:commons-lang3",
+        "version": "3.5",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:8ac96fc686512d777fca85e144f196cd7cfe0c0aec23127229497d1a38ff651c"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.5/commons-lang3-3.5.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.apache.maven:maven-artifact|3.5.3",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:30d066e27379a51c8d9c67b1ab0b7e55d930c9721161b07ef1666ab9fc24c629"
+      ],
+      "record": {
+        "id": "maven|org.apache.maven:maven-artifact|3.5.3",
+        "ecosystem": "maven",
+        "name": "org.apache.maven:maven-artifact",
+        "version": "3.5.3",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:30d066e27379a51c8d9c67b1ab0b7e55d930c9721161b07ef1666ab9fc24c629"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.5.3/maven-artifact-3.5.3.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.apache.maven:maven-model|3.5.3",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:a7b1418f0761e1b31aa930d5a06ac8a468462a3310a6d545d91c71df770f53db"
+      ],
+      "record": {
+        "id": "maven|org.apache.maven:maven-model|3.5.3",
+        "ecosystem": "maven",
+        "name": "org.apache.maven:maven-model",
+        "version": "3.5.3",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:a7b1418f0761e1b31aa930d5a06ac8a468462a3310a6d545d91c71df770f53db"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.5.3/maven-model-3.5.3.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.apache.maven:maven-plugin-api|3.5.3",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:eb0341df87279f506b0b24e528730a94a459e7e86d0a3f0aa22246b8fd183aec"
+      ],
+      "record": {
+        "id": "maven|org.apache.maven:maven-plugin-api|3.5.3",
+        "ecosystem": "maven",
+        "name": "org.apache.maven:maven-plugin-api",
+        "version": "3.5.3",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:eb0341df87279f506b0b24e528730a94a459e7e86d0a3f0aa22246b8fd183aec"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.5.3/maven-plugin-api-3.5.3.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-classworlds|2.5.2",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:b2931d41740490a8d931cbe0cfe9ac20deb66cca606e679f52522f7f534c9fd7"
+      ],
+      "record": {
+        "id": "maven|org.codehaus.plexus:plexus-classworlds|2.5.2",
+        "ecosystem": "maven",
+        "name": "org.codehaus.plexus:plexus-classworlds",
+        "version": "2.5.2",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:b2931d41740490a8d931cbe0cfe9ac20deb66cca606e679f52522f7f534c9fd7"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-component-annotations|1.5.5",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:4df7a6a7be64b35bbccf60b5c115697f9ea3421d22674ae67135dde375fcca1f"
+      ],
+      "record": {
+        "id": "maven|org.codehaus.plexus:plexus-component-annotations|1.5.5",
+        "ecosystem": "maven",
+        "name": "org.codehaus.plexus:plexus-component-annotations",
+        "version": "1.5.5",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:4df7a6a7be64b35bbccf60b5c115697f9ea3421d22674ae67135dde375fcca1f"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.codehaus.plexus:plexus-utils|3.1.0",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:0ffa0ad084ebff5712540a7b7ea0abda487c53d3a18f78c98d1a3675dab9bf61"
+      ],
+      "record": {
+        "id": "maven|org.codehaus.plexus:plexus-utils|3.1.0",
+        "ecosystem": "maven",
+        "name": "org.codehaus.plexus:plexus-utils",
+        "version": "3.1.0",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:0ffa0ad084ebff5712540a7b7ea0abda487c53d3a18f78c98d1a3675dab9bf61"
+        ],
+        "spdx": "Apache-2.0",
+        "electedSpdx": "Apache-2.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.1.0/plexus-utils-3.1.0.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.eclipse.sisu:org.eclipse.sisu.inject|0.3.3",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:c6935e0b7d362ed4ca768c9b71d5d4d98788ff0a79c0d2bb954c221a078b166b"
+      ],
+      "record": {
+        "id": "maven|org.eclipse.sisu:org.eclipse.sisu.inject|0.3.3",
+        "ecosystem": "maven",
+        "name": "org.eclipse.sisu:org.eclipse.sisu.inject",
+        "version": "0.3.3",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:c6935e0b7d362ed4ca768c9b71d5d4d98788ff0a79c0d2bb954c221a078b166b"
+        ],
+        "spdx": "EPL-1.0",
+        "electedSpdx": "EPL-1.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.3/org.eclipse.sisu.inject-0.3.3.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    },
+    {
+      "id": "maven|org.eclipse.sisu:org.eclipse.sisu.plexus|0.3.3",
+      "class": "build-tool",
+      "integrities": [
+        "sha256:98045f5ecd802d6a96ba00394f8cb61259f9ac781ec2cb51ca0cb7b2c94ac720"
+      ],
+      "record": {
+        "id": "maven|org.eclipse.sisu:org.eclipse.sisu.plexus|0.3.3",
+        "ecosystem": "maven",
+        "name": "org.eclipse.sisu:org.eclipse.sisu.plexus",
+        "version": "0.3.3",
+        "recordedOn": "2026-10-20",
+        "verifiedOn": "2026-10-20",
+        "locations": [
+          "pom.xml"
+        ],
+        "integrities": [
+          "sha256:98045f5ecd802d6a96ba00394f8cb61259f9ac781ec2cb51ca0cb7b2c94ac720"
+        ],
+        "spdx": "EPL-1.0",
+        "electedSpdx": "EPL-1.0",
+        "licenceSource": "https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.3/org.eclipse.sisu.plexus-0.3.3.pom",
+        "class": "build-tool",
+        "unmodified": true
+      },
+      "reason": "Only on the os-maven-plugin 1.7.1 classpath (executed-plugin-9 in the base scan); absent from every other module and executed-plugin graph."
+    }
+  ],
+  "registerCounts": {
+    "before": 393,
+    "after": 381
+  },
+  "removedException": {
+    "vulnerability": "CVE-2025-67030",
+    "target": "maven:executed-plugin-9",
+    "package": "org.codehaus.plexus:plexus-utils",
+    "version": "3.1.0",
+    "severity": "High",
+    "owner": "amazen33",
+    "approvedBy": "amazen33",
+    "workOrder": "IOT-WO-08",
+    "createdOn": "2026-10-20",
+    "expires": "2026-11-19",
+    "controls": [
+      "security/evidence/vulnerability-exceptions/group-19260b6f9cdcf91b.md"
+    ],
+    "reason": "CVE-2025-67030 in org.codehaus.plexus:plexus-utils 3.1.0; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-19260b6f9cdcf91b.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+  },
+  "exceptionCounts": {
+    "before": {
+      "total": 38,
+      "IOT-WO-08": {
+        "Critical": 2,
+        "High": 20
+      },
+      "IOT-WO-02 Part C": {
+        "Critical": 1,
+        "High": 15
+      }
+    },
+    "after": {
+      "total": 37,
+      "IOT-WO-08": {
+        "Critical": 2,
+        "High": 19
+      },
+      "IOT-WO-02 Part C": {
+        "Critical": 1,
+        "High": 15
+      }
+    }
+  },
+  "newOrUpdatedComponents": [],
+  "newLegacyAdmissions": 0,
+  "remainingExceptionsUnchanged": true
+}
