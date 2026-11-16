@@ -257,6 +257,14 @@ Under A-3 (owner, 2026-11-11), the two CVE-2026-85091 High `zlib1g` rows in
 copied after the A-2 rows, changing only `approvedBy`. Deploying either
 image voids its row. The TB row expires 2026-11-19 and the CNPG row
 2026-11-30, with no extension.
+Under A-4 (owner, 2026-11-12), the six High rows in
+`vulnerability-exception-proposals/iot-wo-08-apt-zlib-high-2026-11-12.json`
+were approved by exact SHA-256 and copied after the A-3 rows, changing only
+`approvedBy`: CVE-2026-109518 on the `apt` packages of both images, and
+CVE-2026-76844 on CNPG PostgreSQL `zlib1g`. Starting TB or deploying the
+PostgreSQL image voids its rows, and a KEV listing voids that advisory's
+rows. The three tb-node rows expire 2026-11-19 and the three CNPG rows
+2026-11-30, with no extension. CVE-2026-76844 on tb-node is not covered.
 The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and
@@ -271,6 +279,6 @@ main's [2026-11-11 scan](https://github.com/amazen33/EdgePulse/actions/runs/4306
 no longer scans the old digest and matches 7 other rows. The gate also
 validates every row's lifetime before matching, so a row left after its
 2026-11-19 expiry would fail every scan from 2026-11-20 UTC. Under item 1
-they leave removal-only (26 to 7 rows); the
+they leave removal-only (32 to 13 rows with A-4); the
 [record](evidence/iot-wo-08/retired-tb-4.3.1.6-exceptions-2026-11-12.json)
 keeps each row and its block hash. No row is added or changed.
