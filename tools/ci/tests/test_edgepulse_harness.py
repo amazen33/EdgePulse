@@ -300,7 +300,17 @@ class HarnessRepository(unittest.TestCase):
         part_c = [v for v in old if v not in removed
                   and json.loads(v)['workOrder'] == 'IOT-WO-02 Part C']
         self.assertEqual(len(part_c), 16)
-        retained = [v for v in old if v not in removed and v not in part_c]
+        # IOT-WO-08 item 1: TB 4.3.1.8 (PR #56) replaced the 4.3.1.6 digest,
+        # so exactly its 19 rows leave, removal-only, before their
+        # 2026-11-19 expiry; the record keeps each row and its block hash.
+        tb_4316 = 'docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a'
+        retired_tb = [v for v in old if v not in removed and v not in part_c
+                      and json.loads(v)['target'] == tb_4316]
+        self.assertEqual(len(retired_tb), 19)
+        record = json.loads((ep.ROOT/'security/evidence/iot-wo-08/retired-tb-4.3.1.6-exceptions-2026-11-12.json').read_text(encoding='utf-8'))
+        self.assertEqual([(r['blockSHA256'], r['row']) for r in record['removedExceptions']],
+                         [(sc.sha(v.encode('utf-8')), json.loads(v)) for v in retired_tb])
+        retained = [v for v in old if v not in removed and v not in part_c and v not in retired_tb]
         self.assertEqual(new[:len(retained)], retained)
         # IOT-WO-08, Review of PR #56 A-1 (owner, 2026-10-30): the
         # original proposals stay immutable; only these exact approved
