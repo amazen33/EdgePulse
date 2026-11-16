@@ -94,7 +94,9 @@ Use Python or `py -3` on Windows. Maven is downloaded into the repository's
 ignored `target/licence-tools/` directory with a verified SHA-256; no host
 configuration is changed. On Windows, pass that Maven's `bin/mvn.cmd` path
 to `--mvn`, or put its bin directory on the current process PATH. In CI,
-the bootstrap writes its bin path to `GITHUB_PATH`.
+the bootstrap writes its bin path to `GITHUB_PATH`. The download makes up
+to four attempts on HTTP 429, HTTP 5xx, timeouts and connection errors, and
+retries an HTTP 404 once. A SHA-256 mismatch is never retried.
 
 ```text
 python -m pip install -r security/requirements.txt
