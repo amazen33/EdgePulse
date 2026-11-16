@@ -28,6 +28,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08 item 3: record dated owner reasons, under the ADR 0028
+  staleness rule, for Cilium v1.20.3 on the three Cilium harness images,
+  which stay on Twinfra's 1.20.2 lock while the kind rehearsal is paused.
+  This clears the staleness failure from 2026-11-15. Cilium v1.20.4 is not
+  covered and blocks from 2026-11-23 UTC; KEV still blocks.
+
 - IOT-WO-08 A-3: activate the two owner-approved CVE-2026-85091 High
   exceptions for `zlib1g` on TB 4.3.1.8 and CNPG PostgreSQL 18.6, blocked
   since the Debian fix appeared on 2026-11-09 (exact proposal SHA-256, only
