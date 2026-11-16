@@ -294,7 +294,13 @@ class HarnessRepository(unittest.TestCase):
         removed = [v for v in old if json.loads(v)['target'].split('@')[0] in names
                    and json.loads(v)['workOrder'] == 'IOT-WO-08']
         self.assertEqual(len(removed), 266)
-        retained = [v for v in old if v not in removed]
+        # IOT-WO-02 Amendment 6 (owner, 2026-10-31): the Spring Boot 4.1
+        # line removes exactly the 16 'IOT-WO-02 Part C' rows; every other
+        # retained row keeps its bytes and order.
+        part_c = [v for v in old if v not in removed
+                  and json.loads(v)['workOrder'] == 'IOT-WO-02 Part C']
+        self.assertEqual(len(part_c), 16)
+        retained = [v for v in old if v not in removed and v not in part_c]
         self.assertEqual(new[:len(retained)], retained)
         # IOT-WO-08, Review of PR #56 A-1 (owner, 2026-10-30): the
         # original proposals stay immutable; only these exact approved
@@ -319,8 +325,16 @@ class HarnessRepository(unittest.TestCase):
         self.assertEqual(sc.sha(payload), 'dfa73ed9ab5c5badf96462a446abbe87d90406c3d8c7b0a567ed9ff9c68f0fdb')
         zlib = json.loads(payload)['exceptions']
         self.assertEqual(len(zlib), 2)
+        # IOT-WO-08 A-4 (owner, 2026-11-12): the six apt and zlib1g High
+        # copies of this exact proposal follow the A-3 copies, changing only
+        # approvedBy.
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-apt-zlib-high-2026-11-12.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), 'e077a59c2c7c6b7c473e87071dcb0937ef16913b1ad89f45684e7b53f876e68f')
+        apt_zlib = json.loads(payload)['exceptions']
+        self.assertEqual(len(apt_zlib), 6)
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v | {'approvedBy':'amazen33'} for v in proposals + highs + zlib])
+                         [v | {'approvedBy':'amazen33'} for v in proposals + highs + zlib + apt_zlib])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))

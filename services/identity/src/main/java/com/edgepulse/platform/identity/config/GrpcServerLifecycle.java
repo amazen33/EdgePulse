@@ -10,7 +10,7 @@ import org.springframework.context.SmartLifecycle;
  * gRPC Spring Boot starter: a few lines, no extra dependency, and the
  * gRPC adapter itself stays free of Spring.
  *
- * <p>Configuration ({@code application.yml}):
+ * <p>Configuration ({@code application.properties}):
  * {@code edgepulse.identity.grpc.enabled} (default {@code true}) and
  * {@code edgepulse.identity.grpc.port} (default {@code 9091}; {@code 0} =
  * ephemeral, used by tests).

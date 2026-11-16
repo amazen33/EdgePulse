@@ -10,7 +10,7 @@ around it, under [ADR 0020](docs/adr/0020-tb-ce-operational-core.md),
 and [migration-manager integration](docs/adr/0022-migration-manager-integration.md).
 The approved roadmap is [MILESTONES.md](MILESTONES.md).
 
-MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): in progress; licence and supply-chain code/CI foundations are merged ([#46](https://github.com/amazen33/EdgePulse/pull/46), [#48](https://github.com/amazen33/EdgePulse/pull/48)). Part C runtime work precedes Part D quality work under Amendment 5; MS1 acceptance remains pending.
+MS0 Reset: accepted 2026-10-18 ([receipt](docs/acceptance/ms0-reset-2026-10-18.md)); pre-release v2.0.0-alpha.3 (tags v2.0.0-alpha.1 and v2.0.0-alpha.2 were never released). MS2 migration contract v1.0.0-draft: accepted 2026-10-19 ([receipt](docs/acceptance/ms2-migration-contract-v1-2026-10-19.md)); pre-release v2.0.0-alpha.4. MS1 (IOT-WO-02): in progress; licence and supply-chain code/CI foundations are merged ([#46](https://github.com/amazen33/EdgePulse/pull/46), [#48](https://github.com/amazen33/EdgePulse/pull/48)). Part C runtime work precedes Part D quality work under Amendment 5: the Java 21 pin is merged ([#54](https://github.com/amazen33/EdgePulse/pull/54)), and the Spring Boot 4.1 line is [#60](https://github.com/amazen33/EdgePulse/pull/60). MS1 acceptance remains pending.
 [MILESTONES.md](MILESTONES.md) defines the sequence and required receipts;
 runtime integrations remain pending.
 
@@ -29,7 +29,7 @@ below evidence only their stated foundation artifacts and tests.
 | TB CE core | Inventory and plan-only customization manifest from merged [#13](https://github.com/amazen33/EdgePulse/pull/13); dated spike retained as historical input | MS3 deployment/upgrade rehearsal and MS5 event path await implementation and acceptance receipts |
 | Migration | M1/M9 moved to EdgeMig; execution plan retained as its input specification | EdgePulse readiness MR-1 to MR-14: MS2 contracts, then MS4–MS6 implementation |
 | Deployment | Own-infrastructure history is preserved in [archive/iot-ee-own-infra](https://github.com/amazen33/EdgePulse/tree/archive/iot-ee-own-infra/deploy/); active application sources are under [charts/](charts/) and the isolated [kind harness](dev/kind/) | Runtime integration and Argo CD application delivery require their work orders and acceptance receipts |
-| Gates and runtime | Java [#14](https://github.com/amazen33/EdgePulse/pull/14), release [#36](https://github.com/amazen33/EdgePulse/pull/36), licence [#46](https://github.com/amazen33/EdgePulse/pull/46) and supply-chain [#48](https://github.com/amazen33/EdgePulse/pull/48) code/CI foundations are merged | IOT-WO-02 Part C runtime baseline, then Part D quality gate; MS1 receipt remains pending |
+| Gates and runtime | Java [#14](https://github.com/amazen33/EdgePulse/pull/14), release [#36](https://github.com/amazen33/EdgePulse/pull/36), licence [#46](https://github.com/amazen33/EdgePulse/pull/46) and supply-chain [#48](https://github.com/amazen33/EdgePulse/pull/48) code/CI foundations are merged | IOT-WO-02 Part C Spring Boot 4.1 line ([#60](https://github.com/amazen33/EdgePulse/pull/60)), then Part D quality gate; MS1 receipt remains pending |
 
 The snapshot is preserved at `archive/reconcile-snapshot-2026-09-26`;
 it is not a merge source wholesale. The dated
@@ -45,7 +45,7 @@ an ADR alone does not prove implementation, portability or runtime acceptance.
 
 | Concern | Accepted direction / implementation limit | Authority |
 | --- | --- | --- |
-| Runtime | Java 21 build/CI baseline; Spring Boot 3.3.4 / Spring Cloud 2023.0.3 unchanged. Supported Spring upgrade remains IOT-WO-02 Part C; [pin and checks](docs/runtime/java21-baseline.md) | 0011, 0012, 0021 |
+| Runtime | Java 21 build/CI baseline; Spring Boot 4.1.2 / Spring Framework 7.0.10, no Spring Cloud (IOT-WO-02 Part C, [#60](https://github.com/amazen33/EdgePulse/pull/60)); [Java pin](docs/runtime/java21-baseline.md) and [Spring line](docs/runtime/spring-boot-4.1-baseline.md) | 0011, 0012, 0021 |
 | Structure | Autonomous services, versioned contracts, hexagonal ports/adapters; no shared runtime libraries | 0013, 0017 |
 | TB CE and devices | TB CE owns MQTT/HTTP/CoAP transports, devices/assets/relations, telemetry/attributes, rules, alarms and dashboards; unforked | 0020 |
 | Events | TB outbound Kafka node → raw topic → ingestion adapter → canonical topics; Apache Kafka only; outbox/idempotent consumers for EdgePulse service publishing | 0018 as amended by 0021, 0020 |

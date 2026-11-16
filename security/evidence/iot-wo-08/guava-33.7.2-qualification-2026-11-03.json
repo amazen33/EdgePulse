@@ -1,0 +1,247 @@
+{
+  "workOrder": "IOT-WO-08",
+  "date": "2026-11-03",
+  "stackedBase": "6321bb2cb9b933b41a292f08058550096039a868",
+  "finding": {
+    "id": "GHSA-xxph-c9ww-hj94",
+    "cve": "CVE-2026-102554",
+    "scannerSeverity": "High",
+    "targets": [
+      "maven:services/identity/pom.xml",
+      "maven:executed-plugin-8"
+    ],
+    "blockingFrom": "2026-11-11"
+  },
+  "criteria": {
+    "maturity": {
+      "result": "pass",
+      "evidence": "https://github.com/google/guava/releases/tag/v33.7.2",
+      "date": "2026-11-03",
+      "notes": "Final release published 2026-09-29T14:53:52Z; exact Central artifacts published 2026-09-29T14:47:28Z, more than 14 days old."
+    },
+    "governance": {
+      "result": "pass",
+      "evidence": "https://github.com/google/guava",
+      "date": "2026-11-03",
+      "notes": "Google maintains Guava. The vendor-backed route follows the previously accepted Guava-family review; Google Assured OSS lists Guava. No purchased support or Assured OSS artifact use is claimed."
+    },
+    "activitySupport": {
+      "result": "pass",
+      "evidence": "https://github.com/google/guava/wiki/ReleasePolicy",
+      "date": "2026-11-03",
+      "notes": "Maintained 33.x family with September 2026 security-fix release; Android/JRE flavour and compatibility policies apply. No invented LTS or EOL date."
+    },
+    "securityProcess": {
+      "result": "pass",
+      "evidence": "https://github.com/google/guava/security/policy",
+      "date": "2026-11-03",
+      "notes": "Private Google vulnerability intake and coordinated advisories. OpenSSF Scorecard 8.8 dated 2026-11-02T18:15:11Z; exact JAR/POM hashes retained."
+    },
+    "supplyChain": {
+      "result": "pass",
+      "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/41642485897",
+      "date": "2026-11-03",
+      "notes": "Full Linux/amd64 ADR-0049 run 41642485897 passed; exact candidate JAR hashes match both scanned BOMs; zero findings in the two targets, zero blockers, no introduced fixable Critical/High identity and no Guava exception. See guava-33.7.2-scan-2026-11-03.json."
+    },
+    "adoption": {
+      "result": "pass",
+      "evidence": "https://github.com/google/guava/blob/v33.7.2/README.md",
+      "date": "2026-11-03",
+      "notes": "Supplier identifies broad use across Google Java projects and other companies; project adoption, not an exact-patch deployment receipt."
+    }
+  },
+  "artifacts": [
+    {
+      "id": "maven|com.google.errorprone:error_prone_annotations|2.50.0",
+      "name": "com.google.errorprone:error_prone_annotations",
+      "version": "2.50.0",
+      "jarURL": "https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar",
+      "jarSHA256": "4667724877f1d37a689202da191e23efa7657c62eef93ccdac406eccfe5cdd0a",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.pom",
+      "pomSHA256": "71a0680d277324bab46bec4b00f6f111c1b794a931d0d8cda79bcb9246982f92",
+      "published": "Wed, 10 Jun 2026 10:34:28 GMT",
+      "spdx": "Apache-2.0",
+      "classification": "build-tool"
+    },
+    {
+      "id": "maven|com.google.guava:guava|33.7.2-android",
+      "name": "com.google.guava:guava",
+      "version": "33.7.2-android",
+      "jarURL": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.7.2-android/guava-33.7.2-android.jar",
+      "jarSHA256": "b949fe975a32421c1a2633c07a4f1578b462f2f467668aa0a4023c5ff7c4a808",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.7.2-android/guava-33.7.2-android.pom",
+      "pomSHA256": "f7f6481d044bb0c3fd94f8be74a703c61dce54bc5d6c84bdcec9c1d9bfa27f1d",
+      "published": "Tue, 29 Sep 2026 14:47:28 GMT",
+      "spdx": "Apache-2.0",
+      "classification": "allowed"
+    },
+    {
+      "id": "maven|com.google.guava:guava|33.7.2-jre",
+      "name": "com.google.guava:guava",
+      "version": "33.7.2-jre",
+      "jarURL": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.7.2-jre/guava-33.7.2-jre.jar",
+      "jarSHA256": "b530942257fb935f8b2cfaa5f8eb5bd59c555fd8e8d01b8ce98912e077ea606c",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/google/guava/guava/33.7.2-jre/guava-33.7.2-jre.pom",
+      "pomSHA256": "5d1501a97230f90df54ea33164831a61c6714a8b2a4c6a04e90bb729581bbabc",
+      "published": "Tue, 29 Sep 2026 14:47:28 GMT",
+      "spdx": "Apache-2.0",
+      "classification": "build-tool"
+    },
+    {
+      "id": "maven|com.google.j2objc:j2objc-annotations|3.1",
+      "name": "com.google.j2objc:j2objc-annotations",
+      "version": "3.1",
+      "jarURL": "https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar",
+      "jarSHA256": "84d3a150518485f8140ea99b8a985656749629f6433c92b80c75b36aba3b099b",
+      "pomURL": "https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.pom",
+      "pomSHA256": "14570838500034fc1b47c8205ce1c9d6b255c1ccdd2d1afdcdcbf75e89b24a33",
+      "published": "Thu, 14 Aug 2025 17:49:49 GMT",
+      "spdx": "Apache-2.0",
+      "classification": "build-tool"
+    }
+  ],
+  "removedRegisterEntries": [
+    "maven|com.google.guava:guava|33.4.8-jre",
+    "maven|com.google.guava:guava|33.6.0-android",
+    "maven|org.jspecify:jspecify|1.0.0"
+  ],
+  "unchangedRuntimeInputs": [
+    "com.google.guava:failureaccess:1.0.3",
+    "com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava",
+    "com.google.errorprone:error_prone_annotations:2.28.0",
+    "com.google.j2objc:j2objc-annotations:1.3"
+  ],
+  "scorecard": {
+    "url": "https://api.securityscorecards.dev/projects/github.com/google/guava",
+    "score": 8.8,
+    "date": "2026-11-02T18:15:11Z",
+    "responseSHA256": "7dd2104b096f9906d6dd93a8ad8d513443ce6f2c1c072b74b04ab94596c6a35b",
+    "commit": "e98ea2340f6acc94ed9e2cca08976ccae68c3412"
+  },
+  "localVerification": {
+    "command": "mvn -B -f pom.xml clean verify",
+    "java": "Temurin 21.0.12.1+1",
+    "maven": "3.9.11",
+    "platform": "Windows amd64",
+    "identityTests": 214,
+    "contractTests": 61,
+    "transportEquivalenceTests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "limits": [
+    "Full Linux supply-chain run 41642485897 passed; exact candidate scan record retained separately.",
+    "The separately pinned Maven 3.9.11 distribution bundles its own Guava 33.4.8-jre; this request changes the two named project/plugin scan targets only.",
+    "The 22 inherited Spring cooling-off records are unchanged.",
+    "No deployment or real-backend acceptance."
+  ],
+  "resolvedProof": {
+    "platform": "Windows amd64",
+    "runtime": [
+      {
+        "name": "com.google.j2objc:j2objc-annotations",
+        "version": "1.3",
+        "scope": "compile"
+      },
+      {
+        "name": "com.google.errorprone:error_prone_annotations",
+        "version": "2.28.0",
+        "scope": "compile"
+      },
+      {
+        "name": "com.google.guava:guava",
+        "version": "33.7.2-android",
+        "scope": "compile"
+      },
+      {
+        "name": "com.google.guava:failureaccess",
+        "version": "1.0.3",
+        "scope": "compile"
+      },
+      {
+        "name": "com.google.guava:listenablefuture",
+        "version": "9999.0-empty-to-avoid-conflict-with-guava",
+        "scope": "compile"
+      }
+    ],
+    "runtimeJSpecifyAbsent": true,
+    "runtimeClasspathJSpecifyAbsent": true,
+    "pluginTarget": "maven:executed-plugin-8",
+    "pluginRoot": {
+      "groupId": "org.xolstice.maven.plugins",
+      "artifactId": "protobuf-maven-plugin",
+      "version": "0.6.1",
+      "type": "jar",
+      "classifier": "",
+      "kind": "plugin",
+      "dependencies": [
+        {
+          "groupId": "com.google.guava",
+          "artifactId": "guava",
+          "version": "33.7.2-jre",
+          "type": "",
+          "classifier": ""
+        },
+        {
+          "groupId": "org.apache.maven",
+          "artifactId": "maven-core",
+          "version": "3.9.11",
+          "type": "",
+          "classifier": ""
+        },
+        {
+          "groupId": "org.apache.maven",
+          "artifactId": "maven-compat",
+          "version": "3.9.11",
+          "type": "",
+          "classifier": ""
+        },
+        {
+          "groupId": "org.codehaus.plexus",
+          "artifactId": "plexus-utils",
+          "version": "3.6.2",
+          "type": "",
+          "classifier": ""
+        }
+      ]
+    },
+    "pluginComponents": [
+      {
+        "name": "com.google.guava:guava",
+        "version": "33.7.2-jre",
+        "sha256": "b530942257fb935f8b2cfaa5f8eb5bd59c555fd8e8d01b8ce98912e077ea606c"
+      },
+      {
+        "name": "com.google.guava:failureaccess",
+        "version": "1.0.3",
+        "sha256": "cbfc3906b19b8f55dd7cfd6dfe0aa4532e834250d7f080bd8d211a3e246b59cb"
+      },
+      {
+        "name": "com.google.guava:listenablefuture",
+        "version": "9999.0-empty-to-avoid-conflict-with-guava",
+        "sha256": "b372a037d4230aa57fbeffdef30fd6123f9c0c2db85d0aced00c91b974f33f99"
+      },
+      {
+        "name": "org.jspecify:jspecify",
+        "version": "1.0.1",
+        "sha256": "070d75f261fe4c5b8202508366715f7f2d4660f88c8ef7e6d3575e48c9683b66"
+      },
+      {
+        "name": "com.google.errorprone:error_prone_annotations",
+        "version": "2.50.0",
+        "sha256": "4667724877f1d37a689202da191e23efa7657c62eef93ccdac406eccfe5cdd0a"
+      },
+      {
+        "name": "com.google.j2objc:j2objc-annotations",
+        "version": "3.1",
+        "sha256": "84d3a150518485f8140ea99b8a985656749629f6433c92b80c75b36aba3b099b"
+      }
+    ],
+    "sourcePomSHA256": "54f67f27e17d70b3e8dc98eeb5ed2ab01a61d8e2612d8265c50af494a2069432",
+    "identityBomSHA256": "b6059c7e55c81d90e51a11d12381b2517a4f26137777f18f4e3ef51f4a26465a",
+    "identityTreeSHA256": "aba9b0c482255200fc17e95c7f71fd318a6bd26ccd49d4b5992774c71f0d36d6",
+    "pluginBomSHA256": "5c5a09244cd4f0bb5862fff60f6abef04fec78d123e412f514a295ed4b599504"
+  },
+  "linuxScanRecord": "guava-33.7.2-scan-2026-11-03.json"
+}

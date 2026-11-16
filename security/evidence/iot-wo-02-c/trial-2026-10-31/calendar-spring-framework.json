@@ -1,0 +1,204 @@
+{
+  "_embedded" : {
+    "generations" : [ {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/4.3.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "4.3.x",
+      "initialReleaseDate" : "2016-06-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2020-12-31",
+      "commercialSupportEndDate" : "2020-12-31",
+      "linkedGenerations" : {
+        "spring-boot" : [ "1.5.x" ]
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/5.0.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "5.0.x",
+      "initialReleaseDate" : "2017-09-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2020-12-31",
+      "commercialSupportEndDate" : "2022-12-31",
+      "linkedGenerations" : {
+        "spring-boot" : [ "2.0.x" ]
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/5.1.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "5.1.x",
+      "initialReleaseDate" : "2018-09-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2020-12-31",
+      "commercialSupportEndDate" : "2022-12-31",
+      "linkedGenerations" : {
+        "spring-boot" : [ "2.1.x" ]
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/5.2.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "5.2.x",
+      "initialReleaseDate" : "2019-09-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2021-12-31",
+      "commercialSupportEndDate" : "2029-06-30",
+      "linkedGenerations" : {
+        "spring-boot" : [ "2.2.x", "2.3.x" ]
+      },
+      "latestPatch" : {
+        "oss" : "5.2.25.RELEASE",
+        "enterprise" : "5.2.26.RELEASE"
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/5.3.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "5.3.x",
+      "initialReleaseDate" : "2020-10-31",
+      "support" : "extended",
+      "ossSupportEndDate" : "2024-08-31",
+      "commercialSupportEndDate" : "2029-06-30",
+      "linkedGenerations" : {
+        "spring-boot" : [ "2.4.x", "2.5.x", "2.6.x", "2.7.x" ]
+      },
+      "latestPatch" : {
+        "oss" : "5.3.39",
+        "enterprise" : "5.3.50"
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/6.0.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "6.0.x",
+      "initialReleaseDate" : "2022-11-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2024-06-30",
+      "commercialSupportEndDate" : "2032-06-30",
+      "linkedGenerations" : {
+        "spring-boot" : [ "3.0.x", "3.1.x" ]
+      },
+      "latestPatch" : {
+        "oss" : "6.0.23",
+        "enterprise" : "6.0.32"
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/6.1.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "6.1.x",
+      "initialReleaseDate" : "2023-11-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2025-06-30",
+      "commercialSupportEndDate" : "2032-06-30",
+      "linkedGenerations" : {
+        "spring-boot" : [ "3.2.x", "3.3.x" ]
+      },
+      "latestPatch" : {
+        "oss" : "6.1.21",
+        "enterprise" : "6.1.29"
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/6.2.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "6.2.x",
+      "initialReleaseDate" : "2024-11-30",
+      "support" : "extended",
+      "ossSupportEndDate" : "2026-06-30",
+      "commercialSupportEndDate" : "2032-06-30",
+      "linkedGenerations" : {
+        "spring-boot" : [ "3.4.x", "3.5.x" ]
+      },
+      "latestPatch" : {
+        "oss" : "6.2.19",
+        "enterprise" : "6.2.20"
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/7.0.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "7.0.x",
+      "initialReleaseDate" : "2025-11-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2027-07-31",
+      "commercialSupportEndDate" : "2028-07-31",
+      "linkedGenerations" : {
+        "spring-boot" : [ "4.0.x", "4.1.x" ]
+      },
+      "latestPatch" : {
+        "oss" : "7.0.8",
+        "enterprise" : "7.0.8.1"
+      }
+    }, {
+      "_links" : {
+        "self" : {
+          "href" : "https://api.spring.io/projects/spring-framework/generations/7.1.x"
+        },
+        "project" : {
+          "href" : "https://api.spring.io/projects/spring-framework"
+        }
+      },
+      "name" : "7.1.x",
+      "initialReleaseDate" : "2026-11-30",
+      "support" : "default",
+      "ossSupportEndDate" : "2027-12-31",
+      "commercialSupportEndDate" : "2028-12-31",
+      "linkedGenerations" : {
+        "spring-boot" : [ "4.2.x" ]
+      }
+    } ]
+  },
+  "_links" : {
+    "project" : {
+      "href" : "https://api.spring.io/projects/spring-framework"
+    }
+  }
+}
