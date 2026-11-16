@@ -182,3 +182,11 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
 4. The owner merges PR #56 (`java-platform-bootstrap` red is the known main fault).
 5. Codex updates PR #55 from main.
 6. The owner merges PR #55 once green.
+
+## Cilium staleness (2026-11-16, architect)
+
+**Facts (nightly scan 43700701694, 2026-11-15, `a12e046`).** 1,227 findings, none blocked, 7 excepted. The run failed only on the ADR 0028 staleness rule: Cilium v1.20.3 (published 2026-10-15T15:26:34Z) passed 30 days unadopted on `quay.io/cilium/cilium`, `quay.io/cilium/cilium-envoy` and `quay.io/cilium/operator-generic`, which stay on 1.20.2. The check runs live on every gate run, so every PR's supply-chain gate fails from the same date. Cilium v1.20.4 (2026-10-23T14:51:39Z) blocks from 2026-11-23 UTC.
+
+**Owner decision (2026-11-16):** record a dated owner reason for v1.20.3 on the three images, rather than adopting 1.20.4 before the 2026-11-19 exception cutoff. Reason: the harness copies Twinfra's read-only Cilium 1.20.2 lock (`module-2/artifacts.lock.json` at Twinfra `5801b8e`, same chart SHA-256), and the kind rehearsal is paused, so Cilium runs nowhere. KEV still blocks. Record: `security/evidence/iot-wo-08/cilium-1.20.3-owner-reason-2026-11-16.json`.
+
+**Still open, due before 2026-11-23:** adopt Cilium 1.20.4 (pins, chart, three digests, licence admissions and the Envoy scan, moving the harness off Twinfra's lock) or record a separate dated reason for v1.20.4.

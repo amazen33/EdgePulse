@@ -1,0 +1,64 @@
+{
+  "authority": "ADR 0028 staleness rule; IOT-WO-08 item 3",
+  "recordedOn": "2026-11-16",
+  "status": "Owner reason for the exact repository/release v1.20.3 of the three Cilium harness images. Gate evidence only; not a milestone receipt and no runtime claim.",
+  "failure": {
+    "run": "https://github.com/amazen33/EdgePulse/actions/runs/43700701694",
+    "workflow": "Supply-chain nightly scan",
+    "commit": "a12e04693768e41647aa53bbf3edcedb37c93b29",
+    "date": "2026-11-15",
+    "findings": 1227,
+    "blockedFindings": 0,
+    "exceptedFindings": 7,
+    "status": "failed",
+    "cause": "ADR 0028 staleness: Cilium v1.20.3 eligible, unadopted and published more than 30 days earlier, with no owner reason"
+  },
+  "pinned": {
+    "source": "dev/kind/pins.json",
+    "version": "1.20.2",
+    "chartSha256": "b2afd87b7f75f875f92a14559f14f59b7babbb479d968e3fd625a20bf30ec20e",
+    "images": [
+      "quay.io/cilium/cilium@sha256:2939231d0d3e3ebddcd80fffa168b7ddcc78fdf0dc864d1c8c126ff523c54f01",
+      "quay.io/cilium/cilium-envoy@sha256:af7382699576b9e65e9184efa52eeca0b58aea70ad6e511bf260c91d9f740463",
+      "quay.io/cilium/operator-generic@sha256:64d8798350e8569b8e7622563fed6e44dce2625f311e4651b774816516c744fc"
+    ]
+  },
+  "releaseMetadata": {
+    "source": "https://api.github.com/repos/cilium/cilium/releases?per_page=100",
+    "sourceSHA256": "aaa0191c7a1bf86ae39e96d0be8a0784edfa86e19456d365171a512a3fb82734",
+    "observedIn": "harness-checks.json of run 43700701694",
+    "releases": [
+      {
+        "release": "v1.20.3",
+        "publishedAt": "2026-10-15T15:26:34Z",
+        "staleFrom": "2026-11-15 UTC",
+        "coveredByThisReason": true
+      },
+      {
+        "release": "v1.20.4",
+        "publishedAt": "2026-10-23T14:51:39Z",
+        "staleFrom": "2026-11-23 UTC",
+        "coveredByThisReason": false
+      }
+    ]
+  },
+  "twinfraLock": {
+    "access": "read-only local checkout, git show only, not fetched",
+    "commit": "5801b8e6c952f88304888ab0661e1329d7c8e229",
+    "path": "module-2/artifacts.lock.json",
+    "fileSHA256": "e45e3a755e2bc61a07d9689fc9571c464afa3a883f3ac3ffeac73789535d9317",
+    "cilium": "1.20.2",
+    "vendoredChart": "module-2/vendor/cilium-1.20.2.tgz",
+    "vendoredChartSHA256": "b2afd87b7f75f875f92a14559f14f59b7babbb479d968e3fd625a20bf30ec20e"
+  },
+  "exposure": "The kind rehearsal is paused (IOT-WO-08 Amendment 2, dev/kind/rehearsal-pause.json); kind-smoke is skipped and the local up, install and smoke scripts refuse before engine access. The Cilium images are scanned, not run.",
+  "ownerReasons": [
+    "quay.io/cilium/cilium",
+    "quay.io/cilium/cilium-envoy",
+    "quay.io/cilium/operator-generic"
+  ],
+  "notCovered": [
+    "v1.20.4: stale from 2026-11-23 UTC; needs adoption (pins, chart, three digests, licence admissions and the Envoy scan) or its own dated owner reason before then",
+    "Any KEV finding in a Cilium image: ADR 0028 and ADR 0014 permit no waiver"
+  ]
+}

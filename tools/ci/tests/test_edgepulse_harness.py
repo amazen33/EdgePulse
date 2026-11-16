@@ -268,6 +268,37 @@ runs:
         self.assertTrue(all(c['newestEligibleRelease'].endswith('.99') and c['blocked'] for c in checks))
         self.assertTrue(all(c['overdueReleases'][0]['release'].endswith('.98') for c in checks))
 
+    def test_cilium_1_20_3_owner_reason_is_exact_and_ends_when_1_20_4_turns_stale(self):
+        # IOT-WO-08 item 3 (owner, 2026-11-16): exactly three reasons, for
+        # v1.20.3 of the three Cilium images. Real release dates from run
+        # 43700701694; v1.20.4 still blocks from 2026-11-23 UTC.
+        reasons = h.policy(ep.ROOT)['ownerReasons']
+        cilium = ['quay.io/cilium/cilium', 'quay.io/cilium/cilium-envoy', 'quay.io/cilium/operator-generic']
+        self.assertEqual([(r['repository'], r['release'], r['owner'], r['date']) for r in reasons],
+                         [(r, 'v1.20.3', 'amazen33', '2026-11-16') for r in cilium])
+        pins = sc.read(self.root/'dev/kind/pins.json')
+        node = pins['kind']['node']
+        def releases(repo, memo):
+            if repo == 'cilium/cilium':
+                return [dict(tag_name=t, published_at=p, draft=False, prerelease=False, body='')
+                        for t, p in [('v1.20.2', '2026-09-16T00:00:00Z'), ('v1.20.3', '2026-10-15T15:26:34Z'),
+                                     ('v1.20.4', '2026-10-23T14:51:39Z')]]
+            family = {'kubernetes-sigs/kind':'kind', 'cloudnative-pg/cloudnative-pg':'cnpg'}[repo]
+            return [dict(tag_name='v'+pins[family]['version'], published_at='2026-09-01T00:00:00Z',
+                         draft=False, prerelease=False, body=node)]
+        with patch.object(h.watch, 'releases', side_effect=releases):
+            with self.assertRaisesRegex(ValueError, 'invalid dated owner reason'):
+                h.release_checks(self.root, self.guard()['targets'], date(2026, 11, 15))
+            for on, blocked in [(date(2026, 11, 16), False), (date(2026, 11, 22), False), (date(2026, 11, 23), True)]:
+                with self.subTest(on=on):
+                    checks = h.release_checks(self.root, self.guard()['targets'], on)
+                    stale = [c for c in checks if c['target'].split('@')[0] in cilium]
+                    self.assertEqual(len(stale), 3)
+                    self.assertTrue(all(c['blocked'] == blocked for c in stale))
+                    self.assertFalse(any(c['blocked'] for c in checks if c not in stale))
+                    self.assertTrue(all(o['ownerReason'] for c in stale for o in c['overdueReleases']
+                                        if o['release'] == 'v1.20.3'))
+
     def test_report_writer_keeps_ported_formatter_unchanged(self):
         report = self.report()
         original = sc.markdown
