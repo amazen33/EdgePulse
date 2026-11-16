@@ -26,6 +26,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   unchanged, and the bootstrap still verifies the hash before use.
 - Sync the main-and-release ruleset file with the live required checks (licence-gate, supply-chain-gate).
 
+- Move the two Node 20 CI action pins to Node 24 releases:
+  `actions/setup-python` v5.6.0 to v7.1.0 and `actions/setup-java` v4.7.1
+  to v6.1.0 (exact SHAs, MIT, both older than 14 days), with matching
+  licence-register entries. The Python 3.12.12 and Temurin
+  `21.0.12+101.0.LTS` version pins are unchanged.
+
 ### Security
 
 - IOT-WO-08 A-4: activate six owner-approved High bridge rows for
