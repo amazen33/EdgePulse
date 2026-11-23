@@ -32,8 +32,9 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   gate cannot match the CNPG image's PGDG PostgreSQL packages, so the 52
   PostgreSQL 18.7 CVEs are not reported. Propose a PGDG upstream CPE pass
   that uses the pinned Grype and its database snapshot, plus a fail-closed
-  coverage rule. This is a proposal only: no scanner, pin, exception or gate
-  rule changes.
+  coverage rule. Add a report-only probe and regression tests that show, in
+  the gate artifact, where coverage is lost and the affected 18.6 and fixed
+  18.7 cases. No scanner, pin, exception, finding or gate-status change.
 - IOT-WO-08 A-4: activate six owner-approved High bridge rows for
   CVE-2026-109518 (`apt` 3.0.3) and CVE-2026-76844 (`zlib1g`) on TB 4.3.1.8
   and CNPG PostgreSQL 18.6, which block from 2026-11-19 and 2026-11-20
