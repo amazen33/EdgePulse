@@ -290,7 +290,7 @@ The legacy fingerprint (`licence_ladder.fingerprint`) covers every register fiel
 2. **Coverage rule (new, fail-closed).** Every dpkg package with a `.pgdg` version in a scanned image must be handled by item 1 or listed in a new reviewed map, `security/os-package-coverage.json`, which names its matching route and evidence. Otherwise the gate fails with "uncovered third-party OS package". This rule:
    - keeps `postgresql-common` and `postgresql-client-common` honest: the probe shows whether Debian trixie records cover them;
    - catches later additions, such as CNPG's `standard` flavour with PGDG extensions, or a new PostgreSQL major.
-3. **Probe first.** Before any PGDG finding counts, the PR runs item 1 in report-only mode for the current digest and the next 18.7 candidate, and attaches the output. Acceptance:
+3. **Probe first.** Before any PGDG finding counts, item 1 runs in report-only mode for the current digest and the next 18.7 candidate, and the output is attached. The report-only probe (`tools/ci/edgepulse_pgdg.py`, with regression tests in `tools/ci/tests/test_edgepulse_pgdg.py`) already runs in the gate from the proposal PR onward. It records the loss point (dpkg-pass matches and the database's rows per OS) and the upstream CPE route with a fixed-version control. It also records a Debian 14 route. Acceptance:
    - the PR records how many of the 52 CVEs match, and each of the four sampled CVEs matches;
    - Grype reports `fix.state: fixed` with `18.7`;
    - the 18.7 candidate has none of the 52.
@@ -306,6 +306,16 @@ The legacy fingerprint (`licence_ladder.fingerprint`) covers every register fiel
 - **Owner decision:** the first-seen anchor. The default is the first run that evaluates these findings, using the state in tracking issue #52. The alternative is the 18.7 publication date, 2026-11-12, which would make the Highs block at once. Do not backdate without that decision.
 - CNPG build `18.7-202611122305` (`b98ae0b7…`) clears cool-off at 2026-11-26T23:16:17Z. If the IOT-WO-08 refresh to it lands first, or within 14 days of item 1, none of the 52 should block.
   - The refresh does not change the glibc and krb5 rows, because their versions are the same in that build.
+
+### Proposed disposition of the 52 server findings
+
+This is for owner decision. A-6 in IOT-WO-08 covers only the Debian OS packages.
+
+- **Remediate by refresh, with no exception.** The fix is the partial CNPG refresh to `18.7-202611122305` that A-6 names (eligible 2026-11-27), due by the A-6 owner checkpoint on **2026-12-07**. That is 14 days after the first recorded observation on 2026-11-23. The refresh PR must show, through the probe, that `postgresql-18` is at 18.7 and that none of the 52 CVEs is still affected.
+- **Until the refresh:** the findings are known, uncovered and report-only, and no exception can attach to them.
+  - A-6's undeployed condition applies here too.
+  - A KEV listing of any of the 52 expedites the refresh, as an owner decision.
+- **If the refresh misses 2026-12-07,** the owner decides between an evidenced exception (once item 1 emits the findings) and keeping the image blocked.
 
 ### Acceptance
 

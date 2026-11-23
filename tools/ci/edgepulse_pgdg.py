@@ -197,6 +197,8 @@ def probe(plan, tools, out):
         except ERRORS as error:
             result['images'].append(dict(target=image['target'], error=str(error)))
     sc.write(out/'pgdg-coverage.json', result)
+    # Readable even when a later gate step fails before report.md is written.
+    (out/'pgdg-coverage.md').write_text(markdown(dict(pgdgCoverage=result)), encoding='utf-8', newline='\n')
     return result
 
 

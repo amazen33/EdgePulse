@@ -89,3 +89,32 @@ These were checked on 2026-11-23, from public pages:
 
   Amendment 7's probe must answer these questions before any finding counts
   toward the gate.
+
+## Proposed disposition of the PostgreSQL server findings
+
+This is for the owner's decision. It is separate from A-6, which covers only
+the Debian OS packages and records this gap as uncovered.
+
+- **Identity.** The finding is on the CNPG PostgreSQL image at `37ade18d…`,
+  package `postgresql-18` at `18.6-1.pgdg13+2`. It also covers `libpq5` and
+  `postgresql-client-18`, which come from the same source. The 52 CVEs are
+  fixed upstream in 18.7. None is in KEV, and none is Critical; 38 are High
+  by the CNA's CVSS.
+- **Disposition: remediate by refresh, with no exception.**
+  - The fix is the partial CNPG refresh to `18.7-202611122305` that A-6
+    already names, eligible 2026-11-27.
+  - It is due by the A-6 owner checkpoint, **2026-12-07**. That is 14 days
+    after the first recorded observation (2026-11-23, this record), which
+    matches the High-with-fix window that Amendment 5 would apply.
+  - The refresh PR must show, through the probe, that `postgresql-18` is at
+    18.7 and that none of the 52 CVEs is still affected.
+- **Until then: known, uncovered and report-only.**
+  - The gate cannot emit these findings, so no exception can attach to them,
+    and none is needed.
+  - A-6's condition applies here too: deploying the image voids this
+    disposition.
+  - If any of the 52 enters KEV, the refresh is expedited under ADR 0014's
+    rule, which is an owner decision.
+- **If the refresh misses 2026-12-07,** the owner decides. Either an
+  evidenced exception proposal is made once Amendment 7 emits the findings,
+  or the image stays blocked. This record proposes no exception.

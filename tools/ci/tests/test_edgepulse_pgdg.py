@@ -129,6 +129,8 @@ class PgdgCoverage(unittest.TestCase):
             self.assertEqual(subset['artifactRelationships'], [dict(parent='p1', child='p2', type='dependency-of')])
             self.assertEqual(value['images'][0]['otherPgdgPackages'][0]['dpkgPassMatches'], 0)
             self.assertTrue((out/'pgdg-coverage.json').is_file())
+            self.assertIn('Coverage loss for `postgresql-18 18.6-1.pgdg13+2`',
+                          (out/'pgdg-coverage.md').read_text(encoding='utf-8'))
             # Pinned binary and the scan's own database snapshot; never an update.
             for call in scanner.calls:
                 self.assertEqual(call['command'][0], 'SYNTHETIC-grype')
