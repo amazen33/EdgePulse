@@ -29,10 +29,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 ### Security
 
 - IOT-WO-08 item 3: record dated owner reasons, under the ADR 0028
-  staleness rule, for Cilium v1.20.3 on the three Cilium harness images,
-  which stay on Twinfra's 1.20.2 lock while the kind rehearsal is paused.
-  This clears the staleness failure from 2026-11-15. Cilium v1.20.4 is not
-  covered and blocks from 2026-11-23 UTC; KEV still blocks.
+  staleness rule, for Cilium v1.20.3 and v1.20.4 on the three Cilium
+  harness images, which stay on Twinfra's 1.20.2 lock while the kind
+  rehearsal is paused. This clears the staleness failures from 2026-11-15
+  and 2026-11-23. Cilium v1.20.5 is not covered and blocks from
+  2026-12-18 UTC; KEV still blocks.
 
 - IOT-WO-08 A-4: activate six owner-approved High bridge rows for
   CVE-2026-109518 (`apt` 3.0.3) and CVE-2026-76844 (`zlib1g`) on TB 4.3.1.8

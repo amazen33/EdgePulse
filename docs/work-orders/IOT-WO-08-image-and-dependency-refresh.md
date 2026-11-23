@@ -189,4 +189,6 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
 
 **Owner decision (2026-11-16):** record a dated owner reason for v1.20.3 on the three images, rather than adopting 1.20.4 before the 2026-11-19 exception cutoff. Reason: the harness copies Twinfra's read-only Cilium 1.20.2 lock (`module-2/artifacts.lock.json` at Twinfra `5801b8e`, same chart SHA-256), and the kind rehearsal is paused, so Cilium runs nowhere. KEV still blocks. Record: `security/evidence/iot-wo-08/cilium-1.20.3-owner-reason-2026-11-16.json`.
 
-**Still open, due before 2026-11-23:** adopt Cilium 1.20.4 (pins, chart, three digests, licence admissions and the Envoy scan, moving the harness off Twinfra's lock) or record a separate dated reason for v1.20.4.
+**Owner decision (2026-11-23):** v1.20.4 went stale on 2026-11-23 UTC; add the same dated reason for v1.20.4 on the three images rather than adopting it, and confirm the v1.20.3 wording. Twinfra's lock is unchanged (`cceab35`, byte-identical lock file). Record: `security/evidence/iot-wo-08/cilium-1.20.4-owner-reason-2026-11-23.json`.
+
+**Still open, due before 2026-12-18 UTC:** Cilium v1.20.5 (published 2026-11-17T09:53:42Z) becomes eligible on 2026-12-01 and stale on 2026-12-18. Adopt it (pins, chart, three digests, licence admissions and the Envoy scan, moving the harness off Twinfra's lock) or record a separate dated reason for it. The CNPG operator has the same dates: 1.30.2 (published 2026-11-17T11:31:47Z) becomes eligible on 2026-12-01 and stale on 2026-12-18 UTC.

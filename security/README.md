@@ -209,11 +209,13 @@ EdgePulse wrapper adds the same isolation, KEV and staleness checks.
 The first owner reasons (2026-11-16, IOT-WO-08 item 3) cover only Cilium
 release v1.20.3 of the three Cilium images. Cilium 1.20.3 went stale on
 2026-11-15 and failed that night's scan. The harness copies Twinfra's
-read-only Cilium 1.20.2 lock, and the kind rehearsal is paused. Cilium
-v1.20.4 is not covered and blocks from 2026-11-23 UTC unless it is adopted
-or given its own dated reason. The
+read-only Cilium 1.20.2 lock, and the kind rehearsal is paused. The
 [record](evidence/iot-wo-08/cilium-1.20.3-owner-reason-2026-11-16.json) keeps
-the release metadata hash, the Twinfra lock and the dates.
+the release metadata hash, the Twinfra lock and the dates. On 2026-11-23,
+when v1.20.4 went stale, the owner added the same reason for v1.20.4
+([record](evidence/iot-wo-08/cilium-1.20.4-owner-reason-2026-11-23.json)).
+Cilium v1.20.5 (published 2026-11-17) is not covered and blocks from
+2026-12-18 UTC unless it is adopted or given its own dated reason.
 
 Amendment 1 removes exactly 266 `IOT-WO-08` harness exceptions. The remaining
 36 entries preserve their exact bytes and order. The repository regression
