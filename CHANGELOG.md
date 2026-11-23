@@ -35,6 +35,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   and 2026-11-23. Cilium v1.20.5 is not covered and blocks from
   2026-12-18 UTC; KEV still blocks.
 
+- IOT-WO-08: retire the 19 High exception rows for the replaced TB 4.3.1.6
+  digest removal-only (32 to 13 entries). They match no scanned input since
+  PR #56, and any row left after its 2026-11-19 expiry would fail every
+  scan from 2026-11-20. The record keeps each row and its block hash.
+
 - IOT-WO-08 A-4: activate six owner-approved High bridge rows for
   CVE-2026-109518 (`apt` 3.0.3) and CVE-2026-76844 (`zlib1g`) on TB 4.3.1.8
   and CNPG PostgreSQL 18.6, which block from 2026-11-19 and 2026-11-20
