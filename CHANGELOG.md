@@ -30,9 +30,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 - IOT-WO-08 A-5 and A-6: remove the eight TB 4.3.1.8 exception copies
   (A-1 to A-4) that expired on 2026-11-19, removal-only. From the 2026-11-23
-  scan, propose 24 new, unapproved TB rows (4 Critical, 20 High), expiring
-  2026-12-23, and 35 PostgreSQL High rows, expiring 2026-12-14. No exception
-  is activated by the proposals.
+  scan, activate the owner-approved A-5 (24 TB rows, 4 Critical and 20 High,
+  expiring 2026-12-23) and A-6 (35 PostgreSQL High rows, expiring
+  2026-12-14), as exact proposal copies with only `approvedBy` changed. A-6
+  replaces the four A-3/A-4 PostgreSQL rows. Starting TB or deploying the
+  PostgreSQL image voids its rows. PostgreSQL server CVEs are not seen by
+  the scanners and are not covered.
 
 - IOT-WO-08 item 3: record dated owner reasons, under the ADR 0028
   staleness rule, for Cilium v1.20.3 and v1.20.4 on the three Cilium

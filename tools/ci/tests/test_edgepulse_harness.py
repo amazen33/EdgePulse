@@ -395,8 +395,29 @@ class HarnessRepository(unittest.TestCase):
         block = lambda row: ('    '+json.dumps(row, indent=2).replace('\n', '\n    ')).encode('utf-8')
         self.assertEqual([r['blockSHA256'] for r in record['removedExceptions']],
                          [sc.sha(block(r['row'])) for r in record['removedExceptions']])
+        # IOT-WO-08 A-6 (owner, 2026-11-23): the new PostgreSQL rows renew the
+        # A-3/A-4 PostgreSQL copies, so those four leave removal-only (the
+        # gate rejects duplicate keys); the record keeps each block.
+        superseded = [v for v in approved if v not in expired_tb]
+        self.assertEqual(len(superseded), 4)
+        record = json.loads((ep.ROOT/'security/evidence/iot-wo-08/superseded-pg-rows-2026-11-23.json').read_text(encoding='utf-8'))
+        self.assertEqual([r['row'] for r in record['removedExceptions']], superseded)
+        self.assertEqual([r['blockSHA256'] for r in record['removedExceptions']],
+                         [sc.sha(block(r['row'])) for r in record['removedExceptions']])
+        # IOT-WO-08 A-5 and A-6 (owner, 2026-11-23): only exact copies of
+        # these two proposals follow, changing only approvedBy.
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-tb-renewal-2026-11-23.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), 'c2b4e2416037e6c74c1d008cdc8c0eeaea5dcf8a758034c6701239eddfd8047f')
+        tb_renewal = json.loads(payload)['exceptions']
+        self.assertEqual(len(tb_renewal), 24)
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-pg-bridge-2026-11-23.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), 'f2e811603798d360d274fda1c7850b7b8c80af36914fbfd006a634661acd7a99')
+        pg_bridge = json.loads(payload)['exceptions']
+        self.assertEqual(len(pg_bridge), 35)
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v for v in approved if v not in expired_tb])
+                         [v | {'approvedBy':'amazen33'} for v in tb_renewal + pg_bridge])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))

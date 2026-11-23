@@ -286,9 +286,14 @@ A-5 proposes 24 new TB rows
 (`vulnerability-exception-proposals/iot-wo-08-tb-renewal-2026-11-23.json`,
 expiring 2026-12-23) and A-6 proposes 35 PostgreSQL rows
 (`vulnerability-exception-proposals/iot-wo-08-pg-bridge-2026-11-23.json`,
-expiring 2026-12-14), one per package and advisory. A-6 supersedes the four
-A-3/A-4 PostgreSQL rows. Until the owner approves them by SHA-256, those
-findings block.
+expiring 2026-12-14), one per package and advisory. The owner approved
+both on 2026-11-23 by exact SHA-256 as temporary bridges, with both images
+kept unstarted. The active rows are exact copies, changing only
+`approvedBy`. A-6 replaced the four A-3/A-4 PostgreSQL rows
+([record](evidence/iot-wo-08/superseded-pg-rows-2026-11-23.json)). A-6 covers
+Debian OS packages only. The scanners do not match the PGDG `postgresql-18`
+server package, so PostgreSQL server CVEs are not covered and need their
+own disposition.
 The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and
