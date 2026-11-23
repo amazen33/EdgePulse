@@ -382,8 +382,21 @@ class HarnessRepository(unittest.TestCase):
         self.assertEqual(sc.sha(payload), 'e077a59c2c7c6b7c473e87071dcb0937ef16913b1ad89f45684e7b53f876e68f')
         apt_zlib = json.loads(payload)['exceptions']
         self.assertEqual(len(apt_zlib), 6)
+        approved = [v | {'approvedBy':'amazen33'} for v in proposals + highs + zlib + apt_zlib]
+        # IOT-WO-08 A-5 (owner, 2026-11-23): the eight TB 4.3.1.8 copies
+        # (A-1 to A-4) expired on 2026-11-19 and leave removal-only; the
+        # record keeps each row and its block hash. The PostgreSQL copies
+        # keep their bytes and order. Renewal is only by new A-5 entries.
+        tb_4318 = 'docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872'
+        expired_tb = [v for v in approved if v['target'] == tb_4318]
+        self.assertEqual(len(expired_tb), 8)
+        record = json.loads((ep.ROOT/'security/evidence/iot-wo-08/expired-tb-4.3.1.8-exceptions-2026-11-23.json').read_text(encoding='utf-8'))
+        self.assertEqual([r['row'] for r in record['removedExceptions']], expired_tb)
+        block = lambda row: ('    '+json.dumps(row, indent=2).replace('\n', '\n    ')).encode('utf-8')
+        self.assertEqual([r['blockSHA256'] for r in record['removedExceptions']],
+                         [sc.sha(block(r['row'])) for r in record['removedExceptions']])
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v | {'approvedBy':'amazen33'} for v in proposals + highs + zlib + apt_zlib])
+                         [v for v in approved if v not in expired_tb])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))

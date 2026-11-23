@@ -276,6 +276,15 @@ CVE-2026-76844 on CNPG PostgreSQL `zlib1g`. Starting TB or deploying the
 PostgreSQL image voids its rows, and a KEV listing voids that advisory's
 rows. The three tb-node rows expire 2026-11-19 and the three CNPG rows
 2026-11-30, with no extension. CVE-2026-76844 on tb-node is not covered.
+The eight TB 4.3.1.8 copies from A-1 to A-4 expired on 2026-11-19. Because
+the gate validates every row before matching, they left removal-only on
+2026-11-23; the
+[record](evidence/iot-wo-08/expired-tb-4.3.1.8-exceptions-2026-11-23.json)
+keeps each row and its block hash. A-5 (2026-11-23) proposes eight new TB
+rows with fresh evidence in
+`vulnerability-exception-proposals/iot-wo-08-tb-renewal-2026-11-23.json`,
+one per package and advisory, expiring 2026-12-23. Until the owner approves
+it by SHA-256, TB findings block.
 The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and
