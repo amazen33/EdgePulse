@@ -9120,72 +9120,6 @@
       }
     },
     {
-      "id": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
-      "ecosystem": "oci-image",
-      "name": "ghcr.io/cloudnative-pg/postgresql",
-      "version": "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
-      "locations": [
-        "charts/edgepulse-thingsboard/values.yaml",
-        "dev/kind/pins.json"
-      ],
-      "integrities": [
-        "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3"
-      ],
-      "class": "allowed",
-      "spdx": "Apache-2.0 AND PostgreSQL",
-      "electedSpdx": "Apache-2.0 AND PostgreSQL",
-      "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/ff34de135f29e04a841247ea9686d7a80b663005/LICENSE",
-      "unmodified": true,
-      "tier": 2,
-      "enterpriseGrade": {
-        "status": "verified",
-        "criteria": {
-          "maturity": {
-            "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
-          },
-          "governance": {
-            "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
-          },
-          "activitySupport": {
-            "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
-          },
-          "securityProcess": {
-            "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
-          },
-          "supplyChain": {
-            "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/component-d41dcd8b03e342ee.json",
-            "date": "2026-10-20",
-            "notes": "Exact component passes without an exception; real CI SBOM and scan hashes retained. No environment acceptance."
-          },
-          "adoption": {
-            "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
-          }
-        }
-      },
-      "imageSBOM": {
-        "path": "target/supply-chain/reviewed/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.cdx.json",
-        "sha256": "f42ce54dd54c2a1f2a62cfd8698de528fabc3e7cab0c14d4f8dc274a95bed954"
-      }
-    },
-    {
       "id": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
       "ecosystem": "oci-image",
       "name": "ghcr.io/cloudnative-pg/postgresql",
@@ -9205,7 +9139,7 @@
       "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/e1279c43bd11570edc864d220468c28e611df5dd/LICENSE",
       "unmodified": true,
       "tier": 2,
-      "notes": "IOT-WO-08 item 1 (owner, 2026-11-23): proposed CNPG PostgreSQL 18.7-202611122305. supplyChain and the reviewed imageSBOM await this PR's Linux CI scan. No legacy admission or deployment claim.",
+      "notes": "IOT-WO-08 item 1 (owner, 2026-11-23): CNPG PostgreSQL 18.7-202611122305. supplyChain does not pass until the A-7 glibc and krb5 rows for this digest are approved and active (see the criterion). No legacy admission or deployment claim.",
       "enterpriseGrade": {
         "status": "pending",
         "criteria": {
@@ -9235,9 +9169,9 @@
           },
           "supplyChain": {
             "result": "pending",
-            "evidence": "https://github.com/amazen33/EdgePulse/actions",
+            "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/45137906762",
             "date": "2026-11-23",
-            "notes": "No passing qualification recorded. Requires this PR's full Linux scan of the exact digest. This link is a workflow index, not scan evidence."
+            "notes": "PR #72 gate run 45137906762 (2026-11-23, pull_request merge commit a8e68b86): full Linux scan of all six active images, the Maven graph and lockfiles with pinned Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0; Grype database built 2026-11-23T06:28:32Z; CISA KEV 2026.11.20. On this digest: apt and libapt-pkg7.0 3.0.4 and zlib1g 1:1.3.dfsg+really1.3.1-1+deb13u1, so CVE-2026-109518 and CVE-2026-85091 are gone; no new fixable Critical/High identity versus the replaced digest; no KEV. Not yet passing ADR-0049: 8 glibc Highs block now and 24 krb5 Highs block from 2026-11-24/25, with no approved exception. Record pass only after the A-7 rows are approved and active and a rerun is green, citing that run. The reviewed imageSBOM is bound below. Static artifact qualification only; nothing is deployed."
           },
           "adoption": {
             "result": "pass",
@@ -9246,6 +9180,10 @@
             "notes": "ADOPTERS.md lists 56 named organisations, including EDB (BigAnimal), IBM (Cloud Pak), Google Cloud and Clustermarket. GitHub API read 2026-11-23T07:40:28Z: cloudnative-pg/cloudnative-pg has 9,647 stars and 823 forks. Project-wide operator adoption signals, not counts for this operand image, this digest or any EdgePulse deployment."
           }
         }
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1.cdx.json",
+        "sha256": "2cbd55cfd5ea6d43f5977f8e3fe25f0a8ce9a29148f205810608e720d8a2f714"
       }
     },
     {

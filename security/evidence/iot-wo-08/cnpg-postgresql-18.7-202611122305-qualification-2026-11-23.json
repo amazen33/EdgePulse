@@ -1,0 +1,195 @@
+{
+  "workOrder": "IOT-WO-08 item 1; owner decision 2026-11-23 (partial refresh to PostgreSQL 18.7)",
+  "status": "Supplier criteria, eligibility and scan recorded; supplyChain awaits the A-7 rows; draft until 2026-11-27",
+  "reviewedOn": "2026-11-23",
+  "candidate": "ghcr.io/cloudnative-pg/postgresql@sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
+  "candidateTag": "18.7-202611122305-minimal-trixie",
+  "baseline": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+  "baselineTag": "18.6-202610050823-minimal-trixie",
+  "release": "PostgreSQL 18.7",
+  "sourceCommit": "e1279c43bd11570edc864d220468c28e611df5dd",
+  "licence": "Apache-2.0 AND PostgreSQL",
+  "licenceEvidence": "https://github.com/cloudnative-pg/postgres-containers/blob/e1279c43bd11570edc864d220468c28e611df5dd/LICENSE",
+  "licenceSHA256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "licenceNote": "Byte-identical to the LICENSE at the replaced image's revision ff34de135f29e04a841247ea9686d7a80b663005.",
+  "eligibility": {
+    "rule": "ADR 0014: 14-day cool-off from publication. No KEV expedite is used.",
+    "indexCreated": "2026-11-12T23:05:08Z",
+    "createdSource": "OCI index annotation org.opencontainers.image.created. Build time is a lower bound, not publication time.",
+    "publishedNoLaterThan": "2026-11-12T23:16:17Z",
+    "eligibleFrom": "2026-11-26T23:16:17Z",
+    "eligibleFromNote": "The later of the Rekor integration time (23:16:14Z) and the signature referrer's created annotation (23:16:17Z) is used.",
+    "publicationEvidence": [
+      {
+        "kind": "cosign signature over the exact index digest",
+        "registryReferrer": "ghcr.io/cloudnative-pg/postgresql:sha256-b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
+        "signatureManifest": "sha256:337b0054476fd1b944936f26324c5416e65a2e5cffb2d1071290efb598f5b2fd",
+        "signatureManifestCreated": "2026-11-12T23:16:17Z",
+        "bundle": "sha256:2aa85ea74ed6696a7b2655f3884f0e3e5529a3772d9ed54cbd076d7a652ccec7",
+        "statementSubject": "sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
+        "payloadSHA256": "0aba879fa78d2d02a2e1c354340b0565f0b727a571eba23aa2d86d9e9e24bc00",
+        "rekorLogIndex": 3841077455,
+        "rekorEntry": "https://rekor.sigstore.dev/api/v1/log/entries?logIndex=3841077455",
+        "rekorUUID": "108e9186e8c5677a1a4a7316cbe4e57513907173e82421a8c67df0a260f95bb1c52be8a89b12094e",
+        "integratedTime": "2026-11-12T23:16:14Z",
+        "signer": "https://github.com/cloudnative-pg/postgres-containers/.github/workflows/bake_targets.yml@refs/heads/main, run 43325682541, commit e1279c43bd11570edc864d220468c28e611df5dd"
+      },
+      {
+        "kind": "signed CNPG image catalog naming the exact tag and digest",
+        "commit": "https://github.com/cloudnative-pg/artifacts/commit/72fb8647dd498f5c50a79057d20292c2cb82f553",
+        "file": "image-catalogs/catalog-minimal-trixie.yaml",
+        "fileSHA256": "1beb6fd13f8723838d9b3413a147b065e5b32b6b99905c45350f939332d11749",
+        "rekorLogIndex": 3841178854,
+        "rekorEntry": "https://rekor.sigstore.dev/api/v1/log/entries?logIndex=3841178854",
+        "integratedTime": "2026-11-12T23:21:48Z",
+        "signer": "https://github.com/cloudnative-pg/postgres-containers/.github/workflows/catalogs.yml@refs/heads/main, run 43328119355"
+      }
+    ],
+    "limits": "The GitHub API returned HTTP 404 on 2026-11-23 for postgres-containers run 43325682541; the Rekor entries are the retained public build records. Each Rekor body hash was matched to the fetched payload or file; certificate chains were not cryptographically verified."
+  },
+  "candidateSelection": {
+    "decision": "Owner, 2026-11-23: partial refresh to 18.7-202611122305, replacing the 18.6-202611090812 target, because no eligible build carries the glibc and krb5 fixes.",
+    "checkedOn": "2026-11-23T08:02:29Z",
+    "builds": [
+      {
+        "tag": "18.6-202611090812-minimal-trixie",
+        "digest": "sha256:ec2ed3404e89fff99643901b58a2a34c46a46345fe69a3d96500b82f995c327b",
+        "eligibleFrom": "2026-11-23T08:24:52Z",
+        "glibc": "2.41-12+deb13u4",
+        "krb5": "1.21.3-5+deb13u1",
+        "apt": "3.0.4",
+        "zlib1g": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+        "postgresql": "18.6"
+      },
+      {
+        "tag": "18.7-202611122305-minimal-trixie",
+        "digest": "sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
+        "eligibleFrom": "2026-11-26T23:16:17Z",
+        "glibc": "2.41-12+deb13u4",
+        "krb5": "1.21.3-5+deb13u1",
+        "apt": "3.0.4",
+        "zlib1g": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+        "postgresql": "18.7"
+      },
+      {
+        "tag": "18.7-202611160820-minimal-trixie",
+        "digest": "sha256:452a15584e2aa1ce658c4ae8538b5dc157eb031d41b82fd19882e0c03bcec01d",
+        "eligibleFrom": "2026-11-30T08:35:48Z",
+        "glibc": "2.41-12+deb13u4",
+        "krb5": "1.21.3-5+deb13u1",
+        "apt": "3.0.4",
+        "zlib1g": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+        "postgresql": "18.7"
+      },
+      {
+        "tag": "18.7-202611201711-minimal-trixie",
+        "digest": "sha256:635bfde0a4ce2a04daad754e1ad37fb95ae096c8153b37fe1a4561b5ea417e38",
+        "eligibleFrom": "2026-12-04T17:26:25Z",
+        "glibc": "2.41-12+deb13u4",
+        "krb5": "1.21.3-5+deb13u1",
+        "apt": "3.0.4",
+        "zlib1g": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+        "postgresql": "18.7"
+      }
+    ],
+    "method": "Package versions read from var/lib/dpkg/status in each build's linux/amd64 layer blobs, verified by digest, with Python tarfile; the images were not run or extracted. A pre-check; the gate scan is the evidence.",
+    "fixesNeeded": {
+      "glibc": "2.41-12+deb13u5 (Debian trixie)",
+      "krb5": "1.21.3-5+deb13u2 (DSA-6650-1)"
+    }
+  },
+  "serverCoverageGap": {
+    "release": "https://www.postgresql.org/docs/release/18.7/",
+    "releaseDate": "2026-11-12",
+    "fixedCVEs": 52,
+    "kev": "None in the CISA KEV catalogue 2026.11.20 (SHA-256 12c9ca4c5350ecacdf22bdce91b4ffcf06b8c8dc9c69b8bfb4c1a21be7a5fe50).",
+    "gap": "The pinned Grype scan reports no match for the PGDG postgresql-18 or libpq5 packages in either digest, so PostgreSQL server CVEs never reach the gate. Moving to 18.7 delivers the 52 fixes; the gate cannot confirm them, and it would not see future server CVEs either. A separate session is investigating the coverage loss."
+  },
+  "criteria": {
+    "maturity": {
+      "result": "pass",
+      "evidence": "https://www.postgresql.org/docs/release/18.7/",
+      "date": "2026-11-23",
+      "notes": "Stable PostgreSQL 18.7 (released 2026-11-12), not a beta or release candidate, in CNPG's official dated minimal-trixie operand image 18.7-202611122305-minimal-trixie, OCI created 2026-11-12T23:05:08Z from postgres-containers revision e1279c43bd11570edc864d220468c28e611df5dd. Same supplier, flavour and Debian release as the replaced 18.6 build. Supplier qualification only."
+    },
+    "governance": {
+      "result": "pass",
+      "evidence": "https://www.cncf.io/projects/cloudnativepg/",
+      "date": "2026-11-23",
+      "notes": "CNCF project page read 2026-11-23: CloudNativePG was accepted to CNCF on 2025-01-21 and moved to the Incubating maturity level on 2026-11-02. The cloudnative-pg GitHub organization owns postgres-containers, whose GOVERNANCE.md at the image revision defers to the CloudNativePG governance policies. PostgreSQL has its own established project governance. See companion review for response hashes."
+    },
+    "activitySupport": {
+      "result": "pass",
+      "evidence": "https://www.postgresql.org/support/versioning/",
+      "date": "2026-11-23",
+      "notes": "PostgreSQL 18 is supported until 2030-11-14, and the versioning page read 2026-11-23 lists 18.7 as the current 18.x minor. 18.7 delivers fixes for 52 PostgreSQL CVEs, none in the CISA KEV catalogue 2026.11.20; the pinned scanners do not match the PGDG postgresql-18 package, so the gate cannot see that class of finding. CNPG rebuilds its operand images weekly. This build was signed 2026-11-12T23:16:14Z (Rekor) and listed at 23:16:17Z, within six months; the 14-day cool-off ends 2026-11-26T23:16:17Z."
+    },
+    "securityProcess": {
+      "result": "pass",
+      "evidence": "https://github.com/cloudnative-pg/cloudnative-pg/security/policy",
+      "date": "2026-11-23",
+      "notes": "Private vulnerability reporting, a 10-business-day acknowledgement target and coordinated GitHub security advisories. The exact index digest has a keyless cosign signature from the postgres-containers bake_targets.yml workflow at revision e1279c43bd11570edc864d220468c28e611df5dd (Rekor logIndex 3841077455) and per-platform SBOM and provenance attestation manifests. OpenSSF Scorecard for cloudnative-pg/cloudnative-pg: 9.3, dated 2026-11-20 (Security-Policy 10, Signed-Releases 10). The postgres-containers Scorecard endpoint returned HTTP 404; no score is claimed for it. The Rekor entry was matched to the digest; the certificate chain was not cryptographically verified here."
+    },
+    "adoption": {
+      "result": "pass",
+      "evidence": "https://github.com/cloudnative-pg/cloudnative-pg/blob/e9eec0d3b49adb088f6fbcfa024d4ea288105c6e/ADOPTERS.md",
+      "date": "2026-11-23",
+      "notes": "ADOPTERS.md lists 56 named organisations, including EDB (BigAnimal), IBM (Cloud Pak), Google Cloud and Clustermarket. GitHub API read 2026-11-23T07:40:28Z: cloudnative-pg/cloudnative-pg has 9,647 stars and 823 forks. Project-wide operator adoption signals, not counts for this operand image, this digest or any EdgePulse deployment."
+    }
+  },
+  "scorecard": {
+    "evidence": "https://api.securityscorecards.dev/projects/github.com/cloudnative-pg/cloudnative-pg",
+    "date": "2026-11-20",
+    "readOn": "2026-11-23",
+    "score": 9.3,
+    "commit": "e9eec0d3b49adb088f6fbcfa024d4ea288105c6e",
+    "securityPolicyScore": 10,
+    "signedReleasesScore": 10,
+    "scope": "Operator repository default branch. The postgres-containers endpoint returned HTTP 404; no score is claimed for the image repository."
+  },
+  "supplyChain": {
+    "result": "pending",
+    "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/45137906762",
+    "date": "2026-11-23",
+    "reviewedSBOM": {
+      "path": "target/supply-chain/reviewed/b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1.cdx.json",
+      "sha256": "2cbd55cfd5ea6d43f5977f8e3fe25f0a8ce9a29148f205810608e720d8a2f714",
+      "matchesArtifactReviewedFile": true
+    },
+    "scan": {
+      "scanRun": "https://github.com/amazen33/EdgePulse/actions/runs/45137906762",
+      "scanDate": "2026-11-23",
+      "artifact": "edgepulse-supply-chain-45137906762 (ID 14800931763, sha256:5e07c197e69a54155db2a4293782fec747699ffe9a59ff3184b7efe41ee2d240)",
+      "reportSHA256": "bbf5a12d2666dd212bc2a152db19945b896ac700766dcf6342cc8bd49927ccd0",
+      "oldDigestScanned": "as previous input only (PR base 37af1b9)",
+      "newDigestPackages": {
+        "apt": "3.0.4",
+        "libapt-pkg7.0": "3.0.4",
+        "zlib1g": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+        "libc6": "2.41-12+deb13u4",
+        "libkrb5-3": "1.21.3-5+deb13u1",
+        "postgresql-18": "18.7-1.pgdg13+2"
+      },
+      "clearedOnNewDigest": [
+        "CVE-2026-109518 (apt, libapt-pkg7.0)",
+        "CVE-2026-85091 (zlib1g)"
+      ],
+      "absentInBoth": [
+        "CVE-2026-76844"
+      ],
+      "notClearedOnNewDigest": "glibc CVE-2026-19499 and CVE-2026-5435 (8 rows) and krb5 CVE-2026-112314, -112320, -112321, -112322, -112323, -119079 (24 rows): proposed again for the new digest as A-7, not active",
+      "newFixableCriticalHigh": [],
+      "kev": []
+    },
+    "blockingOnNewDigest": 8,
+    "blockingFrom20261124": 16,
+    "blockingFrom20261125": 8,
+    "proposal": {
+      "id": "A-7",
+      "path": "security/vulnerability-exception-proposals/iot-wo-08-pg-18.7-bridge-2026-11-23.json",
+      "sha256": "1948cb7a33e2584c35f9d51a5e8cc38fa4b05885a85ea33580295e86a88b2af4",
+      "rows": 32,
+      "approvedBy": ""
+    }
+  }
+}

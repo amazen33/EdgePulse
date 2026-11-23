@@ -378,8 +378,11 @@ def verify_backfill(root):
         'maven|org.apache.tomcat.embed:'+name+'|10.1.30':
         'maven|org.apache.tomcat.embed:'+name+'|11.0.27'
         for name in ('tomcat-embed-core','tomcat-embed-el','tomcat-embed-websocket')}
+    # IOT-WO-08 item 1 (owner, 2026-11-23): the minimal pin moves from the
+    # 18.6 build of 2026-10-05 (37ade18d) to 18.7-202611122305; the current
+    # replacement still needs a full ADR-0054 record and a reviewed imageSBOM.
     replacements['oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:5efb66993894055f0aa50bd94337c6c4ff2e2129f4d433c527151aebbf283fb0'] = (
-        'oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3')
+        'oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1')
     # IOT-WO-06 ruling 2026-10-21: independently resolved inputs, not absence
     # from the editable register, authorize a removal-only legacy retirement.
     sys.path.insert(0, str(ROOT/'security'))
