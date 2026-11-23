@@ -193,3 +193,21 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
 **Owner decision (2026-11-23):** v1.20.4 went stale on 2026-11-23 UTC; add the same dated reason for v1.20.4 on the three images rather than adopting it, and confirm the v1.20.3 wording. Twinfra's lock is unchanged (`cceab35`, byte-identical lock file). Record: `security/evidence/iot-wo-08/cilium-1.20.4-owner-reason-2026-11-23.json`.
 
 **Still open, due before 2026-12-18 UTC:** Cilium v1.20.5 (published 2026-11-17T09:53:42Z) becomes eligible on 2026-12-01 and stale on 2026-12-18. Adopt it (pins, chart, three digests, licence admissions and the Envoy scan, moving the harness off Twinfra's lock) or record a separate dated reason for it. The CNPG operator has the same dates: 1.30.2 (published 2026-11-17T11:31:47Z) becomes eligible on 2026-12-01 and stale on 2026-12-18 UTC.
+
+## Amendment 5 (architect, proposed 2026-11-01): retire the os-maven-plugin build extension
+
+**Status:** Approved (owner, 2026-11-23), for PR #61.
+
+**Facts.**
+- `maven:executed-plugin-9` is the `kr.motd.maven:os-maven-plugin` 1.7.1 build extension in `services/identity/pom.xml`. Its last release was 2022-11-07, and no newer version exists to adopt under item 1.
+- Its classpath carries `plexus-utils` 3.1.0 (CVE-2025-67030, High; fixed in 3.6.1 and 4.0.3; first seen 2026-10-20) and `commons-lang3` 3.5 (CVE-2025-48924, Medium, report-only).
+- One approved IOT-WO-08 exception covered the High until 2026-11-19. It has expired, and while it stays in the register every gate run stops at exception validation.
+- The extension only computes `os.detected.classifier` for the protoc and protoc-gen-grpc-java artifacts.
+
+**Ruling.**
+1. Replace the extension with two OS-activated profiles that set `os.detected.classifier`: `linux-x86_64` (Linux, amd64) and `windows-x86_64` (Windows, amd64). These are the classifiers `security/collect_maven.py` already inventories as code generators. Add no plugin, extension or dependency. Any other platform needs its profile and its collector classifier added together, in one reviewed change.
+2. Retire the 12 `build-tool` register records found only on that classpath, removal-only, with their exact bytes kept in `security/evidence/iot-wo-08/os-maven-plugin-removal-2026-11-01.json`. No record is added or changed. The legacy set and baseline are unchanged.
+3. Under item 1, remove the cleared exception (CVE-2025-67030, `maven:executed-plugin-9`). The exception regression test may allow exactly that row's removal. Every other row keeps its bytes and order.
+4. Leave unchanged: the ported checker, ladder, schemas, licence classes, gate logic and other exceptions.
+
+**Acceptance.** Green `java-platform-bootstrap`, `naming-gate` and `supply-chain-gate`. The executed-plugin inventory no longer contains os-maven-plugin or plexus-utils 3.1.0. `licence-gate` is green, or fails only on unrelated, pre-existing items. Until the other 27 expired rows leave `main` (PR #66 and the TB A-5 renewal), `supply-chain-gate` stops at exception validation; the stacked A-5 recovery branch runs this change together with them.

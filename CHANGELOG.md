@@ -40,6 +40,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   PR #56, and any row left after its 2026-11-19 expiry would fail every
   scan from 2026-11-20. The record keeps each row and its block hash.
 
+- IOT-WO-08: replace the os-maven-plugin build extension with OS-activated
+  profiles for the protoc classifiers, clearing plexus-utils 3.1.0
+  (CVE-2025-67030) from the executed build tools. Retire its twelve
+  build-tool register records removal-only and remove the one cleared
+  `IOT-WO-08` exception (32 to 31 entries).
+
 - IOT-WO-08 A-4: activate six owner-approved High bridge rows for
   CVE-2026-109518 (`apt` 3.0.3) and CVE-2026-76844 (`zlib1g`) on TB 4.3.1.8
   and CNPG PostgreSQL 18.6, which block from 2026-11-19 and 2026-11-20

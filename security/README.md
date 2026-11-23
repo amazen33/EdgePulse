@@ -293,3 +293,17 @@ validates every row's lifetime before matching, so a row left after its
 they leave removal-only (32 to 13 rows with A-4); the
 [record](evidence/iot-wo-08/retired-tb-4.3.1.6-exceptions-2026-11-12.json)
 keeps each row and its block hash. No row is added or changed.
+
+## IOT-WO-08: os-maven-plugin removal
+
+The identity build no longer loads the os-maven-plugin 1.7.1 extension,
+which has no newer release and whose classpath carried plexus-utils 3.1.0
+(CVE-2025-67030, High). Two OS-activated profiles in
+`services/identity/pom.xml` set `os.detected.classifier` to
+`linux-x86_64` or `windows-x86_64`, the two classifiers the collector
+already inventories for protoc and protoc-gen-grpc-java. Other platforms
+have no inventoried generator binary and fail to resolve. The twelve
+build-tool records found only on that classpath leave the register
+removal-only, and the cleared exception is removed; the
+[record](evidence/iot-wo-08/os-maven-plugin-removal-2026-11-01.json)
+keeps their exact bytes. No component or exception is added.
