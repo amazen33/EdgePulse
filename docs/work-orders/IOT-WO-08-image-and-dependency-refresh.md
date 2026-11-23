@@ -172,6 +172,8 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
   - **Approved (owner, 2026-11-02):** "I approve both rows" for proposal `security/vulnerability-exception-proposals/iot-wo-08-tb-openjdk-high-2026-10-31.json`, SHA-256 `a2df007b98c9aed735c4cb55590e004df8d9f6f82cae67b6eb591b1091c366f1`, under the A-1 conditions. No upstream TB 4.3.1.x patch clears them; IOT-WO-09 is the replacement.
 - **A-3 (zlib1g, 2026-11-10):** CVE-2026-85091 (High, not KEV) gained a Debian 13 fix between the 2026-11-07 and 2026-11-09 nightlies and, first seen 2026-10-20, blocked at once on TB 4.3.1.8 and CNPG PostgreSQL 18.6. Proposal `security/vulnerability-exception-proposals/iot-wo-08-zlib-high-2026-11-10.json`: the tb-node row expires 2026-11-19 with A-1 and A-2; the CNPG row expires 2026-11-30, when IOT-WO-08 refreshes to the first qualifying CNPG digest with the fix. Deploying either image voids its row; a KEV listing voids both. Evidence: `security/evidence/vulnerability-exceptions/zlib-high-2026-11-10.md`.
   - **Approved (owner, 2026-11-11):** "I approve both rows" for SHA-256 `dfa73ed9ab5c5badf96462a446abbe87d90406c3d8c7b0a567ed9ff9c68f0fdb`.
+- **A-4 (apt and zlib1g, 2026-11-12):** two non-KEV Highs not yet covered: CVE-2026-109518 (apt 3.0.3, fixed in 3.0.4, first seen 2026-11-05, blocks from 2026-11-19) and CVE-2026-76844 (zlib1g, fixed in the same deb13u1 as A-3, first seen 2026-11-06, blocks from 2026-11-20). Proposal `security/vulnerability-exception-proposals/iot-wo-08-apt-zlib-high-2026-11-12.json`, SHA-256 `e077a59c2c7c6b7c473e87071dcb0937ef16913b1ad89f45684e7b53f876e68f`: three tb-node apt rows expire 2026-11-19 with A-1 to A-3; three CNPG PostgreSQL rows expire 2026-11-30 with the A-3 PostgreSQL row. CVE-2026-76844 on tb-node starts blocking after every tb-node row has expired, so it belongs to the 2026-11-20 TB decision. Same voiding conditions as A-3. Evidence: `security/evidence/vulnerability-exceptions/apt-zlib-high-2026-11-12.md`.
+  - **Approved (owner, 2026-11-12):** "I approve all six rows" for SHA-256 `e077a59c2c7c6b7c473e87071dcb0937ef16913b1ad89f45684e7b53f876e68f`.
 
 **Merge order after A-1:**
 1. Codex sets `approvedBy` on the two rows (nothing else changes) and reruns CI.
@@ -180,3 +182,21 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
 4. The owner merges PR #56 (`java-platform-bootstrap` red is the known main fault).
 5. Codex updates PR #55 from main.
 6. The owner merges PR #55 once green.
+
+## Amendment 5 (architect, proposed 2026-11-01): retire the os-maven-plugin build extension
+
+**Status:** Approved (owner, 2026-11-23), for PR #61.
+
+**Facts.**
+- `maven:executed-plugin-9` is the `kr.motd.maven:os-maven-plugin` 1.7.1 build extension in `services/identity/pom.xml`. Its last release was 2022-11-07, and no newer version exists to adopt under item 1.
+- Its classpath carries `plexus-utils` 3.1.0 (CVE-2025-67030, High; fixed in 3.6.1 and 4.0.3; first seen 2026-10-20) and `commons-lang3` 3.5 (CVE-2025-48924, Medium, report-only).
+- One approved IOT-WO-08 exception covered the High until 2026-11-19. It has expired, and while it stays in the register every gate run stops at exception validation.
+- The extension only computes `os.detected.classifier` for the protoc and protoc-gen-grpc-java artifacts.
+
+**Ruling.**
+1. Replace the extension with two OS-activated profiles that set `os.detected.classifier`: `linux-x86_64` (Linux, amd64) and `windows-x86_64` (Windows, amd64). These are the classifiers `security/collect_maven.py` already inventories as code generators. Add no plugin, extension or dependency. Any other platform needs its profile and its collector classifier added together, in one reviewed change.
+2. Retire the 12 `build-tool` register records found only on that classpath, removal-only, with their exact bytes kept in `security/evidence/iot-wo-08/os-maven-plugin-removal-2026-11-01.json`. No record is added or changed. The legacy set and baseline are unchanged.
+3. Under item 1, remove the cleared exception (CVE-2025-67030, `maven:executed-plugin-9`). The exception regression test may allow exactly that row's removal. Every other row keeps its bytes and order.
+4. Leave unchanged: the ported checker, ladder, schemas, licence classes, gate logic and other exceptions.
+
+**Acceptance.** Green `java-platform-bootstrap`, `naming-gate` and `supply-chain-gate`. The executed-plugin inventory no longer contains os-maven-plugin or plexus-utils 3.1.0. `licence-gate` is green, or fails only on unrelated, pre-existing items. Until the other 27 expired rows leave `main` (PR #66 and the TB A-5 renewal), `supply-chain-gate` stops at exception validation; the stacked A-5 recovery branch runs this change together with them.

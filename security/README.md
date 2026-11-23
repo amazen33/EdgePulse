@@ -257,6 +257,14 @@ Under A-3 (owner, 2026-11-11), the two CVE-2026-85091 High `zlib1g` rows in
 copied after the A-2 rows, changing only `approvedBy`. Deploying either
 image voids its row. The TB row expires 2026-11-19 and the CNPG row
 2026-11-30, with no extension.
+Under A-4 (owner, 2026-11-12), the six High rows in
+`vulnerability-exception-proposals/iot-wo-08-apt-zlib-high-2026-11-12.json`
+were approved by exact SHA-256 and copied after the A-3 rows, changing only
+`approvedBy`: CVE-2026-109518 on the `apt` packages of both images, and
+CVE-2026-76844 on CNPG PostgreSQL `zlib1g`. Starting TB or deploying the
+PostgreSQL image voids its rows, and a KEV listing voids that advisory's
+rows. The three tb-node rows expire 2026-11-19 and the three CNPG rows
+2026-11-30, with no extension. CVE-2026-76844 on tb-node is not covered.
 The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and
