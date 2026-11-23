@@ -28,11 +28,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
-- IOT-WO-08 A-5: remove the eight TB 4.3.1.8 exception copies (A-1 to A-4)
-  that expired on 2026-11-19, removal-only, and propose eight new,
-  unapproved TB rows with fresh evidence for CVE-2026-91403 (Critical),
-  CVE-2026-91415, CVE-2026-85091 and CVE-2026-109518, expiring 2026-12-23.
-  No exception is activated by the proposal.
+- IOT-WO-08 A-5 and A-6: remove the eight TB 4.3.1.8 exception copies
+  (A-1 to A-4) that expired on 2026-11-19, removal-only. From the 2026-11-23
+  scan, propose 24 new, unapproved TB rows (4 Critical, 20 High), expiring
+  2026-12-23, and 35 PostgreSQL High rows, expiring 2026-12-14. No exception
+  is activated by the proposals.
 
 - IOT-WO-08 item 3: record dated owner reasons, under the ADR 0028
   staleness rule, for Cilium v1.20.3 and v1.20.4 on the three Cilium
