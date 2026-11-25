@@ -1,0 +1,169 @@
+{
+  "authority": "IOT-WO-08 items 1 and 4; owner decision 2026-11-23 (A-5 renewal)",
+  "recordedOn": "2026-11-23",
+  "baseCommit": "bdb4241e671261aa29a2daebb6e4bca8f8f66ea7",
+  "lastCompleteScan": "https://github.com/amazen33/EdgePulse/actions/runs/44507343525",
+  "failingScan": "https://github.com/amazen33/EdgePulse/actions/runs/45010648666",
+  "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+  "image": "ThingsBoard tb-node 4.3.1.8",
+  "rule": "validate_exceptions checks every row's lifetime before matching (tools/ci/supply_chain.py); a row past its expiry fails every scan. These eight approved copies (A-1 to A-4) expired on 2026-11-19 and are never extended in place (item 4). Coverage, if any, continues only through new, separately approved A-5 entries.",
+  "removedExceptions": [
+    {
+      "blockSHA256": "db194e30c64bef45d22f2aad032360eefa9c026669d7079fbdf584bd8f024282",
+      "row": {
+        "vulnerability": "CVE-2026-91403",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "openjdk-25-jdk-headless",
+        "version": "25.0.4.1+1-1~deb13u1",
+        "severity": "Critical",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "TB 4.3.1.8 fixes the Brotli KEV but no published TB 4.3.1.x image contains OpenJDK 25.0.5+8 yet. Reachability: TB is not deployed; MS3 has not been reached. Promote the first upstream patch containing the fixed JDK under the KEV expedite; never fork or rebuild TB. This individual proposal ends at the existing IOT-WO-08 deadline, within the 30-day Critical cap; it is not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/tb-openjdk-25-2026-10-30.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-10-30",
+        "expires": "2026-11-19"
+      }
+    },
+    {
+      "blockSHA256": "c136caa897ac74df324a273cb271946ea81b24fa5737567570974c755e3f5479",
+      "row": {
+        "vulnerability": "CVE-2026-91403",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "openjdk-25-jre-headless",
+        "version": "25.0.4.1+1-1~deb13u1",
+        "severity": "Critical",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "TB 4.3.1.8 fixes the Brotli KEV but no published TB 4.3.1.x image contains OpenJDK 25.0.5+8 yet. Reachability: TB is not deployed; MS3 has not been reached. Promote the first upstream patch containing the fixed JDK under the KEV expedite; never fork or rebuild TB. This individual proposal ends at the existing IOT-WO-08 deadline, within the 30-day Critical cap; it is not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/tb-openjdk-25-2026-10-30.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-10-30",
+        "expires": "2026-11-19"
+      }
+    },
+    {
+      "blockSHA256": "d34bcebaa7e92d21680393dd4ac7bf2e06bf1134cb302473eb418732762c1841",
+      "row": {
+        "vulnerability": "CVE-2026-91415",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "openjdk-25-jdk-headless",
+        "version": "25.0.4.1+1-1~deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-2: no published TB 4.3.1.x image contains OpenJDK 25.0.5+8 yet (4.3.1.8 is the newest 4.3.1.x patch on 2026-10-31). This High reaches the ADR-0049 blocking threshold on 2026-11-05. Reachability: TB is not deployed; MS3 has not been reached; the kind rehearsal is paused. Promote the first upstream TB patch containing the fixed JDK under the expedite; never fork or rebuild TB. Starting TB anywhere voids this row. It ends at the existing IOT-WO-08 deadline and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/tb-openjdk-25-high-2026-10-31.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-10-31",
+        "expires": "2026-11-19"
+      }
+    },
+    {
+      "blockSHA256": "b1451a5ada9b8a592e2b17d6705df2f012962d821db23c2fa8e5cb0b4fa519e0",
+      "row": {
+        "vulnerability": "CVE-2026-91415",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "openjdk-25-jre-headless",
+        "version": "25.0.4.1+1-1~deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-2: no published TB 4.3.1.x image contains OpenJDK 25.0.5+8 yet (4.3.1.8 is the newest 4.3.1.x patch on 2026-10-31). This High reaches the ADR-0049 blocking threshold on 2026-11-05. Reachability: TB is not deployed; MS3 has not been reached; the kind rehearsal is paused. Promote the first upstream TB patch containing the fixed JDK under the expedite; never fork or rebuild TB. Starting TB anywhere voids this row. It ends at the existing IOT-WO-08 deadline and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/tb-openjdk-25-high-2026-10-31.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-10-31",
+        "expires": "2026-11-19"
+      }
+    },
+    {
+      "blockSHA256": "639ca0317ef6fa18b7f819729857412a47d5f816c33d78c87b56c2ae2b479c3a",
+      "row": {
+        "vulnerability": "CVE-2026-85091",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "zlib1g",
+        "version": "1:1.3.dfsg+really1.3.1-1+b1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-3: Debian fixed CVE-2026-85091 in zlib1g 1:1.3.dfsg+really1.3.1-1+deb13u1. The fix first appeared in the 2026-11-09 nightly; the finding was first seen on 2026-10-20, so ADR-0049 blocked it at once. Not KEV. TB 4.3.1.8 (this digest) is the newest 4.3.1.x tb-node image on 2026-11-10. Reachability: TB is not deployed; MS3 has not been reached; the kind rehearsal is paused. Replace with the IOT-WO-09 runtime image or the first upstream TB patch containing the fix; never fork or rebuild TB. Starting TB anywhere voids this row. It ends with the A-1 and A-2 rows at the existing IOT-WO-08 deadline and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/zlib-high-2026-11-10.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-10",
+        "expires": "2026-11-19"
+      }
+    },
+    {
+      "blockSHA256": "5d81996ff72a8c2e4de050653a8db776d53dc59e7c0f3e3a8da9d5585717fcb0",
+      "row": {
+        "vulnerability": "CVE-2026-109518",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "apt",
+        "version": "3.0.3",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-4: Debian fixed CVE-2026-109518 in apt 3.0.4 (advisory 2026-11-04). First seen 2026-11-05, it blocks under ADR-0049 from 2026-11-19. Not KEV. Exploitation needs an APT package install over HTTP that an attacker can manipulate; no EdgePulse chart, harness or workflow runs APT in this image. TB 4.3.1.8 (this digest) is the newest 4.3.1.x tb-node image on 2026-11-12. Reachability: TB is not deployed; MS3 has not been reached; the kind rehearsal is paused. Replace with the IOT-WO-09 runtime image or the first upstream TB patch containing the fix; never fork or rebuild TB. Starting TB anywhere voids this row. It ends with the A-1, A-2 and A-3 tb-node rows on 2026-11-19 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/apt-zlib-high-2026-11-12.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-12",
+        "expires": "2026-11-19"
+      }
+    },
+    {
+      "blockSHA256": "030f366bb80758a55fd5372d9217ff8bd3fdadf9ea07ec480c80d9402221f6ac",
+      "row": {
+        "vulnerability": "CVE-2026-109518",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "apt-transport-https",
+        "version": "3.0.3",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-4: Debian fixed CVE-2026-109518 in apt 3.0.4 (advisory 2026-11-04). First seen 2026-11-05, it blocks under ADR-0049 from 2026-11-19. Not KEV. Exploitation needs an APT package install over HTTP that an attacker can manipulate; no EdgePulse chart, harness or workflow runs APT in this image. TB 4.3.1.8 (this digest) is the newest 4.3.1.x tb-node image on 2026-11-12. Reachability: TB is not deployed; MS3 has not been reached; the kind rehearsal is paused. Replace with the IOT-WO-09 runtime image or the first upstream TB patch containing the fix; never fork or rebuild TB. Starting TB anywhere voids this row. It ends with the A-1, A-2 and A-3 tb-node rows on 2026-11-19 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/apt-zlib-high-2026-11-12.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-12",
+        "expires": "2026-11-19"
+      }
+    },
+    {
+      "blockSHA256": "f0c96b64b73893bb9ffb97a17ff180523a14095f9828228e16b38e5c047ca2a8",
+      "row": {
+        "vulnerability": "CVE-2026-109518",
+        "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+        "package": "libapt-pkg7.0",
+        "version": "3.0.3",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-4: Debian fixed CVE-2026-109518 in apt 3.0.4 (advisory 2026-11-04). First seen 2026-11-05, it blocks under ADR-0049 from 2026-11-19. Not KEV. Exploitation needs an APT package install over HTTP that an attacker can manipulate; no EdgePulse chart, harness or workflow runs APT in this image. TB 4.3.1.8 (this digest) is the newest 4.3.1.x tb-node image on 2026-11-12. Reachability: TB is not deployed; MS3 has not been reached; the kind rehearsal is paused. Replace with the IOT-WO-09 runtime image or the first upstream TB patch containing the fix; never fork or rebuild TB. Starting TB anywhere voids this row. It ends with the A-1, A-2 and A-3 tb-node rows on 2026-11-19 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/apt-zlib-high-2026-11-12.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-12",
+        "expires": "2026-11-19"
+      }
+    }
+  ],
+  "counts": {
+    "beforeAtBase": 32,
+    "removedHere": 8,
+    "expiredAtBase": 28
+  }
+}

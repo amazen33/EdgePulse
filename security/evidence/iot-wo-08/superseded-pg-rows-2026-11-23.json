@@ -1,0 +1,86 @@
+{
+  "authority": "IOT-WO-08; owner approval of A-6 (2026-11-23)",
+  "recordedOn": "2026-11-23",
+  "baseCommit": "9ab2a22",
+  "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+  "rule": "validate_exceptions rejects duplicate (target, package, version, vulnerability) keys. A-6 renews the A-3/A-4 apt and zlib1g rows with new entries expiring 2026-12-14, so the old rows (expiring 2026-11-30) leave removal-only. A-4's CVE-2026-76844 row leaves too: the advisory is absent from the 2026-11-19 and 2026-11-23 scans, so it matches nothing.",
+  "supersededBy": "security/vulnerability-exception-proposals/iot-wo-08-pg-bridge-2026-11-23.json",
+  "removedExceptions": [
+    {
+      "blockSHA256": "4b5c9e5effa1ac2621951e67d72ce345d568d9c46c057513a85337ef4460544e",
+      "row": {
+        "vulnerability": "CVE-2026-85091",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "zlib1g",
+        "version": "1:1.3.dfsg+really1.3.1-1+b1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-3: Debian fixed CVE-2026-85091 in zlib1g 1:1.3.dfsg+really1.3.1-1+deb13u1. The fix first appeared in the 2026-11-09 nightly; the finding was first seen on 2026-10-20, so ADR-0049 blocked it at once. Not KEV. CNPG publishes weekly 18.6 minimal-trixie rebuilds; the newest on 2026-11-10 (18.6-202611090812-minimal-trixie) has not been checked for the fixed package and would clear the 14-day cool-off on 2026-11-23. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. Refresh to the first qualifying CNPG digest that contains the fix and remove this row. Deploying this image anywhere voids this row. It is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/zlib-high-2026-11-10.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-10",
+        "expires": "2026-11-30"
+      }
+    },
+    {
+      "blockSHA256": "7746c162fa31771c554b81c93df358764e6bf7fdd168b0a385775b6be3dd8add",
+      "row": {
+        "vulnerability": "CVE-2026-109518",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "apt",
+        "version": "3.0.3",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-4: Debian fixed CVE-2026-109518 in apt 3.0.4 (advisory 2026-11-04). First seen 2026-11-05, it blocks under ADR-0049 from 2026-11-19. Not KEV. Exploitation needs an APT package install over HTTP that an attacker can manipulate; no EdgePulse chart, harness or workflow runs APT in this image. CNPG's newest 18.6 minimal-trixie build on 2026-11-12 (18.6-202611090812-minimal-trixie) has not been checked for the fixed packages and would clear the 14-day cool-off on 2026-11-23. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. Refresh to the first qualifying CNPG digest that contains the fix and remove this row. Deploying this image anywhere voids this row. It ends with the A-3 PostgreSQL row on 2026-11-30 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/apt-zlib-high-2026-11-12.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-12",
+        "expires": "2026-11-30"
+      }
+    },
+    {
+      "blockSHA256": "34338c72d093b982d62c1f55a729e1f1832b39390176d1dfd0e57adf4e6a3d98",
+      "row": {
+        "vulnerability": "CVE-2026-109518",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libapt-pkg7.0",
+        "version": "3.0.3",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-4: Debian fixed CVE-2026-109518 in apt 3.0.4 (advisory 2026-11-04). First seen 2026-11-05, it blocks under ADR-0049 from 2026-11-19. Not KEV. Exploitation needs an APT package install over HTTP that an attacker can manipulate; no EdgePulse chart, harness or workflow runs APT in this image. CNPG's newest 18.6 minimal-trixie build on 2026-11-12 (18.6-202611090812-minimal-trixie) has not been checked for the fixed packages and would clear the 14-day cool-off on 2026-11-23. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. Refresh to the first qualifying CNPG digest that contains the fix and remove this row. Deploying this image anywhere voids this row. It ends with the A-3 PostgreSQL row on 2026-11-30 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/apt-zlib-high-2026-11-12.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-12",
+        "expires": "2026-11-30"
+      }
+    },
+    {
+      "blockSHA256": "57cfacb268c14ac0966fddc3d3760ff71acaa2c8df95179f62653c74b415ae48",
+      "row": {
+        "vulnerability": "CVE-2026-76844",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "zlib1g",
+        "version": "1:1.3.dfsg+really1.3.1-1+b1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-4: Debian fixed CVE-2026-76844 in zlib1g 1:1.3.dfsg+really1.3.1-1+deb13u1 (advisory 2026-11-07), the same version that fixes A-3's CVE-2026-85091. First seen 2026-11-06, it blocks under ADR-0049 from 2026-11-20. Not KEV. Reachability through zlib's gz* write path in this image is not established. CNPG's newest 18.6 minimal-trixie build on 2026-11-12 (18.6-202611090812-minimal-trixie) has not been checked for the fixed packages and would clear the 14-day cool-off on 2026-11-23. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. Refresh to the first qualifying CNPG digest that contains the fix and remove this row. Deploying this image anywhere voids this row. It ends with the A-3 PostgreSQL row on 2026-11-30 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/apt-zlib-high-2026-11-12.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-12",
+        "expires": "2026-11-30"
+      }
+    }
+  ]
+}

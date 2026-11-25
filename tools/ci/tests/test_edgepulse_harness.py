@@ -268,6 +268,39 @@ runs:
         self.assertTrue(all(c['newestEligibleRelease'].endswith('.99') and c['blocked'] for c in checks))
         self.assertTrue(all(c['overdueReleases'][0]['release'].endswith('.98') for c in checks))
 
+    def test_cilium_owner_reasons_are_exact_and_end_when_1_20_5_turns_stale(self):
+        # IOT-WO-08 item 3 (owner, 2026-11-16 and 2026-11-23): exactly six
+        # reasons, for v1.20.3 and v1.20.4 of the three Cilium images. Real
+        # release dates; v1.20.5 still blocks from 2026-12-18 UTC.
+        reasons = h.policy(ep.ROOT)['ownerReasons']
+        cilium = ['quay.io/cilium/cilium', 'quay.io/cilium/cilium-envoy', 'quay.io/cilium/operator-generic']
+        self.assertEqual([(r['repository'], r['release'], r['owner'], r['date']) for r in reasons],
+                         [(r, 'v1.20.3', 'amazen33', '2026-11-16') for r in cilium] +
+                         [(r, 'v1.20.4', 'amazen33', '2026-11-23') for r in cilium])
+        pins = sc.read(self.root/'dev/kind/pins.json')
+        node = pins['kind']['node']
+        def releases(repo, memo):
+            if repo == 'cilium/cilium':
+                return [dict(tag_name=t, published_at=p, draft=False, prerelease=False, body='')
+                        for t, p in [('v1.20.2', '2026-09-16T00:00:00Z'), ('v1.20.3', '2026-10-15T15:26:34Z'),
+                                     ('v1.20.4', '2026-10-23T14:51:39Z'), ('v1.20.5', '2026-11-17T09:53:42Z')]]
+            family = {'kubernetes-sigs/kind':'kind', 'cloudnative-pg/cloudnative-pg':'cnpg'}[repo]
+            return [dict(tag_name='v'+pins[family]['version'], published_at='2026-09-01T00:00:00Z',
+                         draft=False, prerelease=False, body=node)]
+        with patch.object(h.watch, 'releases', side_effect=releases):
+            with self.assertRaisesRegex(ValueError, 'invalid dated owner reason'):
+                h.release_checks(self.root, self.guard()['targets'], date(2026, 11, 15))
+            for on, blocked in [(date(2026, 11, 16), False), (date(2026, 11, 22), False), (date(2026, 11, 23), False),
+                                (date(2026, 12, 17), False), (date(2026, 12, 18), True)]:
+                with self.subTest(on=on):
+                    checks = h.release_checks(self.root, self.guard()['targets'], on)
+                    stale = [c for c in checks if c['target'].split('@')[0] in cilium]
+                    self.assertEqual(len(stale), 3)
+                    self.assertTrue(all(c['blocked'] == blocked for c in stale))
+                    self.assertFalse(any(c['blocked'] for c in checks if c not in stale))
+                    self.assertTrue(all(o['ownerReason'] for c in stale for o in c['overdueReleases']
+                                        if o['release'] in ('v1.20.3', 'v1.20.4')))
+
     def test_report_writer_keeps_ported_formatter_unchanged(self):
         report = self.report()
         original = sc.markdown
@@ -290,6 +323,12 @@ class HarnessRepository(unittest.TestCase):
         blocks = lambda text:re.findall(r'^    \{\n.*?^    \}', text, re.M | re.S)
         old, new = blocks(before), blocks(after)
         self.assertEqual(len(old), 302)
+        # IOT-WO-08 item 1: removing the os-maven-plugin build extension
+        # clears exactly this executed-plugin row; nothing else changes.
+        cleared = [v for v in old if [json.loads(v)[k] for k in ('target', 'package', 'version', 'vulnerability')]
+                   == ['maven:executed-plugin-9', 'org.codehaus.plexus:plexus-utils', '3.1.0', 'CVE-2025-67030']]
+        self.assertEqual(len(cleared), 1)
+        old = [v for v in old if v not in cleared]
         names = {v['repository'] for v in h.policy(ep.ROOT)['testHarnessImages']}
         removed = [v for v in old if json.loads(v)['target'].split('@')[0] in names
                    and json.loads(v)['workOrder'] == 'IOT-WO-08']
@@ -300,7 +339,17 @@ class HarnessRepository(unittest.TestCase):
         part_c = [v for v in old if v not in removed
                   and json.loads(v)['workOrder'] == 'IOT-WO-02 Part C']
         self.assertEqual(len(part_c), 16)
-        retained = [v for v in old if v not in removed and v not in part_c]
+        # IOT-WO-08 item 1: TB 4.3.1.8 (PR #56) replaced the 4.3.1.6 digest,
+        # so exactly its 19 rows leave, removal-only, before their
+        # 2026-11-19 expiry; the record keeps each row and its block hash.
+        tb_4316 = 'docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a'
+        retired_tb = [v for v in old if v not in removed and v not in part_c
+                      and json.loads(v)['target'] == tb_4316]
+        self.assertEqual(len(retired_tb), 19)
+        record = json.loads((ep.ROOT/'security/evidence/iot-wo-08/retired-tb-4.3.1.6-exceptions-2026-11-12.json').read_text(encoding='utf-8'))
+        self.assertEqual([(r['blockSHA256'], r['row']) for r in record['removedExceptions']],
+                         [(sc.sha(v.encode('utf-8')), json.loads(v)) for v in retired_tb])
+        retained = [v for v in old if v not in removed and v not in part_c and v not in retired_tb]
         self.assertEqual(new[:len(retained)], retained)
         # IOT-WO-08, Review of PR #56 A-1 (owner, 2026-10-30): the
         # original proposals stay immutable; only these exact approved
@@ -333,8 +382,42 @@ class HarnessRepository(unittest.TestCase):
         self.assertEqual(sc.sha(payload), 'e077a59c2c7c6b7c473e87071dcb0937ef16913b1ad89f45684e7b53f876e68f')
         apt_zlib = json.loads(payload)['exceptions']
         self.assertEqual(len(apt_zlib), 6)
+        approved = [v | {'approvedBy':'amazen33'} for v in proposals + highs + zlib + apt_zlib]
+        # IOT-WO-08 A-5 (owner, 2026-11-23): the eight TB 4.3.1.8 copies
+        # (A-1 to A-4) expired on 2026-11-19 and leave removal-only; the
+        # record keeps each row and its block hash. The PostgreSQL copies
+        # keep their bytes and order. Renewal is only by new A-5 entries.
+        tb_4318 = 'docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872'
+        expired_tb = [v for v in approved if v['target'] == tb_4318]
+        self.assertEqual(len(expired_tb), 8)
+        record = json.loads((ep.ROOT/'security/evidence/iot-wo-08/expired-tb-4.3.1.8-exceptions-2026-11-23.json').read_text(encoding='utf-8'))
+        self.assertEqual([r['row'] for r in record['removedExceptions']], expired_tb)
+        block = lambda row: ('    '+json.dumps(row, indent=2).replace('\n', '\n    ')).encode('utf-8')
+        self.assertEqual([r['blockSHA256'] for r in record['removedExceptions']],
+                         [sc.sha(block(r['row'])) for r in record['removedExceptions']])
+        # IOT-WO-08 A-6 (owner, 2026-11-23): the new PostgreSQL rows renew the
+        # A-3/A-4 PostgreSQL copies, so those four leave removal-only (the
+        # gate rejects duplicate keys); the record keeps each block.
+        superseded = [v for v in approved if v not in expired_tb]
+        self.assertEqual(len(superseded), 4)
+        record = json.loads((ep.ROOT/'security/evidence/iot-wo-08/superseded-pg-rows-2026-11-23.json').read_text(encoding='utf-8'))
+        self.assertEqual([r['row'] for r in record['removedExceptions']], superseded)
+        self.assertEqual([r['blockSHA256'] for r in record['removedExceptions']],
+                         [sc.sha(block(r['row'])) for r in record['removedExceptions']])
+        # IOT-WO-08 A-5 and A-6 (owner, 2026-11-23): only exact copies of
+        # these two proposals follow, changing only approvedBy.
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-tb-renewal-2026-11-23.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), 'c2b4e2416037e6c74c1d008cdc8c0eeaea5dcf8a758034c6701239eddfd8047f')
+        tb_renewal = json.loads(payload)['exceptions']
+        self.assertEqual(len(tb_renewal), 24)
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-pg-bridge-2026-11-23.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), 'f2e811603798d360d274fda1c7850b7b8c80af36914fbfd006a634661acd7a99')
+        pg_bridge = json.loads(payload)['exceptions']
+        self.assertEqual(len(pg_bridge), 35)
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v | {'approvedBy':'amazen33'} for v in proposals + highs + zlib + apt_zlib])
+                         [v | {'approvedBy':'amazen33'} for v in tb_renewal + pg_bridge])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))
