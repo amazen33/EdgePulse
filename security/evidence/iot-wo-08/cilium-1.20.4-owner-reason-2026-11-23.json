@@ -1,0 +1,57 @@
+{
+  "authority": "ADR 0028 staleness rule; IOT-WO-08 item 3",
+  "recordedOn": "2026-11-23",
+  "ownerDecision": "2026-11-23: add a v1.20.4 reason to the v1.20.3 reasons, rather than adopting 1.20.4; the owner also confirmed the v1.20.3 wording.",
+  "status": "Owner reason for the exact repository/release v1.20.4 of the three Cilium harness images. Gate evidence only; not a milestone receipt and no runtime claim.",
+  "previousRecord": "security/evidence/iot-wo-08/cilium-1.20.3-owner-reason-2026-11-16.json",
+  "pinned": {
+    "source": "dev/kind/pins.json",
+    "version": "1.20.2",
+    "chartSha256": "b2afd87b7f75f875f92a14559f14f59b7babbb479d968e3fd625a20bf30ec20e"
+  },
+  "releaseMetadata": {
+    "source": "https://api.github.com/repos/cilium/cilium/releases",
+    "checkedOn": "2026-11-23",
+    "releases": [
+      {
+        "release": "v1.20.3",
+        "publishedAt": "2026-10-15T15:26:34Z",
+        "staleFrom": "2026-11-15 UTC",
+        "coveredBy": "2026-11-16 owner reason"
+      },
+      {
+        "release": "v1.20.4",
+        "publishedAt": "2026-10-23T14:51:39Z",
+        "staleFrom": "2026-11-23 UTC",
+        "coveredBy": "this record"
+      },
+      {
+        "release": "v1.20.5",
+        "publishedAt": "2026-11-17T09:53:42Z",
+        "eligibleFrom": "2026-12-01 UTC",
+        "staleFrom": "2026-12-18 UTC",
+        "coveredBy": null
+      }
+    ]
+  },
+  "twinfraLock": {
+    "access": "read-only local checkout, git show only, not fetched",
+    "commit": "cceab35b2cae71da3065cfcefa80b0e45aefe30c",
+    "path": "module-2/artifacts.lock.json",
+    "fileSHA256": "e45e3a755e2bc61a07d9689fc9571c464afa3a883f3ac3ffeac73789535d9317",
+    "unchangedSince": "5801b8e6c952f88304888ab0661e1329d7c8e229",
+    "cilium": "1.20.2",
+    "vendoredChart": "module-2/vendor/cilium-1.20.2.tgz",
+    "vendoredChartSHA256": "b2afd87b7f75f875f92a14559f14f59b7babbb479d968e3fd625a20bf30ec20e"
+  },
+  "exposure": "The kind rehearsal is paused (IOT-WO-08 Amendment 2); kind-smoke is skipped and the local up, install and smoke scripts refuse before engine access. The Cilium images are scanned, not run. When run, Cilium has privileged networking on the developer machine or runner; that is the reason to adopt a release rather than keep adding reasons.",
+  "ownerReasons": [
+    "quay.io/cilium/cilium",
+    "quay.io/cilium/cilium-envoy",
+    "quay.io/cilium/operator-generic"
+  ],
+  "notCovered": [
+    "v1.20.5: stale from 2026-12-18 UTC; needs adoption (pins, chart, three digests, licence admissions and the Envoy scan) or its own dated owner reason before then",
+    "Any KEV finding in a Cilium image: ADR 0028 and ADR 0014 permit no waiver"
+  ]
+}

@@ -206,6 +206,17 @@ and reason. There are no owner overrides in this change. KEV cannot be waived
 by such a record. Weekly comparison scans retain their upstream logic; the
 EdgePulse wrapper adds the same isolation, KEV and staleness checks.
 
+The first owner reasons (2026-11-16, IOT-WO-08 item 3) cover only Cilium
+release v1.20.3 of the three Cilium images. Cilium 1.20.3 went stale on
+2026-11-15 and failed that night's scan. The harness copies Twinfra's
+read-only Cilium 1.20.2 lock, and the kind rehearsal is paused. The
+[record](evidence/iot-wo-08/cilium-1.20.3-owner-reason-2026-11-16.json) keeps
+the release metadata hash, the Twinfra lock and the dates. On 2026-11-23,
+when v1.20.4 went stale, the owner added the same reason for v1.20.4
+([record](evidence/iot-wo-08/cilium-1.20.4-owner-reason-2026-11-23.json)).
+Cilium v1.20.5 (published 2026-11-17) is not covered and blocks from
+2026-12-18 UTC unless it is adopted or given its own dated reason.
+
 Amendment 1 removes exactly 266 `IOT-WO-08` harness exceptions. The remaining
 36 entries preserve their exact bytes and order. The repository regression
 test compares them with immutable base `c126d1e`; the removal list is in
@@ -265,7 +276,52 @@ CVE-2026-76844 on CNPG PostgreSQL `zlib1g`. Starting TB or deploying the
 PostgreSQL image voids its rows, and a KEV listing voids that advisory's
 rows. The three tb-node rows expire 2026-11-19 and the three CNPG rows
 2026-11-30, with no extension. CVE-2026-76844 on tb-node is not covered.
+The eight TB 4.3.1.8 copies from A-1 to A-4 expired on 2026-11-19. Because
+the gate validates every row before matching, they left removal-only on
+2026-11-23; the
+[record](evidence/iot-wo-08/expired-tb-4.3.1.8-exceptions-2026-11-23.json)
+keeps each row and its block hash. The 2026-11-23 scan, the first complete
+one since then, blocks on 14 TB and 8 PostgreSQL findings, with more due.
+A-5 proposes 24 new TB rows
+(`vulnerability-exception-proposals/iot-wo-08-tb-renewal-2026-11-23.json`,
+expiring 2026-12-23) and A-6 proposes 35 PostgreSQL rows
+(`vulnerability-exception-proposals/iot-wo-08-pg-bridge-2026-11-23.json`,
+expiring 2026-12-14), one per package and advisory. The owner approved
+both on 2026-11-23 by exact SHA-256 as temporary bridges, with both images
+kept unstarted. The active rows are exact copies, changing only
+`approvedBy`. A-6 replaced the four A-3/A-4 PostgreSQL rows
+([record](evidence/iot-wo-08/superseded-pg-rows-2026-11-23.json)). A-6 covers
+Debian OS packages only. The scanners do not match the PGDG `postgresql-18`
+server package, so PostgreSQL server CVEs are not covered and need their
+own disposition.
 The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and
 fingerprint stays unchanged. Nothing is deployed or accepted as MS3.
+
+## IOT-WO-08: retired TB 4.3.1.6 exception rows
+
+PR #56 replaced the TB 4.3.1.6 digest with 4.3.1.8 but left that digest's
+19 High rows in the ledger. The gate matches an exception only on its exact
+target, package, version and vulnerability, so these rows match nothing:
+main's [2026-11-11 scan](https://github.com/amazen33/EdgePulse/actions/runs/43068337295)
+no longer scans the old digest and matches 7 other rows. The gate also
+validates every row's lifetime before matching, so a row left after its
+2026-11-19 expiry would fail every scan from 2026-11-20 UTC. Under item 1
+they leave removal-only (32 to 13 rows with A-4); the
+[record](evidence/iot-wo-08/retired-tb-4.3.1.6-exceptions-2026-11-12.json)
+keeps each row and its block hash. No row is added or changed.
+
+## IOT-WO-08: os-maven-plugin removal
+
+The identity build no longer loads the os-maven-plugin 1.7.1 extension,
+which has no newer release and whose classpath carried plexus-utils 3.1.0
+(CVE-2025-67030, High). Two OS-activated profiles in
+`services/identity/pom.xml` set `os.detected.classifier` to
+`linux-x86_64` or `windows-x86_64`, the two classifiers the collector
+already inventories for protoc and protoc-gen-grpc-java. Other platforms
+have no inventoried generator binary and fail to resolve. The twelve
+build-tool records found only on that classpath leave the register
+removal-only, and the cleared exception is removed; the
+[record](evidence/iot-wo-08/os-maven-plugin-removal-2026-11-01.json)
+keeps their exact bytes. No component or exception is added.
