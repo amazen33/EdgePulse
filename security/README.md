@@ -324,8 +324,8 @@ The new digest's 32 glibc and krb5 Highs (8 blocking now) are proposed again
 as A-7
 (`vulnerability-exception-proposals/iot-wo-08-pg-18.7-bridge-2026-11-23.json`,
 SHA-256 `1948cb7a33e2584c35f9d51a5e8cc38fa4b05885a85ea33580295e86a88b2af4`).
-A-7 is not active, so the gate and the licence ladder stay red until the owner
-approves it. PostgreSQL 18.7 fixes 52 server CVEs, but the scanners do not
+The owner approved A-7 by exact SHA-256 on 2026-11-25; its 32 copies follow
+the A-5 rows, changing only `approvedBy`, and expire 2026-12-14. PostgreSQL 18.7 fixes 52 server CVEs, but the scanners do not
 match the PGDG server package, so the gate cannot confirm them. Nothing is
 deployed.
 

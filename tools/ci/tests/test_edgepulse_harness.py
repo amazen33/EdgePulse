@@ -429,16 +429,15 @@ class HarnessRepository(unittest.TestCase):
         self.assertEqual([r['row'] for r in record['removedExceptions']], retired_pg)
         self.assertEqual([r['blockSHA256'] for r in record['removedExceptions']],
                          [sc.sha(block(r['row'])) for r in record['removedExceptions']])
-        # A-7 stays an immutable proposal with empty approvedBy; it is not
-        # active until the owner approves it by hash.
+        # IOT-WO-08 A-7 (owner, 2026-11-25): the 32 glibc and krb5 copies of
+        # this exact proposal follow the A-5 copies, changing only approvedBy.
         path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-pg-18.7-bridge-2026-11-23.json'
         payload = path.read_bytes()
         self.assertEqual(sc.sha(payload), '1948cb7a33e2584c35f9d51a5e8cc38fa4b05885a85ea33580295e86a88b2af4')
         pg_187 = json.loads(payload)['exceptions']
         self.assertEqual(len(pg_187), 32)
-        self.assertTrue(all(v['approvedBy'] == '' for v in pg_187))
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v for v in active if v not in retired_pg])
+                         [v for v in active if v not in retired_pg] + [v | {'approvedBy':'amazen33'} for v in pg_187])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))
