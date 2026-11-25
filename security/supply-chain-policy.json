@@ -23,5 +23,48 @@
       "pinFamily": "cnpg"
     }
   ],
-  "ownerReasons": []
+  "ownerReasons": [
+    {
+      "repository": "quay.io/cilium/cilium",
+      "release": "v1.20.3",
+      "owner": "amazen33",
+      "date": "2026-11-16",
+      "reason": "ADR 0028 test-harness image, never shipped. The kind harness copies Twinfra's read-only Cilium lock (module-2/artifacts.lock.json at Twinfra 5801b8e: Cilium 1.20.2, with the same chart SHA-256), so adopting 1.20.3 would move the harness off that lock. The kind rehearsal is paused (IOT-WO-08 Amendment 2), so Cilium runs nowhere. KEV still blocks. This reason covers v1.20.3 only; v1.20.4 needs adoption or its own dated reason before 2026-11-23 UTC."
+    },
+    {
+      "repository": "quay.io/cilium/cilium-envoy",
+      "release": "v1.20.3",
+      "owner": "amazen33",
+      "date": "2026-11-16",
+      "reason": "ADR 0028 test-harness image, never shipped. The kind harness copies Twinfra's read-only Cilium lock (module-2/artifacts.lock.json at Twinfra 5801b8e: Cilium 1.20.2, with the same chart SHA-256), so adopting 1.20.3 would move the harness off that lock. The kind rehearsal is paused (IOT-WO-08 Amendment 2), so Cilium runs nowhere. KEV still blocks. This reason covers v1.20.3 only; v1.20.4 needs adoption or its own dated reason before 2026-11-23 UTC."
+    },
+    {
+      "repository": "quay.io/cilium/operator-generic",
+      "release": "v1.20.3",
+      "owner": "amazen33",
+      "date": "2026-11-16",
+      "reason": "ADR 0028 test-harness image, never shipped. The kind harness copies Twinfra's read-only Cilium lock (module-2/artifacts.lock.json at Twinfra 5801b8e: Cilium 1.20.2, with the same chart SHA-256), so adopting 1.20.3 would move the harness off that lock. The kind rehearsal is paused (IOT-WO-08 Amendment 2), so Cilium runs nowhere. KEV still blocks. This reason covers v1.20.3 only; v1.20.4 needs adoption or its own dated reason before 2026-11-23 UTC."
+    },
+    {
+      "repository": "quay.io/cilium/cilium",
+      "release": "v1.20.4",
+      "owner": "amazen33",
+      "date": "2026-11-23",
+      "reason": "ADR 0028 test-harness image, never shipped. The kind harness copies Twinfra's read-only Cilium lock (module-2/artifacts.lock.json at Twinfra cceab35, byte-identical to 5801b8e: Cilium 1.20.2, with the same chart SHA-256), so adopting 1.20.4 would move the harness off that lock. The kind rehearsal is paused (IOT-WO-08 Amendment 2), so Cilium runs nowhere. KEV still blocks. This reason covers v1.20.4 only; v1.20.5 (published 2026-11-17) needs adoption or its own dated reason before 2026-12-18 UTC."
+    },
+    {
+      "repository": "quay.io/cilium/cilium-envoy",
+      "release": "v1.20.4",
+      "owner": "amazen33",
+      "date": "2026-11-23",
+      "reason": "ADR 0028 test-harness image, never shipped. The kind harness copies Twinfra's read-only Cilium lock (module-2/artifacts.lock.json at Twinfra cceab35, byte-identical to 5801b8e: Cilium 1.20.2, with the same chart SHA-256), so adopting 1.20.4 would move the harness off that lock. The kind rehearsal is paused (IOT-WO-08 Amendment 2), so Cilium runs nowhere. KEV still blocks. This reason covers v1.20.4 only; v1.20.5 (published 2026-11-17) needs adoption or its own dated reason before 2026-12-18 UTC."
+    },
+    {
+      "repository": "quay.io/cilium/operator-generic",
+      "release": "v1.20.4",
+      "owner": "amazen33",
+      "date": "2026-11-23",
+      "reason": "ADR 0028 test-harness image, never shipped. The kind harness copies Twinfra's read-only Cilium lock (module-2/artifacts.lock.json at Twinfra cceab35, byte-identical to 5801b8e: Cilium 1.20.2, with the same chart SHA-256), so adopting 1.20.4 would move the harness off that lock. The kind rehearsal is paused (IOT-WO-08 Amendment 2), so Cilium runs nowhere. KEV still blocks. This reason covers v1.20.4 only; v1.20.5 (published 2026-11-17) needs adoption or its own dated reason before 2026-12-18 UTC."
+    }
+  ]
 }
