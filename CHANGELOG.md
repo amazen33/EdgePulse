@@ -36,6 +36,33 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08 A-5 and A-6: remove the eight TB 4.3.1.8 exception copies
+  (A-1 to A-4) that expired on 2026-11-19, removal-only. From the 2026-11-23
+  scan, activate the owner-approved A-5 (24 TB rows, 4 Critical and 20 High,
+  expiring 2026-12-23) and A-6 (35 PostgreSQL High rows, expiring
+  2026-12-14), as exact proposal copies with only `approvedBy` changed. A-6
+  replaces the four A-3/A-4 PostgreSQL rows. Starting TB or deploying the
+  PostgreSQL image voids its rows. PostgreSQL server CVEs are not seen by
+  the scanners and are not covered.
+
+- IOT-WO-08 item 3: record dated owner reasons, under the ADR 0028
+  staleness rule, for Cilium v1.20.3 and v1.20.4 on the three Cilium
+  harness images, which stay on Twinfra's 1.20.2 lock while the kind
+  rehearsal is paused. This clears the staleness failures from 2026-11-15
+  and 2026-11-23. Cilium v1.20.5 is not covered and blocks from
+  2026-12-18 UTC; KEV still blocks.
+
+- IOT-WO-08: retire the 19 High exception rows for the replaced TB 4.3.1.6
+  digest removal-only (32 to 13 entries). They match no scanned input since
+  PR #56, and any row left after its 2026-11-19 expiry would fail every
+  scan from 2026-11-20. The record keeps each row and its block hash.
+
+- IOT-WO-08: replace the os-maven-plugin build extension with OS-activated
+  profiles for the protoc classifiers, clearing plexus-utils 3.1.0
+  (CVE-2025-67030) from the executed build tools. Retire its twelve
+  build-tool register records removal-only and remove the one cleared
+  `IOT-WO-08` exception (32 to 31 entries).
+
 - IOT-WO-08 A-4: activate six owner-approved High bridge rows for
   CVE-2026-109518 (`apt` 3.0.3) and CVE-2026-76844 (`zlib1g`) on TB 4.3.1.8
   and CNPG PostgreSQL 18.6, which block from 2026-11-19 and 2026-11-20

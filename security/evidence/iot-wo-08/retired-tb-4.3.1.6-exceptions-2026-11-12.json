@@ -1,0 +1,402 @@
+{
+  "authority": "IOT-WO-08 item 1 (adopting a refresh removes the exceptions it clears). PR #56 promoted TB 4.3.1.8 and retired this digest's admission; these 19 rows were left behind.",
+  "baseCommit": "a12e04693768e41647aa53bbf3edcedb37c93b29",
+  "baseScan": "https://github.com/amazen33/EdgePulse/actions/runs/43068337295",
+  "retiredTarget": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+  "retiredRelease": "4.3.1.6",
+  "replacedBy": {
+    "target": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+    "release": "4.3.1.8",
+    "pr": "https://github.com/amazen33/EdgePulse/pull/56"
+  },
+  "rule": "Removal only. The gate matches an exception on the exact (target, package, version, vulnerability) key, and validates every row's lifetime before matching: a row left in the register after 2026-11-19 fails every scan dated 2026-11-20 UTC or later, whether or not it matches.",
+  "proof": {
+    "scanDate": "2026-11-11",
+    "retiredTargetScanned": false,
+    "retiredTargetInInventory": false,
+    "rowsMatchingAFinding": 0,
+    "matchedExceptionsInScan": 7,
+    "otherReferences": "Only dated evidence records name the digest; no chart, pin, workflow or scan input does."
+  },
+  "removedExceptions": [
+    {
+      "blockSHA256": "b68fe45ca41ee420e8f0ea5c21583b6d43965fec002bb29a4dd74b79573817ab",
+      "row": {
+        "vulnerability": "CVE-2026-66046",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libexpat1",
+        "version": "2.8.3-1~deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md"
+        ],
+        "reason": "CVE-2026-66046 in libexpat1 2.8.3-1~deb13u1; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "1c46ea85a491bb25e85052245697460c4e6d78efc67d3fc65a2613c795adcc7c",
+      "row": {
+        "vulnerability": "CVE-2026-76956",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libexpat1",
+        "version": "2.8.3-1~deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md"
+        ],
+        "reason": "CVE-2026-76956 in libexpat1 2.8.3-1~deb13u1; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "f56a9cd4187101e4bceb7d8f1668f233c4f6d25915bd9d33df49b4404aa03fd9",
+      "row": {
+        "vulnerability": "CVE-2026-76957",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libexpat1",
+        "version": "2.8.3-1~deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md"
+        ],
+        "reason": "CVE-2026-76957 in libexpat1 2.8.3-1~deb13u1; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "6a1edb7239a67130e423c55390066749cfd8ca16ceffcfb703f05d23f59e51bd",
+      "row": {
+        "vulnerability": "CVE-2026-77214",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libexpat1",
+        "version": "2.8.3-1~deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md"
+        ],
+        "reason": "CVE-2026-77214 in libexpat1 2.8.3-1~deb13u1; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "78291b89483933ecf4e61d2248470cd8fccac13d07c3d90d98975131e112cd6c",
+      "row": {
+        "vulnerability": "CVE-2026-93990",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libexpat1",
+        "version": "2.8.3-1~deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md"
+        ],
+        "reason": "CVE-2026-93990 in libexpat1 2.8.3-1~deb13u1; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-708844f9a703adfc.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "afd524a7c721d4f75269d6852937c3c774a64792c1ab7535ce6ae830c6902dac",
+      "row": {
+        "vulnerability": "CVE-2026-103111",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libpcre2-8-0",
+        "version": "10.46-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-2eb1e79e730b9741.md"
+        ],
+        "reason": "CVE-2026-103111 in libpcre2-8-0 10.46-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-2eb1e79e730b9741.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "bd28ec134b07036bc8cb6cd70fd132bbc8493a4fc9af8e2916fbe15e3bca6570",
+      "row": {
+        "vulnerability": "CVE-2026-54873",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libssl3t64",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md"
+        ],
+        "reason": "CVE-2026-54873 in libssl3t64 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "16d9f648fb860531623f3f99cad955f2e564b67b2463926adb73d65fcee228d9",
+      "row": {
+        "vulnerability": "CVE-2026-72897",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libssl3t64",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md"
+        ],
+        "reason": "CVE-2026-72897 in libssl3t64 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "d3e37f7114a096494b0e5d5b7b7c621a42efcb2adaabb288c6ecbea520251856",
+      "row": {
+        "vulnerability": "CVE-2026-84782",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libssl3t64",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md"
+        ],
+        "reason": "CVE-2026-84782 in libssl3t64 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "bcd33fab5392ea95a004b2ef0760c8dad78384b3a08ab82bcaba8775ec8a0f75",
+      "row": {
+        "vulnerability": "CVE-2026-84784",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "libssl3t64",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md"
+        ],
+        "reason": "CVE-2026-84784 in libssl3t64 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-f3476ed2b7ba9851.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "d2ee8f4d96588c2043c708002b496a8c096f9ddad4671b7f4e57077a0999b1fc",
+      "row": {
+        "vulnerability": "CVE-2026-106451",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "lz4-java",
+        "version": "1.10.1",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-6dbd635d7ff7188b.md"
+        ],
+        "reason": "CVE-2026-106451 in lz4-java 1.10.1; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-6dbd635d7ff7188b.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "bdd6aa694e977dc2baab61eb63dd053e1f3e3d1e8c33411e893b40e6153bab4c",
+      "row": {
+        "vulnerability": "CVE-2026-54873",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md"
+        ],
+        "reason": "CVE-2026-54873 in openssl 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "3eb9932c7594bb222e2017ab9c2ca80b36b051d393b32e2b2b279ae965bf5a35",
+      "row": {
+        "vulnerability": "CVE-2026-72897",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md"
+        ],
+        "reason": "CVE-2026-72897 in openssl 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "4c124fc531f1796f440a84d9c1e3b9da3540c1e9a7e5fcae0aaf3bdc98441cfc",
+      "row": {
+        "vulnerability": "CVE-2026-84782",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md"
+        ],
+        "reason": "CVE-2026-84782 in openssl 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "a229a6a8cbc1a27e7cb115e1e9a643c4e6ff1e7d61e51b8bb5cb47cb38a8f03e",
+      "row": {
+        "vulnerability": "CVE-2026-84784",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md"
+        ],
+        "reason": "CVE-2026-84784 in openssl 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-6ecb68e2bed8d03d.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "ea1e9fad3b8ff6454f98d0210e021e3c5945a38cf6e3b85ba1376d44b657559c",
+      "row": {
+        "vulnerability": "CVE-2026-54873",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl-provider-legacy",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md"
+        ],
+        "reason": "CVE-2026-54873 in openssl-provider-legacy 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "2ed336e234401c53be66e44acd2c15fb5298066ef1c33a01d52fa6da9e3f3031",
+      "row": {
+        "vulnerability": "CVE-2026-72897",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl-provider-legacy",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md"
+        ],
+        "reason": "CVE-2026-72897 in openssl-provider-legacy 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "f6559146e10f1fc7dcd70f7df119e87bc87a7529205d558611674f45287cf7ce",
+      "row": {
+        "vulnerability": "CVE-2026-84782",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl-provider-legacy",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md"
+        ],
+        "reason": "CVE-2026-84782 in openssl-provider-legacy 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    },
+    {
+      "blockSHA256": "2caa116f8b0753042c7c6279ebc684c0cc5a79bfa7dd97d758dc7d2df95bb0cb",
+      "row": {
+        "vulnerability": "CVE-2026-84784",
+        "target": "docker.io/thingsboard/tb-node@sha256:36ffc61305a5d811e167c95bdb1ae452e55588e43bfdce7040467a8c25f3ef5a",
+        "package": "openssl-provider-legacy",
+        "version": "3.5.7-1~deb13u2",
+        "severity": "High",
+        "owner": "amazen33",
+        "approvedBy": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "createdOn": "2026-10-20",
+        "expires": "2026-11-19",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md"
+        ],
+        "reason": "CVE-2026-84784 in openssl-provider-legacy 3.5.7-1~deb13u2; fixed by IOT-WO-08 (due 2026-11-19). Exact scan https://github.com/amazen33/EdgePulse/actions/runs/39434411230. See reviewed reachability and limits in security/evidence/vulnerability-exceptions/group-8585f25b3e639e75.md. Owner approval requested in this PR; no deployment or exploitability assertion."
+      }
+    }
+  ],
+  "exceptionCounts": {
+    "before": {
+      "total": 26,
+      "IOT-WO-08": {
+        "Critical": 2,
+        "High": 24
+      }
+    },
+    "after": {
+      "total": 7,
+      "IOT-WO-08": {
+        "Critical": 2,
+        "High": 5
+      }
+    }
+  },
+  "remainingExceptionsUnchanged": true,
+  "newOrChangedExceptions": []
+}
