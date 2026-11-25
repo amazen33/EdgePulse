@@ -309,7 +309,9 @@ Its cosign signature is in Rekor, and its 14-day cool-off ends
 **2026-11-26T23:16:17Z**. The PR stays a draft until then. The
 [qualification](evidence/iot-wo-08/cnpg-postgresql-18.7-202611122305-qualification-2026-11-23.md)
 records five passing supplier criteria and the reviewed `imageSBOM`.
-`supplyChain` is still pending. `verify_backfill`'s supported-line
+`supplyChain` passes on the green [gate rerun](https://github.com/amazen33/EdgePulse/actions/runs/45668871265)
+of 2026-11-25, which has zero blockers and every fixable High matched by an
+A-7 row. `verify_backfill`'s supported-line
 replacement now names the new digest and still requires its full record. The
 old digest's verified record leaves removal-only
 ([record](evidence/iot-wo-08/retired-pg-18.6-admission-2026-11-23.json)); no

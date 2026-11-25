@@ -120,9 +120,21 @@ Mutable pages and APIs may later return different bytes.
 
 ## Supply-chain qualification
 
-**Pending: the criterion does not pass yet.** PR #72's
+**Pass, 2026-11-25, with the owner-approved A-7 rows.** The green gate
+[rerun 45668871265](https://github.com/amazen33/EdgePulse/actions/runs/45668871265)
+on `ebe032c` reports `Supply-chain: passed` with zero blockers and zero KEVs.
+It used the Grype database built 2026-11-25T06:22:21Z and the CISA KEV
+catalogue 2026.11.25. All 32 fixable Highs on this digest (glibc ×8, krb5
+×24) now carry a block reason, and each matches an active A-7 row; no other
+fixable High or Critical is present. The reviewed SBOM hash is unchanged.
+This is a passing ADR-0049 disposition with evidenced exceptions, not a
+vulnerability-free image. The A-7 rows expire 2026-12-14, and deploying the
+image voids them.
+
+The first PR #72
 [gate run](https://github.com/amazen33/EdgePulse/actions/runs/45137906762)
-scanned all six active images, the Maven graph and the lockfiles on Linux.
+on 2026-11-23 scanned all six active images, the Maven graph and the
+lockfiles on Linux.
 It used Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0, the Grype database
 built 2026-11-23T06:28:32Z and the CISA KEV catalogue 2026.11.20. The old
 digest was scanned as the previous input.
@@ -132,16 +144,14 @@ digest was scanned as the previous input.
   gone, and CVE-2026-76844 is absent from both digests.
 - There is no new fixable High or Critical identity compared with the old
   digest, and no KEV.
-- The scan's only blockers are 8 glibc Highs on this digest. 24 krb5 Highs
-  start blocking on 2026-11-24 and 2026-11-25. None has an approved
-  exception, and A-7 proposes them for this digest.
-
-The criterion becomes `pass` only after A-7 is approved and active and a
-rerun is green; that run is then the evidence. Until then, the licence gate
-reports this record as pending.
+- That run's only blockers were 8 glibc Highs on this digest. 24 krb5 Highs
+  started blocking on 2026-11-24 and 2026-11-25. A-7 proposed all 32 for
+  this digest, and the owner approved it on 2026-11-25.
 
 | Retained evidence | Identity / SHA-256 |
 | --- | --- |
+| [Green rerun artifact](https://github.com/amazen33/EdgePulse/actions/runs/45668871265/artifacts/15049665238) | `edgepulse-supply-chain-45668871265`, ID `15049665238`, GitHub-reported digest `73b5706bf57c53ef0ac39054c881d7efb00f496f18cce4b033fc161d569a4832` |
+| Green rerun `report.json` | `1c4d1d6a20fed551f0044a3f6d7a7b8b5a3d17b7857335da89dadd844e80a331` |
 | [Gate artifact](https://github.com/amazen33/EdgePulse/actions/runs/45137906762/artifacts/14800931763) | `edgepulse-supply-chain-45137906762`, ID `14800931763`, GitHub-reported digest `5e07c197e69a54155db2a4293782fec747699ffe9a59ff3184b7efe41ee2d240` |
 | `report.json` | `bbf5a12d2666dd212bc2a152db19945b896ac700766dcf6342cc8bd49927ccd0` |
 | Reviewed CycloneDX SBOM (`imageSBOM`) | `2cbd55cfd5ea6d43f5977f8e3fe25f0a8ce9a29148f205810608e720d8a2f714` |

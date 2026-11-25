@@ -30,7 +30,8 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 - IOT-WO-08 item 1: partial refresh of the CNPG PostgreSQL pin to
   `18.7-202611122305-minimal-trixie` (cool-off ends 2026-11-26T23:16:17Z),
-  with a new ADR-0054 record whose `supplyChain` criterion stays pending.
+  with a new ADR-0054 record; `supplyChain` passes on the green gate rerun
+  45668871265 (2026-11-25) with the A-7 rows.
   The scan clears the apt and zlib1g findings and shows no new fixable
   High/Critical or KEV. Remove the 35 A-6 rows for the old digest
   removal-only (59 to 24 entries), retire its register record, and

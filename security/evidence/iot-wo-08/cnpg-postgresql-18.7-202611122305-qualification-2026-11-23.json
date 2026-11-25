@@ -1,6 +1,6 @@
 {
   "workOrder": "IOT-WO-08 item 1; owner decision 2026-11-23 (partial refresh to PostgreSQL 18.7)",
-  "status": "Supplier criteria, eligibility and scan recorded; supplyChain awaits the A-7 rows; draft until 2026-11-27",
+  "status": "All six criteria recorded; supplyChain passes with the owner-approved A-7 rows; draft until 2026-11-27",
   "reviewedOn": "2026-11-23",
   "candidate": "ghcr.io/cloudnative-pg/postgresql@sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
   "candidateTag": "18.7-202611122305-minimal-trixie",
@@ -148,9 +148,9 @@
     "scope": "Operator repository default branch. The postgres-containers endpoint returned HTTP 404; no score is claimed for the image repository."
   },
   "supplyChain": {
-    "result": "pending",
-    "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/45137906762",
-    "date": "2026-11-23",
+    "result": "pass",
+    "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/45668871265",
+    "date": "2026-11-25",
     "reviewedSBOM": {
       "path": "target/supply-chain/reviewed/b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1.cdx.json",
       "sha256": "2cbd55cfd5ea6d43f5977f8e3fe25f0a8ce9a29148f205810608e720d8a2f714",
@@ -189,7 +189,25 @@
       "path": "security/vulnerability-exception-proposals/iot-wo-08-pg-18.7-bridge-2026-11-23.json",
       "sha256": "1948cb7a33e2584c35f9d51a5e8cc38fa4b05885a85ea33580295e86a88b2af4",
       "rows": 32,
-      "approvedBy": ""
+      "approvedBy": "amazen33",
+      "approvedOn": "2026-11-25",
+      "active": true
+    },
+    "greenRun": {
+      "run": "https://github.com/amazen33/EdgePulse/actions/runs/45668871265",
+      "headCommit": "ebe032c2b7003c42f44f36eaaf2175285cf85210",
+      "mergeCommit": "2baf33cd",
+      "date": "2026-11-25",
+      "status": "passed",
+      "blockers": 0,
+      "kev": 0,
+      "grypeDatabaseBuilt": "2026-11-25T06:22:21Z",
+      "kevCatalog": "2026.11.25",
+      "fixableHighCriticalOnDigest": 32,
+      "matchedByA7": 32,
+      "reviewedSBOMSHA256": "2cbd55cfd5ea6d43f5977f8e3fe25f0a8ce9a29148f205810608e720d8a2f714",
+      "artifact": "edgepulse-supply-chain-45668871265 (ID 15049665238, sha256:73b5706bf57c53ef0ac39054c881d7efb00f496f18cce4b033fc161d569a4832)",
+      "reportSHA256": "1c4d1d6a20fed551f0044a3f6d7a7b8b5a3d17b7857335da89dadd844e80a331"
     }
   }
 }
