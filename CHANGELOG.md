@@ -24,6 +24,14 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 - Fetch the pinned Maven 3.9.11 archive from Maven Central after
   `archive.apache.org` became unreachable. The version and SHA-256 pin are
   unchanged, and the bootstrap still verifies the hash before use.
+- Retry the pinned Maven 3.9.11 download in `security/bootstrap_maven.py`
+  after the transient HTTP 404 and HTTP 429 failures of 2026-11-12 and
+  2026-11-16. It makes at most four attempts with exponential backoff
+  (2, 4 and 8 seconds) and honours `Retry-After`, capped at 30 seconds. It
+  retries only HTTP 429, HTTP 5xx, timeouts and connection errors, plus one
+  HTTP 404. A SHA-256 mismatch fails at once, and the last error fails the
+  job. The version, URL and SHA-256 pin are unchanged. Mocked-`urlopen`
+  tests are in `security/tests/test_bootstrap_maven.py`.
 - Sync the main-and-release ruleset file with the live required checks (licence-gate, supply-chain-gate).
 
 ### Security
