@@ -97,7 +97,7 @@ ADR-0049 qualification remain pending; this inventory is not an admission.
 | CNPG PostgreSQL image | 18.6-202610050823-minimal-trixie, OCI index digest | [PostgreSQL](https://www.postgresql.org/about/licence/); [image source](https://github.com/cloudnative-pg/postgres-containers) (Apache-2.0 build packaging) |
 | PyYAML | 6.0.3 | [MIT](https://pypi.org/project/PyYAML/6.0.3/), static test dependency only |
 | actions/checkout | 5.0.0, 08c6903cd8c0fde910a37f88322edcfb5dd907a8 | MIT |
-| actions/setup-python | 5.6.0, a26af69be951a213d495a4c3e4e4022e16d87065 | MIT |
+| actions/setup-python | 7.1.0, 6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 | MIT |
 
 Twinfra version/policy observations (read only, 2026-10-19):
 module-2/artifacts.lock.json pins Kubernetes 1.36.5, Cilium 1.20.2 and CNPG
