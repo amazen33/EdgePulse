@@ -416,8 +416,28 @@ class HarnessRepository(unittest.TestCase):
         self.assertEqual(sc.sha(payload), 'f2e811603798d360d274fda1c7850b7b8c80af36914fbfd006a634661acd7a99')
         pg_bridge = json.loads(payload)['exceptions']
         self.assertEqual(len(pg_bridge), 35)
+        active = [v | {'approvedBy':'amazen33'} for v in tb_renewal + pg_bridge]
+        # IOT-WO-08 item 1 (owner, 2026-11-23): the partial refresh to CNPG
+        # PostgreSQL 18.7-202611122305 retires the 18.6 digest, so exactly
+        # its 35 A-6 copies leave, removal-only. The old digest is no longer
+        # an image input; the record keeps each exact block and its hash.
+        pg_old = 'ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3'
+        retired_pg = [v for v in active if v['target'] == pg_old]
+        self.assertEqual(retired_pg, [v | {'approvedBy':'amazen33'} for v in pg_bridge])
+        self.assertNotIn(pg_old, ep.image_references(ep.ROOT))
+        record = json.loads((ep.ROOT/'security/evidence/iot-wo-08/retired-pg-18.6-a6-rows-2026-11-23.json').read_text(encoding='utf-8'))
+        self.assertEqual([r['row'] for r in record['removedExceptions']], retired_pg)
+        self.assertEqual([r['blockSHA256'] for r in record['removedExceptions']],
+                         [sc.sha(block(r['row'])) for r in record['removedExceptions']])
+        # IOT-WO-08 A-7 (owner, 2026-11-25): the 32 glibc and krb5 copies of
+        # this exact proposal follow the A-5 copies, changing only approvedBy.
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-pg-18.7-bridge-2026-11-23.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), '1948cb7a33e2584c35f9d51a5e8cc38fa4b05885a85ea33580295e86a88b2af4')
+        pg_187 = json.loads(payload)['exceptions']
+        self.assertEqual(len(pg_187), 32)
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v | {'approvedBy':'amazen33'} for v in tb_renewal + pg_bridge])
+                         [v for v in active if v not in retired_pg] + [v | {'approvedBy':'amazen33'} for v in pg_187])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))

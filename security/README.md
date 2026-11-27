@@ -301,6 +301,38 @@ removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-20
 preserves their old fingerprints. Every retained legacy deadline and
 fingerprint stays unchanged. Nothing is deployed or accepted as MS3.
 
+## IOT-WO-08: CNPG PostgreSQL 18.7 partial refresh
+
+No eligible CNPG build carries the glibc (`2.41-12+deb13u5`) or krb5
+(`1.21.3-5+deb13u2`) fixes. On 2026-11-23 the owner therefore chose a
+partial refresh to `18.7-202611122305-minimal-trixie`
+(`sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1`).
+Its cosign signature is in Rekor, and its 14-day cool-off ends
+**2026-11-26T23:16:17Z**. The PR stays a draft until then. The
+[qualification](evidence/iot-wo-08/cnpg-postgresql-18.7-202611122305-qualification-2026-11-23.md)
+records five passing supplier criteria and the reviewed `imageSBOM`.
+`supplyChain` passes on the green [gate rerun](https://github.com/amazen33/EdgePulse/actions/runs/45668871265)
+of 2026-11-25, which has zero blockers and every fixable High matched by an
+A-7 row. `verify_backfill`'s supported-line
+replacement now names the new digest and still requires its full record. The
+old digest's verified record leaves removal-only
+([record](evidence/iot-wo-08/retired-pg-18.6-admission-2026-11-23.json)); no
+legacy fingerprint changes.
+
+The PR's [gate scan](https://github.com/amazen33/EdgePulse/actions/runs/45137906762)
+shows `apt`/`libapt-pkg7.0` 3.0.4 and `zlib1g` `…-1+deb13u1` on the new digest.
+It finds no new fixable High or Critical and no KEV. The 35 A-6 rows for the
+old digest match nothing and leave removal-only, taking the ledger from 59 to
+24 entries ([record](evidence/iot-wo-08/retired-pg-18.6-a6-rows-2026-11-23.json)).
+The new digest's 32 glibc and krb5 Highs (8 blocking now) are proposed again
+as A-7
+(`vulnerability-exception-proposals/iot-wo-08-pg-18.7-bridge-2026-11-23.json`,
+SHA-256 `1948cb7a33e2584c35f9d51a5e8cc38fa4b05885a85ea33580295e86a88b2af4`).
+The owner approved A-7 by exact SHA-256 on 2026-11-25; its 32 copies follow
+the A-5 rows, changing only `approvedBy`, and expire 2026-12-14. PostgreSQL 18.7 fixes 52 server CVEs, but the scanners do not
+match the PGDG server package, so the gate cannot confirm them. Nothing is
+deployed.
+
 ## IOT-WO-08: retired TB 4.3.1.6 exception rows
 
 PR #56 replaced the TB 4.3.1.6 digest with 4.3.1.8 but left that digest's
