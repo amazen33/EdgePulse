@@ -45,6 +45,18 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   The net-improvement rule is unchanged. No pin, chart, register or
   exception change.
 
+- IOT-WO-08 item 1: partial refresh of the CNPG PostgreSQL pin to
+  `18.7-202611122305-minimal-trixie` (cool-off ends 2026-11-26T23:16:17Z),
+  with a new ADR-0054 record; `supplyChain` passes on the green gate rerun
+  45668871265 (2026-11-25) with the A-7 rows.
+  The scan clears the apt and zlib1g findings and shows no new fixable
+  High/Critical or KEV. Remove the 35 A-6 rows for the old digest
+  removal-only (59 to 24 entries), retire its register record, and
+  activate the owner-approved A-7 (32 glibc and krb5 High rows for the new
+  digest, exact proposal copies with only `approvedBy` changed, expiring
+  2026-12-14; 24 to 56 entries). PostgreSQL 18.7 brings 52 server CVE fixes that the scanners
+  cannot see.
+
 - IOT-WO-08 A-5 and A-6: remove the eight TB 4.3.1.8 exception copies
   (A-1 to A-4) that expired on 2026-11-19, removal-only. From the 2026-11-23
   scan, activate the owner-approved A-5 (24 TB rows, 4 Critical and 20 High,

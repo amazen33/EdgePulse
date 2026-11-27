@@ -1,0 +1,708 @@
+{
+  "authority": "IOT-WO-08 item 1; owner decision 2026-11-23 (partial refresh to CNPG PostgreSQL 18.7)",
+  "recordedOn": "2026-11-23",
+  "baseCommit": "37af1b9500c8fb194fa8a21f88783f4e92244ac5",
+  "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+  "replacedBy": {
+    "target": "ghcr.io/cloudnative-pg/postgresql@sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
+    "tag": "18.7-202611122305-minimal-trixie",
+    "qualification": "security/evidence/iot-wo-08/cnpg-postgresql-18.7-202611122305-qualification-2026-11-23.json"
+  },
+  "rule": "Removal only. The gate matches an exception on the exact (target, package, version, vulnerability) key. The old digest is no longer an image input, so these A-6 rows match nothing. The new digest's glibc and krb5 findings need fresh owner approval against that digest (proposal A-7); no row here is carried over, changed or extended.",
+  "counts": {
+    "before": 59,
+    "after": 24
+  },
+  "proof": {
+    "scanRun": "https://github.com/amazen33/EdgePulse/actions/runs/45137906762",
+    "scanDate": "2026-11-23",
+    "artifact": "edgepulse-supply-chain-45137906762 (ID 14800931763, sha256:5e07c197e69a54155db2a4293782fec747699ffe9a59ff3184b7efe41ee2d240)",
+    "reportSHA256": "bbf5a12d2666dd212bc2a152db19945b896ac700766dcf6342cc8bd49927ccd0",
+    "oldDigestScanned": "as previous input only (PR base 37af1b9)",
+    "newDigestPackages": {
+      "apt": "3.0.4",
+      "libapt-pkg7.0": "3.0.4",
+      "zlib1g": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+      "libc6": "2.41-12+deb13u4",
+      "libkrb5-3": "1.21.3-5+deb13u1",
+      "postgresql-18": "18.7-1.pgdg13+2"
+    },
+    "clearedOnNewDigest": [
+      "CVE-2026-109518 (apt, libapt-pkg7.0)",
+      "CVE-2026-85091 (zlib1g)"
+    ],
+    "absentInBoth": [
+      "CVE-2026-76844"
+    ],
+    "notClearedOnNewDigest": "glibc CVE-2026-19499 and CVE-2026-5435 (8 rows) and krb5 CVE-2026-112314, -112320, -112321, -112322, -112323, -119079 (24 rows): proposed again for the new digest as A-7, not active",
+    "newFixableCriticalHigh": [],
+    "kev": []
+  },
+  "removedExceptions": [
+    {
+      "blockSHA256": "2c8d9e547be6d97e43d4ca8b818f019824bd73890067509818f7ca3f27defa34",
+      "row": {
+        "vulnerability": "CVE-2026-19499",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libc-bin",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-19499 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "2df643a0166f2c846f26cd984833e50dff2df0f55592f95508fead2eae63b63e",
+      "row": {
+        "vulnerability": "CVE-2026-19499",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libc-l10n",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-19499 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "eafa5b9d7670086a748b54d274bfbacf57a0a90e0ceeb44ccc69cd334750eb3a",
+      "row": {
+        "vulnerability": "CVE-2026-19499",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libc6",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-19499 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "a7ff984539a91a9ce542d154fad4d426bd58a37c61f3246fdb2c278772b3ef74",
+      "row": {
+        "vulnerability": "CVE-2026-19499",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "locales",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-19499 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "1d410c974a74dbb67c2cae92ad69cd556b48bd55cce97a188d4e6464bd55e4fe",
+      "row": {
+        "vulnerability": "CVE-2026-5435",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libc-bin",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-5435 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "a5802a0a34875511536403c92e4a595a696abe86cb82dda012c7ab60754683b6",
+      "row": {
+        "vulnerability": "CVE-2026-5435",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libc-l10n",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-5435 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "1f5560751e62e10fe4bac109f13adf75cd04de8ec48b960ce49fdb3315913e38",
+      "row": {
+        "vulnerability": "CVE-2026-5435",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libc6",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-5435 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "0f2a1a98da9be99bf29745f7e982b3fbe7126377f0d9f453a4d3a42a51843484",
+      "row": {
+        "vulnerability": "CVE-2026-5435",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "locales",
+        "version": "2.41-12+deb13u4",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-5435 (glibc) in 2.41-12+deb13u5, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "f5dcf7ba9afc1f15ff73343b9c11699da42a7c33951af38cdba281942392232f",
+      "row": {
+        "vulnerability": "CVE-2026-112314",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libgssapi-krb5-2",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112314 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "bcbb504393062bf16514aeda0e4b88a81ce59c640b270b8e68b83b5c218f8de8",
+      "row": {
+        "vulnerability": "CVE-2026-112314",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libk5crypto3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112314 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "28dd5b9ab3ca8506ef3aeef4818310e747ab398a877cabca136e0f0aa26dc1c4",
+      "row": {
+        "vulnerability": "CVE-2026-112314",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5-3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112314 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "d93f8cc541c6bb1c1a4d3cbd4ec1956711d77fb45b49d8068de1052240f91bb2",
+      "row": {
+        "vulnerability": "CVE-2026-112314",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5support0",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112314 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "18449625dc380e5748931e1997bff103a38d6648a477a372bb61e3dec90bf097",
+      "row": {
+        "vulnerability": "CVE-2026-112320",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libgssapi-krb5-2",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112320 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "145e53e717a225ca827e1a3b891707c089ec6064dacff607ffb61e88f8fd413e",
+      "row": {
+        "vulnerability": "CVE-2026-112320",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libk5crypto3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112320 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "80a10acd41fb8e7647b291b97bc056075aacd932c2413083ab4818b2f8ffb3ce",
+      "row": {
+        "vulnerability": "CVE-2026-112320",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5-3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112320 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "cdd900a82a9258a0fe2e90a3f5a0a50eb3a390bcb5d02b51ba5fd99fdb133e70",
+      "row": {
+        "vulnerability": "CVE-2026-112320",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5support0",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112320 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-11 (2026-11-23 scan, PR #70); it blocks from 2026-11-25 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "11cf96b72c57781d6a4967045c97a8dd9ba8f419f3b70e12df222fccd32ec639",
+      "row": {
+        "vulnerability": "CVE-2026-112321",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libgssapi-krb5-2",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112321 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "8ce8c255aabea78025b7e06052327e3caaac8f6587e0507c0cd449b7fda991be",
+      "row": {
+        "vulnerability": "CVE-2026-112321",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libk5crypto3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112321 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "469d53b0f6876477a4b0c056834e0035d152ab960cecf727fe8df5ed43e93d54",
+      "row": {
+        "vulnerability": "CVE-2026-112321",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5-3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112321 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "4de8536506784bc7347ec3be091fce3c8a07552a46bd947c279e957a291618ad",
+      "row": {
+        "vulnerability": "CVE-2026-112321",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5support0",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112321 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "17b371a97be7b637cae54b9ea64d5186fd17da236695b42c8b47f3c62b0b636a",
+      "row": {
+        "vulnerability": "CVE-2026-112322",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libgssapi-krb5-2",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112322 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "cf13aa99316bcd77907bc4f27a8cdf5c0f550524a490e214e4134e752be8691b",
+      "row": {
+        "vulnerability": "CVE-2026-112322",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libk5crypto3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112322 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "20f060999a47504191ff632f64bfa28b85863a20d90136193c4d9bd9ae715059",
+      "row": {
+        "vulnerability": "CVE-2026-112322",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5-3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112322 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "81b7096c93b9b4f7f0b92d9aca96876d113eaff05c24fe8204e0f5f9249cd732",
+      "row": {
+        "vulnerability": "CVE-2026-112322",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5support0",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112322 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "9d02ae48e19c0b36b5ef6e68a622423cecc9870628ec5f466f105c076d87b36a",
+      "row": {
+        "vulnerability": "CVE-2026-112323",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libgssapi-krb5-2",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112323 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "26bcd0c1b5616e199be655ff63ac9efa6ac76e725115bcad18e36af93ac21ecc",
+      "row": {
+        "vulnerability": "CVE-2026-112323",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libk5crypto3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112323 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "af603c1d6a3fb9a2a785e898771e9f76a14bb2df00cb8fd0b9cf45e3851bbf36",
+      "row": {
+        "vulnerability": "CVE-2026-112323",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5-3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112323 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "506bf5424d60976eda72512ab146bb25054405f149efc2a8e19edf3722204e3d",
+      "row": {
+        "vulnerability": "CVE-2026-112323",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5support0",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-112323 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "e646fadbdddb0e161be4d06a0c3008d8ef83e69507cadda049b604b77ce05427",
+      "row": {
+        "vulnerability": "CVE-2026-119079",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libgssapi-krb5-2",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-119079 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "2356189cb2a9815195da17a3412ce248fc0ce09e8d3d65b36e29cf0499e9586a",
+      "row": {
+        "vulnerability": "CVE-2026-119079",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libk5crypto3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-119079 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "954893c8593d5ae880a318c66c3343438520572f6526ce9a656fdf36f675d062",
+      "row": {
+        "vulnerability": "CVE-2026-119079",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5-3",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-119079 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "e2876010b535f6e9b1b63b6f70d489489f4e963de4765e3cfdd616e93b905ae6",
+      "row": {
+        "vulnerability": "CVE-2026-119079",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libkrb5support0",
+        "version": "1.21.3-5+deb13u1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: Debian fixed CVE-2026-119079 (krb5) in 1.21.3-5+deb13u2, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-10 (2026-11-23 scan, PR #70); it blocks from 2026-11-24 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "b728c495fdb4cbc969dc43a5cc2df52cbc460aa395a1946430ab8be772a6a53f",
+      "row": {
+        "vulnerability": "CVE-2026-109518",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "apt",
+        "version": "3.0.3",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: renewal under item 4 (new entry; the A-4 row expires 2026-11-30 and is superseded by this entry). Debian fixed CVE-2026-109518 (apt) in 3.0.4, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-05 (2026-11-23 scan, PR #70); it blocks from 2026-11-19 under ADR-0049. Not KEV. Exploitation needs an APT package install over HTTP that an attacker can manipulate; no EdgePulse chart, harness or workflow runs APT in this image. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "b7b511a78e57a494559b79720d4cb016e04ee839de555b5a74c51e5ae7303fdc",
+      "row": {
+        "vulnerability": "CVE-2026-109518",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "libapt-pkg7.0",
+        "version": "3.0.3",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: renewal under item 4 (new entry; the A-4 row expires 2026-11-30 and is superseded by this entry). Debian fixed CVE-2026-109518 (apt) in 3.0.4, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-11-05 (2026-11-23 scan, PR #70); it blocks from 2026-11-19 under ADR-0049. Not KEV. Exploitation needs an APT package install over HTTP that an attacker can manipulate; no EdgePulse chart, harness or workflow runs APT in this image. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    },
+    {
+      "blockSHA256": "294f4e57a1841429ec1184a3ff37493e235c2df0ec75802b290caf4ca11b50cc",
+      "row": {
+        "vulnerability": "CVE-2026-85091",
+        "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+        "package": "zlib1g",
+        "version": "1:1.3.dfsg+really1.3.1-1+b1",
+        "severity": "High",
+        "owner": "amazen33",
+        "workOrder": "IOT-WO-08",
+        "reason": "IOT-WO-08 A-6: renewal under item 4 (new entry; the A-3 row expires 2026-11-30 and is superseded by this entry). Debian fixed CVE-2026-85091 (zlib1g) in 1:1.3.dfsg+really1.3.1-1+deb13u1, which this CNPG PostgreSQL 18.6 digest does not contain. First seen 2026-10-20 (2026-11-23 scan, PR #70); it blocks from 2026-11-03 under ADR-0049. Not KEV. Reachability: the chart is not deployed; MS3 has not been reached; the kind rehearsal is paused. IOT-WO-08 refreshes to the first qualifying CNPG digest that contains the fix and removes this row. Deploying this image anywhere voids this row. It expires 2026-12-14 and is not extended. This is a proposal, not active approval.",
+        "controls": [
+          "security/evidence/vulnerability-exceptions/pg-bridge-2026-11-23.md"
+        ],
+        "approvedBy": "amazen33",
+        "createdOn": "2026-11-23",
+        "expires": "2026-12-14"
+      }
+    }
+  ]
+}
