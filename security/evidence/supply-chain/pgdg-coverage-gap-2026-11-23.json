@@ -1,0 +1,546 @@
+{
+  "record": "pgdg-coverage-gap",
+  "date": "2026-11-23",
+  "scope": "Evidence for proposed IOT-WO-02 Amendment 7. Static reading of an existing CI artifact and public pages. No image was pulled, run or deployed. No gate rule, exception, pin or scanner changed.",
+  "source": {
+    "workflow": "Supply-chain gate",
+    "run": 45132416685,
+    "event": "pull_request",
+    "headBranch": "claude/iot-wo-08-a5-gate-recovery",
+    "headSha": "ae3fa4231b687a5a0ac31e8de8d9a0f24017ecd4",
+    "created": "2026-11-23T07:37:08Z",
+    "conclusion": "failure",
+    "artifact": {
+      "name": "edgepulse-supply-chain-45132416685",
+      "id": 14798796132,
+      "sizeBytes": 9092886
+    },
+    "fileSHA256": {
+      "supply-chain/sboms/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.syft.json": "f22503709857e13b18f00f77ca869545792c9edb39eae1d5f68bb439c7fd3f2a",
+      "supply-chain/reviewed/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.cdx.json": "f42ce54dd54c2a1f2a62cfd8698de528fabc3e7cab0c14d4f8dc274a95bed954",
+      "supply-chain/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.grype.json": "0108d7eb8d79688efa68840a8cb0c388d8425fbeeb5166df6ecf59f1e7d43e67",
+      "supply-chain/database.json": "3892cc1453685376179bc3f81583727ec1e2c4de5edeb8e1e871a5ae256aea72"
+    }
+  },
+  "scanners": {
+    "syft": "1.52.0",
+    "grype": "0.119.0",
+    "grypeDatabase": {
+      "schemaVersion": "v6.1.10",
+      "built": "2026-11-23T06:28:32Z",
+      "archiveChecksum": "sha256:3d24f57cd3587e2c73f686decc7ad04b213d1f3575bcf1dd847e42df94560f14"
+    },
+    "grypeMatchConfig": {
+      "dpkg.using-cpes": false,
+      "dpkg.use-cpes-for-eol": false,
+      "stock.using-cpes": true,
+      "add-cpes-if-none": false
+    },
+    "syftConfig": {
+      "relationships.exclude-binary-packages-with-file-ownership-overlap": true,
+      "binaryClassifiersIncludePostgresql": true
+    }
+  },
+  "image": {
+    "target": "ghcr.io/cloudnative-pg/postgresql@sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+    "tag": "18.6-202610050823-minimal-trixie",
+    "syftDistro": {
+      "id": "debian",
+      "versionID": "13.7",
+      "codename": "trixie"
+    },
+    "artifacts": 140,
+    "artifactTypes": {
+      "deb": 140
+    }
+  },
+  "pgdgPackages": [
+    {
+      "name": "postgresql-18",
+      "version": "18.6-1.pgdg13+2",
+      "sourcePackage": null,
+      "purl": "pkg:deb/debian/postgresql-18@18.6-1.pgdg13%2B2?arch=amd64&distro=debian-13.7",
+      "exampleSyftCpe": "cpe:2.3:a:postgresql:postgresql-18:18.6-1.pgdg13\\+2:*:*:*:*:*:*:*",
+      "grypeMatches": 0
+    },
+    {
+      "name": "postgresql-client-18",
+      "version": "18.6-1.pgdg13+2",
+      "sourcePackage": "postgresql-18",
+      "purl": "pkg:deb/debian/postgresql-client-18@18.6-1.pgdg13%2B2?arch=amd64&distro=debian-13.7&upstream=postgresql-18",
+      "grypeMatches": 0
+    },
+    {
+      "name": "libpq5",
+      "version": "18.6-1.pgdg13+2",
+      "sourcePackage": "postgresql-18",
+      "purl": "pkg:deb/debian/libpq5@18.6-1.pgdg13%2B2?arch=amd64&distro=debian-13.7&upstream=postgresql-18",
+      "exampleSyftCpe": "cpe:2.3:a:libpq5:libpq5:18.6-1.pgdg13\\+2:*:*:*:*:*:*:*",
+      "grypeMatches": 0
+    },
+    {
+      "name": "postgresql-common",
+      "version": "293.pgdg13+1",
+      "sourcePackage": null,
+      "purl": "pkg:deb/debian/postgresql-common@293.pgdg13%2B1?arch=all&distro=debian-13.7",
+      "grypeMatches": 0
+    },
+    {
+      "name": "postgresql-client-common",
+      "version": "293.pgdg13+1",
+      "sourcePackage": "postgresql-common",
+      "purl": "pkg:deb/debian/postgresql-client-common@293.pgdg13%2B1?arch=all&distro=debian-13.7&upstream=postgresql-common",
+      "grypeMatches": 0
+    }
+  ],
+  "pgdgOriginSignals": "Only the .pgdg13 version suffix. The maintainer field is Debian PostgreSQL Maintainers, as in Debian, and dpkg status records no repository origin.",
+  "grypeResult": {
+    "matches": 479,
+    "namespaces": {
+      "debian:distro:debian:13": 479
+    },
+    "matchers": {
+      "dpkg-matcher exact-indirect-match": 429,
+      "dpkg-matcher exact-direct-match": 50
+    },
+    "postgresqlOrLibpqMatches": 0
+  },
+  "otherImagesInSameArtifact": "No other scanned image has a PGDG or other third-party-repository OS package. The other unusual suffixes are Debian binNMUs (+bN) and Ubuntu updates (~NN.04.N).",
+  "dpkgVersionOrdering": {
+    "note": "Computed with a port of dpkg verrevcmp. The PGDG suffix orders correctly, so it is not the cause.",
+    "results": [
+      "18.6-1.pgdg13+2 < 18.7-1",
+      "18.7-1.pgdg13+1 > 18.7-1",
+      "18.7-1.pgdg13+1 < 18.7-2",
+      "18.6-1.pgdg13+2 > 18.6-1"
+    ]
+  },
+  "externalChecks": {
+    "checkedOn": "2026-11-23",
+    "debianSecurityTracker": {
+      "postgresql-18": "forky 18.7-1 and sid 18.7-1; no trixie or bookworm entry",
+      "postgresql-17": "trixie 17.12-0+deb13u1",
+      "urls": [
+        "https://security-tracker.debian.org/tracker/source-package/postgresql-18",
+        "https://security-tracker.debian.org/tracker/source-package/postgresql-17"
+      ]
+    },
+    "debianPackageTracker": {
+      "postgresql-18": "accepted into unstable 2026-11-12, migrated to testing 2026-11-17; only testing and unstable shown",
+      "url": "https://tracker.debian.org/pkg/postgresql-18"
+    },
+    "grypeSourceAtV0.119.0": {
+      "grype/matcher/dpkg/matcher.go": "Searches the distro namespace by exact package name and by each upstream (source) package name. CPEs are used only when use-cpes-for-eol is set and the distro is end-of-life.",
+      "grype/matcher/stock/matcher.go": "Matches by ecosystem and, when stock.using-cpes is true, by CPE.",
+      "grype/pkg/cpe_provider.go": "Accepts a bare CPE input with the 'cpe:' prefix.",
+      "grype/pkg/purl_provider.go": "Accepts a single 'pkg:' purl input."
+    },
+    "vunnelDebianProvider": {
+      "releaseMap": "forky->14, trixie->13, sid->unstable (debian_distro_map, src/vunnel/providers/debian/parser.py, main)",
+      "notVerified": "Whether the published DB snapshot holds postgresql-18 under debian:14 or debian:unstable."
+    },
+    "nvdSample": {
+      "cves": [
+        "CVE-2026-6460",
+        "CVE-2026-120151",
+        "CVE-2026-116330",
+        "CVE-2026-14661"
+      ],
+      "nvdStatus": "Awaiting Analysis; no NVD configurations; the CVSS v3.1 score is a Secondary (CNA) score.",
+      "anchoreNvdDataOverrides": "All four have override files with cpe:2.3:a:postgresql:postgresql:*:*:*:*:*:*:*:* and versionStartIncluding 18, versionEndExcluding 18.7 (plus the 14 to 17 lines), annotated as not yet analyzed by NVD, modified 2026-11-12T21:42Z to 2026-11-14T04:57Z.",
+      "notVerified": "The other 48 CVEs; whether the 2026-11-23 Grype DB snapshot contains these overrides; whether Grype 0.119.0 reports fix versions for CPE matches."
+    },
+    "postgresqlProject": {
+      "securityPage": "https://www.postgresql.org/support/security/",
+      "announcement": "https://www.postgresql.org/about/news/postgresql-187-1712-1616-1520-1425-and-19-rc-2-released-3442/",
+      "machineReadableFeed": "none linked from the security page"
+    }
+  },
+  "upstreamAdvisory": {
+    "release": "PostgreSQL 18.7",
+    "released": "2026-11-12",
+    "fixesInScope": 52,
+    "severityFromCnaCvss": {
+      "Medium": 12,
+      "High": 38,
+      "Low": 2
+    },
+    "components": {
+      "core server": 43,
+      "contrib module": 3,
+      "client": 6
+    },
+    "maxCvssV3": 8.8,
+    "kev": {
+      "catalogVersion": "2026.11.20",
+      "source": "kev.json in the same artifact",
+      "matches": 0
+    },
+    "cves": [
+      {
+        "id": "CVE-2026-120154",
+        "cvssV3": 4.3,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120153",
+        "cvssV3": 7.2,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120152",
+        "cvssV3": 4.3,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120151",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120150",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120149",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120148",
+        "cvssV3": 8.1,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120147",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "contrib module",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120146",
+        "cvssV3": 4.3,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120145",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120144",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120143",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120142",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120141",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-120139",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116336",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116335",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116333",
+        "cvssV3": 6.5,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116332",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116331",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116330",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "client",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116329",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116328",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116327",
+        "cvssV3": 4.3,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116326",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116325",
+        "cvssV3": 8.0,
+        "severityFromCvss": "High",
+        "component": "client",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116323",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116322",
+        "cvssV3": 5.3,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116321",
+        "cvssV3": 4.3,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116320",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116319",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116318",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "client",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116317",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116316",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116315",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116314",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "client",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116313",
+        "cvssV3": 7.2,
+        "severityFromCvss": "High",
+        "component": "client",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116312",
+        "cvssV3": 5.4,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116311",
+        "cvssV3": 5.4,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116310",
+        "cvssV3": 4.3,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116309",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116308",
+        "cvssV3": 4.3,
+        "severityFromCvss": "Medium",
+        "component": "contrib module",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116307",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116306",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116304",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-116303",
+        "cvssV3": 3.1,
+        "severityFromCvss": "Low",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-18447",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-16240",
+        "cvssV3": 3.7,
+        "severityFromCvss": "Low",
+        "component": "client",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-16237",
+        "cvssV3": 5.4,
+        "severityFromCvss": "Medium",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-14661",
+        "cvssV3": 8.1,
+        "severityFromCvss": "High",
+        "component": "contrib module",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-6467",
+        "cvssV3": 7.2,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      },
+      {
+        "id": "CVE-2026-6460",
+        "cvssV3": 8.8,
+        "severityFromCvss": "High",
+        "component": "core server",
+        "fixedInPostgresql18": "18.7"
+      }
+    ]
+  }
+}

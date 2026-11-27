@@ -255,3 +255,80 @@ The legacy fingerprint (`licence_ladder.fingerprint`) covers every register fiel
 - **Commons Logging 1.4.0** replaces the 1.3.6 named in item 2: accepted. It is the project's current release, and the build and runtime-logging tests pass.
 - **Spring Session BOM 4.1.1:** the POM declares "Broadcom Foundation License" with no URL; the exact-tag `LICENSE.txt` is Apache-2.0. Apache-2.0 accepted for this POM-only import, which is never on a classpath. Re-check at the next Spring Boot upgrade.
 - The 22 Spring Boot, Spring Framework and Micrometer records pass maturity only once ADR 0014's 14-day cool-off ends on 2026-11-05. No waiver.
+
+## Amendment 7 (proposed, 2026-11-23): PGDG PostgreSQL coverage
+
+**Status:** Proposed, awaiting owner approval. Nothing in it is in force yet. It adds a derived Grype input to Part B and one fail-closed coverage rule, so it changes how the gate passes or fails.
+**Implementer:** Codex, after approval, on branch `codex/iot-wo-02-pgdg-coverage`.
+**Why:** the [coverage evidence](../../security/evidence/supply-chain/pgdg-coverage-gap-2026-11-23.md) shows that the pinned Grype checks the CNPG image's PGDG packages (`postgresql-18`, `postgresql-client-18`, `libpq5` at `18.6-1.pgdg13+2`) only against Debian trixie, which ships PostgreSQL 17. So no PostgreSQL server or libpq CVE reaches the gate. PostgreSQL 18.7 fixes 52 of them: 38 High by the CNA's CVSS, no Critical, and none in KEV 2026.11.20.
+
+**No ADR change:** ADR 0014 Decision 1 says Grype scans images and SBOMs. Decision 2 already puts bundled dependencies in scope. This amendment adds a Grype input derived from the reviewed Syft SBOM, run with the same pinned binary and database snapshot. A general policy for third-party OS repositories would need an ADR. This amendment covers only PGDG.
+
+### Options considered
+
+| Option | Result | Disposition |
+| --- | --- | --- |
+| 1. Use CPE matching for dpkg packages | Grype 0.119.0 uses CPEs for dpkg only on end-of-life distros. Syft's generated CPEs (`postgresql-18`, Debian version strings) would not match NVD's `postgresql:postgresql` anyway. | Rejected |
+| 2. Keep Syft's binary-classifier packages (turn off file-ownership overlap exclusion) | Changes every reviewed image SBOM and the licence gate's `imageSBOM` hashes. It also adds generic binaries for all images, and NVD ranges cannot see Debian and Ubuntu backported fixes, so false positives follow. | Rejected |
+| 3. **PGDG upstream CPE pass** | For each PGDG server package, the same pinned Grype and database snapshot scan `cpe:2.3:a:postgresql:postgresql:<upstream>`. PGDG builds upstream minor releases, so the minor version is the fix level. NVD and Anchore's overrides already carry `>= 18, < 18.7` ranges for the sampled CVEs. | **Recommended** |
+| 4. Match the PGDG subset against Debian forky or sid (`--distro`) | Gives real Debian fix versions, and dpkg ordering of `.pgdg13+N` works. But `postgresql-18` leaves sid and forky once Debian moves to PostgreSQL 19 (19 RC2 came out on 2026-11-12), and coverage would then disappear without notice. | Fallback for fix data only (item 3) |
+| 5. Another scanner, or a PGDG feed | There is no PGDG or PostgreSQL machine-readable feed. Another scanner would change ADR 0014, which excludes Trivy. | Rejected |
+| 6. Report-only disclosure or a minor-version staleness rule | Honest, but gives no CVE IDs and no KEV join. A staleness rule would add postgresql.org as a new unpinned source. | Interim only (item 5) |
+
+### Scope (once approved)
+
+1. **PGDG upstream pass,** in `tools/ci/edgepulse_supply_chain.py` only. The ADR-0049 port `tools/ci/supply_chain.py` is not changed.
+   - From each scanned SBOM, including baseline inputs, select the dpkg packages whose version matches `^(\d+)\.(\d+)-[0-9A-Za-z.]+\.pgdg\d+\+\d+$` and whose source package (or name) is `postgresql-<major>` with the same major. The upstream version is `<major>.<minor>`.
+   - Run the pinned Grype once per image and source package, on `cpe:2.3:a:postgresql:postgresql:<upstream>:*:*:*:*:*:*:*`.
+     - Use the scan's `GRYPE_DB_CACHE_DIR` and `GRYPE_DB_AUTO_UPDATE=false`.
+     - Do not run a second database update.
+     - Keep the raw output as `<digest>.pgdg.grype.json`.
+   - Record each match against the image target, using the SBOM identity (package `postgresql-18`, version `18.6-1.pgdg13+2`), with scanner `grype` and `packageClass` `deb (PGDG, upstream CPE)`.
+     - Severity and fix come only from Grype's output.
+     - `classify_image_findings` sets "introduced" and first-seen as it does for other findings, so ADR 0014's rules and the exception rules apply unchanged.
+   - The reviewed SBOM bytes are read, never rewritten, so the licence gate is unaffected.
+2. **Coverage rule (new, fail-closed).** Every dpkg package with a `.pgdg` version in a scanned image must be handled by item 1 or listed in a new reviewed map, `security/os-package-coverage.json`, which names its matching route and evidence. Otherwise the gate fails with "uncovered third-party OS package". This rule:
+   - keeps `postgresql-common` and `postgresql-client-common` honest: the probe shows whether Debian trixie records cover them;
+   - catches later additions, such as CNPG's `standard` flavour with PGDG extensions, or a new PostgreSQL major.
+3. **Probe first.** Before any PGDG finding counts, item 1 runs in report-only mode for the current digest and the next 18.7 candidate, and the output is attached. The report-only probe (`tools/ci/edgepulse_pgdg.py`, with regression tests in `tools/ci/tests/test_edgepulse_pgdg.py`) already runs in the gate from the proposal PR onward. It records the loss point (dpkg-pass matches and the database's rows per OS) and the upstream CPE route with a fixed-version control. It also records a Debian 14 route. Acceptance:
+   - the PR records how many of the 52 CVEs match, and each of the four sampled CVEs matches;
+   - Grype reports `fix.state: fixed` with `18.7`;
+   - the 18.7 candidate has none of the 52.
+
+   If Grype gives no fix versions for CPE matches, the findings are report-only under Amendment 5 item 1 and could never block. In that case **stop and report**. The owner then decides on option 4 for fix data, or on another route.
+4. **Report.** The Markdown report gets one line per image for the PGDG pass: the packages, the derived upstream version and the match count. A zero is then visible, not silent.
+5. **Interim.** Until this amendment takes effect, the evidence record is the disclosure. A passing PostgreSQL row does not cover PostgreSQL server or libpq CVEs. Nothing here adds an exception or changes a pin or gate rule.
+6. **Docs:** add the PGDG pass and the coverage rule to the gate section of `security/README.md`, and add a CHANGELOG entry.
+
+### Gate impact and order
+
+- On digest `37ade18d…`, item 1 would add up to 52 findings. The PR does not introduce them, because the digest is unchanged. Under Amendment 5, each High with a fix then blocks 14 days after it is first seen.
+- **Owner decision:** the first-seen anchor. The default is the first run that evaluates these findings, using the state in tracking issue #52. The alternative is the 18.7 publication date, 2026-11-12, which would make the Highs block at once. Do not backdate without that decision.
+- CNPG build `18.7-202611122305` (`b98ae0b7…`) clears cool-off at 2026-11-26T23:16:17Z. If the IOT-WO-08 refresh to it lands first, or within 14 days of item 1, none of the 52 should block.
+  - The refresh does not change the glibc and krb5 rows, because their versions are the same in that build.
+
+### Proposed disposition of the 52 server findings
+
+This is for owner decision. A-6 in IOT-WO-08 covers only the Debian OS packages.
+
+- **Remediate by refresh, with no exception.** The fix is the partial CNPG refresh to `18.7-202611122305` that A-6 names (eligible 2026-11-27), due by the A-6 owner checkpoint on **2026-12-07**. That is 14 days after the first recorded observation on 2026-11-23. The refresh PR must show, through the probe, that `postgresql-18` is at 18.7 and that none of the 52 CVEs is still affected.
+- **Until the refresh:** the findings are known, uncovered and report-only, and no exception can attach to them.
+  - A-6's undeployed condition applies here too.
+  - A KEV listing of any of the 52 expedites the refresh, as an owner decision.
+- **If the refresh misses 2026-12-07,** the owner decides between an evidenced exception (once item 1 emits the findings) and keeping the image blocked.
+
+### Acceptance
+
+- Planted tests in `tools/ci/tests/` cover:
+  - deriving the CPE and the upstream version;
+  - findings that keep the SBOM identity;
+  - an unknown PGDG package that fails the gate;
+  - no database update during the pass;
+  - non-PGDG packages left untouched.
+- The supply-chain gate artifact shows the PGDG pass for the CNPG image, with its match count and fix states.
+- Scanners, `security/toolchain.lock.json` and ADR 0014 are unchanged. No exception is added.
+
+### Not in scope
+
+- **Twinfra.** Its ADR-0049 engine may have the same gap for PGDG-based images. This was not checked, because Twinfra is read-only here.
+- **Other third-party OS repositories.** Item 2's map handles them when they appear.

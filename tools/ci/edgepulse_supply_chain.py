@@ -17,6 +17,7 @@ from urllib.parse import urlsplit
 
 import supply_chain as sc
 import edgepulse_harness as harness  # ADR 0028: EdgePulse wiring only.
+import edgepulse_pgdg as pgdg  # IOT-WO-02 Amendment 7 (proposed): report-only probe.
 from stage_tools import verified
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -321,7 +322,7 @@ def report_files(report, out):
     """ADR 0028: put the compact harness section first, also in the nightly issue."""
     original = sc.markdown
     try:
-        sc.markdown = lambda value: harness.markdown(value)+'\n'+original(value)
+        sc.markdown = lambda value: harness.markdown(value)+'\n'+pgdg.markdown(value)+original(value)
         sc.report_files(report, out)
     finally:
         sc.markdown = original
@@ -479,6 +480,12 @@ def run(root, tools_path, out, cache, base=None):
         for value in result['findings']:
             if value['target'] == image['target']:
                 value['packageClass'] = classes.get((value['package'], value['version']), 'unknown')
+    # IOT-WO-02 Amendment 7 (proposed): report-only. Nothing from the probe is
+    # merged into findings, exceptions or status before owner approval.
+    try:
+        coverage = pgdg.probe(plan, tools, out)
+    except Exception as error:  # A probe defect must never change the gate result.
+        coverage = dict(authority=pgdg.AUTHORITY, reportOnly=True, error=type(error).__name__+': '+str(error))
     result['findings'].extend(maven)
     result['toolVersions'] = scanner_metadata(root)
     result['gitCommit'] = sc.git(root, 'rev-parse', 'HEAD')
@@ -490,6 +497,7 @@ def run(root, tools_path, out, cache, base=None):
     report = evaluate(result, sc.read(root/'security/vulnerability-exceptions.json'), json.loads(raw), root,
                       state if link else None, harness_guard=guard, staleness=staleness)
     report['trackingIssue'] = link
+    report['pgdgCoverage'] = coverage
     report['kev']['downloadSHA256'] = sc.sha(raw)
     report['reviewedSBOMs'] = canonical_sboms(plan, out)
     report_files(report, out)

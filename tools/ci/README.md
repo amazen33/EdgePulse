@@ -69,6 +69,20 @@ not approval. Ordinary pushes, main, forks and other branches reject that
 marker. The owner reviews the exact list and records approval before merge;
 the approved entries must name `amazen33` rather than `pending-owner`.
 
+The PGDG coverage probe (`edgepulse_pgdg.py`) is **report-only** and belongs
+to proposed IOT-WO-02 Amendment 7. Grype's dpkg pass checks PGDG
+`postgresql-<major>` packages only against the image distro's namespace,
+which has no records for them on Debian trixie. For each such package the
+probe records:
+- the dpkg-pass match count, and the database rows per OS for the source
+  package (`grype db search`), which shows where coverage is lost;
+- the upstream CPE route at the installed minor version and at the fix version;
+- a Debian 14 route over the PGDG subset only.
+
+The probe uses the pinned Grype and the scan's database snapshot, and runs no
+update. Its output is `pgdg-coverage.json`, `pgdg/` and a report section. It
+never adds findings, exceptions or blocking.
+
 ## Evidence and alerts
 
 The work order's evidence-only ruling permits adding `imageSBOM` to exactly

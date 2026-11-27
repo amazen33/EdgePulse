@@ -36,6 +36,14 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-02 Amendment 7 (proposed): record evidence that the supply-chain
+  gate cannot match the CNPG image's PGDG PostgreSQL packages, so the 52
+  PostgreSQL 18.7 CVEs are not reported. Propose a PGDG upstream CPE pass
+  that uses the pinned Grype and its database snapshot, plus a fail-closed
+  coverage rule. Add a report-only probe and regression tests that show, in
+  the gate artifact, where coverage is lost and the affected 18.6 and fixed
+  18.7 cases. No scanner, pin, exception, finding or gate-status change.
+
 - IOT-WO-08 A-5 and A-6: remove the eight TB 4.3.1.8 exception copies
   (A-1 to A-4) that expired on 2026-11-19, removal-only. From the 2026-11-23
   scan, activate the owner-approved A-5 (24 TB rows, 4 Critical and 20 High,
