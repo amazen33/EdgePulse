@@ -306,6 +306,12 @@ kept unstarted. The active rows are exact copies, changing only
 Debian OS packages only. The scanners do not match the PGDG `postgresql-18`
 server package, so PostgreSQL server CVEs are not covered and need their
 own disposition.
+A-8 (2026-11-27) proposes eight TB rows for the Tomcat 10.1.61 bundled in TB
+4.3.1.8 (two Criticals blocking since 2026-11-26), expiring 2026-12-23
+(`vulnerability-exception-proposals/iot-wo-08-tb-tomcat-2026-11-27.json`).
+Only an upstream TB release can replace bundled libraries; TB 4.3.1.9 is the
+candidate under scan. The owner approved A-8 by exact SHA-256 on
+2026-11-27; its copies follow the A-7 rows, changing only `approvedBy`.
 The two absent old image admissions are retired under the existing
 removal-only rule; [their record](evidence/iot-wo-08/retired-image-admissions-2026-10-30.json)
 preserves their old fingerprints. Every retained legacy deadline and

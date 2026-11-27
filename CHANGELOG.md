@@ -45,6 +45,12 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   The net-improvement rule is unchanged. No pin, chart, register or
   exception change.
 
+- IOT-WO-08 A-8: activate eight owner-approved TB 4.3.1.8 rows for its
+  bundled Tomcat 10.1.61 (CVE-2026-116561 and CVE-2026-118028 Critical,
+  blocking since 2026-11-26; six Highs due 2026-12-10), as exact proposal
+  copies with only `approvedBy` changed, expiring 2026-12-23 with A-5.
+  Starting TB voids them.
+
 - IOT-WO-08 item 1: partial refresh of the CNPG PostgreSQL pin to
   `18.7-202611122305-minimal-trixie` (cool-off ends 2026-11-26T23:16:17Z),
   with a new ADR-0054 record; `supplyChain` passes on the green gate rerun
