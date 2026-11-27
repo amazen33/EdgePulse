@@ -84,8 +84,17 @@ blocking Tomcat finding if it is rated High or Critical.
 Only an upstream TB release can change the bundled Tomcat, and 4.3.1.9 does
 not. Promoting 4.3.1.9 after 2026-12-08 would clear all 24 A-5 rows, but it
 would still need the Tomcat findings bridged on the new digest, or a later
-4.3.1.x patch with Tomcat 10.1.62 or newer. Choosing between those is the
-owner's decision; this draft proposes no exception.
+4.3.1.x patch with Tomcat 10.1.62 or newer.
+
+The sequence recommended on 2026-11-28 takes the first route: qualify
+4.3.1.9 and keep this PR in draft. The digest-specific bridge is proposal A-9,
+`security/vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json`
+(SHA-256 `2257195a05472138602b67014f2b1506560a8f6ef78cd60479ca7bc7e389bd64`;
+[evidence](../vulnerability-exceptions/tb-4-3-1-9-tomcat-2026-11-28.md)).
+It is not approved and not active. Its eight rows target this candidate
+digest, expire 2026-12-23 and carry the A-8 conditions. A-8 covers only
+the 4.3.1.8 digest. Until the promotion activates A-9, this candidate
+gate stays red on the two Tomcat Criticals by design.
 
 ### Retained evidence
 
@@ -169,6 +178,9 @@ than a floor.
 2. Rerun the full Linux scan on the exact digest, then propose the pin,
    chart, register (full ADR-0054 record) and `imageSBOM` change.
 3. Remove the A-5 rows that the scan clears.
-4. Decide how to handle the Tomcat findings on the new digest.
+4. Activate A-9 (once approved by hash) and retire the eight A-8 rows for
+   the old digest, all in the same reviewed change.
+5. Watch CVE-2026-121649: if it is rated High or Critical, it needs its own
+   entry with fresh evidence.
 
 Starting TB anywhere still voids the A-5 rows.

@@ -1,3 +1,4 @@
+from datetime import date
 import json
 import sys
 import unittest
@@ -86,6 +87,28 @@ class TbRefreshEvidenceTests(unittest.TestCase):
         self.assertNotEqual(record['candidate'], record['baseline'])
         self.assertRegex(record['release'], r'^4\.3\.\d+\.\d+$')
         self.assertTrue(record['expectedPackages'])
+
+    def test_digest_specific_tomcat_proposal_matches_the_candidate_and_stays_inactive(self):
+        # A-9 (proposed): exact counterpart of A-8 on the candidate digest; owner approval by hash.
+        path = tb.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json'
+        payload = path.read_bytes()
+        self.assertEqual(tb.sc.sha(payload), '2257195a05472138602b67014f2b1506560a8f6ef78cd60479ca7bc7e389bd64')
+        rows = json.loads(payload)['exceptions']
+        record = json.loads((tb.ROOT/tb.REVIEW).read_text(encoding='utf-8'))
+        a8 = json.loads((tb.ROOT/'security/vulnerability-exception-proposals/'
+                         'iot-wo-08-tb-tomcat-2026-11-27.json').read_text(encoding='utf-8'))['exceptions']
+        same = ('vulnerability', 'package', 'version', 'severity', 'owner', 'workOrder', 'approvedBy', 'expires')
+        self.assertEqual([{k: v[k] for k in same} for v in a8], [{k: v[k] for k in same} for v in rows])
+        self.assertEqual({record['candidate']}, {v['target'] for v in rows})
+        for value in rows:
+            self.assertEqual(record['expectedPackages']['java-archive:'+value['package']], value['version'])
+        self.assertEqual(('', '2026-12-23'), tuple({(v['approvedBy'], v['expires']) for v in rows})[0])
+        active = json.loads((tb.ROOT/'security/vulnerability-exceptions.json').read_text(encoding='utf-8'))['exceptions']
+        self.assertFalse({v['target'] for v in active} & {record['candidate']})
+        # An approved copy must pass the unchanged lifetime and evidence checks through the expiry date.
+        approved = dict(version=1, exceptions=[v | {'approvedBy': 'SYNTHETIC-approver'} for v in rows])
+        for on in ('2026-11-28', '2026-12-23'):
+            tb.ep.validate_exception_evidence(approved, tb.ROOT, date.fromisoformat(on))
 
 if __name__ == '__main__':
     unittest.main()

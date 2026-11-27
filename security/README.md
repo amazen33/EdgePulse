@@ -259,6 +259,12 @@ record is the TB 4.3.1.9 draft
 ([review](evidence/iot-wo-08/tb-4.3.1.9-qualification-2026-11-27.md)), which
 is not eligible before 2026-12-08. A record does not pin, admit or except
 anything.
+Proposal A-9
+(`vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json`)
+repeats the eight A-8 Tomcat rows on the 4.3.1.9 digest, expiring
+2026-12-23. It is not active. It is approved by its own hash and is
+activated only in the reviewed promotion, which also retires the A-5 and
+A-8 rows for the old digest.
 
 The immutable pre-approval OpenJDK rows stay in
 `vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json`,
