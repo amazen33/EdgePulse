@@ -9120,23 +9120,23 @@
       }
     },
     {
-      "id": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "id": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
       "ecosystem": "oci-image",
       "name": "ghcr.io/cloudnative-pg/postgresql",
-      "version": "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
-      "recordedOn": "2026-10-20",
-      "verifiedOn": "2026-10-20",
+      "version": "sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
+      "recordedOn": "2026-11-23",
+      "verifiedOn": "2026-11-25",
       "locations": [
         "charts/edgepulse-thingsboard/values.yaml",
         "dev/kind/pins.json"
       ],
       "integrities": [
-        "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3"
+        "sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1"
       ],
       "class": "allowed",
       "spdx": "Apache-2.0 AND PostgreSQL",
       "electedSpdx": "Apache-2.0 AND PostgreSQL",
-      "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/ff34de135f29e04a841247ea9686d7a80b663005/LICENSE",
+      "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/e1279c43bd11570edc864d220468c28e611df5dd/LICENSE",
       "unmodified": true,
       "tier": 2,
       "enterpriseGrade": {
@@ -9144,45 +9144,45 @@
         "criteria": {
           "maturity": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+            "evidence": "https://www.postgresql.org/docs/release/18.7/",
+            "date": "2026-11-23",
+            "notes": "Stable PostgreSQL 18.7 (released 2026-11-12), not a beta or release candidate, in CNPG's official dated minimal-trixie operand image 18.7-202611122305-minimal-trixie, OCI created 2026-11-12T23:05:08Z from postgres-containers revision e1279c43bd11570edc864d220468c28e611df5dd. Same supplier, flavour and Debian release as the replaced 18.6 build. Supplier qualification only."
           },
           "governance": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+            "evidence": "https://www.cncf.io/projects/cloudnativepg/",
+            "date": "2026-11-23",
+            "notes": "CNCF project page read 2026-11-23: CloudNativePG was accepted to CNCF on 2025-01-21 and moved to the Incubating maturity level on 2026-11-02. The cloudnative-pg GitHub organization owns postgres-containers, whose GOVERNANCE.md at the image revision defers to the CloudNativePG governance policies. PostgreSQL has its own established project governance. See companion review for response hashes."
           },
           "activitySupport": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+            "evidence": "https://www.postgresql.org/support/versioning/",
+            "date": "2026-11-23",
+            "notes": "PostgreSQL 18 is supported until 2030-11-14, and the versioning page read 2026-11-23 lists 18.7 as the current 18.x minor. 18.7 delivers fixes for 52 PostgreSQL CVEs, none in the CISA KEV catalogue 2026.11.20; the pinned scanners do not match the PGDG postgresql-18 package, so the gate cannot see that class of finding. CNPG rebuilds its operand images weekly. This build was signed 2026-11-12T23:16:14Z (Rekor) and listed at 23:16:17Z, within six months; the 14-day cool-off ends 2026-11-26T23:16:17Z."
           },
           "securityProcess": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+            "evidence": "https://github.com/cloudnative-pg/cloudnative-pg/security/policy",
+            "date": "2026-11-23",
+            "notes": "Private vulnerability reporting, a 10-business-day acknowledgement target and coordinated GitHub security advisories. The exact index digest has a keyless cosign signature from the postgres-containers bake_targets.yml workflow at revision e1279c43bd11570edc864d220468c28e611df5dd (Rekor logIndex 3841077455) and per-platform SBOM and provenance attestation manifests. OpenSSF Scorecard for cloudnative-pg/cloudnative-pg: 9.3, dated 2026-11-20 (Security-Policy 10, Signed-Releases 10). The postgres-containers Scorecard endpoint returned HTTP 404; no score is claimed for it. The Rekor entry was matched to the digest; the certificate chain was not cryptographically verified here."
           },
           "supplyChain": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/component-d41dcd8b03e342ee.json",
-            "date": "2026-10-20",
-            "notes": "Exact component passes without an exception; real CI SBOM and scan hashes retained. No environment acceptance."
+            "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/45668871265",
+            "date": "2026-11-25",
+            "notes": "Green PR #72 gate run 45668871265 on ebe032c (pull_request merge commit 2baf33cd), 2026-11-25: all six active images, the Maven graph and lockfiles scanned on Linux with pinned Syft 1.52.0, Grype 0.119.0 and OSV-Scanner 2.6.0; Grype database built 2026-11-25T06:22:21Z; CISA KEV 2026.11.25. Zero blockers and zero KEVs. ADR-0049 passes with the 32 owner-approved A-7 rows (glibc and krb5 Highs, expiring 2026-12-14), which match every fixable High/Critical on this digest. apt 3.0.4 and zlib1g deb13u1: CVE-2026-109518 and CVE-2026-85091 gone; no new fixable Critical/High identity versus the replaced digest (scan 45137906762). The reviewed imageSBOM hash is identical in both runs. The scanners do not match the PGDG postgresql-18 package, so server CVEs are outside this evidence. Deploying the image voids the A-7 rows. Static artifact qualification only, not runtime or milestone acceptance."
           },
           "adoption": {
             "result": "pass",
-            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
-            "date": "2026-10-20",
-            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+            "evidence": "https://github.com/cloudnative-pg/cloudnative-pg/blob/e9eec0d3b49adb088f6fbcfa024d4ea288105c6e/ADOPTERS.md",
+            "date": "2026-11-23",
+            "notes": "ADOPTERS.md lists 56 named organisations, including EDB (BigAnimal), IBM (Cloud Pak), Google Cloud and Clustermarket. GitHub API read 2026-11-23T07:40:28Z: cloudnative-pg/cloudnative-pg has 9,647 stars and 823 forks. Project-wide operator adoption signals, not counts for this operand image, this digest or any EdgePulse deployment."
           }
         }
       },
       "imageSBOM": {
-        "path": "target/supply-chain/reviewed/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.cdx.json",
-        "sha256": "f42ce54dd54c2a1f2a62cfd8698de528fabc3e7cab0c14d4f8dc274a95bed954"
+        "path": "target/supply-chain/reviewed/b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1.cdx.json",
+        "sha256": "2cbd55cfd5ea6d43f5977f8e3fe25f0a8ce9a29148f205810608e720d8a2f714"
       }
     },
     {

@@ -1,0 +1,75 @@
+{
+  "authority": "IOT-WO-08 item 1; owner decision 2026-11-23 (partial refresh to CNPG PostgreSQL 18.7)",
+  "recordedOn": "2026-11-23",
+  "baseCommit": "37af1b9500c8fb194fa8a21f88783f4e92244ac5",
+  "replacedBy": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:b98ae0b74a12f20ccff32219be0e33fdd35c7e2e8e73c8bff9173f1128e167d1",
+  "rule": "Removal only. The digest is no longer a chart or kind input. It held a full verified ADR-0054 record, not a legacy admission, so no legacy fingerprint, tier or deadline changes. verify_backfill now names the new digest as the supported-line replacement for the original system-flavour admission and still requires its full record and reviewed imageSBOM.",
+  "retired": [
+    {
+      "id": "oci-image|ghcr.io/cloudnative-pg/postgresql|sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "ecosystem": "oci-image",
+      "name": "ghcr.io/cloudnative-pg/postgresql",
+      "version": "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3",
+      "recordedOn": "2026-10-20",
+      "verifiedOn": "2026-10-20",
+      "locations": [
+        "charts/edgepulse-thingsboard/values.yaml",
+        "dev/kind/pins.json"
+      ],
+      "integrities": [
+        "sha256:37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3"
+      ],
+      "class": "allowed",
+      "spdx": "Apache-2.0 AND PostgreSQL",
+      "electedSpdx": "Apache-2.0 AND PostgreSQL",
+      "licenceSource": "https://github.com/cloudnative-pg/postgres-containers/blob/ff34de135f29e04a841247ea9686d7a80b663005/LICENSE",
+      "unmodified": true,
+      "tier": 2,
+      "enterpriseGrade": {
+        "status": "verified",
+        "criteria": {
+          "maturity": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
+            "date": "2026-10-20",
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+          },
+          "governance": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
+            "date": "2026-10-20",
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+          },
+          "activitySupport": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
+            "date": "2026-10-20",
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+          },
+          "securityProcess": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
+            "date": "2026-10-20",
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+          },
+          "supplyChain": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/component-d41dcd8b03e342ee.json",
+            "date": "2026-10-20",
+            "notes": "Exact component passes without an exception; real CI SBOM and scan hashes retained. No environment acceptance."
+          },
+          "adoption": {
+            "result": "pass",
+            "evidence": "https://github.com/amazen33/EdgePulse/blob/codex/iot-wo-02-b/security/evidence/supply-chain/runtime-qualification-2026-10-20.md",
+            "date": "2026-10-20",
+            "notes": "Exact upstream supplier evidence and support policy reviewed in the linked record."
+          }
+        }
+      },
+      "imageSBOM": {
+        "path": "target/supply-chain/reviewed/37ade18dbdddba430858c72725aceeec66f33fa5333e82ea1df4942f6c1c83a3.cdx.json",
+        "sha256": "f42ce54dd54c2a1f2a62cfd8698de528fabc3e7cab0c14d4f8dc274a95bed954"
+      }
+    }
+  ]
+}
