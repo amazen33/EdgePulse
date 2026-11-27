@@ -1,15 +1,28 @@
-"""IOT-WO-08 Amendments 2/3: Linux-only TB comparison; no exception activation."""
+"""IOT-WO-08 Amendments 2/3: Linux-only TB comparison; no exception activation.
+
+The reviewed record names the exact candidate and baseline digests and the
+exact-digest package proof. A record is evidence for one candidate; it never
+pins, admits or excepts anything.
+"""
 from collections import Counter
 import argparse
 import json
 from pathlib import Path
+import re
 import sys
 
 import edgepulse_supply_chain as ep
 import supply_chain as sc
 
 ROOT = Path(__file__).resolve().parents[2]
-REVIEW = 'security/evidence/iot-wo-08/tb-4.3.1.8-qualification-2026-10-30.json'
+REVIEW = 'security/evidence/iot-wo-08/tb-4.3.1.9-qualification-2026-11-27.json'
+# The 4.3.1.8 record predates expectedPackages; its reviewed proof is kept
+# here unchanged (Amendment 2: fixed Brotli, OpenJDK as in the proposals).
+REVIEWED_PROOFS = {
+    'docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872': {
+        'deb:libbrotli1': '1.1.0-2+deb13u1',
+        'deb:openjdk-25-jdk-headless': '25.0.4.1+1-1~deb13u1',
+        'deb:openjdk-25-jre-headless': '25.0.4.1+1-1~deb13u1'}}
 
 
 def identities(values):
@@ -29,28 +42,42 @@ def compare(result):
                  newFixableCriticalHigh=[dict(package=p, vulnerability=v) for p, v in added],
                  removedFixableCriticalHigh=[dict(package=p, vulnerability=v)
                                             for p, v in sorted(identities(before)-identities(after))],
+                 retainedFixableCriticalHigh=[dict(package=p, vulnerability=v)
+                                             for p, v in sorted(identities(before) & identities(after))],
                  netImprovement=not added and len(identities(after)) < len(identities(before)))
     return value
 
 
-def candidate_packages(sbom):
-    packages = {v['name']: v['version'] for v in sbom['artifacts'] if v['type'] == 'deb'}
+def observed_packages(sbom, keys):
+    """Every version Syft catalogued for each type:name key, in sorted order."""
+    found = {}
+    for artifact in sbom['artifacts']:
+        found.setdefault(artifact['type']+':'+artifact['name'], set()).add(artifact['version'])
+    return {key: sorted(found.get(key, ())) for key in keys}
+
+
+def candidate_packages(sbom, review):
     # This is an exact-digest assessment, not an admission of arbitrary future versions.
-    if packages.get('libbrotli1') != '1.1.0-2+deb13u1':
-        raise ValueError('Approved TB candidate does not contain the reviewed fixed Brotli package')
-    for name in ('openjdk-25-jdk-headless', 'openjdk-25-jre-headless'):
-        if packages.get(name) != '25.0.4.1+1-1~deb13u1':
-            raise ValueError('OpenJDK proposal differs from the actual candidate package: '+name)
-    return {k: packages[k] for k in ('libbrotli1', 'openjdk-25-jdk-headless', 'openjdk-25-jre-headless')}
+    expected = review.get('expectedPackages') or REVIEWED_PROOFS.get(review.get('candidate'))
+    if not expected:
+        raise ValueError('Candidate record has no exact-digest package proof')
+    packages = observed_packages(sbom, [*expected, *review.get('reportedPackages', [])])
+    for key, version in expected.items():
+        if packages[key] != [version]:
+            raise ValueError('Candidate package differs from the reviewed record: '+key)
+    return packages
 
 
-def run(root, tools_path, out, cache):
+def run(root, tools_path, out, cache, review_path=REVIEW):
     if sys.platform != 'linux':
         raise ValueError('Full TB image comparison requires Linux; no Windows substitute')
-    review = sc.read(root/REVIEW)
+    review = sc.read(root/review_path)
     candidate, baseline = (ep.canonical(review[k]) for k in ('candidate', 'baseline'))
     if {v.split('@')[0] for v in (candidate, baseline)} != {'docker.io/thingsboard/tb-node'}:
         raise ValueError('TB evidence must compare the same approved upstream repository')
+    # ADR 0020: TB CE 4.3.x only; 4.4.0 and later (BUSL-1.1) is never a candidate.
+    if candidate == baseline or not re.fullmatch(r'4\.3\.\d+\.\d+', str(review.get('release'))):
+        raise ValueError('TB candidate must be a different Apache-2.0 CE 4.3.x release digest')
     origins = ['charts/edgepulse-thingsboard/values.yaml:docker.io/thingsboard/tb-node',
                'dev/kind/pins.json:docker.io/thingsboard/tb-node']
     prior = [dict(target=baseline, source='registry:'+baseline, digest=baseline.split('@')[1],
@@ -64,9 +91,11 @@ def run(root, tools_path, out, cache):
     out.mkdir(parents=True, exist_ok=True)
     result = sc.scan(plan, sc.verify_tools(tools_path, root), cache, out, root=root)
     digest = candidate.split('@sha256:')[1]
-    packages = candidate_packages(sc.read(out/'sboms'/(digest+'.syft.json')))
+    packages = candidate_packages(sc.read(out/'sboms'/(digest+'.syft.json')), review)
+    prior = observed_packages(sc.read(out/'sboms'/(baseline.split('@sha256:')[1]+'.syft.json')), list(packages))
     comparison = compare(result)
-    comparison.update(candidate=candidate, baseline=baseline, packages=packages,
+    comparison.update(candidate=candidate, baseline=baseline, release=review['release'],
+                      record=Path(review_path).as_posix(), packages=packages, baselinePackages=prior,
                       database=result['database'], date=sc.today().isoformat(),
                       toolVersions=ep.scanner_metadata(root), scope=plan['scope'])
     sc.write(out/'net-improvement.json', comparison)
@@ -94,12 +123,13 @@ def run(root, tools_path, out, cache):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
+    parser.add_argument('--review', default=REVIEW, help='reviewed candidate record, relative to --root')
     parser.add_argument('--tools', type=Path, default=ROOT/'target/scan-tools/bin')
     parser.add_argument('--out', type=Path, default=ROOT/'target/tb-refresh')
     parser.add_argument('--cache', type=Path, default=ROOT/'target/supply-chain-cache')
     args = parser.parse_args()
     try:
-        return run(args.root, args.tools, args.out, args.cache)
+        return run(args.root, args.tools, args.out, args.cache, args.review)
     except (ValueError, KeyError, OSError) as error:
         print('TB evidence failure: '+str(error), file=sys.stderr)
         return 1

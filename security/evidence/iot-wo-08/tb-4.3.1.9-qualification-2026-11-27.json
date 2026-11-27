@@ -1,0 +1,23 @@
+{
+  "workOrder": "IOT-WO-08 item 1 (TB 4.3.1.x refresh check); Amendments 2 and 3",
+  "status": "Candidate scan draft; not eligible before 2026-12-08 (14-day cool-off); no pin, chart or exception change",
+  "reviewedOn": "2026-11-27",
+  "candidate": "docker.io/thingsboard/tb-node@sha256:3795fa72d86f8cf7908f532a742447fb18a2cbb7a69d9438f87f2a0ef233c4fc",
+  "baseline": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+  "release": "4.3.1.9",
+  "expectedPackages": {
+    "deb:libbrotli1": "1.1.0-2+deb13u1"
+  },
+  "reportedPackages": [
+    "deb:openjdk-25-jdk-headless",
+    "deb:openjdk-25-jre-headless",
+    "deb:zlib1g",
+    "deb:apt",
+    "deb:apt-transport-https",
+    "deb:libapt-pkg7.0",
+    "deb:libc-bin",
+    "deb:libc6",
+    "java-archive:tomcat-embed-core",
+    "java-archive:tomcat-embed-websocket"
+  ]
+}
