@@ -36,6 +36,15 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
+- IOT-WO-08 item 1: scan TB CE 4.3.1.9 (index digest `3795fa72…`) against
+  the pinned 4.3.1.8 digest. The draft qualification record is not eligible
+  before 2026-12-08. Net improvement passes: there are no new fixable
+  Critical/High identities and no KEV. All 24 A-5 findings are fixed, but
+  the 8 Tomcat 10.1.61 findings remain. `tools/ci/tb_refresh_evidence.py`
+  now reads a reviewed candidate record with an exact-digest package proof.
+  The net-improvement rule is unchanged. No pin, chart, register or
+  exception change.
+
 - IOT-WO-08 A-5 and A-6: remove the eight TB 4.3.1.8 exception copies
   (A-1 to A-4) that expired on 2026-11-19, removal-only. From the 2026-11-23
   scan, activate the owner-approved A-5 (24 TB rows, 4 Critical and 20 High,
