@@ -36,10 +36,11 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ### Security
 
-- IOT-WO-08 A-8: propose eight unapproved TB 4.3.1.8 rows for its bundled
-  Tomcat 10.1.61 (CVE-2026-116561 and CVE-2026-118028 Critical, blocking
-  since 2026-11-26; six Highs due 2026-12-10), expiring 2026-12-23 with A-5.
-  No exception is activated by the proposal.
+- IOT-WO-08 A-8: activate eight owner-approved TB 4.3.1.8 rows for its
+  bundled Tomcat 10.1.61 (CVE-2026-116561 and CVE-2026-118028 Critical,
+  blocking since 2026-11-26; six Highs due 2026-12-10), as exact proposal
+  copies with only `approvedBy` changed, expiring 2026-12-23 with A-5.
+  Starting TB voids them.
 
 - IOT-WO-08 A-5 and A-6: remove the eight TB 4.3.1.8 exception copies
   (A-1 to A-4) that expired on 2026-11-19, removal-only. From the 2026-11-23

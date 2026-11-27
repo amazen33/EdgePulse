@@ -416,8 +416,15 @@ class HarnessRepository(unittest.TestCase):
         self.assertEqual(sc.sha(payload), 'f2e811603798d360d274fda1c7850b7b8c80af36914fbfd006a634661acd7a99')
         pg_bridge = json.loads(payload)['exceptions']
         self.assertEqual(len(pg_bridge), 35)
+        # IOT-WO-08 A-8 (owner, 2026-11-27): the eight TB bundled-Tomcat copies
+        # of this exact proposal follow the A-6 copies, changing only approvedBy.
+        path = ep.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-tb-tomcat-2026-11-27.json'
+        payload = path.read_bytes()
+        self.assertEqual(sc.sha(payload), '4f270c191a57493eb57fbd839344f6cba8fed6cfcf0710f85ba74cf080b89d2f')
+        tomcat = json.loads(payload)['exceptions']
+        self.assertEqual(len(tomcat), 8)
         self.assertEqual([json.loads(v) for v in new[len(retained):]],
-                         [v | {'approvedBy':'amazen33'} for v in tb_renewal + pg_bridge])
+                         [v | {'approvedBy':'amazen33'} for v in tb_renewal + pg_bridge + tomcat])
 
     def test_actual_inputs_remain_isolated_and_read_only(self):
         guard = h.check_references(ep.ROOT, ep.image_references(ep.ROOT))
