@@ -178,7 +178,8 @@ than a floor.
 2. Rerun the full Linux scan on the exact digest, then propose the pin,
    chart, register (full ADR-0054 record) and `imageSBOM` change.
 3. Remove the A-5 rows that the scan clears.
-4. Activate A-9 (once approved by hash) and retire the eight A-8 rows for
+4. Activate A-9 (once approved by hash; the owner approves only after an
+   independent review of this PR) and retire the eight A-8 rows for
    the old digest, all in the same reviewed change.
 5. Watch CVE-2026-121649: if it is rated High or Critical, it needs its own
    entry with fresh evidence.

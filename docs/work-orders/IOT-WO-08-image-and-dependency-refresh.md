@@ -188,7 +188,7 @@ This generalises the JSpecify ruling. When a refresh introduces a new runtime-re
   - **Recommended sequence (2026-11-28):** qualify 4.3.1.9 and keep #75 in draft. A-8 covers only the old digest, so the new digest gets its own proposal.
   - **Proposal:** `security/vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json`, SHA-256 `2257195a05472138602b67014f2b1506560a8f6ef78cd60479ca7bc7e389bd64`. It holds eight rows (2 Critical, 6 High) on the candidate digest, identical to A-8 apart from target, dates, reason and evidence, and expiring 2026-12-23. It carries the A-8 conditions.
   - **Activation:** only in the reviewed 4.3.1.9 promotion, after 2026-12-08, with a fresh full Linux scan of the exact digest. That change moves the pins, the chart, the full ADR-0054 record and the `imageSBOM`, and it retires the 24 A-5 rows and the eight A-8 rows.
-  - **Status:** not approved and not active. `supplyChain` stays `pending`, and the candidate gate stays red on the two Tomcat Criticals until admission.
+  - **Status:** not approved and not active. Owner decision (2026-11-28): approve only after an independent review of PR #75 (tooling, the five proposed criteria, A-9); no reviewer is assigned yet. `supplyChain` stays `pending`, and the candidate gate stays red on the two Tomcat Criticals until admission.
   - **Evidence:** `security/evidence/vulnerability-exceptions/tb-4-3-1-9-tomcat-2026-11-28.md`.
 
 **Merge order after A-1:**
