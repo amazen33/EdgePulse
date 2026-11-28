@@ -250,6 +250,28 @@ Critical/High identities. The reviewed generated imageSBOM hash is bound to
 the new digest. Final architect diff review and owner merge remain pending;
 these records prove static artifact qualification, not runtime integration.
 
+The TB comparison job (`tools/ci/tb_refresh_evidence.py`) reads one
+reviewed candidate record under `evidence/iot-wo-08/`. The record names the
+candidate and baseline digests, which must be different TB CE 4.3.x
+images, and an exact-digest package proof (`expectedPackages`) that every
+run re-verifies: each proven package appears exactly once at its reviewed
+version, and every package behind a removed or retained fixable
+Critical/High identity must be proven. The record's `release` must match
+the single TB application archive in the scanned candidate image, and the
+baseline must bundle a different CE 4.3.x one. The 4.3.1.8 record keeps its
+original proof. The current
+record is the TB 4.3.1.9 draft
+([review](evidence/iot-wo-08/tb-4.3.1.9-qualification-2026-11-27.md)), which
+is not eligible before 2026-12-08. A record does not pin, admit or except
+anything.
+Proposal A-9
+(`vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json`)
+repeats the eight A-8 Tomcat rows on the 4.3.1.9 digest, expiring
+2026-12-23. The owner approved its own hash on 2026-11-28, after an
+independent review. It is not active: it is activated only in the
+reviewed promotion, which also retires the A-5 and A-8 rows for the old
+digest.
+
 The immutable pre-approval OpenJDK rows stay in
 `vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json`,
 with empty `approvedBy`. Under A-1, exactly two copies were added to the

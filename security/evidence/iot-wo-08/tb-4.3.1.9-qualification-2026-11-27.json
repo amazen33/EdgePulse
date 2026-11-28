@@ -1,0 +1,75 @@
+{
+  "workOrder": "IOT-WO-08 item 1 (TB 4.3.1.x refresh check); Amendments 2 and 3",
+  "status": "Draft for architect review: candidate scan evidence only; not eligible before 2026-12-08 (14-day cool-off from the 2026-11-24 release); no pin, chart, register or exception change",
+  "reviewedOn": "2026-11-27",
+  "candidate": "docker.io/thingsboard/tb-node@sha256:3795fa72d86f8cf7908f532a742447fb18a2cbb7a69d9438f87f2a0ef233c4fc",
+  "baseline": "docker.io/thingsboard/tb-node@sha256:5e2c180f3c48a9f4efd3e19d2f03c41b510ff1a935f25083657e0cf046a94872",
+  "release": "4.3.1.9",
+  "eligibleFrom": "2026-12-08",
+  "sourceCommit": "d13c25a6f73880a6a4cd65fe5bcac981cda822b7",
+  "licence": "Apache-2.0",
+  "licenceEvidence": "https://github.com/thingsboard/thingsboard/blob/v4.3.1.9/LICENSE",
+  "licenceSHA256": "c1b9df1275e769f3dbab000d1e457a2d4b0f28eb5da6c77e48dc37eeba202ed7",
+  "expectedPackages": {
+    "deb:libbrotli1": "1.1.0-2+deb13u1",
+    "deb:openjdk-25-jdk-headless": "25.0.5.1+2-1~deb13u1",
+    "deb:openjdk-25-jre-headless": "25.0.5.1+2-1~deb13u1",
+    "deb:zlib1g": "1:1.3.dfsg+really1.3.1-1+deb13u1",
+    "deb:apt": "3.0.4",
+    "deb:apt-transport-https": "3.0.4",
+    "deb:libapt-pkg7.0": "3.0.4",
+    "deb:libc-bin": "2.41-12+deb13u5",
+    "deb:libc6": "2.41-12+deb13u5",
+    "java-archive:tomcat-embed-core": "10.1.61",
+    "java-archive:tomcat-embed-websocket": "10.1.61"
+  },
+  "criteria": {
+    "maturity": {
+      "result": "pass",
+      "evidence": "https://api.github.com/repos/thingsboard/thingsboard/releases/tags/v4.3.1.9",
+      "date": "2026-11-27",
+      "notes": "Stable 4.3.1.9 release, published 2026-11-24T18:34:29Z; draft=false and prerelease=false; tag commit d13c25a6f73880a6a4cd65fe5bcac981cda822b7. The image tag was pushed 2026-11-24T14:21:41Z. No KEV expedite applies, so ADR 0014's 14-day cool-off ends 2026-12-08. Supplier qualification only."
+    },
+    "governance": {
+      "result": "pass",
+      "evidence": "https://api.github.com/orgs/thingsboard",
+      "date": "2026-11-27",
+      "notes": "Unchanged from the accepted 4.3.1.8 review: the thingsboard GitHub organization owns thingsboard/thingsboard; the exact 4.3.1.9 PR template is byte-identical to 4.3.1.8's; the official contribution guide documents team review, tests, pull requests and CLA review. See companion review for primary links and hashes. No foundation status, multi-employer count or paid support entitlement is inferred."
+    },
+    "activitySupport": {
+      "result": "pass",
+      "evidence": "https://thingsboard.io/docs/releases/releases-table/",
+      "date": "2026-11-27",
+      "notes": "CE 4.3.x is Active LTS through 2027-07-20, with v4.3.1.9 (2026-11-24) as its current patch. The release notes list four security fixes."
+    },
+    "securityProcess": {
+      "result": "pass",
+      "evidence": "https://github.com/thingsboard/thingsboard/blob/v4.3.1.9/security.md",
+      "date": "2026-11-27",
+      "notes": "The tagged disclosure policy is byte-identical to 4.3.1.8's (private reporting, three-business-day response). Release notes document CVE-2026-116689, CVE-2026-59171, CVE-2026-106554 and CVE-2026-110879 as fixed; the release API publishes SHA-256 digests for three distribution assets. OpenSSF Scorecard 4.7 dated 2026-11-23 is below the target of 6 (4.9 at the 4.3.1.8 review); Signed-Releases=0: no signed-artifact or provenance claim."
+    },
+    "supplyChain": {
+      "result": "pending",
+      "evidence": "https://github.com/amazen33/EdgePulse/actions/runs/45916833345",
+      "date": "2026-11-27",
+      "notes": "Pending. Linux TB comparison run 45916833345 (pinned Syft 1.52.0, Grype 0.119.0; one Grype database built 2026-11-26T06:22:34Z; CISA KEV 2026.11.25) scanned both complete images: 394 to 257 findings, fixable Critical/High identities 32 to 8, zero new fixable Critical/High identities, zero KEVs; net improvement passed. All 24 A-5 findings are absent from the candidate. The 8 Tomcat findings remain: tomcat-embed-core and tomcat-embed-websocket are still 10.1.61, so the two Criticals block at once and the six Highs block from 2026-12-10 without an approved exception on this digest. Not eligible before 2026-12-08. Static artifact evidence only, not runtime or milestone acceptance."
+    },
+    "adoption": {
+      "result": "pass",
+      "evidence": "https://api.github.com/repos/thingsboard/thingsboard",
+      "date": "2026-11-27",
+      "notes": "Primary project metrics read 2026-11-27T00:27:51Z: GitHub 22,731 stars and 6,573 forks; Docker Hub thingsboard/tb-node 5,604,931 pulls. The vendor's Supertech Agroline case study names an end-user platform (edition unspecified). Cumulative repository/image-wide signals, not unique users, production installations, CE-only totals or proof of this patch or any EdgePulse deployment."
+    }
+  },
+  "scorecard": {
+    "evidence": "https://api.securityscorecards.dev/projects/github.com/thingsboard/thingsboard",
+    "date": "2026-11-23",
+    "readOn": "2026-11-27",
+    "score": 4.7,
+    "target": 6,
+    "commit": "d39bcf650ed7aefd84267b7ec452b743cb7a3def",
+    "securityPolicyScore": 10,
+    "signedReleasesScore": 0,
+    "scope": "Project-wide default-branch assessment, not the exact CE release commit"
+  }
+}

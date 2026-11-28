@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - 'security/evidence/iot-wo-08/tb-4.3.1.8-*'
+      - 'security/evidence/iot-wo-08/tb-*'
       - 'security/vulnerability-exception-proposals/**'
       - 'security/vulnerability-exceptions.json'
       - 'tools/ci/tb_refresh_evidence.py'
