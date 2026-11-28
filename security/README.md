@@ -267,10 +267,10 @@ anything.
 Proposal A-9
 (`vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json`)
 repeats the eight A-8 Tomcat rows on the 4.3.1.9 digest, expiring
-2026-12-23. It is not approved and not active. It needs the owner's
-approval of its own hash, which follows an independent review, and it is
-activated only in the reviewed promotion, which also retires the A-5 and
-A-8 rows for the old digest.
+2026-12-23. The owner approved its own hash on 2026-11-28, after an
+independent review. It is not active: it is activated only in the
+reviewed promotion, which also retires the A-5 and A-8 rows for the old
+digest.
 
 The immutable pre-approval OpenJDK rows stay in
 `vulnerability-exception-proposals/iot-wo-08-tb-openjdk-2026-10-30.json`,

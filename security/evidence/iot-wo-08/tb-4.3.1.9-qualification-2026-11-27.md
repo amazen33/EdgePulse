@@ -91,7 +91,7 @@ The sequence recommended on 2026-11-28 takes the first route: qualify
 `security/vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json`
 (SHA-256 `2257195a05472138602b67014f2b1506560a8f6ef78cd60479ca7bc7e389bd64`;
 [evidence](../vulnerability-exceptions/tb-4-3-1-9-tomcat-2026-11-28.md)).
-It is not approved and not active. Its eight rows target this candidate
+The owner approved its hash on 2026-11-28; it is not active. Its eight rows target this candidate
 digest, expire 2026-12-23 and carry the A-8 conditions. A-8 covers only
 the 4.3.1.8 digest. Until the promotion activates A-9, this candidate
 gate stays red on the two Tomcat Criticals by design.
@@ -178,8 +178,8 @@ than a floor.
 2. Rerun the full Linux scan on the exact digest, then propose the pin,
    chart, register (full ADR-0054 record) and `imageSBOM` change.
 3. Remove the A-5 rows that the scan clears.
-4. Activate A-9 (once approved by hash; the owner approves only after an
-   independent review of this PR) and retire the eight A-8 rows for
+4. Activate A-9 (owner-approved by hash on 2026-11-28, after independent
+   review of this PR) and retire the eight A-8 rows for
    the old digest, all in the same reviewed change.
 5. Watch CVE-2026-121649: if it is rated High or Critical, it needs its own
    entry with fresh evidence.

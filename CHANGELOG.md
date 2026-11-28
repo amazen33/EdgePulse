@@ -45,9 +45,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   (one copy per proven package, covering every removed or retained fixable
   identity) and binds the record's release to the TB application archive
   in the scanned image. The net-improvement rule is unchanged. Add proposal A-9: the eight A-8
-  Tomcat rows on the 4.3.1.9 digest, expiring 2026-12-23. It is not
-  approved and not active. No pin, chart, register or active-exception
-  change.
+  Tomcat rows on the 4.3.1.9 digest, expiring 2026-12-23. The owner
+  approved its hash on 2026-11-28 after an independent review; it is not
+  active until the reviewed promotion. No pin, chart, register or
+  active-exception change.
 
 - IOT-WO-08 A-8: activate eight owner-approved TB 4.3.1.8 rows for its
   bundled Tomcat 10.1.61 (CVE-2026-116561 and CVE-2026-118028 Critical,

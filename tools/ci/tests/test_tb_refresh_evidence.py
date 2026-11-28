@@ -124,7 +124,7 @@ class TbRefreshEvidenceTests(unittest.TestCase):
         self.assertTrue(record['expectedPackages'])
 
     def test_digest_specific_tomcat_proposal_matches_the_candidate_and_stays_inactive(self):
-        # A-9 (proposed): exact counterpart of A-8 on the candidate digest; owner approval by hash.
+        # A-9: exact counterpart of A-8 on the candidate digest; approved by hash 2026-11-28, inactive until promotion.
         path = tb.ROOT/'security/vulnerability-exception-proposals/iot-wo-08-tb-4.3.1.9-tomcat-2026-11-28.json'
         payload = path.read_bytes()
         self.assertEqual(tb.sc.sha(payload), '2257195a05472138602b67014f2b1506560a8f6ef78cd60479ca7bc7e389bd64')
