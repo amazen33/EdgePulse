@@ -9,6 +9,16 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
 
 ## [Unreleased]
 
+### Added
+
+- IOT-WO-09 and its ADR (both proposed): an EdgePulse-owned ThingsBoard
+  runtime image that copies TB CE 4.3.1.8's files byte-identical from the
+  pinned upstream digest onto a patched Debian 13 and OpenJDK 25 base, to
+  replace the A-5 bridge rows before they expire on 2026-12-23. The ADR
+  covers the base and JDK, byte identity, build and provenance, gate
+  integration, rollback, what "starting TB" means, and parity tests.
+  Documents only: no image is built and no gate changes.
+
 ### Changed
 
 - IOT-WO-02 Part C (Amendment 6): move the identity service to Spring Boot
