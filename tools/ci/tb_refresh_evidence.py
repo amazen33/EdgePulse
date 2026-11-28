@@ -23,6 +23,10 @@ REVIEWED_PROOFS = {
         'deb:libbrotli1': '1.1.0-2+deb13u1',
         'deb:openjdk-25-jdk-headless': '25.0.4.1+1-1~deb13u1',
         'deb:openjdk-25-jre-headless': '25.0.4.1+1-1~deb13u1'}}
+# TB's own application archive inside the image; its version is the release.
+TB_APPLICATION = 'pkg:maven/org.thingsboard/application@'
+# ADR 0020: TB CE 4.3.x only; 4.4.0 and later (BUSL-1.1) is never a candidate.
+CE_RELEASE = re.compile(r'4\.3\.\d+\.\d+')
 
 
 def identities(values):
@@ -49,23 +53,58 @@ def compare(result):
 
 
 def observed_packages(sbom, keys):
-    """Every version Syft catalogued for each type:name key, in sorted order."""
+    """The version of every copy Syft catalogued for each type:name key, sorted; copies are kept."""
     found = {}
     for artifact in sbom['artifacts']:
-        found.setdefault(artifact['type']+':'+artifact['name'], set()).add(artifact['version'])
+        found.setdefault(artifact['type']+':'+artifact['name'], []).append(artifact['version'])
     return {key: sorted(found.get(key, ())) for key in keys}
 
 
-def candidate_packages(sbom, review):
-    # This is an exact-digest assessment, not an admission of arbitrary future versions.
+def expected_packages(review):
     expected = review.get('expectedPackages') or REVIEWED_PROOFS.get(review.get('candidate'))
     if not expected:
         raise ValueError('Candidate record has no exact-digest package proof')
+    return expected
+
+
+def candidate_packages(sbom, review):
+    # This is an exact-digest assessment, not an admission of arbitrary future versions:
+    # each proven package must appear exactly once, at the reviewed version.
+    expected = expected_packages(review)
     packages = observed_packages(sbom, [*expected, *review.get('reportedPackages', [])])
     for key, version in expected.items():
         if packages[key] != [version]:
             raise ValueError('Candidate package differs from the reviewed record: '+key)
     return packages
+
+
+def check_record(review, candidate, baseline):
+    if candidate == baseline or not CE_RELEASE.fullmatch(str(review.get('release'))):
+        raise ValueError('TB candidate must be a different Apache-2.0 CE 4.3.x release digest')
+
+
+def bundled_release(sbom):
+    """Versions of every TB application archive Syft catalogued in the image."""
+    return sorted(a['version'] for a in sbom['artifacts'] if str(a.get('purl', '')).startswith(TB_APPLICATION))
+
+
+def check_release(candidate_sbom, baseline_sbom, release):
+    """Bind the record's release label to the scanned image, not to the record alone."""
+    found, prior = bundled_release(candidate_sbom), bundled_release(baseline_sbom)
+    if found != [release]:
+        raise ValueError('Candidate image must bundle exactly one TB application '+release+'; found '+repr(found))
+    if len(prior) != 1 or not CE_RELEASE.fullmatch(prior[0]) or prior == found:
+        raise ValueError('Baseline image must bundle one different TB CE 4.3.x application; found '+repr(prior))
+    return dict(candidate=found[0], baseline=prior[0])
+
+
+def check_proof_coverage(comparison, expected):
+    """Every package behind a removed or retained fixable identity needs an exact-version proof."""
+    proven = {key.split(':', 1)[1] for key in expected}
+    named = {v['package'] for k in ('removedFixableCriticalHigh', 'retainedFixableCriticalHigh')
+             for v in comparison[k]}
+    if named - proven:
+        raise ValueError('Candidate record has no package proof for: '+', '.join(sorted(named - proven)))
 
 
 def run(root, tools_path, out, cache, review_path=REVIEW):
@@ -75,9 +114,7 @@ def run(root, tools_path, out, cache, review_path=REVIEW):
     candidate, baseline = (ep.canonical(review[k]) for k in ('candidate', 'baseline'))
     if {v.split('@')[0] for v in (candidate, baseline)} != {'docker.io/thingsboard/tb-node'}:
         raise ValueError('TB evidence must compare the same approved upstream repository')
-    # ADR 0020: TB CE 4.3.x only; 4.4.0 and later (BUSL-1.1) is never a candidate.
-    if candidate == baseline or not re.fullmatch(r'4\.3\.\d+\.\d+', str(review.get('release'))):
-        raise ValueError('TB candidate must be a different Apache-2.0 CE 4.3.x release digest')
+    check_record(review, candidate, baseline)
     origins = ['charts/edgepulse-thingsboard/values.yaml:docker.io/thingsboard/tb-node',
                'dev/kind/pins.json:docker.io/thingsboard/tb-node']
     prior = [dict(target=baseline, source='registry:'+baseline, digest=baseline.split('@')[1],
@@ -91,16 +128,23 @@ def run(root, tools_path, out, cache, review_path=REVIEW):
     out.mkdir(parents=True, exist_ok=True)
     result = sc.scan(plan, sc.verify_tools(tools_path, root), cache, out, root=root)
     digest = candidate.split('@sha256:')[1]
-    packages = candidate_packages(sc.read(out/'sboms'/(digest+'.syft.json')), review)
-    prior = observed_packages(sc.read(out/'sboms'/(baseline.split('@sha256:')[1]+'.syft.json')), list(packages))
+    candidate_sbom = sc.read(out/'sboms'/(digest+'.syft.json'))
+    baseline_sbom = sc.read(out/'sboms'/(baseline.split('@sha256:')[1]+'.syft.json'))
+    bundled = check_release(candidate_sbom, baseline_sbom, review['release'])
+    packages = candidate_packages(candidate_sbom, review)
+    prior = observed_packages(baseline_sbom, list(packages))
     comparison = compare(result)
-    comparison.update(candidate=candidate, baseline=baseline, release=review['release'],
+    comparison.update(candidate=candidate, baseline=baseline, release=review['release'], bundledRelease=bundled,
                       record=Path(review_path).as_posix(), packages=packages, baselinePackages=prior,
                       database=result['database'], date=sc.today().isoformat(),
                       toolVersions=ep.scanner_metadata(root), scope=plan['scope'])
     sc.write(out/'net-improvement.json', comparison)
     # Preserve complete comparison output even if admission still fails.
     ep.canonical_sboms(plan, out)
+    # Records with expectedPackages must prove every package the comparison relies on;
+    # the 4.3.1.8 record keeps its original reviewed proof.
+    if review.get('expectedPackages'):
+        check_proof_coverage(comparison, review['expectedPackages'])
     if not comparison['netImprovement']:
         raise ValueError('TB candidate fails net improvement: new fixable Critical/High identity or no reduction')
     with ep.github_reads():

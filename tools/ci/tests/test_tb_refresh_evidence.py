@@ -20,6 +20,10 @@ def jar(name, version):
     return dict(name=name, version=version, type='java-archive')
 
 
+def application(version):
+    return dict(name='application', version=version, type='java-archive', purl=tb.TB_APPLICATION+version)
+
+
 def finding(package='SYNTHETIC-package', advisory='CVE-2099-1000', severity='Critical', fixed=True):
     return dict(package=package, vulnerability=advisory, severity=severity, fixAvailable=fixed)
 
@@ -63,16 +67,47 @@ class TbRefreshEvidenceTests(unittest.TestCase):
     def test_record_proof_covers_bundled_java_archives_and_reports_versions(self):
         record = dict(expectedPackages={'java-archive:SYNTHETIC-embed': '2.0.1'},
                       reportedPackages=['deb:SYNTHETIC-jdk', 'deb:SYNTHETIC-absent'])
-        sbom = dict(artifacts=[jar('SYNTHETIC-embed', '2.0.1'), jar('SYNTHETIC-embed', '2.0.1'),
+        sbom = dict(artifacts=[jar('SYNTHETIC-embed', '2.0.1'), deb('SYNTHETIC-jdk', '1.1'),
                                deb('SYNTHETIC-jdk', '1.1'), deb('SYNTHETIC-embed', '9.9')])
-        self.assertEqual({'java-archive:SYNTHETIC-embed': ['2.0.1'], 'deb:SYNTHETIC-jdk': ['1.1'],
+        self.assertEqual({'java-archive:SYNTHETIC-embed': ['2.0.1'], 'deb:SYNTHETIC-jdk': ['1.1', '1.1'],
                           'deb:SYNTHETIC-absent': []}, tb.candidate_packages(sbom, record))
 
     def test_planted_second_bundled_copy_fails_exact_proof(self):
         record = dict(expectedPackages={'java-archive:SYNTHETIC-embed': '2.0.1'})
-        with self.assertRaisesRegex(ValueError, 'java-archive:SYNTHETIC-embed'):
-            tb.candidate_packages(dict(artifacts=[jar('SYNTHETIC-embed', '2.0.1'), jar('SYNTHETIC-embed', '2.0.0')]),
-                                  record)
+        for second in ('2.0.0', '2.0.1'):  # a different or an identical second copy
+            with self.subTest(second=second), self.assertRaisesRegex(ValueError, 'java-archive:SYNTHETIC-embed'):
+                tb.candidate_packages(dict(artifacts=[jar('SYNTHETIC-embed', '2.0.1'), jar('SYNTHETIC-embed', second)]),
+                                      record)
+
+    def test_record_guard_rejects_the_same_digest_and_releases_outside_ce_43x(self):
+        tb.check_record(dict(release='4.3.1.9'), 'SYNTHETIC-candidate', 'SYNTHETIC-baseline')
+        with self.assertRaisesRegex(ValueError, 'different Apache-2.0 CE 4.3.x'):
+            tb.check_record(dict(release='4.3.1.9'), 'SYNTHETIC-same', 'SYNTHETIC-same')
+        for release in (None, '4.4.0', '4.4.0.0', '4.3.1', '4.3.1.9.1', '14.3.1.9', '4.3.1.9 '):
+            with self.subTest(release=release), self.assertRaisesRegex(ValueError, 'different Apache-2.0 CE 4.3.x'):
+                tb.check_record(dict(release=release), 'SYNTHETIC-candidate', 'SYNTHETIC-baseline')
+
+    def test_release_label_is_bound_to_the_bundled_tb_application(self):
+        baseline = dict(artifacts=[application('4.3.1.8')])
+        self.assertEqual(dict(candidate='4.3.1.9', baseline='4.3.1.8'),
+                         tb.check_release(dict(artifacts=[application('4.3.1.9')]), baseline, '4.3.1.9'))
+        planted = {'mislabelled 4.4 image': [application('4.4.0.0')], 'no application': [],
+                   'second application': [application('4.3.1.9'), application('4.3.1.9')]}
+        for name, artifacts in planted.items():
+            with self.subTest(name), self.assertRaisesRegex(ValueError, 'Candidate image must bundle exactly one'):
+                tb.check_release(dict(artifacts=artifacts), baseline, '4.3.1.9')
+        for artifacts in ([application('4.3.1.9')], [application('4.4.0.0')], []):
+            with self.subTest(baseline=artifacts), self.assertRaisesRegex(ValueError, 'Baseline image must bundle'):
+                tb.check_release(dict(artifacts=[application('4.3.1.9')]), dict(artifacts=artifacts), '4.3.1.9')
+
+    def test_record_must_prove_every_removed_and_retained_package(self):
+        comparison = tb.compare(dict(previousFindings=[finding(), finding(package='SYNTHETIC-gone')],
+                                     findings=[finding()]))
+        tb.check_proof_coverage(comparison, {'deb:SYNTHETIC-package': '1', 'java-archive:SYNTHETIC-gone': '2'})
+        with self.assertRaisesRegex(ValueError, 'no package proof for: SYNTHETIC-gone$'):
+            tb.check_proof_coverage(comparison, {'deb:SYNTHETIC-package': '1'})
+        with self.assertRaisesRegex(ValueError, 'no package proof for: SYNTHETIC-package$'):
+            tb.check_proof_coverage(comparison, {'java-archive:SYNTHETIC-gone': '2'})
 
     def test_unchanged_fixable_identity_is_reported_as_retained(self):
         value = tb.compare(dict(previousFindings=[finding(), finding(advisory='CVE-2099-1001')],
@@ -102,7 +137,8 @@ class TbRefreshEvidenceTests(unittest.TestCase):
         self.assertEqual({record['candidate']}, {v['target'] for v in rows})
         for value in rows:
             self.assertEqual(record['expectedPackages']['java-archive:'+value['package']], value['version'])
-        self.assertEqual(('', '2026-12-23'), tuple({(v['approvedBy'], v['expires']) for v in rows})[0])
+        self.assertEqual(8, len(rows))
+        self.assertEqual([('', '2026-12-23')]*8, [(v['approvedBy'], v['expires']) for v in rows])
         active = json.loads((tb.ROOT/'security/vulnerability-exceptions.json').read_text(encoding='utf-8'))['exceptions']
         self.assertFalse({v['target'] for v in active} & {record['candidate']})
         # An approved copy must pass the unchanged lifetime and evidence checks through the expiry date.

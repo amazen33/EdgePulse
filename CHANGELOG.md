@@ -41,8 +41,10 @@ Sections `0.3.0` to `1.0.0` are back-filled from the IOT-EE milestone tags (tag 
   before 2026-12-08. Net improvement passes: there are no new fixable
   Critical/High identities and no KEV. All 24 A-5 findings are fixed, but
   the 8 Tomcat 10.1.61 findings remain. `tools/ci/tb_refresh_evidence.py`
-  now reads a reviewed candidate record with an exact-digest package proof.
-  The net-improvement rule is unchanged. Add proposal A-9: the eight A-8
+  now reads a reviewed candidate record with an exact-digest package proof
+  (one copy per proven package, covering every removed or retained fixable
+  identity) and binds the record's release to the TB application archive
+  in the scanned image. The net-improvement rule is unchanged. Add proposal A-9: the eight A-8
   Tomcat rows on the 4.3.1.9 digest, expiring 2026-12-23. It is not
   approved and not active. No pin, chart, register or active-exception
   change.
